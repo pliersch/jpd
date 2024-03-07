@@ -1,0 +1,20 @@
+.active-route {
+  background: var(--theme-contrast-background);
+  border-radius: 3px;
+}
+
+a.mdc-list-item {
+  margin: 0 1em;
+  width: unset;
+}
+
+.nav-container {
+  flex: 0 1 auto;
+  height: 100%;
+}
+
+.action-container {
+  display: flex;
+  justify-content: space-around;
+}
+

@@ -1,0 +1,13 @@
+.scroll-container {
+  overflow: auto;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.round {
+  transform: translate(50%, 0%);
+}

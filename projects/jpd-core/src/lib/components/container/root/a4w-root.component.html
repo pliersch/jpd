@@ -1,0 +1,61 @@
+<mat-sidenav-container autosize class="h-100">
+
+  <mat-sidenav mode="over" autoFocus="false">
+    <a4w-sidenav/>
+  </mat-sidenav>
+
+<!--  @if (adminService.isAdmin$) {-->
+<!--    <mat-sidenav mode="side" position="end" [opened]="adminService.isAdminMode$ | async" autoFocus="false">-->
+<!--      <a4w-right-side/>-->
+<!--    </mat-sidenav>-->
+<!--  }-->
+
+  <mat-sidenav-content>
+
+    <!--  default. before scroll-container. need for 'normal' appbar  -->
+    <ng-content></ng-content>
+    <!--    <ng-content select="[fixed-top]"></ng-content>-->
+
+    <!--  sticky appbar  -->
+    <ng-content select="[sticky]"></ng-content>
+
+    <div #scroller cdkScrollable class="d-flex flex-column scroll-container max-page-height position-relative"
+         (scroll)="onPageScroll($event)">
+
+      <!--  fixed top. need for scroll-out or blurry appbar (part of scroll-container) -->
+      <div #fixed_top_appbar_ref class="sticky-top">
+        <ng-content select="[fixed-top]"></ng-content>
+      </div>
+
+      <!--  fixed top but centred and min-width. need for scroll-out or blurry appbar (part of scroll-container) -->
+      <div class="fixed-top ">
+        <!--      <div #fixed_top_center_appbar_ref class="position-fixed round">-->
+        <div class="container">
+          <div class="row">
+            <div #fixed_top_center_appbar_ref class="col-12">
+              <ng-content select="[fixed-top-center]"></ng-content>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--  hide / scroll out. (part of scroll-container) -->
+      <div #hide_appbar_ref>
+        <ng-content select="[scroll-out]"></ng-content>
+      </div>
+
+      <router-outlet></router-outlet>
+      @if (showFooter) {
+        <div class="mt-auto">
+          <ng-content select="[footer]"></ng-content>
+        </div>
+      }
+    </div>
+
+    <!-- action-container -->
+    <div class="bottom-right">
+      <ng-content select="[bottom-right]"></ng-content>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
