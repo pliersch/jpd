@@ -1,0 +1,10 @@
+.floating {
+  display: inline-block;
+  vertical-align: super;
+
+  .floating-item {
+    display: inline-block;
+    position: absolute;
+    transform: translate(0, -50%);
+  }
+}

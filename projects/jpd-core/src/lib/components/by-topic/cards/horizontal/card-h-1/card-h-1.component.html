@@ -1,0 +1,21 @@
+<div class="mt-5">
+  <a4w-poster>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-12 pe-lg-0">
+        <a [routerLink]="[link]">
+          <div class="p-3 pe-md-0">
+            <img class="w-100 rounded-3" [src]="imageUrl" alt="image">
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-8 col-md-6 col-12 ps-lg-0 my-auto">
+        <div class="card-body">
+          <h5 class="fw-500 mb-0">{{ title }}</h5>
+          <h6 class="accent">{{ subtitle }}</h6>
+          <p class="mb-0">{{ description }}</p>
+        </div>
+      </div>
+      <span class="spacer"></span>
+    </div>
+  </a4w-poster>
+</div>

@@ -1,0 +1,21 @@
+.thumbnail-list {
+  display: block;
+  white-space: nowrap;
+
+  .thumbnail-item {
+    display: inline-block;
+    position: relative;
+  }
+}
+
+.example-viewport {
+  overflow-y: hidden !important;
+  height: 122px;
+  width: 100%;
+  border: 1px solid black;
+
+  .cdk-virtual-scroll-content-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+}

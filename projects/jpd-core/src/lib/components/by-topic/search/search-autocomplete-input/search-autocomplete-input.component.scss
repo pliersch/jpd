@@ -1,0 +1,48 @@
+foo {
+  background-color: var(--mdc-filled-text-field-container-color);
+}
+
+.input-group {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  width: 100%;
+  background-color: var(--mdc-filled-text-field-container-color);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.4rem;
+  /*color: #495057;*/
+  /*background-color: #fff;*/
+  background-color: var(--mdc-filled-text-field-container-color);
+  background-clip: padding-box;
+  border: 1px solid #d2d6da;
+  appearance: none;
+  transition: box-shadow .15s ease, border-color .15s ease;
+}
+
+/*.form-control {*/
+/*  display: block;*/
+/*  background-color: transparent;*/
+/*  background-clip: padding-box;*/
+/*  border: 1px solid #e3e3e3;*/
+/*  border-radius: 30px;*/
+/*  color: #2c2c2c;*/
+/*  line-height: normal;*/
+/*  font-size: .8571em;*/
+/*  -webkit-transition: color .3s ease-in-out, border-color .3s ease-in-out, background-color .3s ease-in-out;*/
+/*  transition: color .3s ease-in-out, border-color .3s ease-in-out, background-color .3s ease-in-out;*/
+/*  -webkit-box-shadow: none;*/
+/*  box-shadow: none;*/
+/*}*/

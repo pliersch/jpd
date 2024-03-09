@@ -1,0 +1,23 @@
+<div class="container-xl">
+  <div class="row">
+    <div *ngFor="let item of model.items" class="col-md-4 flex">
+      <div class="card-31 rounded mat-elevation-z6">
+        <div class="avatar">
+          <a [routerLink]="[item.link]">
+            <img class="mat-elevation-z3 rounded" [src]="item.imageUrl" alt="avatar">
+          </a>
+        </div>
+        <div class="body">
+          <h6 class="primary">{{ item.description }}</h6>
+          <h4>
+            <a [routerLink]="[item.link]" class="link fw-500">{{ item.title }}</a>
+          </h4>
+          <p>
+            {{ item.subtitle }}
+            <a [routerLink]="[item.link]"> weiterlesen </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

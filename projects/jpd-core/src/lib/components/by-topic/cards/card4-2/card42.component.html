@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let item of model.items" class="d-flex col-md-3 col-sm-6">
+      <div class="card-42">
+        <div class="card-title">
+          <h4 class="white fw-500">{{ item.title }}</h4>
+        </div>
+        <div class="card-subtitle">
+          <div class="flex" *ngFor="let subtitle of item.subtitles">
+            <mat-icon class="icon-display me-1" color="accent" aria-hidden="false"
+                      aria-label="Example home icon" fontIcon="check"></mat-icon>
+            <p class="fs-6 white"> {{ subtitle }}</p>
+          </div>
+        </div>
+        <span class="spacer"></span>
+      </div>
+    </div>
+  </div>
+</div>

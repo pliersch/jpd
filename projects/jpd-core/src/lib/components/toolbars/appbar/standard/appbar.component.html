@@ -1,0 +1,62 @@
+@if (isHandset$|async) {
+  <!--   mobile    -->
+  <mat-toolbar class="z-2 fill mat-elevation-z6 position-relative">
+    <button mat-icon-button (click)="emitNavToggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="d-flex align-items-center w-150px">
+      <ng-content select="[logo-small]"/>
+    </div>
+  </mat-toolbar>
+} @else {
+
+  <!--   DESKTOP    -->
+  <mat-toolbar class="z-2 fill mat-elevation-z6 position-relative"
+               [class.transparent-bg]="_transparent"
+               [class.position-absolute]="_transparent || blurry"
+               [class.rounded]="rounded"
+               [class.blurry]="blurry"
+               [style.background-color]="bgColor">
+
+    <div class="d-flex w-100 align-items-center"
+         [class.justify-content-between]="actionsVisible">
+      <div class="d-flex align-items-center w-150px">
+        <ng-content select="[logo]"/>
+      </div>
+      <div #navContainer>
+        @if (route$ | async; as route) {
+          @if (route.children.length === 1) {
+            @for (childRoute of route.children[0].fragments; track childRoute) {
+              <a mat-flat-button class="transparent-background text-capitalize"
+                 [routerLinkActiveOptions]="linkActiveOptions"
+                 [fragment]="childRoute" routerLinkActive="active" [routerLink]="[route.path]">
+                {{ childRoute }}
+              </a>
+            }
+          } @else {
+            <!-- multi site. with sub routes -->
+            @for (childRoute of route.children; track childRoute.name) {
+              <a mat-flat-button class="transparent-background text-capitalize demo-btn-color"
+                 routerLinkActive="active" [routerLink]="[route.path +'/'+ childRoute.path]"
+                 [routerLinkActiveOptions]="linkActiveOptions"
+                 (click)="showSubNav(childRoute, $event)"
+                 (mouseenter)="showSubNav(childRoute, $event)"
+                 (mouseleave)="hideSubNav()">
+                {{ childRoute.name }}
+              </a>
+            }
+          }
+        }
+      </div>
+      @if (actionsVisible) {
+        <div class="px-2 d-flex align-items-center flex-row-reverse w-150px">
+          <ng-content select="[action]"></ng-content>
+        </div>
+      }
+
+    </div>
+  </mat-toolbar>
+  <div>
+    <ng-content select="[nav-menu]"></ng-content>
+  </div>
+}

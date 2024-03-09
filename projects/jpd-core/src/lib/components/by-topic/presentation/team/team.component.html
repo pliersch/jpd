@@ -1,0 +1,35 @@
+<div class="section section-dark text-center">
+  <div class="container">
+    <h2 class="title">Let's talk about us</h2>
+    <div class="row wrap">
+      <div *ngFor="let item of team" class="col-md-4">
+        <div class="card card-profile card-plain">
+          <div class="card-avatar">
+            <a [routerLink]="[item.link]">
+              <img alt="..." [src]="item.imageUrl"></a>
+            <!--            <a href="#avatar"><img alt="..." src="./assets/img/faces/clem-onojeghuo-3.jpg"></a>-->
+          </div>
+          <div class="card-block">
+            <a href="#paper-kit">
+              <div class="author">
+                <h4 class="card-title">{{ item.title }}</h4>
+                <h6 class="card-category">{{ item.subtitle }}</h6>
+              </div>
+            </a>
+            <p class="card-description text-center">
+              {{ item.description }}
+            </p>
+          </div>
+          <div class="card-footer text-center">
+            <a class="btn btn-link btn-just-icon btn-neutral" [routerLink]="['/']"><i
+              class="fa fa-twitter"></i></a>
+            <a class="btn btn-link btn-just-icon btn-neutral" [routerLink]="['/']"><i
+              class="fa fa-google-plus"></i></a>
+            <a class="btn btn-link btn-just-icon btn-neutral" [routerLink]="['/']"><i
+              class="fa fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<section class="pb-5">
+  @for (card of model.cards; track card) {
+    <a4w-card44 [model]="card"/>
+  }
+</section>
+
+<a4w-image-card1 [model]="model.imageCard"/>
+
+<section class="pb-5">
+  @for (card of model.cards; track card) {
+    <a4w-card44 [model]="card"/>
+  }
+</section>
+
+<div class="d-flex ps-n8px">
+  <mat-paginator [length]="100" [pageSize]="10" [hidePageSize]="true"
+                 [showFirstLastButtons]="true" aria-label="Select page">
+  </mat-paginator>
+</div>

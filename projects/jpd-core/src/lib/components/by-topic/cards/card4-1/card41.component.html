@@ -1,0 +1,23 @@
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let item of model.items" class="col-md-3 flex">
+        <div class="card rounded mat-elevation-z6">
+          <!--          <div class="card-avatar">-->
+          <img [src]="item.imageUrl" alt="example image of a service">
+          <!--          </div>-->
+          <div class="card-title">
+            <h4 class="fw-500 no-margin">{{ item.title }}</h4>
+          </div>
+          <div class="card-subtitle">
+            <h6>{{ item.subtitle }}</h6>
+          </div>
+          <span class="spacer"></span>
+          <div class="card-description">
+            <small *ngIf="item.description">{{ item.description }}</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

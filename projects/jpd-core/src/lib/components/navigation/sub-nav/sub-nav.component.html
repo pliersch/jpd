@@ -1,0 +1,18 @@
+@if (visible) {
+  <div class="position-absolute top-0 toolbar-bg" [style.left]="left"
+       (mouseenter)="setActive()" (mouseleave)="setInactive()">
+
+    <mat-nav-list>
+      <nav>
+        @if (route$ | async; as route) {
+          @for (childRoute of route.children; track childRoute.name) {
+            <a mat-list-item class="transparent-background primary-color"
+               routerLinkActive="active-route" [routerLink]="[route.path +'/'+ childRoute.path]">
+              {{ childRoute.name }}
+            </a>
+          }
+        }
+      </nav>
+    </mat-nav-list>
+  </div>
+}

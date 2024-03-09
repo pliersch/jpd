@@ -1,0 +1,69 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+  <div class="row">
+    <div class="col">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Name*" formControlName="name">
+        <mat-error *ngIf="contactForm.controls['name'].hasError('required')">
+          Name fehlt
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Firma" formControlName="company">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Email*" type="email" formControlName="email">
+        <mat-error *ngIf="contactForm.controls['email'].hasError('required')">
+          Email fehlt
+        </mat-error>
+        <mat-error *ngIf="contactForm.controls['email'].hasError('email')">
+          Email Format nicht korrekt
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Telefonnummer" type="tel" formControlName="phone">
+        <!--        <mat-error *ngIf="contactForm.controls['phone'].hasError('required')">-->
+        <!--          TODO validate phone number-->
+        <!--        </mat-error>-->
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="deine Nachricht an uns*" formControlName="message"></textarea>
+        <mat-error *ngIf="contactForm.controls['message'].hasError('required')">
+          Bitte schreib uns, was Dir auf dem Herzen liegt
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-checkbox formControlName="checked">Einverständniserklärung</mat-checkbox>
+      <br>
+      <small>Ich bin mit der Erhebung, Speicherung und Nutzung der vorstehenden personenbezogenen Daten sowie der
+        besonderen Arten personenbezogener Daten einverstanden. Die Daten werden ausschließlich für den vorgesehenen
+        Zweck von den Betreibern dieser Webseite genutzt und nicht unberechtigt an Dritte weitergegeben.
+        Der Nutzung meiner Daten kann ich jederzeit widersprechen. (* Pflichtfeld)
+        Datenschutzerklärung und Widerspruchhinweise</small>
+    </div>
+  </div>
+  <div class="flex pt-3">
+    <span class="spacer"></span>
+    <button mat-raised-button color="primary" [disabled]="!valid" type="submit">Abschicken</button>
+  </div>
+
+</form>

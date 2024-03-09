@@ -1,0 +1,9 @@
+<div class="parallax-container max-page-height" [style.height]="height + 'vh'">
+  <div class="img" [style.transform]="'translateY('+ parallax + 'px)'"
+       [style.background-image]="'url(' + model.backgroundImage + ')'">
+    @if (darkenBG) {
+      <div class="filter"></div>
+    }
+  </div>
+  <ng-content></ng-content>
+</div>

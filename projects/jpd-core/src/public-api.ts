@@ -1,1 +1,5 @@
-export * from './lib/components/container/root/a4w-root.component';
+export * from './lib/components/index';
+export * from './lib/common/index'
+export * from './lib/content/index'
+export * from './lib/core/index'
+export * from './lib/modules/admin/index'

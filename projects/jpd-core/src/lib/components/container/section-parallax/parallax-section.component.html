@@ -1,0 +1,10 @@
+<section class="parallax-container py-section"
+         [style.color]="color"
+         [class.py-section]="!noPadding"
+         [style.background-image]="'url(' + model.backgroundImageUrl + ')'">
+  <!--  <div class="filter"></div>-->
+  <ng-content select="[header]"></ng-content>
+  <!--  default-->
+  <ng-content></ng-content>
+  <ng-content select="[footer]"></ng-content>
+</section>

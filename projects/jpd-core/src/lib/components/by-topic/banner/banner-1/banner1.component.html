@@ -1,0 +1,31 @@
+<section class="py-4 position-relative">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-10 mx-auto rounded-3"
+           [style.background-image]=' (color1 && color2) ?
+           "linear-gradient(310deg, " + color1 + ", " + color2 +")":
+           "linear-gradient(310deg, var(--theme-primary-darken-15), var(--theme-primary-lighten-15))"'>
+        <div class="row py-5" [style.color]="textColor">
+          <div class="col-xl-4 col-md-6 px-5 position-relative">
+            <img class="rounded-3 max-height-300 h-100 position-relative"
+                 [src]="model.imageUrl" alt="card image">
+          </div>
+          <div class="col-xl-4 col-md-5 position-relative px-md-3 px-5 my-md-auto mt-4">
+            <p>
+              {{ model.contentText }}
+            </p>
+            <small>{{ model.postContentText }}</small>
+          </div>
+          <div class="col-1"></div>
+          <div class="col-xl-2 col-12 px-xl-0 px-5 my-xl-auto">
+            <h3 class="mt-xl-0 mt-5">{{ model.title }}</h3>
+            <p class="text-sm opacity-8"> {{ model.subtitle }}</p>
+            <a [routerLink]="[model.linkUrl]" class="accent link">{{ model.linkText }}
+              <i class="material-icon" aria-hidden="true">east</i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

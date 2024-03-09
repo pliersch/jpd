@@ -1,0 +1,21 @@
+.p-6px {
+  padding: 6px;
+}
+
+span[matchipaction] {
+  cursor: pointer !important;
+}
+
+.mdc-evolution-chip__action {
+  cursor: pointer !important;
+}
+
+.mdc-evolution-chip__action mat-mdc-chip-action mdc-evolution-chip__action--primary mdc-evolution-chip__action--presentationa {
+  cursor: pointer !important;
+}
+
+span {
+  &.mdc-evolution-chip__action--presentational {
+    cursor: pointer !important;
+  }
+}

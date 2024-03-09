@@ -1,0 +1,67 @@
+<form class="form">
+  @for (data of modelData; track data) {
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          @if (data.type === 'string' || data.type === 'number') {
+            <mat-form-field>
+              <mat-label>{{ data.key }}</mat-label>
+              <input matInput [value]="data.value">
+            </mat-form-field>
+          } @else if (data.type === 'array') {
+            <mat-tab-group color="accent">
+              @for (tab of $any(data.value); track tab) {
+                <mat-tab [label]="($modelData(data).key + (Number($modelData(tab).key) + 1))">
+                  @if ($modelData(tab).type === 'string') {
+                    <mat-form-field>
+                      <mat-label>not impl</mat-label>
+                      <input matInput type="text" [value]="data.value">
+                    </mat-form-field>
+                  } @else if ($modelData(tab).type === 'number') {
+                    <mat-form-field>
+                      <mat-label>not impl</mat-label>
+                      <input matInput type="number" [value]="$modelData(tab).value">
+                    </mat-form-field>
+                  } @else if ($modelData(tab).type === 'array') {
+                    <mat-form-field>
+                      <mat-label>not impl</mat-label>
+                      <input matInput [value]="$modelData(tab).value">
+                    </mat-form-field>
+                  } @else if ($modelData(tab).type === 'object') {
+                    @for (objData of $any(tab).value; track objData) {
+                      <div class="container">
+                        <div class="row">
+                          <div class="col">
+                            @if (objData.type === 'string' || objData.type === 'number') {
+                              <mat-form-field>
+                                <mat-label>{{ objData.key }}</mat-label>
+                                <input matInput [value]="objData.value">
+                              </mat-form-field>
+                            } @else if (objData.type === 'array') {
+                              @for (objArrData of $any(objData).value; track objArrData) {
+                                <div class="row">
+                                  <div class="col">
+                                    @if (objArrData.type === 'string' || objArrData.type === 'number') {
+                                      <mat-form-field>
+                                        <mat-label>{{ objArrData.key }}</mat-label>
+                                        <input matInput [value]="objArrData.value">
+                                      </mat-form-field>
+                                    }
+                                  </div>
+                                </div>
+                              }
+                            }
+                          </div>
+                        </div>
+                      </div>
+                    }
+                  }
+                </mat-tab>
+              }
+            </mat-tab-group>
+          }
+        </div>
+      </div>
+    </div>
+  }
+</form>

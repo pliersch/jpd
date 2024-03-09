@@ -1,0 +1,8 @@
+<div (wheel)="onScroll($event)">
+  <cdk-virtual-scroll-viewport orientation="horizontal" itemSize="150" class="example-viewport">
+    <a4w-scroller-item *cdkVirtualFor="let url of imageUrls; let i = index"
+                       [imageUrl]="url" [index]="i" (selectEvent)="onItemSelect($event)"
+                       [active]="currentIndex === i">
+    </a4w-scroller-item>
+  </cdk-virtual-scroll-viewport>
+</div>

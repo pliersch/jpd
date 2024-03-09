@@ -1,0 +1,18 @@
+@if (fab) {
+  <button mat-fab color="accent" (click)="execute()"
+          aria-label="Button zum Wechsel von Hell und Dunkel Design">
+    <mat-icon>{{ icon }}</mat-icon>
+  </button>
+
+} @else if (button) {
+  <button mat-raised-button color="primary" (click)="execute()"
+          aria-label="Ruf mich an">
+    {{ text }}
+  </button>
+
+} @else {
+  <button mat-icon-button (click)="execute()"
+          aria-label="Ruf mich an">
+    <mat-icon>{{ icon }}</mat-icon>
+  </button>
+}

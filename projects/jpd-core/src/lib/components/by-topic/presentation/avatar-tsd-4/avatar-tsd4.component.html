@@ -1,0 +1,26 @@
+<section class="white-bg black text-center">
+  <div class="container">
+    <!--    <div class="row center">-->
+    <!--      <div class="col-6 column center">-->
+    <p class="a4w-h2 mtb-30">{{ model.headline }}</p>
+    <!--      </div>-->
+    <!--    </div>-->
+    <div class="row">
+      <div *ngFor="let item of model.items" class="col-m-3">
+        <div class="card">
+          <div class="card-avatar">
+            <a [routerLink]="['/']">
+              <img class="img" [src]="item.image">
+            </a>
+          </div>
+          <div class="card-content">
+            <p class="a4w-h3 info-title">{{ item.title }}</p>
+            <p class="a4w-h5 description">{{ item.subtitle }}</p>
+            <a class="btn btn-link btn-danger" [routerLink]="['/']">See more</a>
+            <p>{{ item.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

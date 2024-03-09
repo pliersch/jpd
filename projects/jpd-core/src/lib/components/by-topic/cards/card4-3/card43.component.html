@@ -1,0 +1,19 @@
+<div class="container-xl">
+  <div class="row">
+    <div *ngFor="let item of model.items" class="col-md-3 col-12 flex">
+      <div class="card-43 text-center">
+        <div class="card-avatar mat-elevation-z6">
+          <a [routerLink]="['/']">
+            <img appImgFallback [src]="item.imageUrl">
+          </a>
+        </div>
+        <div class="card-body">
+          <h5 class="fw-500">{{ item.title }}</h5>
+          <h6 class="theme-grey">{{ item.subtitle }}</h6>
+          <a class="accent" [routerLink]="[item.link]">mehr lesen</a>
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

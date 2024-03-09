@@ -1,0 +1,20 @@
+:host {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  /*top: 0;*/
+}
+
+.toolbar-bg {
+  background-color: var(--mat-toolbar-container-background-color);
+}
+
+.active-route {
+  background-color: var(--theme-component-contrast);
+  border-radius: 3px;
+}
+
+a {
+  //margin: 0 1em;
+  width: unset;
+}

@@ -1,0 +1,23 @@
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { BaseComponent } from '@lib/components/core/base/base.component';
+import { FragmentDirective } from '@lib/common/directives/fragment.directive';
+
+export interface AnimationModel {
+  landingImg: string;
+  animationImg: string;
+}
+
+@Component({
+  selector: 'a4w-animation-1',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './animation1.component.html',
+  styleUrls: ['./animation1.component.scss']
+})
+export class Animation1Component extends BaseComponent<AnimationModel> {
+
+  constructor(override fragment?: FragmentDirective) {
+    super(fragment)
+  }
+}

@@ -1,0 +1,36 @@
+.card44 {
+
+  img {
+    width: 100%;
+  }
+
+  //todo make variable use this for transparent bg
+  .plain {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .author {
+    display: flex;
+  }
+
+  .avatar {
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    border-radius: 0.75rem;
+    height: 48px;
+    width: 48px;
+  }
+
+  .avatar-sm {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: .875rem;
+  }
+
+
+}
+

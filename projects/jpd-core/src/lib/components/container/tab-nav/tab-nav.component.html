@@ -1,0 +1,14 @@
+<nav mat-tab-nav-bar [tabPanel]="tabPanel" backgroundColor="primary">
+  @for (route of model.routes;track route) {
+    <a mat-tab-link
+       (click)="navigateUrl(route.path)"
+       [active]="activeLink === route.path"> {{ route.name }} </a>
+  }
+</nav>
+<mat-tab-nav-panel #tabPanel
+                   [@routeAnimations]="prepareRoute(outlet)"
+                   [@.disabled]="animationsDisabled">
+  <div class="router-container">
+    <router-outlet #outlet="outlet"/>
+  </div>
+</mat-tab-nav-panel>

@@ -1,0 +1,12 @@
+<div class="theme-bg p-6px">
+  <mat-chip-listbox multiple aria-label="Color selection">
+    <mat-chip [highlighted]="!areActiveTags" color="accent"
+              (click)="deactivateTags()">Alle
+    </mat-chip>
+    @for (tag of availableTags; track tag) {
+      <mat-chip [highlighted]="tag.active" color="accent"
+                (click)="toggleTag(tag.name)">{{ tag.name }}
+      </mat-chip>
+    }
+  </mat-chip-listbox>
+</div>

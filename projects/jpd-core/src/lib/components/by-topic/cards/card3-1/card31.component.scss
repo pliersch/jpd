@@ -1,0 +1,31 @@
+.card-31 {
+  display: flex;
+  flex-direction: column;
+  //width: 100%;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  background: #fff;
+  color: rgba(0, 0, 0, .87);
+  font-size: .875rem;
+
+  .avatar {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: -30px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .title {
+    font-size: 1.7em;
+    margin-top: 0.625rem;
+  }
+
+  .body {
+    padding: 0.9375rem 1.875rem;
+  }
+
+}

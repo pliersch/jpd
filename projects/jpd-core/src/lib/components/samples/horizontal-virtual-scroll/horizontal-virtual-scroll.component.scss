@@ -1,0 +1,19 @@
+.cdk-virtual-scroll-data-source-example {
+
+  .example-viewport {
+    overflow-y: hidden;
+    height: 102px;
+    width: 400px;
+    border: 1px solid black;
+
+    .cdk-virtual-scroll-content-wrapper {
+      display: flex;
+      flex-direction: row;
+
+      .example-item {
+        width: 50px;
+        height: 100px;
+      }
+    }
+  }
+}

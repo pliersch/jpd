@@ -1,0 +1,10 @@
+<div [@flyIn]="(filteredVideos$ | async)!.length" class="container-fluid">
+  <div class="image-wrapper">
+    @for (item of filteredVideos$ | async; track item.id) {
+      <a4w-card-video-1
+        class="media"
+        [imageUrl]="item.posterUrl" [title]="item.title"
+        [link]="'/youtube/watch/' + item.id" [subtitle]="item.artist"/>
+    }
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<h4 class="mt-5">Top Stories</h4>
+
+@for (story of stories; track story) {
+  <div class="mt-4">
+    <a [routerLink]="[story.link]" class="link">
+      <div class="row">
+        <div class="col-lg-4 col-md-4">
+
+          <div class="card-image position-relative border-radius-lg">
+
+            <img class="img border-radius-lg" [src]="story.imgUrl" alt="curved11">
+          </div>
+        </div>
+        <div class="col-lg-8 col-md-8 my-sm-auto mt-3">
+          <h5>{{ story.title }} </h5>
+        </div>
+      </div>
+    </a>
+  </div>
+}
+
+

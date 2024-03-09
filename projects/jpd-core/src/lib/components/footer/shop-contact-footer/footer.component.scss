@@ -1,0 +1,29 @@
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  font-size: .875rem;
+
+  .card-title {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    margin-bottom: 10px !important;
+  }
+
+  .card-content {
+
+    .list-unstyled {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .icon-display {
+      font-size: 16px;
+      height: 17px;
+      margin-right: 5px;
+    }
+  }
+
+}

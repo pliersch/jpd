@@ -1,0 +1,36 @@
+.parallax-container {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .img {
+    position: absolute;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .filter::after {
+    background-color: rgba(0, 0, 0, 0.65);
+    //background: linear-gradient(180deg,
+    //  rgba(0, 0, 0, 1) 0%,
+    //  rgba(0, 0, 0, 1) 1%,
+    //  rgba(0, 0, 0, 0.6) 10%,
+    //  rgba(0, 0, 0, 0.6) 90%,
+    //  rgba(0, 0, 0, 1) 100%);
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+
+}
+

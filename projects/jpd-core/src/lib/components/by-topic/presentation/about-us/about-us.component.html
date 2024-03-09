@@ -1,0 +1,48 @@
+<!----------------------------------------------------->
+<!--                     mobile                      -->
+<!----------------------------------------------------->
+<ng-template [ngIf]="isHandset$ | async" [ngIfElse]="desktop">
+  <section>
+    <div *ngFor="let item of model.items" class="bg-img" [style.background-image]="'url(' + item.imageUrl + ')'">
+      <div class="p-5 darken-bg">
+        <div class="ccc">
+          <h2 class="fw-400 white"> {{ item.title }}</h2>
+          <h6 class="mat-headline-6 white">{{ item.description }}</h6>
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-template>
+
+<!----------------------------------------------------->
+<!--                     desktop                     -->
+<!----------------------------------------------------->
+<ng-template #desktop>
+  <section>
+    <div class="container-lg">
+      <div class="simple-flex-row">
+        <div class="w50">
+          <img class="img-cover" alt="thumbnail" [src]="model.items[0].imageUrl">
+        </div>
+        <div class="w50 p-5 primary-bg">
+          <div class="column">
+            <h2 class="fw-400 mb-5"> {{ model.items[0].title }}</h2>
+            <h4 class="fw-300">{{ model.items[0].description }}</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="simple-flex-row">
+        <div class="w50 p-5 primary-bg">
+          <div class="column">
+            <h2 class="fw-400 mb-5"> {{ model.items[1].title }}</h2>
+            <h4 class="fw-300">{{ model.items[1].description }}</h4>
+          </div>
+        </div>
+        <div class="w50">
+          <img class="img-cover" alt="thumbnail" [src]="model.items[1].imageUrl">
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-template>

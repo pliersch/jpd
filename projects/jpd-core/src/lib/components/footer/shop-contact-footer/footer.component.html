@@ -1,0 +1,49 @@
+<footer class="py-section theme-contrast">
+  <div class="container-lg" [style.color]="textColor">
+    <div class="row">
+      <div class="col-sm-6 col-md-5 col-xl-4 mx-auto">
+        <div class="card-footer">
+          <p class="card-title" [style.color]="headlineColor">
+            Öffnungszeiten
+          </p>
+          <div class="card-content">
+            <ul class="list-unstyled">
+              <li *ngFor="let item of model.openingHours" class="flex center-items mb-2">
+                {{ item }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-5 col-xl-4 mx-auto">
+        <div class="card-footer">
+          <p class="card-title" [style.color]="headlineColor">
+            Kontakt
+          </p>
+          <div class="card-content">
+            <ul class="list-unstyled">
+              <li class="flex center-items mb-2">
+                <mat-icon class="icon-display" aria-hidden="false" aria-label="Example home icon"
+                          fontIcon="location_on"></mat-icon>
+                {{ address }}
+              </li>
+              <li class="flex center-items mb-2">
+                <mat-icon class="icon-display" aria-hidden="false" aria-label="Example home icon"
+                          fontIcon="call"></mat-icon>
+                {{ model.phone }}
+              </li>
+              <li class="flex center-items">
+                <mat-icon class="icon-display" aria-hidden="false" aria-label="Example home icon"
+                          fontIcon="mail"></mat-icon>
+                <a class="link" [href]="'mailto:' + model.email">
+                  {{ model.email }}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

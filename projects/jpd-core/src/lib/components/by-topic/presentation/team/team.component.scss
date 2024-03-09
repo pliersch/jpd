@@ -1,0 +1,70 @@
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+  background-clip: border-box;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  color: rgba(0, 0, 0, .87);
+  background: #fff;
+  width: 100%;
+
+  .card-title {
+    font-size: 1.7em;
+    margin-top: 0.625rem;
+  }
+
+  .card-avatar {
+    //display: flex;
+    //flex-direction: column;
+    //position: relative;
+    //min-width: 0;
+    //width: 130px;
+    //max-width: 130px;
+    //max-height: 130px;
+    //word-wrap: break-word;
+    //background-color: #fff;
+    //background-clip: border-box;
+    //border: 1px solid rgba(0, 0, 0, .12);
+    //border-radius: 0.25rem;
+
+    width: 130px;
+    max-width: 130px;
+    max-height: 130px;
+
+    margin: -50px auto 0;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 0;
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, .56),
+    0 4px 25px 0 rgba(0, 0, 0, .12),
+    0 8px 10px -5px rgba(0, 0, 0, .2);
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .card-body {
+    margin-top: 15px;
+    padding: 0.9375rem 1.875rem;
+    //flex: 1 1 auto;
+  }
+}
+
+.wrap-item {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 25%;
+
+  @media only screen and (max-width: 1200px) {
+    flex-basis: 50%;
+  }
+
+  @media only screen and (max-width: 800px) {
+    flex-basis: 100%;
+  }
+}

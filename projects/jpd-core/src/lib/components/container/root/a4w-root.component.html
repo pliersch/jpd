@@ -1,14 +1,14 @@
 <mat-sidenav-container autosize class="h-100">
 
-  <mat-sidenav mode="over" autoFocus="false">
+  <mat-sidenav mode="over" autoFocus="dialog">
     <a4w-sidenav/>
   </mat-sidenav>
 
-<!--  @if (adminService.isAdmin$) {-->
-<!--    <mat-sidenav mode="side" position="end" [opened]="adminService.isAdminMode$ | async" autoFocus="false">-->
-<!--      <a4w-right-side/>-->
-<!--    </mat-sidenav>-->
-<!--  }-->
+  @if (adminService.isAdmin$) {
+    <mat-sidenav mode="side" position="end" [opened]="adminService.isAdminMode$ | async" autoFocus="false">
+      <a4w-right-side/>
+    </mat-sidenav>
+  }
 
   <mat-sidenav-content>
 

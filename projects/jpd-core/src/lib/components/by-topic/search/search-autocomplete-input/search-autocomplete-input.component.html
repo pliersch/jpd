@@ -1,0 +1,23 @@
+<div class="input-group fixed">
+  <form class="example-form fixed">
+    <input type="text" class="form-control fixed" placeholder="Suche nach Sektion"
+           [formControl]="control" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let street of filteredStreets | async;" [value]="street">{{street}}</mat-option>
+    </mat-autocomplete>
+    <div class="input-group-append">
+      <span class="input-group-text"><i class="now-ui-icons users_single-02"></i></span>
+    </div>
+  </form>
+</div>
+
+<!--<form class="example-form">-->
+<!--  <input type="text"-->
+<!--         placeholder="Search for a street"-->
+<!--         [formControl]="control"-->
+<!--         [matAutocomplete]="auto"-->
+<!--         class="example-input">-->
+<!--  <mat-autocomplete #auto="matAutocomplete">-->
+<!--    <mat-option *ngFor="let street of filteredStreets | async;" [value]="street">{{street}}</mat-option>-->
+<!--  </mat-autocomplete>-->
+<!--</form>-->

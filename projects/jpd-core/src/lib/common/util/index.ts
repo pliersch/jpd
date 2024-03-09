@@ -1,0 +1,1 @@
+export { regExValidator } from './validators'

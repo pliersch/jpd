@@ -1,0 +1,28 @@
+.card-42 {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 30px 0;
+
+  .card-title {
+    padding: 12px 18px 12px 18px;
+  }
+
+  .card-subtitle {
+    padding: 0 18px;
+  }
+
+  .card-description {
+    padding: 12px 18px 12px 18px;
+  }
+
+  small {
+    font-size: 14px;
+  }
+
+  .card-body {
+    margin-top: 15px;
+    padding: 0.9375rem 1.875rem;
+  }
+
+}

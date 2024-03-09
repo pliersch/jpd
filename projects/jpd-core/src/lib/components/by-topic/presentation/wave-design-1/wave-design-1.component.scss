@@ -1,0 +1,10 @@
+.bg-gradient-primary {
+  background-image: linear-gradient(
+      310deg,
+      var(--theme-primary-darken-15),
+      var(--theme-primary-lighten-15));
+}
+
+.hack-bottom-n6 {
+  bottom: -6px !important;
+}

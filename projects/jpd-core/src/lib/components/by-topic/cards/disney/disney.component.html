@@ -1,0 +1,39 @@
+<section class="disney-bg-dark">
+  <div class="position-absolute">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 800 800" opacity="0.57">
+      <defs>
+        <filter id="bbblurry-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox"
+                primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+          <feGaussianBlur stdDeviation="35" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic"
+                          result="blur"></feGaussianBlur>
+        </filter>
+      </defs>
+      <g fill="var(--theme-background, #fff)">
+        <g filter="url(#bbblurry-filter)">
+          <ellipse rx="87" ry="71.5" cx="602.9912881152168" cy="361.0555239447748"
+                   fill="hsla(251, 27%, 61%, 1.00)"></ellipse>
+          <ellipse rx="87" ry="71.5" cx="357.7959806719375" cy="336.7148493272472"
+                   fill="hsla(238, 26%, 61%, 1.00)"></ellipse>
+          <ellipse rx="87" ry="71.5" cx="492.424263442374" cy="404.41417833522974"
+                   fill="hsla(234, 33%, 67%, 1.00)"></ellipse>
+          <ellipse rx="87" ry="71.5" cx="235.16282286569083" cy="420.40605376653025"
+                   fill="hsla(231, 32%, 59%, 1.00)"></ellipse>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let item of model.items" class="flex col-md-2 col-sm-4">
+
+        <div class="card-disney rounded position-relative mat-elevation-z10 disney-card-bg h-120px">
+          <h5 class="m-0 absolute-center">{{ item.title }}</h5>
+          <span class="position-absolute w-100 h-100 mouse-pointer"></span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
