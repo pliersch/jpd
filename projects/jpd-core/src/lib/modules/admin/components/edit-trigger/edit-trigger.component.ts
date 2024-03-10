@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatButton } from '@angular/material/button';
-import { PosterComponent } from '@lib/components';
+import { PosterComponent } from '../../../../components/poster/poster.component';
 
 @Component({
   selector: 'a4w-edit-trigger',

@@ -2,8 +2,8 @@ import { BreakpointObserver } from "@angular/cdk/layout";
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, inject, OnDestroy, QueryList, ViewChildren } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, NavigationSkipped, Router } from "@angular/router";
-import { CssVarService, FragmentDirective, NavigationService, PageScrollService } from "@lib/common";
 import { Subscription } from "rxjs";
+import { CssVarService, FragmentDirective, NavigationService, PageScrollService } from '../../../common';
 
 @Component({
   selector: 'a4w-default-page',

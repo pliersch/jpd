@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { BaseComponent } from '@lib/components/core/base/base.component';
-import { FragmentDirective } from '@lib/common/directives/fragment.directive';
+import { FragmentDirective } from '../../../../../common';
+import { BaseComponent } from '../../../../core/base/base.component';
 
 export interface LinkFooterDecoratorModel {
   text: string;

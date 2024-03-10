@@ -6,8 +6,8 @@ import { MatError, MatFormField, MatFormFieldModule } from '@angular/material/fo
 import { MatIcon } from '@angular/material/icon';
 import { MatInput, MatInputModule } from '@angular/material/input';
 import { MatTab, MatTabGroup } from '@angular/material/tabs';
-import { AdminService } from '@lib/modules/admin';
 import { Subscription } from 'rxjs';
+import { AdminService } from '../../services/admin.service';
 
 export type DataType = 'string' | 'number' | 'array' | 'object'
 

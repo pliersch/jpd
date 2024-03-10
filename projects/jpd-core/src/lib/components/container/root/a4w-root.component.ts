@@ -5,15 +5,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { CssVar, CssVarService, PageScrollService, ScrollSpyDirective, ToggleSidenavService } from '@lib/common';
-import {
-  AppbarComponent,
-  DynamicHostComponent,
-  RightSideComponent,
-  SidenavComponent,
-  StickyAppbarComponent
-} from '@lib/components';
-import { AdminService } from '@lib/modules/admin/services/admin.service';
+import { CssVar, CssVarService, PageScrollService, ScrollSpyDirective, ToggleSidenavService } from '../../../common';
+import { AdminService } from '../../../modules/admin';
+import { DynamicHostComponent } from '../../dynamic-component/dynamic-host.component';
+import { SidenavComponent } from '../../navigation/sidenav/sidenav.component';
+import { AppbarComponent } from '../../toolbars/appbar/standard/appbar.component';
+import { StickyAppbarComponent } from '../../toolbars/appbar/standard/sticky-appbar.component';
+import { RightSideComponent } from '../side/right/right-side.component';
 
 @Component({
   selector: 'a4w-root',

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { PosterComponent } from '@lib/components';
+import { PosterComponent } from '../../../poster/poster.component';
 
 @Component({
   selector: 'a4w-privacy-1',

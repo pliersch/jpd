@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IsActiveMatchOptions } from '@angular/router';
-import { Route } from '@lib/common/interfaces/route';
+import { Route } from '../interfaces';
 
 @Injectable({
   providedIn: 'root'

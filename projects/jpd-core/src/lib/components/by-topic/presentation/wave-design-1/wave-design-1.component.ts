@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { CardH1Component } from '@lib/components/by-topic/cards/horizontal/card-h-1/card-h-1.component';
-import { BaseComponent } from '@lib/components/core/base/base.component';
-import { TitleSubtitleDescription } from '@lib/content/content';
-import { FragmentDirective } from '@lib/common/directives/fragment.directive';
+import { FragmentDirective } from '../../../../common';
+import { TitleSubtitleDescription } from '../../../../content';
+import { BaseComponent } from '../../../core/base/base.component';
+import { CardH1Component } from '../../cards/horizontal/card-h-1/card-h-1.component';
 
 export interface WaveDesign1Model {
   cards: TitleSubtitleDescription[];

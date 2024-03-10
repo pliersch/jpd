@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ContactCompanyInfoComponent, ContactFormComponent, PosterComponent } from '@lib/components';
+import { PosterComponent } from '../../../../poster/poster.component';
+import { ContactFormComponent } from '../../forms/contact-form-1/contact-form.component';
+import { ContactCompanyInfoComponent } from '../../info/company-info/contact-company-info.component';
+
 
 @Component({
   selector: 'a4w-standard-contact',

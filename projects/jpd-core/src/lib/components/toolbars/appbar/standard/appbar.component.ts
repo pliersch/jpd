@@ -16,19 +16,18 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { IsActiveMatchOptions, RouterLink, RouterLinkActive } from "@angular/router";
+
+import { Observable, of } from "rxjs";
+import { map } from 'rxjs/operators';
 import {
   CssDomService,
   PageScrollService,
   Route,
   RouteDomService,
-  Themes,
-  ThemeToggleChange,
+  Themes, ThemeToggleChange,
   ToggleSidenavService
-} from '@lib/common';
-import { NavigationDirective } from '@lib/components/navigation/directives/navigation.directive';
-
-import { Observable, of } from "rxjs";
-import { map } from 'rxjs/operators';
+} from '../../../../common';
+import { NavigationDirective } from '../../../navigation/directives/navigation.directive';
 
 @Component({
   selector: 'a4w-appbar',

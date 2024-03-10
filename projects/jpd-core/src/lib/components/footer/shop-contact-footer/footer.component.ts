@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { MatIconModule } from "@angular/material/icon";
-import { BaseComponent } from '@lib/components/core/base/base.component';
-import { Address } from "@lib/content/company";
-import { FragmentDirective } from '@lib/common/directives/fragment.directive';
+import { FragmentDirective } from '../../../common';
+import { Address } from '../../../content';
+import { BaseComponent } from '../../core/base/base.component';
 
 export interface FooterModel {
   address: Address;

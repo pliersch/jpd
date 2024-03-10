@@ -1,6 +1,6 @@
 // todo find better place for the interfaces or rename the file
 
-import { Company } from "@lib/content/company";
+import { Company } from './company';
 
 export interface ComponentData {
   name: string;

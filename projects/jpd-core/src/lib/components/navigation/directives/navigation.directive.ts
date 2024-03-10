@@ -1,7 +1,7 @@
 import { Directive } from '@angular/core';
-import { Route } from '@lib/common/interfaces/route';
-import { AbstractNavigationComponent } from '@lib/components/navigation/base/behavior/abstract-navigation.component';
-import { AppDataService } from '@lib/core/app-data.service';
+import { Route } from '../../../common';
+import { AppDataService } from '../../../core';
+import { AbstractNavigationComponent } from '../base/behavior/abstract-navigation.component';
 
 @Directive({
   selector: '[a4wNavigation]',

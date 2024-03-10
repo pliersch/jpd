@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { AbstractNavigationComponent } from '@lib/components/navigation/base/behavior/abstract-navigation.component';
+import { AbstractNavigationComponent } from '../base/behavior/abstract-navigation.component';
 
 @Component({
   selector: 'a4w-sub-nav',

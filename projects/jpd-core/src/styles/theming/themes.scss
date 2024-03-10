@@ -1,0 +1,203 @@
+@use '@angular/material' as mat;
+//@use '../../app/components/lib/poster/poster.component-theme' as poster;
+@use 'sass:color';
+@import 'theme-colors';
+@import 'palette-helper';
+
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+$dark-primary: mat.define-palette(mat.$purple-palette, 900) !default;
+$dark-accent: mat.define-palette(mat.$green-palette, A200, A100, A400) !default;
+$light-primary: mat.define-palette(mat.$indigo-palette, 900) !default;
+$light-accent: mat.define-palette(mat.$pink-palette, A400, A200, A700) !default;
+
+$dark-background: #303030 !default;
+$isDifferentDarkBackground: false;
+@if ($dark-background != #303030) {
+  $isDifferentDarkBackground: true;
+}
+
+$light-background: #fafafa !default;
+$isDifferentLightBackground: false;
+@if ($light-background != #fafafa) {
+  $isDifferentLightBackground: true;
+}
+
+//////////////////////////////////////////////////////////
+//                   dark
+//////////////////////////////////////////////////////////
+
+$dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $dark-primary,
+    accent: $dark-accent
+  ),
+));
+@if ($dark-background != #303030) {
+  $dark-theme: modify-theme($dark-theme, $dark-background);
+}
+
+$dark-bg-palette: map-get($dark-theme, background);
+
+$dark-bg: map-get($dark-bg-palette, background);
+$dark-bg-lighter-10: lighten($dark-bg, 10%);
+$dark-bg-lighter-30: lighten($dark-bg, 30%);
+$dark-foreground: mat.get-color-from-palette(mat.$dark-theme-foreground-palette, base);
+
+//////////////////////////////////////////////////////////
+//                   light
+//////////////////////////////////////////////////////////
+
+$light-theme: mat.define-light-theme((
+  color: (
+    primary: $light-primary,
+    accent: $light-accent,
+  )
+));
+
+$light-bg_palette: map-get($light-theme, background);
+
+$light-bg: map-get($light-bg_palette, background);
+$light-bg-lighter-10: lighten($light-bg, 10%);
+$light-bg-lighter-30: lighten($light-bg, 30%);
+$light-foreground: mat.get-color-from-palette(mat.$light-theme-foreground-palette, base);
+
+//////////////////////////////////////////////////////////
+//                   result
+//////////////////////////////////////////////////////////
+
+.dark-theme {
+  @include mat.core-color($dark-theme);
+  @include theme-colors($dark-theme, $light-theme);
+  //@include poster.theme($dark-theme);
+  @include mat.all-component-colors($dark-theme);
+
+  //$dark-primary-color: mat.get-color-from-palette($dark-primary);
+  //--theme-primary-lighten-15: #{lighten($dark-primary-color, 15%)};
+  //--theme-primary-lighten-30: #{lighten($dark-primary-color, 30%)};
+  //--theme-primary-darken-15: #{darken($dark-primary-color, 15%)};
+  //--theme-primary-darken-30: #{darken($dark-primary-color, 30%)};
+
+  --theme-primary: #{mat.get-color-from-palette($dark-primary)};
+  --theme-primary-lighten-15: #{lighten(mat.get-color-from-palette($dark-primary), 15%)};
+  --theme-primary-darken-15: #{darken(mat.get-color-from-palette($dark-primary), 15%)};
+  --theme-accent: #{mat.get-color-from-palette($dark-accent)};
+  --theme-accent--rgb: #{hexToRGB(mat.get-color-from-palette($dark-accent))};
+  --theme-background: #{$dark-bg};
+  --theme-background--rgb: #{hexToRGB($dark-bg)};
+  --theme-contrast-background: #{lighten($dark-bg, 10%)};
+  --theme-component-contrast: #{darken($dark-bg, 2%)};
+  --theme-background-contrast-10: #{$dark-bg-lighter-10};
+  --theme-background-contrast-30: #{$dark-bg-lighter-30};
+  --theme-background-alpha-50: #{color.adjust($dark-background, $alpha: -0.5)};
+  --theme-background-alpha-70: #{color.adjust($dark-background, $alpha: -0.3)};
+  --theme-foreground-alpha-10: #{color.adjust($dark-foreground, $alpha: -0.9)};
+  --theme-foreground: #{$dark-foreground};
+  --theme-background-opposite: #{$light-bg};
+  --theme-foreground-opposite: #{$light-foreground};
+  --theme-foreground-opposite-alpha-10: #{color.adjust($dark-bg, $alpha: -0.9)};
+  --theme-default-text: #FFFFFF;
+  --theme-default-opposite-text: rgba(0, 0, 0, 0.87);;
+  --theme-grey: #bdbdbd;
+  --poster-background: #{lighten($dark-bg, 5%)};
+}
+
+.light-theme {
+  @include mat.core-color($light-theme);
+  @include theme-colors($light-theme, $dark-theme);
+  //@include poster.theme($light-theme);
+  @include mat.all-component-colors($light-theme);
+
+  //$light-primary-color: mat.get-color-from-palette($light-primary);
+  //--theme-primary-lighten-15: #{lighten($light-primary-color, 15%)};
+  //--theme-primary-lighten-30: #{lighten($light-primary-color, 30%)};
+  //--theme-primary-darken-15: #{darken($light-primary-color, 15%)};
+  //--theme-primary-darken-30: #{darken($light-primary-color, 30%)};
+
+
+  --theme-primary: #{mat.get-color-from-palette($light-primary)};
+  --theme-primary-lighten-15: #{lighten(mat.get-color-from-palette($light-primary), 15%)};
+  --theme-primary-darken-15: #{darken(mat.get-color-from-palette($light-primary), 15%)};
+  --theme-accent: #{mat.get-color-from-palette($light-accent)};
+  --theme-accent--rgb: #{hexToRGB(mat.get-color-from-palette($light-accent))};
+  --theme-background: #{$light-bg};
+  --theme-background--rgb: #{hexToRGB($light-bg)};
+  --theme-contrast-background: #{darken($light-bg, 10%)};
+  --theme-background-contrast-10: #{$light-bg-lighter-10};
+  --theme-background-contrast-30: #{$light-bg-lighter-30};
+  --theme-background-alpha-50: #{color.adjust($light-background, $alpha: -0.5)};
+  --theme-background-alpha-70: #{color.adjust($light-background, $alpha: -0.3)};
+  --theme-foreground-alpha-10: #{color.adjust($light-foreground, $alpha: -0.9)};
+  --theme-component-background: #{$light-bg};
+  --theme-component-contrast: #{darken($light-bg, 10%)};
+  --theme-foreground: #{$light-foreground};
+  --theme-background-opposite: #{$dark-bg};
+  --theme-foreground-opposite: #{$dark-foreground};
+  --theme-foreground-opposite-alpha-10: #{color.adjust($light-bg, $alpha: -0.9)};
+  --theme-default-text: rgba(0, 0, 0, 0.87);;
+  --theme-default-opposite-text: #FFFFFF;
+  --theme-grey: #212121;
+  //--poster-background: #{lighten($light-bg, 6%)};
+  --poster-background: white;
+}
+
+
+.dark-theme {
+  .theme-toggle {
+    color: rgba(0, 0, 0, 0.87);
+    background-color: #{$light-bg};
+
+    .theme-grey {
+      color: #212121;
+    }
+  }
+
+  @if ($isDifferentDarkBackground) {
+
+    .mat-drawer {
+      background-color: $dark-background;
+    }
+
+  }
+}
+
+.light-theme {
+  .theme-toggle {
+    color: white;
+    background-color: #{$dark-bg};
+
+    .theme-grey {
+      color: #bdbdbd;
+    }
+  }
+
+  @if ($isDifferentLightBackground) {
+
+    .mat-drawer {
+      background-color: $light-background;
+    }
+
+  }
+}
+
+.dark-text {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.theme-grey {
+  color: var(--theme-grey);
+}
+
+.theme-bg {
+  background-color: var(--theme-background);
+}
+
+.bg-contrast {
+  background-color: var(--theme-contrast-background);
+}
+
+.theme-contrast {
+  background-color: var(--theme-component-contrast);
+}

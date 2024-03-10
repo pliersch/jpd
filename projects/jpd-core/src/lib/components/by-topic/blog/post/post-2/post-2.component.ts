@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { ImageFallbackDirective } from '@lib/common';
-import { BackActionComponent, Parallax1Component, PosterComponent } from '@lib/components';
-import { LoremIpsumFactory } from '@lib/content';
+import { ImageFallbackDirective } from '../../../../../common';
+import { LoremIpsumFactory } from '../../../../../content';
+import { BackActionComponent } from '../../../../actions/back/back-action.component';
+import { Parallax1Component } from '../../../../container/parallax/parallax-1/parallax1.component';
+import { PosterComponent } from '../../../../poster/poster.component';
 
 @Component({
   selector: 'a4w-post-2',

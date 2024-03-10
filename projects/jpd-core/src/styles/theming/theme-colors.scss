@@ -1,0 +1,106 @@
+@use '@angular/material' as mat;
+
+@mixin theme-colors($theme, $opposite-theme) {
+
+  //////////////////////////////////////////////////////////
+  //                   default
+  //////////////////////////////////////////////////////////
+
+  .white {
+    color: white;
+  }
+
+  .black {
+    color: black;
+  }
+
+  .light-grey {
+    color: #bdbdbd;
+  }
+
+  .grey {
+    color: #5e5e5e;
+  }
+
+  .dark-grey {
+    color: #212121;
+  }
+
+  .white-bg {
+    background-color: white;
+  }
+
+  .black-bg {
+    background-color: black;
+  }
+
+  //////////////////////////////////////////////////////////
+  //                   theme
+  //////////////////////////////////////////////////////////
+
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+
+  .primary {
+    color: mat.get-color-from-palette($primary) !important;
+  }
+  .primary-bg {
+    background-color: mat.get-color-from-palette($primary) !important;
+  }
+  .accent {
+    color: mat.get-color-from-palette($accent) !important;
+  }
+  .accent-bg {
+    background-color: mat.get-color-from-palette($accent) !important;
+  }
+  .warn-color {
+    color: mat.get-color-from-palette($warn) !important;
+  }
+  .warn-bg {
+    background-color: mat.get-color-from-palette($warn) !important;
+  }
+
+  //////////////////////////////////////////////////////////
+  //                   opposite
+  //////////////////////////////////////////////////////////
+
+  $primary-opposite: map-get($opposite-theme, primary);
+  $accent-opposite: map-get($opposite-theme, accent);
+  $warn-opposite: map-get($opposite-theme, warn);
+
+  .primary-opposite {
+    color: mat.get-color-from-palette($primary-opposite) !important;
+  }
+  .primary-bg-opposite {
+    background-color: mat.get-color-from-palette($primary-opposite) !important;
+  }
+  .accent-opposite {
+    color: mat.get-color-from-palette($accent-opposite) !important;
+  }
+  .accent-bg-opposite {
+    background-color: mat.get-color-from-palette($accent-opposite) !important;
+  }
+  .warn-opposite {
+    color: mat.get-color-from-palette($warn-opposite) !important;
+  }
+  .warn-bg-opposite {
+    background-color: mat.get-color-from-palette($warn-opposite) !important;
+  }
+
+  //////////////////////////////////////////////////////////
+  //                   disney
+  //////////////////////////////////////////////////////////
+
+  .disney-bg-light {
+    background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+  }
+
+  .disney-bg-dark {
+    background: linear-gradient(180deg, #2B3041 0%, #0C0E16 100%);
+  }
+
+  .disney-card-bg {
+    background: linear-gradient(rgb(48, 50, 62), rgb(30, 31, 42));
+  }
+}

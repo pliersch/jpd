@@ -1,0 +1,40 @@
+//:root {
+//  //scrollbar-color: #6495ed var(--theme-background) !important;
+//  scrollbar-color: #a4a4a4 transparent !important;
+//  //scrollbar-color: #6495ed red !important;
+//}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  //background-color: var(--theme-background);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #a4a4a4;
+}
+
+//::-webkit-scrollbar-track {
+//  background-color: var(--theme-background);
+//  //background-color: var(--theme-background-contrast-30);
+//}
+//
+//::-webkit-scrollbar-corner {
+//  background-color: var(--theme-background);
+//}
+
+//::-webkit-scrollbar-track {
+//  background-color: #5e5e5e;
+//}
+//
+//::-webkit-scrollbar-corner {
+//  background-color: #5e5e5e;
+//}
+
+//@supports (-moz-appearance:none) {
+//  body {
+//    --scrollbar-width: 10px;
+//  }
+//}
+

@@ -1,4 +1,4 @@
-import { TagItem } from '@lib/components/by-topic/youtube/model';
+import { TagItem } from './model';
 
 export const TAGS: TagItem[] = [
   {name: 'Elektro', active: false},

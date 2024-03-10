@@ -1,9 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { FragmentDirective, ImageFallbackDirective } from '@lib/common';
-import { BaseComponent } from '@lib/components';
-
+import { FragmentDirective, ImageFallbackDirective } from '../../../../common';
+import { BaseComponent } from '../../../core/base/base.component';
 export interface Banner1Model {
   title: string;
   subtitle: string;

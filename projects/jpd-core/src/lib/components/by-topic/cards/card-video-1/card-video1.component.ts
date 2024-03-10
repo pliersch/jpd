@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { ImageFallbackDirective } from '@lib/common';
-import { PosterComponent } from '@lib/components';
+import { ImageFallbackDirective } from '../../../../common';
+import { PosterComponent } from '../../../poster/poster.component';
 
 @Component({
   selector: 'a4w-card-video-1',

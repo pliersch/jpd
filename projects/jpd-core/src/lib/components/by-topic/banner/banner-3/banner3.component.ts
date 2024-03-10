@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { FragmentDirective } from '@lib/common';
-import { BaseComponent } from '@lib/components';
+import { FragmentDirective } from '../../../../common';
+import { BaseComponent } from '../../../core/base/base.component';
 
 export interface Banner3Model {
   title: string;

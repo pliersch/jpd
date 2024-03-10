@@ -2,7 +2,8 @@ import { CommonModule } from '@angular/common';
 import { booleanAttribute, Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { ActionComponent, BaseComponent } from '@lib/components';
+import { BaseComponent } from '../../core/base/base.component';
+import { ActionComponent } from '../_base-action/action.component';
 
 export interface PhoneModel {
   phone: string;

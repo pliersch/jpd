@@ -1,9 +1,9 @@
 import { BreakpointObserver } from "@angular/cdk/layout";
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { AppDataService } from "@lib/core/app-data.service";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
+import { AppDataService } from '../../../../core';
 
 @Component({
   selector: 'app-about-us',

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { booleanAttribute, Component, Input } from '@angular/core';
-import { CssDomService, Themes } from '@lib/common';
-import { ActionComponent } from '@lib/components';
+import { CssDomService, Themes } from '../../../common';
+import { ActionComponent } from '../_base-action/action.component';
 
 @Component({
   selector: 'a4w-theme-toggle-action',

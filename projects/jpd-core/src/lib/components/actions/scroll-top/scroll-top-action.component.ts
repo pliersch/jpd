@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { booleanAttribute, Component, Input, OnDestroy, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { PageScrollService } from '@lib/common';
-import { ActionComponent } from '@lib/components';
 import { Subscription } from 'rxjs';
+import { PageScrollService } from '../../../common';
+import { ActionComponent } from '../_base-action/action.component';
 
 @Component({
   selector: 'a4w-scroll-top-action',

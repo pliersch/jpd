@@ -1,9 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { GoogleMapsModule } from "@angular/google-maps";
-import { BaseComponent } from '@lib/components/core/base/base.component';
-import { FragmentDirective } from '@lib/common/directives/fragment.directive';
-import { SafePipe } from "@lib/common/pipes/safe.pipe";
+import { FragmentDirective, SafePipe } from '../../../../common';
+import { BaseComponent } from '../../../core/base/base.component';
 
 export interface GMapsModel {
   url: string;

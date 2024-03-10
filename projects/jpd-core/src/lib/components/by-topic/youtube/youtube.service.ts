@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Video } from '@lib/components/by-topic/youtube/model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Video } from './model';
 
 @Injectable({providedIn: 'root'})
 export abstract class YoutubeService {

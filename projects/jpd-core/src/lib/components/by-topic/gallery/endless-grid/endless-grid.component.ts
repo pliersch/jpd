@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, isDevMode, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { ImageService } from '@lib/common/services/image.service';
-import { BaseComponent } from '@lib/components/core/base/base.component';
+import { ImageService } from '../../../../common';
+import { BaseComponent } from '../../../core/base/base.component';
 
 export interface EndlessGridModel {
   rowCount: number;

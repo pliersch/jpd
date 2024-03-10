@@ -1,7 +1,7 @@
 import { MediaMatcher } from '@angular/cdk/layout';
-import { Themes } from '@lib/common/const/themes';
-import { CssDomService } from '@lib/common/services/css-dom.service';
 import { SsrCookieService } from 'ngx-cookie-service-ssr';
+import { Themes } from '../const';
+import { CssDomService } from '../services';
 
 export function initTheme(cookieService: SsrCookieService,
                           cssDomService: CssDomService,

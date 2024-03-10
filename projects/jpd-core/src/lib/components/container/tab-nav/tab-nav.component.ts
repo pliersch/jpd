@@ -3,9 +3,8 @@ import { Component, HostBinding, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
 import { RouterOutlet } from '@angular/router';
-import { fader } from '@lib/common/animations/animations';
-import { Route } from '@lib/common/interfaces/route';
-import { BaseComponent } from '@lib/components/core/base/base.component';
+import { fader, Route } from '../../../common';
+import { BaseComponent } from '../../core/base/base.component';
 
 export interface TabNavModel {
   routes: Route[];

@@ -2,8 +2,8 @@ import { animate, style, transition, trigger } from '@angular/animations'
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { FragmentDirective } from '@lib/common';
-import { BaseComponent } from '@lib/components';
+import { FragmentDirective } from '../../../../common';
+import { BaseComponent } from '../../../core/base/base.component';
 
 export interface Banner2ItemModel {
   contentText: string;

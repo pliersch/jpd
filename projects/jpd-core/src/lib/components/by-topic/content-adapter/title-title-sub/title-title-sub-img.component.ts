@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { TitleTitleSubtitleImg } from '@lib/components/by-topic/content-adapter/model';
-import { BaseComponent } from '@lib/components/core/base/base.component';
-import { FragmentDirective } from '@lib/common/directives/fragment.directive';
+import { FragmentDirective } from '../../../../common';
+import { BaseComponent } from '../../../core/base/base.component';
+import { TitleTitleSubtitleImg } from '../model';
 
 @Component({
   selector: 'a4w-content-ttsi',

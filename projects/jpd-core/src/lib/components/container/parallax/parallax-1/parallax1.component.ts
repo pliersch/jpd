@@ -1,8 +1,7 @@
 import { Component, Input, OnDestroy } from '@angular/core';
-import { FragmentDirective } from '@lib/common/directives/fragment.directive';
-import { PageScrollService } from '@lib/common/services/page-scroll.service';
-import { BaseComponent } from '@lib/components/core/base/base.component';
 import { Subscription } from 'rxjs';
+import { FragmentDirective, PageScrollService } from '../../../../common';
+import { BaseComponent } from '../../../core/base/base.component';
 
 export interface Parallax1Model {
   backgroundImage: string;

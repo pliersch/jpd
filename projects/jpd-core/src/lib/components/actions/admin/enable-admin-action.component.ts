@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { booleanAttribute, Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { ActionComponent } from '@lib/components';
-import { AdminService } from '@lib/modules/admin';
+import { AdminService } from '../../../modules/admin';
+import { ActionComponent } from '../_base-action/action.component';
 
 @Component({
   selector: 'a4w-enable-admin-action',

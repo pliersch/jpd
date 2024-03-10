@@ -1,8 +1,8 @@
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, Renderer2, RendererFactory2 } from "@angular/core";
-import { Themes } from '@lib/common/const/themes';
 import { SsrCookieService } from 'ngx-cookie-service-ssr';
 import { Subject } from 'rxjs';
+import { Themes } from '../const';
 
 export interface ThemeToggleChange {
   add: string;

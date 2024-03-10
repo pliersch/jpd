@@ -4,10 +4,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { IsActiveMatchOptions, RouterLink, RouterLinkActive } from '@angular/router';
-import { Route } from '@lib/common/interfaces/route';
-import { PageScrollService } from '@lib/common/services/page-scroll.service';
-import { RouteDomService } from '@lib/common/services/route-dom.service';
 import { Observable, of } from 'rxjs';
+import { PageScrollService, Route, RouteDomService } from '../../../../common';
 
 @Component({
   selector: 'a4w-sticky-appbar',

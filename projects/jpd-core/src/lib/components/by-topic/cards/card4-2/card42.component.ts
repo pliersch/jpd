@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { FragmentDirective } from '@lib/common/directives/fragment.directive';
-import { BaseComponent } from '@lib/components/core/base/base.component';
-import { TitleSubtitles } from "@lib/content/content";
+import { FragmentDirective } from '../../../../common';
+import { TitleSubtitles } from '../../../../content';
+import { BaseComponent } from '../../../core/base/base.component';
 
 export interface Card42Model {
   items: TitleSubtitles[]

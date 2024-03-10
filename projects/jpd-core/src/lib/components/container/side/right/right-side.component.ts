@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { AdminTabContainerComponent } from '@lib/modules/admin/components/nav-container/admin-tab-container.component';
+import { AdminTabContainerComponent } from '../../../../modules/admin';
 
 @Component({
   selector: 'a4w-right-side',

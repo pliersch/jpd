@@ -1,7 +1,7 @@
 import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
 import { Injectable } from '@angular/core';
-import { Dimension } from "@lib/common/const/dimensions";
 import { distinctUntilChanged, Observable, ReplaySubject } from "rxjs";
+import { Dimension } from '../const';
 
 @Injectable({
   providedIn: 'root'

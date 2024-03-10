@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { booleanAttribute, Component, Input } from '@angular/core';
-import { BaseComponent } from '@lib/components/core/base/base.component';
-import { FragmentDirective } from '@lib/common/directives/fragment.directive';
+import { FragmentDirective } from '../../../common';
+import { BaseComponent } from '../../core/base/base.component';
 
 export interface ParallaxSectionModel {
   backgroundImageUrl: string;

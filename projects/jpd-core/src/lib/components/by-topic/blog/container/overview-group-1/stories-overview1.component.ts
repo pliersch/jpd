@@ -1,19 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FragmentDirective } from '@lib/common/directives/fragment.directive';
-import { BaseComponent } from '@lib/components';
-import {
-  ActivityList1Component,
-  ActivityList1Model
-} from '@lib/components/by-topic/blog/activities/activity-list-1/activity-list-1.component';
-import {
-  TopStories1Component,
-  TopStories1Model
-} from '@lib/components/by-topic/blog/stories/top-stories-1/top-stories-1.component';
+import { FragmentDirective } from '../../../../../common';
+import { BaseComponent } from '../../../../core/base/base.component';
+import { Tags1Component } from '../../../tags/tags-1/tags-1.component';
+import { ActivityList1Component, ActivityList1Model } from '../../activities/activity-list-1/activity-list-1.component';
+import { TopStories1Component, TopStories1Model } from '../../stories/top-stories-1/top-stories-1.component';
 import {
   NewsletterSimpleSubscription1Component
-} from '@lib/components/by-topic/blog/subscription/simple-1/newsletter-simple-subscription1.component';
-import { Tags1Component } from '@lib/components/by-topic/tags/tags-1/tags-1.component';
+} from '../../subscription/simple-1/newsletter-simple-subscription1.component';
 
 
 export interface StoriesOverview1Model {

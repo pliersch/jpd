@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Route } from '@lib/common/interfaces/route';
+
 import { Observable, of } from 'rxjs';
+import { Route } from '../../../../common';
 
 @Component({
   selector: 'a4w-base-behavior',

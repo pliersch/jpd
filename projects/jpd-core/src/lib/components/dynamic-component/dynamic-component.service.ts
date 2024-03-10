@@ -1,5 +1,5 @@
 import { Injectable, Type } from '@angular/core';
-import { DynamicHostComponent } from "@lib/components";
+import { DynamicHostComponent } from './dynamic-host.component';
 
 @Injectable({
   providedIn: 'root'

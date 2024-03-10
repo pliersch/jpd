@@ -13,10 +13,10 @@ import {
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
-import { ScrollerItemComponent } from '@lib/components/by-topic/gallery';
 import {
   HorizontalVirtualScrollComponent
-} from '@lib/components/samples/horizontal-virtual-scroll/horizontal-virtual-scroll.component';
+} from '../../../../samples/horizontal-virtual-scroll/horizontal-virtual-scroll.component';
+import { ScrollerItemComponent } from '../scroller-item/scroller-item.component';
 
 
 @Component({

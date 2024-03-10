@@ -1,10 +1,9 @@
 import { Location, NgIf } from '@angular/common';
 import { Component, EventEmitter, HostListener, OnDestroy, OnInit, Output } from '@angular/core';
-import { AlertService } from '@lib/common/services/alert.service';
-import { ImageService } from '@lib/common/services/image.service';
+import { AlertService, ImageService } from '../../../../common';
 import {
   PhotosHorizontalScrollerComponent
-} from '@lib/components/by-topic/gallery/scroller/horizontal-scroller/photos-horizontal-scroller.component';
+} from '../scroller/horizontal-scroller/photos-horizontal-scroller.component';
 
 @Component({
   selector: 'a4w-photos-slideshow',

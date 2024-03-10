@@ -1,6 +1,7 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { tap } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { getDocument } from 'ssr-window';
 
 export function initApplication(breakpointObserver: BreakpointObserver): () => Promise<void> {
   return () => new Promise(resolve => {
@@ -17,7 +18,7 @@ export function initApplication(breakpointObserver: BreakpointObserver): () => P
 function updateCssVar(isHandset: boolean): void {
   let appbarHeight = 64;
   // need detection. documentElement isn´t available on server (ssr)
-  const style = document.documentElement?.style
+  const style = getDocument().documentElement?.style
   if (style) {
     if (isHandset) {
       appbarHeight = 56;
@@ -25,4 +26,3 @@ function updateCssVar(isHandset: boolean): void {
     style.setProperty('--appbar-height', `${appbarHeight}px`)
   }
 }
-

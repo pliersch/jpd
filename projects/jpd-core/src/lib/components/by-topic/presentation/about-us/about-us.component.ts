@@ -1,11 +1,11 @@
 import { BreakpointObserver } from "@angular/cdk/layout";
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { BaseComponent } from '@lib/components/core/base/base.component';
-import { TitleDescriptionImage } from "@lib/content/content";
-import { FragmentDirective } from '@lib/common/directives/fragment.directive';
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
+import { FragmentDirective } from '../../../../common';
+import { TitleDescriptionImage } from '../../../../content';
+import { BaseComponent } from '../../../core/base/base.component';
 
 export interface AboutUsModel {
   items: TitleDescriptionImage[];

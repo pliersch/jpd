@@ -1,0 +1,113 @@
+@use '@angular/material' as mat;
+
+//@use 'bootstrap/dist/css/bootstrap.min.css';
+
+@use 'bootstrap/dist/css/bootstrap-utilities.min.css';
+@use 'bootstrap/dist/css/bootstrap-grid.min.css';
+@use "bootstrap/scss/bootstrap-reboot";
+
+//@use 'bootstrap/scss/functions';
+//@use "bootstrap/scss/variables";
+//@use "bootstrap/scss/mixins";
+//@use "bootstrap/scss/root";
+//@use "bootstrap/scss/reboot";
+//@use 'bootstrap/scss/type';
+//@use 'bootstrap/scss/utilities';
+//@use "bootstrap/scss/containers";
+//@use "bootstrap/scss/grid";
+//@use "bootstrap/scss/bootstrap-grid";
+//@use "bootstrap/scss/bootstrap-utilities";
+//@use "bootstrap/scss/helpers";
+//@use "bootstrap/scss/utilities/api";
+//@use "bootstrap/js/dist/dom";
+//@use "bootstrap/js/dist/util";
+//@use 'bootstrap/scss/maps';
+
+@use 'padding';
+@use 'margin';
+@use 'flex-layout';
+@use 'text';
+@use 'theming/theme-colors';
+@use 'scrollbar';
+
+$dark-primary: mat.define-palette(mat.$purple-palette, 900) !default;
+$dark-accent: mat.define-palette(mat.$green-palette, A200, A100, A400) !default;
+$light-primary: mat.define-palette(mat.$indigo-palette, 900) !default;
+$light-accent: mat.define-palette(mat.$pink-palette, A400, A200, A700) !default;
+$dark-background: #303030 !default;
+
+@use './theming/themes' with (
+  $dark-primary: $dark-primary,
+  $dark-accent: $dark-accent,
+  $light-primary: $light-primary,
+  $light-accent: $light-accent,
+  $dark-background: $dark-background
+);
+
+
+//@import 'color-contrast';
+//.foo-color-contrast {
+//  color: tone(#fff); // returns 'white'
+//  color: tone(#444); // returns 'dark'
+//}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.mouse-pointer {
+  cursor: pointer;
+}
+
+.h-100vh {
+  height: 100vh;
+}
+
+.max-page-height {
+  height: calc(100vh - var(--appbar-height, 64px));
+  //height: calc(var(--doc-height) - var(--appbar-height));
+  //height: calc(100vh - 64px);
+}
+
+.appbar-offset {
+  height: var(--appbar-height);
+}
+
+.header-link {
+  color: #6e6e6e52;
+  margin: 0 6px;
+  text-decoration: none;
+  //user-select: none;
+  //visibility: hidden;
+  display: inline-flex;
+  vertical-align: middle;
+
+  :hover {
+    color: var(--theme-accent);
+    //color: #6e6e6e;
+  }
+}
+
+.transparent-background {
+  background-color: transparent !important;
+}
+
+.link {
+  color: unset;
+  text-decoration-line: none;
+}
+
+.material-icon {
+  font-family: 'Material Icons', 'Material Icons', serif;
+  display: inline-flex;
+  vertical-align: text-top;
+}
+
+//* {
+//  &:active,
+//  :focus {
+//    opacity: 0.5;
+//    background: initial;
+//    outline: none !important;
+//  }
+//}

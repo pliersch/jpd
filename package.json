@@ -3,13 +3,16 @@
   "version": "0.0.0",
   "scripts": {
     "start:app1": "ng serve --project=app1 --port=4201",
+    "start:demo": "ng serve --project=demo --port=4202",
     "serve:ssr:app1": "node dist/app1/server/server.mjs",
     "build:app1": "ng build --project=app1",
     "build-lib-core": "ng build --project=jpd-core",
+    "build-lib-fesm": "ng build --project=fesm-lib",
     "build:stats": "ng build --project=app1 --stats-json",
     "watch:lib": "ng build --project=jpd-core --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:jdp-demo": "node dist/jdp-demo/server/server.mjs"
+    "serve:ssr:jdp-demo": "node dist/jdp-demo/server/server.mjs",
+    "serve:ssr:demo": "node dist/demo/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -32,6 +35,7 @@
     "express": "^4.18.2",
     "ngx-cookie-service-ssr": "^17.1.0",
     "rxjs": "~7.8.0",
+    "ssr-window": "^4.0.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { PosterComponent } from '@lib/components';
+import { PosterComponent } from '../../../../poster/poster.component';
 
 @Component({
   selector: 'a4w-card-h-1',

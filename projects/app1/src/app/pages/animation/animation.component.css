@@ -1,0 +1,27 @@
+nav a {
+  padding: .7rem;
+}
+
+h1 {
+  margin-bottom: .3rem;
+}
+
+form {
+  margin-bottom: 2rem;
+}
+
+nav {
+  padding-bottom: 3rem;
+}
+
+.foo {
+  width: 100%;
+  height: 800px;
+  background-color: chocolate;
+}
+
+.animation-container {
+  overflow: hidden;
+}
+
+

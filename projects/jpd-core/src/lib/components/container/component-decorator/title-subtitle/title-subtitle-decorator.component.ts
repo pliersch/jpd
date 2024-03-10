@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { FragmentDirective } from '@lib/common/directives/fragment.directive';
-import { BaseComponent } from '@lib/components/core/base/base.component';
-import { TitleSubtitle } from '@lib/content/content';
+import { FragmentDirective } from '../../../../common';
+import { TitleSubtitle } from '../../../../content';
+import { BaseComponent } from '../../../core/base/base.component';
 
 @Component({
   selector: 'a4w-title-subtitle-decorator',

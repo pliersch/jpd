@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { BaseComponent } from '@lib/components/core/base/base.component';
-import { TitleSubtitleDescriptionImg } from '@lib/content/content';
+import { TitleSubtitleDescriptionImg } from '../../../../content';
+import { BaseComponent } from '../../../core/base/base.component';
 
 // fixme this is not a name
 export interface Foo {

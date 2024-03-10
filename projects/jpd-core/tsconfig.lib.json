@@ -8,11 +8,6 @@
     "inlineSources": true,
     "types": [],
     "baseUrl": "src",
-    "paths": {
-      "@lib/*": [
-        "lib/*"
-      ]
-    }
   },
   "exclude": [
     "**/*.spec.ts"

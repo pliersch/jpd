@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, inject, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
-import { FragmentDirective } from '@lib/common';
-import { AppDataService } from '@lib/core';
-import { AdminService } from '@lib/modules/admin';
+import { FragmentDirective } from '../../../common';
+import { AppDataService } from '../../../core';
+import { AdminService } from '../../../modules/admin';
 
 @Component({
   selector: 'a4w-base',

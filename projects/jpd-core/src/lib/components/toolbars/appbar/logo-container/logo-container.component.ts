@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { BaseComponent } from '@lib/components/core/base/base.component';
+import { BaseComponent } from '../../../core/base/base.component';
 
 export interface LogoModel {
   logoUrl: string;

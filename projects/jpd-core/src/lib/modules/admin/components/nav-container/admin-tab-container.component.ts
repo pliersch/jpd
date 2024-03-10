@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AdminComponentBarComponent } from '@lib/modules/admin/components/component-bar/admin-component-bar.component';
+import { AdminComponentBarComponent } from '../component-bar/admin-component-bar.component';
 
 @Component({
   selector: 'a4w-admin-tab-container',
