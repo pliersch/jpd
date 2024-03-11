@@ -3,16 +3,17 @@
   "version": "0.0.0",
   "scripts": {
     "start:app1": "ng serve --project=app1 --port=4201",
-    "start:demo": "ng serve --project=demo --port=4202",
-    "serve:ssr:app1": "node dist/app1/server/server.mjs",
     "build:app1": "ng build --project=app1",
-    "build-lib-core": "ng build --project=jpd-core",
-    "build-lib-fesm": "ng build --project=fesm-lib",
+    "build:lib-core": "ng build --project=jpd-core",
     "build:stats": "ng build --project=app1 --stats-json",
     "watch:lib": "ng build --project=jpd-core --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:jdp-demo": "node dist/jdp-demo/server/server.mjs",
-    "serve:ssr:demo": "node dist/demo/server/server.mjs"
+    "serve:ssr:app1": "node dist/app1/server/server.mjs",
+    "serve:app1": "node dist/app1/browser/index.html",
+    "serve-app1-new": "http-server ./dist/app1/browser -a 127.0.0.1 -p 4301",
+    "start:app2": "ng serve --project=non-ssr --port=4202",
+    "build:app2": "ng build --project=non-ssr",
+    "serve:app2": "http-server ./dist/non-ssr/browser -a 127.0.0.1 -p 4302"
   },
   "private": true,
   "dependencies": {

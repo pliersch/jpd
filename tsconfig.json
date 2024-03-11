@@ -16,6 +16,9 @@
       ],
       "@app1/*": [
         "projects/app1/src/app/*"
+      ],
+      "@app2/*": [
+        "projects/non-ssr/src/app/*"
       ]
     },
     "noImplicitReturns": true,
