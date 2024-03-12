@@ -4,6 +4,7 @@ import { APP_INITIALIZER, ApplicationConfig, importProvidersFrom } from '@angula
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { CustomAppDataService } from '@app1/services/custom-app-data.service';
@@ -25,7 +26,7 @@ import { ROUTES } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    // provideClientHydration(),
+    provideClientHydration(),
     importProvidersFrom(MatSnackBarModule, MatDialogModule, GoogleMapsModule),
     provideAnimations(),
     provideHttpClient(withFetch(), /*withInterceptorsFromDi()*/),
