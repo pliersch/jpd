@@ -19,7 +19,7 @@ export interface Card42Model {
 export class Card42Component extends BaseComponent<Card42Model> {
 
   constructor(override fragment?: FragmentDirective) {
-    super(fragment)
+    super('Card42', fragment)
   }
 
 }

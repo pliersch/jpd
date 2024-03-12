@@ -30,7 +30,7 @@ export class Parallax1Component extends BaseComponent<Parallax1Model> implements
 
   constructor(scrollService: PageScrollService,
               override fragment?: FragmentDirective) {
-    super(fragment);
+    super('Parallax1', fragment);
     this.subscription = scrollService.scrollTop$.subscribe(scrollTop => this.updateParallax(scrollTop));
   }
 

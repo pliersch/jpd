@@ -18,7 +18,7 @@ export interface GMapsModel {
 export class GMapsIframeComponent extends BaseComponent<GMapsModel> {
 
   constructor(override fragment?: FragmentDirective) {
-    super(fragment)
+    super('GMapsIframe', fragment)
   }
 
 }

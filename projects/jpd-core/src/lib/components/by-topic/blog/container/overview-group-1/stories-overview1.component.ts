@@ -26,7 +26,7 @@ export interface StoriesOverview1Model {
 export class StoriesOverview1Component extends BaseComponent<StoriesOverview1Model> {
 
   constructor(override fragment?: FragmentDirective) {
-    super(fragment)
+    super('StoriesOverview1', fragment)
   }
 
 }

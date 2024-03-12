@@ -27,7 +27,7 @@ export class TabNavComponent extends BaseComponent<TabNavModel> implements OnIni
   activeLink: string;
 
   constructor(private location: Location) {
-    super();
+    super('TabNav');
   }
 
   ngOnInit(): void {

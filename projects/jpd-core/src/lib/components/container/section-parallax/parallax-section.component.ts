@@ -31,7 +31,7 @@ export class ParallaxSectionComponent extends BaseComponent<ParallaxSectionModel
   }
 
   constructor(override fragment?: FragmentDirective) {
-    super(fragment)
+    super('ParallaxSection', fragment)
   }
 
 }

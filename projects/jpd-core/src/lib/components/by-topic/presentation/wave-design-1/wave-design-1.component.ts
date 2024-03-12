@@ -19,6 +19,6 @@ export interface WaveDesign1Model {
 export class WaveDesign1Component extends BaseComponent<WaveDesign1Model> {
 
   constructor(fragment: FragmentDirective) {
-    super(fragment);
+    super('WaveDesign1', fragment);
   }
 }

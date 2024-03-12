@@ -17,7 +17,7 @@ export interface TextFooterDecoratorModel {
 export class TextFooterDecoratorComponent extends BaseComponent<TextFooterDecoratorModel> {
 
   constructor(override fragment?: FragmentDirective) {
-    super(fragment)
+    super('TextFooterDecorator', fragment)
   }
 
 }

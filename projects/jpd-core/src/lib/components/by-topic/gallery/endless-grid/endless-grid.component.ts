@@ -23,7 +23,7 @@ export class EndlessGridComponent extends BaseComponent<EndlessGridModel> implem
   columns: number[];
 
   constructor(private imageService: ImageService) {
-    super();
+    super('EndlessGrid');
   }
 
   ngOnInit(): void {

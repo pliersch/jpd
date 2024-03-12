@@ -18,6 +18,6 @@ export interface AnimationModel {
 export class Animation1Component extends BaseComponent<AnimationModel> {
 
   constructor(override fragment?: FragmentDirective) {
-    super(fragment)
+    super('Animation1')
   }
 }

@@ -25,7 +25,7 @@ export class PhoneActionComponent extends BaseComponent<PhoneModel> {
   @Input({transform: booleanAttribute}) button: boolean;
 
   constructor() {
-    super();
+    super('PhoneAction');
   }
 
   call(): void {

@@ -19,7 +19,7 @@ export interface LinkFooterDecoratorModel {
 export class LinkFooterDecoratorComponent extends BaseComponent<LinkFooterDecoratorModel> {
 
   constructor(override fragment?: FragmentDirective) {
-    super(fragment)
+    super('LinkFooterDecorator', fragment)
   }
 
 }

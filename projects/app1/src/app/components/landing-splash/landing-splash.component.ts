@@ -20,8 +20,8 @@ export interface LandingSplashModel {
 
 export class LandingSplashComponent extends BaseComponent<LandingSplashModel> {
 
-  constructor(override fragment?: FragmentDirective,) {
-    super(fragment)
+  constructor(fragment?: FragmentDirective,) {
+    super('LandingSplash', fragment)
   }
 
 }

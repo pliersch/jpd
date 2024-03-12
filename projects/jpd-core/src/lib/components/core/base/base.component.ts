@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, inject, Renderer2 } from '@angular/core';
+import { Component, ElementRef, Inject, inject, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { FragmentDirective } from '../../../common';
 import { AppDataService } from '../../../core';
@@ -9,28 +9,29 @@ import { AdminService } from '../../../modules/admin';
   selector: 'a4w-base',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './base.component.html',
-  styleUrl: './base.component.scss'
+  template: ``,
+  styles: []
 })
 export abstract class BaseComponent<T extends object> {
 
-  protected router: Router  = inject(Router);
+  protected router: Router = inject(Router);
   protected model: T;
   private appDataService: AppDataService = inject(AppDataService);
-  private adminService: AdminService  = inject(AdminService);
-  protected renderer: Renderer2  = inject(Renderer2);
+  private adminService: AdminService = inject(AdminService);
+  protected renderer: Renderer2 = inject(Renderer2);
   protected el: ElementRef = inject(ElementRef);
   private adminNode: Element;
   private unListener: () => void;
 
-  protected constructor(protected fragment?: FragmentDirective,) {
+  protected constructor(@Inject(String) className: string,
+                        protected fragment?: FragmentDirective,) {
     // this.fragment = injector.get(FragmentDirective);
-    this.readModelData();
+    this.readModelData(className);
     this.adminService.isAdminMode$.subscribe(mode => this.toggleEditMode(mode));
   }
 
-  private readModelData(): void {
-    this.model = this.appDataService.getComponentData(this.constructor.name, this.router.url, this.fragment?.appFragment);
+  protected readModelData(className: string): void {
+    this.model = this.appDataService.getComponentData(className, this.router.url, this.fragment?.appFragment);
   }
 
   private toggleEditMode(mode: boolean): void {

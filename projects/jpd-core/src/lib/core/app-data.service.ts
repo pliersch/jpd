@@ -21,12 +21,7 @@ export abstract class AppDataService {
    * @param appFragment name of fragment provides by fragment-directive
    */
   getComponentData(className: string, url: string, appFragment?: string): any {
-    console.log('AppDataService getComponentData ! : ', className)
-    // fixme https://trello.com/c/q5jeUiDC/69-appdataservice-classname
-    // let className = clazz.constructor.name;
-    if (className.charAt(0) === '_') {
-      className = className.slice(1);
-    }
+    // console.log('AppDataService getComponentData ! : ', className)
     url = this.normalizeUrl(url);
     const components =
       this.appConfig.componentsByUrl.find(item => item.url === url);

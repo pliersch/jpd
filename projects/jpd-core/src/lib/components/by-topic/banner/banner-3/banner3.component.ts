@@ -23,6 +23,6 @@ export interface Banner3Model {
 export class Banner3Component extends BaseComponent<Banner3Model> {
 
   constructor(override fragment?: FragmentDirective) {
-    super(fragment)
+    super('Banner3', fragment)
   }
 }

@@ -36,7 +36,7 @@ export const appData: AppConfig = {
           //                  Appbar Logo
           //////////////////////////////////////////////////////////
           {
-            name: 'LogoContainerComponent',
+            name: 'LogoContainer',
             data: {
               logoUrl: 'assets/svg/logo.svg',
             }
@@ -45,7 +45,7 @@ export const appData: AppConfig = {
           //                  Phone Action
           //////////////////////////////////////////////////////////
           {
-            name: 'PhoneActionComponent',
+            name: 'PhoneAction',
             data: {
               phone: company.phone,
             }
@@ -54,7 +54,7 @@ export const appData: AppConfig = {
           //                   Footer
           //////////////////////////////////////////////////////////
           {
-            name: 'FooterComponent',
+            name: 'Footer',
             data: {
               address: company.address,
               phone: company.phone,
@@ -73,7 +73,7 @@ export const appData: AppConfig = {
           //                  Landing
           //////////////////////////////////////////////////////////
           {
-            name: 'Parallax1Component',
+            name: 'Parallax1',
             fragment: 'top',
             data: {
               backgroundImage: 'assets/img/landing.jpg',
@@ -84,7 +84,7 @@ export const appData: AppConfig = {
           //               Landing Content
           //////////////////////////////////////////////////////////
           {
-            name: 'LandingSplashComponent',
+            name: 'LandingSplash',
             fragment: 'top',
             data: {
               imageUrl: 'assets/svg/apps4web-splash.svg',
@@ -94,7 +94,7 @@ export const appData: AppConfig = {
           //                 Card31 (Blog)
           //////////////////////////////////////////////////////////
           {
-            name: 'Card31Component',
+            name: 'Card31',
             fragment: 'blog',
             data: {
               items: [
@@ -105,7 +105,7 @@ export const appData: AppConfig = {
             }
           },
           {
-            name: 'TitleSubtitleDecoratorComponent',
+            name: 'TitleSubtitleDecorator',
             fragment: 'blog',
             data: {
               title: 'Unser Blog',
@@ -113,7 +113,7 @@ export const appData: AppConfig = {
             }
           },
           {
-            name: 'LinkFooterDecoratorComponent',
+            name: 'LinkFooterDecorator',
             fragment: 'blog',
             data: {
               text: 'weiterlesen',
@@ -124,7 +124,7 @@ export const appData: AppConfig = {
           //                   Gallery Grid
           //////////////////////////////////////////////////////////
           {
-            name: 'ImageGrid321Component',
+            name: 'ImageGrid321',
             fragment: 'gallery',
             data: {
               image31: {imgUrl: 'assets/img/1x/9.jpg', link: '/gallery'},
@@ -135,7 +135,7 @@ export const appData: AppConfig = {
             }
           },
           {
-            name: 'TitleSubtitleDecoratorComponent',
+            name: 'TitleSubtitleDecorator',
             fragment: 'gallery',
             data: {
               title: 'Unsere kleine Galerie',
@@ -143,7 +143,7 @@ export const appData: AppConfig = {
             }
           },
           {
-            name: 'LinkFooterDecoratorComponent',
+            name: 'LinkFooterDecorator',
             fragment: 'gallery',
             data: {
               text: 'alle ansehen',
@@ -154,7 +154,7 @@ export const appData: AppConfig = {
           //                 Card 43
           //////////////////////////////////////////////////////////
           {
-            name: 'Card43Component',
+            name: 'Card43',
             fragment: 'team',
             data: {
               headline: 'Unsere Mitarbeiter',
@@ -187,7 +187,7 @@ export const appData: AppConfig = {
             }
           },
           {
-            name: 'TitleSubtitleDecoratorComponent',
+            name: 'TitleSubtitleDecorator',
             fragment: 'team',
             data: {
               title: 'Unser Team',
@@ -195,7 +195,7 @@ export const appData: AppConfig = {
             }
           },
           {
-            name: 'TextFooterDecoratorComponent',
+            name: 'TextFooterDecorator',
             fragment: 'team',
             data: {
               text: 'ein simpler Text Decorator',
@@ -206,7 +206,7 @@ export const appData: AppConfig = {
           //                  Banner 1
           //////////////////////////////////////////////////////////
           {
-            name: 'Banner1Component',
+            name: 'Banner1',
             fragment: 'banner1',
             data: {
               title: 'Great Stuff',
@@ -219,7 +219,7 @@ export const appData: AppConfig = {
             }
           },
           {
-            name: 'Banner1Component',
+            name: 'Banner1',
             fragment: 'banner11',
             data: {
               title: 'Great Stuff',
@@ -236,14 +236,14 @@ export const appData: AppConfig = {
           //                 Card42 & ParallaxSection
           //////////////////////////////////////////////////////////
           {
-            name: 'ParallaxSectionComponent',
+            name: 'ParallaxSection',
             fragment: 'skills',
             data: {
               backgroundImageUrl: 'assets/img/parallax-section-bg.jpg',
             }
           },
           {
-            name: 'Card42Component',
+            name: 'Card42',
             fragment: 'skills',
             data: {
               items: [
@@ -267,7 +267,7 @@ export const appData: AppConfig = {
             },
           },
           {
-            name: 'TitleSubtitleDecoratorComponent',
+            name: 'TitleSubtitleDecorator',
             fragment: 'skills',
             data: {
               title: 'Unsere Skills',
@@ -287,7 +287,7 @@ export const appData: AppConfig = {
           //                  Banner 3
           //////////////////////////////////////////////////////////
           {
-            name: 'Banner3Component',
+            name: 'Banner3',
             fragment: 'banner',
             data: {
               title: 'The sad bunny',
@@ -299,10 +299,10 @@ export const appData: AppConfig = {
             }
           },
           //////////////////////////////////////////////////////////
-          //       WaveDesign1Component
+          //       WaveDesign1
           //////////////////////////////////////////////////////////
           {
-            name: 'WaveDesign1Component',
+            name: 'WaveDesign1',
             fragment: 'wave',
             data: {
               cards: [
@@ -334,7 +334,7 @@ export const appData: AppConfig = {
             }
           },
           {
-            name: 'TitleSubtitleDecoratorComponent',
+            name: 'TitleSubtitleDecorator',
             fragment: 'wave',
             data: {
               title: 'Unsere Mitarbeiter',
@@ -345,7 +345,7 @@ export const appData: AppConfig = {
           //                  Banner 2
           //////////////////////////////////////////////////////////
           {
-            name: 'Banner2Component',
+            name: 'Banner2',
             fragment: 'banner2',
             data: {
               items: [
@@ -377,10 +377,10 @@ export const appData: AppConfig = {
         url: 'blog', data: [
 
           //////////////////////////////////////////////////////////
-          //                  StoriesOverview1Component
+          //                  StoriesOverview1
           //////////////////////////////////////////////////////////
           {
-            name: 'StoriesOverview1Component',
+            name: 'StoriesOverview1',
             fragment: 'blog',
             data: {
               tags: [
@@ -403,10 +403,10 @@ export const appData: AppConfig = {
             }
           },
           //////////////////////////////////////////////////////////
-          //                  StoriesGroup1Component
+          //                  StoriesGroup1
           //////////////////////////////////////////////////////////
           {
-            name: 'StoriesGroup1Component',
+            name: 'StoriesGroup1',
             fragment: 'blog',
             data: {
               cards: [
@@ -454,7 +454,7 @@ export const appData: AppConfig = {
           //                 Parallax landing
           //////////////////////////////////////////////////////////
           {
-            name: 'Parallax1Component',
+            name: 'Parallax1',
             fragment: 'post',
             data: {
               backgroundImage: 'assets/img/1x/14.jpg',
@@ -465,7 +465,7 @@ export const appData: AppConfig = {
           //                 Card31 (Blog)
           //////////////////////////////////////////////////////////
           {
-            name: 'Card31Component',
+            name: 'Card31',
             fragment: 'recommendation',
             data: {
               items: [
@@ -476,7 +476,7 @@ export const appData: AppConfig = {
             }
           },
           {
-            name: 'TitleSubtitleDecoratorComponent',
+            name: 'TitleSubtitleDecorator',
             fragment: 'recommendation',
             data: {
               title: 'Ähnliche Stories',
@@ -493,7 +493,7 @@ export const appData: AppConfig = {
           // //                 Parallax landing
           // //////////////////////////////////////////////////////////
           // {
-          //   name: 'Parallax1Component',
+          //   name: 'Parallax1',
           //   fragment: 'post',
           //   data: {
           //     backgroundImage: 'assets/img/1x/14.jpg',
@@ -504,7 +504,7 @@ export const appData: AppConfig = {
           // //                 Card31 (Blog)
           // //////////////////////////////////////////////////////////
           // {
-          //   name: 'Card31Component',
+          //   name: 'Card31',
           //   fragment: 'recommendation',
           //   data: {
           //     items: [
@@ -515,7 +515,7 @@ export const appData: AppConfig = {
           //   }
           // },
           // {
-          //   name: 'TitleSubtitleDecoratorComponent',
+          //   name: 'TitleSubtitleDecorator',
           //   fragment: 'recommendation',
           //   data: {
           //     title: 'Ähnliche Stories',
@@ -532,7 +532,7 @@ export const appData: AppConfig = {
           //                 Endless Image Grid
           //////////////////////////////////////////////////////////
           {
-            name: 'EndlessGridComponent',
+            name: 'EndlessGrid',
             fragment: 'gallery',
             data: {
               columnCount: 4,
@@ -540,7 +540,7 @@ export const appData: AppConfig = {
 
           },
           {
-            name: 'TitleSubtitleDecoratorComponent',
+            name: 'TitleSubtitleDecorator',
             fragment: 'gallery',
             data: {
               title: 'Unsere große Galerie',
@@ -559,7 +559,7 @@ export const appData: AppConfig = {
           //       Tab Nav (Routing)
           //////////////////////////////////////////////////////////
           {
-            name: 'TabNavComponent',
+            name: 'TabNav',
             data: {
               routes: [
                 {name: 'Health', path: '/service/health'},
@@ -575,10 +575,10 @@ export const appData: AppConfig = {
       {
         url: 'contact', data: [
           //////////////////////////////////////////////////////////
-          //                  Parallax1Component
+          //                  Parallax1
           //////////////////////////////////////////////////////////
           {
-            name: 'Parallax1Component',
+            name: 'Parallax1',
             fragment: 'top',
             data: {
               backgroundImage: 'assets/img/1x/6.jpg',
@@ -589,7 +589,7 @@ export const appData: AppConfig = {
           //                   GMapsIframe
           //////////////////////////////////////////////////////////
           {
-            name: 'GMapsIframeComponent',
+            name: 'GMapsIframe',
             data: {
               url: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d83202.63399778331!2d14.005926363632453!3d52.04056566652021!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4707f19da142579f%3A0x83e0c5a2eca11ae0!2sKFZ-Meisterwerkstatt%20Karsten%20Kohts!5e0!3m2!1sde!2sde!4v1696433271595!5m2!1sde!2sde'
             }
@@ -598,7 +598,7 @@ export const appData: AppConfig = {
           // //                 Disney (Card)
           // //////////////////////////////////////////////////////////
           // {
-          //   name: 'DisneyComponent',
+          //   name: 'Disney',
           //   fragment: 'disney',
           //   data: {
           //     items: [
@@ -612,7 +612,7 @@ export const appData: AppConfig = {
           //   }
           // },
           {
-            name: 'TitleSubtitleDecoratorComponent',
+            name: 'TitleSubtitleDecorator',
             fragment: 'disney',
             data: {
               title: 'Disney Plus Design',
@@ -623,7 +623,7 @@ export const appData: AppConfig = {
           //                   Footer
           //////////////////////////////////////////////////////////
           {
-            name: 'FooterComponent',
+            name: 'Footer',
             data: {
               address: company.address,
               phone: company.phone,

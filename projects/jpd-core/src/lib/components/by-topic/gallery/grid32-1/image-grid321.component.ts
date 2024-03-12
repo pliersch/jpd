@@ -27,6 +27,6 @@ export interface Grid321Model {
 export class ImageGrid321Component extends BaseComponent<Grid321Model> {
 
   constructor(override fragment?: FragmentDirective) {
-    super(fragment)
+    super('ImageGrid321', fragment)
   }
 }

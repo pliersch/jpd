@@ -18,7 +18,7 @@ export class TitleSubtitleDecoratorComponent extends BaseComponent<TitleSubtitle
   anchor: string | undefined;
 
   constructor(override fragment?: FragmentDirective) {
-    super(fragment)
+    super('TitleSubtitleDecorator', fragment)
   }
 
   ngOnInit(): void {

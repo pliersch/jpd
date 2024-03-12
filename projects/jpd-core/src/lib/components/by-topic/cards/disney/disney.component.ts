@@ -17,6 +17,8 @@ export interface DisneyModel {
 })
 export class DisneyComponent extends BaseComponent<DisneyModel> {
 
+  className = 'Disney';
+
   constructor(override fragment?: FragmentDirective) {
     super(fragment)
   }

@@ -19,7 +19,8 @@ export interface Foo {
 })
 export class AvatarTSD4Component extends BaseComponent<Foo> {
 
+
   constructor() {
-    super();
+    super('AvatarTSD4');
   }
 }

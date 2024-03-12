@@ -1,12 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { AppDataService } from '../../../../core';
+import { BaseComponent } from '../../../core/base/base.component';
 
 export interface LogoModel {
   logoUrl: string;
 }
-
 @Component({
   selector: 'a4w-logo-container',
   standalone: true,
@@ -14,14 +13,10 @@ export interface LogoModel {
   templateUrl: './logo-container.component.html',
   styleUrl: './logo-container.component.scss'
 })
-export class LogoContainerComponent {
 
-  private appDataService: AppDataService = inject(AppDataService);
-  model: LogoModel = {logoUrl: 'foobar'};
+export class LogoContainerComponent extends BaseComponent<LogoModel> {
 
-  constructor() {
-    const componentData = this.appDataService.getComponentData('LogoContainerComponent', '/');
-    console.log('LogoContainerComponent constructor: ', componentData)
-    this.model = componentData;
+  constructor(/*fragment: FragmentDirective*/) {
+    super('LogoContainer');
   }
 }

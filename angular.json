@@ -33,11 +33,7 @@
               "projects/app1/src/styles.scss"
             ],
             "scripts": [],
-            "server": "projects/app1/src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "projects/app1/server.ts"
-            }
+            "server": "projects/app1/src/main.server.ts"
           },
           "configurations": {
             "production": {

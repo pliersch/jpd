@@ -22,6 +22,6 @@ export class TeamComponent extends BaseComponent<any> {
   // ]
 
   constructor(override fragment?: FragmentDirective) {
-    super(fragment)
+    super('Team', fragment)
   }
 }

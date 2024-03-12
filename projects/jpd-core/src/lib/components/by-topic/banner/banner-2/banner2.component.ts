@@ -44,7 +44,7 @@ export class Banner2Component extends BaseComponent<Banner2Model> implements OnI
   alphaColor: string;
 
   constructor(override fragment?: FragmentDirective) {
-    super(fragment);
+    super('Banner2', fragment);
   }
 
   ngOnInit(): void {

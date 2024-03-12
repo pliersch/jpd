@@ -24,7 +24,7 @@ export class AboutUsComponent extends BaseComponent<AboutUsModel> {
 
   constructor(private breakpointObserver: BreakpointObserver,
               override fragment?: FragmentDirective) {
-    super(fragment);
+    super('AboutUs', fragment);
     this.isHandset$ = this.breakpointObserver.observe('(max-width: 740px)')
       .pipe(
         map(result => result.matches)

@@ -30,7 +30,7 @@ export class FooterComponent extends BaseComponent<FooterModel> implements OnIni
   address: string
 
   constructor(override fragment?: FragmentDirective) {
-    super(fragment)
+    super('Footer', fragment)
   }
 
   ngOnInit(): void {

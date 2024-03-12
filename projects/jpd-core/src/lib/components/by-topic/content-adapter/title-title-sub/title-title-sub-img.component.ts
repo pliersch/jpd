@@ -14,6 +14,6 @@ import { TitleTitleSubtitleImg } from '../model';
 export class TitleTitleSubImgComponent extends BaseComponent<TitleTitleSubtitleImg> {
 
   constructor(override fragment?: FragmentDirective) {
-    super(fragment)
+    super('TitleTitleSubImg', fragment)
   }
 }

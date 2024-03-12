@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FragmentDirective, ImageFallbackDirective } from '../../../../common';
 import { BaseComponent } from '../../../core/base/base.component';
+
 export interface Banner1Model {
   title: string;
   subtitle: string;
@@ -32,6 +33,6 @@ export class Banner1Component extends BaseComponent<Banner1Model> {
   color2: string;
 
   constructor(override fragment?: FragmentDirective) {
-    super(fragment)
+    super('Banner1', fragment)
   }
 }
