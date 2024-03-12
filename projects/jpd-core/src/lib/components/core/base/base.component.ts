@@ -14,29 +14,23 @@ import { AdminService } from '../../../modules/admin';
 })
 export abstract class BaseComponent<T extends object> {
 
-  protected router: Router;
+  protected router: Router  = inject(Router);
   protected model: T;
-  private appDataService: AppDataService;
-  private adminService: AdminService;
-  protected renderer: Renderer2;
-  protected el: ElementRef;
+  private appDataService: AppDataService = inject(AppDataService);
+  private adminService: AdminService  = inject(AdminService);
+  protected renderer: Renderer2  = inject(Renderer2);
+  protected el: ElementRef = inject(ElementRef);
   private adminNode: Element;
   private unListener: () => void;
 
   protected constructor(protected fragment?: FragmentDirective,) {
-    this.appDataService = inject(AppDataService);
-    this.adminService = inject(AdminService);
-
-    this.renderer = inject(Renderer2);
-    this.el = inject(ElementRef);
-    this.router = inject(Router);
     // this.fragment = injector.get(FragmentDirective);
     this.readModelData();
     this.adminService.isAdminMode$.subscribe(mode => this.toggleEditMode(mode));
   }
 
   private readModelData(): void {
-    this.model = this.appDataService.getComponentData(this, this.router.url, this.fragment?.appFragment);
+    this.model = this.appDataService.getComponentData(this.constructor.name, this.router.url, this.fragment?.appFragment);
   }
 
   private toggleEditMode(mode: boolean): void {

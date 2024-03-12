@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { BaseComponent } from '../../../core/base/base.component';
+import { AppDataService } from '../../../../core';
 
 export interface LogoModel {
   logoUrl: string;
@@ -14,9 +14,14 @@ export interface LogoModel {
   templateUrl: './logo-container.component.html',
   styleUrl: './logo-container.component.scss'
 })
-export class LogoContainerComponent extends BaseComponent<LogoModel> {
+export class LogoContainerComponent {
 
-  constructor(/*fragment: FragmentDirective*/) {
-    super(/*fragment*/);
+  private appDataService: AppDataService = inject(AppDataService);
+  model: LogoModel = {logoUrl: 'foobar'};
+
+  constructor() {
+    const componentData = this.appDataService.getComponentData('LogoContainerComponent', '/');
+    console.log('LogoContainerComponent constructor: ', componentData)
+    this.model = componentData;
   }
 }

@@ -16,13 +16,14 @@ export abstract class AppDataService {
   }
 
   /**
-   * @param clazz class of the component like: 'MyComponent' normally use 'this'
+   * @param className class of the component like: 'MyComponent'
    * @param url '/' is root. other examples are '/contact' '/impressum'
    * @param appFragment name of fragment provides by fragment-directive
    */
-  getComponentData(clazz: any, url: string, appFragment?: string): any {
+  getComponentData(className: string, url: string, appFragment?: string): any {
+    console.log('AppDataService getComponentData ! : ', className)
     // fixme https://trello.com/c/q5jeUiDC/69-appdataservice-classname
-    let className = clazz.constructor.name;
+    // let className = clazz.constructor.name;
     if (className.charAt(0) === '_') {
       className = className.slice(1);
     }
