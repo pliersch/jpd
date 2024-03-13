@@ -60,7 +60,7 @@ export {Privacy1Component} from './by-topic/privacy/v1/privacy1.component'
 export {TxtImg2Component} from './by-topic/presentation/text-img-2/txt-img2.component'
 export {WaveDesign1Component, WaveDesign1Model} from './by-topic/presentation/wave-design-1/wave-design-1.component'
 
-// fixme move youtube in separate module
+// todo move youtube in separate module
 export {YoutubePlayerComponent} from './by-topic/youtube/player/youtube-player.component';
 export {YoutubePlayListComponent} from './by-topic/youtube/playlist/youtube-play-list.component';
 export {ChipFilterComponent} from './by-topic/youtube/chip-filter/chip-filter.component';
