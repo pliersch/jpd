@@ -1,11 +1,12 @@
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { CardVideo1Component } from 'jpd-core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { CardVideo1Component } from '../../cards/card-video-1/card-video1.component';
-import { Video } from '../model';
-import { YoutubeService } from '../youtube.service';
+
+import { Video } from '../../model';
+import { YoutubeService } from '../../youtube.service';
 
 @Component({
   selector: 'a4w-youtube-playlist',

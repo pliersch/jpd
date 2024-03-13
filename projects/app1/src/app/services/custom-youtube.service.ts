@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Video, YoutubeService } from 'jpd-core';
+import { Video, YoutubeService } from 'jpd-youtube';
 import { Observable, of } from 'rxjs';
 import videos from '../../assets/json/youtube-songs.json'
 

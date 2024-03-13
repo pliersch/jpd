@@ -1,7 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { ChipFilterComponent, Video, YoutubePlayerComponent, YoutubePlayListComponent, YoutubeService } from 'jpd-core';
+import {
+  ChipFilterComponent,
+  Video,
+  YoutubePlayerComponent,
+  YoutubePlayListComponent,
+  YoutubeService
+} from 'jpd-youtube';
 import { Observable, switchMap } from 'rxjs';
 
 @Component({

@@ -42,6 +42,7 @@ export {Card42Component, Card42Model} from './by-topic/cards/card4-2/card42.comp
 export {Card43Component, Card43Model} from './by-topic/cards/card4-3/card43.component'
 export {Card44Component, Card44Model} from './by-topic/cards/card4-4/card44.component'
 export {ImageCard1Component, ImageCard1Model} from './by-topic/cards/image-card-1/image-card1.component'
+export {CardVideo1Component} from './by-topic/cards/card-video-1/card-video1.component'
 export {TitleTitleSubImgComponent} from './by-topic/content-adapter/title-title-sub/title-title-sub-img.component'
 
 // export {} from './by-topic/contact/contact-comany-info/contact-company.component';
@@ -59,14 +60,6 @@ export {TeamComponent} from './by-topic/presentation/team/team.component'
 export {Privacy1Component} from './by-topic/privacy/v1/privacy1.component'
 export {TxtImg2Component} from './by-topic/presentation/text-img-2/txt-img2.component'
 export {WaveDesign1Component, WaveDesign1Model} from './by-topic/presentation/wave-design-1/wave-design-1.component'
-
-// todo move youtube in separate module
-export {YoutubePlayerComponent} from './by-topic/youtube/player/youtube-player.component';
-export {YoutubePlayListComponent} from './by-topic/youtube/playlist/youtube-play-list.component';
-export {ChipFilterComponent} from './by-topic/youtube/chip-filter/chip-filter.component';
-export {Video, TagItem} from './by-topic/youtube/model';
-export {YoutubeService} from './by-topic/youtube/youtube.service';
-export {TAGS} from './by-topic/youtube/data';
 
 export {DynamicHostComponent} from './dynamic-component/dynamic-host.component';
 

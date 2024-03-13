@@ -10,15 +10,8 @@ import { CustomAppDataService } from '@app1/services/custom-app-data.service';
 import { CustomImageService } from '@app1/services/custom-image.service';
 import { CustomRouteDomService } from '@app1/services/custom-route-dom.service';
 import { CustomYoutubeService } from '@app1/services/custom-youtube.service';
-import {
-  AppDataService,
-  CssDomService,
-  ImageService,
-  initApplication,
-  initTheme,
-  RouteDomService,
-  YoutubeService
-} from 'jpd-core';
+import { AppDataService, CssDomService, ImageService, initApplication, initTheme, RouteDomService } from 'jpd-core';
+import { YoutubeService } from 'jpd-youtube';
 
 import { SsrCookieService } from 'ngx-cookie-service-ssr';
 import { ROUTES } from './app.routes';

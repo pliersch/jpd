@@ -8,6 +8,7 @@
     "build:stats": "ng build --project=app1 --stats-json",
     "build:lib-core": "ng build --project=jpd-core",
     "watch:lib-core": "ng build --project=jpd-core --watch --configuration development",
+    "build:lib-youtube": "ng build --project=jpd-youtube",
     "serve:ssr:app1": "node dist/app1/server/server.mjs",
     "serve:app1": "node dist/app1/browser/index.html",
     "serve-app1-new": "http-server ./dist/app1/browser -a 127.0.0.1 -p 4301",
