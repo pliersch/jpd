@@ -61,12 +61,12 @@ export abstract class AbstractDefaultPageComponent implements AfterViewInit, OnD
   }
 
   private scrollToPosition(): void {
-    // if scrollTop > 0 we can scroll faster to fragments without timeout (cache exists)
-    // will execute when using forward/backward
-    if (this.navigationService.getCurrent()?.scrollTop > 0) {
-      this.scrollService.scrollToPosition(this.navigationService.getCurrent().scrollTop)
-      return;
-    }
+    // // if scrollTop > 0 we can scroll faster to fragments without timeout (cache exists)
+    // // will execute when using forward/backward
+    // if (this.navigationService.getCurrent()?.scrollTop > 0) {
+    //   this.scrollService.scrollToPosition(this.navigationService.getCurrent().scrollTop)
+    //   return;
+    // }
     // first time opening
     const fragment = this.findFragment(this.router.url);
     if (fragment) {

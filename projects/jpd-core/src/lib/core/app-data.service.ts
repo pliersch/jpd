@@ -21,7 +21,6 @@ export abstract class AppDataService {
    * @param appFragment name of fragment provides by fragment-directive
    */
   getComponentData(className: string, url: string, appFragment?: string): any {
-    console.log('AppDataService getComponentData ! : ', className)
     url = this.normalizeUrl(url);
     const components =
       this.appConfig.componentsByUrl.find(item => item.url === url);
