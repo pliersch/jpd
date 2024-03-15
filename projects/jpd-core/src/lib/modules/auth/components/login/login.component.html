@@ -1,0 +1,19 @@
+<div class="page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <a4w-poster>
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" class="m-2" autocomplete="off">
+            <div class="d-flex">
+              <input matInput autofocus type="password" formControlName="password"
+                     required class="form-control" placeholder="a4w2024! 🙄">
+              <button mat-raised-button color="primary" type="submit" [disabled]="!valid">
+                Login
+              </button>
+            </div>
+          </form>
+        </a4w-poster>
+      </div>
+    </div>
+  </div>
+</div>

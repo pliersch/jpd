@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { AsyncPipe } from '@angular/common';
+import { AfterViewInit, Component } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 import {
   A4WFooterComponent,
   A4WRootComponent,
   ActionContainerComponent,
   AppbarComponent,
+  AuthService,
   FooterComponent,
   FragmentDirective,
+  LoginComponent,
   LogoContainerComponent,
   NavigationDirective,
   ScrollTopActionComponent,
@@ -19,10 +22,20 @@ import {
   standalone: true,
   imports: [RouterOutlet, A4WRootComponent, AppbarComponent,
     LogoContainerComponent, ThemeToggleActionComponent, SubNavComponent, NavigationDirective,
-    ActionContainerComponent, ScrollTopActionComponent, FooterComponent, A4WFooterComponent, FragmentDirective],
+    ActionContainerComponent, ScrollTopActionComponent, FooterComponent, A4WFooterComponent, FragmentDirective, AsyncPipe, LoginComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
 
+  constructor(protected authService: AuthService,
+              private router: Router) { }
+
+  ngAfterViewInit(): void {
+    this.authService.correctPassword$.subscribe((correct: boolean) => {
+      if (!correct) {
+        this.router.navigateByUrl('/');
+      }
+    })
+  }
 }

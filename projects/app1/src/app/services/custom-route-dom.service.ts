@@ -12,9 +12,7 @@ export class CustomRouteDomService {
       name: 'ROOT',
       path: '',
       children: [
-        {
-          name: 'Home', path: 'home', children: [], fragments: ['#top']
-        },
+        // {name: 'Home', path: 'home', children: [], fragments: ['#top']},
         {name: 'Galerie', path: 'gallery', children: []},
         {name: 'Blog', path: 'blog', children: []},
         {name: 'Team', path: 'team', children: []},

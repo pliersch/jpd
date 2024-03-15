@@ -14,7 +14,8 @@ const galleryRoutes = () => import('@app1/pages/gallery/gallery.routes');
 
 export const ROUTES: Route[] = [
   // components
-  {path: 'home', title: 'Demo Home', loadComponent: home},
+  {path: '', title: ' Home', loadComponent: home},
+  // {path: 'home', title: 'Demo Home', loadComponent: home},
   {path: 'team', title: 'Demo Team', loadComponent: team},
   {path: 'contact', title: 'Demo Kontakt', loadComponent: contact},
   {path: 'forest', title: 'Demo Parallax', loadComponent: forest},
@@ -27,5 +28,5 @@ export const ROUTES: Route[] = [
   {path: 'animation', loadChildren: animationRoutes},
   {path: 'service', loadChildren: serviceRoutes},
 
-  {path: '**', redirectTo: 'home', pathMatch: 'full'},
+  {path: '**', redirectTo: '', pathMatch: 'full'},
 ];

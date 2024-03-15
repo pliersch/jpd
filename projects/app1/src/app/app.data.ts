@@ -62,13 +62,6 @@ export const appData: AppConfig = {
               openingHours: company.openingHours
             }
           },
-        ]
-      },
-      //////////////////////////////////////////////////////////
-      //       HOME PAGE
-      //////////////////////////////////////////////////////////
-      {
-        url: 'home', data: [
           //////////////////////////////////////////////////////////
           //                  Landing
           //////////////////////////////////////////////////////////
@@ -273,9 +266,10 @@ export const appData: AppConfig = {
               title: 'Unsere Skills',
               subtitle: 'Eine kleine Auswahl'
             }
-          },
+          }
         ]
       },
+
 
       //////////////////////////////////////////////////////////
       //       TEAM PAGE
