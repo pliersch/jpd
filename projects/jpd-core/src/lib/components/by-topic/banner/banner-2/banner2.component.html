@@ -2,7 +2,8 @@
   <div class="container-xl">
     <div class="row position-relative">
       <ng-container *ngFor="let item of model.items; let i = index">
-        <div class="slider" *ngIf="current === i" @fade>
+        <!--        <div class="slider" *ngIf="current === i" @fade>-->
+        <div class="slider" *ngIf="current === i">
           <div class="col py-7 z-2 mx-auto overflow-hidden rounded-3 position-relative"
                [style.background-color]="color">
             <div class="pseudo-bg-img z-n1">
