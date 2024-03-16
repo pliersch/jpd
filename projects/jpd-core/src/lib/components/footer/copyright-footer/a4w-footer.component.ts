@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   template: `
-      <!--    <div class="container no-padding-tb">-->
-      <a class="link flex center-content bg-contrast" href="https://apps4web.de"
-         target="_blank">© 2023 apps4web.de</a>
-      <!--    </div>-->
+    <!--    <div class="container no-padding-tb">-->
+    <a class="link flex center-content theme-contrast" href="https://apps4web.de"
+       target="_blank">© 2023 apps4web.de</a>
+    <!--    </div>-->
   `,
   styles: []
 })

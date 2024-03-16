@@ -1,18 +1,18 @@
 <section>
   <div class="container-xl">
-    <div class="row position-relative">
+    <div class="row">
       <ng-container *ngFor="let item of model.items; let i = index">
         <!--        <div class="slider" *ngIf="current === i" @fade>-->
         <div class="slider" *ngIf="current === i">
           <div class="col py-7 z-2 mx-auto overflow-hidden rounded-3 position-relative"
+               [style.color]="textColor"
                [style.background-color]="color">
             <div class="pseudo-bg-img z-n1">
               <img [src]="item.bgImageUrl" alt="Hintergrundbild zum Artikel"/>
             </div>
             <span class="mask opacity-10 z-index-0 rounded-end-3"
                   [style.background-image]='"radial-gradient(280px circle at 60% 50%, "
-                  + alphaColor + " 0," + color + " 100%)"'
-            ></span>
+                  + alphaColor + " 0," + color + " 100%)"'></span>
             <div class="row position-relative z-3">
               <div class="col-6 px-5">
                 <p> {{ item.contentText }} </p>
