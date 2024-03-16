@@ -1,8 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { LandingSplashComponent } from '@app1/components/landing-splash/landing-splash.component';
-import { FragmentDirective, ToggleThemeDirective } from 'jpd-core';
-
 import {
   A4WFooterComponent,
   AbstractDefaultPageComponent,
@@ -11,7 +9,7 @@ import {
   Card31Component,
   Card42Component,
   Card43Component,
-  FooterComponent,
+  FragmentDirective,
   GMapsIframeComponent,
   ImageGrid321Component,
   LinkFooterDecoratorComponent,
@@ -19,7 +17,8 @@ import {
   ParallaxSectionComponent,
   SectionComponent,
   TextFooterDecoratorComponent,
-  TitleSubtitleDecoratorComponent
+  TitleSubtitleDecoratorComponent,
+  ToggleThemeDirective
 } from 'jpd-core';
 
 
@@ -30,7 +29,6 @@ import {
     CommonModule,
     Parallax1Component,
     GMapsIframeComponent,
-    FooterComponent,
     A4WFooterComponent,
     FragmentDirective,
     Card31Component,

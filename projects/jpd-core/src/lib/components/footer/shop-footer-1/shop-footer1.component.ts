@@ -5,7 +5,7 @@ import { FragmentDirective } from '../../../common';
 import { Address } from '../../../content';
 import { BaseComponent } from '../../core/base/base.component';
 
-export interface FooterModel {
+export interface ShopFooter1Model {
   address: Address;
   phone: string;
   email: string;
@@ -13,13 +13,13 @@ export interface FooterModel {
 }
 
 @Component({
-  selector: 'a4w-footer',
+  selector: 'a4w-shop-footer-1',
   standalone: true,
   imports: [CommonModule, MatIconModule],
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  templateUrl: './shop-footer1.component.html',
+  styleUrls: ['./shop-footer1.component.scss']
 })
-export class FooterComponent extends BaseComponent<FooterModel> implements OnInit {
+export class ShopFooter1Component extends BaseComponent<ShopFooter1Model> implements OnInit {
 
   @Input()
   headlineColor: string;

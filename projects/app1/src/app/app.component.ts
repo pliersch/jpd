@@ -7,12 +7,12 @@ import {
   ActionContainerComponent,
   AppbarComponent,
   AuthService,
-  FooterComponent,
   FragmentDirective,
   LoginComponent,
   LogoContainerComponent,
   NavigationDirective,
   ScrollTopActionComponent,
+  SmallFooter1Component,
   SubNavComponent,
   ThemeToggleActionComponent,
 } from 'jpd-core';
@@ -22,7 +22,7 @@ import {
   standalone: true,
   imports: [RouterOutlet, A4WRootComponent, AppbarComponent,
     LogoContainerComponent, ThemeToggleActionComponent, SubNavComponent, NavigationDirective,
-    ActionContainerComponent, ScrollTopActionComponent, FooterComponent, A4WFooterComponent, FragmentDirective, AsyncPipe, LoginComponent],
+    ActionContainerComponent, ScrollTopActionComponent, A4WFooterComponent, FragmentDirective, AsyncPipe, LoginComponent, SmallFooter1Component],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
