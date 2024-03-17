@@ -20,7 +20,7 @@
   <div class="row">
     <div class="col">
       <mat-form-field class="full-width">
-        <input matInput placeholder="Email*" type="email" formControlName="email">
+        <input matInput placeholder="Email*" autocomplete="email" type="email" formControlName="email">
         <mat-error *ngIf="contactForm.controls['email'].hasError('required')">
           Email fehlt
         </mat-error>
@@ -33,7 +33,7 @@
   <div class="row">
     <div class="col">
       <mat-form-field class="full-width">
-        <input matInput placeholder="Telefonnummer" type="tel" formControlName="phone">
+        <input matInput placeholder="Telefonnummer" autocomplete="phone" type="tel" formControlName="phone">
         <!--        <mat-error *ngIf="contactForm.controls['phone'].hasError('required')">-->
         <!--          TODO validate phone number-->
         <!--        </mat-error>-->

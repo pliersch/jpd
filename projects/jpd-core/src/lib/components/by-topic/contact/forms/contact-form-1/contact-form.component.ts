@@ -29,7 +29,6 @@ export class ContactFormComponent implements OnInit, OnDestroy {
     this.subscription = this.contactForm.statusChanges.subscribe(result => {
       this.valid = result === 'VALID';
     });
-    // this.setupForm();
   }
 
   ngOnDestroy(): void {
@@ -47,9 +46,9 @@ export class ContactFormComponent implements OnInit, OnDestroy {
       // todo improve regex (01514 1122333 ok, 01514-1122333 ok, but 015141122333 not ok)
       // autoformat !?
       phone: [null/*, Validators.pattern(/(\+49|0)([- ()]?\d[- ()]?){6,11}$/g)*/],
-      company: [null, Validators.required],
+      company: [null],
       message: [null, Validators.required],
-      checked: [null, Validators.required],
+      checked: [null, Validators.requiredTrue],
     });
   }
 
