@@ -53,7 +53,7 @@ export class EndlessGridComponent extends BaseComponent<EndlessGridModel> implem
   }
 
   openImageViewer(index: number): void {
-    void this.router.navigateByUrl('gallery/images/' + index)
+    void this.router.navigateByUrl('galerie/images/' + index)
   }
 
 }

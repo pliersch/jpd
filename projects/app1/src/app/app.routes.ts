@@ -17,12 +17,12 @@ export const ROUTES: Route[] = [
   {path: '', title: ' Home', loadComponent: home},
   // {path: 'home', title: 'Demo Home', loadComponent: home},
   {path: 'team', title: 'Demo Team', loadComponent: team},
-  {path: 'contact', title: 'Demo Kontakt', loadComponent: contact},
+  {path: 'kontakt', title: 'Demo Kontakt', loadComponent: contact},
   {path: 'forest', title: 'Demo Parallax', loadComponent: forest},
-  {path: 'privacy', title: 'Demo Datenschutz', loadComponent: privacy},
+  {path: 'datenschutz', title: 'Demo Datenschutz', loadComponent: privacy},
 
   // routes
-  {path: 'gallery', loadChildren: galleryRoutes},
+  {path: 'galerie', loadChildren: galleryRoutes},
   {path: 'blog', loadChildren: blogRoutes},
   {path: 'youtube', loadChildren: youtubeRoutes},
   {path: 'animation', loadChildren: animationRoutes},

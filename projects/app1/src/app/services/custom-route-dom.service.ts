@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { IsActiveMatchOptions } from '@angular/router';
-import { Route } from 'jpd-core';
+import { Route, RouteDomService } from 'jpd-core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CustomRouteDomService {
+export class CustomRouteDomService extends RouteDomService {
 
   getRouteDom(): Route {
     return {
@@ -13,21 +13,21 @@ export class CustomRouteDomService {
       path: '',
       children: [
         // {name: 'Home', path: 'home', children: [], fragments: ['#top']},
-        {name: 'Galerie', path: 'gallery', children: []},
+        {name: 'Galerie', path: 'galerie', children: []},
         {name: 'Blog', path: 'blog', children: []},
         {name: 'Team', path: 'team', children: []},
         {name: 'Youtube', path: 'youtube', children: []},
         {
           name: 'Service', path: 'service', children: [
-            {name: 'Gesundheit', path: 'health', children: []},
-            {name: 'Pflege', path: 'care', children: [],},
-            {name: 'Kräuter', path: 'herbal', children: []},
+            {name: 'Gesundheit', path: 'gesundheit', children: []},
+            {name: 'Pflege', path: 'pflege', children: [],},
+            {name: 'Notfall', path: 'notfall', children: []},
           ], fragments: ['#top']
         },
         {name: 'Animation', path: 'animation', children: []},
-        {name: 'Kontakt', path: 'contact', children: []},
+        // {name: 'Kontakt', path: 'kontakt', children: []},
         {name: 'Forest', path: 'forest', children: []},
-        {name: 'Datenschutz', path: 'privacy', children: []},
+        // {name: 'Datenschutz', path: 'datenschutz', children: []},
       ]
     }
   }

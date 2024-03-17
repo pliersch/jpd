@@ -24,7 +24,8 @@ import {
   PageScrollService,
   Route,
   RouteDomService,
-  Themes, ThemeToggleChange,
+  Themes,
+  ThemeToggleChange,
   ToggleSidenavService
 } from '../../../../common';
 import { NavigationDirective } from '../../../navigation/directives/navigation.directive';
