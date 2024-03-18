@@ -87,7 +87,6 @@ export class AppbarComponent implements OnInit/*, AfterViewInit*/ {
     this._transparent = this.transparent;
     this.isHandset$ = this.breakpointObserver.observe(Breakpoints.Handset)
       .pipe(
-        // tap(res => this.updateCssVar(res.matches)),
         map(result => result.matches)
       );
   }
@@ -102,11 +101,11 @@ export class AppbarComponent implements OnInit/*, AfterViewInit*/ {
     }
   }
 
-  showSubNav(route: Route, event: MouseEvent): void {
-    this.navigationDirective?.show(route, (event.target as Element)?.getBoundingClientRect())
+  showSubNav(route: Route, x: number): void {
+    this.navigationDirective?.show(route, x)
   }
 
-  hideSubNav(/*route: Route*/): void {
+  hideSubNav(): void {
     this.navigationDirective?.hide();
   }
 

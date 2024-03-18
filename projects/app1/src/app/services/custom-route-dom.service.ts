@@ -19,9 +19,9 @@ export class CustomRouteDomService extends RouteDomService {
         {name: 'Youtube', path: 'youtube', children: []},
         {
           name: 'Service', path: 'service', children: [
-            {name: 'Gesundheit', path: 'gesundheit', children: []},
-            {name: 'Pflege', path: 'pflege', children: [],},
-            {name: 'Notfall', path: 'notfall', children: []},
+            {name: 'Gesundheit', path: 'health', children: []},
+            {name: 'Pflege', path: 'care', children: [],},
+            {name: 'Kräuter', path: 'herbal', children: []},
           ], fragments: ['#top']
         },
         {name: 'Animation', path: 'animation', children: []},

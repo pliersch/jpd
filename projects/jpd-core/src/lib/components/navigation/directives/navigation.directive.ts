@@ -1,6 +1,5 @@
 import { Directive } from '@angular/core';
 import { Route } from '../../../common';
-import { AppDataService } from '../../../core';
 import { AbstractNavigationComponent } from '../base/behavior/abstract-navigation.component';
 
 @Directive({
@@ -9,15 +8,11 @@ import { AbstractNavigationComponent } from '../base/behavior/abstract-navigatio
 })
 export class NavigationDirective {
 
-  // private routes: Route[] = [];
-
-  constructor(appDataService: AppDataService,
-              public navigationComponent: AbstractNavigationComponent) {
-    // this.routes = appDataService.getRoutesDom();
+  constructor(public navigationComponent: AbstractNavigationComponent) {
   }
 
-  show(route: Route, event: DOMRect): void {
-    this.navigationComponent.show(route, event)
+  show(route: Route, x: number): void {
+    this.navigationComponent.show(route, x)
   }
 
   hide(): void {

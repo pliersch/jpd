@@ -36,11 +36,11 @@
           } @else {
             <!-- multi site. with sub routes -->
             @for (childRoute of route.children; track childRoute.name) {
-              <a mat-flat-button class="transparent-background text-capitalize demo-btn-color"
+              <a #ref mat-flat-button class="transparent-background text-capitalize demo-btn-color"
                  routerLinkActive="active" [routerLink]="[route.path +'/'+ childRoute.path]"
                  [routerLinkActiveOptions]="linkActiveOptions"
-                 (click)="showSubNav(childRoute, $event)"
-                 (mouseenter)="showSubNav(childRoute, $event)"
+                 (click)="showSubNav(childRoute, ref._elementRef.nativeElement.getBoundingClientRect().x)"
+                 (mouseenter)="showSubNav(childRoute,ref._elementRef.nativeElement.getBoundingClientRect().x)"
                  (mouseleave)="hideSubNav()">
                 {{ childRoute.name }}
               </a>

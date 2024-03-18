@@ -20,11 +20,10 @@ export abstract class AbstractNavigationComponent {
 
   route$: Observable<Route>;
 
-  show(route: Route, event: DOMRect): void {
+  show(route: Route, x: number): void {
     this.route$ = of(route);
-
     clearTimeout(this.timeoutId);
-    this.left = event.x + 'px';
+    this.left = x + 'px';
     this.visible = true;
   }
 

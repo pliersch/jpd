@@ -1,12 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import {
-  AbstractDefaultPageComponent,
-  FragmentDirective,
-  Parallax7Component,
-  Privacy1Component,
-  SectionComponent
-} from 'jpd-core';
+import { AbstractDefaultPageComponent, FragmentDirective, Parallax7Component, SectionComponent } from 'jpd-core';
 
 @Component({
   selector: 'app-forest-page',
@@ -15,7 +9,6 @@ import {
     CommonModule,
     FragmentDirective,
     SectionComponent,
-    Privacy1Component,
     Parallax7Component,
   ],
   templateUrl: './forest-page.component.html',

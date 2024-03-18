@@ -24,7 +24,7 @@ export class SmallFooter1Component /*extends BaseComponent<Small1FooterModel> */
 
   routes: Route[] = [
     {name: 'Kontakt', path: 'kontakt', children: []},
-    {name: 'Impressum', path: 'impressum', children: []},
+    // {name: 'Impressum', path: 'impressum', children: []},
     {name: 'Datenschutz', path: 'datenschutz', children: []},
   ];
 

@@ -8,9 +8,9 @@ const herbal = () => import('./herbal/herbal-page.component').then((x) => x.Herb
 export default [
   {
     path: '', component: ServicesPageComponent, children: [
-      {path: 'pflege', loadComponent: care, data: {animation: 'isRight'}},
-      {path: 'gesundheit', loadComponent: health, data: {animation: 'isLeft'}},
-      {path: 'notfall', loadComponent: herbal, data: {animation: 'isFoo'}},
+      {path: 'care', loadComponent: care, data: {animation: 'isRight'}},
+      {path: 'health', loadComponent: health, data: {animation: 'isLeft'}},
+      {path: 'herbal', loadComponent: herbal, data: {animation: 'isFoo'}},
       {path: '**', redirectTo: 'health', pathMatch: 'full'},
     ]
   }
