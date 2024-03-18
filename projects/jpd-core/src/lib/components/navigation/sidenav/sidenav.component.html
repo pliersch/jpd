@@ -2,33 +2,33 @@
 
   <div class="nav-container">
     <mat-nav-list>
-<!--      <nav>-->
-<!--        @if (route$ | async; as route) {-->
-<!--          @if (route.children.length === 1) {-->
-<!--            @for (f of route.children[0].fragments; track f) {-->
-<!--              <a mat-list-item class="text-capitalize my-2"-->
-<!--                 [routerLinkActiveOptions]="linkActiveOptions" [fragment]="f"-->
-<!--                 routerLinkActive="active-route" [routerLink]="[route.path]">{{ f }}-->
-<!--              </a>-->
-<!--            }-->
-<!--          } @else {-->
-<!--            &lt;!&ndash; multi site. with sub routes &ndash;&gt;-->
-<!--            @for (childRoute of route.children; track childRoute.name) {-->
-<!--              <a mat-list-item class="text-capitalize"-->
-<!--                 [routerLinkActiveOptions]="linkActiveOptions"-->
-<!--                 routerLinkActive="active-route" [routerLink]="[route.path +'/'+ childRoute.path]">-->
-<!--                {{ childRoute.name }}-->
-<!--              </a>-->
-<!--            }-->
-<!--          }-->
-<!--        }-->
-<!--      </nav>-->
+      <nav>
+        @if (route$ | async; as route) {
+          @if (route.children.length === 1) {
+            @for (f of route.children[0].fragments; track f) {
+              <a mat-list-item class="text-capitalize my-2"
+                 [routerLinkActiveOptions]="linkActiveOptions" [fragment]="f"
+                 routerLinkActive="active-route" [routerLink]="[route.path]">{{ f }}
+              </a>
+            }
+          } @else {
+            <!-- multi site. with sub routes -->
+            @for (childRoute of route.children; track childRoute.name) {
+              <a mat-list-item class="text-capitalize"
+                 [routerLinkActiveOptions]="linkActiveOptions"
+                 routerLinkActive="active-route" [routerLink]="[route.path +'/'+ childRoute.path]">
+                {{ childRoute.name }}
+              </a>
+            }
+          }
+        }
+      </nav>
     </mat-nav-list>
   </div>
 
   <div class="action-container">
-<!--    <a4w-theme-toggle-action/>-->
-<!--    <a4w-phone-action/>-->
+    <a4w-theme-toggle-action/>
+    <a4w-phone-action/>
   </div>
 
 </div>
