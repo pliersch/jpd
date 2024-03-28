@@ -6,13 +6,17 @@
     "build:app1": "ng build --project=app1",
     "watch:app1": "ng build --project=app1 --watch --configuration development",
     "build:stats": "ng build --project=app1 --stats-json",
+    "start:kohts": "ng serve --project=kohts-karsten --port=4202",
+    "build:kohts": "ng build --project=kohts-karsten",
+    "watch:kohts": "ng build --project=kohts-karsten --watch --configuration development",
     "build:lib-core": "ng build --project=jpd-core",
     "watch:lib-core": "ng build --project=jpd-core --watch --configuration development",
     "build:lib-youtube": "ng build --project=jpd-youtube",
     "serve:ssr:app1": "node dist/app1/server/server.mjs",
     "serve:app1": "node dist/app1/browser/index.html",
     "serve-app1-new": "http-server ./dist/app1/browser -a 127.0.0.1 -p 4301",
-    "test": "ng test"
+    "test": "ng test",
+    "serve:ssr:kohts-karsten": "node dist/kohts-karsten/server/server.mjs"
   },
   "private": true,
   "dependencies": {

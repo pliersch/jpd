@@ -31,9 +31,8 @@ export class BackActionComponent {
   }
 
   back(): void {
-    console.log('BackActionComponent back: ',)
-    this.navigationService.goBack();
-    // this.location.back()
+    // this.navigationService.goBack();
+    this.location.back()
     // this.router.navigate(['/'])
     // console.log('BackActionComponent back: ',)
     // if (window.history.length > 1) {
