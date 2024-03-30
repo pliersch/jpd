@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {
-  A4WFooterComponent,
   A4WRootComponent,
   ActionContainerComponent,
   AppbarComponent,
@@ -9,6 +8,7 @@ import {
   NavigationService,
   PhoneActionComponent,
   ShopFooter1Component,
+  SmallFooter2Component,
   StickyAppbarComponent,
   ThemeToggleActionComponent
 } from 'jpd-core';
@@ -25,9 +25,9 @@ import {
     ActionContainerComponent,
     ThemeToggleActionComponent,
     LogoContainerComponent,
-    A4WFooterComponent,
     ShopFooter1Component,
     FragmentDirective,
+    SmallFooter2Component,
   ],
   standalone: true
 })

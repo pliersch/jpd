@@ -1,0 +1,42 @@
+<!--<footer class="footer theme-contrast">-->
+<!--  <div class="container">-->
+<!--    <div class="row">-->
+<!--      <div class="col d-flex justify-content-center">-->
+<!--        <nav>-->
+<!--          @for (route of routes; track route) {-->
+<!--            <a mat-flat-button class="transparent-background text-capitalize"-->
+<!--               [routerLink]="route.path">-->
+<!--              {{ route.name }}-->
+<!--            </a>-->
+<!--          }-->
+<!--        </nav>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</footer>-->
+
+<footer class="footer footer-black">
+  <div class="container">
+
+    <div class="footer-row">
+      <nav>
+        @for (route of routes; track route) {
+          <a mat-flat-button class="transparent-background text-capitalize"
+             [routerLink]="route.path">
+            {{ route.name }}
+          </a>
+        }
+      </nav>
+      <div class="d-flex align-items-center ms-auto">
+        <p class="m-0 me-1"> © 2024, made with</p>
+        <mat-icon class="icon-display me-1" color="warn" aria-hidden="false"
+                  aria-label="Example home icon" fontIcon="favorite"></mat-icon>
+        <!--        <p class="m-0">-->
+        <!--          by Creative Tim-->
+        <!--        </p>-->
+        <a class="link flex center-content theme-contrast" href="https://apps4web.de"
+           target="_blank">by apps4web.de</a>
+      </div>
+    </div>
+  </div>
+</footer>

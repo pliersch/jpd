@@ -23,7 +23,7 @@
       <div class="d-flex align-items-center w-150px">
         <ng-content select="[logo]"/>
       </div>
-      <div #navContainer>
+      <nav #navContainer>
         @if (route$ | async; as route) {
           @if (route.children.length === 1) {
             @for (childRoute of route.children[0].fragments; track childRoute) {
@@ -47,7 +47,7 @@
             }
           }
         }
-      </div>
+      </nav>
       @if (actionsVisible) {
         <div class="px-2 d-flex align-items-center flex-row-reverse w-150px">
           <ng-content select="[action]"></ng-content>

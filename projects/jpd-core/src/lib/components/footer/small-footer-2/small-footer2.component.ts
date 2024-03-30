@@ -5,16 +5,16 @@ import { MatIconModule } from "@angular/material/icon";
 import { RouterLink } from '@angular/router';
 import { Route } from '../../../common';
 
-export interface Small1FooterModel {}
+export interface Small2FooterModel {}
 
 @Component({
-  selector: 'a4w-small-footer-1',
+  selector: 'a4w-small-footer-2',
   standalone: true,
   imports: [CommonModule, MatIconModule, MatAnchor, RouterLink],
-  templateUrl: './small-footer1.component.html',
-  styleUrls: ['./small-footer1.component.scss']
+  templateUrl: './small-footer2.component.html',
+  styleUrls: ['./small-footer2.component.scss']
 })
-export class SmallFooter1Component /*extends BaseComponent<Small1FooterModel> */ {
+export class SmallFooter2Component /*extends BaseComponent<Small1FooterModel> */ {
 
   routes: Route[] = [
     {name: 'Kontakt', path: 'kontakt', children: []},

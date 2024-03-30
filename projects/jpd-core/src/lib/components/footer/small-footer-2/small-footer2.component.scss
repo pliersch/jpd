@@ -1,0 +1,18 @@
+.footer {
+
+  padding: 1.125rem 0;
+  text-align: center;
+
+  nav {
+    display: inline-block;
+    float: left;
+  }
+
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
