@@ -67,6 +67,9 @@ export { TitleTitleSubImgComponent } from './by-topic/content-adapter/title-titl
 export { ContactCompanyInfoComponent } from './by-topic/contact/info/company-info/contact-company-info.component';
 export { ContactFormComponent } from './by-topic/contact/forms/contact-form-1/contact-form.component';
 export { ContactCompanyComponent } from './by-topic/contact/templates/standard-1/contact-company.component';
+export {
+  MapsOpeningContactComponent
+} from './by-topic/contact/templates/maps-opening-contact/maps-opening-contact.component';
 
 export { SlideshowComponent } from './by-topic/gallery/slideshow/slideshow.component'
 export { EndlessGridComponent, EndlessGridModel } from './by-topic/gallery/endless-grid/endless-grid.component'
