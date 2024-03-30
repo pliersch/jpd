@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { FragmentDirective, ImageFallbackDirective } from '../../../../common';
 import { BaseComponent } from '../../../core/base/base.component';
@@ -17,7 +18,7 @@ export interface Banner1Model {
 @Component({
   selector: 'a4w-banner-1',
   standalone: true,
-  imports: [CommonModule, ImageFallbackDirective, RouterLink],
+  imports: [CommonModule, ImageFallbackDirective, RouterLink, MatIcon],
   templateUrl: './banner1.component.html',
   styleUrl: './banner1.component.scss'
 })

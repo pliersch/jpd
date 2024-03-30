@@ -20,9 +20,12 @@
           <div class="col-xl-2 col-12 px-xl-0 px-5 my-xl-auto">
             <h3 class="mt-xl-0 mt-5">{{ model.title }}</h3>
             <p class="text-sm opacity-8"> {{ model.subtitle }}</p>
-            <a [routerLink]="[model.linkUrl]" class="accent link">{{ model.linkText }}
-              <i class="material-icon" aria-hidden="true">east</i>
-            </a>
+            <div class="d-flex align-items-center">
+              <a [routerLink]="[model.linkUrl]" class="accent link me-1">{{ model.linkText }}
+              </a>
+              <mat-icon class="icon-display me-1" color="accent" aria-hidden="false"
+                        aria-label="Example home icon" fontIcon="east"></mat-icon>
+            </div>
           </div>
         </div>
       </div>
