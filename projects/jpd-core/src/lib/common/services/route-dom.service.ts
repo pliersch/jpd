@@ -9,5 +9,9 @@ export abstract class RouteDomService {
 
   abstract getRouteDom(): Route;
 
+  abstract getAppbarRoutes(): Route;
+
+  abstract getFooterRoutes(): Route;
+
   abstract getIsActiveMatchOptions(): IsActiveMatchOptions;
 }

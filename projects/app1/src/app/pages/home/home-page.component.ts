@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { LandingSplashComponent } from '@app1/components/landing-splash/landing-splash.component';
 import {
-  A4WFooterComponent,
   AbstractDefaultPageComponent,
   Banner1Component,
   Banner2Component,
@@ -29,7 +28,6 @@ import {
     CommonModule,
     Parallax1Component,
     GMapsIframeComponent,
-    A4WFooterComponent,
     FragmentDirective,
     Card31Component,
     ImageGrid321Component,

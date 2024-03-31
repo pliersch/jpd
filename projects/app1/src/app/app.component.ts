@@ -2,7 +2,6 @@ import { AsyncPipe } from '@angular/common';
 import { AfterViewInit, Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import {
-  A4WFooterComponent,
   A4WRootComponent,
   ActionContainerComponent,
   AppbarComponent,
@@ -22,7 +21,7 @@ import {
   standalone: true,
   imports: [RouterOutlet, A4WRootComponent, AppbarComponent,
     LogoContainerComponent, ThemeToggleActionComponent, SubNavComponent, NavigationDirective,
-    ActionContainerComponent, ScrollTopActionComponent, A4WFooterComponent, FragmentDirective, AsyncPipe, LoginComponent, SmallFooter1Component],
+    ActionContainerComponent, ScrollTopActionComponent, FragmentDirective, AsyncPipe, LoginComponent, SmallFooter1Component],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

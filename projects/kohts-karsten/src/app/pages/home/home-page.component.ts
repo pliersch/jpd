@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {
-  A4WFooterComponent,
   AboutUsComponent,
   AbstractDefaultPageComponent,
   Card31Component,
@@ -14,7 +13,7 @@ import {
   SectionComponent,
   TitleSubtitleDecoratorComponent
 } from 'jpd-core';
-import { LandingSplashComponent } from './components/landing-splash/landing-splash.component';
+import { LandingSplashComponent } from './landing-splash/landing-splash.component';
 
 
 @Component({
@@ -24,8 +23,6 @@ import { LandingSplashComponent } from './components/landing-splash/landing-spla
     CommonModule,
     Parallax1Component,
     GMapsIframeComponent,
-
-    A4WFooterComponent,
     Card41Component,
     AboutUsComponent,
     FragmentDirective,
@@ -36,10 +33,10 @@ import { LandingSplashComponent } from './components/landing-splash/landing-spla
     ParallaxSectionComponent,
     LandingSplashComponent
   ],
-  templateUrl: './page.component.html',
-  styleUrls: ['./page.component.scss']
+  templateUrl: './home-page.component.html',
+  styleUrls: ['./home-page.component.scss']
 })
-export class PageComponent extends AbstractDefaultPageComponent {
+export class HomePageComponent extends AbstractDefaultPageComponent {
 
   constructor() {
     super();

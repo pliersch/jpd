@@ -40,4 +40,12 @@ export class CustomRouteDomService extends RouteDomService {
       fragment: 'ignored',
     };
   }
+
+  getAppbarRoutes(): Route {
+    return {name: 'Kontakt', path: 'kontakt', children: []};
+  }
+
+  getFooterRoutes(): Route {
+    return {name: 'Kontakt', path: 'kontakt', children: []};
+  }
 }

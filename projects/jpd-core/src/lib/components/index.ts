@@ -29,7 +29,7 @@ export { TabNavComponent, TabNavModel } from './container/tab-nav/tab-nav.compon
 
 export { BaseComponent } from './core/base/base.component'
 
-export { A4WFooterComponent } from './footer/copyright-footer/a4w-footer.component'
+export { A4WCopyrightFooter1Component } from './footer/copyright-footer/a4-w-copyright-footer1.component'
 export { ShopFooter1Component, ShopFooter1Model } from './footer/shop-footer-1/shop-footer1.component'
 export { SmallFooter1Component, Small1FooterModel } from './footer/small-footer-1/small-footer1.component'
 export { SmallFooter2Component, Small2FooterModel } from './footer/small-footer-2/small-footer2.component'

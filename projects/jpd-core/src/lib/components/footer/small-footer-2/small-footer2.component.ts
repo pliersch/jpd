@@ -14,7 +14,7 @@ export interface Small2FooterModel {}
   templateUrl: './small-footer2.component.html',
   styleUrls: ['./small-footer2.component.scss']
 })
-export class SmallFooter2Component /*extends BaseComponent<Small1FooterModel> */ {
+export class SmallFooter2Component /*extends BaseComponent<Small2FooterModel> */ {
 
   routes: Route[] = [
     {name: 'Kontakt', path: 'kontakt', children: []},

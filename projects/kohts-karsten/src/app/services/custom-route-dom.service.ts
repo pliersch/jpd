@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { IsActiveMatchOptions } from '@angular/router';
-import { Route } from 'jpd-core';
+import { Route, RouteDomService } from 'jpd-core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CustomRouteDomService {
+export class CustomRouteDomService extends RouteDomService {
 
   getRouteDom(): Route {
     return {
@@ -15,8 +15,17 @@ export class CustomRouteDomService {
         {
           name: 'Home', path: '', children: [],
           fragments: ['top', 'wir', 'service', 'skills', 'maps', 'kontakt']
-        }]
+        }
+      ]
     }
+  }
+
+  getAppbarRoutes(): Route {
+    return {name: 'Datenschutz', path: 'datenschutz', children: []};
+  }
+
+  getFooterRoutes(): Route {
+    return {name: 'Datenschutz', path: '', children: []};
   }
 
   getIsActiveMatchOptions(): IsActiveMatchOptions {
