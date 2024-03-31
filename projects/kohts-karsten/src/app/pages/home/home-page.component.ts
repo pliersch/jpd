@@ -11,6 +11,8 @@ import {
   Parallax1Component,
   ParallaxSectionComponent,
   SectionComponent,
+  ShopFooter1Component,
+  SmallFooter2Component,
   TitleSubtitleDecoratorComponent
 } from 'jpd-core';
 import { LandingSplashComponent } from './landing-splash/landing-splash.component';
@@ -31,7 +33,9 @@ import { LandingSplashComponent } from './landing-splash/landing-splash.componen
     Card31Component,
     TitleSubtitleDecoratorComponent,
     ParallaxSectionComponent,
-    LandingSplashComponent
+    LandingSplashComponent,
+    ShopFooter1Component,
+    SmallFooter2Component
   ],
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
