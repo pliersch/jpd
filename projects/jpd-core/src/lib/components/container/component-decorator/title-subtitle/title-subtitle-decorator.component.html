@@ -5,8 +5,9 @@
         <h1 class="m-0 d-inline-block">{{ model.title }} </h1>
         <div class="floating">
           <a *ngIf="anchor" title="Link to this heading" class="floating-item header-link" aria-hidden="true"
-             [routerLink]="[route]" [fragment]="anchor"><i
-            class="material-icons">link</i></a>
+             [routerLink]="[route]" [fragment]="anchor">
+            <mat-icon svgIcon="link"></mat-icon>
+          </a>
         </div>
       </div>
       <p class="fs-5">{{ model.subtitle }}</p>

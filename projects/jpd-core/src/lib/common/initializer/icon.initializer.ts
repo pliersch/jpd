@@ -4,33 +4,42 @@ import { DomSanitizer } from '@angular/platform-browser';
 export function initIcons(matIconRegistry: MatIconRegistry,
                           domSanitizer: DomSanitizer): () => Promise<void> {
   return () => new Promise(resolve => {
+    const path = './assets/svg/icons/';
     matIconRegistry.addSvgIcon(
-      "brightness",
-      domSanitizer.bypassSecurityTrustResourceUrl("./assets/svg/icons/brightness.svg")
+      'brightness',
+      domSanitizer.bypassSecurityTrustResourceUrl(path + 'brightness.svg')
     );
     matIconRegistry.addSvgIcon(
-      "call",
-      domSanitizer.bypassSecurityTrustResourceUrl("./assets/svg/icons/call.svg")
+      'call',
+      domSanitizer.bypassSecurityTrustResourceUrl(path + 'call.svg')
     );
     matIconRegistry.addSvgIcon(
-      "vertical_align_top",
-      domSanitizer.bypassSecurityTrustResourceUrl("./assets/svg/icons/vertical_align_top.svg")
+      'vertical_align_top',
+      domSanitizer.bypassSecurityTrustResourceUrl(path + 'vertical_align_top.svg')
     );
     matIconRegistry.addSvgIcon(
-      "check",
-      domSanitizer.bypassSecurityTrustResourceUrl("./assets/svg/icons/check.svg")
+      'check',
+      domSanitizer.bypassSecurityTrustResourceUrl(path + 'check.svg')
     );
     matIconRegistry.addSvgIcon(
-      "location_on",
-      domSanitizer.bypassSecurityTrustResourceUrl("./assets/svg/icons/location_on.svg")
+      'location_on',
+      domSanitizer.bypassSecurityTrustResourceUrl(path + 'location_on.svg')
     );
     matIconRegistry.addSvgIcon(
-      "mail",
-      domSanitizer.bypassSecurityTrustResourceUrl("./assets/svg/icons/mail.svg")
+      'mail',
+      domSanitizer.bypassSecurityTrustResourceUrl(path + 'mail.svg')
     );
     matIconRegistry.addSvgIcon(
-      "heart",
-      domSanitizer.bypassSecurityTrustResourceUrl("./assets/svg/icons/heart.svg")
+      'heart',
+      domSanitizer.bypassSecurityTrustResourceUrl(path + 'heart.svg')
+    );
+    matIconRegistry.addSvgIcon(
+      'link',
+      domSanitizer.bypassSecurityTrustResourceUrl(path + 'link.svg')
+    );
+    matIconRegistry.addSvgIcon(
+      'menu',
+      domSanitizer.bypassSecurityTrustResourceUrl(path + 'menu.svg')
     );
     resolve();
   });
