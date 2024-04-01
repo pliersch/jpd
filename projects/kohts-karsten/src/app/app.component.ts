@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import {
   A4WRootComponent,
   ActionContainerComponent,
@@ -12,6 +12,7 @@ import {
   StickyAppbarComponent,
   ThemeToggleActionComponent
 } from 'jpd-core';
+import * as CookieConsent from 'vanilla-cookieconsent';
 
 @Component({
   selector: 'app-root',
@@ -31,9 +32,14 @@ import {
   ],
   standalone: true
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
 
   constructor(navigationService: NavigationService) {
     navigationService.startSaveHistory();
+  }
+
+  ngAfterViewInit(): void {
+    CookieConsent.show();
+    // CookieConsent.showPreferences();
   }
 }

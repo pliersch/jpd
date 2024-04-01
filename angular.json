@@ -30,7 +30,8 @@
               "projects/app1/src/assets"
             ],
             "styles": [
-              "projects/app1/src/styles.scss"
+              "projects/app1/src/styles.scss",
+              "node_modules/vanilla-cookieconsent/dist/cookieconsent.css"
             ],
             "scripts": [],
             "server": "projects/app1/src/main.server.ts"
@@ -131,100 +132,6 @@
         }
       }
     },
-    "non-ssr": {
-      "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
-      "root": "projects/non-ssr",
-      "sourceRoot": "projects/non-ssr/src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:application",
-          "options": {
-            "outputPath": "dist/non-ssr",
-            "index": "projects/non-ssr/src/index.html",
-            "browser": "projects/non-ssr/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
-            "tsConfig": "projects/non-ssr/tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              "projects/non-ssr/src/favicon.ico",
-              "projects/non-ssr/src/assets"
-            ],
-            "styles": [
-              "projects/non-ssr/src/styles.scss"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ],
-              "outputHashing": "all"
-            },
-            "development": {
-              "optimization": false,
-              "extractLicenses": false,
-              "sourceMap": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
-            "production": {
-              "buildTarget": "non-ssr:build:production"
-            },
-            "development": {
-              "buildTarget": "non-ssr:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "buildTarget": "non-ssr:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "projects/non-ssr/tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              "projects/non-ssr/src/favicon.ico",
-              "projects/non-ssr/src/assets"
-            ],
-            "styles": [
-              "projects/non-ssr/src/styles.scss"
-            ],
-            "scripts": []
-          }
-        }
-      }
-    },
     "jpd-youtube": {
       "projectType": "library",
       "root": "projects/jpd-youtube",
@@ -285,7 +192,8 @@
               "projects/kohts-karsten/src/assets"
             ],
             "styles": [
-              "projects/kohts-karsten/src/styles.scss"
+              "projects/kohts-karsten/src/styles.scss",
+              "node_modules/vanilla-cookieconsent/dist/cookieconsent.css"
             ],
             "scripts": [],
             "server": "projects/kohts-karsten/src/main.server.ts",

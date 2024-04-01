@@ -3,11 +3,12 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 import { APP_INITIALIZER, ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, provideClientHydration } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { AppDataService, CssDomService, initApplication, initIcons, initTheme, RouteDomService } from 'jpd-core';
 import { SsrCookieService } from 'ngx-cookie-service-ssr';
+import { initCookieConsent } from '../../../jpd-core/src/lib/common/initializer/cookie-consent.initializer';
 import { ROUTES } from './app.routes';
 import { CustomAppDataService } from './services/custom-app-data.service';
 import { CustomRouteDomService } from './services/custom-route-dom.service';
@@ -16,6 +17,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     importProvidersFrom(GoogleMapsModule),
     provideAnimations(),
+    provideClientHydration(),
     provideHttpClient(withFetch()),
     provideRouter(ROUTES),
     {
@@ -25,6 +27,7 @@ export const appConfig: ApplicationConfig = {
       deps: [SsrCookieService, CssDomService, MediaMatcher]
     },
     {provide: APP_INITIALIZER, useFactory: initApplication, multi: true, deps: [BreakpointObserver]},
+    {provide: APP_INITIALIZER, useFactory: initCookieConsent, multi: true},
     {provide: APP_INITIALIZER, useFactory: initIcons, multi: true, deps: [MatIconRegistry, DomSanitizer]},
     {provide: RouteDomService, useClass: CustomRouteDomService},
     {provide: AppDataService, useClass: CustomAppDataService},

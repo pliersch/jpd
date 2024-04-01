@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { MatAnchor } from '@angular/material/button';
 import { MatIconModule } from "@angular/material/icon";
 import { RouterLink } from '@angular/router';
+import * as CookieConsent from 'vanilla-cookieconsent';
 import { Route } from '../../../common';
 
 export interface Small2FooterModel {}
@@ -26,4 +27,7 @@ export class SmallFooter2Component /*extends BaseComponent<Small2FooterModel> */
   //   super('Footer', fragment)
   // }
 
+  openCookieConsent(): void {
+    CookieConsent.showPreferences();
+  }
 }
