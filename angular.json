@@ -196,7 +196,11 @@
               "node_modules/vanilla-cookieconsent/dist/cookieconsent.css"
             ],
             "scripts": [],
-            "server": "projects/kohts-karsten/src/main.server.ts"
+            "server": "projects/kohts-karsten/src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "projects/kohts-karsten/server.ts"
+            }
           },
           "configurations": {
             "production": {
