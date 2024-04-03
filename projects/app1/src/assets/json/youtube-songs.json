@@ -45,6 +45,36 @@
       "tags": []
     },
     {
+      "artist": "Steve Jablonsky",
+      "title": "Tessa",
+      "posterUrl": "/assets/img/youtube/Steve Jablonsky - Tessa.webp",
+      "id": "_tuLd3h19Fw",
+      "tags": [
+        "Orchester",
+        "Instrumental"
+      ]
+    },
+    {
+      "artist": "Steve Jablonsky",
+      "title": "We Have to Go",
+      "posterUrl": "/assets/img/youtube/Steve Jablonsky - We Have to Go.webp",
+      "id": "eob6JuOvMCU",
+      "tags": [
+        "Orchester",
+        "Instrumental"
+      ]
+    },
+    {
+      "artist": "Steve Jablonsky",
+      "title": "Sacrifice",
+      "posterUrl": "/assets/img/youtube/Steve Jablonsky - Sacrifice.webp",
+      "id": "tpa0uDCHuY8",
+      "tags": [
+        "Orchester",
+        "Instrumental"
+      ]
+    },
+    {
       "artist": "Emma Kok & André Rieu",
       "title": "Voilà",
       "posterUrl": "/assets/img/youtube/emma kok - voilà.webp",
@@ -93,6 +123,24 @@
       "title": "Way",
       "posterUrl": "/assets/img/youtube/Ennja - Way.webp",
       "id": "HeBEwUkMQUo",
+      "tags": [
+        "Elektro"
+      ]
+    },
+    {
+      "artist": "Gustavo Santaolalla",
+      "title": "Babel",
+      "posterUrl": "/assets/img/youtube/Gustavo Santaolalla - Babel.webp",
+      "id": "JXVnFQVAAk4",
+      "tags": [
+        "Elektro"
+      ]
+    },
+    {
+      "artist": "Ben Böhmer",
+      "title": "Beyond Beliefs",
+      "posterUrl": "/assets/img/youtube/Ben Böhmer - Beyond Beliefs.webp",
+      "id": "aVTalm2VjDc",
       "tags": [
         "Elektro"
       ]
@@ -357,6 +405,15 @@
       ]
     },
     {
+      "artist": "Billy Boyd",
+      "title": "The Last Goodbye (The Hobbit)",
+      "posterUrl": "/assets/img/youtube/The Last Goodbye - Billy Boyd - The Hobbit.webp",
+      "id": "q8ir8rVl2Z4",
+      "tags": [
+        "Film"
+      ]
+    },
+    {
       "artist": "Roudeep",
       "title": "Azerbaijan",
       "posterUrl": "/assets/img/youtube/Roudeep - Azerbaijan.webp",
@@ -364,6 +421,13 @@
       "tags": [
         "Elektro"
       ]
+    },
+    {
+      "artist": "Lana del Rey",
+      "title": "Summer Wine",
+      "posterUrl": "/assets/img/youtube/Lana del Rey - Summer Wine.webp",
+      "id": "1OEron4rXfk",
+      "tags": []
     },
     {
       "artist": "Emanuele Patetta",
