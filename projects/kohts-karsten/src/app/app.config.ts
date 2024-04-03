@@ -6,18 +6,25 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer, provideClientHydration } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
-import { AppDataService, CssDomService, initApplication, initIcons, initTheme, RouteDomService } from 'jpd-core';
+import {
+  AppDataService,
+  CssDomService,
+  initApplication,
+  initCookieConsent,
+  initIcons,
+  initTheme,
+  RouteDomService
+} from 'jpd-core';
 import { SsrCookieService } from 'ngx-cookie-service-ssr';
-import { initCookieConsent } from '../../../jpd-core/src/lib/common/initializer/cookie-consent.initializer';
 import { ROUTES } from './app.routes';
 import { CustomAppDataService } from './services/custom-app-data.service';
 import { CustomRouteDomService } from './services/custom-route-dom.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideClientHydration(),
     importProvidersFrom(GoogleMapsModule),
     provideAnimations(),
-    provideClientHydration(),
     provideHttpClient(withFetch()),
     provideRouter(ROUTES),
     {

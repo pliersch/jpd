@@ -12,7 +12,6 @@ import {
   StickyAppbarComponent,
   ThemeToggleActionComponent
 } from 'jpd-core';
-import * as CookieConsent from 'vanilla-cookieconsent';
 
 @Component({
   selector: 'app-root',
@@ -39,7 +38,7 @@ export class AppComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    CookieConsent.show();
+    // CookieConsent.show();
     // CookieConsent.showPreferences();
   }
 }
