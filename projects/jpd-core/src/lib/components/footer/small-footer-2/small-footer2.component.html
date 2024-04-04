@@ -1,24 +1,30 @@
 <footer class="footer footer-black theme-contrast">
-  <div class="container">
+  <div class="container-lg">
     <div class="footer-row">
-      <div class="d-flex align-items-center me-auto fs-7">
+
+      <div>
+        <nav>
+          @for (route of routes; track route) {
+            <a mat-flat-button class="transparent-background text-capitalize"
+               [routerLink]="route.path">
+              {{ route.name }}
+            </a>
+          }
+        </nav>
+        <a mat-flat-button (click)="openCookieConsent()" class="transparent-background text-capitalize">
+          Cookie Einstellungen
+        </a>
+      </div>
+
+      <div class="footer-a4w d-flex align-items-center fs-7">
         <p class="m-0 me-1"> © 2024, made with</p>
         <mat-icon class="icon-display me-1" color="warn" aria-hidden="false"
                   aria-label="Example home icon" svgIcon="heart"></mat-icon>
         <a class="link flex center-content theme-contrast" href="https://apps4web.de"
            target="_blank">by apps4web.de</a>
       </div>
-      <nav>
-        @for (route of routes; track route) {
-          <a mat-flat-button class="transparent-background text-capitalize"
-             [routerLink]="route.path">
-            {{ route.name }}
-          </a>
-        }
-      </nav>
-      <a mat-flat-button (click)="openCookieConsent()" class="transparent-background text-capitalize">
-        Cookie Einstellungen
-      </a>
+
     </div>
+
   </div>
 </footer>
