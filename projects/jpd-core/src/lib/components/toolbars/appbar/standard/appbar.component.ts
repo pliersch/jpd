@@ -1,6 +1,7 @@
 import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
 import { CommonModule } from '@angular/common';
 import {
+  AfterViewInit,
   booleanAttribute,
   Component,
   ContentChild,
@@ -37,7 +38,7 @@ import { NavigationDirective } from '../../../navigation/directives/navigation.d
   templateUrl: './appbar.component.html',
   styleUrls: ['./appbar.component.scss'],
 })
-export class AppbarComponent implements OnInit/*, AfterViewInit*/ {
+export class AppbarComponent implements OnInit, AfterViewInit {
 
   @ContentChild(NavigationDirective)
   navigationDirective?: NavigationDirective;
@@ -90,6 +91,10 @@ export class AppbarComponent implements OnInit/*, AfterViewInit*/ {
         tap(res => console.log(res.matches)),
         map(result => result.matches)
       );
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => this.onResize());
   }
 
   emitNavToggle(): void {
