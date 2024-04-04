@@ -17,7 +17,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { IsActiveMatchOptions, RouterLink, RouterLinkActive } from "@angular/router";
 
-import { Observable, of } from "rxjs";
+import { Observable, tap } from "rxjs";
 import { map } from 'rxjs/operators';
 import {
   CssDomService,
@@ -65,7 +65,7 @@ export class AppbarComponent implements OnInit/*, AfterViewInit*/ {
 
   actionsVisible = true;
   routes: Route[] = [];
-  route$: Observable<Route>;
+  rootRoute: Route;
 
   linkActiveOptions: IsActiveMatchOptions;
 
@@ -81,12 +81,13 @@ export class AppbarComponent implements OnInit/*, AfterViewInit*/ {
   isHandset$: Observable<boolean>;
 
   ngOnInit(): void {
-    this.route$ = of(this.routeDomService.getRouteDom());
+    this.rootRoute = this.routeDomService.getRouteDom();
     this.linkActiveOptions = this.routeDomService.getIsActiveMatchOptions();
     this.bgColor = this.cssDomService.getTheme() === Themes.DARK ? this.bgColorDark : this.bgColorLight;
     this._transparent = this.transparent;
     this.isHandset$ = this.breakpointObserver.observe(Breakpoints.Handset)
       .pipe(
+        tap(res => console.log(res.matches)),
         map(result => result.matches)
       );
   }
@@ -119,7 +120,7 @@ export class AppbarComponent implements OnInit/*, AfterViewInit*/ {
     this.actionsVisible = appbarWidth <= window.innerWidth;
   }
 
-  private onToggleTheme(change: ThemeToggleChange) {
+  private onToggleTheme(change: ThemeToggleChange): void {
     if (change.add === Themes.DARK) {
       this.bgColor = this.bgColorDark;
     } else {
