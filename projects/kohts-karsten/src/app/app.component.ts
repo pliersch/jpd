@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { afterNextRender, AfterRenderPhase, Component } from '@angular/core';
 import {
   A4WRootComponent,
   ActionContainerComponent,
@@ -7,6 +7,7 @@ import {
   LogoContainerComponent,
   NavigationService,
   PhoneActionComponent,
+  runCookieConsentConfig,
   ShopFooter1Component,
   SmallFooter2Component,
   StickyAppbarComponent,
@@ -31,14 +32,17 @@ import {
   ],
   standalone: true
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent {
 
   constructor(navigationService: NavigationService) {
     navigationService.startSaveHistory();
+
+    afterNextRender(() => {
+      runCookieConsentConfig();
+      // CookieConsent.show();
+      // CookieConsent.showPreferences();
+
+    }, {phase: AfterRenderPhase.Write});
   }
 
-  ngAfterViewInit(): void {
-    // CookieConsent.show();
-    // CookieConsent.showPreferences();
-  }
 }

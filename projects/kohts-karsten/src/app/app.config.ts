@@ -6,15 +6,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer, provideClientHydration } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
-import {
-  AppDataService,
-  CssDomService,
-  initApplication,
-  initCookieConsent,
-  initIcons,
-  initTheme,
-  RouteDomService
-} from 'jpd-core';
+import { AppDataService, CssDomService, initApplication, initIcons, initTheme, RouteDomService } from 'jpd-core';
 import { SsrCookieService } from 'ngx-cookie-service-ssr';
 import { ROUTES } from './app.routes';
 import { CustomAppDataService } from './services/custom-app-data.service';
@@ -34,7 +26,6 @@ export const appConfig: ApplicationConfig = {
       deps: [SsrCookieService, CssDomService, MediaMatcher]
     },
     {provide: APP_INITIALIZER, useFactory: initApplication, multi: true, deps: [BreakpointObserver]},
-    {provide: APP_INITIALIZER, useFactory: initCookieConsent, multi: true},
     {provide: APP_INITIALIZER, useFactory: initIcons, multi: true, deps: [MatIconRegistry, DomSanitizer]},
     {provide: RouteDomService, useClass: CustomRouteDomService},
     {provide: AppDataService, useClass: CustomAppDataService},
