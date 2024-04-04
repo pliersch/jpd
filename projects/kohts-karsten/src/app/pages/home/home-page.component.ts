@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import {
   AboutUsComponent,
   AbstractDefaultPageComponent,
+  Banner2Component,
   Card31Component,
   Card41Component,
   Card42Component,
@@ -35,7 +36,8 @@ import { LandingSplashComponent } from './landing-splash/landing-splash.componen
     ParallaxSectionComponent,
     LandingSplashComponent,
     ShopFooter1Component,
-    SmallFooter2Component
+    SmallFooter2Component,
+    Banner2Component
   ],
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']

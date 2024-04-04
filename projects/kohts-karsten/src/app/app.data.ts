@@ -70,6 +70,23 @@ export const appData: AppConfig = {
             }
           },
           //////////////////////////////////////////////////////////
+          //                  Banner 2
+          //////////////////////////////////////////////////////////
+          {
+            name: 'Banner2',
+            fragment: 'banner2',
+            data: {
+              items: [
+                {
+                  contentText: 'Angebot!',
+                  postContentText: 'Reifenwechsel 12€',
+                  bgImageUrl: 'assets/img/reifen_wechsel.webp',
+                  color: '#cebe13'
+                },
+              ]
+            }
+          },
+          //////////////////////////////////////////////////////////
           //                 AboutUs
           //////////////////////////////////////////////////////////
           {
