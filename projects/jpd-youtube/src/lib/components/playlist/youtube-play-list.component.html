@@ -1,4 +1,5 @@
-<div [@flyIn]="(filteredVideos$ | async)!.length" class="container-fluid">
+<!--<div [@flyIn]="(filteredVideos$ | async)!.length" class="container-fluid">-->
+<div class="container-fluid">
   <div class="d-flex flex-wrap">
     @for (item of filteredVideos$ | async; track item.id) {
       <a4w-card-video-1
