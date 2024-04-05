@@ -1,4 +1,4 @@
-import { BreakpointObserver, MediaMatcher } from '@angular/cdk/layout';
+import { MediaMatcher } from '@angular/cdk/layout';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { APP_INITIALIZER, ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { GoogleMapsModule } from '@angular/google-maps';
@@ -14,6 +14,7 @@ import { CustomRouteDomService } from '@app1/services/custom-route-dom.service';
 import { CustomYoutubeService } from '@app1/services/custom-youtube.service';
 import {
   AppDataService,
+  BreakpointService,
   CssDomService,
   ImageService,
   initApplication,
@@ -40,7 +41,7 @@ export const appConfig: ApplicationConfig = {
       useFactory: initTheme,
       deps: [SsrCookieService, CssDomService, MediaMatcher]
     },
-    {provide: APP_INITIALIZER, useFactory: initApplication, multi: true, deps: [BreakpointObserver]},
+    {provide: APP_INITIALIZER, useFactory: initApplication, multi: true, deps: [BreakpointService]},
     {provide: APP_INITIALIZER, useFactory: initIcons, multi: true, deps: [MatIconRegistry, DomSanitizer]},
     {provide: AppDataService, useClass: CustomAppDataService},
     {provide: RouteDomService, useClass: CustomRouteDomService},

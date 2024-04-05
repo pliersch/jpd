@@ -95,5 +95,6 @@ export { PosterComponent } from './poster/poster.component';
 export { StickyAppbarComponent } from './toolbars/appbar/standard/sticky-appbar.component';
 
 export { AppbarComponent } from './toolbars/appbar/standard/appbar.component';
+export { AppbarTwoRowsComponent } from './toolbars/appbar/2-row/appbar-two-rows.component';
 export { LogoContainerComponent, LogoModel } from './toolbars/appbar/logo-container/logo-container.component';
 

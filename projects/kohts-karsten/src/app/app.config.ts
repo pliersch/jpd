@@ -1,12 +1,20 @@
-import { BreakpointObserver, MediaMatcher } from '@angular/cdk/layout';
+import { MediaMatcher } from '@angular/cdk/layout';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { APP_INITIALIZER, ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer, provideClientHydration } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
-import { AppDataService, CssDomService, initApplication, initIcons, initTheme, RouteDomService } from 'jpd-core';
+import {
+  AppDataService,
+  BreakpointService,
+  CssDomService,
+  initApplication,
+  initIcons,
+  initTheme,
+  RouteDomService
+} from 'jpd-core';
 import { SsrCookieService } from 'ngx-cookie-service-ssr';
 import { ROUTES } from './app.routes';
 import { CustomAppDataService } from './services/custom-app-data.service';
@@ -14,7 +22,7 @@ import { CustomRouteDomService } from './services/custom-route-dom.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideClientHydration(),
+    // provideClientHydration(),
     importProvidersFrom(GoogleMapsModule),
     provideAnimations(),
     provideHttpClient(withFetch()),
@@ -25,7 +33,7 @@ export const appConfig: ApplicationConfig = {
       useFactory: initTheme,
       deps: [SsrCookieService, CssDomService, MediaMatcher]
     },
-    {provide: APP_INITIALIZER, useFactory: initApplication, multi: true, deps: [BreakpointObserver]},
+    {provide: APP_INITIALIZER, useFactory: initApplication, multi: true, deps: [BreakpointService]},
     {provide: APP_INITIALIZER, useFactory: initIcons, multi: true, deps: [MatIconRegistry, DomSanitizer]},
     {provide: RouteDomService, useClass: CustomRouteDomService},
     {provide: AppDataService, useClass: CustomAppDataService},

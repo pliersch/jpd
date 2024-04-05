@@ -3,6 +3,7 @@ import {
   A4WRootComponent,
   ActionContainerComponent,
   AppbarComponent,
+  AppbarTwoRowsComponent,
   FragmentDirective,
   LogoContainerComponent,
   NavigationService,
@@ -29,6 +30,7 @@ import {
     ShopFooter1Component,
     FragmentDirective,
     SmallFooter2Component,
+    AppbarTwoRowsComponent,
   ],
   standalone: true
 })

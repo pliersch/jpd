@@ -1,28 +1,38 @@
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { tap } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { getDocument } from 'ssr-window';
+import { Dimension } from '../const';
+import { BreakpointService } from '../services';
 
-export function initApplication(breakpointObserver: BreakpointObserver): () => Promise<void> {
+export function initApplication(breakpointService: BreakpointService): () => Promise<void> {
   return () => new Promise(resolve => {
 
-    breakpointObserver.observe(Breakpoints.Handset)
-      .pipe(
-        tap(res => updateCssVar(res.matches)),
-        map(result => result.matches)
-      ).subscribe();
+    breakpointService.dimension$.subscribe(res => {
+      console.log(res)
+      let appbarHeight = 64;
+      switch (res) {
+        case Dimension.XSmall:
+          appbarHeight = 56;
+          break;
+        case Dimension.Small:
+          appbarHeight = 120;
+          break;
+      }
+
+      updateCssVar(appbarHeight)
+    })
+
     resolve();
   });
 }
 
-function updateCssVar(isHandset: boolean): void {
-  let appbarHeight = 64;
+function updateCssVar(appbarHeight: number): void {
+
+  console.log('updateCssVarHandset updateCssVarHandset: ',)
   // need detection. documentElement isn´t available on server (ssr)
-  const style = getDocument().documentElement?.style
+  const style = getDocument().documentElement?.style;
   if (style) {
-    if (isHandset) {
-      appbarHeight = 56;
-    }
+
     style.setProperty('--appbar-height', `${appbarHeight}px`)
   }
 }
+
+
