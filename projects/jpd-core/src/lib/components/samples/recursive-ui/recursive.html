@@ -1,0 +1,32 @@
+<ul>
+  <ng-container
+    *ngTemplateOutlet="Recursion; context:{ list: modelData}"
+  ></ng-container>
+</ul>
+
+<ng-template #Recursion let-list="list">
+  <li *ngFor="let item of list">
+    <p>{{ item.key }}</p>
+    <ul>
+      @if (item.type === 'array') {
+        <ng-container
+          *ngTemplateOutlet="Recursion; context:{ list: item.value }"
+        ></ng-container>
+      } @else if (item.type === 'string' || item.type === 'number') {
+        <mat-form-field class="example-form-field">
+          <mat-label>Clearable input</mat-label>
+          <input matInput type="text" [(ngModel)]="item.value">
+          @if (item.value) {
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="item.value='Foo'">
+              <mat-icon>edit</mat-icon>
+            </button>
+          }
+        </mat-form-field>
+      } @else if (item.type === 'object') {
+        <ng-container
+          *ngTemplateOutlet="Recursion; context:{ list: item.value }"
+        ></ng-container>
+      }
+    </ul>
+  </li>
+</ng-template>
