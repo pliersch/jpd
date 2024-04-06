@@ -92,7 +92,8 @@ export { SubNavComponent } from './navigation/sub-nav/sub-nav.component';
 
 export { PosterComponent } from './poster/poster.component';
 
-export { StickyAppbarComponent } from './toolbars/appbar/standard/sticky-appbar.component';
+export { StickyAppbarComponent } from './toolbars/appbar/sticky/sticky-appbar.component';
+export { ScrollOutAppbarComponent } from './toolbars/appbar/scroll-out/scroll-out-appbar.component';
 
 export { AppbarComponent } from './toolbars/appbar/standard/appbar.component';
 export { AppbarTwoRowsComponent } from './toolbars/appbar/2-row/appbar-two-rows.component';

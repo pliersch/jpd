@@ -1,0 +1,21 @@
+//:host {
+//  position: fixed;
+//  top: 0;
+//  left: 0;
+//  right: 0;
+//  z-index: 2;
+//}
+
+mat-toolbar {
+  height: 56px !important; /*want it smaller. not to small.  use mobile height for touch*/
+}
+
+.transparent-background {
+  background-color: transparent !important;
+}
+
+.active-route {
+  background-color: red !important;
+  //background-color: var(--theme-component-contrast);
+  border-radius: 3px;
+}
