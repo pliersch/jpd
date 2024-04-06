@@ -36,6 +36,12 @@ $app1-theme: mat.define-light-theme((
   density: 0
 ));
 
+//body {
+//  margin: 0;
+//  font-family: Roboto, "Helvetica Neue", sans-serif;
+//  font-family: Montserrat, "Helvetica Neue", sans-serif;
+//}
+
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
