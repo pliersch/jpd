@@ -7,7 +7,7 @@ export interface BgImageModel {
 }
 
 @Component({
-  selector: 'a4w-bg-image-section',
+  selector: 'a4w-section-bg-image',
   templateUrl: './section-bg-image.component.html',
   styleUrls: ['./section-bg-image.component.scss'],
   standalone: true,

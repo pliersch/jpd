@@ -208,9 +208,7 @@ export const appData: AppConfig = {
           {
             name: 'ContactInfoBoard1',
             fragment: 'kontakt2',
-            data: {
-              // backgroundImage: 'assets/img/landing.webp',
-            }
+            data: {}
           },
           //////////////////////////////////////////////////////////
           //                   GMapsIframe

@@ -20,7 +20,6 @@ import {
 } from 'jpd-core';
 import { LandingSplashComponent } from './landing-splash/landing-splash.component';
 
-
 @Component({
   selector: 'app-default-page',
   standalone: true,
