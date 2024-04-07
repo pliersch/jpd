@@ -7,10 +7,12 @@ import {
   Card31Component,
   Card41Component,
   Card42Component,
+  ContactInfoBoard1Component,
   FragmentDirective,
   GMapsIframeComponent,
   Parallax1Component,
   ParallaxSectionComponent,
+  SectionBgImageComponent,
   SectionComponent,
   ShopFooter1Component,
   SmallFooter2Component,
@@ -37,7 +39,9 @@ import { LandingSplashComponent } from './landing-splash/landing-splash.componen
     LandingSplashComponent,
     ShopFooter1Component,
     SmallFooter2Component,
-    Banner2Component
+    Banner2Component,
+    ContactInfoBoard1Component,
+    SectionBgImageComponent
   ],
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']

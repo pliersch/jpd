@@ -194,6 +194,24 @@ export const appData: AppConfig = {
               subtitle: 'Eine kleine Auswahl. Fragt nach, wir können auch mehr'
             }
           },
+
+          //////////////////////////////////////////////////////////
+          //            ContactInfoBoard & BgImageSection
+          //////////////////////////////////////////////////////////
+          {
+            name: 'SectionBgImage',
+            fragment: 'kontakt2',
+            data: {
+              backgroundImage: 'assets/img/landing.webp',
+            }
+          },
+          {
+            name: 'ContactInfoBoard1',
+            fragment: 'kontakt2',
+            data: {
+              // backgroundImage: 'assets/img/landing.webp',
+            }
+          },
           //////////////////////////////////////////////////////////
           //                   GMapsIframe
           //////////////////////////////////////////////////////////

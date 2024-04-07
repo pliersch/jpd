@@ -1,0 +1,8 @@
+<div class="parallax-container py-section">
+  <div class="img" [style.background-image]="'url(' + model.backgroundImage + ')'">
+    @if (darkenBG) {
+      <div class="filter"></div>
+    }
+  </div>
+  <ng-content></ng-content>
+</div>

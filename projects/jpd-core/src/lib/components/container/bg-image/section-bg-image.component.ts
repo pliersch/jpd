@@ -1,0 +1,25 @@
+import { Component, Input } from '@angular/core';
+import { FragmentDirective } from '../../../common';
+import { BaseComponent } from '../../core/base/base.component';
+
+export interface BgImageModel {
+  backgroundImage: string;
+}
+
+@Component({
+  selector: 'a4w-bg-image-section',
+  templateUrl: './section-bg-image.component.html',
+  styleUrls: ['./section-bg-image.component.scss'],
+  standalone: true,
+})
+
+export class SectionBgImageComponent extends BaseComponent<BgImageModel> {
+
+  @Input()
+  darkenBG = true;
+
+  constructor(override fragment?: FragmentDirective) {
+    super('SectionBgImage', fragment);
+  }
+
+}

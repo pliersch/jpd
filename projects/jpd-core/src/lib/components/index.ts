@@ -23,6 +23,7 @@ export { SectionComponent } from './container/section/section.component';
 export {
   ParallaxSectionComponent, ParallaxSectionModel
 } from './container/section-parallax/parallax-section.component';
+export { SectionBgImageComponent } from './container/bg-image/section-bg-image.component';
 export { RightSideComponent } from './container/side/right/right-side.component';
 export { StickySideContainerComponent } from './container/sticky-side-container/sticky-side-container.component';
 export { TabNavComponent, TabNavModel } from './container/tab-nav/tab-nav.component';
@@ -64,6 +65,7 @@ export { CardVideo1Component } from './by-topic/cards/card-video-1/card-video1.c
 export { TitleTitleSubImgComponent } from './by-topic/content-adapter/title-title-sub/title-title-sub-img.component'
 
 // export {} from './by-topic/contact/contact-comany-info/contact-company.component';
+export { ContactInfoBoard1Component } from './by-topic/contact/boards/board-1/contact-info-board1.component';
 export { ContactCompanyInfoComponent } from './by-topic/contact/info/company-info/contact-company-info.component';
 export { ContactFormComponent } from './by-topic/contact/forms/contact-form-1/contact-form.component';
 export { ContactCompanyComponent } from './by-topic/contact/templates/standard-1/contact-company.component';
@@ -98,4 +100,3 @@ export { ScrollOutAppbarComponent } from './toolbars/appbar/scroll-out/scroll-ou
 export { AppbarComponent } from './toolbars/appbar/standard/appbar.component';
 export { AppbarTwoRowsComponent } from './toolbars/appbar/2-row/appbar-two-rows.component';
 export { LogoContainerComponent, LogoModel } from './toolbars/appbar/logo-container/logo-container.component';
-
