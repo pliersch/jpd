@@ -6,7 +6,6 @@ export function initApplication(breakpointService: BreakpointService): () => Pro
   return () => new Promise(resolve => {
 
     breakpointService.dimension$.subscribe(res => {
-      console.log(res)
       let appbarHeight = 64;
       switch (res) {
         case Dimension.XSmall:
@@ -25,12 +24,9 @@ export function initApplication(breakpointService: BreakpointService): () => Pro
 }
 
 function updateCssVar(appbarHeight: number): void {
-
-  console.log('updateCssVarHandset updateCssVarHandset: ',)
   // need detection. documentElement isn´t available on server (ssr)
   const style = getDocument().documentElement?.style;
   if (style) {
-
     style.setProperty('--appbar-height', `${appbarHeight}px`)
   }
 }

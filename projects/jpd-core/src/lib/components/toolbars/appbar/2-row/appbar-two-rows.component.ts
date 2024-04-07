@@ -1,4 +1,3 @@
-import { BreakpointObserver } from "@angular/cdk/layout";
 import { CommonModule } from '@angular/common';
 import {
   AfterViewInit,
@@ -55,6 +54,9 @@ export class AppbarTwoRowsComponent implements OnInit, AfterViewInit {
   bgColor: string;
 
   @Input({transform: booleanAttribute})
+  showOnScrollTop: boolean = true;
+
+  @Input({transform: booleanAttribute})
   transparent = false;
   _transparent = false;
 
@@ -65,9 +67,13 @@ export class AppbarTwoRowsComponent implements OnInit, AfterViewInit {
   rounded = false;
 
   navVisible = 'hidden';
-  actionsVisible = true;
+
   routes: Route[] = [];
   rootRoute: Route;
+
+  isOpen = true;
+  // todo move it into config file
+  scrollTop = 200;
 
   isSmall$: Observable<boolean>;
   isXSmall$: Observable<boolean>;
@@ -78,8 +84,7 @@ export class AppbarTwoRowsComponent implements OnInit, AfterViewInit {
               scrollService: PageScrollService,
               private cssDomService: CssDomService,
               private routeDomService: RouteDomService,
-              private breakpointService: BreakpointService,
-              private breakpointObserver: BreakpointObserver) {
+              private breakpointService: BreakpointService) {
     scrollService.scrollTop$.subscribe(scrollTop => this.onScroll(scrollTop));
     cssDomService.themeToggle$.subscribe(state => this.onToggleTheme(state));
   }
@@ -108,6 +113,12 @@ export class AppbarTwoRowsComponent implements OnInit, AfterViewInit {
     if (this.transparent) {
       this._transparent = scrollTop <= 50;
     }
+    if (this.showOnScrollTop) {
+      this.isOpen = scrollTop < this.scrollTop;
+    } else {
+      this.isOpen = scrollTop >= this.scrollTop;
+    }
+    this.scrollTop = scrollTop;
   }
 
   showSubNav(route: Route, x: number): void {

@@ -54,7 +54,7 @@
   <!----------------------------------------------------->
     <!--                    desktop                      -->
     <!----------------------------------------------------->
-  <mat-toolbar class="z-2 fill mat-elevation-z6 position-relative"
+  <mat-toolbar class="z-2 fill mat-elevation-z6 position-relative flex-column-reverse"
                [class.transparent-bg]="_transparent"
                [class.position-absolute]="_transparent || blurry"
                [class.rounded]="rounded"
@@ -73,12 +73,16 @@
 
       </div>
     </mat-toolbar-row>
+
+
     @if (isSmall$ | async) {
-      <mat-toolbar-row class="second-toolbar">
-        <div class="w-100">
-          <ng-container [ngTemplateOutlet]="navTemplate"></ng-container>
-        </div>
-      </mat-toolbar-row>
+      @if (isOpen) {
+        <mat-toolbar-row class="second-toolbar">
+          <div class="w-100">
+            <ng-container [ngTemplateOutlet]="navTemplate"></ng-container>
+          </div>
+        </mat-toolbar-row>
+      }
     }
 
   </mat-toolbar>

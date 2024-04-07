@@ -10,7 +10,7 @@ import { AdminService } from '../../../modules/admin';
 import { DynamicHostComponent } from '../../dynamic-component/dynamic-host.component';
 import { SidenavComponent } from '../../navigation/sidenav/sidenav.component';
 import { AppbarComponent } from '../../toolbars/appbar/standard/appbar.component';
-import { StickyAppbarComponent } from '../../toolbars/appbar/standard/sticky-appbar.component';
+import { StickyAppbarComponent } from '../../toolbars/appbar/sticky/sticky-appbar.component';
 import { RightSideComponent } from '../side/right/right-side.component';
 
 @Component({
