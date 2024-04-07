@@ -1,13 +1,15 @@
 <!----------------------------------------------------->
-<!--                  nav template                   -->
+<!--                actions template                 -->
 <!----------------------------------------------------->
-
 <ng-template #actionsTemplate>
-  <div class="px-2 d-flex align-items-center flex-row-reverse w-150px">
+  <div class="px-2 d-flex align-items-center flex-row-reverse">
     <ng-content select="[action]"></ng-content>
   </div>
 </ng-template>
 
+<!----------------------------------------------------->
+<!--                  nav template                   -->
+<!----------------------------------------------------->
 <ng-template #navTemplate>
   <nav #navContainer class="d-flex" [style.visibility]="navVisible">
 
@@ -44,7 +46,7 @@
     <button mat-icon-button (click)="emitNavToggle()">
       <mat-icon svgIcon="menu"/>
     </button>
-    <div class="d-flex align-items-center w-150px">
+    <div class="d-flex align-items-center">
       <ng-content select="[logo-small]"/>
     </div>
     <span class="spacer"></span>
@@ -63,7 +65,7 @@
 
     <mat-toolbar-row>
       <div class="d-flex w-100 align-items-center justify-content-between">
-        <div class="d-flex align-items-center w-150px">
+        <div class="d-flex align-items-center">
           <ng-content select="[logo]"/>
         </div>
         @if ((isSmall$ | async) === false) {
@@ -73,7 +75,6 @@
 
       </div>
     </mat-toolbar-row>
-
 
     @if (isSmall$ | async) {
       @if (isOpen) {

@@ -19,9 +19,6 @@ export class Parallax1Component extends BaseComponent<Parallax1Model> implements
   @Input()
   darkenBG = true;
 
-  @Input()
-  height: number;
-
   parallax = 0;
   alpha = 1;
   basis = 500;
