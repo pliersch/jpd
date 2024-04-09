@@ -2,16 +2,20 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {
   AbstractDefaultPageComponent,
+  Address1Component,
   ContactCompanyComponent,
+  ContactCompanyInfoComponent,
   FragmentDirective,
   GMapsIframeComponent,
-  Parallax1Component
+  Mail1Component,
+  Parallax1Component,
+  Phone1Component
 } from 'jpd-core';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FragmentDirective, Parallax1Component, GMapsIframeComponent, ContactCompanyComponent],
+  imports: [CommonModule, FragmentDirective, Parallax1Component, GMapsIframeComponent, ContactCompanyComponent, ContactCompanyInfoComponent, Address1Component, Mail1Component, Phone1Component],
   templateUrl: './contact-page.component.html',
   styleUrls: ['./contact-page.component.scss']
 })

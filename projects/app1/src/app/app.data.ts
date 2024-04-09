@@ -579,6 +579,28 @@ export const appData: AppConfig = {
               // animationImg: 'assets/img/clouds.png',
             }
           },
+          {
+            name: 'Address1',
+            fragment: 'top',
+            data: {
+              address: company.address
+            }
+          },
+          {
+            name: 'Mail1',
+            fragment: 'top',
+            data: {
+              mail: company.email
+            }
+          },
+          {
+            name: 'Phone1',
+            fragment: 'top',
+            data: {
+              phone: company.phone,
+              contact: company.owner.firstName + ' ' + company.owner.lastName
+            }
+          },
           //////////////////////////////////////////////////////////
           //                   GMapsIframe
           //////////////////////////////////////////////////////////
