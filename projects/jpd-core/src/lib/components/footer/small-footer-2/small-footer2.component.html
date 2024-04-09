@@ -1,23 +1,23 @@
-<footer class="footer footer-black theme-contrast">
+<footer class="footer footer-black theme-contrast fw-300">
   <div class="container-lg">
     <div class="footer-row">
 
       <div>
         <nav>
           @for (route of routes; track route) {
-            <a mat-flat-button class="transparent-background text-capitalize"
+            <a mat-flat-button class="transparent-background text-capitalize fw-300"
                [routerLink]="route.path">
               {{ route.name }}
             </a>
           }
         </nav>
-        <a mat-flat-button (click)="openCookieConsent()" class="transparent-background text-capitalize">
+        <a mat-flat-button (click)="openCookieConsent()" class="transparent-background text-capitalize fw-300">
           Cookie Einstellungen
         </a>
       </div>
 
       <div class="footer-a4w d-flex align-items-center fs-7">
-        <p class="m-0 me-1"> © 2024, made with</p>
+        <p class="m-0 me-1"> Copyright © 2024, made with</p>
         <mat-icon class="icon-display me-1" color="warn" aria-hidden="false"
                   aria-label="Example home icon" svgIcon="heart"></mat-icon>
         <a class="link flex center-content theme-contrast" href="https://apps4web.de"

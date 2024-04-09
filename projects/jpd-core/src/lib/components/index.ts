@@ -65,6 +65,11 @@ export { CardVideo1Component } from './by-topic/cards/card-video-1/card-video1.c
 export { TitleTitleSubImgComponent } from './by-topic/content-adapter/title-title-sub/title-title-sub-img.component'
 
 // export {} from './by-topic/contact/contact-comany-info/contact-company.component';
+export { Address1Component } from './by-topic/company/address-1/address-1.component';
+export { Opening1Component } from './by-topic/company/opening-1/opening1.component';
+export { Phone1Component } from './by-topic/company/phone-1/phone1.component';
+export { Mail1Component } from './by-topic/company/mail-1/mail1.component';
+
 export { ContactInfoBoard1Component } from './by-topic/contact/boards/board-1/contact-info-board1.component';
 export { ContactCompanyInfoComponent } from './by-topic/contact/info/company-info/contact-company-info.component';
 export { ContactFormComponent } from './by-topic/contact/forms/contact-form-1/contact-form.component';

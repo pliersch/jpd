@@ -1,5 +1,4 @@
 .parallax-container {
-  overflow: hidden;
   position: relative;
   display: flex;
   align-items: center;
@@ -14,15 +13,15 @@
     z-index: -1;
   }
 
-  .filter::after {
-    background-color: rgba(0, 0, 0, 0.65);
-    background-image: radial-gradient(280px circle at 60% 50%, #cebe1399 0, rgba(0, 0, 0, 0.53) 100%);
-    //background: linear-gradient(180deg,
-    //  rgba(0, 0, 0, 1) 0%,
-    //  rgba(0, 0, 0, 1) 1%,
-    //  rgba(0, 0, 0, 0.6) 10%,
-    //  rgba(0, 0, 0, 0.6) 90%,
-    //  rgba(0, 0, 0, 1) 100%);
+  .filter {
+    //background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.38));
+    //background-image: radial-gradient(280px circle at 70% 50%, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0.95) 100%);
+
+    // OVERWRITTEN IN HTML DELETE LATER
+    // !!!!!!!!
+    background: linear-gradient(90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.9) 100%);
     content: "";
     display: block;
     height: 100%;

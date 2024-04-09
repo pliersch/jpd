@@ -41,6 +41,10 @@ export function initIcons(matIconRegistry: MatIconRegistry,
       'menu',
       domSanitizer.bypassSecurityTrustResourceUrl(path + 'menu.svg')
     );
+    matIconRegistry.addSvgIcon(
+      'schedule',
+      domSanitizer.bypassSecurityTrustResourceUrl(path + 'schedule.svg')
+    );
     resolve();
   });
 }

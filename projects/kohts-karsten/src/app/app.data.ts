@@ -196,19 +196,51 @@ export const appData: AppConfig = {
           },
 
           //////////////////////////////////////////////////////////
-          //            ContactInfoBoard & BgImageSection
+          //            ContactInfoBoard
           //////////////////////////////////////////////////////////
           {
-            name: 'SectionBgImage',
-            fragment: 'kontakt2',
+            name: 'TitleSubtitleDecorator',
+            fragment: 'kontakt1',
             data: {
-              backgroundImage: 'assets/img/landing.webp',
+              title: 'Tritt mit uns in Kontakt',
+              subtitle: 'Du brauchst weitere Informationen? Wir sind für Dich da.'
             }
           },
           {
             name: 'ContactInfoBoard1',
-            fragment: 'kontakt2',
-            data: {}
+            fragment: 'kontakt1',
+            data: {
+              companyPicture: 'assets/img/location.webp',
+            }
+          },
+          {
+            name: 'Opening1',
+            fragment: 'kontakt1',
+            data: {
+              openingHours: company.openingHours
+            }
+          },
+          {
+            name: 'Address1',
+            fragment: 'kontakt1',
+            data: {
+              address: company.address
+            }
+          },
+          {
+            name: 'Mail1',
+            fragment: 'kontakt1',
+            data: {
+              mail: company.email
+            }
+          },
+          {
+            name: 'Phone1',
+            fragment: 'kontakt1',
+            data: {
+              phone: company.phone,
+              contact: company.owner.firstName + ' ' + company.owner.lastName
+            }
           },
           //////////////////////////////////////////////////////////
           //                   GMapsIframe

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import {
   AboutUsComponent,
   AbstractDefaultPageComponent,
+  Address1Component,
   Banner2Component,
   Card31Component,
   Card41Component,
@@ -10,8 +11,11 @@ import {
   ContactInfoBoard1Component,
   FragmentDirective,
   GMapsIframeComponent,
+  Mail1Component,
+  Opening1Component,
   Parallax1Component,
   ParallaxSectionComponent,
+  Phone1Component,
   SectionBgImageComponent,
   SectionComponent,
   ShopFooter1Component,
@@ -40,7 +44,11 @@ import { LandingSplashComponent } from './landing-splash/landing-splash.componen
     SmallFooter2Component,
     Banner2Component,
     ContactInfoBoard1Component,
-    SectionBgImageComponent
+    SectionBgImageComponent,
+    Address1Component,
+    Phone1Component,
+    Mail1Component,
+    Opening1Component
   ],
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']

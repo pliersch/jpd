@@ -1,8 +1,8 @@
 <div class="parallax-container py-section">
   <div class="img" [style.background-image]="'url(' + model.backgroundImage + ')'">
-    @if (darkenBG) {
-      <div class="filter"></div>
-    }
+    <div class="filter" [style.background-image]=
+      '"linear-gradient(310deg, var(--theme-background-alpha-95), var(--theme-background))"'>
+    </div>
   </div>
   <ng-content></ng-content>
 </div>

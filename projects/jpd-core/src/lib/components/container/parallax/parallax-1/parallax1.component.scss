@@ -9,27 +9,23 @@
     position: absolute;
     background-size: cover;
     background-position: center center;
+    //background-position: 70% 50%;
     width: 100%;
     height: 100%;
     z-index: -1;
   }
 
-  .filter::after {
-    background-color: rgba(0, 0, 0, 0.65);
-    //background: linear-gradient(180deg,
-    //  rgba(0, 0, 0, 1) 0%,
-    //  rgba(0, 0, 0, 1) 1%,
-    //  rgba(0, 0, 0, 0.6) 10%,
-    //  rgba(0, 0, 0, 0.6) 90%,
-    //  rgba(0, 0, 0, 1) 100%);
-    content: "";
-    display: block;
-    height: 100%;
-    left: 0;
-    top: 0;
+  .filter {
+    //background-color: rgba(0, 0, 0, 0.65);
+    background: linear-gradient(180deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.7) 10%,
+      rgba(0, 0, 0, 0.7) 90%,
+      rgba(0, 0, 0, 1) 100%);
+
     position: absolute;
+    height: 100%;
     width: 100%;
-    z-index: 1;
   }
 
 }

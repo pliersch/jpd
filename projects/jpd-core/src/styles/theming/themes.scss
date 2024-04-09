@@ -91,6 +91,8 @@ $light-foreground: mat.get-color-from-palette(mat.$light-theme-foreground-palett
   --theme-component-contrast: #{darken($dark-bg, 2%)};
   --theme-background-contrast-10: #{$dark-bg-lighter-10};
   --theme-background-contrast-30: #{$dark-bg-lighter-30};
+  --theme-background-alpha-95: #{color.adjust($dark-background, $alpha: -0.05)};
+  --theme-background-alpha-90: #{color.adjust($dark-background, $alpha: -0.1)};
   --theme-background-alpha-50: #{color.adjust($dark-background, $alpha: -0.5)};
   --theme-background-alpha-70: #{color.adjust($dark-background, $alpha: -0.3)};
   --theme-foreground-alpha-10: #{color.adjust($dark-foreground, $alpha: -0.9)};
@@ -127,6 +129,8 @@ $light-foreground: mat.get-color-from-palette(mat.$light-theme-foreground-palett
   --theme-contrast-background: #{darken($light-bg, 10%)};
   --theme-background-contrast-10: #{$light-bg-lighter-10};
   --theme-background-contrast-30: #{$light-bg-lighter-30};
+  --theme-background-alpha-95: #{color.adjust($light-background, $alpha: -0.05)};
+  --theme-background-alpha-90: #{color.adjust($light-background, $alpha: -0.1)};
   --theme-background-alpha-50: #{color.adjust($light-background, $alpha: -0.5)};
   --theme-background-alpha-70: #{color.adjust($light-background, $alpha: -0.3)};
   --theme-foreground-alpha-10: #{color.adjust($light-foreground, $alpha: -0.9)};

@@ -1,27 +1,13 @@
 <div class="container-fluid">
   <div class="row">
     <div class="flex mb-3">
-      <mat-icon class="me-2" color="accent" aria-hidden="false" aria-label="Example home icon"
-                svgIcon="location_on"></mat-icon>
-      <div>
-        <h4>Unsere Adresse</h4>
-        <p> Am Hang 301<br>
-          15913 Schwielochsee<br>
-          Deutschland
-        </p>
-      </div>
+      <ng-content select="[item1]"></ng-content>
     </div>
-
     <div class="flex mb-3">
-      <mat-icon class="me-2" color="accent" aria-hidden="false" aria-label="Example home icon"
-                svgIcon="call"></mat-icon>
-      <div>
-        <h4>Ruf uns an</h4>
-        <p>Patrick Liersch<br>
-          +49 1514 121 64 19<br>
-          Deutschland
-        </p>
-      </div>
+      <ng-content select="[item2]"></ng-content>
+    </div>
+    <div class="flex mb-3">
+      <ng-content select="[item3]"></ng-content>
     </div>
 
     <!--    <div class="flex mb-3">-->
