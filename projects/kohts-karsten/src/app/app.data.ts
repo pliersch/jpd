@@ -200,7 +200,7 @@ export const appData: AppConfig = {
           //////////////////////////////////////////////////////////
           {
             name: 'TitleSubtitleDecorator',
-            fragment: 'kontakt1',
+            fragment: 'kontakt',
             data: {
               title: 'Tritt mit uns in Kontakt',
               subtitle: 'Du brauchst weitere Informationen? Wir sind für Dich da.'
@@ -208,35 +208,35 @@ export const appData: AppConfig = {
           },
           {
             name: 'ContactInfoBoard1',
-            fragment: 'kontakt1',
+            fragment: 'kontakt',
             data: {
               companyPicture: 'assets/img/location.webp',
             }
           },
           {
             name: 'Opening1',
-            fragment: 'kontakt1',
+            fragment: 'kontakt',
             data: {
               openingHours: company.openingHours
             }
           },
           {
             name: 'Address1',
-            fragment: 'kontakt1',
+            fragment: 'kontakt',
             data: {
               address: company.address
             }
           },
           {
             name: 'Mail1',
-            fragment: 'kontakt1',
+            fragment: 'kontakt',
             data: {
               mail: company.email
             }
           },
           {
             name: 'Phone1',
-            fragment: 'kontakt1',
+            fragment: 'kontakt',
             data: {
               phone: company.phone,
               contact: company.owner.firstName + ' ' + company.owner.lastName

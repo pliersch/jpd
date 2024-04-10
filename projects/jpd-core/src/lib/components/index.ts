@@ -38,6 +38,7 @@ export { SmallFooter2Component, Small2FooterModel } from './footer/small-footer-
 export { Banner1Component, Banner1Model } from './by-topic/banner/banner-1/banner1.component'
 export { Banner2Component, Banner2Model, Banner2ItemModel } from './by-topic/banner/banner-2/banner2.component'
 export { Banner3Component, Banner3Model } from './by-topic/banner/banner-3/banner3.component'
+export { Banner4Component } from './by-topic/banner/banner-4/banner-4.component'
 
 export {
   ActivityList1Component, ActivityList1Model
