@@ -41,13 +41,13 @@
   margin-top: -16rem !important;
 }
 
-
 @media (min-width: 992px) {
   .d-lg-block {
     display: block !important;
   }
 }
 
-.w-20 {
-  width: 20% !important;
+.absolute-wrapper {
+  position: absolute;
+  inset: 0;
 }
