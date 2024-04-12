@@ -112,6 +112,12 @@ body {
   vertical-align: text-top;
 }
 
+.center-vertical {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .inset-0 {
   inset: 0;
 }

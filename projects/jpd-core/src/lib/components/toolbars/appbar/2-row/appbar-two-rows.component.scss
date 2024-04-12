@@ -1,6 +1,9 @@
+.shadow-bottom {
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
 .fill {
   background-color: var(--theme-component-contrast);
-  //transition: background-color 0.5s;
 }
 
 .active {
@@ -10,7 +13,6 @@
 .transparent-bg {
   box-shadow: inherit !important;
   background-color: #00000000;
-  //transition: background-color 0.5s;
 }
 
 .rounded {

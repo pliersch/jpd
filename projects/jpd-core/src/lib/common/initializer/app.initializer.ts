@@ -11,9 +11,6 @@ export function initApplication(breakpointService: BreakpointService): () => Pro
         case Dimension.XSmall:
           appbarHeight = 56;
           break;
-        case Dimension.Small:
-          appbarHeight = 120;
-          break;
       }
 
       updateCssVar(appbarHeight)
