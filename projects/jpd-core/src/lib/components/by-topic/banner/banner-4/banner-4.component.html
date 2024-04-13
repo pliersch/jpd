@@ -1,26 +1,24 @@
-<!----------------------------------------------------->
-<!--                CSS NOT COMPLETE                 -->
-<!----------------------------------------------------->
+<div class="container-lg">
+  <div class="bg-gradient-primary position-relative py-5 z-2 border-radius-xl">
+    <div class="row">
+      <div class="d-flex">
 
-<div class="bg-gradient-primary position-relative mx-xxl-8 mx-xl-4 mx-lg-3 mx-3 py-5 z-2 border-radius-xl">
-  <div class="container-lg">
-    <div class="d-flex">
-
-      <div class="col-6 fs-7">
-        <div class="position-relative">
-          <h1 class="mt-4 text-white">{{ model.title }}</h1>
-          <h4 class="mt-4 text-white">{{ model.message }}</h4>
-          <p class="text-white">{{ model.description }}</p>
+        <div class="col-6">
+          <div class="ps-5 fs-7">
+            <h1 class="mt-4 text-white">{{ model.title }}</h1>
+            <h4 class="mt-4 text-white">{{ model.message }}</h4>
+            <p class="text-white">{{ model.description }}</p>
+          </div>
         </div>
-      </div>
 
-      <!----------------------------------------------------->
-      <!--             height on wrap is 0 😒             -->
-      <!--             hide image!!!                       -->
-      <!----------------------------------------------------->
-      <div class="position-relative col-6 mb-4">
-        <div class="position-absolute inset-0 d-flex justify-content-center align-items-center">
-          <img class="h-100" [src]="model.bgImageUrl" alt="phones">
+        <!----------------------------------------------------->
+        <!--             height on wrap is 0 😒             -->
+        <!--             hide image!!!                       -->
+        <!----------------------------------------------------->
+        <div class="position-relative col-6">
+          <div class="position-absolute inset-0 d-flex justify-content-center align-items-center">
+            <img class="h-100" [src]="model.imageUrl" alt="phones">
+          </div>
         </div>
       </div>
     </div>

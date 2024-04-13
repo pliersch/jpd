@@ -8,7 +8,7 @@ export interface Banner4Model {
   title: string;
   message: string;
   description: string;
-  bgImageUrl: string;
+  imageUrl: string;
   linkUrl: string;
   color: string;
 }

@@ -1,8 +1,8 @@
-<div class="bg-gradient-warning position-relative mx-xxl-5 mx-xl-4 mx-lg-3 mx-3 py-5
-  rounded-4 overflow-hidden">
-  <div class="container">
-    <div class="row justify-content-center align-items-center">
-      <div class="col-md-6 text-start px-3 py-sm-5 me-auto position-relative">
+<div class="container-lg">
+  <div class="bg-gradient-warning position-relative py-5  rounded-4 overflow-hidden">
+    <div class="row">
+      <!--    <div class="row justify-content-center align-items-center">-->
+      <div class="col-md-6 ps-5 pe-3 py-sm-5 position-relative">
         <div class="position-relative">
           <h2 class="text-white mt-sm-0">{{ model.title }}</h2>
           <p class="lead text-white mb-5">
@@ -10,9 +10,10 @@
           <a mat-raised-button color="primary">{{ model.linkText }}</a>
         </div>
       </div>
-      <div class="col-md-6 position-relative d-flex justify-content-center">
+      <div class="col-md-6 position-relative d-flex justify-content-center align-items-center">
         <img class="h-100 max-height-350 d-md-block d-none" [src]="model.imageUrl" alt="macbook">
       </div>
+      <!--    </div>-->
     </div>
   </div>
 </div>

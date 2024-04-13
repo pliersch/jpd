@@ -302,7 +302,7 @@ export const appData: AppConfig = {
               title: 'Angebot!',
               message: 'Reifenwechsel 12€',
               description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy',
-              bgImageUrl: 'assets/img/bunny.jpg',
+              imageUrl: 'assets/img/bunny.jpg',
               color: '#cebe13'
             }
           },
