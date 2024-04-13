@@ -1,19 +1,44 @@
-<div class="container">
-  <div class="row">
-    <div *ngFor="let item of model.items" class="d-flex col-md-3 col-sm-6">
-      <div class="card-42">
-        <div class="card-title">
-          <h4 class="white fw-500">{{ item.title }}</h4>
-        </div>
-        <div class="card-subtitle">
-          <div class="flex" *ngFor="let subtitle of item.subtitles">
-            <mat-icon class="icon-display me-1" color="accent" aria-hidden="false"
-                      aria-label="Example home icon" svgIcon="check"></mat-icon>
-            <p class="fs-6 white"> {{ subtitle }}</p>
+@if ((dim$ | async) !== Dimension.XSmall) {
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let item of model.items" class="d-flex col-md-3 col-sm-6">
+        <div class="card-42">
+          <div class="card-title">
+            <h4 class="white fw-500">{{ item.title }}</h4>
           </div>
+          <div class="card-subtitle">
+            <div class="d-flex" *ngFor="let subtitle of item.subtitles">
+              <mat-icon class="icon-display me-1" color="accent" aria-hidden="false"
+                        aria-label="Example home icon" svgIcon="check"></mat-icon>
+              <p class="fs-6 white"> {{ subtitle }}</p>
+            </div>
+          </div>
+          <span class="spacer"></span>
         </div>
-        <span class="spacer"></span>
       </div>
     </div>
   </div>
-</div>
+} @else {
+  <div class="container">
+    <mat-accordion>
+      @for (item of model.items; track item; let i = $first) {
+        <mat-expansion-panel [expanded]=i>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ item.title }}
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          @for (subtitle of item.subtitles; track subtitle) {
+            <div class="d-flex">
+              <mat-icon class="icon-display me-1" color="accent" aria-hidden="false"
+                        aria-label="Example home icon" svgIcon="check"></mat-icon>
+              <p>{{ subtitle }}</p>
+            </div>
+          }
+        </mat-expansion-panel>
+      }
+    </mat-accordion>
+  </div>
+
+}
