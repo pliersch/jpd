@@ -8,7 +8,7 @@
           </p>
           <div class="card-content">
             <ul class="list-unstyled">
-              <li *ngFor="let item of model.openingHours" class="flex center-items mb-2">
+              <li *ngFor="let item of model.openingHours" class="d-flex align-items-center mb-2">
                 {{ item }}
               </li>
             </ul>
@@ -23,17 +23,17 @@
           </p>
           <div class="card-content">
             <ul class="list-unstyled">
-              <li class="flex center-items mb-2">
+              <li class="d-flex align-items-center mb-2">
                 <mat-icon class="icon-display" aria-hidden="false" aria-label="Example home icon"
                           svgIcon="location_on"></mat-icon>
                 {{ address }}
               </li>
-              <li class="flex center-items mb-2">
+              <li class="d-flex align-items-center mb-2">
                 <mat-icon class="icon-display" aria-hidden="false" aria-label="Example home icon"
                           svgIcon="call"></mat-icon>
                 {{ model.phone }}
               </li>
-              <li class="flex center-items">
+              <li class="d-flex align-items-center">
                 <mat-icon class="icon-display" aria-hidden="false" aria-label="Example home icon"
                           svgIcon="mail"></mat-icon>
                 <a class="link" [href]="'mailto:' + model.email">

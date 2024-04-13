@@ -6,7 +6,7 @@ import { map } from "rxjs/operators";
 import { AppDataService } from '../../../../core';
 
 @Component({
-  selector: 'app-about-us',
+  selector: 'a4w-long-txt-1',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './long-text1.component.html',
