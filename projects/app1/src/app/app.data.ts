@@ -293,6 +293,20 @@ export const appData: AppConfig = {
             }
           },
           //////////////////////////////////////////////////////////
+          //                  Banner 4
+          //////////////////////////////////////////////////////////
+          {
+            name: 'Banner4',
+            fragment: 'banner4',
+            data: {
+              title: 'Angebot!',
+              message: 'Reifenwechsel 12€',
+              description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy',
+              bgImageUrl: 'assets/img/bunny.jpg',
+              color: '#cebe13'
+            }
+          },
+          //////////////////////////////////////////////////////////
           //       WaveDesign1
           //////////////////////////////////////////////////////////
           {

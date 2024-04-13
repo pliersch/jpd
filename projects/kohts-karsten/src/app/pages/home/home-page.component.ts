@@ -5,6 +5,7 @@ import {
   AbstractDefaultPageComponent,
   Address1Component,
   Banner2Component,
+  Banner4Component,
   Card31Component,
   Card41Component,
   Card42Component,
@@ -48,7 +49,8 @@ import { LandingSplashComponent } from './landing-splash/landing-splash.componen
     Address1Component,
     Phone1Component,
     Mail1Component,
-    Opening1Component
+    Opening1Component,
+    Banner4Component
   ],
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']

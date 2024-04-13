@@ -8,11 +8,9 @@
 
       <div class="col-6 fs-7">
         <div class="position-relative">
-          <h1 class="mt-4 text-white">Banner 4</h1>
-          <p class="lead text-white">Height of img is h-100 (no max-height) like others!!!</p>
-          <p class="lead text-white">This is a placeholder</p>
-          <p class="lead text-white">This is a placeholder</p>
-          <p class="lead text-white">This is a placeholder</p>
+          <h1 class="mt-4 text-white">{{ model.title }}</h1>
+          <h4 class="mt-4 text-white">{{ model.message }}</h4>
+          <p class="text-white">{{ model.description }}</p>
         </div>
       </div>
 
@@ -22,7 +20,7 @@
       <!----------------------------------------------------->
       <div class="position-relative col-6 mb-4">
         <div class="position-absolute inset-0 d-flex justify-content-center align-items-center">
-          <img class="h-100" [src]="imageUrl" alt="phones">
+          <img class="h-100" [src]="model.bgImageUrl" alt="phones">
         </div>
       </div>
     </div>
