@@ -93,11 +93,12 @@ export const appData: AppConfig = {
             name: 'Banner4',
             fragment: 'banner4',
             data: {
-              title: 'Angebot!',
-              message: 'Reifenwechsel 12€',
-              description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy',
-              imageUrl: 'assets/img/reifen_wechsel.webp',
-              color: '#cebe13'
+              title: 'Vereinbaren Sie einen Termin!',
+              message: 'Jetzt anrufen',
+              // description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy',
+              // imageUrl: 'assets/img/reifen_wechsel.webp',
+              color: '#cebe13',
+              buttonIcon: 'phone'
             }
           },
           //////////////////////////////////////////////////////////

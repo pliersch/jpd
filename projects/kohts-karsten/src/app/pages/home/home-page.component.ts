@@ -17,6 +17,7 @@ import {
   Parallax1Component,
   ParallaxSectionComponent,
   Phone1Component,
+  PhoneActionComponent,
   SectionBgImageComponent,
   SectionComponent,
   ShopFooter1Component,
@@ -50,7 +51,8 @@ import { LandingSplashComponent } from './landing-splash/landing-splash.componen
     Phone1Component,
     Mail1Component,
     Opening1Component,
-    Banner4Component
+    Banner4Component,
+    PhoneActionComponent
   ],
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
