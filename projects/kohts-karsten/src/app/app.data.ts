@@ -93,8 +93,8 @@ export const appData: AppConfig = {
             name: 'Banner4',
             fragment: 'banner4',
             data: {
-              title: 'Vereinbaren Sie einen Termin!',
-              message: 'Jetzt anrufen',
+              title: 'Jetzt anrufen',
+              message: 'Vereinbaren Sie einen Termin!',
               // description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy',
               // imageUrl: 'assets/img/reifen_wechsel.webp',
               color: '#cebe13',

@@ -1,18 +1,25 @@
 @if (fab) {
   <button mat-fab color="accent" (click)="execute()"
-          aria-label="Button zum Wechsel von Hell und Dunkel Design">
+          aria-label="Anruf">
     <mat-icon [svgIcon]="icon"></mat-icon>
   </button>
 
 } @else if (button) {
-  <button mat-raised-button color="primary" (click)="execute()"
-          aria-label="Ruf mich an">
+  <button class="fs-5" mat-raised-button color="accent" (click)="execute()"
+          aria-label="Anruf">
+    {{ text }}
+  </button>
+
+} @else if (iconTextButton) {
+  <button mat-raised-button color="accent" (click)="execute()"
+          aria-label="Anruf">
+    <mat-icon [svgIcon]="icon"></mat-icon>
     {{ text }}
   </button>
 
 } @else {
   <button mat-icon-button (click)="execute()"
-          aria-label="Ruf mich an">
+          aria-label="Anruf">
     <mat-icon [svgIcon]="icon"></mat-icon>
   </button>
 }

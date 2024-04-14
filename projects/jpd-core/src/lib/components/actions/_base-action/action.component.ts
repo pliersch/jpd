@@ -18,6 +18,9 @@ export class ActionComponent implements OnInit {
   @Input({transform: booleanAttribute})
   button: boolean;
 
+  @Input({transform: booleanAttribute})
+  iconTextButton: boolean;
+
   @Input({required: true})
   name: string;
 
@@ -38,8 +41,10 @@ export class ActionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.fab && this.button) {
-      throw new Error(this.name + ' action: Set "fab" and "button" were set. Only one is allowed.')
+    if (this.fab && this.button
+      || this.fab && this.iconTextButton
+      || this.button && this.iconTextButton) {
+      throw new Error(this.name + ' action: Only one button-type is allowed.')
     }
   }
 
