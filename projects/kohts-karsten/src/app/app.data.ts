@@ -1,4 +1,4 @@
-import { AppConfig, Company } from 'jpd-core';
+import { AppConfig, Company, LoremIpsumFactory } from 'jpd-core';
 
 const company: Company = {
   name: 'Kfz-Meisterwerkstatt Karsten Kohts',
@@ -95,12 +95,76 @@ export const appData: AppConfig = {
             data: {
               title: 'Jetzt anrufen',
               message: 'Vereinbaren Sie einen Termin!',
-              // description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy',
+              // description: 'Lorem ipsum dolor',
               // imageUrl: 'assets/img/reifen_wechsel.webp',
               color: '#cebe13',
               buttonIcon: 'phone'
             }
           },
+          //////////////////////////////////////////////////////////
+          //                 About Card44 ImageCard
+          //////////////////////////////////////////////////////////
+          {
+            name: 'CardPresentation1',
+            fragment: 'about',
+            data: {
+              cards: [
+                {
+                  title: 'Über uns',
+                  contentText: 'Kfz-Meisterwerkstatt Karsten Kohts bietet Ihnen Reparaturen und Wartungsservice zu einem sehr transparenten Preis. Kfz-Meisterwerkstatt Karsten Kohts bedient jeglichen Bedarf rund um Fahrzeuge in Märkische Heide und Umgebung, seit unserer Eröffnung im Jahr 2016. Unser Erfolg basiert darauf, dass wir unsere Kunden zufrieden vom Hof fahren lassen und beide Seiten gut schlafen können!',
+                  // postContentText: 'this is optional',
+                  imgUrl: 'assets/img/present1.avif',
+                  // avatar: 'assets/img/red-john.jpg',
+                  // linkText: 'weiter lesen',
+                  linkUrl: '/blog/post/1'
+                },
+                {
+                  title: 'Unsere Dienstleistungen',
+                  contentText: 'Kfz-Meisterwerkstatt Karsten Kohts beseitigt nicht nur jegliches Problem, das Sie mit Ihrem Auto haben, sondern hilft Ihnen darüber hinaus! Unser erfahrenes Team berät Sie auch gerne unverbindlich, wie Sie in Zukunft Zeit und Geld sparen können. Unsere Dienstleistungen werden von einem fachkundigen und professionellen Team durchgeführt. Unser Team ist bereit für jede Herausforderung, die Ihr Fahrzeug an uns stellt.',
+                  // postContentText: 'this is optional',
+                  imgUrl: 'assets/img/present2.avif',
+                  // avatar: 'assets/img/red-john.jpg',
+                  // linkText: 'weiter lesen',
+                  linkUrl: '/blog/post/1'
+                },
+              ],
+              imageCards: [
+                {
+                  title: 'Eine Story zum Lesen',
+                  contentText: LoremIpsumFactory.getText(140),
+                  postContentTitle: 'Patrick Liersch',
+                  postContentText: 'Story Schreiber',
+                  imgUrl: 'assets/img/reifen_wechsel.webp',
+                  // avatar: 'assets/img/red-john.jpg',
+                  linkText: 'weiter lesen',
+                  linkUrl: '/blog/post/1'
+                },
+                {
+                  title: 'Eine Story zum Lesen',
+                  contentText: LoremIpsumFactory.getText(140),
+                  postContentTitle: 'Patrick Liersch',
+                  postContentText: 'Story Schreiber',
+                  imgUrl: 'assets/img/reifen_wechsel.webp',
+                  // avatar: 'assets/img/red-john.jpg',
+                  linkText: 'weiter lesen',
+                  linkUrl: '/blog/post/1'
+                },
+                {
+                  title: 'Eine Story zum Lesen',
+                  contentText: LoremIpsumFactory.getText(140),
+                  postContentTitle: 'Patrick Liersch',
+                  postContentText: 'Story Schreiber',
+                  imgUrl: 'assets/img/reifen_wechsel.webp',
+                  // avatar: 'assets/img/red-john.jpg',
+                  linkText: 'weiter lesen',
+                  linkUrl: '/blog/post/1'
+                },
+              ]
+
+            }
+          },
+
+
           //////////////////////////////////////////////////////////
           //                 AboutUs
           //////////////////////////////////////////////////////////

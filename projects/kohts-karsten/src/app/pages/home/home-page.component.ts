@@ -18,6 +18,7 @@ import {
   ParallaxSectionComponent,
   Phone1Component,
   PhoneActionComponent,
+  PresentationCards1Component,
   SectionBgImageComponent,
   SectionComponent,
   ShopFooter1Component,
@@ -27,35 +28,36 @@ import {
 import { LandingSplashComponent } from './landing-splash/landing-splash.component';
 
 @Component({
-  selector: 'app-default-page',
-  standalone: true,
   imports: [
     CommonModule,
-    Parallax1Component,
-    GMapsIframeComponent,
-    Card41Component,
     AboutUsComponent,
+    Banner2Component,
+    Banner4Component,
+    PresentationCards1Component,
+    Parallax1Component,
+    ParallaxSectionComponent,
+    GMapsIframeComponent,
     FragmentDirective,
+    Card31Component,
+    Card41Component,
     Card42Component,
     SectionComponent,
-    Card31Component,
     TitleSubtitleDecoratorComponent,
-    ParallaxSectionComponent,
     LandingSplashComponent,
     ShopFooter1Component,
     SmallFooter2Component,
-    Banner2Component,
     ContactInfoBoard1Component,
     SectionBgImageComponent,
     Address1Component,
     Phone1Component,
     Mail1Component,
     Opening1Component,
-    Banner4Component,
-    PhoneActionComponent
+    PhoneActionComponent,
   ],
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+  selector: 'app-default-page',
+  standalone: true,
+  styleUrls: ['./home-page.component.scss'],
+  templateUrl: './home-page.component.html'
 })
 export class HomePageComponent extends AbstractDefaultPageComponent {
 

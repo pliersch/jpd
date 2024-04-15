@@ -6,7 +6,10 @@
       </div>
       <div class="col-lg-7 col-md-7 my-sm-auto mt-3 ms-sm-3">
         <h4> {{ model.title }} </h4>
-        <p> {{ model.contentText }} {{ model.linkText }} </p>
+        <p> {{ model.contentText }}
+          @if (model.linkText) {
+            {{ model.linkText }}
+          }</p>
         <div class="author">
           @if (model.avatar) {
             <img [src]="model.avatar" alt="team-3" class="avatar avatar-sm">
