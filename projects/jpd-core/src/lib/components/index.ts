@@ -57,6 +57,7 @@ export {
 export { TopStories1Component, TopStories1Model } from './by-topic/blog/stories/top-stories-1/top-stories-1.component'
 
 export { Card31Component, Card31Model, Card31ComponentModel } from './by-topic/cards/card3-1/card31.component'
+export { Card11Component } from './by-topic/cards/card1-1/card11.component'
 export { Card41Component, Card41Model } from './by-topic/cards/card4-1/card41.component'
 export { Card42Component, Card42Model } from './by-topic/cards/card4-2/card42.component'
 export { Card43Component, Card43Model } from './by-topic/cards/card4-3/card43.component'
@@ -88,6 +89,7 @@ export { Animation1Component, AnimationModel } from './by-topic/landing/animatio
 export { GMapsIframeComponent, GMapsModel } from './by-topic/maps/g-maps-iframe/g-maps-iframe.component'
 export { AboutUsComponent, AboutUsModel } from './by-topic/presentation/about-us/about-us.component'
 export { TeamComponent } from './by-topic/presentation/team/team.component'
+export { PresentationCards1Component } from './by-topic/presentation/cards-1/presentation-cards1.component'
 export { Privacy1Component } from './by-topic/privacy/v1/privacy1.component'
 export { TxtImg2Component } from './by-topic/presentation/text-img-2/txt-img2.component'
 export { WaveDesign1Component, WaveDesign1Model } from './by-topic/presentation/wave-design-1/wave-design-1.component'
