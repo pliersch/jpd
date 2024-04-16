@@ -4,9 +4,12 @@ import { MatAnchor } from '@angular/material/button';
 import { MatIconModule } from "@angular/material/icon";
 import { RouterLink } from '@angular/router';
 import * as CookieConsent from 'vanilla-cookieconsent';
-import { Route } from '../../../common';
+import { FragmentDirective } from '../../../common';
+import { BaseComponent } from '../../core/base/base.component';
 
-export interface Small2FooterModel {}
+export interface Small2FooterModel {
+  routeNames: string[];
+}
 
 @Component({
   selector: 'a4w-small-footer-2',
@@ -15,17 +18,11 @@ export interface Small2FooterModel {}
   templateUrl: './small-footer2.component.html',
   styleUrls: ['./small-footer2.component.scss']
 })
-export class SmallFooter2Component /*extends BaseComponent<Small2FooterModel> */ {
+export class SmallFooter2Component extends BaseComponent<Small2FooterModel> {
 
-  routes: Route[] = [
-    {name: 'Kontakt', path: 'kontakt', children: []},
-    // {name: 'Impressum', path: 'impressum', children: []},
-    {name: 'Datenschutz', path: 'datenschutz', children: []},
-  ];
-
-  // constructor(override fragment?: FragmentDirective) {
-  //   super('Footer', fragment)
-  // }
+  constructor(override fragment?: FragmentDirective) {
+    super('SmallFooter2', fragment);
+  }
 
   openCookieConsent(): void {
     CookieConsent.showPreferences();

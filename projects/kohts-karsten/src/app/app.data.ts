@@ -328,15 +328,13 @@ export const appData: AppConfig = {
             }
           },
           //////////////////////////////////////////////////////////
-          //                   Footer
+          //                   SmallFooter2
           //////////////////////////////////////////////////////////
           {
-            name: 'Footer',
+            name: 'SmallFooter2',
+            fragment: 'footer',
             data: {
-              address: company.address,
-              phone: company.phone,
-              email: company.email,
-              openingHours: company.openingHours
+              routeNames: ['impressum', 'datenschutz']
             }
           },
         ]

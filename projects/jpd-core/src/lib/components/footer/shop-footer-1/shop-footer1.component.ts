@@ -30,7 +30,7 @@ export class ShopFooter1Component extends BaseComponent<ShopFooter1Model> implem
   address: string
 
   constructor(override fragment?: FragmentDirective) {
-    super('Footer', fragment)
+    super('ShopFooter1', fragment);
   }
 
   ngOnInit(): void {

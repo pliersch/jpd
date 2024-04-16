@@ -4,10 +4,10 @@
 
       <div>
         <nav>
-          @for (route of routes; track route) {
+          @for (route of model.routeNames; track route) {
             <a mat-flat-button class="transparent-background text-capitalize fw-300"
-               [routerLink]="route.path">
-              {{ route.name }}
+               [routerLink]="route">
+              {{ route }}
             </a>
           }
         </nav>

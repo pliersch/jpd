@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {
-  AboutUsComponent,
   AbstractDefaultPageComponent,
   Address1Component,
   Banner2Component,
@@ -22,8 +21,6 @@ import {
   PresentationCards1Component,
   SectionBgImageComponent,
   SectionComponent,
-  ShopFooter1Component,
-  SmallFooter2Component,
   TitleSubtitleDecoratorComponent
 } from 'jpd-core';
 
@@ -32,7 +29,7 @@ import { LandingSplashComponent } from './landing-splash/landing-splash.componen
 @Component({
   imports: [
     CommonModule,
-    AboutUsComponent,
+    // AboutUsComponent,
     Banner2Component,
     Banner4Component,
     PresentationCards1Component,
@@ -46,8 +43,6 @@ import { LandingSplashComponent } from './landing-splash/landing-splash.componen
     SectionComponent,
     TitleSubtitleDecoratorComponent,
     LandingSplashComponent,
-    ShopFooter1Component,
-    SmallFooter2Component,
     ContactInfoBoard1Component,
     SectionBgImageComponent,
     Address1Component,
@@ -60,7 +55,7 @@ import { LandingSplashComponent } from './landing-splash/landing-splash.componen
     // TextContent1Component,
     // ImageContent1Component
   ],
-  selector: 'app-default-page',
+  selector: 'app-home-page',
   standalone: true,
   styleUrls: ['./home-page.component.scss'],
   templateUrl: './home-page.component.html'
