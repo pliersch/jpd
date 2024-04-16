@@ -62,7 +62,8 @@ export { Card41Component, Card41Model } from './by-topic/cards/card4-1/card41.co
 export { Card42Component, Card42Model } from './by-topic/cards/card4-2/card42.component'
 export { Card43Component, Card43Model } from './by-topic/cards/card4-3/card43.component'
 export { Card44Component, Card44Model } from './by-topic/cards/card4-4/card44.component'
-export { ImageCard1Component, ImageCard1Model } from './by-topic/cards/image-card-1/image-card1.component'
+export { ImageCard1Component } from './by-topic/cards/image-card-1/image-card1.component'
+export { ImageCard2Component } from './by-topic/cards/image-card-2/image-card2.component'
 export { CardVideo1Component } from './by-topic/cards/card-video-1/card-video1.component'
 export { TitleTitleSubImgComponent } from './by-topic/content-adapter/title-title-sub/title-title-sub-img.component'
 

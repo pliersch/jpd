@@ -106,7 +106,7 @@ export const appData: AppConfig = {
           //////////////////////////////////////////////////////////
           {
             name: 'CardPresentation1',
-            fragment: 'about',
+            fragment: 'wir',
             data: {
               cards: [
                 {
@@ -144,7 +144,7 @@ export const appData: AppConfig = {
                   contentText: LoremIpsumFactory.getText(140),
                   postContentTitle: 'Patrick Liersch',
                   postContentText: 'Story Schreiber',
-                  imgUrl: 'assets/img/reifen_wechsel.webp',
+                  imgUrl: 'assets/img/Pannenhilfe.webp',
                   // avatar: 'assets/img/red-john.jpg',
                   linkText: 'weiter lesen',
                   linkUrl: '/blog/post/1'
@@ -154,7 +154,7 @@ export const appData: AppConfig = {
                   contentText: LoremIpsumFactory.getText(140),
                   postContentTitle: 'Patrick Liersch',
                   postContentText: 'Story Schreiber',
-                  imgUrl: 'assets/img/reifen_wechsel.webp',
+                  imgUrl: 'assets/img/zahnriemen.jpg',
                   // avatar: 'assets/img/red-john.jpg',
                   linkText: 'weiter lesen',
                   linkUrl: '/blog/post/1'
@@ -164,28 +164,6 @@ export const appData: AppConfig = {
             }
           },
 
-
-          //////////////////////////////////////////////////////////
-          //                 AboutUs
-          //////////////////////////////////////////////////////////
-          {
-            name: 'AboutUs',
-            data: {
-              items: [
-                {
-                  title: 'Über uns',
-                  description: 'Kfz-Meisterwerkstatt Karsten Kohts bietet Ihnen Reparaturen und Wartungsservice zu einem sehr transparenten Preis. Kfz-Meisterwerkstatt Karsten Kohts bedient jeglichen Bedarf rund um Fahrzeuge in Märkische Heide und Umgebung, seit unserer Eröffnung im Jahr 2016. Unser Erfolg basiert darauf, dass wir unsere Kunden zufrieden vom Hof fahren lassen und beide Seiten gut schlafen können!',
-                  imageUrl: 'assets/img/daumen_hoch.webp'
-                },
-
-                {
-                  title: 'Unsere Dienstleistungen',
-                  description: 'Kfz-Meisterwerkstatt Karsten Kohts beseitigt nicht nur jegliches Problem, das Sie mit Ihrem Auto haben, sondern hilft Ihnen darüber hinaus! Unser erfahrenes Team berät Sie auch gerne unverbindlich, wie Sie in Zukunft Zeit und Geld sparen können. Unsere Dienstleistungen werden von einem fachkundigen und professionellen Team durchgeführt. Unser Team ist bereit für jede Herausforderung, die Ihr Fahrzeug an uns stellt.',
-                  imageUrl: 'assets/img/motor.webp'
-                }
-              ]
-            }
-          },
           //////////////////////////////////////////////////////////
           //                 Services
           //////////////////////////////////////////////////////////
