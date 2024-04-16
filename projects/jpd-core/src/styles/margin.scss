@@ -1,5 +1,8 @@
+//////////////////////////////////////////////////////////
+//                   positive
+//////////////////////////////////////////////////////////
+
 $count: 9;
-$value: 0.5;
 @for $i from 6 through $count {
 
   .m-#{$i} {
@@ -30,6 +33,46 @@ $value: 0.5;
   .mx-#{$i} {
     margin-left: #{$i}rem !important;
     margin-right: #{$i}rem !important;
+  }
+
+}
+
+//////////////////////////////////////////////////////////
+//                   negative
+//////////////////////////////////////////////////////////
+
+$count: 9;
+$value: 0.5;
+@for $i from 1 through $count {
+
+  .m-n#{$i} {
+    margin: #{-$i * $value}rem !important;
+  }
+
+  .mt-n#{$i} {
+    margin-top: #{-$i * $value}rem !important;
+  }
+
+  .mb-n#{$i} {
+    margin-bottom: #{-$i * $value}rem !important;
+  }
+
+  .my-n#{$i} {
+    margin-top: #{-$i * $value}rem !important;
+    margin-bottom: #{-$i * $value}rem !important;
+  }
+
+  .ml-n#{$i} {
+    margin-left: #{-$i * $value}rem !important;
+  }
+
+  .mr-n#{$i} {
+    margin-right: #{-$i * $value}rem !important;
+  }
+
+  .mx-n#{$i} {
+    margin-left: #{-$i * $value}rem !important;
+    margin-right: #{-$i * $value}rem !important;
   }
 
 }

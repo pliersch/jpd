@@ -5,25 +5,23 @@ import {
   FragmentDirective,
   LegalContainerComponent,
   LegalNoticeComponent,
-  Privacy1Component,
   SectionComponent
 } from 'jpd-core';
 
 @Component({
-  selector: 'app-privacy-page',
+  selector: 'app-legal-notice-page',
   standalone: true,
   imports: [
     CommonModule,
     FragmentDirective,
     SectionComponent,
-    Privacy1Component,
     LegalContainerComponent,
     LegalNoticeComponent,
   ],
-  templateUrl: './privacy-page.component.html',
-  styleUrls: ['./privacy-page.component.scss']
+  templateUrl: './legal-notice-page.component.html',
+  styleUrls: ['./legal-notice-page.component.scss']
 })
-export class PrivacyPageComponent extends AbstractDefaultPageComponent {
+export class LegalNoticePageComponent extends AbstractDefaultPageComponent {
 
   constructor() {
     super()
