@@ -299,9 +299,9 @@ export const appData: AppConfig = {
             name: 'Banner4',
             fragment: 'banner4',
             data: {
-              title: 'Angebot!',
-              message: 'Reifenwechsel 12€',
-              description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy',
+              title: 'Kein height bei image!',
+              message: 'So groß wie der Text',
+              description: 'Bild bei Umbruch allerdings aktuell nicht sichtbar (height 100% von 0)',
               imageUrl: 'assets/img/bunny.jpg',
               color: '#cebe13'
             }

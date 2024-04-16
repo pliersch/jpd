@@ -6,6 +6,7 @@ import {
   Address1Component,
   Banner2Component,
   Banner4Component,
+  Banner5Component,
   Card31Component,
   Card41Component,
   Card42Component,
@@ -25,6 +26,7 @@ import {
   SmallFooter2Component,
   TitleSubtitleDecoratorComponent
 } from 'jpd-core';
+
 import { LandingSplashComponent } from './landing-splash/landing-splash.component';
 
 @Component({
@@ -53,6 +55,10 @@ import { LandingSplashComponent } from './landing-splash/landing-splash.componen
     Mail1Component,
     Opening1Component,
     PhoneActionComponent,
+    Banner5Component,
+    // BannerContainer1Component,
+    // TextContent1Component,
+    // ImageContent1Component
   ],
   selector: 'app-default-page',
   standalone: true,

@@ -87,20 +87,39 @@ export const appData: AppConfig = {
             }
           },
           //////////////////////////////////////////////////////////
-          //                  Banner 4
+          //                  Banner 5
           //////////////////////////////////////////////////////////
           {
-            name: 'Banner4',
-            fragment: 'banner4',
+            name: 'Banner5',
+            fragment: 'banner5',
             data: {
               title: 'Jetzt anrufen',
               message: 'Vereinbaren Sie einen Termin!',
               // description: 'Lorem ipsum dolor',
               // imageUrl: 'assets/img/reifen_wechsel.webp',
-              color: '#cebe13',
+
               buttonIcon: 'phone'
             }
           },
+          // //////////////////////////////////////////////////////////
+          // //                  Banner 6 (Container)
+          // //////////////////////////////////////////////////////////
+          // {
+          //   name: 'TextContent1',
+          //   fragment: 'banner6',
+          //   data: {
+          //     title: 'Jetzt anrufen',
+          //     message: 'Vereinbaren Sie einen Termin!',
+          //     description: 'Lorem ipsum dolor',
+          //   }
+          // },
+          // {
+          //   name: 'ImageContent1',
+          //   fragment: 'banner6',
+          //   data: {
+          //     imageUrl: 'assets/img/reifen_wechsel.webp',
+          //   }
+          // },
           //////////////////////////////////////////////////////////
           //                 About Card44 ImageCard
           //////////////////////////////////////////////////////////
@@ -171,10 +190,10 @@ export const appData: AppConfig = {
             name: 'Card41',
             fragment: 'service',
             data: {
-              headline: 'Unser Service',
+              // headline: 'Unser Service',
               items: [
                 {
-                  title: 'TÜV, Haupt- und Abgasuntersuchung',
+                  title: 'TÜV, HU und AU',
                   subtitle: 'Lorem ipsum dolor sit amet',
                   description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy',
                   imageUrl: 'assets/img/hu-au.jpg'

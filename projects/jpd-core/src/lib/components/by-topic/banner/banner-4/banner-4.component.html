@@ -1,34 +1,33 @@
 <div class="container-lg">
   <div class="bg-gradient-primary position-relative py-5 z-2 border-radius-xl">
     <div class="row">
-      <div class="d-flex">
 
-        <div class="col-6">
-          <div class="ps-5 fs-7">
-            <h2 class="mt-4 text-white">{{ model.title }}</h2>
-            @if (model.message) {
-              <h4 class="mt-4 text-white">{{ model.message }}</h4>
-            }
-            @if (model.description) {
-              <p class="text-white">{{ model.description }}</p>
-            }
-          </div>
+      <div class="col-md-6">
+        <div class="ps-5 fs-7">
+          <h2 class="mt-4 text-white">{{ model.title }}</h2>
+          @if (model.message) {
+            <h4 class="mt-4 text-white">{{ model.message }}</h4>
+          }
+          @if (model.description) {
+            <p class="text-white">{{ model.description }}</p>
+          }
         </div>
+      </div>
 
-        <!----------------------------------------------------->
-        <!--             height on wrap is 0 😒             -->
-        <!--             hide image!!!                       -->
-        <!----------------------------------------------------->
-        <div class="position-relative col-6">
-          <div class="position-absolute inset-0 d-flex justify-content-center align-items-center">
-            @if (model.imageUrl) {
-              <img class="h-100" [src]="model.imageUrl" alt="phones">
-            } @else {
-              <ng-content select="[action]"/>
-            }
-          </div>
+      <!----------------------------------------------------->
+      <!--             height on wrap is 0 😒             -->
+      <!--             hide image is 100% of 0!!!          -->
+      <!----------------------------------------------------->
+      <div class="position-relative col-md-6">
+        <div class="position-absolute inset-0 d-flex justify-content-center align-items-center">
+          @if (model.imageUrl) {
+            <img class="h-100" [src]="model.imageUrl" alt="phones">
+          } @else {
+            <ng-content select="[action]"/>
+          }
         </div>
       </div>
     </div>
+
   </div>
 </div>

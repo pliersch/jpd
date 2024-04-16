@@ -4,25 +4,24 @@ import { MatButtonModule } from '@angular/material/button';
 import { FragmentDirective } from '../../../../common';
 import { BaseComponent } from '../../../core/base/base.component';
 
-export interface Banner3Model {
+export interface Banner5Model {
   title: string;
-  contentText: string;
-  postContentText: string,
-  imageUrl: string
-  linkText: string
-  linkUrl: string
+  message: string;
+  description: string;
+  imageUrl: string;
+  buttonIcon: 'phone'
 }
 
 @Component({
-  selector: 'a4w-banner-3',
+  selector: 'a4w-banner-5',
   standalone: true,
   imports: [CommonModule, MatButtonModule],
-  templateUrl: './banner3.component.html',
-  styleUrl: './banner3.component.scss'
+  templateUrl: './banner5.component.html',
+  styleUrl: './banner5.component.scss'
 })
-export class Banner3Component extends BaseComponent<Banner3Model> {
+export class Banner5Component extends BaseComponent<Banner5Model> {
 
   constructor(override fragment?: FragmentDirective) {
-    super('Banner3', fragment)
+    super('Banner5', fragment)
   }
 }

@@ -35,10 +35,14 @@ export { ShopFooter1Component, ShopFooter1Model } from './footer/shop-footer-1/s
 export { SmallFooter1Component, Small1FooterModel } from './footer/small-footer-1/small-footer1.component'
 export { SmallFooter2Component, Small2FooterModel } from './footer/small-footer-2/small-footer2.component'
 
-export { Banner1Component, Banner1Model } from './by-topic/banner/banner-1/banner1.component'
-export { Banner2Component, Banner2Model, Banner2ItemModel } from './by-topic/banner/banner-2/banner2.component'
-export { Banner3Component, Banner3Model } from './by-topic/banner/banner-3/banner3.component'
+export { Banner1Component } from './by-topic/banner/banner-1/banner1.component'
+export { Banner2Component, Banner2ItemModel } from './by-topic/banner/banner-2/banner2.component'
+export { Banner3Component } from './by-topic/banner/banner-3/banner3.component'
 export { Banner4Component } from './by-topic/banner/banner-4/banner-4.component'
+export { Banner5Component } from './by-topic/banner/banner-5/banner5.component'
+export { BannerContainer1Component } from './by-topic/banner/container/container-1/banner-container1.component'
+export { TextContent1Component } from './by-topic/banner/content/text-content-1/text-content-1.component'
+export { ImageContent1Component } from './by-topic/banner/content/image-content-1/image-content-1.component'
 
 export {
   ActivityList1Component, ActivityList1Model
