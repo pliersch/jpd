@@ -83,6 +83,14 @@ export const appData: AppConfig = {
                   bgImageUrl: 'assets/img/reifen_wechsel.webp',
                   color: '#cebe13'
                 },
+                {
+                  contentText: LoremIpsumFactory.getText(200),
+                  postContentText: 'Chef of Kitchen',
+                  bgImageUrl: 'assets/img/dekra-siegel-zertifiziert.webp',
+                  bigMessage: 'Come and See',
+                  linkUrl: '/',
+                  color: '#66a811'
+                },
               ]
             }
           },
@@ -101,25 +109,25 @@ export const appData: AppConfig = {
               buttonIcon: 'phone'
             }
           },
-          // //////////////////////////////////////////////////////////
-          // //                  Banner 6 (Container)
-          // //////////////////////////////////////////////////////////
-          // {
-          //   name: 'TextContent1',
-          //   fragment: 'banner6',
-          //   data: {
-          //     title: 'Jetzt anrufen',
-          //     message: 'Vereinbaren Sie einen Termin!',
-          //     description: 'Lorem ipsum dolor',
-          //   }
-          // },
-          // {
-          //   name: 'ImageContent1',
-          //   fragment: 'banner6',
-          //   data: {
-          //     imageUrl: 'assets/img/reifen_wechsel.webp',
-          //   }
-          // },
+          //////////////////////////////////////////////////////////
+          //                  Banner-Container Dekra
+          //////////////////////////////////////////////////////////
+          {
+            name: 'TextContent1',
+            fragment: 'dekra',
+            data: {
+              title: 'Tüv',
+              message: 'Nächster Termin (mit Banner 2 Style)',
+              description: 'TODO computable text',
+            }
+          },
+          {
+            name: 'ImageContent1',
+            fragment: 'dekra',
+            data: {
+              imageUrl: 'assets/img/hu-au.jpg',
+            }
+          },
           //////////////////////////////////////////////////////////
           //                 About Card44 ImageCard
           //////////////////////////////////////////////////////////

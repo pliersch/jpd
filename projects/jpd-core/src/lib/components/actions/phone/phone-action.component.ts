@@ -31,6 +31,6 @@ export class PhoneActionComponent extends BaseComponent<PhoneModel> {
   }
 
   call(): void {
-    console.log('PhoneComponent call: ', this.model.phone)
+    document.location.href = "tel:+4935476270";
   }
 }

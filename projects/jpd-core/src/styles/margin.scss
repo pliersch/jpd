@@ -2,7 +2,7 @@
 //                   positive
 //////////////////////////////////////////////////////////
 
-$count: 9;
+$count: 10;
 @for $i from 6 through $count {
 
   .m-#{$i} {
@@ -41,7 +41,7 @@ $count: 9;
 //                   negative
 //////////////////////////////////////////////////////////
 
-$count: 9;
+$count: 10;
 $value: 0.5;
 @for $i from 1 through $count {
 

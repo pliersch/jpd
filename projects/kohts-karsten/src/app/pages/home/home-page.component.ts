@@ -6,12 +6,14 @@ import {
   Banner2Component,
   Banner4Component,
   Banner5Component,
+  BannerContainer1Component,
   Card31Component,
   Card41Component,
   Card42Component,
   ContactInfoBoard1Component,
   FragmentDirective,
   GMapsIframeComponent,
+  ImageContent1Component,
   Mail1Component,
   Opening1Component,
   Parallax1Component,
@@ -21,6 +23,7 @@ import {
   PresentationCards1Component,
   SectionBgImageComponent,
   SectionComponent,
+  TextContent1Component,
   TitleSubtitleDecoratorComponent
 } from 'jpd-core';
 
@@ -51,6 +54,9 @@ import { LandingSplashComponent } from './landing-splash/landing-splash.componen
     Opening1Component,
     PhoneActionComponent,
     Banner5Component,
+    BannerContainer1Component,
+    TextContent1Component,
+    ImageContent1Component,
     // BannerContainer1Component,
     // TextContent1Component,
     // ImageContent1Component

@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, Inject, Input, numberAttribute, OnInit, PLATFORM_ID } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FragmentDirective } from '../../../../common';
 import { BaseComponent } from '../../../core/base/base.component';
@@ -35,24 +35,50 @@ export class Banner2Component extends BaseComponent<Banner2Model> implements OnI
   @Input()
   textColor: string;
 
-  @Input()
+  @Input({transform: numberAttribute})
   intervall = 5000;
 
   current = 0;
   color: string;
   alphaColor: string;
 
-  constructor(override fragment?: FragmentDirective) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object,
+              override fragment?: FragmentDirective) {
     super('Banner2', fragment);
   }
 
   ngOnInit(): void {
     this.color = this.model.items[this.current].color;
     this.alphaColor = this.color + '99';
-    // setInterval(() => {
-    //   this.alphaColor = this.color + '99';
-    //   this.current = ++this.current % this.model.items.length
-    //   this.color = this.model.items[this.current].color;
-    // }, this.intervall);
+    if (isPlatformBrowser(this.platformId)) {
+      setInterval(() => {
+        this.alphaColor = this.color + '99';
+        this.current = ++this.current % this.model.items.length
+        this.color = this.model.items[this.current].color;
+      }, this.intervall);
+    }
   }
+
+  // fixme https://angular.io/errors/NG0506
+  // constructor(@Inject(PLATFORM_ID) private platformId: Object,
+  //             private ngZone: NgZone,
+  //             override fragment?: FragmentDirective) {
+  //   super('Banner2', fragment);
+  // }
+  //
+  // ngOnInit(): void {
+  //   this.color = this.model.items[this.current].color;
+  //   this.alphaColor = this.color + '99';
+  //   if (isPlatformBrowser(this.platformId)) {
+  //     this.ngZone.runOutsideAngular(() => {
+  //       setInterval(() => {
+  //         this.alphaColor = this.color + '99';
+  //         this.current = ++this.current % this.model.items.length
+  //         this.color = this.model.items[this.current].color;
+  //       }, this.intervall);
+  //     })
+  //   }
+  // }
+
+
 }
