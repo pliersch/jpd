@@ -46,6 +46,15 @@ export class CustomRouteDomService extends RouteDomService {
   }
 
   getFooterRoutes(): Route {
-    return {name: 'Kontakt', path: 'kontakt', children: []};
-  }
+    return {
+      name: 'ROOT',
+      path: '',
+      children: [
+        {name: 'Kontakt', path: 'kontakt', children: []},
+        {name: 'Datenschutz', path: 'datenschutz', children: []},
+        {name: 'Impressum', path: 'impressum', children: []},
+      ]
+    }
+  };
+
 }

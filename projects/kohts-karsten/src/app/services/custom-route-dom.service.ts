@@ -25,8 +25,15 @@ export class CustomRouteDomService extends RouteDomService {
   }
 
   getFooterRoutes(): Route {
-    return {name: 'Datenschutz', path: '', children: []};
-  }
+    return {
+      name: 'ROOT',
+      path: '',
+      children: [
+        {name: 'Datenschutz', path: 'datenschutz', children: []},
+        {name: 'Impressum', path: 'impressum', children: []},
+      ]
+    }
+  };
 
   getIsActiveMatchOptions(): IsActiveMatchOptions {
     return {

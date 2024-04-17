@@ -20,12 +20,14 @@ import { ThemeToggleActionComponent } from '../../actions/theme-toggle/theme-tog
 export class SidenavComponent implements OnInit {
 
   route$: Observable<Route>;
+  legalRoute$: Observable<Route>;
   linkActiveOptions: IsActiveMatchOptions;
 
   constructor(private routeDomService: RouteDomService,) { }
 
   ngOnInit(): void {
     this.route$ = of(this.routeDomService.getRouteDom());
+    this.legalRoute$ = of(this.routeDomService.getFooterRoutes());
     this.linkActiveOptions = this.routeDomService.getIsActiveMatchOptions()
   }
 }
