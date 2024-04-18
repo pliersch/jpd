@@ -84,8 +84,8 @@ export const appData: AppConfig = {
                   color: '#cebe13'
                 },
                 {
-                  contentText: LoremIpsumFactory.getText(200),
-                  postContentText: 'Chef of Kitchen',
+                  contentText: LoremIpsumFactory.getText(20),
+                  postContentText: 'sub message',
                   bgImageUrl: 'assets/img/dekra-siegel-zertifiziert.webp',
                   bigMessage: 'Come and See',
                   linkUrl: '/',

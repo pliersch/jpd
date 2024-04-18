@@ -1,85 +1,13 @@
-.bg-gradient-primary {
-  background-image: linear-gradient(
-      310deg,
-      var(--theme-primary-darken-15),
-      var(--theme-primary-lighten-15));
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  //border-top: 1px solid black;
+  //border-right: 1px solid black;
+  margin: 3rem;
 }
 
-.waves {
-  position: relative;
-  width: 100%;
-  height: 16vh;
-  margin-bottom: -7px;
-  min-height: 100px;
-  max-height: 150px;
+.grid > span {
+  padding: 0 2.5em 0.5em 0;
+  //border-left: 1px solid black;
+  //border-bottom: 1px solid black;
 }
-
-.wave1 {
-  fill: rgba(var(--theme-accent--rgb), 0.4);
-}
-
-.wave2 {
-  fill: rgba(var(--theme-accent--rgb), 0.35);
-}
-
-.wave3 {
-  fill: rgba(var(--theme-accent--rgb), 0.5);
-}
-
-.wave4 {
-  fill: rgba(var(--theme-accent--rgb), 0.2);
-}
-
-.wave5 {
-  fill: rgba(var(--theme-accent--rgb), 0.15);
-}
-
-.wave6 {
-  fill: rgba(var(--theme-accent--rgb), 0.95);
-}
-
-.ms-n5 {
-  margin-left: -3rem !important;
-}
-
-.dark-theme {
-  .fill-color {
-    color: var(--theme-primary-lighten-15);
-    //color: var(--theme-primary);
-    //color: lighten(var(--theme-primary), 55%);
-  }
-}
-
-//.moving-waves > use {
-//  animation: f 40s cubic-bezier(.55, .5, .45, .5) infinite;
-//}
-//
-//.moving-waves > use:first-child {
-//  animation-delay: -2s;
-//  animation-duration: 11s;
-//}
-//
-//.moving-waves > use:nth-child(2) {
-//  animation-delay: -4s;
-//  animation-duration: 13s;
-//}
-//
-//.moving-waves > use:nth-child(3) {
-//  animation-delay: -3s;
-//  animation-duration: 15s;
-//}
-//
-//.moving-waves > use:nth-child(4) {
-//  animation-delay: -4s;
-//  animation-duration: 20s;
-//}
-//
-//.moving-waves > use:nth-child(5) {
-//  animation-delay: -4s;
-//  animation-duration: 25s;
-//}
-//
-//.moving-waves > use:nth-child(6) {
-//  animation-delay: -3s;
-//  animation-duration: 30s;
-//}
