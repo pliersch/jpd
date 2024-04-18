@@ -1,5 +1,6 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, Inject, Input, numberAttribute, OnInit, PLATFORM_ID } from '@angular/core';
+import { Platform } from '@angular/cdk/platform';
+import { CommonModule } from '@angular/common';
+import { Component, Input, numberAttribute, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FragmentDirective } from '../../../../common';
 import { BaseComponent } from '../../../core/base/base.component';
@@ -42,7 +43,7 @@ export class Banner2Component extends BaseComponent<Banner2Model> implements OnI
   color: string;
   alphaColor: string;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object,
+  constructor(private platform: Platform,
               override fragment?: FragmentDirective) {
     super('Banner2', fragment);
   }
@@ -50,7 +51,7 @@ export class Banner2Component extends BaseComponent<Banner2Model> implements OnI
   ngOnInit(): void {
     this.color = this.model.items[this.current].color;
     this.alphaColor = this.color + '99';
-    if (isPlatformBrowser(this.platformId)) {
+    if (this.platform.isBrowser) {
       setInterval(() => {
         this.alphaColor = this.color + '99';
         this.current = ++this.current % this.model.items.length
@@ -60,6 +61,7 @@ export class Banner2Component extends BaseComponent<Banner2Model> implements OnI
   }
 
   // fixme https://angular.io/errors/NG0506
+  // todo there is no warning in app1 project
   // constructor(@Inject(PLATFORM_ID) private platformId: Object,
   //             private ngZone: NgZone,
   //             override fragment?: FragmentDirective) {

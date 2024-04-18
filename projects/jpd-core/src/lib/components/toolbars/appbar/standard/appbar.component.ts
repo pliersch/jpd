@@ -76,7 +76,7 @@ export class AppbarComponent implements OnInit, AfterViewInit {
               private routeDomService: RouteDomService,
               private breakpointObserver: BreakpointObserver) {
     scrollService.scrollTop$.subscribe(scrollTop => this.onScroll(scrollTop));
-    cssDomService.themeToggle$.subscribe(state => this.onToggleTheme(state));
+    cssDomService.themeState$.subscribe(state => this.onToggleTheme(state));
   }
 
   isHandset$: Observable<boolean>;

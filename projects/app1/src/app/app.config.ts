@@ -1,4 +1,5 @@
 import { MediaMatcher } from '@angular/cdk/layout';
+import { Platform } from '@angular/cdk/platform';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { APP_INITIALIZER, ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { GoogleMapsModule } from '@angular/google-maps';
@@ -23,8 +24,6 @@ import {
   RouteDomService
 } from 'jpd-core';
 import { YoutubeService } from 'jpd-youtube';
-
-import { SsrCookieService } from 'ngx-cookie-service-ssr';
 import { ROUTES } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
@@ -39,7 +38,7 @@ export const appConfig: ApplicationConfig = {
       provide: APP_INITIALIZER,
       multi: true,
       useFactory: initTheme,
-      deps: [SsrCookieService, CssDomService, MediaMatcher]
+      deps: [/*SsrCookieService,*/ CssDomService, Platform, MediaMatcher]
     },
     {provide: APP_INITIALIZER, useFactory: initApplication, multi: true, deps: [BreakpointService]},
     {provide: APP_INITIALIZER, useFactory: initIcons, multi: true, deps: [MatIconRegistry, DomSanitizer]},

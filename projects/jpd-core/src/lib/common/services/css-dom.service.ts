@@ -1,6 +1,5 @@
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, Renderer2, RendererFactory2 } from "@angular/core";
-import { SsrCookieService } from 'ngx-cookie-service-ssr';
 import { Subject } from 'rxjs';
 import { Themes } from '../const';
 
@@ -14,12 +13,12 @@ export interface ThemeToggleChange {
 })
 export class CssDomService {
 
-  themeToggle$ = new Subject<ThemeToggleChange>();
+  themeState$ = new Subject<ThemeToggleChange>();
   private renderer: Renderer2;
   private theme: string;
 
   constructor(rendererFactory: RendererFactory2,
-              private cookieService: SsrCookieService,
+              // private cookieService: SsrCookieService,
               @Inject(DOCUMENT) private document: Document) {
     this.renderer = rendererFactory.createRenderer(null, null);
   }
@@ -32,16 +31,18 @@ export class CssDomService {
     this.renderer.addClass(this.document.body, Themes.DARK);
     this.renderer.removeClass(this.document.body, Themes.LIGHT);
     this.theme = Themes.DARK;
-    this.cookieService.set('theme', this.theme);
-    this.themeToggle$.next({add: Themes.DARK, remove: Themes.LIGHT})
+    localStorage.setItem('theme', this.theme);
+    // this.cookieService.set('theme', this.theme);
+    this.themeState$.next({add: Themes.DARK, remove: Themes.LIGHT})
   }
 
   setLightTheme(): void {
     this.renderer.addClass(this.document.body, Themes.LIGHT);
     this.renderer.removeClass(this.document.body, Themes.DARK);
     this.theme = Themes.LIGHT;
-    this.cookieService.set('theme', this.theme);
-    this.themeToggle$.next({add: Themes.LIGHT, remove: Themes.DARK})
+    localStorage.setItem('theme', this.theme);
+    // this.cookieService.set('theme', this.theme);
+    this.themeState$.next({add: Themes.LIGHT, remove: Themes.DARK})
   }
 
   toggleTheme(): void {

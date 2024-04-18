@@ -86,7 +86,7 @@ export class AppbarTwoRowsComponent implements OnInit, AfterViewInit {
               private routeDomService: RouteDomService,
               private breakpointService: BreakpointService) {
     scrollService.scrollTop$.subscribe(scrollTop => this.onScroll(scrollTop));
-    cssDomService.themeToggle$.subscribe(state => this.onToggleTheme(state));
+    cssDomService.themeState$.subscribe(state => this.onToggleTheme(state));
   }
 
   ngOnInit(): void {
