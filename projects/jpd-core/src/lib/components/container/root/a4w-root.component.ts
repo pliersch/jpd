@@ -5,7 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { CssVar, CssVarService, PageScrollService, ScrollSpyDirective, ToggleSidenavService } from '../../../common';
+import { CssVar, CssVarService, PageScrollService, ToggleSidenavService } from '../../../common';
 import { AdminService } from '../../../modules/admin';
 import { DynamicHostComponent } from '../../dynamic-component/dynamic-host.component';
 import { SidenavComponent } from '../../navigation/sidenav/sidenav.component';
@@ -18,7 +18,7 @@ import { RightSideComponent } from '../side/right/right-side.component';
   templateUrl: './a4w-root.component.html',
   styleUrls: ['./a4w-root.component.scss'],
   standalone: true,
-  imports: [MatSidenavModule, MatListModule, NgFor, RouterLink, RouterLinkActive, RouterOutlet, AsyncPipe, NgIf, DynamicHostComponent, ScrollSpyDirective, AppbarComponent, StickyAppbarComponent, NgClass, NgTemplateOutlet, MatButtonModule, SidenavComponent, RightSideComponent]
+  imports: [MatSidenavModule, MatListModule, NgFor, RouterLink, RouterLinkActive, RouterOutlet, AsyncPipe, NgIf, DynamicHostComponent, AppbarComponent, StickyAppbarComponent, NgClass, NgTemplateOutlet, MatButtonModule, SidenavComponent, RightSideComponent]
 })
 export class A4WRootComponent implements OnInit, AfterViewInit {
 

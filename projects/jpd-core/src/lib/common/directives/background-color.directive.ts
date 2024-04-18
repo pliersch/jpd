@@ -1,7 +1,7 @@
 import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[backgroundColor]',
+  selector: '[a4wBackgroundColor]',
   standalone: true
 })
 export class BackgroundColorDirective implements OnInit {

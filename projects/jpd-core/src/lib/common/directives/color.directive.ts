@@ -1,7 +1,7 @@
 import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[color]',
+  selector: '[a4wColor]',
   standalone: true
 })
 export class ColorDirective implements OnInit {

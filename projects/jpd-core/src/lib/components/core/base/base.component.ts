@@ -31,7 +31,7 @@ export abstract class BaseComponent<T extends object> {
   }
 
   protected readModelData(className: string): void {
-    this.model = this.appDataService.getComponentData(className, this.router.url, this.fragment?.appFragment);
+    this.model = this.appDataService.getComponentData(className, this.router.url, this.fragment?.a4wFragment);
   }
 
   // private toggleEditMode(mode: boolean): void {

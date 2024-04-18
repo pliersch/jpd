@@ -101,6 +101,11 @@
     },
     "jpd-core": {
       "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "projects/jpd-core",
       "sourceRoot": "projects/jpd-core/src",
       "prefix": "lib",

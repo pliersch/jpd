@@ -22,14 +22,16 @@
           "error",
           {
             "type": "attribute",
-            "style": "camelCase"
+            "style": "camelCase",
+            "prefix": "a4w"
           }
         ],
         "@angular-eslint/component-selector": [
           "error",
           {
             "type": "element",
-            "style": "kebab-case"
+            "style": "kebab-case",
+            "prefix": "a4w"
           }
         ],
         //        "@typescript-eslint/explicit-member-accessibility": [

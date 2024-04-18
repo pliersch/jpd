@@ -24,7 +24,7 @@ export class TitleSubtitleDecoratorComponent extends BaseComponent<TitleSubtitle
 
   ngOnInit(): void {
     this.route = this.router.url.split('#')[0];
-    this.anchor = this.fragment?.appFragment;
+    this.anchor = this.fragment?.a4wFragment;
   }
 
 }

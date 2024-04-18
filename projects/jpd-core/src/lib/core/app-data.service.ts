@@ -18,15 +18,15 @@ export abstract class AppDataService {
   /**
    * @param className class of the component like: 'MyComponent'
    * @param url '/' is root. other examples are '/contact' '/impressum'
-   * @param appFragment name of fragment provides by fragment-directive
+   * @param a4wFragment name of fragment provides by fragment-directive
    */
-  getComponentData(className: string, url: string, appFragment?: string): any {
+  getComponentData(className: string, url: string, a4wFragment?: string): any {
     url = this.normalizeUrl(url);
     const components =
       this.appConfig.componentsByUrl.find(item => item.url === url);
     let componentData
-    if (appFragment) {
-      componentData = components?.data.filter(data => data.name === className && data.fragment === appFragment);
+    if (a4wFragment) {
+      componentData = components?.data.filter(data => data.name === className && data.fragment === a4wFragment);
     } else {
       componentData = components?.data.filter(data => data.name === className);
     }
@@ -39,7 +39,7 @@ export abstract class AppDataService {
       return componentData[0].data;
     }
 
-    return componentData.find(data => data.fragment === appFragment);
+    return componentData.find(data => data.fragment === a4wFragment);
   }
 
   /**

@@ -358,7 +358,7 @@ export const appData: AppConfig = {
             data: {
               items: [
                 {
-                  contentText: LoremIpsumFactory.getText(200),
+                  contentText: LoremIpsumFactory.getText(25),
                   postContentText: 'Chef of Kitchen',
                   bgImageUrl: 'assets/img/1x/13.jpg',
                   bigMessage: 'Come and See',
@@ -366,7 +366,7 @@ export const appData: AppConfig = {
                   color: '#66a811'
                 },
                 {
-                  contentText: LoremIpsumFactory.getText(100),
+                  contentText: LoremIpsumFactory.getText(15),
                   postContentText: 'Foo Bar',
                   bgImageUrl: 'assets/img/1x/14.jpg',
                   bigMessage: 'Click here',

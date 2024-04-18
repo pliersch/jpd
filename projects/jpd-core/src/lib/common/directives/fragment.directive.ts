@@ -1,18 +1,18 @@
 import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 
 @Directive({
-  selector: '[appFragment]',
+  selector: '[a4wFragment]',
   standalone: true
 })
 export class FragmentDirective implements OnInit {
 
   @Input({required: true,})
-  appFragment: string;
+  a4wFragment: string;
 
   constructor(public el: ElementRef) { }
 
   public get name(): string {
-    return this.appFragment;
+    return this.a4wFragment;
   }
 
   public get id(): string {
@@ -20,7 +20,7 @@ export class FragmentDirective implements OnInit {
   }
 
   ngOnInit(): void {
-    this.el.nativeElement.id = btoa(this.appFragment);
+    this.el.nativeElement.id = btoa(this.a4wFragment);
   }
 
 }
