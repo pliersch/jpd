@@ -8,7 +8,7 @@ import {
   LogoContainerComponent,
   NavigationService,
   PhoneActionComponent,
-  runCookieConsentConfig,
+  setupCookieConsent,
   ShopFooter1Component,
   SmallFooter2Component,
   StickyAppbarComponent,
@@ -40,7 +40,7 @@ export class AppComponent {
     navigationService.startSaveHistory();
 
     afterNextRender(() => {
-      runCookieConsentConfig();
+      setupCookieConsent();
       // CookieConsent.show();
       // CookieConsent.showPreferences();
 

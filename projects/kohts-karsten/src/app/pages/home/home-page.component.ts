@@ -13,6 +13,7 @@ import {
   ContactInfoBoard1Component,
   FragmentDirective,
   GMapsIframeComponent,
+  IframePlaceholderComponent,
   ImageContent1Component,
   Mail1Component,
   Opening1Component,
@@ -57,6 +58,7 @@ import { LandingSplashComponent } from './landing-splash/landing-splash.componen
     BannerContainer1Component,
     TextContent1Component,
     ImageContent1Component,
+    IframePlaceholderComponent
     // BannerContainer1Component,
     // TextContent1Component,
     // ImageContent1Component
@@ -72,4 +74,5 @@ export class HomePageComponent extends AbstractDefaultPageComponent {
     super();
   }
 
+  protected readonly GMapsIframeComponent = GMapsIframeComponent;
 }

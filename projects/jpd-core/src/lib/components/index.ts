@@ -95,9 +95,12 @@ export { GMapsIframeComponent, GMapsModel } from './by-topic/maps/g-maps-iframe/
 export { AboutUsComponent, AboutUsModel } from './by-topic/presentation/about-us/about-us.component'
 export { TeamComponent } from './by-topic/presentation/team/team.component'
 export { PresentationCards1Component } from './by-topic/presentation/cards-1/presentation-cards1.component'
+
 export { LegalContainerComponent } from './by-topic/legal/legal-container/legal-container.component'
 export { LegalNoticeComponent } from './by-topic/legal/legal-notice/legal-notice.component'
 export { Privacy1Component } from './by-topic/legal/privacy-v1/privacy1.component'
+export { IframePlaceholderComponent } from './by-topic/legal/iframe-placeholder/iframe-placeholder.component'
+
 export { TxtImg2Component } from './by-topic/presentation/text-img-2/txt-img2.component'
 export { WaveDesign1Component, WaveDesign1Model } from './by-topic/presentation/wave-design-1/wave-design-1.component'
 

@@ -1,1 +1,1 @@
-export { runCookieConsentConfig } from './cookie-consent-config'
+export { setupCookieConsent } from './cookie-consent-config'

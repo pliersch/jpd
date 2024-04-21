@@ -2,6 +2,22 @@ p {
   font-weight: 300;
 }
 
+.light-theme {
+  p {
+    font-weight: 400;
+  }
+}
+
+span {
+  font-weight: 300;
+}
+
+.light-theme {
+  span {
+    font-weight: 400;
+  }
+}
+
 .a4w-h2 {
   font-size: 2.8em !important;
   line-height: 1.5em !important;
@@ -26,6 +42,10 @@ p {
   font-size: 1.1em !important;
   line-height: 1.2em !important;
 }
+
+//////////////////////////////////////////////////////////
+//              don't want light, bold etc
+//////////////////////////////////////////////////////////
 
 .fw-300 {
   font-weight: 300 !important;

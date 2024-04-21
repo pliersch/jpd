@@ -1,6 +1,6 @@
 import * as CookieConsent from 'vanilla-cookieconsent';
 
-export function runCookieConsentConfig(): void {
+export function setupCookieConsent(): void {
   CookieConsent.run({
     onFirstConsent: ({cookie}) => {
       console.log('onFirstConsent fired', cookie);

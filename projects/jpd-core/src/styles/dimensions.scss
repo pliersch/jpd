@@ -1,23 +1,37 @@
-.height-250 {
-  height: 250px !important;
+$count: 10;
+@for $i from 1 through $count {
+  $current: $i*50;
+
+  .height-#{$current} {
+    height: #{$current}px !important;
+  }
+
+  .max-height-#{$current} {
+    max-height: #{$current}px !important;
+  }
+
 }
 
-.max-height-250 {
-  max-height: 250px !important;
-}
-
-.height-300 {
-  height: 300px !important;
-}
-
-.max-height-300 {
-  max-height: 300px !important;
-}
-
-.height-350 {
-  height: 350px !important;
-}
-
-.max-height-350 {
-  max-height: 350px !important;
-}
+//.height-250 {
+//  height: 250px !important;
+//}
+//
+//.max-height-250 {
+//  max-height: 250px !important;
+//}
+//
+//.height-300 {
+//  height: 300px !important;
+//}
+//
+//.max-height-300 {
+//  max-height: 300px !important;
+//}
+//
+//.height-350 {
+//  height: 350px !important;
+//}
+//
+//.max-height-350 {
+//  max-height: 350px !important;
+//}
