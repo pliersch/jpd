@@ -1,8 +1,9 @@
-import { NgComponentOutlet } from '@angular/common';
+import { AsyncPipe, NgComponentOutlet } from '@angular/common';
 import { Component, Input, OnInit, Type } from '@angular/core';
 import { MatAnchor, MatButton } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
-import { SsrCookieService } from 'ngx-cookie-service-ssr';
+import { Observable, of } from 'rxjs';
+import { CookieConsentService } from '../../../../common';
 
 export interface IFramePlaceholderModel {
   title: string;
@@ -21,7 +22,9 @@ export interface IFramePlaceholderModel {
     NgComponentOutlet,
     MatButton,
     MatAnchor,
-    RouterLink
+    RouterLink,
+    AsyncPipe,
+    // MatProgressSpinner
   ],
   templateUrl: './iframe-placeholder.component.html',
   styleUrl: './iframe-placeholder.component.scss'
@@ -34,7 +37,7 @@ export class IframePlaceholderComponent implements OnInit {
   model: IFramePlaceholderModel = {
     title: 'Google Maps',
     description1: 'An dieser Stelle finden Sie einen externen Inhalt von ',
-    description2: 'Sie können ihn sich mit einem Klick anzeigen lassen.',
+    description2: 'Sie können sich die Karte mit einem Klick anzeigen lassen.',
     description3: 'Ich bin damit einverstanden, dass mir externe Inhalte angezeigt werden. ' +
       'Damit können personenbezogene Daten an Drittplattformen übermittelt werden. ' +
       'Mehr dazu in unseren ',
@@ -43,22 +46,27 @@ export class IframePlaceholderComponent implements OnInit {
     linkText: 'open link'
   }
 
-  show = false;
+  // show = false;
+  isMapsAllowed$: Observable<boolean>;
 
 
-  constructor(private cookieService: SsrCookieService) { }
+  constructor(private cookieConsentService: CookieConsentService) {
+    this.isMapsAllowed$ = cookieConsentService.isMapsAllowed$;
+  }
 
   onClickAllow(): void {
-    this.show = true;
-    this.cookieService.set('maps', '1');
+    // this.show = true;
+    this.cookieConsentService.acceptService('maps', 'external');
+    // CookieConsent.acceptService('maps', 'external');
   }
 
   onClickAllowOnce(): void {
-    this.show = true;
+    this.isMapsAllowed$ = of(true);
   }
 
   ngOnInit(): void {
-    this.show = this.cookieService.get('maps') === '1';
+    // this.show = CookieConsent.acceptedService('maps', 'external');
+    // this.show = CookieConsent.acceptedService('maps', 'external');
   }
 
 }

@@ -4,11 +4,11 @@ import {
   ActionContainerComponent,
   AppbarComponent,
   AppbarTwoRowsComponent,
+  CookieConsentService,
   FragmentDirective,
   LogoContainerComponent,
   NavigationService,
   PhoneActionComponent,
-  setupCookieConsent,
   ShopFooter1Component,
   SmallFooter2Component,
   StickyAppbarComponent,
@@ -36,12 +36,13 @@ import {
 })
 export class AppComponent {
 
-  constructor(navigationService: NavigationService) {
+  constructor(navigationService: NavigationService,
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
+              cookieConsentService: CookieConsentService) {
     navigationService.startSaveHistory();
 
     afterNextRender(() => {
-      setupCookieConsent();
-      // CookieConsent.show();
+      cookieConsentService.initCookieConsent();
       // CookieConsent.showPreferences();
 
     }, {phase: AfterRenderPhase.Write});

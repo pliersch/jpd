@@ -1,6 +1,5 @@
 export * from './animations/index'
 export * from './const/index'
-export * from './cookie-consent/index'
 export * from './directives/index'
 export * from './initializer/index'
 export * from './interfaces/index'

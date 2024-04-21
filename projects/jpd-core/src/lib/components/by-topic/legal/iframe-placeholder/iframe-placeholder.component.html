@@ -1,12 +1,18 @@
-<div class="h600">
-  @if (show) {
+<div class="height-600px">
+  @if (isMapsAllowed$ | async) {
+    <!--    <div class="position-relative">-->
+      <!--      <div class="position-absolute inset-0">-->
+      <!--        maps is loading-->
+      <!--        <mat-spinner></mat-spinner>-->
+      <!--      </div>-->
     <ng-content/>
+    <!--    </div>-->
   } @else {
     <div class="container-fluid">
       <div class="grey-bg-alpha-25 py-7 rounded-4 overflow-hidden">
         <div class="row">
           <div class="col-md-4 px-5 position-relative d-flex justify-content-center align-items-center">
-            <img class="max-height-450 d-md-block d-none" [src]="model.imageUrl" alt="Firmen-Logo">
+            <img class="max-height-450px d-md-block d-none" [src]="model.imageUrl" alt="Firmen-Logo">
           </div>
           <div class="col-md-8 px-4 px-md-5 py-sm-5 position-relative">
             <div class="position-relative">
@@ -17,7 +23,7 @@
                 <span>{{ model.title }} </span>
 
                 <a class="" href="https://cloud.google.com/maps-platform/terms" target="_blank">
-                  (AGB)</a> <span>.</span>
+                  (AGB)</a> <span>. </span>
                 <span>{{ model.description2 }} </span>
               </div>
               <div class="button-row">
@@ -30,7 +36,7 @@
               </div>
               <span class="fs-7">
               {{ model.description3 }}
-                <a class="" routerLink="./datenschutz">Datenschutzhinweisen</a>.
+                <a class="" routerLink="./datenschutz">Datenschutzhinweisen</a>
               </span>
             </div>
           </div>

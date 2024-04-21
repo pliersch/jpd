@@ -8,7 +8,7 @@ import { Dimension } from '../const';
 })
 export class BreakpointService {
 
-  private dimension: ReplaySubject<string> = new ReplaySubject<string>();
+  private dimension: ReplaySubject<string> = new ReplaySubject();
 
   public get dimension$(): Observable<string> {
     return this.dimension;

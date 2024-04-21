@@ -1,12 +1,12 @@
-$count: 10;
+$count: 14;
 @for $i from 1 through $count {
   $current: $i*50;
 
-  .height-#{$current} {
+  .height-#{$current}px {
     height: #{$current}px !important;
   }
 
-  .max-height-#{$current} {
+  .max-height-#{$current}px {
     max-height: #{$current}px !important;
   }
 

@@ -21,4 +21,7 @@ export class GMapsIframeComponent extends BaseComponent<GMapsModel> {
     super('GMapsIframe', fragment)
   }
 
+  onLoadMaps(): void {
+    console.log('GMapsIframeComponent onLoadMaps: ',)
+  }
 }
