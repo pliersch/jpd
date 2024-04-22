@@ -1,5 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import {
+  MatAccordion,
+  MatExpansionPanel,
+  MatExpansionPanelHeader,
+  MatExpansionPanelTitle
+} from '@angular/material/expansion';
+import { MatIcon } from '@angular/material/icon';
 import { Observable, of } from 'rxjs';
 import { BreakpointService, Dimension } from '../../../../common';
 import { PosterComponent } from '../../../poster/poster.component';
@@ -7,7 +14,7 @@ import { PosterComponent } from '../../../poster/poster.component';
 @Component({
   selector: 'a4w-privacy-1',
   standalone: true,
-  imports: [CommonModule, PosterComponent],
+  imports: [CommonModule, PosterComponent, MatAccordion, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle, MatIcon],
   templateUrl: './privacy1.component.html',
   styleUrl: './privacy1.component.scss'
 })

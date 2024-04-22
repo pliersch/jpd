@@ -19,7 +19,7 @@
     height: 100%;
     position: absolute;
     width: 100%;
-    opacity: .85;
+    opacity: .8;
   }
 
   .full-background {
@@ -32,9 +32,12 @@
     border-radius: 1rem;
   }
 
-  .card-body {
+  .body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     color: #fff;
-    //flex: 1 1 auto;
+    flex: 1 1 auto;
     //position: relative;
     z-index: 2;
 
