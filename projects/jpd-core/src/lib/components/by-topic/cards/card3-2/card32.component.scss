@@ -1,0 +1,55 @@
+.card-32 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+
+  margin-bottom: 30px;
+  margin-top: 30px;
+  font-size: .875rem;
+  align-items: center;
+  box-shadow: 0 20px 27px 0 rgba(0, 0, 0, .05);
+
+  .filter::after {
+    background-image: linear-gradient(310deg, #7928ca, #ff0080);
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    opacity: .85;
+  }
+
+  .full-background {
+    background-position: 50%;
+    background-size: cover;
+    margin-bottom: 30px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 1rem;
+  }
+
+  .card-body {
+    color: #fff;
+    //flex: 1 1 auto;
+    //position: relative;
+    z-index: 2;
+
+    .icon-display {
+      display: inline-block;
+
+      .icon-size2 {
+        transform: scale(2);
+      }
+    }
+
+    .white-button {
+      color: #fff;
+      border-color: #fff;
+    }
+  }
+
+}

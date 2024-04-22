@@ -114,6 +114,20 @@ export const appData: AppConfig = {
             }
           },
           //////////////////////////////////////////////////////////
+          //                 Card31 (Blog)
+          //////////////////////////////////////////////////////////
+          {
+            name: 'Card32',
+            fragment: 'card32',
+            data: {
+              items: [
+                TitleSubtitleMessageFactory.create(LoremIpsumFactory.getText(20), LoremIpsumFactory.getText(150), LoremIpsumFactory.getText(10), 'assets/img/1x/14.jpg', '/blog'),
+                TitleSubtitleMessageFactory.create(LoremIpsumFactory.getText(25), LoremIpsumFactory.getText(105), LoremIpsumFactory.getText(10), 'assets/img/1x/17.jpg', '/blog'),
+                TitleSubtitleMessageFactory.create(LoremIpsumFactory.getText(17), LoremIpsumFactory.getText(142), LoremIpsumFactory.getText(10), 'assets/img/1x/16.jpg', '/blog'),
+              ]
+            }
+          },
+          //////////////////////////////////////////////////////////
           //                   Gallery Grid
           //////////////////////////////////////////////////////////
           {
