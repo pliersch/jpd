@@ -1,4 +1,4 @@
-<div class="height-600px">
+<div class="h-600px">
   @if (isMapsAllowed$ | async) {
     <!--    <div class="position-relative">-->
       <!--      <div class="position-absolute inset-0">-->
@@ -9,21 +9,34 @@
     <!--    </div>-->
   } @else {
     <div class="container-fluid">
-      <div class="grey-bg-alpha-25 py-7 rounded-4 overflow-hidden">
+      <div class="grey-bg-alpha-25 py-5 rounded-4 overflow-hidden">
         <div class="row">
           <div class="col-md-4 px-5 position-relative d-flex justify-content-center align-items-center">
-            <img class="max-height-450px d-md-block d-none" [src]="model.imageUrl" alt="Firmen-Logo">
+            <img class="max-h-450px d-md-block d-none" [src]="model.imageUrl" alt="Firmen-Logo">
           </div>
           <div class="col-md-8 px-4 px-md-5 py-sm-5 position-relative">
             <div class="position-relative">
-              <h5 class="mt-sm-0 fw-400">Empfohlener Inhalt</h5>
-              <h2 class="mt-sm-0 fw-400">{{ model.title }}</h2>
+              <div class="position-relative d-flex">
+                <div class="d-block d-sm-block d-md-none me-3">
+                  <div class="">
+                    <img class="w-100px h-100"
+                         [src]="model.imageUrl" alt="Firmen-Logo">
+                  </div>
+                </div>
+
+                <div class="my-3">
+                  <h5 class="mt-sm-0 fw-400">Empfohlener Inhalt</h5>
+                  <h2 class="mt-sm-0 fw-400">{{ model.title }}</h2>
+                </div>
+              </div>
+              <br>
               <div>
                 <span>{{ model.description1 }} </span>
                 <a class="" href="https://cloud.google.com/maps-platform/terms" target="_blank">
                   (AGB)</a> <span>. </span>
                 <span>{{ model.description2 }} </span>
               </div>
+              <br>
               <div class="button-row">
                 <button mat-raised-button class="fs-6" (click)="onClickAllowOnce()">
                   Karte anzeigen
