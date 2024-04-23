@@ -1,17 +1,17 @@
-<footer class="footer footer-black fw-300">
+<footer class="footer footer-black">
   <div class="container-lg">
     <div class="footer-row">
 
       <div>
         <nav>
           @for (route of model.routeNames; track route) {
-            <a mat-flat-button class="transparent-background text-capitalize fw-300"
+            <a mat-flat-button class="transparent-background text-capitalize"
                [routerLink]="route">
               {{ route }}
             </a>
           }
         </nav>
-        <a mat-flat-button (click)="openCookieConsent()" class="transparent-background text-capitalize fw-300">
+        <a mat-flat-button (click)="openCookieConsent()" class="transparent-background text-capitalize">
           Cookie Einstellungen
         </a>
       </div>

@@ -1,19 +1,9 @@
-p {
+body {
   font-weight: 300;
 }
 
 .light-theme {
-  p {
-    font-weight: 400;
-  }
-}
-
-span {
-  font-weight: 300;
-}
-
-.light-theme {
-  span {
+  body {
     font-weight: 400;
   }
 }
