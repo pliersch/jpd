@@ -15,28 +15,28 @@ export class CookieConsentService {
 
   initCookieConsent(): void {
     CookieConsent.run({
-      onFirstConsent: ({cookie}) => {
-        console.log('onFirstConsent fired', cookie);
+      onFirstConsent: (/*{cookie}*/) => {
+        // console.log('onFirstConsent fired', cookie);
       },
 
-      onConsent: ({cookie}) => {
-        console.log('onConsent fired!', cookie);
+      onConsent: (/*{cookie}*/) => {
+        // console.log('onConsent fired!', cookie);
       },
 
-      onChange: ({changedCategories, changedServices}) => {
-        console.log('onChange fired!', changedCategories, changedServices);
+      onChange: (/*{changedCategories, changedServices}*/) => {
+        // console.log('onChange fired!', changedCategories, changedServices);
       },
 
-      onModalReady: ({modalName}) => {
-        console.log('ready:', modalName);
+      onModalReady: (/*{modalName}*/) => {
+        // console.log('ready:', modalName);
       },
 
-      onModalShow: ({modalName}) => {
-        console.log('visible:', modalName);
+      onModalShow: (/*{modalName}*/) => {
+        // console.log('visible:', modalName);
       },
 
-      onModalHide: ({modalName}) => {
-        console.log('hidden:', modalName);
+      onModalHide: (/*{modalName}*/) => {
+        // console.log('hidden:', modalName);
       },
 
       categories: {

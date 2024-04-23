@@ -1,5 +1,8 @@
 <div class="container-lg">
-  <div class="bg-gradient-warning position-relative py-5  rounded-4 overflow-hidden">
+  <div class="position-relative py-5 rounded-4 overflow-hidden"
+       [style.background-image]=' (model.color1 && model.color2) ?
+           "linear-gradient(310deg, " + model.color1 + ", " + model.color2 +")":
+           "linear-gradient(310deg, " + model.color1 + ", " + model.color1 +")"'>
     <div class="row">
       <div class="col-md-6 ps-5 pe-3 py-sm-5 position-relative">
         <ng-content select="[left]"/>

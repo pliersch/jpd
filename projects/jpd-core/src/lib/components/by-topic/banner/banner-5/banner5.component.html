@@ -15,7 +15,7 @@
       </div>
       <div class="col-md-6 position-relative d-flex justify-content-center align-items-center">
         @if (model.imageUrl) {
-          <img class="h-100 max-height-350px d-md-block d-none" [src]="model.imageUrl">
+          <img class="h-100 max-h-350px d-md-block d-none" [src]="model.imageUrl">
         } @else {
           <div class="py-3">
             <ng-content select="[action]"/>

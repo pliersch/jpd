@@ -2,36 +2,20 @@ $count: 14;
 @for $i from 1 through $count {
   $current: $i*50;
 
-  .height-#{$current}px {
+  .h-#{$current}px {
     height: #{$current}px !important;
   }
 
-  .max-height-#{$current}px {
+  .max-h-#{$current}px {
     max-height: #{$current}px !important;
   }
 
-}
+  .w-#{$current}px {
+    width: #{$current}px !important;
+  }
 
-//.height-250 {
-//  height: 250px !important;
-//}
-//
-//.max-height-250 {
-//  max-height: 250px !important;
-//}
-//
-//.height-300 {
-//  height: 300px !important;
-//}
-//
-//.max-height-300 {
-//  max-height: 300px !important;
-//}
-//
-//.height-350 {
-//  height: 350px !important;
-//}
-//
-//.max-height-350 {
-//  max-height: 350px !important;
-//}
+  .max-w-#{$current}px {
+    max-width: #{$current}px !important;
+  }
+
+}

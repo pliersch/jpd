@@ -113,6 +113,14 @@ export const appData: AppConfig = {
           //                  Banner-Container Dekra
           //////////////////////////////////////////////////////////
           {
+            name: 'BannerContainer1',
+            fragment: 'dekra',
+            data: {
+              color1: '#F00',
+              // color2: '#FF0',
+            }
+          },
+          {
             name: 'TextContent1',
             fragment: 'dekra',
             data: {
