@@ -108,7 +108,7 @@
       },
       "root": "projects/jpd-core",
       "sourceRoot": "projects/jpd-core/src",
-      "prefix": "lib",
+      "prefix": "a4w",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",

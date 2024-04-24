@@ -2,7 +2,7 @@ import { afterNextRender, AfterRenderPhase, Component } from '@angular/core';
 import {
   A4WRootComponent,
   ActionContainerComponent,
-  AppbarComponent,
+  AppbarNavComponent,
   AppbarTwoRowsComponent,
   CookieConsentService,
   FragmentDirective,
@@ -21,7 +21,7 @@ import {
   styleUrls: ['./app.component.scss'],
   imports: [
     A4WRootComponent,
-    AppbarComponent,
+    // AppbarComponent,
     StickyAppbarComponent,
     PhoneActionComponent,
     ActionContainerComponent,
@@ -31,6 +31,7 @@ import {
     FragmentDirective,
     SmallFooter2Component,
     AppbarTwoRowsComponent,
+    AppbarNavComponent,
   ],
   standalone: true
 })

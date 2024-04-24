@@ -1,0 +1,16 @@
+.shadow-bottom {
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+.fill {
+  background-color: var(--theme-component-contrast);
+}
+
+.second-toolbar {
+  height: 56px !important;
+
+  a {
+    display: flex;
+    flex: 1;
+  }
+}

@@ -5,7 +5,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { CssVar, CssVarService, PageScrollService, ToggleSidenavService } from '../../../common';
+import {
+  BreakpointService,
+  CssVar,
+  CssVarService,
+  Dimension,
+  PageScrollService,
+  ToggleSidenavService
+} from '../../../common';
 import { AdminService } from '../../../modules/admin';
 import { DynamicHostComponent } from '../../dynamic-component/dynamic-host.component';
 import { SidenavComponent } from '../../navigation/sidenav/sidenav.component';
@@ -45,6 +52,7 @@ export class A4WRootComponent implements OnInit, AfterViewInit {
   constructor(private toggleSidenavService: ToggleSidenavService,
               private scrollService: PageScrollService,
               protected adminService: AdminService,
+              public breakpointService: BreakpointService,
               private cssVarService: CssVarService,) { }
 
   ngOnInit(): void {
@@ -74,4 +82,5 @@ export class A4WRootComponent implements OnInit, AfterViewInit {
     setTimeout(() => this.showFooter = true, 200);
   }
 
+  protected readonly Dimension = Dimension;
 }

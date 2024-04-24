@@ -11,7 +11,7 @@
 <!--                  nav template                   -->
 <!----------------------------------------------------->
 <ng-template #navTemplate>
-  <nav #navContainer class="d-flex" [style.visibility]="navVisible">
+  <nav class="d-flex" [style.visibility]="navVisible">
 
     @if (rootRoute.children.length === 1) {
       @for (childRoute of rootRoute.children[0].fragments; track childRoute) {
@@ -41,7 +41,6 @@
 <!--                    mobile                       -->
 <!----------------------------------------------------->
 @if (isXSmall$|async) {
-  <!--   mobile    -->
   <mat-toolbar class="z-3 fill shadow-bottom position-relative">
     <button mat-icon-button (click)="emitNavToggle()">
       <mat-icon svgIcon="menu"/>
@@ -86,6 +85,7 @@
       }
     </div>
   }
+
   <div>
     <ng-content select="[nav-menu]"/>
   </div>

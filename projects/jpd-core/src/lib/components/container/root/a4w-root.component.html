@@ -5,7 +5,7 @@
   </mat-sidenav>
 
   @if (adminService.isAdmin$) {
-    <mat-sidenav mode="side" position="end" [opened]="adminService.isAdminMode$ | async" autoFocus="false">
+    <mat-sidenav mode="side" position="end" [opened]="adminService.isAdminMode$ | async">
       <a4w-right-side/>
     </mat-sidenav>
   }
@@ -21,6 +21,13 @@
 
     <div #scroller cdkScrollable class="d-flex flex-column scroll-container max-page-height position-relative"
          (scroll)="onPageScroll($event)">
+
+      <!--  another (sub) nav -->
+      @if ((breakpointService.dimension$ | async) === Dimension.Small) {
+        <div class="">
+          <ng-content select="[nav]"></ng-content>
+        </div>
+      }
 
       <!--  fixed top. need for scroll-out or blurry appbar (part of scroll-container) -->
       <div #fixed_top_appbar_ref class="sticky-top">

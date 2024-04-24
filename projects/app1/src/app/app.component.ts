@@ -5,6 +5,7 @@ import {
   A4WRootComponent,
   ActionContainerComponent,
   AppbarComponent,
+  AppbarNavComponent,
   AppbarTwoRowsComponent,
   AuthService,
   FragmentDirective,
@@ -22,7 +23,7 @@ import {
   standalone: true,
   imports: [RouterOutlet, A4WRootComponent, AppbarComponent,
     LogoContainerComponent, ThemeToggleActionComponent, SubNavComponent, NavigationDirective,
-    ActionContainerComponent, ScrollTopActionComponent, FragmentDirective, AsyncPipe, LoginComponent, SmallFooter1Component, AppbarTwoRowsComponent],
+    ActionContainerComponent, ScrollTopActionComponent, FragmentDirective, AsyncPipe, LoginComponent, SmallFooter1Component, AppbarTwoRowsComponent, AppbarNavComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

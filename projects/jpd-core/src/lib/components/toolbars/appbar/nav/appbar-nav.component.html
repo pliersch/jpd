@@ -1,0 +1,27 @@
+<div class="position-relative w-100 z-3 px-3 fill shadow-bottom align-items-center second-toolbar">
+  <nav class="d-flex align-items-center justify-content-between center-vertical">
+    @if (route$ | async; as route) {
+      @if (route.children.length === 1) {
+        @for (childRoute of route.children[0].fragments; track childRoute) {
+          <a mat-flat-button class="transparent-background text-capitalize"
+             [routerLinkActiveOptions]="linkActiveOptions"
+             [fragment]="childRoute" routerLinkActive="active" [routerLink]="[route.path]">
+            {{ childRoute }}
+          </a>
+        }
+      } @else {
+        <!-- multi site. with sub routes -->
+        @for (childRoute of route.children; track childRoute.name) {
+          <a #ref mat-flat-button class="transparent-background text-capitalize demo-btn-color"
+             routerLinkActive="active" [routerLink]="[route.path +'/'+ childRoute.path]"
+             [routerLinkActiveOptions]="linkActiveOptions"
+             (click)="showSubNav(childRoute, ref._elementRef.nativeElement.getBoundingClientRect().x)"
+             (mouseenter)="showSubNav(childRoute,ref._elementRef.nativeElement.getBoundingClientRect().x)"
+             (mouseleave)="hideSubNav()">
+            {{ childRoute.name }}
+          </a>
+        }
+      }
+    }
+  </nav>
+</div>

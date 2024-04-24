@@ -1,14 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {
-  AfterViewInit,
-  booleanAttribute,
-  Component,
-  ContentChild,
-  ElementRef,
-  Input,
-  OnInit,
-  ViewChild
-} from '@angular/core';
+import { AfterViewInit, booleanAttribute, Component, ContentChild, Input, OnInit } from '@angular/core';
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from '@angular/material/list';
@@ -42,8 +33,8 @@ export class AppbarTwoRowsComponent implements OnInit, AfterViewInit {
   @ContentChild(NavigationDirective)
   navigationDirective?: NavigationDirective;
 
-  @ViewChild('navContainer', {read: ElementRef})
-  navContainer: ElementRef;
+  // @ViewChild('navContainer', {read: ElementRef})
+  // navContainer: ElementRef;
 
   @Input()
   bgColorDark: string; // fixme set default value. current both colors must set
@@ -95,7 +86,6 @@ export class AppbarTwoRowsComponent implements OnInit, AfterViewInit {
     this.bgColor = this.cssDomService.getTheme() === Themes.DARK ? this.bgColorDark : this.bgColorLight;
     this._transparent = this.transparent;
     this.breakpointService.dimension$.subscribe(res => {
-      console.log(res)
       this.isSmall$ = of(res === Dimension.Small);
       this.isXSmall$ = of(res === Dimension.XSmall);
     });
@@ -114,7 +104,7 @@ export class AppbarTwoRowsComponent implements OnInit, AfterViewInit {
       this._transparent = scrollTop <= 50;
     }
     if (this.showOnScrollTop) {
-      this.isOpen = scrollTop < this.scrollTop;
+      this.isOpen = scrollTop < this.scrollTop && scrollTop > 300;
     } else {
       this.isOpen = scrollTop >= this.scrollTop;
     }

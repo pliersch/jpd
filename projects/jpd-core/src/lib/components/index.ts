@@ -119,3 +119,4 @@ export { ScrollOutAppbarComponent } from './toolbars/appbar/scroll-out/scroll-ou
 export { AppbarComponent } from './toolbars/appbar/standard/appbar.component';
 export { AppbarTwoRowsComponent } from './toolbars/appbar/2-row/appbar-two-rows.component';
 export { LogoContainerComponent, LogoModel } from './toolbars/appbar/logo-container/logo-container.component';
+export { AppbarNavComponent } from './toolbars/appbar/nav/appbar-nav.component';
