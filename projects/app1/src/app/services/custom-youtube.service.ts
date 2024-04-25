@@ -8,10 +8,6 @@ import videos from '../../assets/json/youtube-songs.json'
 })
 export class CustomYoutubeService extends YoutubeService {
 
-  constructor() {
-    super();
-  }
-
   getVideos(): Observable<Video[]> {
     return of(videos.favorites);
   }

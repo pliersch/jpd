@@ -9,6 +9,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { DomSanitizer } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
+import { initProjectIcons } from '@app1/common/icon.initializer';
 import { CustomAppDataService } from '@app1/services/custom-app-data.service';
 import { CustomImageService } from '@app1/services/custom-image.service';
 import { CustomRouteDomService } from '@app1/services/custom-route-dom.service';
@@ -42,6 +43,7 @@ export const appConfig: ApplicationConfig = {
     },
     {provide: APP_INITIALIZER, useFactory: initApplication, multi: true, deps: [BreakpointService]},
     {provide: APP_INITIALIZER, useFactory: initIcons, multi: true, deps: [MatIconRegistry, DomSanitizer]},
+    {provide: APP_INITIALIZER, useFactory: initProjectIcons, multi: true, deps: [MatIconRegistry, DomSanitizer]},
     {provide: AppDataService, useClass: CustomAppDataService},
     {provide: RouteDomService, useClass: CustomRouteDomService},
     {provide: ImageService, useClass: CustomImageService},

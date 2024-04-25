@@ -38,15 +38,10 @@
     justify-content: space-between;
     color: #fff;
     flex: 1 1 auto;
-    //position: relative;
     z-index: 2;
 
-    .icon-display {
-      display: inline-block;
-
-      .icon-size2 {
-        transform: scale(2);
-      }
+    .icon-size2 {
+      transform: scale(2);
     }
 
     .white-button {
