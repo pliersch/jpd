@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { LandingSplashComponent } from '@app1/components/landing-splash/landing-splash.component';
+import { LandingSplashComponent } from '@app1/pages/home/landing-splash/landing-splash.component';
 import {
   AbstractDefaultPageComponent,
   Banner1Component,
