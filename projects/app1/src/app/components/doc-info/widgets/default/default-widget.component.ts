@@ -1,23 +1,23 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
-import { DocInfoItem } from '@app1/components/doc-info/doc-info.model';
+import { DocInfoItemModel } from '@app1/components/doc-info/doc-info.model';
 
-export type ItemSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 @Component({
-  selector: 'app-doc-info-default-item',
+  selector: 'app-doc-info-default-widget',
   standalone: true,
   imports: [MatIcon],
-  templateUrl: './default-item.component.html',
-  styleUrl: './default-item.component.scss'
+  templateUrl: './default-widget.component.html',
+  styleUrl: './default-widget.component.scss'
 })
-export class DefaultItemComponent implements OnInit {
+export class DefaultWidgetComponent implements OnInit {
 
   @Input({required: true})
-  item: DocInfoItem;
+  item: DocInfoItemModel;
 
-  @Input({required: true})
-  size: ItemSize;
+  @Input(/*{required: true}*/)
+  size: Size;
 
   svgSize = 2;
 
@@ -26,19 +26,19 @@ export class DefaultItemComponent implements OnInit {
   ngOnInit(): void {
     switch (this.size) {
       case 'xs':
-        this.svgSize = 50;
+        this.svgSize = 20;
         break;
       case 'sm':
-        this.svgSize = 50;
+        this.svgSize = 40;
         break;
       case 'md':
-        this.svgSize = 50;
+        this.svgSize = 60;
         break;
       case 'lg':
         this.svgSize = 80;
         break;
       case 'xl':
-        this.svgSize = 80;
+        this.svgSize = 100;
         break;
     }
     this.imageUrl = 'assets/svg/icons/' + this.item.svgIcon + '.svg';

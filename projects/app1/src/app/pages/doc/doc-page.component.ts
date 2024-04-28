@@ -28,4 +28,11 @@ export class DocPageComponent extends AbstractDefaultPageComponent {
     super();
   }
 
+  onEdit($event: boolean): void {
+    this.edit = $event;
+  }
+
+  onSave(): void {
+    this.edit = false;
+  }
 }

@@ -1,12 +1,17 @@
 <a4w-poster>
-
-  <mat-tab-group color="accent" class="m-3" mat-stretch-tabs="false" mat-align-tabs="start">
-    <mat-tab label="Öffnungszeiten">
-      <app-opening-hours/>
-    </mat-tab>
-    <mat-tab label="Layout">
-      <app-doc-layout-editor/>
-    </mat-tab>
-    <mat-tab label="Urlaub">Content 3</mat-tab>
-  </mat-tab-group>
+  <div class="m-3">
+    <mat-tab-group color="accent" class="m-3" mat-stretch-tabs="false" mat-align-tabs="start">
+      <mat-tab label="Layout">
+        <app-doc-layout-editor/>
+      </mat-tab>
+      <mat-tab label="Öffnungszeiten">
+        <app-opening-hours/>
+      </mat-tab>
+      <mat-tab label="Urlaub">Content 3</mat-tab>
+    </mat-tab-group>
+    <div class="d-flex pt-3">
+      <span class="spacer"></span>
+      <button mat-raised-button color="primary" (click)="onClickSave()">OK</button>
+    </div>
+  </div>
 </a4w-poster>

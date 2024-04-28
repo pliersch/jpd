@@ -1,7 +1,6 @@
 <div cdkDropListGroup class="d-flex flex-column">
-  <div class="example-container">
-    <h2>Top</h2>
-
+  <div>
+    <h2>Primär</h2>
     <div cdkDropList cdkDropListOrientation="horizontal"
          [cdkDropListData]="top" class="example-list"
          (cdkDropListDropped)="drop($event)">
@@ -11,13 +10,23 @@
     </div>
   </div>
 
-  <div class="example-container">
-    <h2>Bottom</h2>
-
+  <div>
+    <h2>Sekundär</h2>
     <div cdkDropList cdkDropListOrientation="horizontal"
          [cdkDropListData]="bottom" class="example-list"
          (cdkDropListDropped)="drop($event)">
       @for (item of bottom; track item) {
+        <div class="example-box accent-bg-opposite" cdkDrag>{{ item.topic }}</div>
+      }
+    </div>
+  </div>
+
+  <div>
+    <h2>verfügbar</h2>
+    <div cdkDropList cdkDropListOrientation="horizontal"
+         [cdkDropListData]="available" class="example-list"
+         (cdkDropListDropped)="drop($event)">
+      @for (item of available; track item) {
         <div class="example-box accent-bg-opposite" cdkDrag>{{ item.topic }}</div>
       }
     </div>
