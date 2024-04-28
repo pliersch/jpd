@@ -28,3 +28,15 @@ button {
   margin: 10px;
 }
 
+.theme-bg {
+  background-color: var(--mdc-filled-text-field-container-color);
+}
+
+input {
+  color: white;
+}
+
+::placeholder {
+  color: white;
+  opacity: 1; /* Firefox */
+}

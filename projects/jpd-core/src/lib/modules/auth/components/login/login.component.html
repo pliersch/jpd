@@ -6,8 +6,8 @@
           <form [formGroup]="form" (ngSubmit)="onSubmit()" class="m-2" autocomplete="off">
             <div class="d-flex">
               <input matInput autofocus type="password" formControlName="password"
-                     required class="form-control" placeholder="a4w2024! 🙄">
-              <button mat-raised-button color="primary" type="submit" [disabled]="!valid">
+                     required class="form-control theme-bg" placeholder="a4w2024! 🙄">
+              <button mat-raised-button type="submit" [disabled]="!valid">
                 Login
               </button>
             </div>

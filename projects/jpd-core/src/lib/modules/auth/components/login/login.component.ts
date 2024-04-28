@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('LoginComponent onSubmit: ', this.form.controls.password.value)
     const controls = this.form.controls;
     this.authService.login(controls.password.value!);
   }
