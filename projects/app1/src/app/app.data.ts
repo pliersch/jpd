@@ -507,21 +507,21 @@ export const appData: AppConfig = {
         ],
       },
       //////////////////////////////////////////////////////////
-      //       POST PAGE
+      //       DOC PAGE
       //////////////////////////////////////////////////////////
       {
-        url: 'post', data: [
-          // //////////////////////////////////////////////////////////
-          // //                 Parallax landing
-          // //////////////////////////////////////////////////////////
-          // {
-          //   name: 'Parallax1',
-          //   fragment: 'post',
-          //   data: {
-          //     backgroundImage: 'assets/img/1x/14.jpg',
-          //   }
-          //
-          // },
+        url: 'doc', data: [
+          //////////////////////////////////////////////////////////
+          //                 Parallax landing
+          //////////////////////////////////////////////////////////
+          {
+            name: 'Parallax1',
+            fragment: 'landing',
+            data: {
+              backgroundImage: 'assets/img/1x/13.jpg',
+            }
+
+          },
           // //////////////////////////////////////////////////////////
           // //                 Card31 (Blog)
           // //////////////////////////////////////////////////////////
@@ -534,13 +534,6 @@ export const appData: AppConfig = {
           //       TitleSubtitleMessageFactory.create(LoremIpsumFactory.getText(25), LoremIpsumFactory.getText(105), LoremIpsumFactory.getText(10), 'assets/img/1x/17.jpg', '/blog'),
           //       TitleSubtitleMessageFactory.create(LoremIpsumFactory.getText(17), LoremIpsumFactory.getText(142), LoremIpsumFactory.getText(10), 'assets/img/1x/16.jpg', '/blog'),
           //     ]
-          //   }
-          // },
-          // {
-          //   name: 'TitleSubtitleDecorator',
-          //   fragment: 'recommendation',
-          //   data: {
-          //     title: 'Ähnliche Stories',
           //   }
           // },
         ]
