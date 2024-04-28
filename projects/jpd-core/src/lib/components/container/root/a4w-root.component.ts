@@ -13,7 +13,6 @@ import {
   PageScrollService,
   ToggleSidenavService
 } from '../../../common';
-import { AdminService } from '../../../modules/admin';
 import { DynamicHostComponent } from '../../dynamic-component/dynamic-host.component';
 import { SidenavComponent } from '../../navigation/sidenav/sidenav.component';
 import { AppbarComponent } from '../../toolbars/appbar/standard/appbar.component';
@@ -51,7 +50,7 @@ export class A4WRootComponent implements OnInit, AfterViewInit {
 
   constructor(private toggleSidenavService: ToggleSidenavService,
               private scrollService: PageScrollService,
-              protected adminService: AdminService,
+              // protected adminService: AdminService,
               public breakpointService: BreakpointService,
               private cssVarService: CssVarService,) { }
 

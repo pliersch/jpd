@@ -12,6 +12,11 @@ export class AdminService {
   isAdminMode$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   componentData$: BehaviorSubject<object> = new BehaviorSubject<object>({});
 
+  constructor() {
+    this.setAdmin();
+    this.toggleAdminMode();
+  }
+
   setAdmin(): void {
     this.isAdmin$ = of(true);
     // this.toggleAdminMode();

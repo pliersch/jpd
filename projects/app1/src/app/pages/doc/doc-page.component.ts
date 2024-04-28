@@ -5,7 +5,6 @@ import { DocInfoComponent } from '@app1/components/doc-info/doc-info.component';
 import { LandingSplashComponent } from '@app1/pages/home/landing-splash/landing-splash.component';
 import { AbstractDefaultPageComponent, FragmentDirective, Parallax1Component, SectionComponent } from 'jpd-core';
 
-
 @Component({
   selector: 'app-default-page',
   standalone: true,
@@ -22,6 +21,8 @@ import { AbstractDefaultPageComponent, FragmentDirective, Parallax1Component, Se
   styleUrls: ['./doc-page.component.scss']
 })
 export class DocPageComponent extends AbstractDefaultPageComponent {
+
+  edit = false;
 
   constructor() {
     super();

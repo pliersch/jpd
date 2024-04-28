@@ -17,4 +17,7 @@ export class DocInfoComponent {
 
   constructor(protected model: DocInfoModel) { }
 
+  enableEditMode(): void {
+
+  }
 }

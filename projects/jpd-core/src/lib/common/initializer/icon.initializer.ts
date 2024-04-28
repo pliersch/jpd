@@ -6,7 +6,7 @@ export function initIcons(matIconRegistry: MatIconRegistry,
   return () => new Promise(resolve => {
     const path = './assets/svg/icons/';
     const icons: string[] =
-      ['brightness', 'call', 'vertical_align_top', 'check', 'location_on', 'mail',
+      ['admin_panel_settings', 'brightness', 'call', 'vertical_align_top', 'check', 'location_on', 'mail',
         'heart', 'link', 'menu', 'schedule', 'arrow_back'];
 
     for (const icon of icons) {

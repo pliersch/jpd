@@ -1,0 +1,29 @@
+<!-- level 01 -->
+<mat-accordion>
+  @for (panel of accordions; track panel) {
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{ panel.title }}</mat-panel-title>
+        <mat-panel-description>{{ panel.description }}</mat-panel-description>
+      </mat-expansion-panel-header>
+
+      @if (panel.subAccordion) {
+        <ng-container>
+          <mat-accordion>
+            @for (subPanel of panel.subAccordion; track subPanel) {
+              <mat-expansion-panel (opened)="panelOpenState = true"
+                                   (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>{{ subPanel.title }}</mat-panel-title>
+                  <mat-panel-description>{{ subPanel.description }}</mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>{{ subPanel.content }}</p>
+              </mat-expansion-panel>
+            }
+          </mat-accordion>
+        </ng-container>
+      }
+    </mat-expansion-panel>
+  }
+</mat-accordion>

@@ -8,6 +8,7 @@ import {
   AppbarNavComponent,
   AppbarTwoRowsComponent,
   AuthService,
+  EnableAdminActionComponent,
   FragmentDirective,
   LoginComponent,
   LogoContainerComponent,
@@ -23,13 +24,14 @@ import {
   standalone: true,
   imports: [RouterOutlet, A4WRootComponent, AppbarComponent,
     LogoContainerComponent, ThemeToggleActionComponent, SubNavComponent, NavigationDirective,
-    ActionContainerComponent, ScrollTopActionComponent, FragmentDirective, AsyncPipe, LoginComponent, SmallFooter1Component, AppbarTwoRowsComponent, AppbarNavComponent],
+    ActionContainerComponent, ScrollTopActionComponent, FragmentDirective, AsyncPipe, LoginComponent, SmallFooter1Component, AppbarTwoRowsComponent, AppbarNavComponent, EnableAdminActionComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements AfterViewInit {
 
   constructor(protected authService: AuthService,
+              // protected adminService: AdminService,
               private router: Router) { }
 
   ngAfterViewInit(): void {
