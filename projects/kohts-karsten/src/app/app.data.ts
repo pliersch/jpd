@@ -148,7 +148,7 @@ export const appData: AppConfig = {
                   title: 'Über uns',
                   contentText: 'Kfz-Meisterwerkstatt Karsten Kohts bietet Ihnen Reparaturen und Wartungsservice zu einem sehr transparenten Preis. Kfz-Meisterwerkstatt Karsten Kohts bedient jeglichen Bedarf rund um Fahrzeuge in Märkische Heide und Umgebung, seit unserer Eröffnung im Jahr 2016. Unser Erfolg basiert darauf, dass wir unsere Kunden zufrieden vom Hof fahren lassen und beide Seiten gut schlafen können!',
                   // postContentText: 'this is optional',
-                  imgUrl: 'assets/img/present1.avif',
+                  imgUrl: 'assets/img/placeholder1.jpg',
                   // avatar: 'assets/img/red-john.jpg',
                   // linkText: 'weiter lesen',
                   linkUrl: '/blog/post/1'
@@ -157,7 +157,7 @@ export const appData: AppConfig = {
                   title: 'Unsere Dienstleistungen',
                   contentText: 'Kfz-Meisterwerkstatt Karsten Kohts beseitigt nicht nur jegliches Problem, das Sie mit Ihrem Auto haben, sondern hilft Ihnen darüber hinaus! Unser erfahrenes Team berät Sie auch gerne unverbindlich, wie Sie in Zukunft Zeit und Geld sparen können. Unsere Dienstleistungen werden von einem fachkundigen und professionellen Team durchgeführt. Unser Team ist bereit für jede Herausforderung, die Ihr Fahrzeug an uns stellt.',
                   // postContentText: 'this is optional',
-                  imgUrl: 'assets/img/present2.avif',
+                  imgUrl: 'assets/img/placeholder2.jpg',
                   // avatar: 'assets/img/red-john.jpg',
                   // linkText: 'weiter lesen',
                   linkUrl: '/blog/post/1'

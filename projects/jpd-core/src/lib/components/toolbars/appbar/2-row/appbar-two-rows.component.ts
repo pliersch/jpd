@@ -86,6 +86,7 @@ export class AppbarTwoRowsComponent implements OnInit, AfterViewInit {
     this.bgColor = this.cssDomService.getTheme() === Themes.DARK ? this.bgColorDark : this.bgColorLight;
     this._transparent = this.transparent;
     this.breakpointService.dimension$.subscribe(res => {
+      console.log('AppbarTwoRowsComponent : ', res)
       this.isSmall$ = of(res === Dimension.Small);
       this.isXSmall$ = of(res === Dimension.XSmall);
     });

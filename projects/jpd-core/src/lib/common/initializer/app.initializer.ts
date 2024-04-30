@@ -32,5 +32,3 @@ function updateCssVar(property: string, value: number): void {
     style.setProperty(property, `${value}px`)
   }
 }
-
-
