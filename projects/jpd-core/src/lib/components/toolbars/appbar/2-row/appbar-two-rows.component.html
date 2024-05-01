@@ -1,4 +1,84 @@
 <!----------------------------------------------------->
+<!--                  final appbar                   -->
+<!----------------------------------------------------->
+
+@if (isMobile()) {
+  <ng-container *ngTemplateOutlet="mobile"></ng-container>
+} @else if (isTablet()) {
+  <ng-container *ngTemplateOutlet="tablet"></ng-container>
+} @else if (isDesktop()) {
+  <ng-container *ngTemplateOutlet="desktop"></ng-container>
+}
+
+<!----------------------------------------------------->
+<!--                mobile template                  -->
+<!----------------------------------------------------->
+<ng-template #mobile>
+  <mat-toolbar class="z-3 fill shadow-bottom position-relative">
+    <button mat-icon-button (click)="emitNavToggle()">
+      <mat-icon svgIcon="menu"/>
+    </button>
+    <div class="d-flex align-items-center">
+      <ng-content select="[logo-small]"/>
+    </div>
+    <span class="spacer"></span>
+    <ng-container [ngTemplateOutlet]="actionsTemplate"/>
+  </mat-toolbar>
+</ng-template>
+
+<!----------------------------------------------------->
+<!--                tablet template                  -->
+<!----------------------------------------------------->
+<ng-template #tablet>
+  <mat-toolbar class="z-3 fill shadow-bottom position-relative"
+               [class.transparent-bg]="_transparent"
+               [class.position-absolute]="_transparent || blurry"
+               [class.rounded]="rounded"
+               [class.blurry]="blurry"
+               [style.background-color]="bgColor">
+
+    <div class="d-flex w-100 align-items-center justify-content-between">
+      <div class="d-flex align-items-center">
+        <ng-content select="[logo]"/>
+      </div>
+      <ng-container [ngTemplateOutlet]="actionsTemplate"/>
+    </div>
+  </mat-toolbar>
+  <div class="w-100 position-fixed fill z-3 shadow-bottom" [style.background-color]="bgColor">
+    @if (isOpen) {
+      <div class="second-toolbar">
+        <div class="w-100 px-3 center-vertical">
+          <ng-container [ngTemplateOutlet]="navTemplate"/>
+        </div>
+      </div>
+    }
+  </div>
+  <ng-container *ngTemplateOutlet="subNavTemplate"></ng-container>
+</ng-template>
+
+<!----------------------------------------------------->
+<!--                desktop template                 -->
+<!----------------------------------------------------->
+<ng-template #desktop>
+  <mat-toolbar class="z-3 fill shadow-bottom position-relative"
+               [class.transparent-bg]="_transparent"
+               [class.position-absolute]="_transparent || blurry"
+               [class.rounded]="rounded"
+               [class.blurry]="blurry"
+               [style.background-color]="bgColor">
+
+    <div class="d-flex w-100 align-items-center justify-content-between">
+      <div class="d-flex align-items-center">
+        <ng-content select="[logo]"/>
+      </div>
+      <ng-container [ngTemplateOutlet]="navTemplate"/>
+      <ng-container [ngTemplateOutlet]="actionsTemplate"/>
+    </div>
+  </mat-toolbar>
+  <ng-container *ngTemplateOutlet="subNavTemplate"></ng-container>
+</ng-template>
+
+<!----------------------------------------------------->
 <!--                actions template                 -->
 <!----------------------------------------------------->
 <ng-template #actionsTemplate>
@@ -38,55 +118,11 @@
 </ng-template>
 
 <!----------------------------------------------------->
-<!--                    mobile                       -->
+<!--                subNav template                  -->
 <!----------------------------------------------------->
-@if (isXSmall$|async) {
-  <mat-toolbar class="z-3 fill shadow-bottom position-relative">
-    <button mat-icon-button (click)="emitNavToggle()">
-      <mat-icon svgIcon="menu"/>
-    </button>
-    <div class="d-flex align-items-center">
-      <ng-content select="[logo-small]"/>
-    </div>
-    <span class="spacer"></span>
-    <ng-container [ngTemplateOutlet]="actionsTemplate"/>
-  </mat-toolbar>
-} @else {
-  <!----------------------------------------------------->
-    <!--                    desktop                      -->
-    <!----------------------------------------------------->
-  <mat-toolbar class="z-3 fill shadow-bottom position-relative"
-               [class.transparent-bg]="_transparent"
-               [class.position-absolute]="_transparent || blurry"
-               [class.rounded]="rounded"
-               [class.blurry]="blurry"
-               [style.background-color]="bgColor">
-
-    <div class="d-flex w-100 align-items-center justify-content-between">
-      <div class="d-flex align-items-center">
-        <ng-content select="[logo]"/>
-      </div>
-      @if ((isSmall$ | async) === false) {
-        <ng-container [ngTemplateOutlet]="navTemplate"/>
-      }
-      <ng-container [ngTemplateOutlet]="actionsTemplate"/>
-    </div>
-  </mat-toolbar>
-
-  @if (isSmall$ | async) {
-    <div class="w-100 position-fixed fill z-3 shadow-bottom" [style.background-color]="bgColor">
-
-      @if (isOpen) {
-        <div class="second-toolbar">
-          <div class="w-100 px-3 center-vertical">
-            <ng-container [ngTemplateOutlet]="navTemplate"/>
-          </div>
-        </div>
-      }
-    </div>
-  }
-
+<!--wrap in template because content could exists only once?!?-->
+<ng-template #subNavTemplate>
   <div>
     <ng-content select="[nav-menu]"/>
   </div>
-}
+</ng-template>

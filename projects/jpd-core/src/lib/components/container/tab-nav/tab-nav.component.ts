@@ -38,6 +38,8 @@ export class TabNavComponent extends BaseComponent<TabNavModel> implements OnIni
 
   // ngAfterViewInit(): void {
   //   // ExpressionChangedAfterItHasBeenCheckedError 😜
+  // TODO use signal!!!
+  //
   //   setTimeout(() => this.animationsDisabled = false);
   // }
 

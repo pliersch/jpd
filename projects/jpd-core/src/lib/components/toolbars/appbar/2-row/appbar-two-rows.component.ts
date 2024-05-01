@@ -1,13 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, booleanAttribute, Component, ContentChild, Input, OnInit } from '@angular/core';
+import {
+  afterNextRender,
+  AfterViewInit,
+  booleanAttribute,
+  Component,
+  ContentChild,
+  Input,
+  OnInit,
+  signal
+} from '@angular/core';
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { IsActiveMatchOptions, RouterLink, RouterLinkActive } from "@angular/router";
-
-import { Observable, of } from "rxjs";
 import {
   BreakpointService,
   CssDomService,
@@ -32,9 +39,6 @@ export class AppbarTwoRowsComponent implements OnInit, AfterViewInit {
 
   @ContentChild(NavigationDirective)
   navigationDirective?: NavigationDirective;
-
-  // @ViewChild('navContainer', {read: ElementRef})
-  // navContainer: ElementRef;
 
   @Input()
   bgColorDark: string; // fixme set default value. current both colors must set
@@ -62,34 +66,38 @@ export class AppbarTwoRowsComponent implements OnInit, AfterViewInit {
   routes: Route[] = [];
   rootRoute: Route;
 
-  isOpen = true;
+  isOpen = false;
   // todo move it into config file
   scrollTop = 200;
 
-  isSmall$: Observable<boolean>;
-  isXSmall$: Observable<boolean>;
+  isTablet = signal(false);
+  isMobile = signal(false);
+  isDesktop = signal(false);
 
   linkActiveOptions: IsActiveMatchOptions;
 
   constructor(private toggleSidenavService: ToggleSidenavService,
               scrollService: PageScrollService,
-              private cssDomService: CssDomService,
+              cssDomService: CssDomService,
               private routeDomService: RouteDomService,
               private breakpointService: BreakpointService) {
     scrollService.scrollTop$.subscribe(scrollTop => this.onScroll(scrollTop));
     cssDomService.themeState$.subscribe(state => this.onToggleTheme(state));
+    afterNextRender(() => {
+      this.breakpointService.dimension$.subscribe(res => {
+        this.isMobile.set(res === Dimension.XSmall);
+        this.isTablet.set(res === Dimension.Small);
+        this.isDesktop.set(!((res === Dimension.Small) && (res === Dimension.XSmall)));
+      });
+      // todo use phase? and which?
+    }/*, {phase: AfterRenderPhase.Write}*/);
   }
 
   ngOnInit(): void {
     this.rootRoute = this.routeDomService.getRouteDom();
     this.linkActiveOptions = this.routeDomService.getIsActiveMatchOptions();
-    this.bgColor = this.cssDomService.getTheme() === Themes.DARK ? this.bgColorDark : this.bgColorLight;
+    // this.bgColor = this.cssDomService.getTheme() === Themes.DARK ? this.bgColorDark : this.bgColorLight;
     this._transparent = this.transparent;
-    this.breakpointService.dimension$.subscribe(res => {
-      console.log('AppbarTwoRowsComponent : ', res)
-      this.isSmall$ = of(res === Dimension.Small);
-      this.isXSmall$ = of(res === Dimension.XSmall);
-    });
   }
 
   ngAfterViewInit(): void {
