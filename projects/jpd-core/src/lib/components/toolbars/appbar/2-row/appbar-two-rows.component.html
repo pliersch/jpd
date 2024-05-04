@@ -38,9 +38,7 @@
                [style.background-color]="bgColor">
 
     <div class="d-flex w-100 align-items-center justify-content-between">
-      <div class="d-flex align-items-center">
-        <ng-content select="[logo]"/>
-      </div>
+      <ng-container *ngTemplateOutlet="logoTemplate"></ng-container>
       <ng-container [ngTemplateOutlet]="actionsTemplate"/>
     </div>
   </mat-toolbar>
@@ -68,9 +66,7 @@
                [style.background-color]="bgColor">
 
     <div class="d-flex w-100 align-items-center justify-content-between">
-      <div class="d-flex align-items-center">
-        <ng-content select="[logo]"/>
-      </div>
+      <ng-container *ngTemplateOutlet="logoTemplate"></ng-container>
       <ng-container [ngTemplateOutlet]="navTemplate"/>
       <ng-container [ngTemplateOutlet]="actionsTemplate"/>
     </div>
@@ -120,9 +116,19 @@
 <!----------------------------------------------------->
 <!--                subNav template                  -->
 <!----------------------------------------------------->
-<!--wrap in template because content could exists only once?!?-->
+<!--wrap in template because content could exists only once-->
 <ng-template #subNavTemplate>
   <div>
     <ng-content select="[nav-menu]"/>
+  </div>
+</ng-template>
+
+<!----------------------------------------------------->
+<!--                  logo template                  -->
+<!----------------------------------------------------->
+<!--wrap in template because content could exists only once-->
+<ng-template #logoTemplate>
+  <div class="d-flex align-items-center">
+    <ng-content select="[logo]"/>
   </div>
 </ng-template>

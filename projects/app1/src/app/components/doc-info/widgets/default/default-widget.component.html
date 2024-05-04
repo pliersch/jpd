@@ -1,7 +1,7 @@
 <div class="d-flex align-items-center"
      [class.flex-col]="size === 'xl' || size === 'lg'">
   <mat-icon inline class="me-2" color="accent" aria-hidden="false"
-            aria-label="Info Symbol" [style.height]=" svgSize + 'px'"
+            aria-label="Info Symbol" [style.height.px]=" svgSize"
             [svgIcon]="item.svgIcon"></mat-icon>
 
   <h4 class="fw-400">{{ item.message }}</h4>

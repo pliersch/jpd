@@ -68,10 +68,6 @@ body {
   cursor: pointer;
 }
 
-.h-100vh {
-  height: 100vh;
-}
-
 // naming 🙄 is 100vh minus appbar
 .max-page-height {
   height: calc(100vh - var(--appbar-height, 64px));

@@ -134,11 +134,11 @@ export const appData: AppConfig = {
             name: 'ImageGrid321',
             fragment: 'galerie',
             data: {
-              image31: {imgUrl: 'assets/img/1x/9.jpg', link: '/galerie'},
-              image32: {imgUrl: 'assets/img/1x/10.jpg', link: '/galerie'},
-              image33: {imgUrl: 'assets/img/1x/12.jpg', link: '/galerie'},
-              image21: {imgUrl: 'assets/img/1x/13.jpg', link: '/galerie'},
-              image22: {imgUrl: 'assets/img/1x/14.jpg', link: '/galerie'}
+              image31: {imgUrl: 'assets/img/1x/9.jpg', link: '/galerie/images/8'},
+              image32: {imgUrl: 'assets/img/1x/10.jpg', link: '/galerie/images/9'},
+              image33: {imgUrl: 'assets/img/1x/12.jpg', link: '/galerie/images/11'},
+              image21: {imgUrl: 'assets/img/1x/13.jpg', link: '/galerie/images/12'},
+              image22: {imgUrl: 'assets/img/1x/14.jpg', link: '/galerie/images/13'}
             }
           },
           {
