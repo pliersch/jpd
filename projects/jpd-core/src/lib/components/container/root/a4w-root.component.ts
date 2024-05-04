@@ -1,18 +1,11 @@
 import { CdkScrollable } from '@angular/cdk/scrolling';
 import { AsyncPipe, NgClass, NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
-import { AfterViewInit, Component, ContentChild, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ContentChild, OnInit, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import {
-  BreakpointService,
-  CssVar,
-  CssVarService,
-  Dimension,
-  PageScrollService,
-  ToggleSidenavService
-} from '../../../common';
+import { CssVarService, PageScrollService, ToggleSidenavService } from '../../../common';
 import { DynamicHostComponent } from '../../dynamic-component/dynamic-host.component';
 import { SidenavComponent } from '../../navigation/sidenav/sidenav.component';
 import { AppbarComponent } from '../../toolbars/appbar/standard/appbar.component';
@@ -30,15 +23,6 @@ export class A4WRootComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatSidenav) sidenav!: MatSidenav;
 
-  @ViewChild('hide_appbar_ref')
-  hideAppbarRef!: ElementRef;
-
-  @ViewChild('fixed_top_appbar_ref')
-  fixedAppbarRef!: ElementRef;
-
-  @ViewChild('fixed_top_center_appbar_ref')
-  fixedCenterAppbarRef!: ElementRef;
-
   @ViewChild('scroller', {read: CdkScrollable, static: true})
   scroller: CdkScrollable;
 
@@ -51,7 +35,6 @@ export class A4WRootComponent implements OnInit, AfterViewInit {
   constructor(private toggleSidenavService: ToggleSidenavService,
               private scrollService: PageScrollService,
               // protected adminService: AdminService,
-              public breakpointService: BreakpointService,
               private cssVarService: CssVarService,) { }
 
   ngOnInit(): void {
@@ -68,18 +51,7 @@ export class A4WRootComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // detect "hide-appbar"
-    if (this.hideAppbarRef.nativeElement.children.length == 1) {
-      this.cssVarService.updateCssVar(CssVar.AppbarHeight, '0px');
-    }
-    // detect "fixed-appbar"
-    if (this.fixedAppbarRef.nativeElement.children.length == 1 ||
-      this.fixedCenterAppbarRef.nativeElement.children.length == 1) {
-      this.cssVarService.updateCssVar(CssVar.AppbarHeight, '0px');
-    }
     // avoid flickering of footer (render before router content)
     setTimeout(() => this.showFooter = true, 200);
-  }
-
-  protected readonly Dimension = Dimension;
+  };
 }

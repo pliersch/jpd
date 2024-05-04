@@ -18,7 +18,7 @@ export function initApplication(breakpointService: BreakpointService): () => Pro
       }
 
       updateCssVar('--appbar-height', appbarHeight);
-      updateCssVar('--navbar-height', navBarHeight);
+      updateCssVar('--sub-appbar-height', navBarHeight);
     })
 
     resolve();

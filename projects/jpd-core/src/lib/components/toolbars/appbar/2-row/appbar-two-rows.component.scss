@@ -15,10 +15,6 @@
   background-color: #00000000;
 }
 
-.rounded {
-  border-radius: 40px !important;
-}
-
 .blurry {
   backdrop-filter: saturate(200%) blur(30px);
   //background-color: #{color.adjust(var(--theme-background), $alpha: -0.9)};

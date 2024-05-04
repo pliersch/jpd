@@ -1,14 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {
-  afterNextRender,
-  AfterViewInit,
-  booleanAttribute,
-  Component,
-  ContentChild,
-  Input,
-  OnInit,
-  signal
-} from '@angular/core';
+import { afterNextRender, booleanAttribute, Component, ContentChild, Input, OnInit, signal } from '@angular/core';
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from '@angular/material/list';
@@ -35,7 +26,7 @@ import { NavigationDirective } from '../../../navigation/directives/navigation.d
   templateUrl: './appbar-two-rows.component.html',
   styleUrls: ['./appbar-two-rows.component.scss'],
 })
-export class AppbarTwoRowsComponent implements OnInit, AfterViewInit {
+export class AppbarTwoRowsComponent implements OnInit {
 
   @ContentChild(NavigationDirective)
   navigationDirective?: NavigationDirective;
@@ -49,26 +40,17 @@ export class AppbarTwoRowsComponent implements OnInit, AfterViewInit {
   bgColor: string;
 
   @Input({transform: booleanAttribute})
-  showOnScrollTop: boolean = true;
-
-  @Input({transform: booleanAttribute})
   transparent = false;
   _transparent = false;
 
   @Input({transform: booleanAttribute})
   blurry = false;
 
-  @Input({transform: booleanAttribute})
-  rounded = false;
-
-  navVisible = 'hidden';
-
   routes: Route[] = [];
   rootRoute: Route;
 
-  isOpen = false;
-  // todo move it into config file
-  scrollTop = 200;
+  isOpen = true;
+  scrollTop = 0;
 
   isTablet = signal(false);
   isMobile = signal(false);
@@ -100,23 +82,15 @@ export class AppbarTwoRowsComponent implements OnInit, AfterViewInit {
     this._transparent = this.transparent;
   }
 
-  ngAfterViewInit(): void {
-    setTimeout(() => this.navVisible = 'visible');
-  }
-
   emitNavToggle(): void {
     this.toggleSidenavService.toggleSidenav();
   }
 
   private onScroll(scrollTop: number): void {
-    if (this.transparent) {
-      this._transparent = scrollTop <= 50;
-    }
-    if (this.showOnScrollTop) {
-      this.isOpen = scrollTop < this.scrollTop && scrollTop > 300;
-    } else {
-      this.isOpen = scrollTop >= this.scrollTop;
-    }
+    // if (this.transparent) {
+    //   this._transparent = scrollTop <= 50;
+    // }
+    this.isOpen = scrollTop <= this.scrollTop || scrollTop <= 100;
     this.scrollTop = scrollTop;
   }
 
