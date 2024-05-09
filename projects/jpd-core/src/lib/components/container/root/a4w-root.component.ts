@@ -35,7 +35,8 @@ export class A4WRootComponent implements OnInit, AfterViewInit {
   constructor(private toggleSidenavService: ToggleSidenavService,
               private scrollService: PageScrollService,
               // protected adminService: AdminService,
-              private cssVarService: CssVarService,) { }
+              private cssVarService: CssVarService,) {
+  }
 
   ngOnInit(): void {
     this.scrollService.setScroller(this.scroller);

@@ -1,4 +1,4 @@
-import { afterNextRender, AfterRenderPhase, Component } from '@angular/core';
+import { afterNextRender, AfterRenderPhase, Component, signal } from '@angular/core';
 import {
   A4WRootComponent,
   ActionContainerComponent,
@@ -14,6 +14,7 @@ import {
   StickyAppbarComponent,
   ThemeToggleActionComponent
 } from 'jpd-core';
+import { BreakpointService } from '../../../jpd-core/src/lib/common';
 
 @Component({
   selector: 'app-root',
@@ -37,13 +38,21 @@ import {
 })
 export class AppComponent {
 
+
+  isRendered = signal(false);
+
   constructor(navigationService: NavigationService,
+              breakpointService: BreakpointService,
               // eslint-disable-next-line @typescript-eslint/no-unused-vars
               cookieConsentService: CookieConsentService) {
     navigationService.startSaveHistory();
 
     afterNextRender(() => {
       cookieConsentService.initCookieConsent();
+      // https://trello.com/c/N4Ixxe8z/90-appcomponent-signal-isrendered
+      breakpointService.dimension$.subscribe(res => {
+        this.isRendered.set(true);
+      });
       // CookieConsent.showPreferences();
 
     }, {phase: AfterRenderPhase.Write});
