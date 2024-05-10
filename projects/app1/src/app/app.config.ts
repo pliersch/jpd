@@ -6,7 +6,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconRegistry } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, provideClientHydration } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { initProjectIcons } from '@app1/common/icon.initializer';
@@ -29,7 +29,7 @@ import { ROUTES } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    // provideClientHydration(),
+    provideClientHydration(),
     importProvidersFrom(MatSnackBarModule, MatDialogModule, GoogleMapsModule),
     provideAnimations(),
     provideHttpClient(withFetch(), /*withInterceptorsFromDi()*/),

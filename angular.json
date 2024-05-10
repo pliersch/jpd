@@ -34,7 +34,11 @@
               "node_modules/vanilla-cookieconsent/dist/cookieconsent.css"
             ],
             "scripts": [],
-            "server": "projects/app1/src/main.server.ts"
+            "server": "projects/app1/src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "projects/app1/server.ts"
+            }
           },
           "configurations": {
             "production": {
