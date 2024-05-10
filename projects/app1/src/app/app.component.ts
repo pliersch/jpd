@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { AfterViewInit, Component } from '@angular/core';
+import { afterNextRender, AfterRenderPhase, AfterViewInit, Component, signal } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import {
   A4WRootComponent,
@@ -17,6 +17,7 @@ import {
   SubNavComponent,
   ThemeToggleActionComponent,
 } from 'jpd-core';
+import { BreakpointService } from '../../../jpd-core/src/lib/common';
 
 @Component({
   selector: 'app-root',
@@ -29,9 +30,22 @@ import {
 })
 export class AppComponent implements AfterViewInit {
 
+  isRendered = signal(false);
+
   constructor(protected authService: AuthService,
+              breakpointService: BreakpointService,
               // protected adminService: AdminService,
-              private router: Router) { }
+              private router: Router) {
+    afterNextRender(() => {
+      // cookieConsentService.initCookieConsent();
+      // https://trello.com/c/N4Ixxe8z/90-appcomponent-signal-isrendered
+      breakpointService.dimension$.subscribe(() => {
+        this.isRendered.set(true);
+      });
+      // CookieConsent.showPreferences();
+
+    }, {phase: AfterRenderPhase.Write});
+  }
 
   ngAfterViewInit(): void {
     this.authService.correctPassword$.subscribe((correct: boolean) => {

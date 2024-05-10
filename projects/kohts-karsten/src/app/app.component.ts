@@ -50,7 +50,7 @@ export class AppComponent {
     afterNextRender(() => {
       cookieConsentService.initCookieConsent();
       // https://trello.com/c/N4Ixxe8z/90-appcomponent-signal-isrendered
-      breakpointService.dimension$.subscribe(res => {
+      breakpointService.dimension$.subscribe(() => {
         this.isRendered.set(true);
       });
       // CookieConsent.showPreferences();
