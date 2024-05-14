@@ -90,7 +90,15 @@ export class AppbarTwoRowsComponent implements OnInit {
     // if (this.transparent) {
     //   this._transparent = scrollTop <= 50;
     // }
-    this.isOpen = scrollTop <= this.scrollTop || scrollTop <= 100;
+
+    this.isOpen =
+      // show nav on scroll up
+      scrollTop <= this.scrollTop
+      // show nav first 100px
+      || scrollTop <= 100
+      // try to detect navigate to position (e.g. fragment). NavBar should be open
+      // id not working, use native scrollEvent to detect scrolling
+      || Math.abs(scrollTop - this.scrollTop) > 25;
     this.scrollTop = scrollTop;
   }
 

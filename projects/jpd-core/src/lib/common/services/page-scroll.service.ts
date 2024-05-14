@@ -7,7 +7,7 @@ import { Subject } from 'rxjs';
 })
 export class PageScrollService {
 
-  scrollTop$ = new Subject<number>();
+  scrollTop$: Subject<number> = new Subject();
   private scroller: CdkScrollable;
 
   setScroller(scroller: CdkScrollable): void {
@@ -19,24 +19,10 @@ export class PageScrollService {
   }
 
   scrollToPosition(elementOffsetTop: number): void {
-
-    // todo obsolete? https://trello.com/c/J9DT30ji/45-cssvarappbaroffset-ersetzen
-    // const appbarHeight = Number(this.cssVarService.getValue(CssVar.AppbarOffset).slice(0, -2)); // slice 'px'
-    // console.log('SidenavLayoutComponent scrollTo: ', appbarHeight)
-
-    const top = elementOffsetTop /*- appbarHeight*/;
-
-    // fixme stickyAppbar offset. how we can set
-    // if (this.stickyAppbar?.isOpen) {
-    //   top = top - 56; // todo hard coded (but should never change)
-    // }
-
-    // console.log('PageScrollService scrollToPosition: ', this.scroller)
     this.scroller.scrollTo({
-      top: top,
+      top: elementOffsetTop,
       behavior: "instant",
     })
-
   }
 
   scrollTop(): void {
