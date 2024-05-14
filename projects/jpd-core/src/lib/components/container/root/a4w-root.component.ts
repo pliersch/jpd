@@ -5,7 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { CssVarService, PageScrollService, ToggleSidenavService } from '../../../common';
+import { PageScrollService, ToggleSidenavService } from '../../../common';
 import { DynamicHostComponent } from '../../dynamic-component/dynamic-host.component';
 import { SidenavComponent } from '../../navigation/sidenav/sidenav.component';
 import { AppbarComponent } from '../../toolbars/appbar/standard/appbar.component';
@@ -35,8 +35,7 @@ export class A4WRootComponent implements OnInit, AfterViewInit {
   constructor(private toggleSidenavService: ToggleSidenavService,
               private scrollService: PageScrollService,
               // protected adminService: AdminService,
-              private cssVarService: CssVarService,) {
-  }
+  ) { }
 
   ngOnInit(): void {
     this.scrollService.setScroller(this.scroller);

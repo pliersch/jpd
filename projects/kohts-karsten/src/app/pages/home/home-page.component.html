@@ -33,6 +33,13 @@
   <a4w-card42/>
 </a4w-section-parallax>
 
+<a4w-section a4wFragment="maps">
+  <a4w-iframe-placeholder [component]="GMapsIframeComponent">
+
+    <a4w-maps-iframe a4wFragment="maps"/>
+  </a4w-iframe-placeholder>
+</a4w-section>
+
 <a4w-section a4wFragment="kontakt">
   <a4w-title-subtitle-decorator header/>
   <lib-contact-info-board-1>
@@ -44,10 +51,3 @@
 </a4w-section>
 
 <!--<a4w-maps-iframe a4wFragment="maps"/>-->
-
-<a4w-section a4wFragment="maps">
-  <a4w-iframe-placeholder [component]="GMapsIframeComponent">
-
-    <a4w-maps-iframe a4wFragment="maps"/>
-  </a4w-iframe-placeholder>
-</a4w-section>

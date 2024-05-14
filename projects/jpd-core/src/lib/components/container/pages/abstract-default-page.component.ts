@@ -1,9 +1,17 @@
-import { BreakpointObserver } from "@angular/cdk/layout";
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, inject, OnDestroy, QueryList, ViewChildren } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  inject,
+  OnDestroy,
+  OnInit,
+  QueryList,
+  ViewChildren
+} from '@angular/core';
 import { ActivatedRoute, NavigationEnd, NavigationSkipped, Router } from "@angular/router";
 import { Subscription } from "rxjs";
-import { CssVarService, FragmentDirective, NavigationService, PageScrollService } from '../../../common';
+import { BreakpointService, Dimension, FragmentDirective, NavigationService, PageScrollService } from '../../../common';
 
 @Component({
   selector: 'a4w-default-page',
@@ -15,7 +23,7 @@ import { CssVarService, FragmentDirective, NavigationService, PageScrollService 
   template: ``,
   styles: []
 })
-export abstract class AbstractDefaultPageComponent implements AfterViewInit, OnDestroy {
+export abstract class AbstractDefaultPageComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChildren(FragmentDirective)
   fragments!: QueryList<FragmentDirective>;
@@ -25,20 +33,25 @@ export abstract class AbstractDefaultPageComponent implements AfterViewInit, OnD
   //////////////////////////////////////////////////////////
   protected router: Router;
   protected route: ActivatedRoute;
-  protected breakpointObserver: BreakpointObserver;
-  protected cssVarService: CssVarService;
+  protected breakpointService: BreakpointService;
   protected subscription: Subscription;
   private scrollService: PageScrollService;
   private navigationService: NavigationService;
+  protected dimension: string;
 
   protected constructor() {
     this.router = inject(Router);
     this.route = inject(ActivatedRoute);
-    this.cssVarService = inject(CssVarService);
-    this.breakpointObserver = inject(BreakpointObserver);
+    this.breakpointService = inject(BreakpointService);
     this.scrollService = inject(PageScrollService);
     this.navigationService = inject(NavigationService);
     this.subscription = new Subscription();
+  }
+
+  ngOnInit(): void {
+    this.breakpointService.dimension$.subscribe((dim) => {
+      this.dimension = dim;
+    });
   }
 
   ngAfterViewInit(): void {
@@ -71,6 +84,7 @@ export abstract class AbstractDefaultPageComponent implements AfterViewInit, OnD
     const fragment = this.findFragment(this.router.url);
     if (fragment) {
       // without timeout the position is wrong, because image size doesn't exist
+      // todo now using ssr. try again without timeout
       setTimeout(() => this.scrollService.scrollToPosition(this.getOffsetTop(fragment)));
       return;
     }
@@ -95,7 +109,16 @@ export abstract class AbstractDefaultPageComponent implements AfterViewInit, OnD
 
   private getOffsetTop(fragment: string): number {
     const element: ElementRef = this.findElementRef(fragment, this.fragments);
-    return element.nativeElement.offsetTop;
+    let appbarHeight = 64;
+    switch (this.dimension) {
+      case Dimension.Small:
+        appbarHeight = 120;
+        break;
+      case Dimension.XSmall:
+        appbarHeight = 56;
+        break;
+    }
+    return element.nativeElement.offsetTop - appbarHeight;
   }
 
   private findElementRef(fragmentName: string, fragments: QueryList<FragmentDirective>): ElementRef {
