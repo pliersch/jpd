@@ -77,12 +77,12 @@ export const appData: AppConfig = {
             fragment: 'banner2',
             data: {
               items: [
-                {
-                  contentText: 'Angebot!',
-                  postContentText: 'Reifenwechsel 12€',
-                  bgImageUrl: 'assets/img/reifen_wechsel.webp',
-                  color: '#cebe13'
-                },
+                // {
+                //   contentText: 'Angebot!',
+                //   postContentText: 'Reifenwechsel 12€',
+                //   bgImageUrl: 'assets/img/reifen_wechsel.webp',
+                //   color: '#cebe13'
+                // },
                 {
                   contentText: LoremIpsumFactory.getText(20),
                   postContentText: 'sub message',
@@ -151,7 +151,7 @@ export const appData: AppConfig = {
                   imgUrl: 'assets/img/placeholder1.jpg',
                   // avatar: 'assets/img/red-john.jpg',
                   // linkText: 'weiter lesen',
-                  linkUrl: '/blog/post/1'
+                  // linkUrl: '/blog/post/1'
                 },
                 {
                   title: 'Unsere Dienstleistungen',
@@ -160,7 +160,7 @@ export const appData: AppConfig = {
                   imgUrl: 'assets/img/placeholder2.jpg',
                   // avatar: 'assets/img/red-john.jpg',
                   // linkText: 'weiter lesen',
-                  linkUrl: '/blog/post/1'
+                  // linkUrl: '/blog/post/1'
                 },
               ],
               imageCards: [
@@ -171,8 +171,8 @@ export const appData: AppConfig = {
                   postContentText: 'Story Schreiber',
                   imgUrl: 'assets/img/reifen_wechsel.webp',
                   // avatar: 'assets/img/red-john.jpg',
-                  linkText: 'weiter lesen',
-                  linkUrl: '/blog/post/1'
+                  // linkText: 'weiter lesen',
+                  // linkUrl: '/blog/post/1'
                 },
                 {
                   title: 'Eine Story zum Lesen',
@@ -181,8 +181,8 @@ export const appData: AppConfig = {
                   postContentText: 'Story Schreiber',
                   imgUrl: 'assets/img/Pannenhilfe.webp',
                   // avatar: 'assets/img/red-john.jpg',
-                  linkText: 'weiter lesen',
-                  linkUrl: '/blog/post/1'
+                  // linkText: 'weiter lesen',
+                  // linkUrl: '/blog/post/1'
                 },
                 {
                   title: 'Eine Story zum Lesen',
@@ -191,8 +191,8 @@ export const appData: AppConfig = {
                   postContentText: 'Story Schreiber',
                   imgUrl: 'assets/img/zahnriemen.jpg',
                   // avatar: 'assets/img/red-john.jpg',
-                  linkText: 'weiter lesen',
-                  linkUrl: '/blog/post/1'
+                  // linkText: 'weiter lesen',
+                  // linkUrl: '/blog/post/1'
                 },
               ]
 

@@ -50,6 +50,7 @@ export class AppbarTwoRowsComponent implements OnInit {
   rootRoute: Route;
 
   isOpen = true;
+  isScrollByRouter = true;
   scrollTop = 0;
 
   isTablet = signal(false);
@@ -86,7 +87,26 @@ export class AppbarTwoRowsComponent implements OnInit {
     this.toggleSidenavService.toggleSidenav();
   }
 
+  // https://trello.com/c/qWFRkwhK/92-scroll-detection
+  // @HostListener('document:mousewheel', ['$event'])
+  // onDocumentMousewheelEvent(event: Event): void {
+  //   this.isUserScroll = true;
+  //   console.log('TRUE',)
+  //   // console.log('on Mouse wheel Event', event);
+  // }
+  //
+  // @HostListener('document:touchstart', ['$event'])
+  // onDocumentTouchstartEvent(event: Event): void {
+  //   this.isUserScroll = true;
+  //   console.log('on touchstart Event', event);
+  // }
+
   private onScroll(scrollTop: number): void {
+    if (this.isScrollByRouter) {
+      this.isOpen = true;
+      this.isScrollByRouter = false;
+      return;
+    }
     // if (this.transparent) {
     //   this._transparent = scrollTop <= 50;
     // }
@@ -96,9 +116,6 @@ export class AppbarTwoRowsComponent implements OnInit {
       scrollTop <= this.scrollTop
       // show nav first 100px
       || scrollTop <= 100
-      // try to detect navigate to position (e.g. fragment). NavBar should be open
-      // id not working, use native scrollEvent to detect scrolling
-      || Math.abs(scrollTop - this.scrollTop) > 25;
     this.scrollTop = scrollTop;
   }
 
@@ -116,5 +133,9 @@ export class AppbarTwoRowsComponent implements OnInit {
     } else {
       this.bgColor = this.bgColorLight;
     }
+  }
+
+  onClickFragment(): void {
+    this.isScrollByRouter = true;
   }
 }
