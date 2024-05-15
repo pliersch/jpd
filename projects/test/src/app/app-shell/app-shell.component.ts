@@ -5,7 +5,7 @@ import { MatIconButton } from '@angular/material/button';
 import { MatListItem, MatNavList } from '@angular/material/list';
 import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
 import { MatToolbar } from '@angular/material/toolbar';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-app-shell',
@@ -19,7 +19,8 @@ import { RouterLink } from '@angular/router';
     MatSidenavContent,
     MatToolbar,
     NgForOf,
-    RouterLink
+    RouterLink,
+    RouterOutlet
   ],
   templateUrl: './app-shell.component.html',
   styleUrl: './app-shell.component.scss'
