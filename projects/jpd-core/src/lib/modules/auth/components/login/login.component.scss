@@ -7,9 +7,9 @@
   justify-content: center;
 }
 
-h6 {
-  color: #ffffff80;
-}
+//h6 {
+//  color: #ffffff80;
+//}
 
 button {
   padding: 11px 22px;
@@ -33,6 +33,10 @@ button {
 }
 
 input {
+  color: white;
+}
+
+input[type=password]:focus {
   color: white;
 }
 

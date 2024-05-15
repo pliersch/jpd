@@ -1,11 +1,17 @@
-import { afterNextRender, AfterRenderPhase, Component, signal } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
+import { afterNextRender, AfterRenderPhase, Component, effect, signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { Router } from '@angular/router';
 import {
   A4WRootComponent,
   ActionContainerComponent,
   AppbarNavComponent,
   AppbarTwoRowsComponent,
+  AuthService,
+  BreakpointService,
   CookieConsentService,
   FragmentDirective,
+  LoginComponent,
   LogoContainerComponent,
   NavigationService,
   PhoneActionComponent,
@@ -14,7 +20,6 @@ import {
   StickyAppbarComponent,
   ThemeToggleActionComponent
 } from 'jpd-core';
-import { BreakpointService } from '../../../jpd-core/src/lib/common';
 
 @Component({
   selector: 'app-root',
@@ -33,19 +38,30 @@ import { BreakpointService } from '../../../jpd-core/src/lib/common';
     SmallFooter2Component,
     AppbarTwoRowsComponent,
     AppbarNavComponent,
+    AsyncPipe,
+    LoginComponent,
   ],
   standalone: true
 })
 export class AppComponent {
 
-
   isRendered = signal(false);
+  isLoggedIn = toSignal(this.authService.correctPassword$);
 
-  constructor(navigationService: NavigationService,
+  constructor(private router: Router,
+              protected authService: AuthService,
+              navigationService: NavigationService,
               breakpointService: BreakpointService,
               // eslint-disable-next-line @typescript-eslint/no-unused-vars
               cookieConsentService: CookieConsentService) {
+
     navigationService.startSaveHistory();
+
+    effect(() => {
+      if (this.isLoggedIn()) {
+        void this.router.navigateByUrl('/');
+      }
+    });
 
     afterNextRender(() => {
       cookieConsentService.initCookieConsent();

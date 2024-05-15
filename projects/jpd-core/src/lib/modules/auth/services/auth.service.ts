@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
+import { EnvironmentService } from '../../../common';
 
 @Injectable({providedIn: 'root'})
 export class AuthService {
 
-  readonly correctPassword$: Subject<boolean> = new BehaviorSubject<boolean>(true);
+  constructor(private environmentService: EnvironmentService) { }
 
-  // readonly correctPassword$: Subject<boolean> = new BehaviorSubject<boolean>(false);
+  readonly correctPassword$: Subject<boolean>
+    = new BehaviorSubject<boolean>(
+    !this.environmentService.getEnvironment().production);
 
   login(password: string): void {
-    this.correctPassword$.next(password === 'a4w2024!');
+    this.correctPassword$.next(
+      password === this.environmentService.getEnvironment().login);
   }
 }

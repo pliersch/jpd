@@ -11,6 +11,7 @@ import {
   AppDataService,
   BreakpointService,
   CssDomService,
+  EnvironmentService,
   initApplication,
   initIcons,
   initTheme,
@@ -18,6 +19,7 @@ import {
 } from 'jpd-core';
 import { ROUTES } from './app.routes';
 import { CustomAppDataService } from './services/custom-app-data.service';
+import { CustomEnvironmentService } from './services/custom-environment.service';
 import { CustomRouteDomService } from './services/custom-route-dom.service';
 
 export const appConfig: ApplicationConfig = {
@@ -35,6 +37,7 @@ export const appConfig: ApplicationConfig = {
     },
     {provide: APP_INITIALIZER, useFactory: initApplication, multi: true, deps: [BreakpointService]},
     {provide: APP_INITIALIZER, useFactory: initIcons, multi: true, deps: [MatIconRegistry, DomSanitizer]},
+    {provide: EnvironmentService, useClass: CustomEnvironmentService},
     {provide: RouteDomService, useClass: CustomRouteDomService},
     {provide: AppDataService, useClass: CustomAppDataService},
   ]

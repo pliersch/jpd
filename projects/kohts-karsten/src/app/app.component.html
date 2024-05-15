@@ -1,20 +1,25 @@
 @if (isRendered()) {
-  <a4w-root>
-    <!--  <a4w-appbar-two-rows appbar transparent-or-blurry bgColorDark="#0e0e0e">-->
-    <a4w-appbar-two-rows appbar>
-      <a4w-logo-container logo/>
-      <a4w-logo-container logo-small/>
-      <a4w-action-container action>
-        <a4w-theme-toggle-action/>
-        <a4w-phone-action/>
-      </a4w-action-container>
-    </a4w-appbar-two-rows>
-    <div footer>
-      <a4w-small-footer-2 a4wFragment="footer"/>
-    </div>
-    <!--  <a4w-action-container bottom-right>-->
-    <!--      <a4w-theme-toggle-action fab/>-->
-    <!--      <a4w-phone-action fab/>-->
-    <!--  </a4w-action-container>-->
-  </a4w-root>
+  @if (isLoggedIn()) {
+    <a4w-root>
+      <!--  <a4w-appbar-two-rows appbar transparent-or-blurry bgColorDark="#0e0e0e">-->
+      <a4w-appbar-two-rows appbar>
+        <a4w-logo-container logo/>
+        <a4w-logo-container logo-small/>
+        <a4w-action-container action>
+          <a4w-theme-toggle-action/>
+          <a4w-phone-action/>
+        </a4w-action-container>
+      </a4w-appbar-two-rows>
+      <div footer>
+        <a4w-small-footer-2 a4wFragment="footer"/>
+      </div>
+      <!--  <a4w-action-container bottom-right>-->
+      <!--      <a4w-theme-toggle-action fab/>-->
+      <!--      <a4w-phone-action fab/>-->
+      <!--  </a4w-action-container>-->
+    </a4w-root>
+  } @else {
+    <a4w-login/>
+  }
 }
+

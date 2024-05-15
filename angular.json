@@ -54,6 +54,12 @@
                   "maximumError": "4kb"
                 }
               ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/app1/src/environments/environment.ts",
+                  "with": "projects/app1/src/environments/environment.prod.ts"
+                }
+              ],
               "outputHashing": "all"
             },
             "development": {
@@ -223,6 +229,12 @@
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
                   "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/kohts-karsten/src/environments/environment.ts",
+                  "with": "projects/kohts-karsten/src/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all"

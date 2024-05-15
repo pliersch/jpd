@@ -2,8 +2,11 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
+import { Environment } from 'jpd-core';
+
+export const environment: Environment = {
   production: false,
+  login: '', // only production
   apiUrl: 'http://localhost:3000',
   socketUrl: 'http://localhost:3000'
 };
