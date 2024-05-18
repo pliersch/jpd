@@ -52,7 +52,6 @@ export class AppComponent {
               protected authService: AuthService,
               navigationService: NavigationService,
               breakpointService: BreakpointService,
-              // eslint-disable-next-line @typescript-eslint/no-unused-vars
               cookieConsentService: CookieConsentService) {
 
     navigationService.startSaveHistory();
@@ -69,7 +68,6 @@ export class AppComponent {
       breakpointService.dimension$.subscribe(() => {
         this.isRendered.set(true);
       });
-      // CookieConsent.showPreferences();
 
     }, {phase: AfterRenderPhase.Write});
   }

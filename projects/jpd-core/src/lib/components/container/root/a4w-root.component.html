@@ -1,39 +1,32 @@
-<mat-sidenav-container autosize class="h-100">
+<div class="example-container" [class.example-is-mobile]="isMobile()">
+  <div class="example-toolbar">
+    <ng-content select="[appbar]"></ng-content>
+  </div>
 
-  <mat-sidenav mode="over" autoFocus="dialog">
-    <a4w-sidenav/>
-  </mat-sidenav>
+  <mat-sidenav-container class="example-sidenav-container"
+                         [style.margin-top.px]="isMobile() ? 56 : 0">
+    <mat-sidenav #snav [mode]="isMobile() ? 'over' : 'side'"
+                 [fixedInViewport]="isMobile()" fixedTopGap="56">
+      <a4w-sidenav/>
+    </mat-sidenav>
 
-  <!--  @if (adminService.isAdmin$) {-->
-  <!--    <mat-sidenav mode="side" position="end" [opened]="adminService.isAdminMode$ | async">-->
-  <!--      <a4w-right-side/>-->
-  <!--    </mat-sidenav>-->
-  <!--  }-->
-
-  <mat-sidenav-content>
-
-    <div #scroller cdkScrollable class="d-flex flex-column scroll-container dvh-100 position-relative"
-         (scroll)="onPageScroll($event)">
-
-      <div class="sticky-top">
-        <ng-content select="[appbar]"></ng-content>
-      </div>
-
-      <div class="sub-nav-offset">
-        <router-outlet/>
-      </div>
-
-      @if (showFooter) {
-        <div class="mt-auto">
-          <ng-content select="[footer]"></ng-content>
+    <mat-sidenav-content #scroller cdkScrollable (scroll)="onPageScroll($event)">
+      <div class="d-flex flex-column">
+        <div class="sub-nav-offset">
+          <router-outlet/>
         </div>
-      }
-    </div>
 
-    <!-- action-container -->
-    <div class="bottom-right">
-      <ng-content select="[bottom-right]"></ng-content>
-    </div>
+        @if (showFooter) {
+          <div class="mt-auto">
+            <ng-content select="[footer]"></ng-content>
+          </div>
+        }
+      </div>
 
-  </mat-sidenav-content>
-</mat-sidenav-container>
+      <!-- action-container -->
+      <div class="bottom-right">
+        <ng-content select="[bottom-right]"></ng-content>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

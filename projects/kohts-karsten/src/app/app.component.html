@@ -1,5 +1,5 @@
-@if (isRendered()) {
-  @if (isLoggedIn()) {
+@if (isLoggedIn()) {
+  @if (isRendered()) {
     <a4w-root>
       <!--  <a4w-appbar-two-rows appbar transparent-or-blurry bgColorDark="#0e0e0e">-->
       <a4w-appbar-two-rows appbar>
@@ -18,8 +18,8 @@
       <!--      <a4w-phone-action fab/>-->
       <!--  </a4w-action-container>-->
     </a4w-root>
-  } @else {
-    <a4w-login/>
   }
+} @else {
+  <a4w-login/>
 }
 
