@@ -25,3 +25,7 @@ $app1-theme: mat.define-light-theme((
 ));
 
 @include mat.all-component-themes($app1-theme);
+
+html {
+  scroll-behavior: auto !important;
+}

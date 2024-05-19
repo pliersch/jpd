@@ -8,7 +8,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { DomSanitizer, provideClientHydration } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { provideRouter, withInMemoryScrolling } from '@angular/router';
+import { provideRouter } from '@angular/router';
 import { initProjectIcons } from '@app1/common/icon.initializer';
 import { CustomAppDataService } from '@app1/services/custom-app-data.service';
 import { CustomEnvironmentService } from '@app1/services/custom-environment.service';
@@ -36,7 +36,8 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     provideHttpClient(withFetch(), /*withInterceptorsFromDi()*/),
     provideRouter(ROUTES,
-      withInMemoryScrolling({anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled'})),
+      // withInMemoryScrolling({anchorScrolling: 'enabled', scrollPositionRestoration: 'top'})
+    ),
     {
       provide: APP_INITIALIZER,
       multi: true,
