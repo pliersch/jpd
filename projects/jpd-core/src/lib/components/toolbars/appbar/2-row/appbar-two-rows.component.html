@@ -2,11 +2,11 @@
 <!--                  final appbar                   -->
 <!----------------------------------------------------->
 
-@if (isMobile()) {
+@if (isXSmall()) {
   <ng-container *ngTemplateOutlet="mobile"></ng-container>
-} @else if (isTablet()) {
+} @else if (isSmall()) {
   <ng-container *ngTemplateOutlet="tablet"></ng-container>
-} @else if (isDesktop()) {
+} @else {
   <ng-container *ngTemplateOutlet="desktop"></ng-container>
 }
 

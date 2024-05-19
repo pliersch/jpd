@@ -8,10 +8,10 @@ import { Dimension } from '../const';
 })
 export class BreakpointService {
 
-  private dimension: ReplaySubject<string> = new ReplaySubject();
+  private _dimension$: ReplaySubject<string> = new ReplaySubject();
 
   public get dimension$(): Observable<string> {
-    return this.dimension;
+    return this._dimension$;
   }
 
   readonly breakpoint$ = this.breakpointObserver
@@ -39,6 +39,6 @@ export class BreakpointService {
     } else if (this.breakpointObserver.isMatched(Breakpoints.XLarge)) {
       dim = Dimension.XLarge;
     }
-    this.dimension.next(dim)
+    this._dimension$.next(dim)
   }
 }

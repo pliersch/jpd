@@ -53,9 +53,10 @@ export class AppbarTwoRowsComponent implements OnInit {
   isScrollByRouter = true;
   scrollTop = 0;
 
-  isTablet = signal(false);
-  isMobile = signal(false);
-  isDesktop = signal(false);
+  // for phone layout
+  isXSmall = signal(false);
+  // for 2 rows layout (extra navbar)
+  isSmall = signal(false);
 
   linkActiveOptions: IsActiveMatchOptions;
 
@@ -68,9 +69,8 @@ export class AppbarTwoRowsComponent implements OnInit {
     cssDomService.themeState$.subscribe(state => this.onToggleTheme(state));
     afterNextRender(() => {
       this.breakpointService.dimension$.subscribe(res => {
-        this.isMobile.set(res === Dimension.XSmall);
-        this.isTablet.set(res === Dimension.Small);
-        this.isDesktop.set(!((res === Dimension.Small) && (res === Dimension.XSmall)));
+        this.isXSmall.set(res === Dimension.XSmall);
+        this.isSmall.set(res === Dimension.Small);
       });
       // todo use phase? and which?
     }/*, {phase: AfterRenderPhase.Write}*/);

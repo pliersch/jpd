@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { booleanAttribute, Component, Input, OnDestroy, ViewChild } from '@angular/core';
+import { booleanAttribute, Component, Input, Signal, ViewChild } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { Subscription } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { PageScrollService } from '../../../common';
 import { ActionComponent } from '../_base-action/action.component';
 
@@ -14,7 +15,7 @@ import { ActionComponent } from '../_base-action/action.component';
   styleUrl: './scroll-top-action.component.scss'
 })
 
-export class ScrollTopActionComponent implements OnDestroy {
+export class ScrollTopActionComponent {
 
   @Input({transform: booleanAttribute}) fab: boolean;
 
@@ -23,18 +24,11 @@ export class ScrollTopActionComponent implements OnDestroy {
   @ViewChild(ActionComponent)
   action!: ActionComponent;
 
-  private subscription: Subscription;
-
-  isTop = true;
+  top: Signal<boolean | undefined>
 
   constructor(private scrollService: PageScrollService) {
-    this.subscription = this.scrollService.scrollTop$.subscribe(scrollTop => {
-      this.isTop = scrollTop <= 0;
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.top = toSignal(this.scrollService.scrollTop$.pipe(
+      map(scrollTop => scrollTop > 0)));
   }
 
   scrollTop(): void {
