@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, NavigationSkipped, Router } from "@angular/router";
 import { Subscription } from "rxjs";
-import { BreakpointService, FragmentDirective, NavigationService, PageScrollService } from '../../../common';
+import { BreakpointService, Dimension, FragmentDirective, NavigationService, PageScrollService } from '../../../common';
 
 @Component({
   selector: 'a4w-default-page',
@@ -40,13 +40,18 @@ export abstract class AbstractDefaultPageComponent implements OnInit, AfterViewI
 
   protected dimension: string;
 
+  // for 2 row appbar if small (tablet) device (extra sub nav)
+  private navBarHeight = 0;
+
   protected constructor() {
     this.subscription = new Subscription();
   }
 
   ngOnInit(): void {
     this.breakpointService.dimension$.subscribe((dim) => {
-      this.dimension = dim;
+      if (dim === Dimension.Small) {
+        this.navBarHeight = 56;
+      }
     });
   }
 
@@ -74,7 +79,8 @@ export abstract class AbstractDefaultPageComponent implements OnInit, AfterViewI
     if (fragmentName) {
       const element = this.findElementRef(fragmentName, this.fragments);
       // without timeout the position is wrong, because image size doesn't exist (after opening page)
-      setTimeout(() => this.scrollService.scrollToPosition(element.nativeElement.offsetTop));
+      setTimeout(() =>
+        this.scrollService.scrollToPosition(element.nativeElement.offsetTop - this.navBarHeight));
     } else {
       this.scrollService.scrollTop();
     }
