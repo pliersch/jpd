@@ -1,4 +1,4 @@
-import { CdkScrollable } from '@angular/cdk/scrolling';
+import { ViewportScroller } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
@@ -8,31 +8,24 @@ import { Subject } from 'rxjs';
 export class PageScrollService {
 
   scrollTop$: Subject<number> = new Subject();
-  private scroller: CdkScrollable;
+  private scrollY: number;
 
-  setScroller(scroller: CdkScrollable): void {
-    this.scroller = scroller;
-  }
+  constructor(private viewportScroller: ViewportScroller) { }
 
-  changeScrollTop(scrollTop: number): void {
-    this.scrollTop$.next(scrollTop);
+  setWindowScrollY(scrollY: number): void {
+    this.scrollY = scrollY;
+    this.scrollTop$.next(scrollY);
   }
 
   scrollToPosition(elementOffsetTop: number): void {
-    this.scroller.scrollTo({
-      top: elementOffsetTop,
-      behavior: "instant",
-    })
+    this.viewportScroller.scrollToPosition([0, elementOffsetTop]);
   }
 
   scrollTop(): void {
-    this.scroller.scrollTo({
-      top: 0,
-      behavior: "instant",
-    })
+    this.viewportScroller.scrollToPosition([0, 0]);
   }
 
   getScrollTop(): number {
-    return this.scroller.measureScrollOffset('top');
+    return this.scrollY;
   }
 }

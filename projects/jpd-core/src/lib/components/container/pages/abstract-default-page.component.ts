@@ -31,20 +31,16 @@ export abstract class AbstractDefaultPageComponent implements OnInit, AfterViewI
   //////////////////////////////////////////////////////////
   // service injection (not the constructor way)
   //////////////////////////////////////////////////////////
-  protected router: Router;
-  protected route: ActivatedRoute;
-  protected breakpointService: BreakpointService;
+  protected router: Router = inject(Router);
+  protected route: ActivatedRoute = inject(ActivatedRoute);
+  protected breakpointService: BreakpointService = inject(BreakpointService);
   protected subscription: Subscription;
-  private scrollService: PageScrollService;
-  private navigationService: NavigationService;
+  private scrollService: PageScrollService = inject(PageScrollService);
+  private navigationService: NavigationService = inject(NavigationService);
+
   protected dimension: string;
 
   protected constructor() {
-    this.router = inject(Router);
-    this.route = inject(ActivatedRoute);
-    this.breakpointService = inject(BreakpointService);
-    this.scrollService = inject(PageScrollService);
-    this.navigationService = inject(NavigationService);
     this.subscription = new Subscription();
   }
 
@@ -55,7 +51,7 @@ export abstract class AbstractDefaultPageComponent implements OnInit, AfterViewI
   }
 
   ngAfterViewInit(): void {
-    this.scrollToPosition()
+    this.scrollToPosition();
     this.observeNavigation();
   }
 
