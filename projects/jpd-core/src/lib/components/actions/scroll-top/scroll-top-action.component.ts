@@ -4,7 +4,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { map } from 'rxjs/operators';
-import { PageScrollService } from '../../../common';
+import { ScrollService } from '../../../common';
 import { ActionComponent } from '../_base-action/action.component';
 
 @Component({
@@ -26,7 +26,7 @@ export class ScrollTopActionComponent {
 
   top: Signal<boolean | undefined>
 
-  constructor(private scrollService: PageScrollService) {
+  constructor(private scrollService: ScrollService) {
     this.top = toSignal(this.scrollService.scrollTop$.pipe(
       map(scrollTop => scrollTop > 0)));
   }

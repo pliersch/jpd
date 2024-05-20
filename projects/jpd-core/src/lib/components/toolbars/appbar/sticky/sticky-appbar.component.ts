@@ -5,7 +5,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { IsActiveMatchOptions, RouterLink, RouterLinkActive } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { PageScrollService, Route, RouteDomService } from '../../../../common';
+import { Route, RouteDomService, ScrollService } from '../../../../common';
 
 @Component({
   selector: 'a4w-sticky-appbar',
@@ -26,7 +26,7 @@ export class StickyAppbarComponent implements OnInit {
   route$: Observable<Route>;
   linkActiveOptions: IsActiveMatchOptions;
 
-  constructor(scrollService: PageScrollService,
+  constructor(scrollService: ScrollService,
               private routeDomService: RouteDomService,) {
     scrollService.scrollTop$.subscribe(scrollTop => this.handleDisplayBehavior(scrollTop));
   }

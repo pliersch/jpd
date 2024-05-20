@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, NavigationSkipped, Router } from "@angular/router";
 import { Subscription } from "rxjs";
-import { BreakpointService, Dimension, FragmentDirective, NavigationService, PageScrollService } from '../../../common';
+import { BreakpointService, Dimension, FragmentDirective, NavigationService, ScrollService } from '../../../common';
 
 @Component({
   selector: 'a4w-default-page',
@@ -35,7 +35,7 @@ export abstract class AbstractDefaultPageComponent implements OnInit, AfterViewI
   protected route: ActivatedRoute = inject(ActivatedRoute);
   protected breakpointService: BreakpointService = inject(BreakpointService);
   protected subscription: Subscription;
-  private scrollService: PageScrollService = inject(PageScrollService);
+  private scrollService: ScrollService = inject(ScrollService);
   private navigationService: NavigationService = inject(NavigationService);
 
   protected dimension: string;

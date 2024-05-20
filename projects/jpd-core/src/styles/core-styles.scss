@@ -74,12 +74,12 @@ body {
 
 // naming 🙄 is 100vh minus appbar
 .max-page-height {
-  height: calc(100vh - var(--appbar-height, 64px));
+  height: calc(100dvh - var(--appbar-height, 64px));
 }
 
 // naming 🙄 is max page minus appbar-nav (small/tablet layout)
 .max-component-height {
-  height: calc(100vh - var(--appbar-height, 64px) - var(--sub-appbar-height, 56px));
+  height: calc(100dvh - var(--appbar-height, 64px) - var(--sub-appbar-height, 56px));
 }
 
 .header-link {

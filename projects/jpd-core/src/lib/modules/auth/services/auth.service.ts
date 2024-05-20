@@ -7,12 +7,15 @@ export class AuthService {
 
   constructor(private environmentService: EnvironmentService) { }
 
-  readonly correctPassword$: Subject<boolean>
+  // readonly isLoggedIn$: Subject<boolean>
+  //   = new BehaviorSubject<boolean>(false);
+
+  readonly isLoggedIn$: Subject<boolean>
     = new BehaviorSubject<boolean>(
     !this.environmentService.getEnvironment().production);
 
   login(password: string): void {
-    this.correctPassword$.next(
-      password === this.environmentService.getEnvironment().login);
+    this.isLoggedIn$.next(
+      password === this.environmentService.getEnvironment().password);
   }
 }

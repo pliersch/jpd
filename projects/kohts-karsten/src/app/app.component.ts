@@ -13,7 +13,6 @@ import {
   FragmentDirective,
   LoginComponent,
   LogoContainerComponent,
-  NavigationService,
   PhoneActionComponent,
   ShopFooter1Component,
   SmallFooter2Component,
@@ -46,15 +45,15 @@ import {
 export class AppComponent {
 
   isRendered = signal(false);
-  isLoggedIn = toSignal(this.authService.correctPassword$);
+  isLoggedIn = toSignal(this.authService.isLoggedIn$);
 
   constructor(private router: Router,
               protected authService: AuthService,
-              navigationService: NavigationService,
+              // navigationService: NavigationService,
               breakpointService: BreakpointService,
               cookieConsentService: CookieConsentService) {
 
-    navigationService.startSaveHistory();
+    // navigationService.startSaveHistory();
 
     effect(() => {
       if (this.isLoggedIn()) {

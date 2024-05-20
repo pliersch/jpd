@@ -1,5 +1,6 @@
 import { AsyncPipe } from '@angular/common';
-import { afterNextRender, AfterRenderPhase, AfterViewInit, Component, signal } from '@angular/core';
+import { afterNextRender, AfterRenderPhase, Component, effect, signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { Router, RouterOutlet } from '@angular/router';
 import {
   A4WRootComponent,
@@ -28,30 +29,28 @@ import { BreakpointService } from '../../../jpd-core/src/lib/common';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent {
 
   isRendered = signal(false);
+  isLoggedIn = toSignal(this.authService.isLoggedIn$);
 
   constructor(protected authService: AuthService,
               breakpointService: BreakpointService,
               // protected adminService: AdminService,
               private router: Router) {
+
+    effect(() => {
+      if (this.isLoggedIn()) {
+        void this.router.navigateByUrl('/');
+      }
+    });
+
     afterNextRender(() => {
-      // cookieConsentService.initCookieConsent();
       // https://trello.com/c/N4Ixxe8z/90-appcomponent-signal-isrendered
       breakpointService.dimension$.subscribe(() => {
         this.isRendered.set(true);
       });
-      // CookieConsent.showPreferences();
-
     }, {phase: AfterRenderPhase.Write});
   }
 
-  ngAfterViewInit(): void {
-    this.authService.correctPassword$.subscribe((correct: boolean) => {
-      if (!correct) {
-        this.router.navigateByUrl('/');
-      }
-    })
-  }
 }

@@ -10,9 +10,9 @@ import {
   BreakpointService,
   CssDomService,
   Dimension,
-  PageScrollService,
   Route,
   RouteDomService,
+  ScrollService,
   Themes,
   ThemeToggleChange,
   ToggleSidenavService
@@ -61,7 +61,7 @@ export class AppbarTwoRowsComponent implements OnInit {
   linkActiveOptions: IsActiveMatchOptions;
 
   constructor(private toggleSidenavService: ToggleSidenavService,
-              scrollService: PageScrollService,
+              scrollService: ScrollService,
               cssDomService: CssDomService,
               private routeDomService: RouteDomService,
               private breakpointService: BreakpointService) {

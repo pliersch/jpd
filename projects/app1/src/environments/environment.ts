@@ -6,7 +6,7 @@ import { Environment } from 'jpd-core';
 
 export const environment: Environment = {
   production: false,
-  login: '', // only production
+  password: 'a4w2024!', // need only production
   apiUrl: 'http://localhost:3000',
   socketUrl: 'http://localhost:3000'
 };

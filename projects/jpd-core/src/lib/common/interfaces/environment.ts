@@ -2,7 +2,7 @@
 
 export interface Environment {
   production: boolean;
-  login: string;
+  password: string;
   apiUrl: string;
   socketUrl: string;
 }

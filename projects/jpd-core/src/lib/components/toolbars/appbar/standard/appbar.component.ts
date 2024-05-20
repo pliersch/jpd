@@ -22,9 +22,9 @@ import { Observable, tap } from "rxjs";
 import { map } from 'rxjs/operators';
 import {
   CssDomService,
-  PageScrollService,
   Route,
   RouteDomService,
+  ScrollService,
   Themes,
   ThemeToggleChange,
   ToggleSidenavService
@@ -71,7 +71,7 @@ export class AppbarComponent implements OnInit, AfterViewInit {
   linkActiveOptions: IsActiveMatchOptions;
 
   constructor(private toggleSidenavService: ToggleSidenavService,
-              scrollService: PageScrollService,
+              scrollService: ScrollService,
               private cssDomService: CssDomService,
               private routeDomService: RouteDomService,
               private breakpointObserver: BreakpointObserver) {

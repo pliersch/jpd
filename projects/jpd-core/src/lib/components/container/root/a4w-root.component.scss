@@ -18,7 +18,13 @@
        `<body>` to be our scrolling element for mobile layouts. */
     flex: 1 0 auto;
 
+    .sub-nav-offset {
+      margin-top: var(--sub-appbar-height);
+    }
+  }
 
+  .appbar-offset {
+    margin-top: var(--appbar-height);
   }
 
   .bottom-right {
@@ -27,12 +33,4 @@
     right: 20px;
     z-index: 2;
   }
-}
-
-.appbar-offset {
-  margin-top: var(--appbar-height);
-}
-
-.sub-nav-offset {
-  margin-top: var(--sub-appbar-height);
 }

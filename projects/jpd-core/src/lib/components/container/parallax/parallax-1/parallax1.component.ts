@@ -1,6 +1,6 @@
 import { Component, Input, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { FragmentDirective, PageScrollService } from '../../../../common';
+import { FragmentDirective, ScrollService } from '../../../../common';
 import { BaseComponent } from '../../../core/base/base.component';
 
 export interface Parallax1Model {
@@ -25,7 +25,7 @@ export class Parallax1Component extends BaseComponent<Parallax1Model> implements
 
   private subscription: Subscription;
 
-  constructor(scrollService: PageScrollService,
+  constructor(scrollService: ScrollService,
               override fragment?: FragmentDirective) {
     super('Parallax1', fragment);
     this.subscription = scrollService.scrollTop$.subscribe(scrollTop => this.updateParallax(scrollTop));

@@ -1,5 +1,5 @@
 import { Directive, HostListener } from '@angular/core';
-import { PageScrollService } from '../services';
+import { ScrollService } from '../services';
 
 @Directive({
   selector: '[a4wScroll]',
@@ -7,7 +7,7 @@ import { PageScrollService } from '../services';
 })
 export class ScrollDirective {
 
-  constructor(private scrollService: PageScrollService) { }
+  constructor(private scrollService: ScrollService) { }
 
   @HostListener('window:scroll', ['$event'])
   onScroll(): void {

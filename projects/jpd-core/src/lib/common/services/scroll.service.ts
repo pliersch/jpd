@@ -5,9 +5,9 @@ import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class PageScrollService {
+export class ScrollService {
 
-  scrollTop$: Subject<number> = new Subject();
+  readonly scrollTop$: Subject<number> = new Subject();
   private scrollY: number;
 
   constructor(private viewportScroller: ViewportScroller) { }
