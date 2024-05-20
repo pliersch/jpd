@@ -21,11 +21,11 @@ import { IsActiveMatchOptions, RouterLink, RouterLinkActive } from "@angular/rou
 import { Observable, tap } from "rxjs";
 import { map } from 'rxjs/operators';
 import {
-  CssDomService,
   Route,
   RouteDomService,
   ScrollService,
   Themes,
+  ThemeService,
   ThemeToggleChange,
   ToggleSidenavService
 } from '../../../../common';
@@ -72,7 +72,7 @@ export class AppbarComponent implements OnInit, AfterViewInit {
 
   constructor(private toggleSidenavService: ToggleSidenavService,
               scrollService: ScrollService,
-              private cssDomService: CssDomService,
+              private cssDomService: ThemeService,
               private routeDomService: RouteDomService,
               private breakpointObserver: BreakpointObserver) {
     scrollService.scrollTop$.subscribe(scrollTop => this.onScroll(scrollTop));

@@ -10,12 +10,12 @@ import { IsActiveMatchOptions, RouterLink, RouterLinkActive } from "@angular/rou
 import { map } from 'rxjs/operators';
 import {
   BreakpointService,
-  CssDomService,
   Dimension,
   Route,
   RouteDomService,
   ScrollService,
   Themes,
+  ThemeService,
   ThemeToggleChange,
   ToggleSidenavService
 } from '../../../../common';
@@ -64,7 +64,7 @@ export class AppbarTwoRowsComponent implements OnInit {
 
   constructor(private toggleSidenavService: ToggleSidenavService,
               scrollService: ScrollService,
-              cssDomService: CssDomService,
+              cssDomService: ThemeService,
               private routeDomService: RouteDomService,
               private breakpointService: BreakpointService) {
 

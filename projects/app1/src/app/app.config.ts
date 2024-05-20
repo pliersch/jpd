@@ -18,13 +18,13 @@ import { CustomYoutubeService } from '@app1/services/custom-youtube.service';
 import {
   AppDataService,
   BreakpointService,
-  CssDomService,
   EnvironmentService,
   ImageService,
   initApplication,
   initIcons,
   initTheme,
-  RouteDomService
+  RouteDomService,
+  ThemeService
 } from 'jpd-core';
 import { YoutubeService } from 'jpd-youtube';
 import { ROUTES } from './app.routes';
@@ -42,7 +42,7 @@ export const appConfig: ApplicationConfig = {
       provide: APP_INITIALIZER,
       multi: true,
       useFactory: initTheme,
-      deps: [/*SsrCookieService,*/ CssDomService, Platform, MediaMatcher]
+      deps: [/*SsrCookieService,*/ ThemeService, Platform, MediaMatcher]
     },
     {provide: APP_INITIALIZER, useFactory: initApplication, multi: true, deps: [BreakpointService]},
     {provide: APP_INITIALIZER, useFactory: initIcons, multi: true, deps: [MatIconRegistry, DomSanitizer]},

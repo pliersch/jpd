@@ -1,9 +1,9 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { Platform } from '@angular/cdk/platform';
 import { Themes } from '../const';
-import { CssDomService } from '../services';
+import { ThemeService } from '../services';
 
-export function initTheme(cssDomService: CssDomService,
+export function initTheme(cssDomService: ThemeService,
                           platform: Platform,
                           // cookieService: SsrCookieService,
                           mediaMatcher: MediaMatcher): () => Promise<void> {

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { booleanAttribute, Component, Input } from '@angular/core';
-import { CssDomService, Themes } from '../../../common';
+import { Themes, ThemeService } from '../../../common';
 import { ActionComponent } from '../_base-action/action.component';
 
 @Component({
@@ -18,7 +18,7 @@ export class ThemeToggleActionComponent {
 
   theme: string = Themes.DARK;
 
-  constructor(private cssDomService: CssDomService) { }
+  constructor(private cssDomService: ThemeService) { }
 
   toggleTheme(): void {
     this.cssDomService.toggleTheme();

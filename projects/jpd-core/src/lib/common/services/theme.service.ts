@@ -8,24 +8,24 @@ export interface ThemeToggleChange {
   remove: string;
 }
 
+//////////////////////////////////////////////////////////
+//      dark is default! no os theme-check
+//////////////////////////////////////////////////////////
+
 @Injectable({
   providedIn: 'root'
 })
-export class CssDomService {
+export class ThemeService {
 
   themeState$ = new Subject<ThemeToggleChange>();
   private renderer: Renderer2;
-  private theme: string;
+  private theme: string = Themes.DARK;
 
   constructor(rendererFactory: RendererFactory2,
               // private cookieService: SsrCookieService,
               @Inject(DOCUMENT) private document: Document) {
     this.renderer = rendererFactory.createRenderer(null, null);
   }
-
-  //////////////////////////////////////////////////////////
-  //                   theming
-  //////////////////////////////////////////////////////////
 
   setDarkTheme(): void {
     this.renderer.addClass(this.document.body, Themes.DARK);

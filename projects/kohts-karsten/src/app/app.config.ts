@@ -10,12 +10,12 @@ import { provideRouter } from '@angular/router';
 import {
   AppDataService,
   BreakpointService,
-  CssDomService,
   EnvironmentService,
   initApplication,
   initIcons,
   initTheme,
-  RouteDomService
+  RouteDomService,
+  ThemeService
 } from 'jpd-core';
 import { ROUTES } from './app.routes';
 import { CustomAppDataService } from './services/custom-app-data.service';
@@ -33,7 +33,7 @@ export const appConfig: ApplicationConfig = {
       provide: APP_INITIALIZER,
       multi: true,
       useFactory: initTheme,
-      deps: [/*SsrCookieService,*/ CssDomService, Platform, MediaMatcher]
+      deps: [/*SsrCookieService,*/ ThemeService, Platform, MediaMatcher]
     },
     {provide: APP_INITIALIZER, useFactory: initApplication, multi: true, deps: [BreakpointService]},
     {provide: APP_INITIALIZER, useFactory: initIcons, multi: true, deps: [MatIconRegistry, DomSanitizer]},

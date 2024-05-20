@@ -1,7 +1,7 @@
 export { AlertService } from './alert.service'
 export { BreakpointService } from './breakpoint.service'
 export { CookieConsentService } from './cookie-consent.service'
-export { CssDomService, ThemeToggleChange } from './css-dom.service'
+export { ThemeService, ThemeToggleChange } from './theme.service'
 export { CssVarService, CssVar } from './css-var.service'
 export { DeviceService } from './device.service'
 export { ImageService } from './image.service'
