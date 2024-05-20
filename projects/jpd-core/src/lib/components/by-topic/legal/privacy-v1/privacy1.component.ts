@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   MatAccordion,
   MatExpansionPanel,
@@ -7,8 +7,6 @@ import {
   MatExpansionPanelTitle
 } from '@angular/material/expansion';
 import { MatIcon } from '@angular/material/icon';
-import { Observable, of } from 'rxjs';
-import { BreakpointService, Dimension } from '../../../../common';
 import { PosterComponent } from '../../../poster/poster.component';
 
 @Component({
@@ -18,19 +16,19 @@ import { PosterComponent } from '../../../poster/poster.component';
   templateUrl: './privacy1.component.html',
   styleUrl: './privacy1.component.scss'
 })
-export class Privacy1Component implements OnInit {
+export class Privacy1Component /*implements OnInit */ {
 
-  isXSmall$: Observable<boolean>;
-  isSmall$: Observable<boolean>;
+  // isXSmall$: Observable<boolean>;
+  // isSmall$: Observable<boolean>;
 
 
-  constructor(private breakpointService: BreakpointService) { }
+  // constructor(private breakpointService: BreakpointService) { }
 
-  ngOnInit(): void {
-    this.breakpointService.dimension$.subscribe(res => {
-      console.log(res)
-      this.isXSmall$ = of(res === Dimension.XSmall);
-      this.isSmall$ = of(res === Dimension.Small);
-    });
-  }
+  // ngOnInit(): void {
+  //   this.breakpointService.dimension$.subscribe(res => {
+  //     console.log(res)
+  //     this.isXSmall$ = of(res === Dimension.XSmall);
+  //     this.isSmall$ = of(res === Dimension.Small);
+  //   });
+  // }
 }

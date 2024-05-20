@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { afterNextRender, booleanAttribute, Component, ContentChild, Input, OnInit, signal } from '@angular/core';
+import { booleanAttribute, Component, ContentChild, Input, OnInit, Signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { IsActiveMatchOptions, RouterLink, RouterLinkActive } from "@angular/router";
+import { map } from 'rxjs/operators';
 import {
   BreakpointService,
   CssDomService,
@@ -54,9 +56,9 @@ export class AppbarTwoRowsComponent implements OnInit {
   scrollTop = 0;
 
   // for phone layout
-  isXSmall = signal(false);
+  isXSmall: Signal<boolean | undefined>;
   // for 2 rows layout (extra navbar)
-  isSmall = signal(false);
+  isSmall: Signal<boolean | undefined>;
 
   linkActiveOptions: IsActiveMatchOptions;
 
@@ -65,15 +67,15 @@ export class AppbarTwoRowsComponent implements OnInit {
               cssDomService: CssDomService,
               private routeDomService: RouteDomService,
               private breakpointService: BreakpointService) {
+
     scrollService.scrollTop$.subscribe(scrollTop => this.onScroll(scrollTop));
     cssDomService.themeState$.subscribe(state => this.onToggleTheme(state));
-    afterNextRender(() => {
-      this.breakpointService.dimension$.subscribe(res => {
-        this.isXSmall.set(res === Dimension.XSmall);
-        this.isSmall.set(res === Dimension.Small);
-      });
-      // todo use phase? and which?
-    }/*, {phase: AfterRenderPhase.Write}*/);
+
+    this.isXSmall = toSignal(this.breakpointService.dimension$.pipe(
+      map(dimension => dimension === Dimension.XSmall)));
+
+    this.isSmall = toSignal(this.breakpointService.dimension$.pipe(
+      map(dimension => dimension === Dimension.Small)));
   }
 
   ngOnInit(): void {
@@ -86,20 +88,6 @@ export class AppbarTwoRowsComponent implements OnInit {
   emitNavToggle(): void {
     this.toggleSidenavService.toggleSidenav();
   }
-
-  // https://trello.com/c/qWFRkwhK/92-scroll-detection
-  // @HostListener('document:mousewheel', ['$event'])
-  // onDocumentMousewheelEvent(event: Event): void {
-  //   this.isUserScroll = true;
-  //   console.log('TRUE',)
-  //   // console.log('on Mouse wheel Event', event);
-  // }
-  //
-  // @HostListener('document:touchstart', ['$event'])
-  // onDocumentTouchstartEvent(event: Event): void {
-  //   this.isUserScroll = true;
-  //   console.log('on touchstart Event', event);
-  // }
 
   private onScroll(scrollTop: number): void {
     if (this.isScrollByRouter) {
