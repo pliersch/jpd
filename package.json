@@ -9,6 +9,7 @@
     "build:kohts": "ng build --project=kohts-karsten",
     "build:lib-core": "ng build --project=jpd-core",
     "watch:lib-core": "ng build --project=jpd-core --watch --configuration development",
+    "watch:lib-youtube": "ng build --project=jpd-youtube --watch --configuration development",
     "build:lib-youtube": "ng build --project=jpd-youtube",
     "serve:ssr:app1": "node dist/app1/server/server.mjs",
     "serve:app1": "node dist/app1/browser/index.html",

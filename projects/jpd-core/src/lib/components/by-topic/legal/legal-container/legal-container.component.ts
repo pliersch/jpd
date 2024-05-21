@@ -1,5 +1,5 @@
 import { AsyncPipe, NgTemplateOutlet } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, signal } from '@angular/core';
 import { BreakpointService, Dimension } from '../../../../common';
 import { PosterComponent } from '../../../poster/poster.component';
 
@@ -16,18 +16,16 @@ import { PosterComponent } from '../../../poster/poster.component';
 })
 export class LegalContainerComponent implements OnInit {
 
+  isMobile = signal(false);
+
   @Input({required: true})
   title: string;
-
-  sm = false;
-  xs = false;
 
   constructor(private breakpointService: BreakpointService) { }
 
   ngOnInit(): void {
-    this.breakpointService.dimension$.subscribe(res => {
-      this.sm = res === Dimension.Small;
-      this.xs = res === Dimension.XSmall;
+    this.breakpointService.dimension$.subscribe(dimension => {
+      this.isMobile.set(dimension === Dimension.XSmall);
     });
   }
 

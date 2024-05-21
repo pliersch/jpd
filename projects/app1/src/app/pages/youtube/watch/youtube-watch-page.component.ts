@@ -25,7 +25,7 @@ export class YoutubeWatchPageComponent implements OnInit {
       switchMap((params: ParamMap) => this.service.getVideo(params.get('id') || '1')));
   }
 
-  playVideo(video: Video) {
+  playVideo(video: Video): void {
     void this.router.navigate(['/youtube/watch', {id: video.id}]);
   }
 
