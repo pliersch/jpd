@@ -1,7 +1,7 @@
 import { Route } from '@angular/router';
 
 const home = () => import('@app1/pages/home/home-page.component').then((x) => x.HomePageComponent);
-const admin = () => import('@app1/pages/admin/admin-page.component').then((x) => x.AdminPageComponent);
+// const admin = () => import('@app1/pages/admin/admin-page.component').then((x) => x.AdminPageComponent);
 const team = () => import('@app1/pages/team/team-page.component').then((x) => x.TeamPageComponent);
 const contact = () => import('@app1/pages/contact/contact-page.component').then((x) => x.ContactPageComponent);
 const forest = () => import('@app1/pages/forest/forest-page.component').then((x) => x.ForestPageComponent);
