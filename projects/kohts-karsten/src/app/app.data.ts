@@ -167,30 +167,21 @@ export const appData: AppConfig = {
                 {
                   title: 'Eine Story zum Lesen',
                   contentText: LoremIpsumFactory.getText(140),
-                  postContentTitle: 'Patrick Liersch',
-                  postContentText: 'Story Schreiber',
                   imgUrl: 'assets/img/reifen_wechsel.webp',
-                  // avatar: 'assets/img/red-john.jpg',
                   // linkText: 'weiter lesen',
                   // linkUrl: '/blog/post/1'
                 },
                 {
                   title: 'Eine Story zum Lesen',
                   contentText: LoremIpsumFactory.getText(140),
-                  postContentTitle: 'Patrick Liersch',
-                  postContentText: 'Story Schreiber',
                   imgUrl: 'assets/img/Pannenhilfe.webp',
-                  // avatar: 'assets/img/red-john.jpg',
                   // linkText: 'weiter lesen',
                   // linkUrl: '/blog/post/1'
                 },
                 {
                   title: 'Eine Story zum Lesen',
                   contentText: LoremIpsumFactory.getText(140),
-                  postContentTitle: 'Patrick Liersch',
-                  postContentText: 'Story Schreiber',
                   imgUrl: 'assets/img/zahnriemen.jpg',
-                  // avatar: 'assets/img/red-john.jpg',
                   // linkText: 'weiter lesen',
                   // linkUrl: '/blog/post/1'
                 },
@@ -238,6 +229,47 @@ export const appData: AppConfig = {
           {
             name: 'TitleSubtitleDecorator',
             fragment: 'service',
+            data: {
+              title: 'Unser Service',
+              subtitle: 'Hier könnte durchaus etwas sinnvolles stehen. Ist aber optional.'
+            }
+          },
+
+          //////////////////////////////////////////////////////////
+          //                 Services v2
+          //////////////////////////////////////////////////////////
+          {
+            name: 'ImageCards2',
+            fragment: 'service2',
+            data: {
+              // headline: 'Unser Service',
+              imageCards: [
+                {
+                  title: 'TÜV, HU und AU',
+                  contentText: 'Lorem ipsum dolor sit amet',
+                  imgUrl: 'assets/img/hu-au.jpg',
+                },
+                {
+                  title: 'Reifen- und Felgenservice',
+                  contentText: 'Lorem ipsum dolor sit amet',
+                  imgUrl: 'assets/img/reifen_wechsel.webp',
+                },
+                {
+                  title: 'Reparatur und Wartung',
+                  contentText: 'Lorem ipsum dolor sit amet',
+                  imgUrl: 'assets/img/Autowerkstatt.webp',
+                },
+                {
+                  title: 'Pannenhilfe und Abschleppdienst',
+                  contentText: 'Lorem ipsum dolor sit amet',
+                  imgUrl: 'assets/img/Pannenhilfe.webp',
+                },
+              ]
+            },
+          },
+          {
+            name: 'TitleSubtitleDecorator',
+            fragment: 'service2',
             data: {
               title: 'Unser Service',
               subtitle: 'Hier könnte durchaus etwas sinnvolles stehen. Ist aber optional.'

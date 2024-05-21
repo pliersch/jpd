@@ -14,6 +14,7 @@ import {
   FragmentDirective,
   GMapsIframeComponent,
   IframePlaceholderComponent,
+  ImageCards2Component,
   ImageContent1Component,
   Mail1Component,
   Opening1Component,
@@ -58,7 +59,8 @@ import { LandingSplashComponent } from './landing-splash/landing-splash.componen
     BannerContainer1Component,
     TextContent1Component,
     ImageContent1Component,
-    IframePlaceholderComponent
+    IframePlaceholderComponent,
+    ImageCards2Component
     // BannerContainer1Component,
     // TextContent1Component,
     // ImageContent1Component
