@@ -45,6 +45,7 @@ import {
 export class AppComponent {
 
   isRendered = signal(false);
+  isLoading = signal(true);
   isLoggedIn = toSignal(this.authService.isLoggedIn$);
 
   constructor(private router: Router,
@@ -57,7 +58,7 @@ export class AppComponent {
 
     effect(() => {
       if (this.isLoggedIn()) {
-        void this.router.navigateByUrl('/');
+        // void this.router.navigateByUrl('/');
       }
     });
 
@@ -67,7 +68,7 @@ export class AppComponent {
       breakpointService.dimension$.subscribe(() => {
         this.isRendered.set(true);
       });
-
+      this.isLoading.set(false)
     }, {phase: AfterRenderPhase.Write});
   }
 

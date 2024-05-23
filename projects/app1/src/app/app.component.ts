@@ -1,7 +1,7 @@
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, Location } from '@angular/common';
 import { afterNextRender, AfterRenderPhase, Component, effect, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { Router, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import {
   A4WRootComponent,
   ActionContainerComponent,
@@ -18,7 +18,6 @@ import {
   SubNavComponent,
   ThemeToggleActionComponent,
 } from 'jpd-core';
-import { BreakpointService } from '../../../jpd-core/src/lib/common';
 
 @Component({
   selector: 'app-root',
@@ -31,25 +30,26 @@ import { BreakpointService } from '../../../jpd-core/src/lib/common';
 })
 export class AppComponent {
 
-  isRendered = signal(false);
+  isLoading = signal(true);
   isLoggedIn = toSignal(this.authService.isLoggedIn$);
 
   constructor(protected authService: AuthService,
-              breakpointService: BreakpointService,
               // protected adminService: AdminService,
-              private router: Router) {
+              private location: Location,
+  ) {
+
+    this.location.onUrlChange(url => {
+      console.log('ActionBarService: ', url)
+    });
 
     effect(() => {
       if (this.isLoggedIn()) {
-        void this.router.navigateByUrl('/');
+        // void this.router.navigateByUrl('/');
       }
     });
 
     afterNextRender(() => {
-      // https://trello.com/c/N4Ixxe8z/90-appcomponent-signal-isrendered
-      breakpointService.dimension$.subscribe(() => {
-        this.isRendered.set(true);
-      });
+      this.isLoading.set(false)
     }, {phase: AfterRenderPhase.Write});
   }
 
