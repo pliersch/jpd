@@ -22,7 +22,7 @@ export { A4WRootComponent } from './container/root/a4w-root.component';
 export { SectionComponent } from './container/section/section.component';
 export {
   ParallaxSectionComponent, ParallaxSectionModel
-} from './container/section-parallax/parallax-section.component';
+} from './container/parallax/parallax-section/parallax-section.component';
 export { SectionBgImageComponent } from './container/section-bg-image/section-bg-image.component';
 export { RightSideComponent } from './container/side/right/right-side.component';
 export { StickySideContainerComponent } from './container/sticky-side-container/sticky-side-container.component';
