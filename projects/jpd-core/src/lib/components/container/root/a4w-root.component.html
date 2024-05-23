@@ -10,11 +10,10 @@
     </mat-sidenav>
 
     <mat-sidenav-content>
-      <div class="d-flex flex-column">
+      <div class="d-flex flex-column max-page-height">
         <div class="sub-nav-offset">
           <router-outlet/>
         </div>
-        <span class="spacer"></span>
         @if (showFooter) {
           <div class="mt-auto">
             <ng-content select="[footer]"></ng-content>
