@@ -1,5 +1,5 @@
-import { AsyncPipe, Location } from '@angular/common';
-import { afterNextRender, AfterRenderPhase, Component, effect, signal } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
+import { afterNextRender, AfterRenderPhase, Component, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterOutlet } from '@angular/router';
 import {
@@ -35,18 +35,7 @@ export class AppComponent {
 
   constructor(protected authService: AuthService,
               // protected adminService: AdminService,
-              private location: Location,
   ) {
-
-    this.location.onUrlChange(url => {
-      console.log('ActionBarService: ', url)
-    });
-
-    effect(() => {
-      if (this.isLoggedIn()) {
-        // void this.router.navigateByUrl('/');
-      }
-    });
 
     afterNextRender(() => {
       this.isLoading.set(false)

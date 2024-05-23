@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { afterNextRender, AfterRenderPhase, Component, effect, signal } from '@angular/core';
+import { afterNextRender, AfterRenderPhase, Component, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
 import {
@@ -8,7 +8,6 @@ import {
   AppbarNavComponent,
   AppbarTwoRowsComponent,
   AuthService,
-  BreakpointService,
   CookieConsentService,
   FragmentDirective,
   LoginComponent,
@@ -44,30 +43,19 @@ import {
 })
 export class AppComponent {
 
-  isRendered = signal(false);
   isLoading = signal(true);
   isLoggedIn = toSignal(this.authService.isLoggedIn$);
 
   constructor(private router: Router,
               protected authService: AuthService,
               // navigationService: NavigationService,
-              breakpointService: BreakpointService,
               cookieConsentService: CookieConsentService) {
 
     // navigationService.startSaveHistory();
 
-    effect(() => {
-      if (this.isLoggedIn()) {
-        // void this.router.navigateByUrl('/');
-      }
-    });
-
     afterNextRender(() => {
       cookieConsentService.initCookieConsent();
       // https://trello.com/c/N4Ixxe8z/90-appcomponent-signal-isrendered
-      breakpointService.dimension$.subscribe(() => {
-        this.isRendered.set(true);
-      });
       this.isLoading.set(false)
     }, {phase: AfterRenderPhase.Write});
   }
