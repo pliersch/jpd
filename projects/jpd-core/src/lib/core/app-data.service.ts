@@ -17,46 +17,30 @@ export abstract class AppDataService {
 
   /**
    * @param className class of the component like: 'MyComponent'
-   * @param url '/' is root. other examples are '/contact' '/impressum'
    * @param a4wFragment name of fragment provides by fragment-directive
    */
-  getComponentData(className: string, url: string, a4wFragment?: string): any {
-    url = this.normalizeUrl(url);
-    const components =
-      this.appConfig.componentsByUrl.find(item => item.url === url);
-    let componentData
+  getComponentData(className: string, a4wFragment?: string): any {
+    // console.log('AppDataService getComponentData: ', className, a4wFragment)
+    const components = this.appConfig.data;
+    let componentData;
     if (a4wFragment) {
-      componentData = components?.data.filter(data => data.name === className && data.fragment === a4wFragment);
+      componentData = components.filter(data =>
+        data.name === className
+        && data.fragment === a4wFragment);
     } else {
-      componentData = components?.data.filter(data => data.name === className);
+      componentData = components.filter(data => data.name === className);
     }
 
     if (!componentData) {
       throw new Error('no data found for: ' + className);
     }
 
-    if (componentData.length == 1) {
-      return componentData[0].data;
+    if (componentData.length > 1) {
+      console.log('AppDataService getComponentData more then one: ', componentData)
+      throw new Error('more then one data found for: ' + className);
     }
 
-    return componentData.find(data => data.fragment === a4wFragment);
-  }
-
-  /**
-   * @param url
-   * @return string example:
-   * @example in: '/service/foo/bar' return: 'service'
-   * @example in: '/foo/#bar' return: 'foo'
-   * @example in: '/' return: ''
-   */
-  private normalizeUrl(url: string): string {
-    const normalized = url.split('/')[1];
-    // // remove fragment. like: foo/bar/#blog → foo/bar
-    if (normalized.lastIndexOf('#') != -1) {
-      return normalized.substring(0, normalized.lastIndexOf('#'))
-    }
-    return normalized;
-
+    return componentData[0].data;
   }
 
 }

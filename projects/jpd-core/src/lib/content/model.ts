@@ -8,13 +8,8 @@ export interface ComponentData {
   data: unknown; // todo make generic
 }
 
-export interface ComponentByUrl {
-  url: string;
-  data: ComponentData[]
-}
-
 export interface AppConfig {
   appName: string;
   company: Company;
-  componentsByUrl: ComponentByUrl[];
+  data: ComponentData[];
 }

@@ -9,13 +9,14 @@ import {
   GMapsIframeComponent,
   Mail1Component,
   Parallax1Component,
-  Phone1Component
+  Phone1Component,
+  SectionComponent
 } from 'jpd-core';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FragmentDirective, Parallax1Component, GMapsIframeComponent, ContactCompanyComponent, ContactCompanyInfoComponent, Address1Component, Mail1Component, Phone1Component],
+  imports: [CommonModule, FragmentDirective, Parallax1Component, GMapsIframeComponent, ContactCompanyComponent, ContactCompanyInfoComponent, Address1Component, Mail1Component, Phone1Component, SectionComponent],
   templateUrl: './contact-page.component.html',
   styleUrls: ['./contact-page.component.scss']
 })

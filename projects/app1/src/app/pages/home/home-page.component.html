@@ -1,6 +1,8 @@
-<a4w-parallax-1 a4wFragment="top">
-  <app-landing-splash/>
-</a4w-parallax-1>
+<a4w-section noPadding a4wFragment="top">
+  <a4w-parallax-1>
+    <app-landing-splash/>
+  </a4w-parallax-1>
+</a4w-section>
 
 <a4w-section a4wFragment="blog">
   <a4w-title-subtitle-decorator header/>
@@ -14,7 +16,9 @@
   <a4w-link-footer-decorator footer/>
 </a4w-section>
 
-<a4w-card32 a4wFragment="card32"/>
+<a4w-section a4wFragment="card32">
+  <a4w-card32/>
+</a4w-section>
 
 <a4w-section a4wFragment="banner1">
   <a4w-banner-1 textColor="black" color1="#ff00ff" color2="#00ff00"/>
@@ -24,10 +28,17 @@
   <a4w-banner-1 textColor="white"/>
 </a4w-section>
 
-<a4w-section-parallax color="white" a4wFragment="skills">
-  <a4w-title-subtitle-decorator header/>
-  <a4w-card42/>
-</a4w-section-parallax>
+<a4w-section a4wFragment="skills" noPadding>
+  <a4w-section-parallax color="white">
+    <a4w-title-subtitle-decorator header/>
+    <a4w-card42/>
+  </a4w-section-parallax>
+</a4w-section>
+
+<!--<a4w-section-parallax color="white" a4wFragment="skills">-->
+<!--  <a4w-title-subtitle-decorator header/>-->
+<!--  <a4w-card42/>-->
+<!--</a4w-section-parallax>-->
 
 <a4w-section a4wThemeToggle a4wFragment="team">
   <a4w-title-subtitle-decorator header/>

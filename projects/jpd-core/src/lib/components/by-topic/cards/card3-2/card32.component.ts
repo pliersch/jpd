@@ -30,4 +30,5 @@ export class Card32Component extends BaseComponent<Card32ComponentModel> {
   constructor(override fragment?: FragmentDirective) {
     super('Card32', fragment)
   }
+
 }

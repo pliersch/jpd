@@ -1,9 +1,11 @@
-<a4w-parallax-1 a4wFragment="landing">
-  <div class="d-flex flex-column">
-    @if (!edit) {
-      <app-doc-info (edit)="onEdit($event)"/>
-    } @else {
-      <app-doc-info-editor (saveChanges)="onSave()"/>
-    }
-  </div>
-</a4w-parallax-1>
+<a4w-section noPadding a4wFragment="doc">
+  <a4w-parallax-1>
+    <div class="d-flex flex-column">
+      @if (!edit) {
+        <app-doc-info (edit)="onEdit($event)"/>
+      } @else {
+        <app-doc-info-editor (saveChanges)="onSave()"/>
+      }
+    </div>
+  </a4w-parallax-1>
+</a4w-section>
