@@ -9,12 +9,14 @@ const company: Company = {
     lastName: 'Xxxxxx',
     gender: "male"
   },
+  representation: 'Herr Xxxxxx',
   address: {
     city: 'Xxxxxxxxxxx',
     street: 'Xxxxxx Xxxxxx',
     no: 'xx',
     zip: 99999
   },
+  addressString: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
   openingHours: [
     // 'Mo. - Fr.: 7:30 - 17:30 Uhr',
     // 'Sa.: nach Absprache',

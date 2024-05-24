@@ -1,7 +1,9 @@
 export interface Company {
   name: string;
   owner: Person;
+  representation: string;
   address: Address;
+  addressString: string;
   phone: string; // todo use type and check regex
   email?: string; // todo use type and check regex
   openingHours: string[];

@@ -9,12 +9,14 @@ const company: Company = {
     lastName: 'Kohts',
     gender: "male"
   },
+  representation: 'Herr Karsten Kohts',
   address: {
     city: 'Märkische Heide OT Schulen',
     street: 'Wiesenweg',
     no: '7',
     zip: 15913
   },
+  addressString: 'Wiesenweg 7, 15913 Märkische Heide OT Schulen',
   openingHours: [
     'Mo. - Fr.: 7:30 - 17:30 Uhr',
     'Sa.: nach Absprache',
@@ -373,13 +375,36 @@ export const appData: AppConfig = {
         }
       },
       //////////////////////////////////////////////////////////
+      //                   LegalNotice
+      //////////////////////////////////////////////////////////
+      {
+        name: 'LegalNotice',
+        data: {
+          url: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d83202.63399778331!2d14.005926363632453!3d52.04056566652021!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4707f19da142579f%3A0x83e0c5a2eca11ae0!2sKFZ-Meisterwerkstatt%20Karsten%20Kohts!5e0!3m2!1sde!2sde!4v1696433271595!5m2!1sde!2sde'
+        }
+      },
+      //////////////////////////////////////////////////////////
       //                   SmallFooter2
       //////////////////////////////////////////////////////////
       {
         name: 'SmallFooter2',
         fragment: 'footer',
         data: {
-          routeNames: ['impressum', 'datenschutz']
+          company: company.name,
+          representation: company.representation,
+          address: company.address,
+          phone: '',
+          fax: '',
+          email: '',
+          homepage: '',
+          jurisdiction: '',
+          taxIdentificationNumber: '',
+          disclaimer: '',
+          consumerInformation: '',
+          infringement: '',
+          webDeveloper: '',
+          copyright: '',
+          references: '',
         }
       },
 

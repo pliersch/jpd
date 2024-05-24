@@ -14,7 +14,7 @@ export class CustomRouteDomService extends RouteDomService {
       children: [
         {
           name: 'Home', path: '', children: [],
-          fragments: ['top', 'wir', 'service', 'skills', 'maps', 'kontakt']
+          fragments: ['wir', 'service', 'skills', 'maps', 'kontakt']
         }
       ]
     }
