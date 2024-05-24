@@ -1,10 +1,10 @@
 <ng-template [ngIf]="isOpen">
   <mat-toolbar class="z2 fill mat-elevation-z6 relative">
-    <div class="d-flex ms-auto me-auto">
+    <div class="flex ms-auto me-auto">
       @if (route$ | async; as route) {
         @if (route.children.length === 1) {
           @for (f of route.children[0].fragments; track f) {
-            <a mat-flat-button class="transparent-background text-capitalize"
+            <a mat-flat-button class="transparent-background !capitalize"
                [routerLinkActiveOptions]="linkActiveOptions" [fragment]="f"
                routerLinkActive="active-route" [routerLink]="[route.path]">{{ f }}
             </a>
@@ -12,7 +12,7 @@
         } @else {
           <!-- multi site. with sub routes -->
           @for (childRoute of route.children; track childRoute.name) {
-            <a mat-flat-button class="transparent-background text-capitalize"
+            <a mat-flat-button class="transparent-background !capitalize"
                [routerLinkActiveOptions]="linkActiveOptions"
                routerLinkActive="active-route" [routerLink]="[route.path +'/'+ childRoute.path]">
               {{ childRoute.name }}

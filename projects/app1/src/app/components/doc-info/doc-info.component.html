@@ -1,61 +1,41 @@
-<div class="d-flex flex-column white">
+<div class="flex flex-col white">
   @if (model.getHighInfos().length === 1) {
-    <div class="container">
-      <div class="row">
-        <div class="d-flex flex-column">
-          @for (item of model.getHighInfos(); track item) {
-            <div class="col">
-              <app-doc-info-default-widget [item]="item" size="xl"/>
-            </div>
-          }
-        </div>
+    <div>
+      <div class="flex flex-col">
+        @for (item of model.getHighInfos(); track item) {
+          <app-doc-info-default-widget [item]="item" size="xl"/>
+        }
       </div>
-      <div class="row row-cols-auto">
+      <div class="grid grid-flow-col auto-rows-max">
         @for (item of model.getLowInfos(); track item) {
-          <div class="col">
-            <app-doc-info-default-widget [item]="item" size="md"/>
-          </div>
+          <app-doc-info-default-widget [item]="item" size="md"/>
         }
       </div>
     </div>
   } @else if (model.getHighInfos().length === 2) {
-    <div class="container">
-      <div class="row row-cols-2">
-        @for (item of model.getHighInfos(); track item) {
-          <div class="col">
-            <app-doc-info-default-widget [item]="item" size="lg"/>
-          </div>
-        }
-      </div>
-      <div class="row row-cols-auto">
+    <div>
+      @for (item of model.getHighInfos(); track item) {
+        <app-doc-info-default-widget [item]="item" size="lg"/>
+      }
+      <div class="grid grid-flow-col auto-rows-max">
         @for (item of model.getLowInfos(); track item) {
-          <div class="col">
-            <app-doc-info-default-widget [item]="item" size="md"/>
-          </div>
+          <app-doc-info-default-widget [item]="item" size="md"/>
         }
       </div>
     </div>
   } @else if (model.getHighInfos().length === 3) {
-
-    <div class="container">
+    <div>
       @for (item of model.getHighInfos(); track item) {
-        <div class="row">
-
-          <div class="col">
-            <app-doc-info-default-widget [item]="item" size="lg"/>
-          </div>
-        </div>
+        <app-doc-info-default-widget [item]="item" size="lg"/>
       }
-      <div class="row row-cols-auto">
+      <div class="grid grid-flow-col auto-rows-max">
         @for (item of model.getLowInfos(); track item) {
-          <div class="col">
-            <app-doc-info-default-widget [item]="item" size="md"/>
-          </div>
+          <app-doc-info-default-widget [item]="item" size="md"/>
         }
       </div>
     </div>
   }
-  <div class="d-flex flex-row-reverse">
+  <div class="flex flex-row-reverse">
     <button mat-raised-button color="primary" (click)="enableEditMode()">Bearbeiten</button>
   </div>
 </div>

@@ -46,6 +46,7 @@ export class IframePlaceholderComponent {
     linkText: 'open link'
   }
 
+  //fixme do it generic
   isMapsAllowed$: Observable<boolean>;
 
   constructor(private cookieConsentService: CookieConsentService) {

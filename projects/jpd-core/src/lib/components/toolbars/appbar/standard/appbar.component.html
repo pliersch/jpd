@@ -1,33 +1,33 @@
 @if (isHandset$|async) {
   <!--   mobile    -->
-  <mat-toolbar class="z-2 fill mat-elevation-z6 position-relative">
+  <mat-toolbar class="z-2 fill mat-elevation-z6 relative">
     <button mat-icon-button (click)="emitNavToggle()">
       <mat-icon svgIcon="menu"/>
     </button>
-    <div class="d-flex align-items-center w-150px">
+    <div class="flex items-center w-150px">
       <ng-content select="[logo-small]"/>
     </div>
   </mat-toolbar>
 } @else {
 
   <!--   DESKTOP    -->
-  <mat-toolbar class="z-2 fill mat-elevation-z6 position-relative"
+  <mat-toolbar class="z-2 fill mat-elevation-z6 relative"
                [class.transparent-bg]="_transparent"
-               [class.position-absolute]="_transparent || blurry"
+               [class.absolute]="_transparent || blurry"
                [class.rounded]="rounded"
                [class.blurry]="blurry"
                [style.background-color]="bgColor">
 
-    <div class="d-flex w-100 align-items-center"
+    <div class="flex w-full items-center"
          [class.justify-content-between]="actionsVisible">
-      <div class="d-flex align-items-center w-150px">
+      <div class="flex items-center w-150px">
         <ng-content select="[logo]"/>
       </div>
       <nav #navContainer>
 
         @if (rootRoute.children.length === 1) {
           @for (childRoute of rootRoute.children[0].fragments; track childRoute) {
-            <a mat-flat-button class="transparent-background text-capitalize"
+            <a mat-flat-button class="transparent-background !capitalize"
                [routerLinkActiveOptions]="linkActiveOptions"
                [fragment]="childRoute" routerLinkActive="active" [routerLink]="[rootRoute.path]">
               {{ childRoute }}
@@ -36,7 +36,7 @@
         } @else {
           <!-- multi site. with sub routes -->
           @for (childRoute of rootRoute.children; track childRoute.name) {
-            <a #ref mat-flat-button class="transparent-background text-capitalize demo-btn-color"
+            <a #ref mat-flat-button class="transparent-background !capitalize demo-btn-color"
                routerLinkActive="active" [routerLink]="[rootRoute.path +'/'+ childRoute.path]"
                [routerLinkActiveOptions]="linkActiveOptions"
                (click)="showSubNav(childRoute, ref._elementRef.nativeElement.getBoundingClientRect().x)"
@@ -49,7 +49,7 @@
 
       </nav>
       @if (actionsVisible) {
-        <div class="px-2 d-flex align-items-center flex-row-reverse w-150px">
+        <div class="px-2 flex items-center flex-row-reverse w-150px">
           <ng-content select="[action]"></ng-content>
         </div>
       }

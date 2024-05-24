@@ -11,8 +11,7 @@ export interface Small1FooterModel {}
   selector: 'a4w-small-footer-1',
   standalone: true,
   imports: [CommonModule, MatIconModule, MatAnchor, RouterLink],
-  templateUrl: './small-footer1.component.html',
-  styleUrls: ['./small-footer1.component.scss']
+  templateUrl: './small-footer1.component.html'
 })
 export class SmallFooter1Component /*extends BaseComponent<Small1FooterModel> */ {
 

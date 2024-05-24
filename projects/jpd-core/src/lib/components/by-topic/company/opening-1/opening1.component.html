@@ -1,10 +1,11 @@
-<div class="d-flex">
-  <mat-icon class="me-2" color="accent" aria-hidden="false" aria-label="Example home icon"
+<div class="flex">
+  <mat-icon class="mr-2 mt-1" color="accent" aria-hidden="false"
+            aria-label="öffnungzeiten icon"
             svgIcon="schedule"></mat-icon>
   <div>
-    <h4 class="fw-400">Öffnungszeiten</h4>
+    <h4 class="text-2xl font-normal">Öffnungszeiten</h4>
     @for (item of model.openingHours; track item) {
-      <p class="mb-0">{{ item }}</p>
+      <p>{{ item }}</p>
     }
   </div>
 </div>

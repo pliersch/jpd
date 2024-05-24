@@ -97,7 +97,7 @@ export const appData: AppConfig = {
         name: 'TitleSubtitleDecorator',
         fragment: 'blog',
         data: {
-          title: 'Unser Blog',
+          title: 'Unser Blog (Card31)',
           subtitle: 'Unbedingt lesen. Alles!'
         }
       },
@@ -117,9 +117,15 @@ export const appData: AppConfig = {
         fragment: 'card32',
         data: {
           items: [
-            TitleSubtitleMessageFactory.create('Bsp für Verteilung unterschiedlicher Text Längen', LoremIpsumFactory.getText(150), LoremIpsumFactory.getText(10), 'assets/img/1x/5.jpg', '/blog'),
-            TitleSubtitleMessageFactory.create('Bsp unterschiedlicher Text Längen', LoremIpsumFactory.getText(105), LoremIpsumFactory.getText(10), 'assets/img/1x/5.jpg', '/blog'),
-            TitleSubtitleMessageFactory.create('Bsp für Text Längen', LoremIpsumFactory.getText(142), LoremIpsumFactory.getText(10), 'assets/img/1x/5.jpg', '/blog'),
+            TitleSubtitleMessageFactory.create(
+              'Card 32! Bsp für Verteilung unterschiedlicher Text Längen', LoremIpsumFactory.getText(150),
+              LoremIpsumFactory.getText(10), 'assets/img/1x/5.jpg', '/blog', 'open'),
+            TitleSubtitleMessageFactory.create(
+              'Card 32! Bsp unterschiedlicher Text Längen', LoremIpsumFactory.getText(105),
+              LoremIpsumFactory.getText(10), 'assets/img/1x/5.jpg', '/blog', 'open'),
+            TitleSubtitleMessageFactory.create(
+              'Card 32! Bsp für Text Längen', LoremIpsumFactory.getText(142),
+              LoremIpsumFactory.getText(10), 'assets/img/1x/5.jpg', '/blog', 'open'),
           ]
         }
       },
@@ -193,7 +199,7 @@ export const appData: AppConfig = {
         name: 'TitleSubtitleDecorator',
         fragment: 'team',
         data: {
-          title: 'Unser Team',
+          title: 'Card 43',
           subtitle: 'Hier könnte durchaus etwas sinnvolles stehen. Ist aber optional.'
         }
       },
@@ -212,7 +218,7 @@ export const appData: AppConfig = {
         name: 'Banner1',
         fragment: 'banner1',
         data: {
-          title: 'Great Stuff',
+          title: 'Banner 1',
           subtitle: LoremIpsumFactory.getText(100),
           contentText: LoremIpsumFactory.getText(200),
           postContentText: 'Chef des Hauses',
@@ -225,7 +231,7 @@ export const appData: AppConfig = {
         name: 'Banner1',
         fragment: 'banner11',
         data: {
-          title: 'Great Stuff',
+          title: 'Banner 1',
           subtitle: LoremIpsumFactory.getText(100),
           contentText: LoremIpsumFactory.getText(200),
           postContentText: 'Chef des Hauses',
@@ -274,7 +280,7 @@ export const appData: AppConfig = {
         fragment: 'skills',
         data: {
           title: 'Unsere Skills',
-          subtitle: 'Eine kleine Auswahl'
+          subtitle: 'Card 42'
         }
       },
       //////////////////////////////////////////////////////////
@@ -284,7 +290,7 @@ export const appData: AppConfig = {
         name: 'Banner3',
         fragment: 'banner',
         data: {
-          title: 'The sad bunny',
+          title: 'The sad bunny (Banner3)',
           contentText: LoremIpsumFactory.getText(200),
           postContentText: 'this is optional',
           imageUrl: 'assets/img/bunny.jpg',
@@ -299,9 +305,9 @@ export const appData: AppConfig = {
         name: 'Banner4',
         fragment: 'banner4',
         data: {
-          title: 'Kein height bei image!',
+          title: 'Kein height bei image! (Banner 4)',
           message: 'So groß wie der Text',
-          description: 'Bild bei Umbruch allerdings aktuell nicht sichtbar (height 100% von 0)',
+          description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr',
           imageUrl: 'assets/img/bunny.jpg',
           color: '#cebe13'
         }
@@ -315,25 +321,25 @@ export const appData: AppConfig = {
         data: {
           cards: [
             {
-              title: 'Jane Doe',
+              title: 'Jane Doe (Card H1)',
               subtitle: 'Verkauf',
               description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr',
               imageUrl: 'assets/img/1x/5.jpg'
             },
             {
-              title: 'Peter Zimmer',
+              title: 'Peter Zimmer (Card H1)',
               subtitle: 'Service',
               description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr',
               imageUrl: 'assets/img/1x/5.jpg'
             },
             {
-              title: 'Klaus von Clausewitz',
+              title: 'Klaus von Clausewitz (Card H1)',
               subtitle: 'Versand',
               description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr',
               imageUrl: 'assets/img/1x/5.jpg'
             },
             {
-              title: 'Harry Hirsch',
+              title: 'Harry Hirsch (Card H1)',
               subtitle: 'Technik',
               description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr',
               imageUrl: 'assets/img/1x/5.jpg'
@@ -358,7 +364,7 @@ export const appData: AppConfig = {
         data: {
           items: [
             {
-              contentText: LoremIpsumFactory.getText(25),
+              contentText: 'Banner 2',
               postContentText: 'Chef of Kitchen',
               bgImageUrl: 'assets/img/1x/13.jpg',
               bigMessage: 'Come and See',
@@ -366,7 +372,7 @@ export const appData: AppConfig = {
               color: '#66a811'
             },
             {
-              contentText: LoremIpsumFactory.getText(15),
+              contentText: 'Banner 2',
               postContentText: 'Foo Bar',
               bgImageUrl: 'assets/img/1x/14.jpg',
               bigMessage: 'Click here',
@@ -411,7 +417,7 @@ export const appData: AppConfig = {
         data: {
           cards: [
             {
-              title: 'Eine Story zum Lesen',
+              title: 'Eine Story zum Lesen (Card 44)',
               contentText: LoremIpsumFactory.getText(140),
               // postContentText: 'this is optional',
               imgUrl: 'assets/img/royo/royo01-small.jpg',
@@ -439,7 +445,7 @@ export const appData: AppConfig = {
             },
           ],
           imageCard: {
-            title: 'Eine Story zum Lesen',
+            title: 'Image Card 1',
             contentText: LoremIpsumFactory.getText(140),
             postContentTitle: 'Patrick Liersch',
             postContentText: 'Story Schreiber',

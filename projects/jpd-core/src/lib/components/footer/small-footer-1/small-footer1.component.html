@@ -1,16 +1,12 @@
-<footer class="footer theme-contrast-bg">
-  <div class="container">
-    <div class="row">
-      <div class="col d-flex justify-content-center">
-        <nav>
-          @for (route of routes; track route) {
-            <a mat-flat-button class="transparent-background text-capitalize"
-               [routerLink]="route.path">
-              {{ route.name }}
-            </a>
-          }
-        </nav>
-      </div>
-    </div>
+<footer class="py-5 theme-contrast-bg">
+  <div class="flex justify-center">
+    <nav>
+      @for (route of routes; track route) {
+        <a mat-flat-button class="!capitalize transparent-background"
+           [routerLink]="route.path">
+          {{ route.name }}
+        </a>
+      }
+    </nav>
   </div>
 </footer>

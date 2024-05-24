@@ -53,8 +53,7 @@ export {
 export {
   StoriesGroup1Component, StoriesGroup1Model
 } from './by-topic/blog/container/stories-group-1/stories-group-1.component'
-export { Post1Component } from './by-topic/blog/post/post-1/post-1.component'
-export { Post2Component } from './by-topic/blog/post/post-2/post-2.component'
+export { Post1Component } from './by-topic/blog/post/post-1/post1.component'
 export {
   NewsletterSimpleSubscription1Component
 } from './by-topic/blog/subscription/simple-1/newsletter-simple-subscription1.component'

@@ -4,8 +4,9 @@ import {
   FragmentDirective,
   LinkFooterDecoratorComponent,
   Parallax1Component,
-  Post2Component,
-  SectionComponent, TitleSubtitleDecoratorComponent
+  Post1Component,
+  SectionComponent,
+  TitleSubtitleDecoratorComponent
 } from 'jpd-core';
 
 @Component({
@@ -14,7 +15,7 @@ import {
   imports: [
     FragmentDirective,
     SectionComponent,
-    Post2Component,
+    Post1Component,
     Parallax1Component,
     Card31Component,
     LinkFooterDecoratorComponent,

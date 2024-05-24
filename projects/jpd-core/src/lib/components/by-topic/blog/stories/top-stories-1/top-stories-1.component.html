@@ -1,22 +1,19 @@
-<h4 class="mt-5">Top Stories</h4>
+<h4 class="text-2xl mt-5">Top Stories</h4>
 
 @for (story of stories; track story) {
   <div class="mt-4">
     <a [routerLink]="[story.link]" class="link">
-      <div class="row">
-        <div class="col-lg-4 col-md-4">
-
-          <div class="card-image position-relative border-radius-lg">
-
-            <img class="img border-radius-lg" [src]="story.imgUrl" alt="curved11">
+      <div class="grid grid-cols-3">
+        <div class="col-span-1">
+          <div class="relative">
+            <img class="max-h-40"
+                 [src]="story.imgUrl" alt="curved11">
           </div>
         </div>
-        <div class="col-lg-8 col-md-8 my-sm-auto mt-3">
-          <h5>{{ story.title }} </h5>
+        <div class="col-span-2 my-auto">
+          <h5 class="text-xl"> {{ story.title }} </h5>
         </div>
       </div>
     </a>
   </div>
 }
-
-

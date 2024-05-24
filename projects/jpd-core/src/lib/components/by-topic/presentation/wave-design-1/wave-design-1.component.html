@@ -1,5 +1,5 @@
-<section class="pt-sm-8 pb-5 position-relative bg-gradient-primary">
-  <div class="w-100">
+<section class="pt-sm-8 pb-5 relative bg-gradient-primary">
+  <div class="w-full">
     <svg width="100%" viewBox="0 0 1920 157" xmlns="http://www.w3.org/2000/svg">
       <g stroke="none" fill="none">
         <g fill="var(--theme-background, #fff)">
@@ -14,27 +14,27 @@
     </svg>
   </div>
 
-  <div class="container z-1 position-relative">
-    <div class="row">
-      <div class="col-md-8 text-start mb-5 mt-5">
-        <h3 class="text-white z-index-1 position-relative">Foo Bar Baz</h3>
-        <p class="text-white opacity-8 mb-0">
+  <div class="container z-10 relative">
+    <div class="">
+      <div class="text-start mb-5 mt-5">
+        <h3 class="text-3xl text-white z-index-1 relative">Foo Bar Baz</h3>
+        <p class="text-white opacity-8">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
           tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
         </p>
       </div>
     </div>
-    <div class="row">
-      @for (card of model.cards; track card) {
-        <div class="col-lg-6 col-12">
+    <div class="">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        @for (card of model.cards; track card) {
           <a4w-card-h-1 [title]="card.title" [subtitle]="card.subtitle" [description]="card.description"
                         [link]="card?.link" [imageUrl]="card?.imageUrl"/>
-        </div>
-      }
+        }
+      </div>
     </div>
 
   </div>
-  <div class="position-absolute w-100 hack-bottom-n6">
+  <div class="absolute w-full hack-bottom-n6">
     <svg width="100%" viewBox="0 -1 1920 166" xmlns="http://www.w3.org/2000/svg">
       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g transform="translate(0.000000, 5.000000)" fill="var(--theme-background, #ff00ff)" fill-rule="nonzero">

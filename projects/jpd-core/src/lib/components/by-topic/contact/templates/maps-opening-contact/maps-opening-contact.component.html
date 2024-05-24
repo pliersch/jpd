@@ -1,13 +1,13 @@
 <div>
-  <div class="d-flex">
+  <div class="flex">
     <div class="main-row">
       <div class="container-fluid col-2">
         <div class="row">
-          <div class="d-flex  ">
+          <div class="flex  ">
             <mat-icon class="me-2" color="accent" aria-hidden="false" aria-label="Example home icon"
                       fontIcon="location_on"></mat-icon>
             <div>
-              <h4>Unsere Adresse</h4>
+              <h4 class="text-2xl"> Unsere Adresse</h4>
               <p> Am Hang 301<br>
                 Fooabre<br>
                 Deutschland
@@ -15,11 +15,11 @@
             </div>
           </div>
 
-          <div class="d-flex ">
+          <div class="flex ">
             <mat-icon class="me-2" color="accent" aria-hidden="false" aria-label="Example home icon"
                       fontIcon="call"></mat-icon>
             <div>
-              <h4>Ruf uns an</h4>
+              <h4 class="text-2xl"> Ruf uns an</h4>
               <p>Patrick Liersch<br>
                 +49 1514 121 64 19<br>
                 Deutschland
@@ -27,14 +27,14 @@
             </div>
           </div>
 
-          <div class="d-flex ">
+          <div class="flex ">
             <mat-icon class="me-2" color="accent" aria-hidden="false" aria-label="Example home icon"
                       fontIcon="call"></mat-icon>
             <div>
-              <h4>Öffnungszeiten</h4>
+              <h4 class="text-2xl"> Öffnungszeiten</h4>
               <div class="card-content">
                 <ul class="list-unstyled">
-                  <li *ngFor="let item of model.openingHours" class="d-flex align-items-center mb-2">
+                  <li *ngFor="let item of model.openingHours" class="flex items-center mb-2">
                     {{ item }}
                   </li>
                 </ul>

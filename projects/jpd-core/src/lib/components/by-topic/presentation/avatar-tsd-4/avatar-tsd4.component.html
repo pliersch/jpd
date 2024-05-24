@@ -2,7 +2,7 @@
   <div class="container">
     <!--    <div class="row center">-->
     <!--      <div class="col-6 column center">-->
-    <p class="a4w-h2 mtb-30">{{ model.headline }}</p>
+    <h2 class="mtb-30">{{ model.headline }}</h2>
     <!--      </div>-->
     <!--    </div>-->
     <div class="row">
@@ -14,8 +14,8 @@
             </a>
           </div>
           <div class="card-content">
-            <p class="a4w-h3 info-title">{{ item.title }}</p>
-            <p class="a4w-h5 description">{{ item.subtitle }}</p>
+            <h3 class="info-title">{{ item.title }}</h3>
+            <h5 class="description">{{ item.subtitle }}</h5>
             <a class="btn btn-link btn-danger" [routerLink]="['/']">See more</a>
             <p>{{ item.description }}</p>
           </div>

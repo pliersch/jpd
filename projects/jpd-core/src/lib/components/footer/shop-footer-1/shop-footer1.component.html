@@ -1,14 +1,14 @@
 <footer class="py-section theme-contrast-bg">
   <div class="container-lg" [style.color]="textColor">
     <div class="row">
-      <div class="d-flex col-sm-6 col-md-5 col-xl-4 mx-auto">
+      <div class="flex col-sm-6 col-md-5 col-xl-4 mx-auto">
         <div class="card-footer">
           <p class="card-title" [style.color]="headlineColor">
             Öffnungszeiten
           </p>
           <div class="card-content">
             <ul class="list-unstyled">
-              <li *ngFor="let item of model.openingHours" class="d-flex align-items-center mb-2">
+              <li *ngFor="let item of model.openingHours" class="flex items-center mb-2">
                 {{ item }}
               </li>
             </ul>
@@ -16,24 +16,24 @@
         </div>
       </div>
 
-      <div class="d-flex col-sm-6 col-md-5 col-xl-4 mx-auto">
+      <div class="flex col-sm-6 col-md-5 col-xl-4 mx-auto">
         <div class="card-footer">
           <p class="card-title" [style.color]="headlineColor">
             Kontakt
           </p>
           <div class="card-content">
             <ul class="list-unstyled">
-              <li class="d-flex align-items-center mb-2">
+              <li class="flex items-center mb-2">
                 <mat-icon class="icon-display" aria-hidden="false" aria-label="Example home icon"
                           svgIcon="location_on"></mat-icon>
                 {{ address }}
               </li>
-              <li class="d-flex align-items-center mb-2">
+              <li class="flex items-center mb-2">
                 <mat-icon class="icon-display" aria-hidden="false" aria-label="Example home icon"
                           svgIcon="call"></mat-icon>
                 {{ model.phone }}
               </li>
-              <li class="d-flex align-items-center">
+              <li class="flex items-center">
                 <mat-icon class="icon-display" aria-hidden="false" aria-label="Example home icon"
                           svgIcon="mail"></mat-icon>
                 <a class="link" [href]="'mailto:' + model.email">

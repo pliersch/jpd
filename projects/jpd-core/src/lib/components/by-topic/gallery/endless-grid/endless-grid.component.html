@@ -1,24 +1,11 @@
 <section>
-  <div class="container-lg">
-    <div class="row">
+  <div class="container">
+    <div class="flex py-3">
       <div *ngFor="let col of columns" class="column">
         <img *ngFor="let row of rows" [src]="imgUrls[col*rows.length + row]"
              (click)="openImageViewer(col*rows.length + row)"
-             class="mouse-pointer" alt="image gallery thumbnail">
+             class="mouse-pointer" alt="Bilder Galerie Thumbnails">
       </div>
     </div>
   </div>
 </section>
-
-<!--<section>-->
-<!--  <div class="container-lg">-->
-<!--    <div class="row">-->
-<!--      <div *ngFor="let col of columns" class="column">-->
-<!--        <a *ngFor="let row of rows" [routerLink]="['/gallery/images/' + (col*rows.length + row)]">-->
-<!--          <img [src]="imgUrls[col*rows.length + row]"-->
-<!--               class="mouse-pointer" alt="image gallery thumbnail">-->
-<!--        </a>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</section>-->

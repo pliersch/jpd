@@ -67,6 +67,7 @@
 .heroes .name {
   min-width: max-content;
   padding: 0.5rem 0;
+  color: black;
 }
 
 label {

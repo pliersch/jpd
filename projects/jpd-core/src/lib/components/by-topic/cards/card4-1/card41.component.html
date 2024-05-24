@@ -1,20 +1,20 @@
 <section class="section">
-  <div class="container">
-    <div class="row">
-      <div *ngFor="let item of model.items" class="d-flex col-md-6 col-lg-3">
-        <div class="card rounded mat-elevation-z6">
+  <div class="md:container">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2">
+      <div *ngFor="let item of model.items">
+        <div class="flex flex-col w-full card rounded mat-elevation-z6 overflow-hidden">
           <!--          <div class="card-avatar">-->
-          <img [src]="item.imageUrl" alt="example image of a service">
+          <img class="w-full object-cover" [src]="item.imageUrl" alt="example image of a service">
           <!--          </div>-->
           <div class="card-title">
-            <h4 class="fw-500 no-margin">{{ item.title }}</h4>
+            <h4 class="text-2xl font-medium">{{ item.title }}</h4>
           </div>
           <div class="card-subtitle">
             <h6>{{ item.subtitle }}</h6>
           </div>
           <span class="spacer"></span>
           <div class="card-description">
-            <small *ngIf="item.description">{{ item.description }}</small>
+            <small class="text-sm" *ngIf="item.description">{{ item.description }}</small>
           </div>
         </div>
       </div>

@@ -1,24 +1,29 @@
-<div class="card44 mt-5 overflow-hidden rounded-3">
-  <a [routerLink]="[model.linkUrl]" class="link">
-    <div class="row py-3 align-items-center">
-      <div class="col-lg-4 col-md-4">
-        <img class="mat-elevation-z6 rounded-3" [src]="model.imgUrl" alt="estate">
+<!--<a4w-poster rounded="rounded-lg">-->
+<div class="grid grid-cols-12 sm:gap-0 gap-4 rounded-2xl max-w-650px">
+  <div class="col-span-12 md:col-span-4 lg:col-span-4">
+    <a [routerLink]="[model.linkUrl]">
+      <div class="sm:p-3 md:p-0 lg:p-3 h-full">
+        <img class="max-h-60 rounded-lg aspect-07"
+             [src]="model.imgUrl" alt="image">
       </div>
-      <div class="col-lg-7 col-md-7 my-sm-auto mt-3 ms-sm-3">
-        <h4> {{ model.title }} </h4>
-        <p> {{ model.contentText }}
-          @if (model.linkText) {
-            {{ model.linkText }}
-          }</p>
-        <div class="author">
-          @if (model.avatar) {
-            <img [src]="model.avatar" alt="team-3" class="avatar avatar-sm">
-          }
-          @if (model.postContentText) {
-            <p class="my-auto ms-2">{{ model.postContentText }}</p>
-          }
-        </div>
+    </a>
+  </div>
+  <div class="col-span-12 md:col-span-8 lg:col-span-8p my-auto">
+    <div class="px-2 py-3 sm:px-6 sm:pb-4">
+      <h4 class="text-2xl font-medium pb-3"> {{ model.title }} </h4>
+      <p> {{ model.contentText }}
+        @if (model.linkText) {
+          {{ model.linkText }}
+        }</p>
+      <div class="author">
+        @if (model.avatar) {
+          <img [src]="model.avatar" alt="team-3" class="avatar avatar-sm">
+        }
+        @if (model.postContentText) {
+          <p class="my-auto ms-2">{{ model.postContentText }}</p>
+        }
       </div>
     </div>
-  </a>
+  </div>
 </div>
+<!--</a4w-poster>-->

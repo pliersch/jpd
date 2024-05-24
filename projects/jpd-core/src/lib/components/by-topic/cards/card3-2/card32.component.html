@@ -1,19 +1,21 @@
-<div class="container-xl">
-  <div class="row">
-    <div *ngFor="let item of model.items" class="d-flex col-md-4">
-      <div class="card-32 card-background card-background-mask-primary mt-md-0 mt-5 rounded-3 overflow-hidden">
-        <div class="full-background" [style.background-image]="'url(' + item.imageUrl + ')'"></div>
+<div class="container">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    @for (item of model.items; track item) {
+      <div class="card-32  mt-md-0 mt-5 rounded-lg overflow-hidden">
+        <div class="full-background"
+             [style.background-image]="'url(' + item.imageUrl + ')'"></div>
         <div class="filter"></div>
         <div class="body px-3 py-5 pt-md-7 text-center">
           <div class="mb-2 mb-md-5">
             <mat-icon class="icon-size2" svgIcon="location_on"/>
           </div>
-          <h1 class="px-2">{{ item.title }}</h1>
+          <h1 class="text-4xl px-2">{{ item.title }}</h1>
           <p class="mb-3 mb-md-9">{{ item.subtitle }}</p>
-          <a mat-stroked-button class="white-button link fs-3" href="https://apps4web.de" target="_blank">Open
-            A4W</a>
+          <a mat-stroked-button class="white-button link fs-3"
+             href="https://apps4web.de" target="_blank">
+            {{ item.linkTxt }}</a>
         </div>
       </div>
-    </div>
+    }
   </div>
 </div>

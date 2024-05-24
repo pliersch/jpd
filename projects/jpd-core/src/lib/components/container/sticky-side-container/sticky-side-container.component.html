@@ -1,10 +1,23 @@
+<!--<div class="container">-->
+<!--  <div class="grid grid-cols-12">-->
+<!--    <div class="col-span-7">-->
+<!--      <ng-content select="[main]"></ng-content>-->
+<!--    </div>-->
+<!--    <div class="col-span-1"></div>-->
+<!--    <div class="col-span-4 ms-auto">-->
+<!--      <ng-content select="[side]"></ng-content>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
 <div class="container">
-  <div class="row">
-    <div class="col-lg-7">
+  <div class="grid grid-cols-12">
+    <main class="col-span-7">
       <ng-content select="[main]"></ng-content>
-    </div>
-    <div class="col-lg-4 ms-auto">
+    </main>
+
+    <aside class="col-end-13 col-span-4 self-start sticky top-0">
       <ng-content select="[side]"></ng-content>
-    </div>
+    </aside>
   </div>
 </div>

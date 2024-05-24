@@ -1,21 +1,23 @@
 @if ((dim$ | async) !== Dimension.XSmall) {
   <div class="container">
-    <div class="row">
-      <div *ngFor="let item of model.items" class="d-flex col-md-3 col-sm-6">
-        <div class="card-42">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      @for (item of model.items; track item) {
+        <div class="card-42 flex flex-col">
           <div class="card-title">
-            <h4 class="white fw-500">{{ item.title }}</h4>
+            <h4 class="text-2xl white font-medium">{{ item.title }}</h4>
           </div>
           <div class="card-subtitle">
-            <div class="d-flex" *ngFor="let subtitle of item.subtitles">
-              <mat-icon class="icon-display me-1" color="accent" aria-hidden="false"
-                        aria-label="Example home icon" svgIcon="check"></mat-icon>
-              <p class="fs-6 white"> {{ subtitle }}</p>
-            </div>
+            @for (subtitle of item.subtitles; track subtitle) {
+              <div class="flex mb-1">
+                <mat-icon class="me-1" color="accent" aria-hidden="false"
+                          aria-label="icon" svgIcon="check"></mat-icon>
+                <p class="text-base white"> {{ subtitle }}</p>
+              </div>
+            }
           </div>
           <span class="spacer"></span>
         </div>
-      </div>
+      }
     </div>
   </div>
 } @else {
@@ -30,9 +32,9 @@
 
           </mat-expansion-panel-header>
           @for (subtitle of item.subtitles; track subtitle) {
-            <div class="d-flex">
-              <mat-icon class="icon-display me-1" color="accent" aria-hidden="false"
-                        aria-label="Example home icon" svgIcon="check"></mat-icon>
+            <div class="flex mb-1">
+              <mat-icon class="me-1" color="accent" aria-hidden="false"
+                        aria-label="icon" svgIcon="check"></mat-icon>
               <p>{{ subtitle }}</p>
             </div>
           }
@@ -40,5 +42,4 @@
       }
     </mat-accordion>
   </div>
-
 }

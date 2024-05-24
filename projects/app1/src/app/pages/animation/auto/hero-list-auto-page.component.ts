@@ -8,7 +8,7 @@ import { HeroListAutoComponent } from './hero-list-auto.component';
   selector: 'app-hero-list-auto-page',
   template: `
     <section>
-      <h2>Automatic Calculation</h2>
+      <h2 class="text-3xl">Automatic Calculation</h2>
 
       <app-hero-list-auto [heroes]="heroes" (remove)="onRemove($event)"></app-hero-list-auto>
     </section>

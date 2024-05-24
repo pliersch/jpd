@@ -1,25 +1,39 @@
-<div class="card11 mt-5 overflow-hidden rounded-3">
-  <!--  <a [routerLink]="[model.linkUrl]" class="link">-->
-  <div class="row" [class.flex-row-reverse]="imgRight">
-    <div class="col-lg-6">
-      <img class="mat-elevation-z6 rounded-3" [src]="model.imgUrl" alt="estate">
-    </div>
+<div class="mt-5 overflow-hidden rounded-lg">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4" [class.grid-flow-dense]="imgRight">
+    @if (imgRight) {
+      <ng-container [ngTemplateOutlet]="txt"/>
+      <ng-container [ngTemplateOutlet]="img"/>
+    } @else {
+      <ng-container [ngTemplateOutlet]="img"/>
+      <ng-container [ngTemplateOutlet]="txt"/>
+    }
+  </div>
+</div>
 
-    <div class="col-lg-6 my-sm-auto pt-3 pt-lg-0">
-      <h3 class="my-3"> {{ model.title }} </h3>
-      <p class="fs-5"> {{ model.contentText }}
-        @if (model.linkText) {
-          {{ model.linkText }}
-        }</p>
-      <div class="author">
-        @if (model.avatar) {
-          <img [src]="model.avatar" alt="team-3" class="avatar avatar-sm">
-        }
-        @if (model.postContentText) {
-          <p class="my-auto ms-2">{{ model.postContentText }}</p>
-        }
-      </div>
+<!----------------------------------------------------->
+<!--                 image template                  -->
+<!----------------------------------------------------->
+<ng-template #img>
+  <img class="mat-elevation-z6 w-full rounded-lg" [src]="model.imgUrl" alt="estate">
+</ng-template>
+
+<!----------------------------------------------------->
+<!--                  text template                  -->
+<!----------------------------------------------------->
+<ng-template #txt>
+  <div class="my-sm-auto pt-3 pt-lg-0">
+    <h3 class="my-3 text-3xl font-medium"> {{ model.title }} </h3>
+    <p class="text-xl"> {{ model.contentText }}
+      @if (model.linkText) {
+        {{ model.linkText }}
+      }</p>
+    <div class="flex">
+      @if (model.avatar) {
+        <img [src]="model.avatar" alt="team-3" class="avatar avatar-sm">
+      }
+      @if (model.postContentText) {
+        <p class="my-auto ms-2">{{ model.postContentText }}</p>
+      }
     </div>
   </div>
-  <!--  </a>-->
-</div>
+</ng-template>

@@ -17,7 +17,7 @@ import { Hero } from '@app1/pages/animation/hero';
       </li>
     </ul>
   `,
-  styleUrls: ['./hero-list-page.component.css'],
+  styleUrls: ['./stagger.css'],
   imports: [NgFor],
   animations: [
     trigger('flyInOut', [
@@ -51,7 +51,7 @@ import { Hero } from '@app1/pages/animation/hero';
     ])
   ]
 })
-export class HeroListGroupsComponent {
+export class StaggerComponent {
   @Input() heroes: Hero[] = [];
 
   @Output() remove = new EventEmitter<number>();

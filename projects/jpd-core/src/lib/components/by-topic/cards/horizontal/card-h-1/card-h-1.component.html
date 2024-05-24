@@ -1,21 +1,19 @@
-<div class="mt-5">
-  <a4w-poster>
-    <div class="row">
-      <div class="col-lg-4 col-md-6 col-12 pe-lg-0">
-        <a [routerLink]="[link]">
-          <div class="p-3 pe-md-0">
-            <img class="w-100 rounded-3" [src]="imageUrl" alt="image">
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-8 col-md-6 col-12 ps-lg-0 my-auto">
-        <div class="card-body">
-          <h5 class="fw-500 mb-0">{{ title }}</h5>
-          <h6 class="accent">{{ subtitle }}</h6>
-          <p class="mb-0">{{ description }}</p>
+<a4w-poster rounded="rounded-lg">
+  <div class="grid grid-cols-12 sm:gap-0 gap-4 rounded-2xl">
+    <div class="col-span-12 md:col-span-4 lg:col-span-4">
+      <a [routerLink]="[link]">
+        <div class="sm:p-3 md:p-0 lg:p-3 h-full">
+          <img class="w-full h-full lg:max-w-44 lg:max-h-44 object-cover lg:rounded-lg"
+               [src]="imageUrl" alt="image">
         </div>
-      </div>
-      <!--      <span class="spacer"></span>-->
+      </a>
     </div>
-  </a4w-poster>
-</div>
+    <div class="col-span-12 md:col-span-8 lg:col-span-8p my-auto">
+      <div class="px-2 py-3 sm:px-6 sm:pb-4">
+        <h5 class="sm:text-xl text-lg lg:text-xl font-medium">{{ title }}</h5>
+        <h6 class="accent sm:text-base text-xs lg:text-sm">{{ subtitle }}</h6>
+        <p class="text-base md:text-sm lg:text-base">{{ description }}</p>
+      </div>
+    </div>
+  </div>
+</a4w-poster>

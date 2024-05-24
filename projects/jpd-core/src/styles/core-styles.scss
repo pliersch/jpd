@@ -1,32 +1,10 @@
 @use '@angular/material' as mat;
 
-@use 'bootstrap/dist/css/bootstrap.min.css';
-
-//@use 'bootstrap/dist/css/bootstrap-utilities.min.css';
 //@use 'bootstrap/dist/css/bootstrap-grid.min.css';
-//@use "bootstrap/scss/bootstrap-reboot";
 
-//@use 'bootstrap/scss/functions';
-//@use "bootstrap/scss/variables";
-//@use "bootstrap/scss/mixins";
-//@use "bootstrap/scss/root";
-//@use "bootstrap/scss/reboot";
-//@use 'bootstrap/scss/type';
-//@use 'bootstrap/scss/utilities';
-//@use "bootstrap/scss/containers";
-//@use "bootstrap/scss/grid";
-//@use "bootstrap/scss/bootstrap-grid";
-//@use "bootstrap/scss/bootstrap-utilities";
-//@use "bootstrap/scss/helpers";
-//@use "bootstrap/scss/utilities/api";
-//@use "bootstrap/js/dist/dom";
-//@use "bootstrap/js/dist/util";
-//@use 'bootstrap/scss/maps';
-
-@use 'padding';
-@use 'margin';
+//@use 'padding';
+//@use 'margin';
 @use 'dimensions';
-@use 'text';
 @use 'theming/theme-colors';
 @use 'scrollbar';
 
@@ -44,6 +22,10 @@ $dark-background: #303030 !default;
   $dark-background: $dark-background
 );
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 //@import 'color-contrast';
 //.foo-color-contrast {
@@ -58,6 +40,25 @@ html, body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+body {
+  font-weight: 300;
+}
+
+.light-theme {
+  body {
+    font-weight: 400;
+  }
+}
+
+.p-section {
+  padding: 50px;
+}
+
+.py-section {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .spacer {

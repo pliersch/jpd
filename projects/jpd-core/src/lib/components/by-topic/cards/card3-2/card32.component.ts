@@ -12,6 +12,7 @@ export interface Card32Model {
   description: string;
   imageUrl: string;
   link: string;
+  linkTxt: string;
 }
 
 export interface Card32ComponentModel {

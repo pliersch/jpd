@@ -6,7 +6,7 @@ import { Parallax1Component } from '../../../../container/parallax/parallax-1/pa
 import { PosterComponent } from '../../../../poster/poster.component';
 
 @Component({
-  selector: 'a4w-post-2',
+  selector: 'a4w-post-1',
   standalone: true,
   imports: [
     ImageFallbackDirective,
@@ -14,10 +14,10 @@ import { PosterComponent } from '../../../../poster/poster.component';
     PosterComponent,
     BackActionComponent
   ],
-  templateUrl: './post-2.component.html',
-  styleUrl: './post-2.component.scss'
+  templateUrl: './post1.component.html',
+  styleUrl: './post1.component.scss'
 })
-export class Post2Component {
+export class Post1Component {
   images =
     ['assets/img/1x/2.jpg',
       'assets/img/1x/10.jpg',

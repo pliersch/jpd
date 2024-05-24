@@ -1,16 +1,17 @@
 <div class="container">
-  <div class="row text-center">
+  <div class="text-center">
     <div class="pb-4">
       <div class="pb-2">
-        <h1 class="m-0 d-inline-block fw-400">{{ model.title }} </h1>
-        <div class="floating">
-          <a *ngIf="anchor" title="Link to this heading" class="floating-item header-link" aria-hidden="true"
+        <h1 class="m-0 inline-block text-4xl font-normal">{{ model.title }} </h1>
+        <div class="inline-block align-super">
+          <a *ngIf="anchor" title="Link" class="inline-block absolute -translate-y-2/3 header-link"
+             aria-hidden="true"
              [routerLink]="[route]" [fragment]="anchor">
             <mat-icon svgIcon="link"></mat-icon>
           </a>
         </div>
       </div>
-      <p class="fs-5">{{ model.subtitle }}</p>
+      <p class="text-xl">{{ model.subtitle }}</p>
     </div>
   </div>
 </div>

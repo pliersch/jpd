@@ -11,7 +11,7 @@ export interface MapsOpeningContactModel {
 }
 
 @Component({
-  selector: 'lib-maps-opening-contact',
+  selector: 'a4w-maps-opening-contact',
   standalone: true,
   imports: [
     MatIcon,

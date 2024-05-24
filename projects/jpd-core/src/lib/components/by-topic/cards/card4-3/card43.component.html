@@ -1,19 +1,19 @@
-<div class="container-xl">
-  <div class="row">
-    <div *ngFor="let item of model.items" class="d-flex col-md-3 col-12">
-      <div class="card-43 text-center">
-        <div class="card-avatar mat-elevation-z6">
+<div class="container">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+    @for (item of model.items; track item) {
+      <div class="card-43 flex flex-col w-full text-sm text-center">
+        <div class="card-avatar overflow-hidden rounded-full mat-elevation-z6">
           <a [routerLink]="['/']">
             <img a4wImgFallback [src]="item.imageUrl">
           </a>
         </div>
         <div class="card-body">
-          <h5 class="fw-500">{{ item.title }}</h5>
+          <h5 class="font-medium text-xl">{{ item.title }}</h5>
           <h6 class="theme-grey">{{ item.subtitle }}</h6>
           <a class="accent" [routerLink]="[item.link]">mehr lesen</a>
           <p>{{ item.description }}</p>
         </div>
       </div>
-    </div>
+    }
   </div>
 </div>

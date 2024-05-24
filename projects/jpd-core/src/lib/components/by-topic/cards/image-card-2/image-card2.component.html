@@ -1,19 +1,19 @@
-<div class="img-card-2 card-background mat-elevation-z6 white position-relative overflow-hidden rounded-3">
+<div class="img-card-2 card-background shadow-lg white relative overflow-hidden rounded-lg">
   @if (model.linkUrl) {
     <a [routerLink]="[model.linkUrl]" class="link">
       <div class="full-background" [style.background-image]="'url(' + model.imgUrl + ')'"></div>
       <div class="filter"></div>
-      <div class="card-body d-flex flex-column justify-content-end">
-        <h3 class="mb-2">{{ model.title }}</h3>
-        <p class="fw-400">{{ model.contentText }}</p>
+      <div class="card-body flex flex-col justify-content-end">
+        <h3 class="text-3xl mb-2">{{ model.title }}</h3>
+        <p class="font-normal">{{ model.contentText }}</p>
       </div>
     </a>
   } @else {
     <div class="full-background" [style.background-image]="'url(' + model.imgUrl + ')'"></div>
     <div class="filter"></div>
-    <div class="card-body d-flex flex-column justify-content-end">
-      <h3 class="mb-2">{{ model.title }}</h3>
-      <p class="fw-400">{{ model.contentText }}</p>
+    <div class="card-body flex flex-col justify-content-end">
+      <h3 class="mb-2 font-medium text-3xl">{{ model.title }}</h3>
+      <p class="font-normal">{{ model.contentText }}</p>
     </div>
   }
 </div>

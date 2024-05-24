@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
 import { HEROES } from '@app1/pages/animation/mock-heroes';
 
-import { HeroListGroupsComponent } from './hero-list-groups.component';
+import { StaggerComponent } from './stagger.component';
 
 @Component({
   standalone: true,
   selector: 'app-hero-list-groups-page',
   template: `
     <section>
-      <h2>Hero List Group</h2>
+      <h2 class="text-3xl">Hero List Group</h2>
 
       <app-hero-list-groups [heroes]="heroes" (remove)="onRemove($event)"></app-hero-list-groups>
     </section>
   `,
-  imports: [HeroListGroupsComponent]
+  imports: [StaggerComponent]
 })
-export class HeroListGroupPageComponent {
+export class StaggerPageComponent {
   heroes = HEROES.slice();
 
   onRemove(id: number) {

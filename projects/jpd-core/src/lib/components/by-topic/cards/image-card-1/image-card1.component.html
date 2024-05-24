@@ -1,13 +1,13 @@
-<div class="big-card-1 card-background mat-elevation-z6 white position-relative overflow-hidden rounded-3">
+<div class="big-card-1 card-background mat-elevation-z6 white relative overflow-hidden rounded-lg">
   <a [routerLink]="[model.linkUrl]" class="link">
     <div class="full-background" [style.background-image]="'url(' + model.imgUrl + ')'"></div>
     <div class="filter"></div>
     <div class="card-body">
-      <div class="content-left d-flex flex-column">
-        <h2 class="card-title">{{ model.title }}</h2>
+      <div class="content-left flex flex-col">
+        <h2 class="card-title text-3xl font-medium">{{ model.title }}</h2>
         <p class="card-description">{{ model.contentText }}</p>
         <span class="spacer"></span>
-        <div class="author align-items-center">
+        <div class="author items-center">
           @if (model.avatar) {
             <img [src]="model.avatar" alt="team-3" class="avatar avatar-sm">
           }

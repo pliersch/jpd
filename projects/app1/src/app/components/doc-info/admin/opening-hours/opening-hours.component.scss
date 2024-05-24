@@ -2,15 +2,7 @@ mat-form-field {
   width: 100%;
 }
 
-.row {
-
-  & div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  p {
-    font-size: 18px;
-  }
+p {
+  font-size: 18px;
+  margin-top: 16px;
 }

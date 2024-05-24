@@ -7,7 +7,6 @@ import { MatButtonModule } from '@angular/material/button';
   standalone: true,
   imports: [CommonModule, MatButtonModule],
   templateUrl: './newsletter-simple-subscription1.component.html',
-  styleUrl: './newsletter-simple-subscription1.component.scss'
 })
 export class NewsletterSimpleSubscription1Component {
 

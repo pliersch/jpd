@@ -8,7 +8,7 @@ import { HeroListEnterLeaveComponent } from './hero-list-enter-leave.component';
   selector: 'app-hero-list-enter-leave-page',
   template: `
     <section>
-      <h2>Enter/Leave</h2>
+      <h2 class="text-3xl">Enter/Leave</h2>
 
       <app-hero-list-enter-leave [heroes]="heroes" (remove)="onRemove($event)"></app-hero-list-enter-leave>
     </section>

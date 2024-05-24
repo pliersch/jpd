@@ -1,9 +1,9 @@
-<div class="position-relative w-100 z-3 px-3 fill shadow-bottom align-items-center second-toolbar">
-  <nav class="d-flex align-items-center justify-content-between center-vertical">
+<div class="relative w-full z-3 px-3 fill shadow-bottom items-center second-toolbar">
+  <nav class="flex items-center justify-content-between center-vertical">
     @if (route$ | async; as route) {
       @if (route.children.length === 1) {
         @for (childRoute of route.children[0].fragments; track childRoute) {
-          <a mat-flat-button class="transparent-background text-capitalize"
+          <a mat-flat-button class="transparent-background !capitalize"
              [routerLinkActiveOptions]="linkActiveOptions"
              [fragment]="childRoute" routerLinkActive="active" [routerLink]="[route.path]">
             {{ childRoute }}
@@ -12,7 +12,7 @@
       } @else {
         <!-- multi site. with sub routes -->
         @for (childRoute of route.children; track childRoute.name) {
-          <a #ref mat-flat-button class="transparent-background text-capitalize demo-btn-color"
+          <a #ref mat-flat-button class="transparent-background !capitalize demo-btn-color"
              routerLinkActive="active" [routerLink]="[route.path +'/'+ childRoute.path]"
              [routerLinkActiveOptions]="linkActiveOptions"
              (click)="showSubNav(childRoute, ref._elementRef.nativeElement.getBoundingClientRect().x)"

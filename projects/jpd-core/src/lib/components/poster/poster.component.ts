@@ -12,6 +12,7 @@ export class PosterComponent implements OnInit {
 
   @Input() color: string | undefined;
   @Input() backgroundColor: string | undefined;
+  @Input() rounded: string | undefined;
 
   constructor(private el: ElementRef,
               private renderer: Renderer2) { }
