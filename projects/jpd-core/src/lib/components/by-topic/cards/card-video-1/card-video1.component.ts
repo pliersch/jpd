@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ImageFallbackDirective } from '../../../../common';
 import { PosterComponent } from '../../../poster/poster.component';
@@ -20,9 +20,15 @@ export class CardVideo1Component {
   subtitle: string;
 
   @Input({required: true})
-  imageUrl?: string
+  imageUrl?: string;
 
   @Input({required: true})
-  link?: string
+  videoId: string;
 
+  @Output()
+  idEmitter = new EventEmitter<string>();
+
+  emitId(): void {
+    this.idEmitter.emit(this.videoId);
+  }
 }

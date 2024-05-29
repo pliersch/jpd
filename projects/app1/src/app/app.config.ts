@@ -14,7 +14,6 @@ import { CustomAppDataService } from '@app1/services/custom-app-data.service';
 import { CustomEnvironmentService } from '@app1/services/custom-environment.service';
 import { CustomImageService } from '@app1/services/custom-image.service';
 import { CustomRouteDomService } from '@app1/services/custom-route-dom.service';
-import { CustomYoutubeService } from '@app1/services/custom-youtube.service';
 import {
   AppDataService,
   BreakpointService,
@@ -26,7 +25,6 @@ import {
   RouteDomService,
   ThemeService
 } from 'jpd-core';
-import { YoutubeService } from 'jpd-youtube';
 import { ROUTES } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
@@ -51,6 +49,5 @@ export const appConfig: ApplicationConfig = {
     {provide: RouteDomService, useClass: CustomRouteDomService},
     {provide: EnvironmentService, useClass: CustomEnvironmentService},
     {provide: ImageService, useClass: CustomImageService},
-    {provide: YoutubeService, useClass: CustomYoutubeService},
   ]
 };

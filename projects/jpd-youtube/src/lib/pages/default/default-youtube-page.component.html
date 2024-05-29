@@ -1,0 +1,17 @@
+<div class="flex flex-col">
+  <div>
+    <a4w-chip-filter class="fixed z-10"
+                     (tagChangeEvent)="onTagsChange($event)"/>
+  </div>
+  @if ((service.currentVideo$ | async)?.id) {
+    <div class="fixed z-10">
+      <youtube-player [playerVars]="playerConfig"
+                      [videoId]="(service.currentVideo$ | async)?.id"
+                      placeholderImageQuality="high"/>
+    </div>
+  }
+  <!--  <div class="fixed inset-20 z-20 bg-black">-->
+  <!--    <div>FOO</div>-->
+  <!--  </div>-->
+  <a4w-youtube-playlist class="mt-6" [tags]="tags"/>
+</div>

@@ -26,7 +26,6 @@ $dark-background: #303030 !default;
 @tailwind components;
 @tailwind utilities;
 
-
 //@import 'color-contrast';
 //.foo-color-contrast {
 //  color: tone(#fff); // returns 'white'
@@ -117,12 +116,15 @@ body {
   vertical-align: text-top;
 }
 
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .center-vertical {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-}
-
-.inset-0 {
-  inset: 0;
 }

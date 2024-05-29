@@ -1,7 +1,7 @@
 import { Route } from '@angular/router';
 import { YoutubePageComponent } from '@app1/pages/youtube/youtube-page.component';
 
-const videos = () => import('./list/youtube-list-page.component').then((x) => x.YoutubeListPageComponent);
+const videos = () => import('./default/default-youtube-page.component').then((x) => x.DefaultYoutubePageComponent);
 const watch = () => import('./watch/youtube-watch-page.component').then((x) => x.YoutubeWatchPageComponent);
 
 export default [

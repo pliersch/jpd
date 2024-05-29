@@ -3,7 +3,6 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 import { CardVideo1Component } from 'jpd-core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
 import { Video } from '../../model';
 import { YoutubeService } from '../../youtube.service';
 
@@ -53,7 +52,7 @@ export class YoutubePlayListComponent implements OnInit, OnChanges {
   constructor(private youtubeService: YoutubeService) { }
 
   ngOnInit(): void {
-    this.videos$ = this.youtubeService.getVideos();
+    this.videos$ = this.youtubeService.videos$;
     this.filteredVideos$ = this.videos$ || new Observable<Video[]>();
   }
 
@@ -76,5 +75,9 @@ export class YoutubePlayListComponent implements OnInit, OnChanges {
       }
     }
     return result;
+  }
+
+  onCurrentVideoChange(videoId: string): void {
+    this.youtubeService.setCurrentVideoId(videoId)
   }
 }

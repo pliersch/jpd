@@ -1,531 +1,549 @@
-{
-  "favorites": [
-    {
-      "artist": "The Civil Wars",
-      "title": "Dust to Dust (Official Video)",
-      "posterUrl": "/assets/img/youtube/civil-wars-dust-to-dust.webp",
-      "id": "yJbmXvBJhCs",
-      "tags": [
-        "Seele"
-      ]
-    },
-    {
-      "artist": "Katie Melua",
-      "title": "I Will Be There - Full Concert Version",
-      "posterUrl": "/assets/img/youtube/Katie Melua - I Will Be There.webp",
-      "id": "7IRIP-hSfJ0",
-      "tags": [
-        "Seele",
-        "Orchester"
-      ]
-    },
-    {
-      "artist": "Sophie James",
-      "title": "The Windmills Of Your Mind (Cover)",
-      "posterUrl": "/assets/img/youtube/sophie james.webp",
-      "id": "OCNIrP3UHz4",
-      "tags": [
-        "Seele"
-      ]
-    },
-    {
-      "artist": "Loreena McKennitt",
-      "title": "Tango to Evora",
-      "posterUrl": "/assets/img/youtube/Loreena McKennitt - Tango to Evora.webp",
-      "id": "AIR5XPWK3Vk",
-      "tags": [
-        "Seele"
-      ]
-    },
-    {
-      "artist": "Norah Jones",
-      "title": "Black",
-      "posterUrl": "/assets/img/youtube/Norah Jones - Black.webp",
-      "id": "OiKuW3xXwmA",
-      "tags": []
-    },
-    {
-      "artist": "Holly Solem",
-      "title": "Speed of Light",
-      "posterUrl": "/assets/img/youtube/Holly Solem - Speed of Light.webp",
-      "id": "UQge2hgXDs0",
-      "tags": [
-      ]
-    },
-    {
-      "artist": "Steve Jablonsky",
-      "title": "Tessa",
-      "posterUrl": "/assets/img/youtube/Steve Jablonsky - Tessa.webp",
-      "id": "_tuLd3h19Fw",
-      "tags": [
-        "Orchester",
-        "Instrumental"
-      ]
-    },
-    {
-      "artist": "Steve Jablonsky",
-      "title": "We Have to Go",
-      "posterUrl": "/assets/img/youtube/Steve Jablonsky - We Have to Go.webp",
-      "id": "eob6JuOvMCU",
-      "tags": [
-        "Orchester",
-        "Instrumental"
-      ]
-    },
-    {
-      "artist": "Steve Jablonsky",
-      "title": "Sacrifice",
-      "posterUrl": "/assets/img/youtube/Steve Jablonsky - Sacrifice.webp",
-      "id": "tpa0uDCHuY8",
-      "tags": [
-        "Orchester",
-        "Instrumental"
-      ]
-    },
-    {
-      "artist": "Steve Jablonsky",
-      "title": "Infinite White",
-      "posterUrl": "/assets/img/youtube/Steve Jablonsky - Infinite White.webp",
-      "id": "OgUewSwIQIM",
-      "tags": [
-        "Orchester",
-        "Instrumental"
-      ]
-    },
-    {
-      "artist": "Muse",
-      "title": "The 2nd Law Isolated System",
-      "posterUrl": "/assets/img/youtube/Muse - The 2nd Law Isolated System.webp",
-      "id": "VXPoJAyeF8k",
-      "tags": [
-        "Instrumental"
-      ]
-    },
-    {
-      "artist": "Emma Kok & André Rieu",
-      "title": "Voilà",
-      "posterUrl": "/assets/img/youtube/emma kok - voilà.webp",
-      "id": "KdIhq1tb8Co",
-      "tags": [
-        "Orchester"
-      ]
-    },
-    {
-      "artist": "Blonde Redhead",
-      "title": "Silently",
-      "posterUrl": "/assets/img/youtube/blonde redhead - silently.webp",
-      "id": "Y9WpguIKPqU",
-      "tags": []
-    },
-    {
-      "artist": "May and Robot Koch",
-      "title": "Bad Kingdom",
-      "posterUrl": "/assets/img/youtube/May and Robot Koch - Bad Kingdom.webp",
-      "id": "FMemllFAw2o",
-      "tags": [
-        "Düster"
-      ]
-    },
-    {
-      "artist": "Nouela",
-      "title": "The Sound of Silence",
-      "posterUrl": "/assets/img/youtube/Nouela - The Sound of Silence.webp",
-      "id": "Ntkyzh4NV7A",
-      "tags": [
-        "Düster",
-        "Seele"
-      ]
-    },
-    {
-      "artist": "Ennja",
-      "title": "Let Go",
-      "posterUrl": "/assets/img/youtube/Ennja - let go.webp",
-      "id": "CkxDv5TItPM",
-      "tags": [
-        "Ferry Corsten - Eternity"
-      ]
-    },
-    {
-      "artist": "Ennja",
-      "title": "Way",
-      "posterUrl": "/assets/img/youtube/Ennja - Way.webp",
-      "id": "HeBEwUkMQUo",
-      "tags": [
-        "Elektro"
-      ]
-    },
-    {
-      "artist": "Gustavo Santaolalla",
-      "title": "Babel",
-      "posterUrl": "/assets/img/youtube/Gustavo Santaolalla - Babel.webp",
-      "id": "JXVnFQVAAk4",
-      "tags": [
-        "Elektro"
-      ]
-    },
-    {
-      "artist": "Ben Böhmer",
-      "title": "Beyond Beliefs",
-      "posterUrl": "/assets/img/youtube/Ben Böhmer - Beyond Beliefs.webp",
-      "id": "aVTalm2VjDc",
-      "tags": [
-        "Elektro"
-      ]
-    },
-    {
-      "artist": "Bicep",
-      "title": "Glue",
-      "posterUrl": "/assets/img/youtube/bicep - glue.webp",
-      "id": "A7ZxRs45tTg",
-      "tags": [
-        "Elektro"
-      ]
-    },
-    {
-      "artist": "Fever Ray",
-      "title": "Keep The Streets Empty For Me",
-      "posterUrl": "/assets/img/youtube/Fever Ray - Keep The Streets Empty For Me.webp",
-      "id": "jWFb5z3kUSQ",
-      "tags": [
-        "Düster"
-      ]
-    },
-    {
-      "artist": "Jonathan E. Blake",
-      "title": "Dance on a Tin Roof",
-      "posterUrl": "/assets/img/youtube/Jonathan E. Blake - Dance on a Tin Roof.webp",
-      "id": "A0rIH1tHD7g",
-      "tags": [
-        "Elektro"
-      ]
-    },
-    {
-      "artist": "Agnes Obel",
-      "title": "Familiar (Official Video)",
-      "posterUrl": "/assets/img/youtube/Agnes Obel - Familiar (Official Video).webp",
-      "id": "32kYH6XZrIo",
-      "tags": []
-    },
-    {
-      "artist": "Roggz74",
-      "title": "The XX-Intro",
-      "posterUrl": "/assets/img/youtube/Roggz74 - The XX-Intro.webp",
-      "id": "QbwdJl8TGeY",
-      "tags": [
-        "Elektro"
-      ]
-    },
-    {
-      "artist": "Sportfreunde Stiller",
-      "title": "Das Geschenk",
-      "posterUrl": "/assets/img/youtube/Sportfreunde Stiller - Das Geschenk.webp",
-      "id": "qWawXmlbzHo",
-      "tags": []
-    },
-    {
-      "artist": "Asaf Avidan",
-      "title": "The Labyrinth Song",
-      "posterUrl": "/assets/img/youtube/Asaf Avidan - The Labyrinth Song.webp",
-      "id": "oiL9ItjmHRw",
-      "tags": [
-        "Seele"
-      ]
-    },
-    {
-      "artist": "Bonaparte",
-      "title": "Melody X",
-      "posterUrl": "/assets/img/youtube/BONAPARTE - MELODY X.webp",
-      "id": "ZAPvZNgPfDE",
-      "tags": [
-        "Düster"
-      ]
-    },
-    {
-      "artist": "Cigarettes After Sex",
-      "title": "Apocalypse",
-      "posterUrl": "/assets/img/youtube/Cigarettes After Sex - Apocalypse.webp",
-      "id": "MblPa7pCnZ8",
-      "tags": []
-    },
-    {
-      "artist": "Sol Seppy",
-      "title": "Enter One",
-      "posterUrl": "/assets/img/youtube/Sol Seppy - Enter One.webp",
-      "id": "zrdezG6c6HM",
-      "tags": [
-        "Seele",
-        "Düster"
-      ]
-    },
-    {
-      "artist": "Sub Pub Music",
-      "title": "Tears Of War",
-      "posterUrl": "/assets/img/youtube/Sub Pub Music - Tears Of War.webp",
-      "id": "gKUdI7sVicQ",
-      "tags": [
-        "Instrumental"
-      ]
-    },
-    {
-      "artist": "Cigarettes After Sex",
-      "title": "Crush",
-      "posterUrl": "/assets/img/youtube/Cigarettes After Sex - Crush.webp",
-      "id": "x0elcMY60iM",
-      "tags": []
-    },
-    {
-      "artist": "Cigarettes After Sex",
-      "title": "Nothing's Gonna Hurt You Baby",
-      "posterUrl": "/assets/img/youtube/Cigarettes After Sex - Nothing's Gonna Hurt You Baby.webp",
-      "id": "qV_lcpLPZ8Q",
-      "tags": []
-    },
-    {
-      "artist": "Cigarettes After Sex",
-      "title": "Heavenly",
-      "posterUrl": "/assets/img/youtube/Cigarettes After Sex - Heavenly.webp",
-      "id": "HMqZhapr6jU",
-      "tags": []
-    },
-    {
-      "artist": "Lunik",
-      "title": "What Is Next",
-      "posterUrl": "/assets/img/youtube/Lunik - What Is Next.webp",
-      "id": "YQSEMhyZsIU",
-      "tags": []
-    },
-    {
-      "artist": "Roudeep",
-      "title": "Dancing in the Moonlight",
-      "posterUrl": "/assets/img/youtube/Roudeep - Dancing in the Moonlight.webp",
-      "id": "SMuaeNPt5EM",
-      "tags": [
-        "Elektro"
-      ]
-    },
-    {
-      "artist": "Thomas Bergersen",
-      "title": "Empire Of Angels",
-      "posterUrl": "/assets/img/youtube/Thomas Bergersen - Empire Of Angels.webp",
-      "id": "izsjRpcgfmk",
-      "tags": [
-        "Instrumental"
-      ]
-    },
-    {
-      "artist": "Zack Hemsey",
-      "title": "The Way",
-      "posterUrl": "/assets/img/youtube/Zack Hemsey - The Way.webp",
-      "id": "oN2Xs-MvxLw",
-      "tags": [
-        "Instrumental"
-      ]
-    },
-    {
-      "artist": "John Lunn",
-      "title": "The Last Kingdom (The Last Kingdom)",
-      "posterUrl": "/assets/img/youtube/John Lunn - The Last Kingdom.webp",
-      "id": "UnjRQcIY-bo",
-      "tags": [
-        "Film",
-        "Düster",
-        "Orchester"
-      ]
-    },
-    {
-      "artist": "John Lunn",
-      "title": "Lívstræðrir (The Last Kingdom)",
-      "posterUrl": "/assets/img/youtube/John Lunn - The Last Kingdom.webp",
-      "id": "T7VqRWD9mKE",
-      "tags": [
-        "Film",
-        "Düster",
-        "Orchester"
-      ]
-    },
-    {
-      "artist": "John Lunn",
-      "title": "My England (The Last Kingdom)",
-      "posterUrl": "/assets/img/youtube/John Lunn - The Last Kingdom.webp",
-      "id": "_kp8aWUoe9M",
-      "tags": [
-        "Film",
-        "Düster",
-        "Orchester"
-      ]
-    },
-    {
-      "artist": "John Lunn",
-      "title": "Lighting the Beacons (The Last Kingdom)",
-      "posterUrl": "/assets/img/youtube/John Lunn - The Last Kingdom.webp",
-      "id": "gIg-Uqorj_Y",
-      "tags": [
-        "Film",
-        "Düster",
-        "Orchester"
-      ]
-    },
-    {
-      "artist": "John Lunn",
-      "title": "Helig (The Last Kingdom)",
-      "posterUrl": "/assets/img/youtube/John Lunn - The Last Kingdom.webp",
-      "id": "5X_w9tPgypg",
-      "tags": [
-        "Film",
-        "Düster",
-        "Orchester"
-      ]
-    },
-    {
-      "artist": "John Lunn",
-      "title": "Destiny Is All (The Last Kingdom)",
-      "posterUrl": "/assets/img/youtube/John Lunn - The Last Kingdom.webp",
-      "id": "azbJ7WAU4Ko",
-      "tags": [
-        "Film",
-        "Düster",
-        "Orchester"
-      ]
-    },
-    {
-      "artist": "John Lunn",
-      "title": "Icicle (The Last Kingdom)",
-      "posterUrl": "/assets/img/youtube/John Lunn - The Last Kingdom.webp",
-      "id": "C80J4qYLi3Y",
-      "tags": [
-        "Film",
-        "Düster",
-        "Orchester"
-      ]
-    },
-    {
-      "artist": "John Lunn",
-      "title": "The Hall of the Fallen (The Last Kingdom)",
-      "posterUrl": "/assets/img/youtube/John Lunn - The Last Kingdom.webp",
-      "id": "AmzpWJ8o6Yo",
-      "tags": [
-        "Film",
-        "Düster",
-        "Orchester"
-      ]
-    },
-    {
-      "artist": "John Lunn",
-      "title": "Aeternum (The Last Kingdom)",
-      "posterUrl": "/assets/img/youtube/John Lunn - The Last Kingdom.webp",
-      "id": "-IdHg_sDxzM",
-      "tags": [
-        "Film",
-        "Düster",
-        "Orchester"
-      ]
-    },
-    {
-      "artist": "John Lunn",
-      "title": "Blood Moon (The Last Kingdom)",
-      "posterUrl": "/assets/img/youtube/John Lunn - The Last Kingdom.webp",
-      "id": "HGB7ZnqvUHI",
-      "tags": [
-        "Film",
-        "Düster",
-        "Orchester"
-      ]
-    },
-    {
-      "artist": "Billy Boyd",
-      "title": "The Last Goodbye (The Hobbit)",
-      "posterUrl": "/assets/img/youtube/The Last Goodbye - Billy Boyd - The Hobbit.webp",
-      "id": "q8ir8rVl2Z4",
-      "tags": [
-        "Film"
-      ]
-    },
-    {
-      "artist": "Roudeep",
-      "title": "Azerbaijan",
-      "posterUrl": "/assets/img/youtube/Roudeep - Azerbaijan.webp",
-      "id": "WjLWzXj5eoc",
-      "tags": [
-        "Elektro"
-      ]
-    },
-    {
-      "artist": "Lana del Rey",
-      "title": "Summer Wine",
-      "posterUrl": "/assets/img/youtube/Lana del Rey - Summer Wine.webp",
-      "id": "1OEron4rXfk",
-      "tags": []
-    },
-    {
-      "artist": "Emanuele Patetta",
-      "title": "Death of a Hero",
-      "posterUrl": "/assets/img/youtube/Emanuele Patetta - Death of a Hero.webp",
-      "id": "WIuely_hs9A",
-      "tags": [
-        "Seele",
-        "Düster"
-      ]
-    },
-    {
-      "artist": "Susie Suh x Robot Koch",
-      "title": "Here With Me",
-      "posterUrl": "/assets/img/youtube/Susie Suh x Robot Koch - Here With Me.webp",
-      "id": "N3bgkE8sAg0",
-      "tags": [
-        "Seele",
-        "Düster"
-      ]
-    },
-    {
-      "artist": "Fiora and Robot Koch",
-      "title": "Let it go by",
-      "posterUrl": "/assets/img/youtube/Fiora and Robot Koch - Let it go by.webp",
-      "id": "YAAju6Aso8w",
-      "tags": [
-        "Seele",
-        "Düster"
-      ]
-    },
-    {
-      "artist": "Hans Zimmer",
-      "title": "The Dark Knight - Live",
-      "posterUrl": "/assets/img/youtube/Hans Zimmer - The Dark Knight.webp",
-      "id": "8-wAvbxB7D8",
-      "tags": [
-        "Orchester",
-        "Düster",
-        "Film"
-      ]
-    },
-    {
-      "artist": "Hans Zimmer",
-      "title": "Time - Live",
-      "posterUrl": "/assets/img/youtube/Hans Zimmer - Time.webp",
-      "id": "va1oiojnGrA",
-      "tags": [
-        "Orchester",
-        "Film"
-      ]
-    },
-    {
-      "artist": "Hans Zimmer",
-      "title": "Now we are free - Live",
-      "posterUrl": "/assets/img/youtube/Hans Zimmer - Now we are free.webp",
-      "id": "Y1UiD2sxoWo",
-      "tags": [
-        "Orchester",
-        "Film"
-      ]
-    },
-    {
-      "artist": "Hans Zimmer",
-      "title": "Chevaliers De Sangreal - Live",
-      "posterUrl": "/assets/img/youtube/Hans Zimmer - Chevaliers De Sangreal.webp",
-      "id": "aAi5FHSkUAQ",
-      "tags": [
-        "Orchester",
-        "Film"
-      ]
-    }
-  ]
-}
+[
+  {
+    "artist": "The Civil Wars",
+    "title": "Dust to Dust (Official Video)",
+    "posterUrl": "/assets/img/youtube/civil-wars-dust-to-dust.webp",
+    "id": "yJbmXvBJhCs",
+    "tags": [
+      "Seele"
+    ]
+  },
+  {
+    "artist": "Katie Melua",
+    "title": "I Will Be There - Full Concert Version",
+    "posterUrl": "/assets/img/youtube/Katie Melua - I Will Be There.webp",
+    "id": "7IRIP-hSfJ0",
+    "tags": [
+      "Seele",
+      "Orchester"
+    ]
+  },
+  {
+    "artist": "Sophie James",
+    "title": "The Windmills Of Your Mind (Cover)",
+    "posterUrl": "/assets/img/youtube/sophie james.webp",
+    "id": "OCNIrP3UHz4",
+    "tags": [
+      "Seele"
+    ]
+  },
+  {
+    "artist": "Loreena McKennitt",
+    "title": "Tango to Evora",
+    "posterUrl": "/assets/img/youtube/Loreena McKennitt - Tango to Evora.webp",
+    "id": "AIR5XPWK3Vk",
+    "tags": [
+      "Seele"
+    ]
+  },
+  {
+    "artist": "Norah Jones",
+    "title": "Black",
+    "posterUrl": "/assets/img/youtube/Norah Jones - Black.webp",
+    "id": "OiKuW3xXwmA",
+    "tags": []
+  },
+  {
+    "artist": "Holly Solem",
+    "title": "Speed of Light",
+    "posterUrl": "/assets/img/youtube/Holly Solem - Speed of Light.webp",
+    "id": "UQge2hgXDs0",
+    "tags": [
+    ]
+  },
+  {
+    "artist": "Steve Jablonsky",
+    "title": "Tessa",
+    "posterUrl": "/assets/img/youtube/Steve Jablonsky - Tessa.webp",
+    "id": "_tuLd3h19Fw",
+    "tags": [
+      "Orchester",
+      "Instrumental"
+    ]
+  },
+  {
+    "artist": "Steve Jablonsky",
+    "title": "We Have to Go",
+    "posterUrl": "/assets/img/youtube/Steve Jablonsky - We Have to Go.webp",
+    "id": "eob6JuOvMCU",
+    "tags": [
+      "Orchester",
+      "Instrumental"
+    ]
+  },
+  {
+    "artist": "Steve Jablonsky",
+    "title": "Sacrifice",
+    "posterUrl": "/assets/img/youtube/Steve Jablonsky - Sacrifice.webp",
+    "id": "tpa0uDCHuY8",
+    "tags": [
+      "Orchester",
+      "Instrumental"
+    ]
+  },
+  {
+    "artist": "Steve Jablonsky",
+    "title": "Infinite White",
+    "posterUrl": "/assets/img/youtube/Steve Jablonsky - Infinite White.webp",
+    "id": "OgUewSwIQIM",
+    "tags": [
+      "Orchester",
+      "Instrumental"
+    ]
+  },
+  {
+    "artist": "Muse",
+    "title": "The 2nd Law Isolated System",
+    "posterUrl": "/assets/img/youtube/Muse - The 2nd Law Isolated System.webp",
+    "id": "VXPoJAyeF8k",
+    "tags": [
+      "Instrumental"
+    ]
+  },
+  {
+    "artist": "Emma Kok & André Rieu",
+    "title": "Voilà",
+    "posterUrl": "/assets/img/youtube/emma kok - voilà.webp",
+    "id": "KdIhq1tb8Co",
+    "tags": [
+      "Orchester"
+    ]
+  },
+  {
+    "artist": "Blonde Redhead",
+    "title": "Silently",
+    "posterUrl": "/assets/img/youtube/blonde redhead - silently.webp",
+    "id": "Y9WpguIKPqU",
+    "tags": []
+  },
+  {
+    "artist": "May and Robot Koch",
+    "title": "Bad Kingdom",
+    "posterUrl": "/assets/img/youtube/May and Robot Koch - Bad Kingdom.webp",
+    "id": "FMemllFAw2o",
+    "tags": [
+      "Düster"
+    ]
+  },
+  {
+    "artist": "Nouela",
+    "title": "The Sound of Silence",
+    "posterUrl": "/assets/img/youtube/Nouela - The Sound of Silence.webp",
+    "id": "Ntkyzh4NV7A",
+    "tags": [
+      "Düster",
+      "Seele"
+    ]
+  },
+  {
+    "artist": "Ennja",
+    "title": "Let Go",
+    "posterUrl": "/assets/img/youtube/Ennja - let go.webp",
+    "id": "CkxDv5TItPM",
+    "tags": [
+      "Ferry Corsten - Eternity"
+    ]
+  },
+  {
+    "artist": "Ennja",
+    "title": "Way",
+    "posterUrl": "/assets/img/youtube/Ennja - Way.webp",
+    "id": "HeBEwUkMQUo",
+    "tags": [
+      "Elektro"
+    ]
+  },
+  {
+    "artist": "Gustavo Santaolalla",
+    "title": "Babel",
+    "posterUrl": "/assets/img/youtube/Gustavo Santaolalla - Babel.webp",
+    "id": "JXVnFQVAAk4",
+    "tags": [
+      "Elektro"
+    ]
+  },
+  {
+    "artist": "Ben Böhmer",
+    "title": "Beyond Beliefs",
+    "posterUrl": "/assets/img/youtube/Ben Böhmer - Beyond Beliefs.webp",
+    "id": "aVTalm2VjDc",
+    "tags": [
+      "Elektro"
+    ]
+  },
+  {
+    "artist": "Bicep",
+    "title": "Glue",
+    "posterUrl": "/assets/img/youtube/bicep - glue.webp",
+    "id": "A7ZxRs45tTg",
+    "tags": [
+      "Elektro"
+    ]
+  },
+  {
+    "artist": "Fever Ray",
+    "title": "Keep The Streets Empty For Me",
+    "posterUrl": "/assets/img/youtube/Fever Ray - Keep The Streets Empty For Me.webp",
+    "id": "jWFb5z3kUSQ",
+    "tags": [
+      "Düster"
+    ]
+  },
+  {
+    "artist": "Jonathan E. Blake",
+    "title": "Dance on a Tin Roof",
+    "posterUrl": "/assets/img/youtube/Jonathan E. Blake - Dance on a Tin Roof.webp",
+    "id": "A0rIH1tHD7g",
+    "tags": [
+      "Elektro"
+    ]
+  },
+  {
+    "artist": "Agnes Obel",
+    "title": "Familiar (Official Video)",
+    "posterUrl": "/assets/img/youtube/Agnes Obel - Familiar (Official Video).webp",
+    "id": "32kYH6XZrIo",
+    "tags": []
+  },
+  {
+    "artist": "Roggz74",
+    "title": "The XX-Intro",
+    "posterUrl": "/assets/img/youtube/Roggz74 - The XX-Intro.webp",
+    "id": "QbwdJl8TGeY",
+    "tags": [
+      "Elektro"
+    ]
+  },
+  {
+    "artist": "Sportfreunde Stiller",
+    "title": "Das Geschenk",
+    "posterUrl": "/assets/img/youtube/Sportfreunde Stiller - Das Geschenk.webp",
+    "id": "qWawXmlbzHo",
+    "tags": []
+  },
+  {
+    "artist": "Asaf Avidan",
+    "title": "The Labyrinth Song",
+    "posterUrl": "/assets/img/youtube/Asaf Avidan - The Labyrinth Song.webp",
+    "id": "oiL9ItjmHRw",
+    "tags": [
+      "Seele"
+    ]
+  },
+  {
+    "artist": "Bonaparte",
+    "title": "Melody X",
+    "posterUrl": "/assets/img/youtube/BONAPARTE - MELODY X.webp",
+    "id": "ZAPvZNgPfDE",
+    "tags": [
+      "Düster"
+    ]
+  },
+  {
+    "artist": "Cigarettes After Sex",
+    "title": "Apocalypse",
+    "posterUrl": "/assets/img/youtube/Cigarettes After Sex - Apocalypse.webp",
+    "id": "MblPa7pCnZ8",
+    "tags": []
+  },
+  {
+    "artist": "Sol Seppy",
+    "title": "Enter One",
+    "posterUrl": "/assets/img/youtube/Sol Seppy - Enter One.webp",
+    "id": "zrdezG6c6HM",
+    "tags": [
+      "Seele",
+      "Düster"
+    ]
+  },
+  {
+    "artist": "Sub Pub Music",
+    "title": "Tears Of War",
+    "posterUrl": "/assets/img/youtube/Sub Pub Music - Tears Of War.webp",
+    "id": "gKUdI7sVicQ",
+    "tags": [
+      "Instrumental"
+    ]
+  },
+  {
+    "artist": "Cigarettes After Sex",
+    "title": "Crush",
+    "posterUrl": "/assets/img/youtube/Cigarettes After Sex - Crush.webp",
+    "id": "x0elcMY60iM",
+    "tags": []
+  },
+  {
+    "artist": "Cigarettes After Sex",
+    "title": "Nothing's Gonna Hurt You Baby",
+    "posterUrl": "/assets/img/youtube/Cigarettes After Sex - Nothing's Gonna Hurt You Baby.webp",
+    "id": "qV_lcpLPZ8Q",
+    "tags": []
+  },
+  {
+    "artist": "Cigarettes After Sex",
+    "title": "Heavenly",
+    "posterUrl": "/assets/img/youtube/Cigarettes After Sex - Heavenly.webp",
+    "id": "HMqZhapr6jU",
+    "tags": []
+  },
+  {
+    "artist": "Lunik",
+    "title": "What Is Next",
+    "posterUrl": "/assets/img/youtube/Lunik - What Is Next.webp",
+    "id": "YQSEMhyZsIU",
+    "tags": []
+  },
+  {
+    "artist": "Roudeep",
+    "title": "Dancing in the Moonlight",
+    "posterUrl": "/assets/img/youtube/Roudeep - Dancing in the Moonlight.webp",
+    "id": "SMuaeNPt5EM",
+    "tags": [
+      "Elektro"
+    ]
+  },
+  {
+    "artist": "Thomas Bergersen",
+    "title": "Empire Of Angels",
+    "posterUrl": "/assets/img/youtube/Thomas Bergersen - Empire Of Angels.webp",
+    "id": "izsjRpcgfmk",
+    "tags": [
+      "Instrumental"
+    ]
+  },
+  {
+    "artist": "Zack Hemsey",
+    "title": "The Way",
+    "posterUrl": "/assets/img/youtube/Zack Hemsey - The Way.webp",
+    "id": "oN2Xs-MvxLw",
+    "tags": [
+      "Instrumental"
+    ]
+  },
+  {
+    "artist": "John Lunn",
+    "title": "The Last Kingdom (The Last Kingdom)",
+    "posterUrl": "/assets/img/youtube/John Lunn - The Last Kingdom.webp",
+    "id": "UnjRQcIY-bo",
+    "tags": [
+      "Film",
+      "Düster",
+      "Orchester"
+    ]
+  },
+  {
+    "artist": "John Lunn",
+    "title": "Lívstræðrir (The Last Kingdom)",
+    "posterUrl": "/assets/img/youtube/John Lunn - The Last Kingdom.webp",
+    "id": "T7VqRWD9mKE",
+    "tags": [
+      "Film",
+      "Düster",
+      "Orchester"
+    ]
+  },
+  {
+    "artist": "John Lunn",
+    "title": "My England (The Last Kingdom)",
+    "posterUrl": "/assets/img/youtube/John Lunn - The Last Kingdom.webp",
+    "id": "_kp8aWUoe9M",
+    "tags": [
+      "Film",
+      "Düster",
+      "Orchester"
+    ]
+  },
+  {
+    "artist": "John Lunn",
+    "title": "Lighting the Beacons (The Last Kingdom)",
+    "posterUrl": "/assets/img/youtube/John Lunn - The Last Kingdom.webp",
+    "id": "gIg-Uqorj_Y",
+    "tags": [
+      "Film",
+      "Düster",
+      "Orchester"
+    ]
+  },
+  {
+    "artist": "John Lunn",
+    "title": "Helig (The Last Kingdom)",
+    "posterUrl": "/assets/img/youtube/John Lunn - The Last Kingdom.webp",
+    "id": "5X_w9tPgypg",
+    "tags": [
+      "Film",
+      "Düster",
+      "Orchester"
+    ]
+  },
+  {
+    "artist": "John Lunn",
+    "title": "Destiny Is All (The Last Kingdom)",
+    "posterUrl": "/assets/img/youtube/John Lunn - The Last Kingdom.webp",
+    "id": "azbJ7WAU4Ko",
+    "tags": [
+      "Film",
+      "Düster",
+      "Orchester"
+    ]
+  },
+  {
+    "artist": "John Lunn",
+    "title": "Icicle (The Last Kingdom)",
+    "posterUrl": "/assets/img/youtube/John Lunn - The Last Kingdom.webp",
+    "id": "C80J4qYLi3Y",
+    "tags": [
+      "Film",
+      "Düster",
+      "Orchester"
+    ]
+  },
+  {
+    "artist": "John Lunn",
+    "title": "The Hall of the Fallen (The Last Kingdom)",
+    "posterUrl": "/assets/img/youtube/John Lunn - The Last Kingdom.webp",
+    "id": "AmzpWJ8o6Yo",
+    "tags": [
+      "Film",
+      "Düster",
+      "Orchester"
+    ]
+  },
+  {
+    "artist": "John Lunn",
+    "title": "Aeternum (The Last Kingdom)",
+    "posterUrl": "/assets/img/youtube/John Lunn - The Last Kingdom.webp",
+    "id": "-IdHg_sDxzM",
+    "tags": [
+      "Film",
+      "Düster",
+      "Orchester"
+    ]
+  },
+  {
+    "artist": "John Lunn",
+    "title": "Blood Moon (The Last Kingdom)",
+    "posterUrl": "/assets/img/youtube/John Lunn - The Last Kingdom.webp",
+    "id": "HGB7ZnqvUHI",
+    "tags": [
+      "Film",
+      "Düster",
+      "Orchester"
+    ]
+  },
+  {
+    "artist": "Billy Boyd",
+    "title": "The Last Goodbye (The Hobbit)",
+    "posterUrl": "/assets/img/youtube/The Last Goodbye - Billy Boyd - The Hobbit.webp",
+    "id": "q8ir8rVl2Z4",
+    "tags": [
+      "Film"
+    ]
+  },
+  {
+    "artist": "Roudeep",
+    "title": "Azerbaijan",
+    "posterUrl": "/assets/img/youtube/Roudeep - Azerbaijan.webp",
+    "id": "WjLWzXj5eoc",
+    "tags": [
+      "Elektro"
+    ]
+  },
+  {
+    "artist": "Lana del Rey",
+    "title": "Summer Wine",
+    "posterUrl": "/assets/img/youtube/Lana del Rey - Summer Wine.webp",
+    "id": "1OEron4rXfk",
+    "tags": []
+  },
+  {
+    "artist": "Emanuele Patetta",
+    "title": "Death of a Hero",
+    "posterUrl": "/assets/img/youtube/Emanuele Patetta - Death of a Hero.webp",
+    "id": "WIuely_hs9A",
+    "tags": [
+      "Seele",
+      "Düster"
+    ]
+  },
+  {
+    "artist": "Susie Suh x Robot Koch",
+    "title": "Here With Me",
+    "posterUrl": "/assets/img/youtube/Susie Suh x Robot Koch - Here With Me.webp",
+    "id": "N3bgkE8sAg0",
+    "tags": [
+      "Seele",
+      "Düster"
+    ]
+  },
+  {
+    "artist": "Fiora and Robot Koch",
+    "title": "Let it go by",
+    "posterUrl": "/assets/img/youtube/Fiora and Robot Koch - Let it go by.webp",
+    "id": "YAAju6Aso8w",
+    "tags": [
+      "Seele",
+      "Düster"
+    ]
+  },
+  {
+    "artist": "Hans Zimmer",
+    "title": "The Dark Knight - Live",
+    "posterUrl": "/assets/img/youtube/Hans Zimmer - The Dark Knight.webp",
+    "id": "8-wAvbxB7D8",
+    "tags": [
+      "Orchester",
+      "Düster",
+      "Film"
+    ]
+  },
+  {
+    "artist": "Hans Zimmer",
+    "title": "Time - Live",
+    "posterUrl": "/assets/img/youtube/Hans Zimmer - Time.webp",
+    "id": "va1oiojnGrA",
+    "tags": [
+      "Orchester",
+      "Film"
+    ]
+  },
+  {
+    "artist": "Hans Zimmer",
+    "title": "Now we are free - Live",
+    "posterUrl": "/assets/img/youtube/Hans Zimmer - Now we are free.webp",
+    "id": "Y1UiD2sxoWo",
+    "tags": [
+      "Orchester",
+      "Film"
+    ]
+  },
+  {
+    "artist": "Hans Zimmer",
+    "title": "Chevaliers De Sangreal - Live",
+    "posterUrl": "/assets/img/youtube/Hans Zimmer - Chevaliers De Sangreal.webp",
+    "id": "aAi5FHSkUAQ",
+    "tags": [
+      "Orchester",
+      "Film"
+    ]
+  },
+  {
+    "artist": "Hans Zimmer",
+    "title": "Flight - Live",
+    "posterUrl": "/assets/img/youtube/Hans Zimmer - Flight.webp",
+    "id": "HGC5E5m17Fg",
+    "tags": [
+      "Orchester",
+      "Film"
+    ]
+  },
+  {
+    "artist": "Hans Zimmer",
+    "title": "Interstellar Theme - Live",
+    "posterUrl": "/assets/img/youtube/Hans Zimmer - Interstellar Theme.webp",
+    "id": "kottjfEd7Zw",
+    "tags": [
+      "Orchester",
+      "Film"
+    ]
+  }
+]
