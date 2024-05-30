@@ -63,6 +63,7 @@ export { Card31Component, Card31Model, Card31ComponentModel } from './by-topic/c
 export { Card32Component, Card32ComponentModel } from './by-topic/cards/card3-2/card32.component'
 export { Card11Component } from './by-topic/cards/card1-1/card11.component'
 export { Card41Component, Card41Model } from './by-topic/cards/card4-1/card41.component'
+export { Cards41Component, Cards41Model } from './by-topic/cards/card4-1/cards41.component'
 export { Card42Component, Card42Model } from './by-topic/cards/card4-2/card42.component'
 export { Card43Component, Card43Model } from './by-topic/cards/card4-3/card43.component'
 export { Card44Component, Card44Model } from './by-topic/cards/card4-4/card44.component'

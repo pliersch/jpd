@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { DefaultYoutubePageComponent, Video } from 'jpd-youtube';
 import videos from '../../../assets/json/youtube-songs.json'
@@ -11,12 +11,8 @@ import videos from '../../../assets/json/youtube-songs.json'
   templateUrl: './youtube-page.component.html',
   styleUrl: './youtube-page.component.scss',
 })
-export class YoutubePageComponent implements OnInit {
+export class YoutubePageComponent {
 
   videos: Video[] = videos;
-
-  ngOnInit(): void {
-
-  }
 
 }

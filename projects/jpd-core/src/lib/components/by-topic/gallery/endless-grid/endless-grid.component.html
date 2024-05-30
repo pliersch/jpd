@@ -4,7 +4,7 @@
       <div *ngFor="let col of columns" class="column">
         <img *ngFor="let row of rows" [src]="imgUrls[col*rows.length + row]"
              (click)="openImageViewer(col*rows.length + row)"
-             class="mouse-pointer" alt="Bilder Galerie Thumbnails">
+             class="cursor-pointer" alt="Bilder Galerie Thumbnails">
       </div>
     </div>
   </div>

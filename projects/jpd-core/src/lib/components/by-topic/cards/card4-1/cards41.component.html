@@ -1,0 +1,16 @@
+<div class="lg:container sm:max-lg:px-3">
+  <div class="grid grid-cols-4 gap-x-4">
+    @for (item of model.cards; track item) {
+      <div class="grid grid-rows-subgrid row-span-4 gap-y-2 overflow-hidden rounded-lg mat-elevation-z6">
+        <img class="w-full object-cover" [src]="item.imageUrl">
+        <h4 class="px-4 sm:text-lg md:text-lg lg:text-2xl font-medium">{{ item.title }}</h4>
+        @if (item.subtitle) {
+          <h6 class="px-4">{{ item.subtitle }}</h6>
+        }
+        @if (item.description) {
+          <small class="px-4 pb-4 text-sm">{{ item.description }}</small>
+        }
+      </div>
+    }
+  </div>
+</div>

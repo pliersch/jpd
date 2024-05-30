@@ -19,7 +19,7 @@ export interface StoriesGroup1Model {
     ImageCard2Component
   ],
   templateUrl: './presentation-cards1.component.html',
-  styleUrl: './presentation-cards1.component.scss'
+  // styleUrl: './presentation-cards1.component.scss'
 })
 export class PresentationCards1Component extends BaseComponent<StoriesGroup1Model> {
 

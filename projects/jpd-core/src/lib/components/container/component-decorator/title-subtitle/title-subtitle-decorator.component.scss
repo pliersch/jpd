@@ -1,0 +1,14 @@
+.header-link {
+  color: #6e6e6e52;
+  margin: 0 6px;
+  text-decoration: none;
+  //user-select: none;
+  //visibility: hidden;
+  display: inline-flex;
+  vertical-align: middle;
+
+  :hover {
+    color: var(--theme-accent);
+    //color: #6e6e6e;
+  }
+}

@@ -193,11 +193,10 @@ export const appData: AppConfig = {
       //                 Services
       //////////////////////////////////////////////////////////
       {
-        name: 'Card41',
+        name: 'Cards41',
         fragment: 'service',
         data: {
-          // headline: 'Unser Service',
-          items: [
+          cards: [
             {
               title: 'TÜV, HU und AU',
               subtitle: 'Lorem ipsum dolor sit amet',

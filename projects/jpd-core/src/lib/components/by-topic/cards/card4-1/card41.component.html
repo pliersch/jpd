@@ -1,23 +1,12 @@
-<section class="section">
-  <div class="md:container">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2">
-      <div *ngFor="let item of model.items">
-        <div class="flex flex-col w-full card rounded mat-elevation-z6 overflow-hidden">
-          <!--          <div class="card-avatar">-->
-          <img class="w-full object-cover" [src]="item.imageUrl" alt="example image of a service">
-          <!--          </div>-->
-          <div class="card-title">
-            <h4 class="text-2xl font-medium">{{ item.title }}</h4>
-          </div>
-          <div class="card-subtitle">
-            <h6>{{ item.subtitle }}</h6>
-          </div>
-          <span class="spacer"></span>
-          <div class="card-description">
-            <small class="text-sm" *ngIf="item.description">{{ item.description }}</small>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="grid grid-rows-subgrid row-span-4 gap-y-2 overflow-hidden rounded-lg mat-elevation-z6"
+     [style.padding]="padding">
+  <img class="w-full object-cover" [src]="model.imageUrl">
+  <h4 class="px-4 text-2xl font-medium">{{ model.title }}</h4>
+  @if (model.subtitle) {
+    <h6 class="px-4">{{ model.subtitle }}</h6>
+  }
+  @if (model.description) {
+    <small class="px-4 pb-4 text-sm">{{ model.description }}</small>
+  }
+</div>
+

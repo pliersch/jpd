@@ -32,7 +32,7 @@ export class DefaultYoutubePageComponent implements OnInit {
 
   playerConfig = {
     controls: 1,
-    autoplay: 0
+    autoplay: 1
   };
 
   constructor(protected service: YoutubeService) { }

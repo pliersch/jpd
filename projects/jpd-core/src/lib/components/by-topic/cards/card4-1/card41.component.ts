@@ -1,25 +1,26 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FragmentDirective } from '../../../../common';
-import { TitleSubtitleDescription } from '../../../../content';
-import { BaseComponent } from '../../../core/base/base.component';
+import { Component, Input } from '@angular/core';
 
 export interface Card41Model {
-  headline: string;
-  items: TitleSubtitleDescription[]
+  title: string;
+  subtitle: string;
+  description: string;
+  imageUrl: string
+  link?: string
 }
 
 @Component({
   selector: 'a4w-card41',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './card41.component.html',
-  styleUrls: ['./card41.component.scss']
+  templateUrl: './card41.component.html'
 })
-export class Card41Component extends BaseComponent<Card41Model> {
+export class Card41Component {
 
-  constructor(override fragment?: FragmentDirective) {
-    super('Card41', fragment)
-  }
+  @Input()
+  model: Card41Model;
+
+  @Input()
+  padding: string = '0';
 
 }

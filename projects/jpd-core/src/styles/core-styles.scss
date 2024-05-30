@@ -51,21 +51,8 @@ body {
   }
 }
 
-.p-section {
-  padding: 50px;
-}
-
-.py-section {
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
 .spacer {
   flex: 1 1 auto;
-}
-
-.mouse-pointer {
-  cursor: pointer;
 }
 
 .dvh-100 {
@@ -86,28 +73,8 @@ body {
   height: calc(100dvh - var(--appbar-height, 64px) - var(--sub-appbar-height, 56px));
 }
 
-.header-link {
-  color: #6e6e6e52;
-  margin: 0 6px;
-  text-decoration: none;
-  //user-select: none;
-  //visibility: hidden;
-  display: inline-flex;
-  vertical-align: middle;
-
-  :hover {
-    color: var(--theme-accent);
-    //color: #6e6e6e;
-  }
-}
-
 .transparent-background {
   background-color: transparent !important;
-}
-
-.link {
-  color: unset;
-  text-decoration-line: none;
 }
 
 .material-icon {

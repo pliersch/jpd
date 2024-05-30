@@ -1,4 +1,4 @@
-<div class="container">
+<div class="lg:container sm:max-lg:px-3">
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
     @for (item of model.items; track item) {
       <div class="card-31 rounded mat-elevation-z6">
@@ -10,7 +10,7 @@
         <div class="body">
           <h6 class="primary">{{ item.description }}</h6>
           <h4 class="text-2xl">
-            <a [routerLink]="[item.link]" class="link font-medium">{{ item.title }}</a>
+            <a [routerLink]="[item.link]" class="font-medium">{{ item.title }}</a>
           </h4>
           <p>
             {{ item.subtitle }}

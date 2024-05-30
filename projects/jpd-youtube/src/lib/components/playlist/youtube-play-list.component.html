@@ -1,6 +1,6 @@
 <!--<div [@flyIn]="(filteredVideos$ | async)!.length" class="container-fluid">-->
 <div class="">
-  <div class="flex flex-wrap absolute-center">
+  <div class="flex flex-wrap">
     @for (item of filteredVideos$ | async; track item.id) {
       <a4w-card-video-1 (idEmitter)="onCurrentVideoChange($event)"
                         class="media"

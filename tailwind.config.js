@@ -8,12 +8,20 @@ module.exports = {
     container: {
       center: true,
       padding: {
-        DEFAULT: '1rem',
-        // sm: '2rem',
-        // lg: '4rem',
+        DEFAULT: '2rem',
+        sm: '2rem',
+        md: '2rem',
+        lg: '2rem',
         // xl: '5rem',
         // '2xl': '6rem',
       },
+      // screens: {
+      //   sm: '600px',
+      //   md: '728px',
+      //   lg: '984px',
+      //   xl: '1240px',
+      //   '2xl': '1496px',
+      // },
     },
   },
   plugins: [

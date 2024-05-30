@@ -1,7 +1,7 @@
-<div [style.background-color]="bgColor"
-     [class.py-section]="!noPadding">
+<section [style.background-color]="bgColor"
+         [class.py-10]="!noPadding">
   <ng-content select="[header]"></ng-content>
   <!--  default-->
   <ng-content></ng-content>
   <ng-content select="[footer]"></ng-content>
-</div>
+</section>
