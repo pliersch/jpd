@@ -1,40 +1,36 @@
-<section>
-  <div class="container">
-    <div class="flex flex-col">
-      <div class="flex">
-        <div class="col33">
-          <a [routerLink]="[model.image31.link]">
-            <img class="rounded mat-elevation-z6 " a4wImgFallback alt="Thumbnail FotoGalerie"
-                 [src]="model.image31.imgUrl">
-          </a>
-        </div>
-        <div class="col33">
-          <a [routerLink]="[model.image32.link]">
-            <img class="rounded mat-elevation-z6 " a4wImgFallback alt="Thumbnail FotoGalerie"
-                 [src]="model.image32.imgUrl">
-          </a>
-        </div>
-        <div class="col33">
-          <a [routerLink]="[model.image33.link]">
-            <img class="rounded mat-elevation-z6 " a4wImgFallback alt="Thumbnail FotoGalerie"
-                 [src]="model.image33.imgUrl">
-          </a>
-        </div>
-      </div>
-      <div class="flex">
-        <div class="col50">
-          <a [routerLink]="[model.image21.link]">
-            <img class="rounded mat-elevation-z6 " a4wImgFallback alt="Thumbnail FotoGalerie"
-                 [src]="model.image21.imgUrl">
-          </a>
-        </div>
-        <div class="col50">
-          <a [routerLink]="[model.image22.link]">
-            <img class="rounded mat-elevation-z6 " a4wImgFallback alt="Thumbnail FotoGalerie"
-                 [src]="model.image22.imgUrl">
-          </a>
-        </div>
-      </div>
+<div class="flex flex-col">
+  <div class="flex">
+    <div class="col33">
+      <a [routerLink]="[model.image31.link]">
+        <img class="rounded mat-elevation-z6 " a4wImgFallback alt="Thumbnail FotoGalerie"
+             [src]="model.image31.imgUrl">
+      </a>
+    </div>
+    <div class="col33 px-4">
+      <a [routerLink]="[model.image32.link]">
+        <img class="rounded mat-elevation-z6 " a4wImgFallback alt="Thumbnail FotoGalerie"
+             [src]="model.image32.imgUrl">
+      </a>
+    </div>
+    <div class="col33">
+      <a [routerLink]="[model.image33.link]">
+        <img class="rounded mat-elevation-z6 " a4wImgFallback alt="Thumbnail FotoGalerie"
+             [src]="model.image33.imgUrl">
+      </a>
     </div>
   </div>
-</section>
+  <div class="flex">
+    <div class="col50 pr-2">
+      <a [routerLink]="[model.image21.link]">
+        <img class="rounded mat-elevation-z6 " a4wImgFallback alt="Thumbnail FotoGalerie"
+             [src]="model.image21.imgUrl">
+      </a>
+    </div>
+    <div class="col50 pl-2">
+      <a [routerLink]="[model.image22.link]">
+        <img class="rounded mat-elevation-z6 " a4wImgFallback alt="Thumbnail FotoGalerie"
+             [src]="model.image22.imgUrl">
+      </a>
+    </div>
+  </div>
+</div>

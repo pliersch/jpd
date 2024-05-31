@@ -14,6 +14,7 @@ import {
   FragmentDirective,
   GMapsIframeComponent,
   ImageGrid321Component,
+  LgContainerComponent,
   LinkFooterDecoratorComponent,
   Parallax1Component,
   ParallaxSectionComponent,
@@ -48,6 +49,7 @@ import {
     Banner1Component,
     DocInfoComponent,
     DocInfoEditorComponent,
+    LgContainerComponent,
   ],
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']

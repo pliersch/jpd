@@ -1,21 +1,19 @@
-<div class="container">
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-    @for (item of model.items; track item) {
-      <div class="card-32  mt-md-0 mt-5 rounded-lg overflow-hidden">
-        <div class="full-background"
-             [style.background-image]="'url(' + item.imageUrl + ')'"></div>
-        <div class="filter"></div>
-        <div class="body px-3 py-5 pt-md-7 text-center">
-          <div class="mb-2 mb-md-5">
-            <mat-icon class="icon-size2" svgIcon="location_on"/>
-          </div>
-          <h1 class="text-4xl px-2">{{ item.title }}</h1>
-          <p class="mb-3 mb-md-9">{{ item.subtitle }}</p>
-          <a mat-stroked-button class="white-button fs-3"
-             href="https://apps4web.de" target="_blank">
-            {{ item.linkTxt }}</a>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+  @for (item of model.items; track item) {
+    <div class="card-32  mt-md-0 mt-5 rounded-lg overflow-hidden">
+      <div class="full-background"
+           [style.background-image]="'url(' + item.imageUrl + ')'"></div>
+      <div class="filter"></div>
+      <div class="body px-3 py-5 pt-md-7 text-center">
+        <div class="mb-2 mb-md-5">
+          <mat-icon class="icon-size2" svgIcon="location_on"/>
         </div>
+        <h1 class="text-4xl px-2">{{ item.title }}</h1>
+        <p class="mb-3 mb-md-9">{{ item.subtitle }}</p>
+        <a mat-stroked-button class="white-button fs-3"
+           href="https://apps4web.de" target="_blank">
+          {{ item.linkTxt }}</a>
       </div>
-    }
-  </div>
+    </div>
+  }
 </div>

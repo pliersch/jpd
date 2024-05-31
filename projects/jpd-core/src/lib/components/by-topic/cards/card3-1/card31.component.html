@@ -1,23 +1,21 @@
-<div class="lg:container sm:max-lg:px-3">
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-    @for (item of model.items; track item) {
-      <div class="card-31 rounded mat-elevation-z6">
-        <div class="avatar">
-          <a [routerLink]="[item.link]">
-            <img class="mat-elevation-z3 rounded" [src]="item.imageUrl" alt="avatar">
-          </a>
-        </div>
-        <div class="body">
-          <h6 class="primary">{{ item.description }}</h6>
-          <h4 class="text-2xl">
-            <a [routerLink]="[item.link]" class="font-medium">{{ item.title }}</a>
-          </h4>
-          <p>
-            {{ item.subtitle }}
-            <a [routerLink]="[item.link]"> weiterlesen </a>
-          </p>
-        </div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+  @for (item of model.items; track item) {
+    <div class="card-31 rounded mat-elevation-z6">
+      <div class="avatar">
+        <a [routerLink]="[item.link]">
+          <img class="mat-elevation-z3 rounded" [src]="item.imageUrl" alt="avatar">
+        </a>
       </div>
-    }
-  </div>
+      <div class="body">
+        <h6 class="primary">{{ item.description }}</h6>
+        <h4 class="text-2xl">
+          <a [routerLink]="[item.link]" class="font-medium">{{ item.title }}</a>
+        </h4>
+        <p>
+          {{ item.subtitle }}
+          <a [routerLink]="[item.link]"> weiterlesen </a>
+        </p>
+      </div>
+    </div>
+  }
 </div>

@@ -1,39 +1,37 @@
-<div class="lg:container sm:max-lg:px-3">
-  <div class="rounded-lg"
-       [style.background-image]=' (color1 && color2) ?
+<div class="rounded-lg"
+     [style.background-image]=' (color1 && color2) ?
            "linear-gradient(310deg, " + color1 + ", " + color2 +")":
            "linear-gradient(310deg, var(--theme-primary-darken-15), var(--theme-primary-lighten-15))"'>
-    <div class="grid grid-cols-12 py-5" [style.color]="textColor">
+  <div class="grid grid-cols-12 py-5" [style.color]="textColor">
 
-      <div class="col-span-4 px-5">
-        <!--      <div class="col-xl-4 col-md-6 px-5 relative">-->
-        <img class="rounded-lg max-h-300px relative"
-             [src]="model.imageUrl" alt="card image">
-      </div>
-
-      <div class="col-span-4 px-5 my-auto">
-        <!--      <div class="col-xl-4 col-md-5 relative px-md-3 px-5 my-md-auto mt-4">-->
-        <p>
-          {{ model.contentText }}
-        </p>
-        <small>{{ model.postContentText }}</small>
-      </div>
-
-      <div class="col-span-1"></div>
-      <!--      <div class="col-1"></div>-->
-
-      <div class="col-span-3 px-5 my-auto">
-        <!--      <div class="col-xl-2 col-12 px-xl-0 px-5 my-xl-auto">-->
-        <h3 class="text-3xl font-medium mt-xl-0 mt-5">{{ model.title }}</h3>
-        <p class="text-sm opacity-8"> {{ model.subtitle }}</p>
-        <div class="flex items-center">
-          <a [routerLink]="[model.linkUrl]" class="accent me-1">{{ model.linkText }}
-          </a>
-          <mat-icon class="icon-display me-1" color="accent" aria-hidden="false"
-                    aria-label="Example home icon" fontIcon="east"></mat-icon>
-        </div>
-      </div>
-
+    <div class="col-span-4 px-5">
+      <!--      <div class="col-xl-4 col-md-6 px-5 relative">-->
+      <img class="rounded-lg max-h-300px relative"
+           [src]="model.imageUrl" alt="card image">
     </div>
+
+    <div class="col-span-4 px-5 my-auto">
+      <!--      <div class="col-xl-4 col-md-5 relative px-md-3 px-5 my-md-auto mt-4">-->
+      <p>
+        {{ model.contentText }}
+      </p>
+      <small>{{ model.postContentText }}</small>
+    </div>
+
+    <div class="col-span-1"></div>
+    <!--      <div class="col-1"></div>-->
+
+    <div class="col-span-3 px-5 my-auto">
+      <!--      <div class="col-xl-2 col-12 px-xl-0 px-5 my-xl-auto">-->
+      <h3 class="text-3xl font-medium mt-xl-0 mt-5">{{ model.title }}</h3>
+      <p class="text-sm opacity-8"> {{ model.subtitle }}</p>
+      <div class="flex items-center">
+        <a [routerLink]="[model.linkUrl]" class="accent me-1">{{ model.linkText }}
+        </a>
+        <mat-icon class="icon-display me-1" color="accent" aria-hidden="false"
+                  aria-label="Example home icon" fontIcon="east"></mat-icon>
+      </div>
+    </div>
+
   </div>
 </div>

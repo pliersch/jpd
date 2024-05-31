@@ -1,6 +1,7 @@
 import { AsyncPipe, NgTemplateOutlet } from '@angular/common';
 import { Component, Input, OnInit, signal } from '@angular/core';
 import { BreakpointService, Dimension } from '../../../../common';
+import { LgContainerComponent } from '../../../container/breakpoints/lg-container.component';
 import { PosterComponent } from '../../../poster/poster.component';
 
 @Component({
@@ -9,7 +10,8 @@ import { PosterComponent } from '../../../poster/poster.component';
   imports: [
     PosterComponent,
     AsyncPipe,
-    NgTemplateOutlet
+    NgTemplateOutlet,
+    LgContainerComponent
   ],
   templateUrl: './legal-container.component.html',
   styleUrl: './legal-container.component.scss'

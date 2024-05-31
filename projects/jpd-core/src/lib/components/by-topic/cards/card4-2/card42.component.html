@@ -1,45 +1,41 @@
 @if ((dim$ | async) !== Dimension.XSmall) {
-  <div class="container">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      @for (item of model.items; track item) {
-        <div class="card-42 flex flex-col">
-          <div class="card-title">
-            <h4 class="text-2xl white font-medium">{{ item.title }}</h4>
-          </div>
-          <div class="card-subtitle">
-            @for (subtitle of item.subtitles; track subtitle) {
-              <div class="flex mb-1">
-                <mat-icon class="me-1" color="accent" aria-hidden="false"
-                          aria-label="icon" svgIcon="check"></mat-icon>
-                <p class="text-base white"> {{ subtitle }}</p>
-              </div>
-            }
-          </div>
-          <span class="spacer"></span>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    @for (item of model.items; track item) {
+      <div class="card-42 flex flex-col">
+        <div class="card-title">
+          <h4 class="text-2xl white font-medium">{{ item.title }}</h4>
         </div>
-      }
-    </div>
-  </div>
-} @else {
-  <div class="container">
-    <mat-accordion>
-      @for (item of model.items; track item; let i = $first) {
-        <mat-expansion-panel [expanded]=i>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              {{ item.title }}
-            </mat-panel-title>
-
-          </mat-expansion-panel-header>
+        <div class="card-subtitle">
           @for (subtitle of item.subtitles; track subtitle) {
             <div class="flex mb-1">
               <mat-icon class="me-1" color="accent" aria-hidden="false"
                         aria-label="icon" svgIcon="check"></mat-icon>
-              <p>{{ subtitle }}</p>
+              <p class="text-base white"> {{ subtitle }}</p>
             </div>
           }
-        </mat-expansion-panel>
-      }
-    </mat-accordion>
+        </div>
+        <span class="spacer"></span>
+      </div>
+    }
   </div>
+} @else {
+  <mat-accordion>
+    @for (item of model.items; track item; let i = $first) {
+      <mat-expansion-panel [expanded]=i>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ item.title }}
+          </mat-panel-title>
+
+        </mat-expansion-panel-header>
+        @for (subtitle of item.subtitles; track subtitle) {
+          <div class="flex mb-1">
+            <mat-icon class="me-1" color="accent" aria-hidden="false"
+                      aria-label="icon" svgIcon="check"></mat-icon>
+            <p>{{ subtitle }}</p>
+          </div>
+        }
+      </mat-expansion-panel>
+    }
+  </mat-accordion>
 }

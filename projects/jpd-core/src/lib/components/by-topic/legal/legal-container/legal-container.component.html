@@ -1,5 +1,5 @@
 @if (!isMobile()) {
-  <div class="lg:container sm:max-lg:px-3">
+  <a4w-lg-container>
     <a4w-poster rounded="rounded-lg">
       <div class="bg-gradient-primary p-12 relative">
         <h2 class="text-3xl font-medium text-white">{{ title }}</h2>
@@ -27,8 +27,7 @@
         <ng-container [ngTemplateOutlet]="contentTemplate"/>
       </div>
     </a4w-poster>
-  </div>
-
+  </a4w-lg-container>
 } @else {
   <div class="m-3">
     <ng-container [ngTemplateOutlet]="contentTemplate"/>

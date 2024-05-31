@@ -1,19 +1,17 @@
-<div class="container">
-  <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-    @for (item of model.items; track item) {
-      <div class="card-43 flex flex-col w-full text-sm text-center">
-        <div class="card-avatar overflow-hidden rounded-full mat-elevation-z6">
-          <a [routerLink]="['/']">
-            <img a4wImgFallback [src]="item.imageUrl">
-          </a>
-        </div>
-        <div class="card-body">
-          <h5 class="font-medium text-xl">{{ item.title }}</h5>
-          <h6 class="theme-grey">{{ item.subtitle }}</h6>
-          <a class="accent" [routerLink]="[item.link]">mehr lesen</a>
-          <p>{{ item.description }}</p>
-        </div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+  @for (item of model.items; track item) {
+    <div class="card-43 flex flex-col w-full text-sm text-center">
+      <div class="card-avatar overflow-hidden rounded-full mat-elevation-z6">
+        <a [routerLink]="['/']">
+          <img a4wImgFallback [src]="item.imageUrl">
+        </a>
       </div>
-    }
-  </div>
+      <div class="card-body">
+        <h5 class="font-medium text-xl">{{ item.title }}</h5>
+        <h6 class="theme-grey">{{ item.subtitle }}</h6>
+        <a class="accent" [routerLink]="[item.link]">mehr lesen</a>
+        <p>{{ item.description }}</p>
+      </div>
+    </div>
+  }
 </div>

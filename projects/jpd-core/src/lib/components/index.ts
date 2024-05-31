@@ -5,6 +5,12 @@ export { PhoneModel, PhoneActionComponent } from './actions/phone/phone-action.c
 export { ScrollTopActionComponent } from './actions/scroll-top/scroll-top-action.component';
 export { ThemeToggleActionComponent } from './actions/theme-toggle/theme-toggle-action.component';
 
+export { SmContainerComponent } from './container/breakpoints/sm-container.component';
+export { MdContainerComponent } from './container/breakpoints/md-container.component';
+export { LgContainerComponent } from './container/breakpoints/lg-container.component';
+export { XlContainerComponent } from './container/breakpoints/xl-container.component';
+export { XxlContainerComponent } from './container/breakpoints/xxl-container.component';
+
 export { ActionContainerComponent } from './container/action-container/action-container.component';
 export {
   LinkFooterDecoratorComponent, LinkFooterDecoratorModel

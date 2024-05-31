@@ -13,6 +13,9 @@ export class SectionComponent {
   @Input()
   bgColor: string;
 
+  @Input()
+  container: 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+
   private _noPadding: boolean;
 
   @Input({transform: booleanAttribute})
