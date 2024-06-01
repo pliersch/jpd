@@ -6,6 +6,7 @@ const team = () => import('@app1/pages/team/team-page.component').then((x) => x.
 const contact = () => import('@app1/pages/contact/contact-page.component').then((x) => x.ContactPageComponent);
 const forest = () => import('@app1/pages/forest/forest-page.component').then((x) => x.ForestPageComponent);
 const doc = () => import('@app1/pages/doc/doc-page.component').then((x) => x.DocPageComponent);
+const baking = () => import('@app1/pages/baking/baking-page.component').then((x) => x.BakingPageComponent);
 const youtube = () => import('@app1/pages/youtube/youtube-page.component').then((x) => x.YoutubePageComponent);
 const privacy = () => import('@app1/pages/privacy/privacy-page.component').then((x) => x.PrivacyPageComponent);
 
@@ -23,6 +24,7 @@ export const ROUTES: Route[] = [
   {path: 'team', title: 'Demo Team', loadComponent: team},
   {path: 'kontakt', title: 'Demo Kontakt', loadComponent: contact},
   {path: 'doc', title: 'Demo Doc', loadComponent: doc},
+  {path: 'baking', title: 'Demo Baking', loadComponent: baking},
   {path: 'youtube', title: 'Demo Youtube', loadComponent: youtube},
   {path: 'forest', title: 'Demo Parallax', loadComponent: forest},
   {path: 'datenschutz', title: 'Demo Datenschutz', loadComponent: privacy},

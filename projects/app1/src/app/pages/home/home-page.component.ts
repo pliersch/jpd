@@ -26,7 +26,7 @@ import {
 
 
 @Component({
-  selector: 'app-default-page',
+  selector: 'app-home-page',
   standalone: true,
   imports: [
     CommonModule,

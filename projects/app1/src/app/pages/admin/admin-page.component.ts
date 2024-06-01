@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { AbstractDefaultPageComponent, AdminPanelMenuComponent } from 'jpd-core';
 
 @Component({
-  selector: 'app-default-page',
+  selector: 'app-admin-page',
   standalone: true,
   imports: [
     CommonModule,
