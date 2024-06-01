@@ -1,7 +1,16 @@
+<p>Recipes: {{ store.recipesEntities() | json }}</p>
+<p>Loading: {{ store.isLoading() }}</p>
+<!-- 👇 The `DeepSignal` value can be read in the same way as `Signal`. -->
+<p>Pagination: {{ store.filter() | json }}</p>
+
+<!-- 👇 Nested signals are created as `DeepSignal` properties. -->
+<p>Query: {{ store.filter.query() }}</p>
+<p>Order: {{ store.filter.order() }}</p>
 <div>
   <div class="p-6">
     <h1>Poolish</h1>
     <div class="grid">
+
       <span>Mehl 1</span>
       <span>Mehl 2</span>
       <span>Wasser</span>
@@ -10,34 +19,16 @@
       <span>Gare Raum</span>
       <span>Gare KS</span>
 
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
-      <input required type="text"/>
+      @for (recipe of store.recipesEntities(); track recipe.id) {
+        <input required type="text" value="{{recipe.flour1}}"/>
+        <input required type="text" value="{{recipe.flour2}}"/>
+        <input required type="text" value="{{recipe.water}}"/>
+        <input required type="text" value="{{recipe.temperature}}"/>
+        <input required type="text" value="{{recipe.yeast}}"/>
+        <input required type="text" value="{{recipe.fermentation1}}"/>
+        <input required type="text" value="{{recipe.fermentation2}}"/>
+      }
+
       <input required type="text"/>
       <input required type="text"/>
       <input required type="text"/>

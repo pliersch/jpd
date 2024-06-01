@@ -1,10 +1,9 @@
-<div class="card-video-1 w-full rounded overflow-hidden
-  mat-elevation-z6 cursor-pointer" (click)="emitId()">
-  <div class="avatar">
-    <img a4wImgFallback class="mat-elevation-z3"
-         [src]="imageUrl" alt="avatar">
+<div class="flex flex-col text-sm w-full rounded overflow-hidden
+ cursor-pointer elevation" (click)="emitId()">
+  <div>
+    <img a4wImgFallback class="w-full object-cover" [src]="imageUrl" alt="avatar">
   </div>
-  <div class="body">
+  <div class="flex flex-col px-2 py-4 theme-contrast-component">
     <p>{{ subtitle }}</p>
     <p class="font-normal">{{ title }}</p>
   </div>

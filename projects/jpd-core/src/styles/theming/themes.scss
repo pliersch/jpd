@@ -198,10 +198,10 @@ $light-foreground: mat.get-color-from-palette(mat.$light-theme-foreground-palett
   background-color: var(--theme-background);
 }
 
-//.bg-contrast {
-//  background-color: var(--theme-contrast-background);
-//}
-
 .theme-contrast-bg {
+  background-color: var(--theme-component-contrast);
+}
+
+.theme-contrast-component {
   background-color: var(--theme-component-contrast);
 }
