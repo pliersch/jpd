@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { MatChip, MatChipListbox } from '@angular/material/chips';
-import { TagItem } from '../../model';
-import { TAGS } from '../../tags';
+import { TagItem } from '../../store/model';
+import { TAGS } from '../../store/tags';
 
 @Component({
   selector: 'a4w-chip-filter',

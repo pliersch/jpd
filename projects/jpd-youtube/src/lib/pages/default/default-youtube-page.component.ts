@@ -1,10 +1,9 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, inject, ViewChild } from '@angular/core';
 import { YouTubePlayer } from '@angular/youtube-player';
 import { ChipFilterComponent } from '../../components/chip-filter/chip-filter.component';
 import { YoutubePlayListComponent } from '../../components/playlist/youtube-play-list.component';
-import { Video } from '../../model';
-import { YoutubeService } from '../../youtube.service';
+import { VideosStore } from '../../store/videos.store';
 
 @Component({
   selector: 'a4w-default-youtube-page',
@@ -18,13 +17,12 @@ import { YoutubeService } from '../../youtube.service';
   templateUrl: './default-youtube-page.component.html',
   styleUrl: './default-youtube-page.component.scss'
 })
-export class DefaultYoutubePageComponent implements OnInit {
+export class DefaultYoutubePageComponent {
 
   @ViewChild(YoutubePlayListComponent)
-  list: YoutubePlayListComponent
+  list: YoutubePlayListComponent;
 
-  @Input({required: true})
-  videos: Video[]
+  readonly store = inject(VideosStore);
 
   tags: string[] = [];
 
@@ -34,12 +32,6 @@ export class DefaultYoutubePageComponent implements OnInit {
     controls: 1,
     autoplay: 1
   };
-
-  constructor(protected service: YoutubeService) { }
-
-  ngOnInit(): void {
-    this.service.setVideos(this.videos);
-  }
 
   onTagsChange($event: string[]): void {
     this.tags = $event;

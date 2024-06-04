@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, inject, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CardVideo1Component } from 'jpd-core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Video } from '../../model';
-import { YoutubeService } from '../../youtube.service';
+import { Video } from '../../store/model';
+import { VideoService } from '../../store/video.service';
+import { VideosStore } from '../../store/videos.store';
 
 @Component({
   selector: 'a4w-youtube-playlist',
@@ -12,36 +13,8 @@ import { YoutubeService } from '../../youtube.service';
   imports: [CommonModule, CardVideo1Component],
   templateUrl: './youtube-play-list.component.html',
   styleUrl: './youtube-play-list.component.scss',
-  // animations: [
-  //   trigger('flyIn', [
-  //     transition('* => *', [
-  //       query(':enter', [
-  //         style({
-  //           transform: 'translateX(20px) translateY(20px) rotateZ(20deg)',
-  //           opacity: 0,
-  //         }),
-  //         stagger(100, [
-  //           animate(
-  //             '200ms',
-  //             style({
-  //               transform: 'none',
-  //               opacity: 1,
-  //             })
-  //           ),
-  //         ]),
-  //       ], {
-  //         optional: true
-  //       }),
-  //       query(':leave', [
-  //         animate(200, style({
-  //           opacity: 0
-  //         }))
-  //       ], {optional: true})
-  //     ]),
-  //   ]),
-  // ],
 })
-export class YoutubePlayListComponent implements OnInit, OnChanges {
+export class YoutubePlayListComponent implements OnChanges {
 
   @Input()
   tags: string[] = [];
@@ -49,12 +22,8 @@ export class YoutubePlayListComponent implements OnInit, OnChanges {
   videos$: Observable<Video[]> = new Observable<Video[]>();
   filteredVideos$: Observable<Video[]> = new Observable<Video[]>();
 
-  constructor(private youtubeService: YoutubeService) { }
-
-  ngOnInit(): void {
-    this.videos$ = this.youtubeService.videos$;
-    this.filteredVideos$ = this.videos$ || new Observable<Video[]>();
-  }
+  readonly store = inject(VideosStore);
+  readonly service = inject(VideoService);
 
   ngOnChanges(changes: SimpleChanges): void {
     this.showVideosByTags(changes['tags'].currentValue);
@@ -78,6 +47,10 @@ export class YoutubePlayListComponent implements OnInit, OnChanges {
   }
 
   onCurrentVideoChange(videoId: string): void {
-    this.youtubeService.setCurrentVideoId(videoId)
+    this.store.setActiveVideoId(videoId);
   }
+
+  // upload() {
+  //   this.service.uploadVideos();
+  // }
 }

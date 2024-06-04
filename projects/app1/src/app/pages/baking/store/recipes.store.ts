@@ -6,7 +6,7 @@ import { tapResponse } from '@ngrx/operators';
 import { patchState, signalStore, type, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import { setAllEntities, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { debounceTime, distinctUntilChanged, pipe, switchMap, tap } from 'rxjs';
+import { debounceTime, distinctUntilChanged, exhaustMap, pipe, tap } from 'rxjs';
 
 type RecipesState = {
   isLoading: boolean;
@@ -35,18 +35,18 @@ export const RecipesStore = signalStore(
   })),
 
   withMethods((store, recipesService = inject(RecipesService)) => ({
-    async getAll(): Promise<void> {
-      patchState(store, {isLoading: true});
-      const recipes = recipesService.getAll();
-      patchState(store, setAllEntities(recipes, {collection: 'recipes'}));
-      patchState(store, {isLoading: false});
-    },
+    // async getAll(): Promise<void> {
+    //   patchState(store, {isLoading: true});
+    //   const recipes = recipesService.getAll();
+    //   patchState(store, setAllEntities(recipes, {collection: 'recipes'}));
+    //   patchState(store, {isLoading: false});
+    // },
     loadAll: rxMethod<string>(
       pipe(
         debounceTime(300),
         distinctUntilChanged(),
         tap(() => patchState(store, {isLoading: true})),
-        switchMap((query) => {
+        exhaustMap(() => {
           return recipesService.loadAll().pipe(
             tapResponse({
               next: (recipes) => patchState(store, setAllEntities(recipes, {collection: 'recipes'})),
@@ -66,8 +66,11 @@ export const RecipesStore = signalStore(
     },
   })),
   withHooks({
-    onInit({getAll}): void {
-      getAll()
+    // onInit({getAll}): void {
+    //   void getAll();
+    // }
+    onInit({loadAll}): void {
+      void loadAll('recipes');
     }
   })
 );

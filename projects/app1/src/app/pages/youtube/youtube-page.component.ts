@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { DefaultYoutubePageComponent, Video } from 'jpd-youtube';
-import videos from '../../../assets/json/youtube-songs.json'
+import { DefaultYoutubePageComponent } from 'jpd-youtube';
 
 @Component({
   selector: 'app-youtube-page',
@@ -12,7 +11,5 @@ import videos from '../../../assets/json/youtube-songs.json'
   styleUrl: './youtube-page.component.scss',
 })
 export class YoutubePageComponent {
-
-  videos: Video[] = videos;
 
 }

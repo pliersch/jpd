@@ -5,8 +5,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { YoutubePlayerComponent } from '../../components/player/youtube-player.component';
 import { YoutubePlayListComponent } from '../../components/playlist/youtube-play-list.component';
-import { Video } from '../../model';
-import { YoutubeService } from '../../youtube.service';
+import { Video } from '../../store/model';
+import { VideoService } from '../../store/video.service';
 
 @Component({
   selector: 'app-youtube-page',
@@ -21,7 +21,7 @@ export class YoutubeWatchPageComponent /*implements OnInit */ {
 
   constructor(private router: Router,
               private route: ActivatedRoute,
-              private service: YoutubeService) { }
+              private service: VideoService) { }
 
   // ngOnInit(): void {
   //   this.video$ = this.route.paramMap.pipe(
@@ -29,7 +29,7 @@ export class YoutubeWatchPageComponent /*implements OnInit */ {
   // }
 
   playVideo(video: Video): void {
-    void this.router.navigate(['/youtube/watch', {id: video.id}]);
+    void this.router.navigate(['/youtube/watch', {id: video.videoId}]);
   }
 
 }

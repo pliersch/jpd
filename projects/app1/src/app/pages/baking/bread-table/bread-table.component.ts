@@ -24,7 +24,7 @@ export class BreadTableComponent {
     effect(() => {
       // 👇 The effect will be re-executed whenever the state changes.
       const state = getState(this.store);
-      console.log('recipes state changed', state);
+      // console.log('recipes state changed', state);
     });
   }
 }
