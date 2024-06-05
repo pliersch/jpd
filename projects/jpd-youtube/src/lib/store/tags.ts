@@ -1,11 +1,11 @@
-import { TagItem } from './model';
+import { Tag } from './model';
 
-export const TAGS: TagItem[] = [
-  {name: 'Elektro', active: false},
-  {name: 'Seele', active: false},
-  {name: 'Orchester', active: false},
-  {name: 'Düster', active: false},
-  {name: 'Instrumental', active: false},
-  {name: 'Film', active: false},
-  // {name: 'Stimme', active: false},
+export const TAGS: Tag[] = [
+  {id: 1, name: 'Elektro', active: false},
+  {id: 2, name: 'Seele', active: false},
+  {id: 3, name: 'Orchester', active: false},
+  {id: 4, name: 'Düster', active: false},
+  {id: 5, name: 'Instrumental', active: false},
+  {id: 6, name: 'Film', active: false},
+  // {id:1,name: 'Stimme', active: false},
 ];

@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatChip, MatChipListbox } from '@angular/material/chips';
-import { TagItem } from '../../store/model';
-import { TAGS } from '../../store/tags';
+import { Tag } from '../../store/model';
 
 @Component({
   selector: 'a4w-chip-filter',
@@ -13,29 +12,29 @@ import { TAGS } from '../../store/tags';
 })
 export class ChipFilterComponent {
 
-  @Output()
-  tagChangeEvent = new EventEmitter<string[]>();
+  @Input({required: true})
+  tags: Tag[];
 
-  availableTags: TagItem[] = TAGS;
+  @Output()
+  tagChangeEvent = new EventEmitter<Tag[]>();
 
   areActiveTags = false;
 
   deactivateTags(): void {
-    for (const tag of this.availableTags) {
+    for (const tag of this.tags) {
       tag.active = false;
     }
     this.areActiveTags = false;
     this.tagChangeEvent.emit([]);
   }
 
-  toggleTag(tagName: string) {
-    const tagItem = this.availableTags.find(item => item.name === tagName);
+  toggleTag(tagName: string): void {
+    const tagItem = this.tags.find(item => item.name === tagName);
     if (tagItem) {
       tagItem.active = !tagItem.active;
     }
-    const activeTags = this.availableTags.filter(item => item.active);
+    const activeTags = this.tags.filter(item => item.active);
     this.areActiveTags = activeTags.length > 0;
-    const activeTagNames = activeTags.map(a => a.name);
-    this.tagChangeEvent.emit(activeTagNames);
+    this.tagChangeEvent.emit(activeTags);
   }
 }

@@ -7,7 +7,8 @@ export interface Video {
   tags: string[];
 }
 
-export interface TagItem {
+export interface Tag {
+  id: number;
   name: string;
   active: boolean;
 }

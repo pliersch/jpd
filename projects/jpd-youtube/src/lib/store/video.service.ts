@@ -8,7 +8,7 @@ import { Video } from './model';
 export class VideoService {
 
   private readonly API_URL: string = `${inject(ENV_TOKEN).apiUrl}/videos`;
-  readonly http = inject(HttpClient);
+  private readonly http = inject(HttpClient);
 
   getAll(): Observable<Video[]> {
     return this.http.get<Video[]>(this.API_URL);

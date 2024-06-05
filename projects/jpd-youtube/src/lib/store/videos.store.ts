@@ -6,19 +6,20 @@ import { patchState, signalStore, type, withComputed, withHooks, withMethods, wi
 import { setAllEntities, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { debounceTime, distinctUntilChanged, pipe, switchMap, tap } from 'rxjs';
-import { Video } from './model';
+import { Tag, Video } from './model';
+import { TAGS } from './tags';
 import { VideoService } from './video.service';
 
 type VideosState = {
   isLoading: boolean;
   activeVideoId: string | undefined;
-  filter: { query: string; order: 'asc' | 'desc' };
+  activeTags: Tag[];
 };
 
 const initialState: VideosState = {
   isLoading: false,
   activeVideoId: undefined,
-  filter: {query: '', order: 'asc'},
+  activeTags: [],
 };
 
 export const VideosStore = signalStore(
@@ -27,8 +28,10 @@ export const VideosStore = signalStore(
   withDevtools('videos'),
   withState(initialState),
   withEntities({entity: type<Video>(), collection: 'videos'}),
-  withComputed(({videosEntities, filter}) => ({
+  withEntities({entity: type<Tag>(), collection: 'tags'}),
+  withComputed(({videosEntities, activeTags}) => ({
     videosCount: computed(() => videosEntities().length),
+    filteredVideos: computed(() => filterByTags(videosEntities(), activeTags())),
     sortedVideos: computed(() => {
       // const direction = filter.order() === 'asc' ? 1 : -1;
       return videosEntities().sort(sortById);
@@ -52,16 +55,21 @@ export const VideosStore = signalStore(
         })
       )
     ),
+    loadTags(): void {
+      const tags: Tag[] = TAGS;
+      patchState(store, setAllEntities(tags, {collection: 'tags'}))
+    },
     setActiveVideoId(id: string): void {
       patchState(store, {activeVideoId: id})
     },
-    updateOrder(order: 'asc' | 'desc'): void {
-      patchState(store, (state) => ({filter: {...state.filter, order}}));
+    setActiveTags(tags: Tag[]): void {
+      patchState(store, {activeTags: tags})
     },
   })),
   withHooks({
-    onInit({loadAll}): void {
-      loadAll('videos')
+    onInit({loadAll, loadTags}): void {
+      loadAll('videos');
+      loadTags()
     }
   })
 );
@@ -75,4 +83,15 @@ export function sortById(p1: Video, p2: Video): number {
   } else {
     return 0;
   }
+}
+
+export function filterByTags(videos: Video[], tags: Tag[]): Video[] {
+  const result = [];
+  for (const video of videos) {
+    const containsAllTags = tags.every(tag => video.tags.find(tag2 => tag.name === tag2));
+    if (containsAllTags) {
+      result.push(video);
+    }
+  }
+  return result;
 }

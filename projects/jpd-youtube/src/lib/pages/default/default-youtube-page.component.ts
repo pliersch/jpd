@@ -3,6 +3,7 @@ import { Component, inject, ViewChild } from '@angular/core';
 import { YouTubePlayer } from '@angular/youtube-player';
 import { ChipFilterComponent } from '../../components/chip-filter/chip-filter.component';
 import { YoutubePlayListComponent } from '../../components/playlist/youtube-play-list.component';
+import { Tag } from '../../store/model';
 import { VideosStore } from '../../store/videos.store';
 
 @Component({
@@ -24,16 +25,16 @@ export class DefaultYoutubePageComponent {
 
   readonly store = inject(VideosStore);
 
-  tags: string[] = [];
-
-  id: string;
-
   playerConfig = {
     controls: 1,
-    autoplay: 1
+    autoplay: 0
   };
 
-  onTagsChange($event: string[]): void {
+  tags: Tag[] = [];
+  id: string;
+
+  onTagsChange($event: Tag[]): void {
+    this.store.setActiveTags($event);
     this.tags = $event;
   }
 }

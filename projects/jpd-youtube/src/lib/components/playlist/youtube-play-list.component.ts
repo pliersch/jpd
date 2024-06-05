@@ -1,11 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CardVideo1Component } from 'jpd-core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { Video } from '../../store/model';
-import { VideoService } from '../../store/video.service';
-import { VideosStore } from '../../store/videos.store';
+import { Tag, Video } from '../../store/model';
 
 @Component({
   selector: 'a4w-youtube-playlist',
@@ -14,40 +10,20 @@ import { VideosStore } from '../../store/videos.store';
   templateUrl: './youtube-play-list.component.html',
   styleUrl: './youtube-play-list.component.scss',
 })
-export class YoutubePlayListComponent implements OnChanges {
+export class YoutubePlayListComponent {
 
   @Input()
-  tags: string[] = [];
+  videos: Video[] | undefined;
 
-  videos$: Observable<Video[]> = new Observable<Video[]>();
-  filteredVideos$: Observable<Video[]> = new Observable<Video[]>();
+  @Input()
+  tags: Tag[] = [];
 
-  readonly store = inject(VideosStore);
-  readonly service = inject(VideoService);
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.showVideosByTags(changes['tags'].currentValue);
-  }
-
-  private showVideosByTags(tags: string[]): void {
-    this.filteredVideos$ = this.videos$.pipe(
-      map(videos => this.filterByTags(videos, tags))
-    );
-  }
-
-  private filterByTags(videos: Video[], tags: string[]): Video[] {
-    const result = [];
-    for (const video of videos) {
-      const containsAllTags = tags.every(tag => video.tags.find(tag2 => tag === tag2));
-      if (containsAllTags) {
-        result.push(video);
-      }
-    }
-    return result;
-  }
+  @Output()
+  videoIdChangeEvent: EventEmitter<string> = new EventEmitter();
 
   onCurrentVideoChange(videoId: string): void {
-    this.store.setActiveVideoId(videoId);
+    this.videoIdChangeEvent.emit(videoId);
+    // this.store.setActiveVideoId(videoId);
   }
 
   // upload() {
