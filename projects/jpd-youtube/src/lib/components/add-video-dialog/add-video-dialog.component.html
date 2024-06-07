@@ -1,0 +1,56 @@
+<h1 mat-dialog-title>Add Video</h1>
+<mat-dialog-content>
+  <form [formGroup]="form" novalidate (ngSubmit)="onSubmit()">
+    <div class="grid grid-cols-2 gap-4">
+      <div class="col-span-1">
+        <mat-form-field class="w-full" appearance="fill">
+          <mat-label>Artist</mat-label>
+          <input matInput formControlName="artist">
+          <mat-error *ngIf="form.controls['artist'].hasError('required')">
+            Artist ist <strong>erforderlich</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-span-1">
+        <mat-form-field class="w-full" appearance="fill">
+          <mat-label>Titel</mat-label>
+          <input matInput formControlName="title">
+          <mat-error *ngIf="form.controls['title'].hasError('required')">
+            Title ist <strong>erforderlich</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-span-1">
+        <mat-form-field class="w-full" appearance="fill">
+          <mat-label>Video ID</mat-label>
+          <input matInput formControlName="videoId">
+          <mat-error *ngIf="form.controls['videoId'].hasError('required')">
+            Video ID ist <strong>erforderlich</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-span-1">
+        <mat-form-field class="w-full" appearance="fill">
+          <mat-label>Poster-Url</mat-label>
+          <input matInput formControlName="posterUrl">
+          <mat-error *ngIf="form.controls['posterUrl'].hasError('required')">
+            Poster-Url ist <strong>erforderlich</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-span-2">
+        <mat-chip-listbox multiple aria-label="Tags">
+          @for (tag of tags; track tag) {
+            <mat-chip-option color="primary">{{ tag.name }}</mat-chip-option>
+          }
+        </mat-chip-listbox>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <span class="spacer"></span>
+  <button mat-raised-button [disabled]="form.disabled" (click)="onCancel()" type="button">Abbrechen</button>
+  <button mat-raised-button color="primary" [disabled]="!valid" type="button" (click)="onSubmit()">Ok</button>
+</mat-dialog-actions>

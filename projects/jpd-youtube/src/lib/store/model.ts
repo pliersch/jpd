@@ -20,3 +20,13 @@ export class CreateVideoDto {
   readonly posterUrl: string;
   readonly tags: string[];
 }
+
+export function getVideoMock(): CreateVideoDto {
+  return {
+    artist: 'fdfd',
+    tags: ['Foo'],
+    posterUrl: 'dgdhgd',
+    videoId: 'Ddfggdf',
+    title: 'Foo'
+  }
+}

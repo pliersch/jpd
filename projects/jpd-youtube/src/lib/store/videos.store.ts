@@ -3,10 +3,10 @@ import { computed, inject } from '@angular/core';
 
 import { tapResponse } from '@ngrx/operators';
 import { patchState, signalStore, type, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
-import { setAllEntities, withEntities } from '@ngrx/signals/entities';
+import { addEntity, setAllEntities, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { debounceTime, distinctUntilChanged, pipe, switchMap, tap } from 'rxjs';
-import { Tag, Video } from './model';
+import { concatMap, debounceTime, distinctUntilChanged, pipe, switchMap, tap } from 'rxjs';
+import { CreateVideoDto, Tag, Video } from './model';
 import { TAGS } from './tags';
 import { VideoService } from './video.service';
 
@@ -44,7 +44,7 @@ export const VideosStore = signalStore(
         debounceTime(300),
         distinctUntilChanged(),
         tap(() => patchState(store, {isLoading: true})),
-        switchMap((query) => {
+        switchMap(() => {
           return videosService.getAll().pipe(
             tapResponse({
               next: (videos) => patchState(store, setAllEntities(videos, {collection: 'videos'})),
@@ -65,11 +65,29 @@ export const VideosStore = signalStore(
     setActiveTags(tags: Tag[]): void {
       patchState(store, {activeTags: tags})
     },
+    addVideo: rxMethod<CreateVideoDto>(
+      pipe(
+        debounceTime(300),
+        distinctUntilChanged(),
+        // tap(() => patchState(store, {isLoading: true})),
+        concatMap((dto) => {
+          return videosService.create(dto).pipe(
+            tap(foo => console.log('store', foo)),
+            tapResponse({
+              next: (video) => patchState(store, addEntity(video, {collection: 'videos'})),
+              error: console.error,
+              finalize: () => console.log('FUCCCKCKCCKCK'),
+              // finalize: () => patchState(store, {isLoading: false}),
+            })
+          );
+        })
+      )
+    )
   })),
   withHooks({
     onInit({loadAll, loadTags}): void {
       loadAll('videos');
-      loadTags()
+      loadTags();
     }
   })
 );

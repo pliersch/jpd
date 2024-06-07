@@ -1,6 +1,6 @@
 .grid {
   grid-template-areas:
-            "filter player foo"
+            "filter player info"
             "list list list";
   grid-template-columns: auto 640px auto;
   grid-template-rows: 390px auto;
@@ -13,8 +13,8 @@
     grid-area: player;
   }
 
-  .grid-foo {
-    grid-area: foo;
+  .grid-info {
+    grid-area: info;
   }
 
   .grid-list {

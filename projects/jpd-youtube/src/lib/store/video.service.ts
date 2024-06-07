@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { ENV_TOKEN } from 'jpd-core';
 import { Observable } from 'rxjs';
-import { Video } from './model';
+import { CreateVideoDto, Video } from './model';
 
 @Injectable({providedIn: 'root'})
 export class VideoService {
@@ -12,6 +12,10 @@ export class VideoService {
 
   getAll(): Observable<Video[]> {
     return this.http.get<Video[]>(this.API_URL);
+  }
+
+  create(dto: CreateVideoDto): Observable<Video> {
+    return this.http.post<Video>(this.API_URL, dto);
   }
 
 }
