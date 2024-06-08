@@ -42,11 +42,7 @@
   padding: 3em;
 }
 
-.card {
-  flex-direction: column;
-}
-
-.blur {
+._blur {
   backdrop-filter: saturate(200%) blur(10px);
   background-color: hsla(0, 0%, 100%, .7) !important;
 }
