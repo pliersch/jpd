@@ -2,7 +2,7 @@
   <a4w-parallax-1>
     <div class="flex flex-col">
       @if (!edit) {
-        <app-doc-info (edit)="onEdit($event)"/>
+        <app-doc-info (editChange)="onEdit()"/>
       } @else {
         <app-doc-info-editor (saveChanges)="onSave()"/>
       }

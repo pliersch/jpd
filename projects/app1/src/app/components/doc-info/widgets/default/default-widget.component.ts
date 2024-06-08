@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
-import { DocInfoItemModel } from '@app1/components/doc-info/doc-info.model';
+import { DocInfoItem } from '@app1/components/doc-info/store/doc-widget.model';
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
@@ -14,7 +14,7 @@ export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 export class DefaultWidgetComponent implements OnInit {
 
   @Input({required: true})
-  item: DocInfoItemModel;
+  item: DocInfoItem;
 
   @Input(/*{required: true}*/)
   size: Size;
@@ -41,6 +41,6 @@ export class DefaultWidgetComponent implements OnInit {
         this.svgSize = 100;
         break;
     }
-    this.imageUrl = 'assets/svg/icons/' + this.item.svgIcon + '.svg';
+    this.imageUrl = 'assets/svg/icons/' + this.item.svg + '.svg';
   }
 }

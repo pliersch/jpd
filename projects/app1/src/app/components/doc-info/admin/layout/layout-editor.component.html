@@ -2,9 +2,9 @@
   <div>
     <h2 class="text-3xl">Primär</h2>
     <div cdkDropList cdkDropListOrientation="horizontal"
-         [cdkDropListData]="top" class="items-list"
+         [cdkDropListData]="high" class="items-list"
          (cdkDropListDropped)="drop($event)">
-      @for (item of top; track item) {
+      @for (item of high; track item) {
         <div class="item accent-bg-opposite" cdkDrag>{{ item.topic }}</div>
       }
     </div>
@@ -13,9 +13,9 @@
   <div>
     <h2 class="text-3xl">Sekundär</h2>
     <div cdkDropList cdkDropListOrientation="horizontal"
-         [cdkDropListData]="bottom" class="items-list"
+         [cdkDropListData]="low" class="items-list"
          (cdkDropListDropped)="drop($event)">
-      @for (item of bottom; track item) {
+      @for (item of low; track item) {
         <div class="item accent-bg-opposite" cdkDrag>{{ item.topic }}</div>
       }
     </div>
@@ -24,9 +24,9 @@
   <div>
     <h2 class="text-3xl">verfügbar</h2>
     <div cdkDropList cdkDropListOrientation="horizontal"
-         [cdkDropListData]="available" class="items-list"
+         [cdkDropListData]="none" class="items-list"
          (cdkDropListDropped)="drop($event)">
-      @for (item of available; track item) {
+      @for (item of none; track item) {
         <div class="item accent-bg-opposite" cdkDrag>{{ item.topic }}</div>
       }
     </div>

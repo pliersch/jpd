@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { DocInfoEditorComponent } from '@app1/components/doc-info/admin/doc-info-editor.component';
-import { DocInfoComponent } from '@app1/components/doc-info/doc-info.component';
+import { DocWidgetEditorComponent } from '@app1/components/doc-info/admin/doc-widget-editor.component';
+import { DocWidgetComponent } from '@app1/components/doc-info/doc-widget.component';
 import { LandingSplashComponent } from '@app1/pages/home/landing-splash/landing-splash.component';
 import {
   AbstractDefaultPageComponent,
@@ -47,8 +47,8 @@ import {
     LinkFooterDecoratorComponent,
     Banner2Component,
     Banner1Component,
-    DocInfoComponent,
-    DocInfoEditorComponent,
+    DocWidgetComponent,
+    DocWidgetEditorComponent,
     LgContainerComponent,
   ],
   templateUrl: './home-page.component.html',

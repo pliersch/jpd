@@ -6,9 +6,10 @@ import {
   moveItemInArray,
   transferArrayItem
 } from '@angular/cdk/drag-drop';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { DocInfoItemModel, DocInfoModel } from '@app1/components/doc-info/doc-info.model';
+import { DocInfoItem } from '@app1/components/doc-info/store/doc-widget.model';
+import { DocWidgetStore } from '@app1/components/doc-info/store/doc-widget.store';
 
 @Component({
   selector: 'app-doc-layout-editor',
@@ -19,13 +20,15 @@ import { DocInfoItemModel, DocInfoModel } from '@app1/components/doc-info/doc-in
 })
 export class LayoutEditorComponent implements OnInit {
 
-  top: DocInfoItemModel[];
-  bottom: DocInfoItemModel[];
-  available: DocInfoItemModel[];
+  high: DocInfoItem[];
+  low: DocInfoItem[];
+  none: DocInfoItem[];
 
-  constructor(private model: DocInfoModel) { }
+  changedWidgets: DocInfoItem[] = [];
 
-  drop(event: CdkDragDrop<DocInfoItemModel[]>): void {
+  readonly store = inject(DocWidgetStore);
+
+  drop(event: CdkDragDrop<DocInfoItem[]>): void {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -40,22 +43,39 @@ export class LayoutEditorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.top = this.model.getHighInfos();
-    this.bottom = this.model.getLowInfos();
-    this.available = this.model.getAvailableInfos();
+    this.high = JSON.parse(JSON.stringify(this.store.getHighWidgets()));
+    this.low = JSON.parse(JSON.stringify(this.store.getLowWidgets()));
+    this.none = JSON.parse(JSON.stringify(this.store.getAvailableWidgets()));
   }
 
   private updateModel(): void {
-    this.top.forEach((item: DocInfoItemModel) => {
-      item.priority = 'high';
-      item.active = true;
+    this.high.forEach((item: DocInfoItem) => {
+      item.visibility = 'high';
     });
-    this.bottom.forEach((item: DocInfoItemModel) => {
-      item.priority = 'low';
-      item.active = true;
+    this.low.forEach((item: DocInfoItem) => {
+      item.visibility = 'low';
     });
-    this.available.forEach((item: DocInfoItemModel) => {item.active = false})
-    const items = this.top.concat(this.bottom).concat(this.available);
-    this.model.setInfos(items);
+    this.none.forEach((item: DocInfoItem) => {
+      item.visibility = 'none';
+    });
+
+    const allWidgets = this.high.concat(this.low).concat(this.none);
+
+    this.changedWidgets = [];
+    this.store.widgetsEntities().forEach(widget => {
+      const current = allWidgets.find(w => w.id === widget.id);
+      if (current!.visibility !== widget.visibility) {
+        this.changedWidgets.push(current!);
+      }
+    });
   }
+
+  saveChanges(): void {
+    if (this.changedWidgets.length > 0) {
+      for (const changedWidget of this.changedWidgets) {
+        this.store.update(changedWidget);
+      }
+    }
+  }
+
 }

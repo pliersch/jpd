@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { DocInfoEditorComponent } from '@app1/components/doc-info/admin/doc-info-editor.component';
-import { DocInfoComponent } from '@app1/components/doc-info/doc-info.component';
+import { DocWidgetEditorComponent } from '@app1/components/doc-info/admin/doc-widget-editor.component';
+import { DocWidgetComponent } from '@app1/components/doc-info/doc-widget.component';
 import { AbstractDefaultPageComponent, FragmentDirective, Parallax1Component, SectionComponent } from 'jpd-core';
 
 @Component({
@@ -12,8 +12,8 @@ import { AbstractDefaultPageComponent, FragmentDirective, Parallax1Component, Se
     Parallax1Component,
     FragmentDirective,
     SectionComponent,
-    DocInfoComponent,
-    DocInfoEditorComponent,
+    DocWidgetComponent,
+    DocWidgetEditorComponent,
   ],
   templateUrl: './doc-page.component.html',
   styleUrls: ['./doc-page.component.scss']
@@ -26,8 +26,8 @@ export class DocPageComponent extends AbstractDefaultPageComponent {
     super();
   }
 
-  onEdit($event: boolean): void {
-    this.edit = $event;
+  onEdit(): void {
+    this.edit = true;
   }
 
   onSave(): void {

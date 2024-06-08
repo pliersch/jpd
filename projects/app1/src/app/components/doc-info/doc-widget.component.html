@@ -1,35 +1,35 @@
 <div class="flex flex-col white">
-  @if (model.getHighInfos().length === 1) {
+  @if (store.getHighWidgets().length === 1) {
     <div>
       <div class="flex flex-col">
-        @for (item of model.getHighInfos(); track item) {
+        @for (item of store.getHighWidgets(); track item) {
           <app-doc-info-default-widget [item]="item" size="xl"/>
         }
       </div>
       <div class="grid grid-flow-col auto-rows-max">
-        @for (item of model.getLowInfos(); track item) {
+        @for (item of store.getLowWidgets(); track item) {
           <app-doc-info-default-widget [item]="item" size="md"/>
         }
       </div>
     </div>
-  } @else if (model.getHighInfos().length === 2) {
+  } @else if (store.getHighWidgets().length === 2) {
     <div>
-      @for (item of model.getHighInfos(); track item) {
+      @for (item of store.getHighWidgets(); track item) {
         <app-doc-info-default-widget [item]="item" size="lg"/>
       }
       <div class="grid grid-flow-col auto-rows-max">
-        @for (item of model.getLowInfos(); track item) {
+        @for (item of store.getLowWidgets(); track item) {
           <app-doc-info-default-widget [item]="item" size="md"/>
         }
       </div>
     </div>
-  } @else if (model.getHighInfos().length === 3) {
+  } @else if (store.getHighWidgets().length === 3) {
     <div>
-      @for (item of model.getHighInfos(); track item) {
+      @for (item of store.getHighWidgets(); track item) {
         <app-doc-info-default-widget [item]="item" size="lg"/>
       }
       <div class="grid grid-flow-col auto-rows-max">
-        @for (item of model.getLowInfos(); track item) {
+        @for (item of store.getLowWidgets(); track item) {
           <app-doc-info-default-widget [item]="item" size="md"/>
         }
       </div>

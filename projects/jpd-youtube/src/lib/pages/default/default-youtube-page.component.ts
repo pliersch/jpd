@@ -8,7 +8,6 @@ import { AddVideoDialogComponent } from '../../components/add-video-dialog/add-v
 import { ChipFilterComponent } from '../../components/chip-filter/chip-filter.component';
 import { YoutubePlayListComponent } from '../../components/playlist/youtube-play-list.component';
 import { CreateVideoDto, Tag } from '../../store/model';
-import { VideoService } from '../../store/video.service';
 import { VideosStore } from '../../store/videos.store';
 
 @Component({
@@ -31,7 +30,7 @@ export class DefaultYoutubePageComponent {
   list: YoutubePlayListComponent;
 
   readonly store = inject(VideosStore);
-  readonly service = inject(VideoService);
+  // readonly service = inject(VideoService);
   readonly dialog = inject(MatDialog);
 
   playerConfig = {
