@@ -297,6 +297,13 @@
     "@types/google.maps" "^3.54.10"
     tslib "^2.3.0"
 
+"@angular/material-date-fns-adapter@^17.2.0":
+  version "17.3.10"
+  resolved "https://registry.yarnpkg.com/@angular/material-date-fns-adapter/-/material-date-fns-adapter-17.3.10.tgz#ccf8c34f164bb2c5423c4a1de219f1dce1b11f5f"
+  integrity sha512-Q4QAPGImZTjKW9ZhLSTkBeQX21I0dtak3JbexYx4CN/pHxKRpen6KaVAEqiORqq6vNUP2Kwb7cZznQyj6L7oQw==
+  dependencies:
+    tslib "^2.3.0"
+
 "@angular/material@17.2.2":
   version "17.2.2"
   resolved "https://registry.npmjs.org/@angular/material/-/material-17.2.2.tgz"

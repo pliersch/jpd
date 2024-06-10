@@ -4,6 +4,8 @@ import { MatIcon } from '@angular/material/icon';
 import { DocWidgetService } from '@app1/components/doc-info/store/doc-widget.service';
 import { DocWidgetStore } from '@app1/components/doc-info/store/doc-widget.store';
 import { DefaultWidgetComponent } from '@app1/components/doc-info/widgets/default/default-widget.component';
+import { formatDistance } from 'date-fns';
+import { de } from 'date-fns/locale';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -25,12 +27,19 @@ export class DocWidgetComponent implements OnInit, OnDestroy {
   readonly service = inject(DocWidgetService);
   private subscription: Subscription;
 
+  lastUpdate = '';
+
   enableEditMode(): void {
     this.editChange.emit();
   }
 
   ngOnInit(): void {
-    // createWidgets().forEach(w => this.service.create(w).subscribe())
+    const time = formatDistance(
+      new Date(1986, 3, 4, 11, 32, 0),
+      new Date(1986, 3, 4, 10, 32, 0),
+      {locale: de}
+    );
+    this.lastUpdate = `Letzte Änderung: vor ${time}`;
 
     this.subscription = this.service.items$
       .subscribe(item => {

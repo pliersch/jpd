@@ -7,6 +7,7 @@ export interface DocInfoItem {
   topic: Topic;
   message: string;
   svg: string;
+  created: string;
   visibility: Visibility;
 }
 
@@ -38,18 +39,18 @@ export interface UpdateDocInfoItemDto {
   visibility?: number;
 }
 
-export function createWidgets(): CreateDocInfoItem[] {
-  return [
-    {
-      topic: 'Öffnung',
-      message: 'Öffnet in 50 Minuten (15:00 Uhr)',
-      visibility: 'high',
-      svg: 'schedule',
-    },
-    {topic: 'Wartedauer', message: 'Lange Wartedauer', visibility: 'high', svg: 'traffic'},
-    {topic: 'Warnung', message: 'Maskenpflicht', visibility: 'low', svg: 'medical_mask'},
-    {topic: 'Service', message: 'Grippe-Impfung möglich', visibility: 'low', svg: 'vaccines'},
-    {topic: 'Info', message: 'demnächst Urlaub', visibility: 'low', svg: 'pan_tool'},
-    {topic: 'Urlaub', message: 'Urlaub', visibility: 'none', svg: 'beach'},
-  ];
-}
+// export function createWidgets(): CreateDocInfoItem[] {
+//   return [
+//     {
+//       topic: 'Öffnung',
+//       message: 'Öffnet in 50 Minuten (15:00 Uhr)',
+//       visibility: 'high',
+//       svg: 'schedule',
+//     },
+//     {topic: 'Wartedauer', message: 'Lange Wartedauer', visibility: 'high', svg: 'traffic'},
+//     {topic: 'Warnung', message: 'Maskenpflicht', visibility: 'low', svg: 'medical_mask'},
+//     {topic: 'Service', message: 'Grippe-Impfung möglich', visibility: 'low', svg: 'vaccines'},
+//     {topic: 'Info', message: 'demnächst Urlaub', visibility: 'low', svg: 'pan_tool'},
+//     {topic: 'Urlaub', message: 'Urlaub', visibility: 'none', svg: 'beach'},
+//   ];
+// }

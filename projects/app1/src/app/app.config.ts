@@ -1,8 +1,10 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { Platform } from '@angular/cdk/platform';
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { APP_INITIALIZER, ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { APP_INITIALIZER, ApplicationConfig, importProvidersFrom, LOCALE_ID } from '@angular/core';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { DateFnsAdapter } from '@angular/material-date-fns-adapter';
+import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconRegistry } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -35,6 +37,8 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(MatSnackBarModule, MatDialogModule, GoogleMapsModule),
     provideAnimations(),
     provideHttpClient(withFetch(), /*withInterceptorsFromDi()*/),
+    {provide: LOCALE_ID, useValue: 'de'},
+    {provide: DateAdapter, useClass: DateFnsAdapter, deps: [MAT_DATE_LOCALE]},
     provideRouter(ROUTES,
       // withInMemoryScrolling({anchorScrolling: 'enabled', scrollPositionRestoration: 'top'})
     ),
