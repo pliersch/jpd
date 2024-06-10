@@ -1,4 +1,6 @@
-import { Component, EventEmitter, inject, OnDestroy, OnInit, Output } from '@angular/core';
+import { DatePipe } from '@angular/common';
+import { Component, EventEmitter, inject, OnDestroy, OnInit, Output, signal } from '@angular/core';
+import { toObservable } from '@angular/core/rxjs-interop';
 import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { DocWidgetService } from '@app1/components/doc-info/store/doc-widget.service';
@@ -14,7 +16,8 @@ import { Subscription } from 'rxjs';
   imports: [
     MatIcon,
     DefaultWidgetComponent,
-    MatButton
+    MatButton,
+    DatePipe
   ],
   templateUrl: './doc-widget.component.html',
   styleUrl: './doc-widget.component.scss'
@@ -24,22 +27,23 @@ export class DocWidgetComponent implements OnInit, OnDestroy {
   @Output() editChange: EventEmitter<void> = new EventEmitter();
 
   readonly store = inject(DocWidgetStore);
-  readonly service = inject(DocWidgetService);
+  private service = inject(DocWidgetService);
   private subscription: Subscription;
 
-  lastUpdate = '';
+  lastUpdate = signal('');
+  storeDate$ = toObservable(this.store.getLastChange)
 
   enableEditMode(): void {
     this.editChange.emit();
   }
 
   ngOnInit(): void {
-    const time = formatDistance(
-      new Date(1986, 3, 4, 11, 32, 0),
-      new Date(1986, 3, 4, 10, 32, 0),
-      {locale: de}
-    );
-    this.lastUpdate = `Letzte Änderung: vor ${time}`;
+    this.storeDate$.subscribe(date => {
+      if (date) {
+        const time = formatDistance(date, new Date(), {locale: de});
+        this.lastUpdate.set(`Letzte Änderung: vor ${time}`);
+      }
+    })
 
     this.subscription = this.service.items$
       .subscribe(item => {

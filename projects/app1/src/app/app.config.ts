@@ -1,6 +1,8 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { Platform } from '@angular/cdk/platform';
+import { registerLocaleData } from '@angular/common';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import localeDe from '@angular/common/locales/de';
 import { APP_INITIALIZER, ApplicationConfig, importProvidersFrom, LOCALE_ID } from '@angular/core';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { DateFnsAdapter } from '@angular/material-date-fns-adapter';
@@ -30,6 +32,8 @@ import {
 } from 'jpd-core';
 import { environment } from '../environments/environment';
 import { ROUTES } from './app.routes';
+
+registerLocaleData(localeDe);
 
 export const appConfig: ApplicationConfig = {
   providers: [
