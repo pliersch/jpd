@@ -8,7 +8,7 @@ import {
 } from '@angular/cdk/drag-drop';
 import { Component, inject, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { DocInfoItem } from '@app1/components/doc-info/store/doc-widget.model';
+import { DocWidgetItem } from '@app1/components/doc-info/store/doc-widget.model';
 import { DocWidgetStore } from '@app1/components/doc-info/store/doc-widget.store';
 
 @Component({
@@ -20,15 +20,15 @@ import { DocWidgetStore } from '@app1/components/doc-info/store/doc-widget.store
 })
 export class LayoutEditorComponent implements OnInit {
 
-  high: DocInfoItem[];
-  low: DocInfoItem[];
-  none: DocInfoItem[];
+  high: DocWidgetItem[];
+  low: DocWidgetItem[];
+  none: DocWidgetItem[];
 
-  changedWidgets: DocInfoItem[] = [];
+  changedWidgets: DocWidgetItem[] = [];
 
   readonly store = inject(DocWidgetStore);
 
-  drop(event: CdkDragDrop<DocInfoItem[]>): void {
+  drop(event: CdkDragDrop<DocWidgetItem[]>): void {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -49,13 +49,13 @@ export class LayoutEditorComponent implements OnInit {
   }
 
   private updateModel(): void {
-    this.high.forEach((item: DocInfoItem) => {
+    this.high.forEach((item: DocWidgetItem) => {
       item.visibility = 'high';
     });
-    this.low.forEach((item: DocInfoItem) => {
+    this.low.forEach((item: DocWidgetItem) => {
       item.visibility = 'low';
     });
-    this.none.forEach((item: DocInfoItem) => {
+    this.none.forEach((item: DocWidgetItem) => {
       item.visibility = 'none';
     });
 

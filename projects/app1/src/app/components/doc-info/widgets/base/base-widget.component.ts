@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
-import { DocInfoItem } from '@app1/components/doc-info/store/doc-widget.model';
+import { DocWidgetItem } from '@app1/components/doc-info/store/doc-widget.model';
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
@@ -8,13 +8,13 @@ export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   selector: 'app-doc-info-default-widget',
   standalone: true,
   imports: [MatIcon],
-  templateUrl: './default-widget.component.html',
-  styleUrl: './default-widget.component.scss'
+  templateUrl: './base-widget.component.html',
+  styleUrl: './base-widget.component.scss'
 })
-export class DefaultWidgetComponent implements OnInit {
+export class BaseWidgetComponent implements OnInit {
 
   @Input({required: true})
-  item: DocInfoItem;
+  item: DocWidgetItem;
 
   @Input(/*{required: true}*/)
   size: Size;

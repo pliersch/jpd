@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { ENV_TOKEN } from 'jpd-core';
 import { Observable, Subject } from 'rxjs';
-import { CreateDocInfoItem, DocInfoItem, UpdateDocInfoItem } from './doc-widget.model';
+import { CreateDocWidgetItem, DocWidgetItem, UpdateDocWidgetItem } from './doc-widget.model';
 
 @Injectable({providedIn: 'root'})
 export class DocWidgetService {
@@ -13,7 +13,7 @@ export class DocWidgetService {
 
   private readonly http = inject(HttpClient);
 
-  items$ = new Subject<DocInfoItem>();
+  items$ = new Subject<DocWidgetItem>();
 
   constructor(private _platform: Platform) {
     if (this._platform.isBrowser) {
@@ -28,16 +28,16 @@ export class DocWidgetService {
     }
   }
 
-  getAll(): Observable<DocInfoItem[]> {
-    return this.http.get<DocInfoItem[]>(this.API_URL);
+  getAll(): Observable<DocWidgetItem[]> {
+    return this.http.get<DocWidgetItem[]>(this.API_URL);
   }
 
-  create(item: CreateDocInfoItem): Observable<DocInfoItem> {
-    return this.http.post<DocInfoItem>(this.API_URL, item);
+  create(item: CreateDocWidgetItem): Observable<DocWidgetItem> {
+    return this.http.post<DocWidgetItem>(this.API_URL, item);
   }
 
-  update(id: string, dto: UpdateDocInfoItem): Observable<DocInfoItem> {
-    return this.http.patch<DocInfoItem>(`${this.API_URL}/${id}`, dto);
+  update(id: string, dto: UpdateDocWidgetItem): Observable<DocWidgetItem> {
+    return this.http.patch<DocWidgetItem>(`${this.API_URL}/${id}`, dto);
   }
 
 }

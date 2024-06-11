@@ -1,6 +1,6 @@
 import { withCallState, withDevtools } from '@angular-architects/ngrx-toolkit';
 import { computed, inject } from '@angular/core';
-import { DocInfoItem } from '@app1/components/doc-info/store/doc-widget.model';
+import { DocWidgetItem } from '@app1/components/doc-info/store/doc-widget.model';
 import { DocWidgetService } from '@app1/components/doc-info/store/doc-widget.service';
 import { tapResponse } from '@ngrx/operators';
 import { patchState, signalStore, type, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
@@ -21,12 +21,12 @@ export const DocWidgetStore = signalStore(
   withCallState(),
   withDevtools('doc-widget'),
   withState(initialState),
-  withEntities({entity: type<DocInfoItem>(), collection: 'widgets'}),
+  withEntities({entity: type<DocWidgetItem>(), collection: 'widgets'}),
   withComputed(({widgetsEntities}) => ({
     getAvailableWidgets: computed(() => widgetsEntities().filter(info => info.visibility === 'none')),
     getHighWidgets: computed(() => widgetsEntities().filter(info => info.visibility === 'high')),
     getLowWidgets: computed(() => widgetsEntities().filter(info => info.visibility === 'low')),
-    getLastChange: computed(() => {
+    getLastUpdate: computed(() => {
       return widgetsEntities().length > 0 ? parseISO(widgetsEntities().sort(sortByDate)[0]?.created) : undefined;
     }),
   })),
@@ -41,13 +41,13 @@ export const DocWidgetStore = signalStore(
               tapResponse({
                 next: (widgets) => patchState(store, setAllEntities(widgets, {collection: 'widgets'})),
                 error: console.error,
-                // finalize: () => patchState(store, {isLoading: false}),
+                finalize: () => computeWidgets(store.widgetsEntities()),
               })
             );
           })
         )
       ),
-      update: rxMethod<DocInfoItem>(
+      update: rxMethod<DocWidgetItem>(
         pipe(
           debounceTime(300),
           distinctUntilChanged(),
@@ -61,7 +61,7 @@ export const DocWidgetStore = signalStore(
           })
         )
       ),
-      updateBySse(widget: DocInfoItem): void {
+      updateBySse(widget: DocWidgetItem): void {
         patchState(store, setEntity(widget, {collection: 'widgets'}))
       }
     }),
@@ -73,7 +73,7 @@ export const DocWidgetStore = signalStore(
   })
 );
 
-export function sortByDate(w1: DocInfoItem, w2: DocInfoItem): number {
+export function sortByDate(w1: DocWidgetItem, w2: DocWidgetItem): number {
   const compare = Number(w1.created.at(0)) - Number(w2.created.at(0));
   if (compare > 0) {
     return 1;
@@ -82,4 +82,9 @@ export function sortByDate(w1: DocInfoItem, w2: DocInfoItem): number {
   } else {
     return 0;
   }
+}
+
+export function computeWidgets(w: DocWidgetItem[]): void {
+  console.log('computeWidgets computeWidgets: ', w)
+
 }

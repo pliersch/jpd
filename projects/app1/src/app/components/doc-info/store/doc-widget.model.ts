@@ -2,7 +2,7 @@ export type Visibility = 'low' | 'high' | 'none';
 
 export type Topic = 'Öffnung' | 'Wartedauer' | 'Warnung' | 'Service' | 'Info' | 'Urlaub';
 
-export interface DocInfoItem {
+export interface DocWidgetItem {
   id: string;
   topic: Topic;
   message: string;
@@ -11,28 +11,28 @@ export interface DocInfoItem {
   visibility: Visibility;
 }
 
-export interface CreateDocInfoItem {
+export interface CreateDocWidgetItem {
   topic: Topic;
   message: string;
   svg: string;
   visibility: Visibility;
 }
 
-export interface UpdateDocInfoItem {
+export interface UpdateDocWidgetItem {
   // topic: Topic;
   // message: string;
   // svg?: string;
   visibility?: Visibility;
 }
 
-export interface CreateDocInfoItemDto {
+export interface CreateDocWidgetItemDto {
   topic: number;
   message: string;
   svg: string;
   visibility: number;
 }
 
-export interface UpdateDocInfoItemDto {
+export interface UpdateDocWidgetItemDto {
   topic?: number;
   message?: string;
   svg?: string;

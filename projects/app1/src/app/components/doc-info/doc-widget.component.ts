@@ -5,7 +5,7 @@ import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { DocWidgetService } from '@app1/components/doc-info/store/doc-widget.service';
 import { DocWidgetStore } from '@app1/components/doc-info/store/doc-widget.store';
-import { DefaultWidgetComponent } from '@app1/components/doc-info/widgets/default/default-widget.component';
+import { BaseWidgetComponent } from '@app1/components/doc-info/widgets/base/base-widget.component';
 import { formatDistance } from 'date-fns';
 import { de } from 'date-fns/locale';
 import { Subscription } from 'rxjs';
@@ -15,7 +15,7 @@ import { Subscription } from 'rxjs';
   standalone: true,
   imports: [
     MatIcon,
-    DefaultWidgetComponent,
+    BaseWidgetComponent,
     MatButton,
     DatePipe
   ],
@@ -31,14 +31,14 @@ export class DocWidgetComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
 
   lastUpdate = signal('');
-  storeDate$ = toObservable(this.store.getLastChange)
+  lastUpdate$ = toObservable(this.store.getLastUpdate)
 
   enableEditMode(): void {
     this.editChange.emit();
   }
 
   ngOnInit(): void {
-    this.storeDate$.subscribe(date => {
+    this.lastUpdate$.subscribe(date => {
       if (date) {
         const time = formatDistance(date, new Date(), {locale: de});
         this.lastUpdate.set(`Letzte Änderung: vor ${time}`);
