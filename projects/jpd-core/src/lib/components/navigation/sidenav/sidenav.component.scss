@@ -12,3 +12,7 @@ a.mdc-list-item {
   flex: 0 1 auto;
   height: 100%;
 }
+
+.mdc-list-item:focus::before {
+  opacity: 0;
+}

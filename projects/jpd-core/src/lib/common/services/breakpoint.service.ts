@@ -1,6 +1,6 @@
 import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
 import { Injectable } from '@angular/core';
-import { distinctUntilChanged, Observable, ReplaySubject } from "rxjs";
+import { distinctUntilChanged, ReplaySubject } from "rxjs";
 import { Dimension } from '../const';
 
 @Injectable({
@@ -8,13 +8,9 @@ import { Dimension } from '../const';
 })
 export class BreakpointService {
 
-  private _dimension$: ReplaySubject<string> = new ReplaySubject();
+  readonly dimension$: ReplaySubject<string> = new ReplaySubject();
 
-  public get dimension$(): Observable<string> {
-    return this._dimension$;
-  }
-
-  readonly breakpoint$ = this.breakpointObserver
+  private breakpoint$ = this.breakpointObserver
     .observe([Breakpoints.XLarge, Breakpoints.Large, Breakpoints.Medium, Breakpoints.Small, Breakpoints.XSmall])
     .pipe(
       distinctUntilChanged()
@@ -39,6 +35,6 @@ export class BreakpointService {
     } else if (this.breakpointObserver.isMatched(Breakpoints.XLarge)) {
       dim = Dimension.XLarge;
     }
-    this._dimension$.next(dim)
+    this.dimension$.next(dim)
   }
 }

@@ -1,6 +1,23 @@
-<a4w-poster rounded="rounded-lg">
-  <div class="m-3">
-    <mat-tab-group color="accent" class="m-3" mat-stretch-tabs="false" mat-align-tabs="start">
+@if (isSmall()) {
+  <div class="h-full w-screen theme-bg">
+    <div class="max-component-height w-full p-3">
+      <ng-container [ngTemplateOutlet]="contentTemplate"/>
+    </div>
+  </div>
+} @else {
+  <a4w-poster rounded="rounded-lg">
+    <div class="m-3">
+      <ng-container [ngTemplateOutlet]="contentTemplate"/>
+    </div>
+  </a4w-poster>
+}
+
+<!----------------------------------------------------->
+<!--                 content template                -->
+<!----------------------------------------------------->
+<ng-template #contentTemplate>
+  <div>
+    <mat-tab-group color="accent" mat-stretch-tabs="false" mat-align-tabs="start">
       <mat-tab label="Layout">
         <app-doc-layout-editor/>
       </mat-tab>
@@ -14,4 +31,4 @@
       <button mat-raised-button color="primary" (click)="onClickSave()">OK</button>
     </div>
   </div>
-</a4w-poster>
+</ng-template>

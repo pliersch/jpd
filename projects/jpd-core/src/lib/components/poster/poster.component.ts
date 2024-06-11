@@ -19,8 +19,7 @@ export class PosterComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.backgroundColor) {
-      console.log('PosterComponent input backgroundColor not implement: ', this.backgroundColor)
-      // this.renderer.setStyle(this.el.nativeElement, 'background-color', this.backgroundColor);
+      this.renderer.setStyle(this.el.nativeElement.children[0], 'background-color', this.backgroundColor);
     }
     if (this.color) {
       console.log('PosterComponent input color not implement: ', this.color)
