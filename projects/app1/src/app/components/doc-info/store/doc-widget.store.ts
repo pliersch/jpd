@@ -1,10 +1,10 @@
 import { withCallState, withDevtools } from '@angular-architects/ngrx-toolkit';
 import { computed, inject } from '@angular/core';
-import { DocWidgetItem } from '@app1/components/doc-info/store/doc-widget.model';
+import { DocWidgetItem, Topic } from '@app1/components/doc-info/store/doc-widget.model';
 import { DocWidgetService } from '@app1/components/doc-info/store/doc-widget.service';
 import { tapResponse } from '@ngrx/operators';
 import { patchState, signalStore, type, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
-import { setAllEntities, setEntity, withEntities } from '@ngrx/signals/entities';
+import { setAllEntities, setEntity, updateEntity, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { parseISO } from 'date-fns';
 import { debounceTime, distinctUntilChanged, pipe, switchMap } from 'rxjs';
@@ -41,7 +41,7 @@ export const DocWidgetStore = signalStore(
               tapResponse({
                 next: (widgets) => patchState(store, setAllEntities(widgets, {collection: 'widgets'})),
                 error: console.error,
-                finalize: () => computeWidgets(store.widgetsEntities()),
+                // finalize: () => computeWidgets(store.widgetsEntities()),
               })
             );
           })
@@ -63,6 +63,12 @@ export const DocWidgetStore = signalStore(
       ),
       updateBySse(widget: DocWidgetItem): void {
         patchState(store, setEntity(widget, {collection: 'widgets'}))
+      },
+      setMessage(topic: Topic, msg: string): void {
+        console.log(' setMessage: ', topic, msg)
+        const widget = store.widgetsEntities().find(w => w.topic === topic);
+        widget!.message = msg;
+        patchState(store, updateEntity({id: widget!.id, changes: {message: widget!.message}}, {collection: 'widgets'}))
       }
     }),
   ),
@@ -84,7 +90,3 @@ export function sortByDate(w1: DocWidgetItem, w2: DocWidgetItem): number {
   }
 }
 
-export function computeWidgets(w: DocWidgetItem[]): void {
-  console.log('computeWidgets computeWidgets: ', w)
-
-}

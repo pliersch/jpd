@@ -22,10 +22,10 @@ import { Observable } from 'rxjs';
     NgIf,
     ReactiveFormsModule
   ],
-  templateUrl: './opening-hours.component.html',
-  styleUrl: './opening-hours.component.scss'
+  templateUrl: './vacation.component.html',
+  styleUrl: './vacation.component.scss'
 })
-export class OpeningHoursComponent implements OnInit {
+export class VacationComponent implements OnInit {
 
   readonly store = inject(DocOpeningStore);
   lastUpdate$: Observable<DailyOpeningHours[]> = toObservable(this.store.entities);

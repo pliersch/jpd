@@ -26,12 +26,12 @@ export class DocWidgetComponent implements OnInit, OnDestroy {
 
   @Output() editChange: EventEmitter<void> = new EventEmitter();
 
-  readonly store = inject(DocWidgetStore);
+  readonly widgetStore = inject(DocWidgetStore);
   private service = inject(DocWidgetService);
   private subscription: Subscription;
 
   lastUpdate = signal('');
-  lastUpdate$ = toObservable(this.store.getLastUpdate)
+  lastUpdate$ = toObservable(this.widgetStore.getLastUpdate)
 
   enableEditMode(): void {
     this.editChange.emit();
@@ -47,7 +47,7 @@ export class DocWidgetComponent implements OnInit, OnDestroy {
 
     this.subscription = this.service.items$
       .subscribe(item => {
-        this.store.updateBySse(item);
+        this.widgetStore.updateBySse(item);
       });
   }
 

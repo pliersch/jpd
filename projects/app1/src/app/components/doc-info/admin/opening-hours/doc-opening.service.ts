@@ -1,0 +1,43 @@
+import { HttpClient } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
+import { DailyOpeningHours } from '@app1/components/doc-info/admin/opening-hours/doc-opening.model';
+import { ENV_TOKEN } from 'jpd-core';
+import { Observable } from 'rxjs';
+import { CreateDocWidgetItem, UpdateDocWidgetItem } from '../../store/doc-widget.model';
+
+@Injectable({providedIn: 'root'})
+export class DocOpeningService {
+
+  private readonly API_URL: string = `${inject(ENV_TOKEN).apiUrl}/doc-opening`;
+  // private readonly SSE_URL: string = `${this.API_URL}/sse`;
+
+  private readonly http = inject(HttpClient);
+
+  // items$ = new Subject<DocWidgetItem>();
+
+  // constructor(private _platform: Platform) {
+  //   if (this._platform.isBrowser) {
+  //     this.setupSse();
+  //   }
+  // }
+
+  // private setupSse(): void {
+  //   const source = new EventSource(this.SSE_URL);
+  //   source.onmessage = (event: MessageEvent): void => {
+  //     this.items$.next(JSON.parse(event.data).payload);
+  //   }
+  // }
+
+  getAll(): Observable<DailyOpeningHours[]> {
+    return this.http.get<DailyOpeningHours[]>(this.API_URL);
+  }
+
+  create(item: CreateDocWidgetItem): Observable<DailyOpeningHours> {
+    return this.http.post<DailyOpeningHours>(this.API_URL, item);
+  }
+
+  update(id: string, dto: UpdateDocWidgetItem): Observable<DailyOpeningHours> {
+    return this.http.patch<DailyOpeningHours>(`${this.API_URL}/${id}`, dto);
+  }
+
+}
