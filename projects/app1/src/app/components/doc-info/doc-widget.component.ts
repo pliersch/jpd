@@ -3,6 +3,8 @@ import { Component, EventEmitter, inject, OnDestroy, OnInit, Output, signal } fr
 import { toObservable } from '@angular/core/rxjs-interop';
 import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
+import { DocOpeningStore } from '@app1/components/doc-info/admin/opening-hours/doc-opening.store';
+import { DocVacationStore } from '@app1/components/doc-info/admin/vacation/doc-vacation.store';
 import { DocWidgetService } from '@app1/components/doc-info/store/doc-widget.service';
 import { DocWidgetStore } from '@app1/components/doc-info/store/doc-widget.store';
 import { BaseWidgetComponent } from '@app1/components/doc-info/widgets/base/base-widget.component';
@@ -27,6 +29,8 @@ export class DocWidgetComponent implements OnInit, OnDestroy {
   @Output() editChange: EventEmitter<void> = new EventEmitter();
 
   readonly widgetStore = inject(DocWidgetStore);
+  readonly vacationStore = inject(DocVacationStore);
+  readonly openingStore = inject(DocOpeningStore);
   private service = inject(DocWidgetService);
   private subscription: Subscription;
 

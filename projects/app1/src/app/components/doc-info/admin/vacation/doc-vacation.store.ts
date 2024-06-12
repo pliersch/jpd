@@ -7,7 +7,7 @@ import { tapResponse } from '@ngrx/operators';
 import { patchState, signalStore, withHooks, withMethods } from '@ngrx/signals';
 import { setAllEntities, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { intervalToDuration } from 'date-fns';
+import { formatDuration, intervalToDuration } from 'date-fns';
 import { debounceTime, distinctUntilChanged, pipe, switchMap } from 'rxjs';
 
 export const DocVacationStore = signalStore(
@@ -63,20 +63,12 @@ export const DocVacationStore = signalStore(
 
 export function computeNextVacation(items: Array<Vacation>): string {
   const now = new Date();
-  let next: Date = new Date();
-  for (const item of items) {
-    if (now < item.begin) {
-      next = item.begin;
-      break;
-    }
-  }
-  // const result = format(now, "yyyy-MM-dd'T'HH:mm:ss.SSSxxx")
-  // console.log(result)
-
+  now.setHours(0, 0, 0, 0);
+  const next: Date = items[0].begin;
   const duration = intervalToDuration({
     start: now,
     end: next
   });
-  console.log('computeNextVacation computeNextVacation: ', duration)
-  return duration.toLocaleString();
+  const msg = formatDuration(duration, {format: ['months', 'weeks', 'days']});
+  return msg + ` vom ${next} bis ${items[0].end}`;
 }

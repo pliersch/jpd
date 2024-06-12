@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTab, MatTabGroup } from '@angular/material/tabs';
 import { LayoutEditorComponent } from '@app1/components/doc-info/admin/layout/layout-editor.component';
 import { OpeningHoursComponent } from '@app1/components/doc-info/admin/opening-hours/opening-hours.component';
+import { VacationComponent } from '@app1/components/doc-info/admin/vacation/vacation.component';
 import { PosterComponent } from 'jpd-core';
 import { BreakpointService, Dimension } from '../../../../../../jpd-core/src/lib/common';
 
@@ -12,7 +13,7 @@ import { BreakpointService, Dimension } from '../../../../../../jpd-core/src/lib
   templateUrl: './doc-widget-editor.component.html',
   styleUrls: ['./doc-widget-editor.component.scss'],
   standalone: true,
-  imports: [MatButtonModule, MatTabGroup, MatTab, LayoutEditorComponent, PosterComponent, OpeningHoursComponent, AsyncPipe, NgTemplateOutlet]
+  imports: [MatButtonModule, MatTabGroup, MatTab, LayoutEditorComponent, PosterComponent, OpeningHoursComponent, AsyncPipe, NgTemplateOutlet, VacationComponent]
 })
 export class DocWidgetEditorComponent implements OnInit {
 

@@ -1,8 +1,22 @@
-mat-form-field {
-  width: 100%;
-}
+.grid {
+  display: grid;
+  //grid-template-columns: 2fr 2fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  //margin: 3rem;
 
-p {
-  font-size: 18px;
-  margin-top: 16px;
+  span {
+    padding: 8px 4px;
+    border: 1px solid black;
+  }
+
+  input {
+    padding: 8px 4px;
+    border: 1px solid black;
+    outline: none;
+    background-color: var(--mdc-filled-text-field-container-color);
+
+    &:focus {
+      background-color: #2B3041;
+    }
+  }
 }
