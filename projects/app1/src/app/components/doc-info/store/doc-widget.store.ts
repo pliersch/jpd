@@ -1,12 +1,12 @@
 import { withCallState, withDevtools } from '@angular-architects/ngrx-toolkit';
 import { computed, inject } from '@angular/core';
-import { DocWidgetItem, Topic } from '@app1/components/doc-info/store/doc-widget.model';
+import { CreateDocWidgetItemResult, DocWidgetItem, Topic } from '@app1/components/doc-info/store/doc-widget.model';
 import { DocWidgetService } from '@app1/components/doc-info/store/doc-widget.service';
 import { tapResponse } from '@ngrx/operators';
 import { patchState, signalStore, type, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import { setAllEntities, setEntity, updateEntity, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { parseISO } from 'date-fns';
+import { isAfter, parseISO } from 'date-fns';
 import { debounceTime, distinctUntilChanged, pipe, switchMap } from 'rxjs';
 
 type DocWidgetState = {
@@ -27,7 +27,7 @@ export const DocWidgetStore = signalStore(
     getHighWidgets: computed(() => widgetsEntities().filter(info => info.visibility === 'high')),
     getLowWidgets: computed(() => widgetsEntities().filter(info => info.visibility === 'low')),
     getLastUpdate: computed(() => {
-      return widgetsEntities().length > 0 ? parseISO(widgetsEntities().sort(sortByDate)[0]?.update) : undefined;
+      return widgetsEntities().length > 0 ? findNewestUpdate(widgetsEntities()) : undefined;
     }),
   })),
   withMethods((store, service = inject(DocWidgetService)) => ({
@@ -39,7 +39,7 @@ export const DocWidgetStore = signalStore(
           switchMap(() => {
             return service.getAll().pipe(
               tapResponse({
-                next: (widgets) => patchState(store, setAllEntities(widgets, {collection: 'widgets'})),
+                next: (widgets) => patchState(store, setAllEntities(createItems(widgets), {collection: 'widgets'})),
                 error: console.error,
                 // finalize: () => computeWidgets(store.widgetsEntities()),
               })
@@ -79,14 +79,40 @@ export const DocWidgetStore = signalStore(
   })
 );
 
-export function sortByDate(w1: DocWidgetItem, w2: DocWidgetItem): number {
-  const compare = Number(w1.update.at(0)) - Number(w2.update.at(0));
-  if (compare > 0) {
-    return 1;
-  } else if (compare < 0) {
-    return -1;
-  } else {
-    return 0;
+export function createItems(items: CreateDocWidgetItemResult[]): DocWidgetItem[] {
+  const result: DocWidgetItem[] = [];
+  for (const item of items) {
+    result.push({
+      id: item.id,
+      topic: item.topic,
+      update: parseISO(item.update),
+      message: item.message,
+      svg: item.svg,
+      visibility: item.visibility
+    });
   }
+  return result;
 }
+
+export function findNewestUpdate(items: DocWidgetItem[]): Date {
+  let newest: Date = items[0].update;
+  for (let i = 1; i < items.length; i++) {
+    if (isAfter(items[i].update, newest)) {
+      newest = items[i].update;
+    }
+  }
+  return newest;
+}
+
+// export function sortByDate(w1: DocWidgetItem, w2: DocWidgetItem): number {
+//   // console.log('sortByDate sortByDate: ', w1.update, w2.update);
+//   const compare = Number(w1.update) - Number(w2.update);
+//   if (compare > 0) {
+//     return 1;
+//   } else if (compare < 0) {
+//     return -1;
+//   } else {
+//     return 0;
+//   }
+// }
 

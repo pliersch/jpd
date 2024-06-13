@@ -7,7 +7,7 @@ export interface DocWidgetItem {
   topic: Topic;
   message: string;
   svg: string;
-  update: string;
+  update: Date;
   visibility: Visibility;
 }
 
@@ -16,6 +16,15 @@ export interface CreateDocWidgetItem {
   message: string;
   svg: string;
   visibility: Visibility;
+}
+
+export interface CreateDocWidgetItemResult {
+  id: string;
+  topic: Topic;
+  message: string;
+  svg: string;
+  visibility: Visibility;
+  update: string;
 }
 
 export interface UpdateDocWidgetItem {
