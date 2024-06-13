@@ -7,7 +7,7 @@ export interface DocWidgetItem {
   topic: Topic;
   message: string;
   svg: string;
-  created: string;
+  update: string;
   visibility: Visibility;
 }
 

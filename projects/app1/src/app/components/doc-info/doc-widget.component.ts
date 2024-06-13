@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, EventEmitter, inject, OnDestroy, OnInit, Output, signal } from '@angular/core';
+import { Component, effect, EventEmitter, inject, OnDestroy, OnInit, Output, signal } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
 import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
@@ -8,6 +8,7 @@ import { DocVacationStore } from '@app1/components/doc-info/admin/vacation/doc-v
 import { DocWidgetService } from '@app1/components/doc-info/store/doc-widget.service';
 import { DocWidgetStore } from '@app1/components/doc-info/store/doc-widget.store';
 import { BaseWidgetComponent } from '@app1/components/doc-info/widgets/base/base-widget.component';
+import { getState } from '@ngrx/signals';
 import { formatDistance } from 'date-fns';
 import { de } from 'date-fns/locale';
 import { Subscription } from 'rxjs';
@@ -36,6 +37,15 @@ export class DocWidgetComponent implements OnInit, OnDestroy {
 
   lastUpdate = signal('');
   lastUpdate$ = toObservable(this.widgetStore.getLastUpdate)
+
+
+  constructor() {
+    effect(() => {
+      // 👇 The effect will be re-executed whenever the state changes.
+      const state = getState(this.widgetStore);
+      console.log('recipes state changed', state);
+    });
+  }
 
   enableEditMode(): void {
     this.editChange.emit();

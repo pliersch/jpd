@@ -27,7 +27,7 @@ export const DocWidgetStore = signalStore(
     getHighWidgets: computed(() => widgetsEntities().filter(info => info.visibility === 'high')),
     getLowWidgets: computed(() => widgetsEntities().filter(info => info.visibility === 'low')),
     getLastUpdate: computed(() => {
-      return widgetsEntities().length > 0 ? parseISO(widgetsEntities().sort(sortByDate)[0]?.created) : undefined;
+      return widgetsEntities().length > 0 ? parseISO(widgetsEntities().sort(sortByDate)[0]?.update) : undefined;
     }),
   })),
   withMethods((store, service = inject(DocWidgetService)) => ({
@@ -80,7 +80,7 @@ export const DocWidgetStore = signalStore(
 );
 
 export function sortByDate(w1: DocWidgetItem, w2: DocWidgetItem): number {
-  const compare = Number(w1.created.at(0)) - Number(w2.created.at(0));
+  const compare = Number(w1.update.at(0)) - Number(w2.update.at(0));
   if (compare > 0) {
     return 1;
   } else if (compare < 0) {
