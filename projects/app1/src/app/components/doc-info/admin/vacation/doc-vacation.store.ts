@@ -2,12 +2,12 @@ import { withCallState, withDevtools } from '@angular-architects/ngrx-toolkit';
 import { inject } from '@angular/core';
 import { Vacation } from '@app1/components/doc-info/admin/vacation/doc-vacation.model';
 import { DocVacationService } from '@app1/components/doc-info/admin/vacation/doc-vacation.service';
+import { computeNextVacation } from '@app1/components/doc-info/admin/vacation/doc-vaction.util';
 import { DocWidgetStore } from '@app1/components/doc-info/store/doc-widget.store';
 import { tapResponse } from '@ngrx/operators';
 import { patchState, signalStore, withHooks, withMethods } from '@ngrx/signals';
 import { setAllEntities, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { formatDuration, intervalToDuration } from 'date-fns';
 import { debounceTime, distinctUntilChanged, pipe, switchMap } from 'rxjs';
 
 export const DocVacationStore = signalStore(
@@ -60,15 +60,3 @@ export const DocVacationStore = signalStore(
     }
   })
 );
-
-export function computeNextVacation(items: Array<Vacation>): string {
-  const now = new Date();
-  now.setHours(0, 0, 0, 0);
-  const next: Date = items[0].begin;
-  const duration = intervalToDuration({
-    start: now,
-    end: next
-  });
-  const msg = formatDuration(duration, {format: ['months', 'weeks', 'days']});
-  return msg + ` vom ${next} bis ${items[0].end}`;
-}

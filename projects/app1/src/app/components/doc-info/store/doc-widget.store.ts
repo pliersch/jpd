@@ -4,10 +4,10 @@ import { CreateDocWidgetItemResult, DocWidgetItem, Topic } from '@app1/component
 import { DocWidgetService } from '@app1/components/doc-info/store/doc-widget.service';
 import { tapResponse } from '@ngrx/operators';
 import { patchState, signalStore, type, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
-import { setAllEntities, setEntity, updateEntity, withEntities } from '@ngrx/signals/entities';
+import { setAllEntities, updateEntity, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { isAfter, parseISO } from 'date-fns';
-import { debounceTime, distinctUntilChanged, pipe, switchMap } from 'rxjs';
+import { pipe, switchMap } from 'rxjs';
 
 type DocWidgetState = {
   lastChanges: string | undefined;
@@ -33,8 +33,6 @@ export const DocWidgetStore = signalStore(
   withMethods((store, service = inject(DocWidgetService)) => ({
       loadAll: rxMethod<void>(
         pipe(
-          debounceTime(300),
-          distinctUntilChanged(),
           // tap(() => patchState(store, {isLoading: true})),
           switchMap(() => {
             return service.getAll().pipe(
@@ -49,12 +47,14 @@ export const DocWidgetStore = signalStore(
       ),
       update: rxMethod<DocWidgetItem>(
         pipe(
-          debounceTime(300),
-          distinctUntilChanged(),
           switchMap((widget) => {
             return service.update(widget.id, {visibility: widget.visibility}).pipe(
               tapResponse({
-                next: (widget) => patchState(store, setEntity(widget, {collection: 'widgets'})),
+                next: (widget) =>
+                  patchState(store, updateEntity({
+                    id: widget!.id,
+                    changes: {update: widget!.update, visibility: widget!.visibility}
+                  }, {collection: 'widgets'})),
                 error: console.error,
               })
             );
@@ -62,7 +62,10 @@ export const DocWidgetStore = signalStore(
         )
       ),
       updateBySse(widget: DocWidgetItem): void {
-        patchState(store, setEntity(widget, {collection: 'widgets'}))
+        patchState(store, updateEntity({
+          id: widget!.id,
+          changes: {update: widget!.update, visibility: widget!.visibility}
+        }, {collection: 'widgets'}))
       },
       setMessage(topic: Topic, msg: string): void {
         console.log(' setMessage: ', topic, msg)

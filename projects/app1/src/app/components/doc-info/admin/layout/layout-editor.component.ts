@@ -66,6 +66,7 @@ export class LayoutEditorComponent implements OnInit {
       const current = allWidgets.find(w => w.id === widget.id);
       if (current!.visibility !== widget.visibility) {
         this.changedWidgets.push(current!);
+        console.log('LayoutEditorComponent : ', this.changedWidgets)
       }
     });
   }
