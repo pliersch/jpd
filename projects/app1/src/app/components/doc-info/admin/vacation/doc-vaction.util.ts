@@ -1,6 +1,6 @@
 import { Vacation } from '@app1/components/doc-info/admin/vacation/doc-vacation.model';
 import { intervalToDuration } from 'date-fns';
-import { formatGermanDayAndMonth } from 'jdp-core';
+import { formatGermanDayAndMonth } from 'jpd-core';
 
 export function computeNextVacation(items: Array<Vacation>): string {
   const now = new Date();

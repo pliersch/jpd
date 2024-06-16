@@ -68,7 +68,6 @@ export const DocWidgetStore = signalStore(
         }, {collection: 'widgets'}))
       },
       setMessage(topic: Topic, msg: string): void {
-        console.log(' setMessage: ', topic, msg)
         const widget = store.widgetsEntities().find(w => w.topic === topic);
         widget!.message = msg;
         patchState(store, updateEntity({id: widget!.id, changes: {message: widget!.message}}, {collection: 'widgets'}))

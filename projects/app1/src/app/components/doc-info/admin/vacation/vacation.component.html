@@ -1,11 +1,19 @@
-<div class="grid">
+<div #root class="grid">
 
   <span>Beginn</span>
   <span>Ende</span>
 
   @for (vacation of store.entities(); track vacation.id) {
-    <input required type="text" value="{{vacation.begin}}"/>
-    <input required type="text" value="{{vacation.end}}"/>
+    <input appInputHelp required type="date" (focusout)="checkDate($event)" value="{{vacation.begin}}"/>
+    <input appInputHelp required type="date" (focusout)="checkDate($event)" value="{{vacation.end}}"/>
   }
 
+  @for (entry of newEntries; track $index) {
+    <input appInputHelp required type="date" (focusout)="checkDate($event)" value="{{entry.begin}}"/>
+    <input appInputHelp required type="date" (focusout)="checkDateAndLine($event)" value="{{entry.end}}"/>
+  }
 </div>
+
+<button mat-raised-button [disabled]="!newLinePossible"
+        color="primary" (click)="nextEntry()">Bearbeiten
+</button>
