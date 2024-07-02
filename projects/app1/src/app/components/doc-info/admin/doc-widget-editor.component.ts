@@ -2,6 +2,7 @@ import { AsyncPipe, NgTemplateOutlet } from '@angular/common';
 import { Component, EventEmitter, OnInit, Output, signal, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTab, MatTabGroup } from '@angular/material/tabs';
+import { WaitingTimeComponent } from '@app1/components/doc-info/admin/ waiting-time/waiting-time.component';
 import { LayoutEditorComponent } from '@app1/components/doc-info/admin/layout/layout-editor.component';
 import { OpeningHoursComponent } from '@app1/components/doc-info/admin/opening-hours/opening-hours.component';
 import { VacationComponent } from '@app1/components/doc-info/admin/vacation/vacation.component';
@@ -13,7 +14,7 @@ import { BreakpointService, Dimension } from '../../../../../../jpd-core/src/lib
   templateUrl: './doc-widget-editor.component.html',
   styleUrls: ['./doc-widget-editor.component.scss'],
   standalone: true,
-  imports: [MatButtonModule, MatTabGroup, MatTab, LayoutEditorComponent, PosterComponent, OpeningHoursComponent, AsyncPipe, NgTemplateOutlet, VacationComponent]
+  imports: [MatButtonModule, MatTabGroup, MatTab, LayoutEditorComponent, PosterComponent, OpeningHoursComponent, AsyncPipe, NgTemplateOutlet, VacationComponent, WaitingTimeComponent]
 })
 export class DocWidgetEditorComponent implements OnInit {
 
