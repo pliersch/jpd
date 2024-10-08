@@ -3,3 +3,13 @@ export interface WaitingTime {
   msg: string;
   active: boolean;
 }
+
+export interface CreateWaitingTime {
+  msg?: string;
+  active?: boolean;
+}
+
+export interface UpdateWaitingTime {
+  msg?: string;
+  active?: boolean;
+}

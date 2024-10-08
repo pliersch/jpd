@@ -1,6 +1,6 @@
 export type Visibility = 'low' | 'high' | 'none';
 
-export type Topic = 'Öffnung' | 'Wartedauer' | 'Warnung' | 'Service' | 'Info' | 'Urlaub';
+export type Topic = 'Öffnung' | 'Wartezeit' | 'Warnung' | 'Service' | 'Info' | 'Urlaub';
 
 export interface DocWidgetItem {
   id: string;
@@ -56,7 +56,7 @@ export interface UpdateDocWidgetItemDto {
 //       visibility: 'high',
 //       svg: 'schedule',
 //     },
-//     {topic: 'Wartedauer', message: 'Lange Wartedauer', visibility: 'high', svg: 'traffic'},
+//     {topic: 'Wartezeit', message: 'Lange Wartezeit', visibility: 'high', svg: 'traffic'},
 //     {topic: 'Warnung', message: 'Maskenpflicht', visibility: 'low', svg: 'medical_mask'},
 //     {topic: 'Service', message: 'Grippe-Impfung möglich', visibility: 'low', svg: 'vaccines'},
 //     {topic: 'Info', message: 'demnächst Urlaub', visibility: 'low', svg: 'pan_tool'},

@@ -30,7 +30,6 @@ export const DocOpeningStore = signalStore(
                 next: (items) => patchState(store, setAllEntities(items)),
                 error: console.error,
                 finalize: () => {
-                  widgetStore.setMessage('Info', 'foo');
                   widgetStore.setMessage('Öffnung', computeNextOpening(store.entities()))
                 }
               })

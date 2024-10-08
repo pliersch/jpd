@@ -1,8 +1,7 @@
 import { withCallState, withDevtools } from '@angular-architects/ngrx-toolkit';
 import { inject } from '@angular/core';
-import { DailyOpeningHours } from '@app1/components/doc-info/admin/opening-hours/doc-opening.model';
-import { DocOpeningService } from '@app1/components/doc-info/admin/opening-hours/doc-opening.service';
-import { computeNextOpening } from '@app1/components/doc-info/admin/opening-hours/doc-opening.util';
+import { WaitingTime } from '@app1/components/doc-info/admin/ waiting-time/doc-waiting-time.model';
+import { DocWaitingTimeService } from '@app1/components/doc-info/admin/ waiting-time/doc-waiting-time.service';
 import { DocWidgetItem } from '@app1/components/doc-info/store/doc-widget.model';
 import { DocWidgetStore } from '@app1/components/doc-info/store/doc-widget.store';
 import { tapResponse } from '@ngrx/operators';
@@ -15,9 +14,9 @@ export const DocOpeningStore = signalStore(
   {providedIn: 'root'},
   withCallState(),
   withDevtools('doc-waiting-time'),
-  withEntities<DailyOpeningHours>(),
+  withEntities<WaitingTime>(),
   withMethods((store,
-               service = inject(DocOpeningService),
+               service = inject(DocWaitingTimeService),
                widgetStore = inject(DocWidgetStore)) => ({
       loadAll: rxMethod<void>(
         pipe(
@@ -30,8 +29,7 @@ export const DocOpeningStore = signalStore(
                 next: (items) => patchState(store, setAllEntities(items)),
                 error: console.error,
                 finalize: () => {
-                  widgetStore.setMessage('Info', 'foo');
-                  widgetStore.setMessage('Öffnung', computeNextOpening(store.entities()))
+                  widgetStore.setMessage('Wartezeit', 'todo compute msg')
                 }
               })
             );
@@ -43,9 +41,9 @@ export const DocOpeningStore = signalStore(
           debounceTime(300),
           distinctUntilChanged(),
           switchMap((widget) => {
-            return service.update(widget.id, {visibility: widget.visibility}).pipe(
+            return service.update(widget.id, {active: true, msg: 'todo'}).pipe(
               tapResponse({
-                next: (widget) => patchState(store, setEntity(widget)),
+                next: (waitingTime) => patchState(store, setEntity(waitingTime)),
                 error: console.error,
               })
             );
