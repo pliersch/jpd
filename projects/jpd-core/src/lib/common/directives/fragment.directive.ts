@@ -1,4 +1,4 @@
-import { Directive, Input } from '@angular/core';
+import { Directive, ElementRef, Input } from '@angular/core';
 
 @Directive({
   selector: '[a4wFragment]',
@@ -9,7 +9,7 @@ export class FragmentDirective {
   @Input({required: true})
   a4wFragment: string;
 
-  // constructor(public el: ElementRef) { }
+  constructor(public el: ElementRef) { }
 
   public get name(): string {
     return this.a4wFragment;
