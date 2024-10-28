@@ -1,6 +1,12 @@
 <div class="lg:container sm:max-lg:px-3">
   <div class="grid grid-cols-1 gap-4">
-    <a4w-card11 [model]="model.cards[0]"/>
-    <a4w-card11 imgRight [model]="model.cards[1]"/>
+    @if (isSmall()) {
+      <a4w-card11 [model]="model.cards[0]"/>
+      <a4w-card11 [model]="model.cards[1]"/>
+    } @else {
+      <a4w-card11 imgFirst [model]="model.cards[0]"/>
+      <a4w-card11 [model]="model.cards[1]"/>
+    }
   </div>
 </div>
+

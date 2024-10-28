@@ -55,7 +55,7 @@ export class CustomRouteDomService extends RouteDomService {
       children: [
         {name: 'Kontakt', path: 'kontakt', children: []},
         {name: 'Datenschutz', path: 'datenschutz', children: []},
-        {name: 'Impressum', path: 'impressum', children: []},
+        // {name: 'Impressum', path: 'impressum', children: []},
       ]
     }
   };

@@ -38,7 +38,7 @@ export { BaseComponent } from './core/base/base.component'
 
 export { A4WCopyrightFooter1Component } from './footer/copyright-footer/a4-w-copyright-footer1.component'
 export { ShopFooter1Component, ShopFooter1Model } from './footer/shop-footer-1/shop-footer1.component'
-export { SmallFooter1Component, Small1FooterModel } from './footer/small-footer-1/small-footer1.component'
+export { SmallFooter1Component, /*Small1FooterModel*/ } from './footer/small-footer-1/small-footer1.component'
 export { SmallFooter2Component, Small2FooterModel } from './footer/small-footer-2/small-footer2.component'
 
 export { Banner1Component } from './by-topic/banner/banner-1/banner1.component'

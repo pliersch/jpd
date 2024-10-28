@@ -1,11 +1,11 @@
 <div class="mt-5 overflow-hidden rounded-lg">
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4" [class.grid-flow-dense]="imgRight">
-    @if (imgRight) {
-      <ng-container [ngTemplateOutlet]="txt"/>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4" [class.grid-flow-dense]="imgFirst">
+    @if (imgFirst) {
       <ng-container [ngTemplateOutlet]="img"/>
+      <ng-container [ngTemplateOutlet]="txt"/>
     } @else {
-      <ng-container [ngTemplateOutlet]="img"/>
       <ng-container [ngTemplateOutlet]="txt"/>
+      <ng-container [ngTemplateOutlet]="img"/>
     }
   </div>
 </div>

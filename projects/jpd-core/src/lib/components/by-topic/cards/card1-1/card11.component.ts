@@ -27,5 +27,5 @@ export class Card11Component {
   transparent = false;
 
   @Input({transform: booleanAttribute})
-  imgRight: boolean;
+  imgFirst: boolean;
 }

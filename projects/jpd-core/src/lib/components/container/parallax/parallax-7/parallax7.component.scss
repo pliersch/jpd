@@ -1,19 +1,14 @@
 // https://codepen.io/samdbeckham/pen/OPXPNp
 
-//* {
-//  box-sizing: border-box;
-//}
-
 .bg {
   background-color: #FEDCC8;
 }
 
-//img {
-//  width: 100%;
-//}
+.wrapper {
+  height: 700px;
+}
 
 .parallax {
-  -webkit-perspective: 100px;
   perspective: 100px;
   overflow-x: hidden;
   overflow-y: auto;
