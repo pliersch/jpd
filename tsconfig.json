@@ -17,12 +17,12 @@
       "@app1/*": [
         "projects/app1/src/app/*"
       ],
+      "@shop/*": [
+        "projects/shop/src/app/*"
+      ],
       "jpd-youtube": [
         "./dist/jpd-youtube"
       ],
-      "@app2/*": [
-        "projects/non-ssr/src/app/*"
-      ]
     },
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,

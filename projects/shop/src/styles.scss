@@ -1,0 +1,30 @@
+@use '@angular/material' as mat;
+
+@use '../../../projects/jpd-core/src/styles/core-styles' with (
+  $dark-primary: mat.define-palette(mat.$purple-palette, 900),
+  $dark-accent: mat.define-palette(mat.$green-palette, A200, A100, A400),
+  $light-primary: mat.define-palette(mat.$indigo-palette, 900),
+  $light-accent: mat.define-palette(mat.$pink-palette, A400, A200, A700)
+);
+
+@include mat.core();
+
+$primary: mat.define-palette(mat.$indigo-palette);
+$accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+//$warn: mat.define-palette(mat.$red-palette);
+
+$app1-theme: mat.define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+    //warn: $warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+@include mat.all-component-themes($app1-theme);
+
+html {
+  scroll-behavior: auto !important;
+}
