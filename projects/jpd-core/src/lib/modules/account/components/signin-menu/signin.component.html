@@ -1,0 +1,48 @@
+<ng-template [ngIf]="user || isDevMode" [ngIfElse]="noUser">
+  <button *ngIf="user || isDevMode" mat-icon-button [matMenuTriggerFor]="accountMenu">
+    <mat-icon svgIcon="person"></mat-icon>
+  </button>
+</ng-template>
+
+<ng-template #noUser>
+  <div>
+    <div id="g_id_onload" data-auto_prompt="true" data-ux_mode="popup"
+         data-client_id="334979481378-o30p8vigr8pma4sdod58qepl6ekk1k8b.apps.googleusercontent.com">
+    </div>
+    <div class="g_id_signin" data-type="standard" data-size="large"
+         data-theme="filled_black" data-text="sign_in_with" data-shape="rectangular"
+         data-logo_alignment="left">
+    </div>
+  </div>
+</ng-template>
+
+<mat-menu #accountMenu="matMenu" yPosition="below">
+  <button mat-menu-item style="margin: 0;" (click)="navigateToAccountProfile()">Account</button>
+  <button *ngIf="user" mat-menu-item style="margin: 0;" (click)="logout()">Logout</button>
+</mat-menu>
+
+<!--<ng-template [ngIf]="googleUser || user || isDevMode" [ngIfElse]="noUser">-->
+<!--  <button *ngIf="googleUser" mat-icon-button [matMenuTriggerFor]="accountMenu">-->
+<!--    <img class="avatar" [src]="googleUser.photoUrl" alt="avatar">-->
+<!--  </button>-->
+<!--  <button *ngIf="user || isDevMode" mat-icon-button [matMenuTriggerFor]="accountMenu">-->
+<!--    <mat-icon>person</mat-icon>-->
+<!--  </button>-->
+<!--</ng-template>-->
+
+<!--<ng-template #noUser>-->
+<!--  <div>-->
+<!--    <div id="g_id_onload" data-auto_prompt="true" data-ux_mode="popup"-->
+<!--         data-client_id="334979481378-o30p8vigr8pma4sdod58qepl6ekk1k8b.apps.googleusercontent.com">-->
+<!--    </div>-->
+<!--    <div class="g_id_signin" data-type="standard" data-size="large"-->
+<!--         data-theme="filled_black" data-text="sign_in_with" data-shape="rectangular"-->
+<!--         data-logo_alignment="left">-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</ng-template>-->
+
+<!--<mat-menu #accountMenu="matMenu" yPosition="below">-->
+<!--  <button mat-menu-item style="margin: 0;" (click)="navigateToAccountProfile()">Account</button>-->
+<!--  <button *ngIf="googleUser || user" mat-menu-item style="margin: 0;" (click)="logout()">Logout</button>-->
+<!--</mat-menu>-->

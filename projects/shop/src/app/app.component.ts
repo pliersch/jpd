@@ -14,6 +14,7 @@ import {
   LogoContainerComponent,
   NavigationDirective,
   ScrollTopActionComponent,
+  SigninComponent,
   SmallFooter1Component,
   SubNavComponent,
   ThemeToggleActionComponent,
@@ -24,7 +25,7 @@ import {
   standalone: true,
   imports: [RouterOutlet, A4WRootComponent, AppbarComponent,
     LogoContainerComponent, ThemeToggleActionComponent, SubNavComponent, NavigationDirective,
-    ActionContainerComponent, ScrollTopActionComponent, FragmentDirective, AsyncPipe, LoginComponent, SmallFooter1Component, AppbarTwoRowsComponent, EnableAdminActionComponent],
+    ActionContainerComponent, ScrollTopActionComponent, SigninComponent, FragmentDirective, AsyncPipe, LoginComponent, SmallFooter1Component, AppbarTwoRowsComponent, EnableAdminActionComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

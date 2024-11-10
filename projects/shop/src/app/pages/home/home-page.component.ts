@@ -22,7 +22,6 @@ import {
   ToggleThemeDirective
 } from 'jpd-core';
 
-
 @Component({
   selector: 'app-home-page',
   standalone: true,

@@ -1,6 +1,7 @@
 export { ActionComponent } from './actions/_base-action/action.component';
 export { EnableAdminActionComponent } from './actions/admin/enable-admin-action.component';
 export { BackActionComponent } from './actions/back/back-action.component';
+export { AccountActionComponent } from './actions/account/account-action.component';
 export { PhoneModel, PhoneActionComponent } from './actions/phone/phone-action.component';
 export { ScrollTopActionComponent } from './actions/scroll-top/scroll-top-action.component';
 export { ThemeToggleActionComponent } from './actions/theme-toggle/theme-toggle-action.component';

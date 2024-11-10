@@ -6,7 +6,7 @@ import { MatCardModule } from "@angular/material/card";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { PosterComponent } from '../../../../components';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../store/auth.service';
 
 @Component({
   selector: 'a4w-login',

@@ -6,7 +6,7 @@ export function initProjectIcons(matIconRegistry: MatIconRegistry,
   return () => new Promise(resolve => {
     const path = './assets/svg/icons/';
     const icons: string[] =
-      ['account_circle', 'beach', 'block', 'east', 'lock', 'medical_mask', 'pan_tool', 'traffic', 'vaccines'];
+      ['account_circle', 'block', 'east', 'lock', 'person', 'pan_tool', 'traffic', 'vaccines'];
 
     for (const icon of icons) {
       matIconRegistry.addSvgIcon(

@@ -49,7 +49,6 @@ export class AppbarTwoRowsComponent implements OnInit {
   @Input({transform: booleanAttribute})
   blurry = false;
 
-  routes: Route[] = [];
   rootRoute: Route;
 
   isOpen = true;

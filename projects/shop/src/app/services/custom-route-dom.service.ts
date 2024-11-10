@@ -14,13 +14,9 @@ export class CustomRouteDomService extends RouteDomService {
       children: [
         {name: 'Home', path: 'home', children: [], fragments: ['#top']},
         // {name: 'Blog', path: 'blog', children: []},
-        {
-          name: 'Shop', path: 'shop', children: [
-            {name: 'Kratom', path: 'kratom', children: []},
-            {name: 'CBD', path: 'cbd', children: [],},
-            {name: 'Sonstiges', path: 'sonstiges', children: []},
-          ], fragments: ['#top']
-        },
+        {name: 'Kratom', path: 'shop/kratom', children: []},
+        {name: 'CBD', path: 'shop/cbd', children: []},
+        {name: 'Sonstiges', path: 'shop/sonstiges', children: []},
         // {name: 'Kontakt', path: 'kontakt', children: []},
         // {name: 'Datenschutz', path: 'datenschutz', children: []},
         // {name: 'Admin', path: 'admin', children: []},

@@ -5,6 +5,9 @@ const home = () => import('@shop/pages/home/home-page.component').then((x) => x.
 const contact = () => import('@shop/pages/contact/contact-page.component').then((x) => x.ContactPageComponent);
 const privacy = () => import('@shop/pages/privacy/privacy-page.component').then((x) => x.PrivacyPageComponent);
 
+
+const shopRoutes = () => import('@shop/pages/shop/shop.routes');
+
 export const ROUTES: Route[] = [
   // components
   {path: '', title: 'Home', loadComponent: home},
@@ -13,5 +16,6 @@ export const ROUTES: Route[] = [
   {path: 'datenschutz', title: 'Datenschutz', loadComponent: privacy},
 
   // routes
+  {path: 'shop', loadChildren: shopRoutes},
   {path: '**', redirectTo: '', pathMatch: 'full'},
 ];

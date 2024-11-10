@@ -4,13 +4,13 @@ import { Themes, ThemeService } from '../../../common';
 import { ActionComponent } from '../_base-action/action.component';
 
 @Component({
-  selector: 'a4w-theme-toggle-action',
+  selector: 'a4w-account-action',
   standalone: true,
   imports: [CommonModule, ActionComponent],
-  templateUrl: './theme-toggle-action.component.html',
-  styleUrl: './theme-toggle-action.component.scss'
+  templateUrl: './account-action.component.html',
+  styleUrl: './account-action.component.scss'
 })
-export class ThemeToggleActionComponent {
+export class AccountActionComponent {
 
   @Input({transform: booleanAttribute}) fab: boolean;
 
@@ -20,7 +20,7 @@ export class ThemeToggleActionComponent {
 
   constructor(private cssDomService: ThemeService) { }
 
-  toggleTheme(): void {
+  openAccountMenu(): void {
     this.cssDomService.toggleTheme();
   }
 
