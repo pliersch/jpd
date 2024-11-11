@@ -3,7 +3,7 @@ import { computed, inject } from '@angular/core';
 
 import { tapResponse } from '@ngrx/operators';
 import { patchState, signalStore, type, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
-import { addEntity, setAllEntities, withEntities } from '@ngrx/signals/entities';
+import { addEntities, addEntity, setAllEntities, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { concatMap, debounceTime, distinctUntilChanged, pipe, switchMap, tap } from 'rxjs';
 import { CreateVideoDto, Tag, Video } from './model';
@@ -47,7 +47,7 @@ export const VideosStore = signalStore(
         switchMap(() => {
           return videosService.getAll().pipe(
             tapResponse({
-              next: (videos) => patchState(store, setAllEntities(videos, {collection: 'videos'})),
+              next: (videos) => patchState(store, addEntities(videos, {collection: 'videos'})),
               error: console.error,
               finalize: () => patchState(store, {isLoading: false}),
             })

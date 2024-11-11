@@ -6,6 +6,9 @@ import { MatToolbar } from '@angular/material/toolbar';
 import { IsActiveMatchOptions, Route, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { AbstractDefaultPageComponent, FragmentDirective, RouteDomService } from 'jpd-core';
 
+// fixme import from jpd-core
+// import { AbstractDefaultPageComponent } from '../../../../../jpd-core/src/lib/components';
+
 @Component({
   selector: 'app-shop-page',
   standalone: true,
@@ -34,10 +37,17 @@ export class ShopPageComponent extends AbstractDefaultPageComponent {
 
   constructor(private routeDomService: RouteDomService) {
     super();
-    // const children = this.routeDomService.getRouteDom().children;
-    // const shop = children.find(c => c.name === 'Shop');
-    // this.routes = shop!.children;
-
     this.linkActiveOptions = this.routeDomService.getIsActiveMatchOptions();
   }
+
+  // override ngOnInit(): void {
+  //   this.router.events
+  //     .pipe(
+  //       filter(event => event instanceof NavigationEnd)
+  //     ).subscribe((event) => {
+  //     console.log(event);
+  //
+  //   });
+  // }
+
 }

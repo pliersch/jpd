@@ -1,0 +1,5 @@
+<p>kratom works!</p>
+@for (article of store.getArticles(); track article.id) {
+  <span>{{ article.name }}</span>
+}
+<router-outlet/>

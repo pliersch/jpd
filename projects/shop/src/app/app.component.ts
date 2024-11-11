@@ -2,6 +2,7 @@ import { AsyncPipe } from '@angular/common';
 import { afterNextRender, AfterRenderPhase, Component, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterOutlet } from '@angular/router';
+import { NavbarComponent } from '@shop/components/navbar/navbar.component';
 import {
   A4WRootComponent,
   ActionContainerComponent,
@@ -25,7 +26,7 @@ import {
   standalone: true,
   imports: [RouterOutlet, A4WRootComponent, AppbarComponent,
     LogoContainerComponent, ThemeToggleActionComponent, SubNavComponent, NavigationDirective,
-    ActionContainerComponent, ScrollTopActionComponent, SigninComponent, FragmentDirective, AsyncPipe, LoginComponent, SmallFooter1Component, AppbarTwoRowsComponent, EnableAdminActionComponent],
+    ActionContainerComponent, ScrollTopActionComponent, SigninComponent, FragmentDirective, AsyncPipe, LoginComponent, SmallFooter1Component, AppbarTwoRowsComponent, EnableAdminActionComponent, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
