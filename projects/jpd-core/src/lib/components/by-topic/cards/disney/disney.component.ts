@@ -1,8 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FragmentDirective } from '../../../../common';
 import { TitleSubtitleDescription } from '../../../../content';
-import { BaseComponent } from '../../../core/base/base.component';
 
 export interface DisneyModel {
   items: TitleSubtitleDescription[];
@@ -15,11 +13,11 @@ export interface DisneyModel {
   templateUrl: './disney.component.html',
   styleUrl: './disney.component.scss'
 })
-export class DisneyComponent extends BaseComponent<DisneyModel> {
+export class DisneyComponent/* extends BaseComponent<DisneyModel>*/ {
 
-  className = 'Disney';
+  // className = 'Disney';
 
-  constructor(override fragment?: FragmentDirective) {
-    super(fragment)
-  }
+  // constructor(override fragment?: FragmentDirective) {
+  //   super(fragment)
+  // }
 }

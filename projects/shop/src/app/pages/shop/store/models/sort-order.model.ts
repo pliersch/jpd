@@ -7,7 +7,7 @@ export function sort(articles: Article[], mode: SortOrder): Article[] {
     case 'AZ':
       return articles.sort(sortByABC);
     case 'ZA':
-      return articles.sort(sortByZYX);
+      return articles.sort(sortByABC);
     case 'Newest':
       return articles.sort(sortByNewest);
     case 'Oldest':
