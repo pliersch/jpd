@@ -29,6 +29,7 @@ import { AbstractDefaultPageComponent, FragmentDirective, RouteDomService } from
 export class ShopPageComponent extends AbstractDefaultPageComponent {
 
   routes: Route[] = [
+    {title: 'Home', path: 'home', children: []},
     {title: 'White', path: 'white', children: []},
     {title: 'Green', path: 'green', children: []},
     {title: 'Red', path: 'red', children: []}];

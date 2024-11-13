@@ -10,7 +10,7 @@ const shopRoutes = () => import('@shop/pages/shop/shop.routes');
 
 export const ROUTES: Route[] = [
   // components
-  {path: '', title: 'Home', loadComponent: home},
+  {path: 'home', title: 'Home', loadComponent: home},
   // {path: 'admin', title: 'Admin', loadComponent: admin},
   {path: 'kontakt', title: 'Kontakt', loadComponent: contact},
   {path: 'datenschutz', title: 'Datenschutz', loadComponent: privacy},

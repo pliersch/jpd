@@ -21,6 +21,7 @@ import { Observable, of, switchMap } from 'rxjs';
 export class NavbarComponent implements OnInit {
 
   routes: Route[] = [
+    {title: 'Home', path: 'shop/kratom/home', children: []},
     {title: 'White', path: 'shop/kratom/white-vein', children: []},
     {title: 'Green', path: 'shop/kratom/green-vein', children: []},
     {title: 'Red', path: 'shop/kratom/red-vein', children: []}];
