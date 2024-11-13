@@ -57,21 +57,25 @@
 <!--                desktop template                 -->
 <!----------------------------------------------------->
 <ng-template #desktop>
-  <mat-toolbar class="fill shadow-bottom relative"
-               [class.transparent-bg]="_transparent"
-               [class.absolute]="_transparent || blurry"
-               [class.blurry]="blurry"
-               [style.background-color]="bgColor">
+  <mat-toolbar>
+    <mat-toolbar-row class="fill shadow-bottom relative"
+                     [class.transparent-bg]="_transparent"
+                     [class.absolute]="_transparent || blurry"
+                     [class.blurry]="blurry"
+                     [style.background-color]="bgColor">
 
-    <div class="flex w-full items-center justify-between">
-      <ng-container *ngTemplateOutlet="logoTemplate"></ng-container>
-      <ng-container [ngTemplateOutlet]="navTemplate"/>
-      <ng-container [ngTemplateOutlet]="actionsTemplate"/>
-    </div>
+      <div class="flex w-full items-center justify-between">
+        <ng-container *ngTemplateOutlet="logoTemplate"></ng-container>
+        <ng-container [ngTemplateOutlet]="navTemplate"/>
+        <ng-container [ngTemplateOutlet]="actionsTemplate"/>
+      </div>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+      <ng-content select="[second-toolbar]"/>
+    </mat-toolbar-row>
   </mat-toolbar>
   <ng-container *ngTemplateOutlet="subNavTemplate"></ng-container>
 </ng-template>
-
 <!----------------------------------------------------->
 <!--                actions template                 -->
 <!----------------------------------------------------->
