@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 import { MatAnchor, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { MatToolbar } from '@angular/material/toolbar';
-import { IsActiveMatchOptions, Route, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { AbstractDefaultPageComponent, FragmentDirective, RouteDomService } from 'jpd-core';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { AbstractDefaultPageComponent, FragmentDirective } from 'jpd-core';
 
 // fixme import from jpd-core
 // import { AbstractDefaultPageComponent } from '../../../../../jpd-core/src/lib/components';
@@ -28,17 +28,17 @@ import { AbstractDefaultPageComponent, FragmentDirective, RouteDomService } from
 })
 export class ShopPageComponent extends AbstractDefaultPageComponent {
 
-  routes: Route[] = [
-    {title: 'Home', path: 'home', children: []},
-    {title: 'White', path: 'white', children: []},
-    {title: 'Green', path: 'green', children: []},
-    {title: 'Red', path: 'red', children: []}];
+  // routes: Route[] = [
+  //   {title: 'Home', path: 'kratom/home', children: []},
+  //   {title: 'White', path: 'kratom/white-vein', children: []},
+  //   {title: 'Green', path: 'kratom/green-vein', children: []},
+  //   {title: 'Red', path: 'kratom/red-vein', children: []}];
+  //
+  // linkActiveOptions: IsActiveMatchOptions;
 
-  linkActiveOptions: IsActiveMatchOptions;
-
-  constructor(private routeDomService: RouteDomService) {
+  constructor(/*private routeDomService: RouteDomService*/) {
     super();
-    this.linkActiveOptions = this.routeDomService.getIsActiveMatchOptions();
+    // this.linkActiveOptions = this.routeDomService.getIsActiveMatchOptions();
   }
 
   // override ngOnInit(): void {

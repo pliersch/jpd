@@ -3,7 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { createKratomArticles } from '@shop/pages/shop/store/artilce.mock-factory';
 import { ENV_TOKEN } from 'jpd-core';
 import { Observable, of } from 'rxjs';
-import { Article, CreateArticle, UpdateArticle } from './shop.model';
+import { Article, Category, CreateArticle, Family, UpdateArticle } from './shop.model';
 
 @Injectable({providedIn: 'root'})
 export class ShopService {
@@ -13,8 +13,13 @@ export class ShopService {
   private readonly http = inject(HttpClient);
 
   getAll(): Observable<Article[]> {
-    console.log('ShopService getAll: ',)
     return of<Article[]>(createKratomArticles());
+    // return this.http.get<Article[]>(this.API_URL);
+  }
+
+  getByCategoryAndFamily(family: Family, category: Category): Observable<Article[]> {
+    const articles = createKratomArticles().filter(val => val.category == category);
+    return of<Article[]>(articles);
     // return this.http.get<Article[]>(this.API_URL);
   }
 

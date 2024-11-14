@@ -11,10 +11,12 @@ export default [
     path: '', component: ShopPageComponent, children: [
       {
         path: 'kratom', loadComponent: kratom, children: [
-          {path: 'home', loadComponent: listDefault},
-          {path: 'white-vein', loadComponent: listDefault},
-          {path: 'green-vein', loadComponent: listDefault},
-          {path: 'red-vein', loadComponent: listDefault},
+          {path: 'home', loadComponent: listDefault, data: {animation: 'enterLeavePage'}},
+          {path: 'white-vein', loadComponent: listDefault, data: {animation: 'enterLeavePage'}},
+          {path: 'green-vein', loadComponent: listDefault, data: {animation: 'enterLeavePage'}},
+          {path: 'red-vein', loadComponent: listDefault, data: {animation: 'enterLeavePage'}},
+          {path: '', redirectTo: '/shop/kratom/home', pathMatch: 'full'},
+          {path: '**', redirectTo: '/shop/kratom/home', pathMatch: 'full'},
         ]
       },
       {path: 'cbd', loadComponent: cbd},

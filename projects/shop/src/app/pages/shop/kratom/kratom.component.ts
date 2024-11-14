@@ -13,4 +13,8 @@ import { AbstractShopPageComponent } from '@shop/pages/shop/abstract-shop-page/a
 })
 export class KratomComponent extends AbstractShopPageComponent {
 
+  // productCategory = 'kratom';
+  // productTypes = ['white', 'green', 'red'];
+
+
 }
