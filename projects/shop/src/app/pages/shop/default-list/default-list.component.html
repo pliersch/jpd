@@ -1,6 +1,6 @@
 <div class="flex flex-wrap">
-  @for (article of store.getArticles(); track article.id) {
-    <a4w-card45 class="media " [title]="article.name" [subtitle]="article.dealer" linkUrl="baz"
-                imageUrl="foobar"/>
+  @for (article of store.articlesEntities(); track article.id) {
+    <a4w-card45 class="media " [title]="article.name" [subtitle]="article.dealer" linkUrl="foo"
+                imageUrl="assets/img/bunny.jpg"/>
   }
 </div>

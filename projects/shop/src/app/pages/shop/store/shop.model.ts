@@ -1,9 +1,17 @@
-export type Category = 'White' | 'Green' | 'Red';
+export type Family = 'kratom' | 'cbd' | 'miscellaneous';
+export type Category = 'white' | 'green' | 'red';
 export type Dealer = 'A' | 'B' | 'C' | 'D' | 'E' | 'F';
+
+export interface Product {
+  id: string;
+  family: Family;
+  category: Category;
+}
 
 export interface Article {
   id: string;
   name: string;
+  family: Family;
   category: Category;
   description: string;
   rating: number;
@@ -32,6 +40,7 @@ export interface Stock {
 
 export interface CreateArticle {
   name: string;
+  family: Family;
   category: Category;
   description: string;
   dealer: Dealer;
