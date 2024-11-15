@@ -14,42 +14,42 @@ import { filter, Subscription, tap } from 'rxjs';
 })
 export abstract class AbstractShopPageComponent implements OnInit, OnDestroy {
 
-  protected router: Router = inject(Router);
-  // protected location: Location = inject(Location);
-
-  private subscription: Subscription;
-
-  // abstract productCategory: string;
-  // abstract productTypes: string[];
-
+  private router: Router = inject(Router);
+  private subscription: Subscription = new Subscription();
   readonly store = inject(ShopStore);
 
   ngOnInit(): void {
-    this.subscription =
-      this.router.events
-        .pipe(
-          filter(event => event instanceof NavigationEnd),
-          // tap(event => console.log((event as NavigationEnd).url)),
-          // tap(event => console.log((event as NavigationEnd).urlAfterRedirects)),
-          // tap(event => this.productCategory = (event as NavigationEnd).url),
-          tap(event => {
-            const category = this.parseProductCategory((event as NavigationEnd).urlAfterRedirects);
-            const rxProductRequest =
-              this.createRequestObj('Kratom', getProductTypeFromUrl(category));
-            this.store.loadProductsByCategoryAndFamily(rxProductRequest)
-          }),
-        ).subscribe();
+    this.loadArticlesByUrl(this.router.url);
+    this.subscribeRouterEvents();
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 
+  private subscribeRouterEvents(): void {
+    this.subscription =
+      this.router.events
+        .pipe(
+          filter(event => event instanceof NavigationEnd),
+          tap(event => {
+            this.loadArticlesByUrl((event as NavigationEnd).urlAfterRedirects);
+          }),
+        ).subscribe();
+  }
+
+  private loadArticlesByUrl(url: string): void {
+    const productCategory = this.findProductCategory(url);
+    const productRequest =
+      this.createRequestObj('kratom', getProductTypeFromUrl(productCategory));
+    this.store.loadProductsByCategoryAndFamily(productRequest)
+  }
+
   private createRequestObj(family: string, category: string): Product {
     return {id: family.concat(category), family: family as Family, category: category as Category}
   }
 
-  private parseProductCategory(url: string): string {
+  private findProductCategory(url: string): string {
     const regExp = /kratom\/(.*)/;
     return regExp.exec(url)![1];
   }
