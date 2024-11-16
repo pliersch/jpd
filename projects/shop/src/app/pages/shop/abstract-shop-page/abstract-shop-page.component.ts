@@ -1,7 +1,7 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { getProductTypeFromUrl } from '@shop/pages/shop/store/models/url-product-types';
-import { Category, Family, Product } from '@shop/pages/shop/store/shop.model';
+import { Category, Family, ProductCategory } from '@shop/pages/shop/store/shop.model';
 import { ShopStore } from '@shop/pages/shop/store/shop.store';
 import { filter, Subscription, tap } from 'rxjs';
 
@@ -42,10 +42,11 @@ export abstract class AbstractShopPageComponent implements OnInit, OnDestroy {
     const productCategory = this.findProductCategory(url);
     const productRequest =
       this.createRequestObj('kratom', getProductTypeFromUrl(productCategory));
-    this.store.loadProductsByCategoryAndFamily(productRequest)
+    this.store.setProductsCategory(productRequest);
+    // this.store.loadProductsByCategoryAndFamily(productRequest)
   }
 
-  private createRequestObj(family: string, category: string): Product {
+  private createRequestObj(family: string, category: string): ProductCategory {
     return {id: family.concat(category), family: family as Family, category: category as Category}
   }
 

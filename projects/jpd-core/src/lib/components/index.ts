@@ -102,6 +102,9 @@ export {
 } from './by-topic/gallery/grid32-1/image-grid321.component'
 export { Animation1Component, AnimationModel } from './by-topic/landing/animation-1/animation1.component'
 export { GMapsIframeComponent, GMapsModel } from './by-topic/maps/g-maps-iframe/g-maps-iframe.component'
+
+export { StarRatingComponent } from './by-topic/miscellaneous/star-rating/star-rating.component'
+
 export { AboutUsComponent, AboutUsModel } from './by-topic/presentation/about-us/about-us.component'
 export { TeamComponent } from './by-topic/presentation/team/team.component'
 export { PresentationCards1Component } from './by-topic/presentation/cards-1/presentation-cards1.component'

@@ -1,31 +1,57 @@
-import { Article, Category, Family } from '@shop/pages/shop/store/shop.model';
+import { Article, Category, Dealer, Family } from '@shop/pages/shop/store/shop.model';
 import { LoremIpsumFactory } from 'jpd-core';
 
 export function createKratomArticles(): Article[] {
+  // todo 'Type' sounds better then 'Category'
   const types: Category[] = ['white', 'green', 'red'];
   const names: string[] = ['Bali', 'Borneo', 'Thai', 'Sumatra'];
   const articles: Article[] = [];
   let id = 1;
   for (const type of types) {
     for (const name of names) {
-      articles.push(createKratomArticle(name, 'kratom', type, String(id++)))
+      articles.push(createKratomArticle(name, 'kratom', type, randomDealer(), String(id++)))
     }
   }
   return articles;
 }
 
-function createKratomArticle(name: string, family: Family, type: Category, id: string): Article {
+function createKratomArticle(name: string, family: Family, type: Category, dealer: Dealer, id: string): Article {
   return {
     id: id,
-    name: `${type} ${name}`,
-    rating: 0,
+    name: `${capitalizeFirstLetter(type)} ${name}`,
+    rating: randomRating(),
     date: new Date(),
     family: family,
     category: type,
+    charge: randomIntFromInterval(1000, 9999),
+    shortName: createShortName(name, type, dealer),
     description: LoremIpsumFactory.getText(150),
     comments: [],
-    dealer: 'A',
+    dealer: dealer,
     stock: {gram10: 20, gram50: 25, gram100: 30, gram250: 70, gram500: 10, gram1000: 8},
     pictureUrl: ''
   }
+}
+
+function capitalizeFirstLetter(val: string): string {
+  return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+}
+
+function randomIntFromInterval(min: number, max: number): number { // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function randomRating(): number {
+  return randomIntFromInterval(1, 5);
+}
+
+function randomDealer(): Dealer {
+  const dealers: Dealer[] = ['A', 'B', 'C', 'D', 'E', 'F'];
+  return dealers[randomIntFromInterval(0, 5)];
+}
+
+function createShortName(name: string, type: Category, dealer: Dealer): string {
+  return dealer.charAt(0).toUpperCase()
+    .concat(name.charAt(0)).toUpperCase()
+    .concat(type.charAt(0)).toUpperCase();
 }

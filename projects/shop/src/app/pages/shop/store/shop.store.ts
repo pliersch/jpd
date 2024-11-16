@@ -1,23 +1,21 @@
 import { withCallState, withDevtools } from '@angular-architects/ngrx-toolkit';
 import { computed, inject } from '@angular/core';
 import { tapResponse } from '@ngrx/operators';
-import { patchState, signalStore, type, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
+import { patchState, signalStore, type, withComputed, withMethods, withState } from '@ngrx/signals';
 import { addEntities, addEntity, setAllEntities, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { Article, Category, Family, Product } from '@shop/pages/shop/store/shop.model';
+import { Article, ProductCategory } from '@shop/pages/shop/store/shop.model';
 import { ShopService } from '@shop/pages/shop/store/shop.service';
 import { debounceTime, distinctUntilChanged, filter, pipe, switchMap, tap } from 'rxjs';
 
 type ShopState = {
   lastChanges: string | undefined;
-  currentFamily: Family | undefined;
-  currentCategory: Category | undefined;
+  productCategory: ProductCategory | undefined;
 };
 
 const initialState: ShopState = {
   lastChanges: undefined,
-  currentFamily: undefined,
-  currentCategory: undefined,
+  productCategory: undefined,
 };
 
 export const ShopStore = signalStore(
@@ -26,10 +24,11 @@ export const ShopStore = signalStore(
   withDevtools('shop'),
   withState(initialState),
   withEntities({entity: type<Article>(), collection: 'articles'}),
-  withEntities({entity: type<Product>(), collection: 'requestedProducts'}),
-  withComputed(({articlesEntities, currentFamily, currentCategory}) => ({
+  withEntities({entity: type<ProductCategory>(), collection: 'requestedProducts'}),
+  withComputed(({articlesEntities, productCategory}) => ({
     getCurrentProducts: computed(() => articlesEntities()
-      .filter(article => article.family === currentFamily() && article.category === currentCategory())),
+      .filter(article => article.family === productCategory()?.family
+        && article.category === productCategory()?.category)),
   })),
   withMethods((store, service = inject(ShopService)) => ({
       loadAll: rxMethod<void>(
@@ -49,11 +48,10 @@ export const ShopStore = signalStore(
           })
         )
       ),
-      loadProductsByCategoryAndFamily: rxMethod<Product>(
+      loadProductsByCategoryAndFamily: rxMethod<ProductCategory>(
         pipe(
           filter(Boolean),
-          filter(p => !store.requestedProductsEntities().find(product => product.id === p.id)),
-          tap((p) => patchState(store, {currentFamily: p.family, currentCategory: p.category})),
+          tap((p) => patchState(store, {productCategory: p})),
           // tap(() => patchState(store, setPending())),
           switchMap((product) => {
             return service.getByCategoryAndFamily(product.family, product.category).pipe(
@@ -72,9 +70,21 @@ export const ShopStore = signalStore(
       ),
     }),
   ),
-  withHooks({
-    onInit(/*{loadAll}*/): void {
-      // loadAll();
-    }
-  })
+  // second withMethods for access to "loadProductsByCategoryAndFamily"
+  withMethods((store) => ({
+      setProductsCategory: rxMethod<ProductCategory>(
+        pipe(
+          filter(Boolean),
+          tap((val) => patchState(store, {productCategory: val})),
+          filter(p => !store.requestedProductsEntities().find(product => product.id === p.id)),
+          tap((val) => store.loadProductsByCategoryAndFamily(val)),
+        ),
+      ),
+    }),
+  ),
+  // withHooks({
+  //   onInit(/*{loadAll}*/): void {
+  //     loadAll();
+  //   }
+  // })
 );

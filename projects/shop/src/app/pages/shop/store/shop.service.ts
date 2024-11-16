@@ -19,7 +19,6 @@ export class ShopService {
 
   getByCategoryAndFamily(family: Family, category: Category): Observable<Article[]> {
     const articles = createKratomArticles().filter(val => val.category == category);
-    console.log('ShopService getByCategoryAndFamily: ', articles);
     return of<Article[]>(articles);
     // return this.http.get<Article[]>(this.API_URL);
   }
