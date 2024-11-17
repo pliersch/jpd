@@ -2,12 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, model } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ImageFallbackDirective } from '../../../../common';
-import { StarRatingComponent } from '../../miscellaneous/star-rating/star-rating.component';
+import { StarsComponent } from '../../miscellaneous/stars/stars.component';
 
 @Component({
   selector: 'a4w-card45',
   standalone: true,
-  imports: [CommonModule, RouterLink, ImageFallbackDirective, ImageFallbackDirective, StarRatingComponent],
+  imports: [CommonModule, RouterLink, ImageFallbackDirective, ImageFallbackDirective, StarsComponent],
   templateUrl: './card45.component.html',
   styleUrl: './card45.component.scss'
 })

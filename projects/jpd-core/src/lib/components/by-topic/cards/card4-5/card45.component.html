@@ -1,9 +1,11 @@
 <div class="flex flex-col text-sm w-full rounded overflow-hidden cursor-pointer elevation">
   <a [routerLink]="[linkUrl]">
     <div>
-      <img a4wImgFallback class="object-cover"
-           [src]="imageUrl" alt="image of kratom">
-      <a4w-star-rating disabled [rate]="rating"/>
+      <div class="flex justify-center items-center">
+        <img a4wImgFallback class="object-cover"
+             [src]="imageUrl" alt="image of kratom">
+      </div>
+      <a4w-stars [rate]="rating"/>
     </div>
     <div class="flex flex-col px-2 py-4 theme-contrast-component">
       <p>{{ subtitle }}</p>

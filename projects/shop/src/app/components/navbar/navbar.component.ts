@@ -17,10 +17,10 @@ import { RouteDomService } from 'jpd-core';
 export class NavbarComponent {
 
   routes: Route[] = [
-    {title: 'Home', path: 'shop/kratom/home', children: []},
-    {title: 'White', path: 'shop/kratom/white-vein', children: []},
-    {title: 'Green', path: 'shop/kratom/green-vein', children: []},
-    {title: 'Red', path: 'shop/kratom/red-vein', children: []}];
+    {title: 'Home', path: 'home', children: []},
+    {title: 'White', path: 'white-vein', children: []},
+    {title: 'Green', path: 'green-vein', children: []},
+    {title: 'Red', path: 'red-vein', children: []}];
 
   linkActiveOptions: IsActiveMatchOptions =
     inject(RouteDomService).getIsActiveMatchOptions();

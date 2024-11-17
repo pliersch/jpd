@@ -104,6 +104,7 @@ export { Animation1Component, AnimationModel } from './by-topic/landing/animatio
 export { GMapsIframeComponent, GMapsModel } from './by-topic/maps/g-maps-iframe/g-maps-iframe.component'
 
 export { StarRatingComponent } from './by-topic/miscellaneous/star-rating/star-rating.component'
+export { StarsComponent } from './by-topic/miscellaneous/stars/stars.component'
 
 export { AboutUsComponent, AboutUsModel } from './by-topic/presentation/about-us/about-us.component'
 export { TeamComponent } from './by-topic/presentation/team/team.component'
