@@ -3,22 +3,28 @@ import { inject, Injectable } from '@angular/core';
 import { createKratomArticles } from '@shop/pages/shop/store/artilce.mock-factory';
 import { ENV_TOKEN } from 'jpd-core';
 import { Observable, of } from 'rxjs';
-import { Article, Category, CreateArticle, Family, UpdateArticle } from './shop.model';
+import { Article, CreateArticle, Product, UpdateArticle } from './shop.model';
 
 @Injectable({providedIn: 'root'})
 export class ShopService {
+
+  private readonly kratomArticles: Article[];
+
+  constructor() {
+    this.kratomArticles = createKratomArticles();
+  }
 
   private readonly API_URL: string = `${inject(ENV_TOKEN).apiUrl}/shop`;
 
   private readonly http = inject(HttpClient);
 
-  getAll(): Observable<Article[]> {
-    return of<Article[]>(createKratomArticles());
+  getAll(product: Product): Observable<Article[]> {
+    return of<Article[]>(this.kratomArticles);
     // return this.http.get<Article[]>(this.API_URL);
   }
 
-  getByCategoryAndFamily(family: Family, category: Category): Observable<Article[]> {
-    const articles = createKratomArticles().filter(val => val.category == category);
+  getByProductCategory(product: Product, category: string): Observable<Article[]> {
+    const articles = this.kratomArticles.filter(val => val.category == category);
     return of<Article[]>(articles);
     // return this.http.get<Article[]>(this.API_URL);
   }

@@ -17,7 +17,7 @@ import { RouteDomService } from 'jpd-core';
 export class NavbarComponent {
 
   routes: Route[] = [
-    {title: 'Home', path: 'home', children: []},
+    // {title: 'Home', path: 'home', children: []},
     {title: 'White', path: 'white-vein', children: []},
     {title: 'Green', path: 'green-vein', children: []},
     {title: 'Red', path: 'red-vein', children: []}];

@@ -1,7 +1,7 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { getProductTypeFromUrl } from '@shop/pages/shop/store/models/url-product-types';
-import { Category, Family, ProductCategory } from '@shop/pages/shop/store/shop.model';
+import { Product } from '@shop/pages/shop/store/shop.model';
 import { ShopStore } from '@shop/pages/shop/store/shop.store';
 import { filter, Subscription, tap } from 'rxjs';
 
@@ -18,8 +18,14 @@ export abstract class AbstractShopPageComponent implements OnInit, OnDestroy {
   private subscription: Subscription = new Subscription();
   readonly store = inject(ShopStore);
 
+  protected abstract product: Product;
+  protected abstract category: string[];
+
   ngOnInit(): void {
-    this.loadArticlesByUrl(this.router.url);
+    this.store.setProduct(this.product);
+    this.store.loadAll(this.product);
+    // this.loadArticles(this.product);
+    this.filterArticlesByUrl(this.router.url);
     this.subscribeRouterEvents();
   }
 
@@ -33,26 +39,24 @@ export abstract class AbstractShopPageComponent implements OnInit, OnDestroy {
         .pipe(
           filter(event => event instanceof NavigationEnd),
           tap(event => {
-            this.loadArticlesByUrl((event as NavigationEnd).urlAfterRedirects);
+            this.filterArticlesByUrl((event as NavigationEnd).urlAfterRedirects);
           }),
         ).subscribe();
   }
 
-  private loadArticlesByUrl(url: string): void {
+  private filterArticlesByUrl(url: string): void {
     const productCategory = this.findProductCategory(url);
-    const productRequest =
-      this.createRequestObj('kratom', getProductTypeFromUrl(productCategory));
-    this.store.setProductsCategory(productRequest);
-    // this.store.loadProductsByCategoryAndFamily(productRequest)
+    if (!productCategory) {
+      this.store.setCategory(undefined);
+      return;
+    }
+    this.store.setCategory(getProductTypeFromUrl(productCategory));
   }
 
-  private createRequestObj(family: string, category: string): ProductCategory {
-    return {id: family.concat(category), family: family as Family, category: category as Category}
-  }
-
-  private findProductCategory(url: string): string {
+  private findProductCategory(url: string): string | null {
     const regExp = /kratom\/(.*)/;
-    return regExp.exec(url)![1];
+    const exec = regExp.exec(url);
+    return exec && exec[1] || null;
   }
 
 }

@@ -1,9 +1,9 @@
-import { Article, Category, Dealer, Family } from '@shop/pages/shop/store/shop.model';
+import { Article, Dealer, Product } from '@shop/pages/shop/store/shop.model';
 import { LoremIpsumFactory } from 'jpd-core';
 
 export function createKratomArticles(): Article[] {
   // todo 'Type' sounds better then 'Category'
-  const types: Category[] = ['white', 'green', 'red'];
+  const types: string[] = ['white', 'green', 'red'];
   const names: string[] = ['Bali', 'Borneo', 'Thai', 'Sumatra'];
   const articles: Article[] = [];
   let id = 1;
@@ -15,16 +15,16 @@ export function createKratomArticles(): Article[] {
   return articles;
 }
 
-function createKratomArticle(name: string, family: Family, type: Category, dealer: Dealer, id: string): Article {
+function createKratomArticle(name: string, product: Product, category: string, dealer: Dealer, id: string): Article {
   return {
     id: id,
-    name: `${capitalizeFirstLetter(type)} ${name}`,
+    name: `${capitalizeFirstLetter(category)} ${name}`,
     rating: randomRating(),
     date: new Date(),
-    family: family,
-    category: type,
+    product: product,
+    category: category,
     charge: randomIntFromInterval(1000, 9999),
-    shortName: createShortName(name, type, dealer),
+    shortName: createShortName(name, category, dealer),
     description: LoremIpsumFactory.getText(150),
     comments: [],
     dealer: dealer,
@@ -50,8 +50,8 @@ function randomDealer(): Dealer {
   return dealers[randomIntFromInterval(0, 5)];
 }
 
-function createShortName(name: string, type: Category, dealer: Dealer): string {
+function createShortName(name: string, category: string, dealer: Dealer): string {
   return dealer.charAt(0).toUpperCase()
     .concat(name.charAt(0)).toUpperCase()
-    .concat(type.charAt(0)).toUpperCase();
+    .concat(category.charAt(0)).toUpperCase();
 }

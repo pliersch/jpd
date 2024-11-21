@@ -1,20 +1,12 @@
 // todo is it possible to use capitalizeFirstLetter
-export type Family = 'kratom' | 'cbd' | 'miscellaneous';
-// todo is it possible to use capitalizeFirstLetter
-export type Category = 'white' | 'green' | 'red';
+export type Product = 'kratom' | 'cbd' | 'miscellaneous';
 export type Dealer = 'A' | 'B' | 'C' | 'D' | 'E' | 'F';
-
-export interface ProductCategory {
-  id: string;
-  family: Family;
-  category: Category;
-}
 
 export interface Article {
   id: string;
   name: string;
-  family: Family;
-  category: Category;
+  product: Product;
+  category: string;
   charge: number;
   shortName: string;
   description: string;
@@ -44,8 +36,8 @@ export interface Stock {
 
 export interface CreateArticle {
   name: string;
-  family: Family;
-  category: Category;
+  product: Product;
+  category: string;
   charge: number;
   shortName: string;
   description: string;
