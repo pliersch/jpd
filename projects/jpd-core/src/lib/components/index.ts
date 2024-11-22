@@ -74,7 +74,7 @@ export { Cards41Component, Cards41Model } from './by-topic/cards/card4-1/cards41
 export { Card42Component, Card42Model } from './by-topic/cards/card4-2/card42.component'
 export { Card43Component, Card43Model } from './by-topic/cards/card4-3/card43.component'
 export { Card44Component, Card44Model } from './by-topic/cards/card4-4/card44.component'
-export { Card45Component } from './by-topic/cards/card4-5/card45.component'
+export { ShopCard1Component } from './by-topic/cards/shop-card-1/shop-card1.component'
 export { ImageCard1Component } from './by-topic/cards/image-card-1/image-card1.component'
 export { ImageCard2Component } from './by-topic/cards/image-card-2/image-card2.component'
 export { ImageCards2Component } from './by-topic/cards/image-card-2/image-cards2.component'

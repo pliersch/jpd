@@ -1,5 +1,4 @@
 import { CdkFixedSizeVirtualScroll, CdkVirtualForOf, CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
-import { AsyncPipe, NgFor } from '@angular/common';
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
@@ -13,9 +12,6 @@ import {
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
-import {
-  HorizontalVirtualScrollComponent
-} from '../../../../samples/horizontal-virtual-scroll/horizontal-virtual-scroll.component';
 import { ScrollerItemComponent } from '../scroller-item/scroller-item.component';
 
 
@@ -26,7 +22,7 @@ import { ScrollerItemComponent } from '../scroller-item/scroller-item.component'
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgFor, ScrollerItemComponent, AsyncPipe, CdkFixedSizeVirtualScroll, CdkVirtualScrollViewport, CdkVirtualForOf, HorizontalVirtualScrollComponent]
+  imports: [ScrollerItemComponent, CdkFixedSizeVirtualScroll, CdkVirtualScrollViewport, CdkVirtualForOf]
 })
 export class PhotosHorizontalScrollerComponent implements AfterViewInit, OnChanges {
 

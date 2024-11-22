@@ -1,1 +1,5 @@
-<p>product-detail works!</p>
+<div *ngIf="article$ | async as hero">
+  <h3>{{ hero.name }}</h3>
+</div>
+<!--<p> signal: {{ productDetail()?.name }}</p>-->
+

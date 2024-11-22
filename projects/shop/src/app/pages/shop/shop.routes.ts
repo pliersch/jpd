@@ -12,6 +12,8 @@ const productDetail = () => import('./components/product-detail/product-detail.c
 export default [
   {
     path: '', component: ShopPageComponent, children: [
+      {path: 'product/:id', loadComponent: productDetail,},
+      {path: 'category/:category', loadComponent: productDetail,},
       {
         path: 'kratom', loadComponent: kratom, children: [
           {path: '', loadComponent: shopContainer, data: {animation: 'enterLeavePage'}},

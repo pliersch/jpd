@@ -50,7 +50,10 @@ export abstract class AbstractShopPageComponent implements OnInit, OnDestroy {
       this.store.setCategory(undefined);
       return;
     }
-    this.store.setCategory(getProductTypeFromUrl(productCategory));
+    const category = getProductTypeFromUrl(productCategory);
+    if (category) {
+      this.store.setCategory(category);
+    }
   }
 
   private findProductCategory(url: string): string | null {

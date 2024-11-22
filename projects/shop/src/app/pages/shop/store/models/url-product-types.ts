@@ -1,7 +1,7 @@
-export function getProductTypeFromUrl(url: string): string {
+export function getProductTypeFromUrl(url: string): string | null {
   const newVar = getMap().get(url);
   if (!newVar) {
-    throw new Error(`Cannot get product type for ${url}`);
+    return null;
   }
   return newVar;
 }

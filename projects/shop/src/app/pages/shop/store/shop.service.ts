@@ -23,6 +23,10 @@ export class ShopService {
     // return this.http.get<Article[]>(this.API_URL);
   }
 
+  getById(id: string): Observable<Article> {
+    return of<Article>(this.kratomArticles.find(v => v.id === id)!);
+  }
+
   getByProductCategory(product: Product, category: string): Observable<Article[]> {
     const articles = this.kratomArticles.filter(val => val.category == category);
     return of<Article[]>(articles);
