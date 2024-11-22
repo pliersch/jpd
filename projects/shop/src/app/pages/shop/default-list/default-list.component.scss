@@ -7,7 +7,6 @@
   &:hover {
     @include mat.elevation(9);
   }
-
 }
 
 .media {
@@ -34,15 +33,15 @@
     width: calc(100% / 6);
   }
 
-  @media (min-width: 1750px) {
+  @media (min-width: 1400px) {
     width: calc(100% / 6);
   }
 
-  @media (min-width: 2000px) {
+  @media (min-width: 1600px) {
     width: calc(100% / 7);
   }
 
-  @media (min-width: 2250px) {
+  @media (min-width: 1800px) {
     width: calc(100% / 8);
   }
 }
