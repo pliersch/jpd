@@ -1,6 +1,7 @@
 // todo is it possible to use capitalizeFirstLetter
+import { DealerType } from '@shop/pages/shop/store/dealer/dealer.model';
+
 export type Product = 'kratom' | 'cbd' | 'miscellaneous';
-export type Dealer = 'A' | 'B' | 'C' | 'D' | 'E' | 'F';
 
 export interface Article {
   id: string;
@@ -12,7 +13,7 @@ export interface Article {
   description: string;
   rating: number;
   comments: Comment[];
-  dealer: Dealer;
+  dealer: DealerType;
   stock: Stock;
   date: Date;
   pictureUrl: string;
@@ -41,7 +42,7 @@ export interface CreateArticle {
   charge: number;
   shortName: string;
   description: string;
-  dealer: Dealer;
+  dealer: DealerType;
   stock: Stock;
   date?: Date;
   pictureUrl: string;
@@ -50,7 +51,7 @@ export interface CreateArticle {
 export interface UpdateArticle {
   name?: string;
   description?: string;
-  dealer?: Dealer;
+  dealer?: DealerType;
   stock?: Stock;
   date?: Date;
   pictureUrl?: string;

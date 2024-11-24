@@ -2,6 +2,6 @@
   @for (article of store.getCurrentProducts(); track article.id) {
     <a4w-shop-card-1 class="media " [title]="article.name + ' ' + article.charge + ' ' + article.shortName"
                      [subtitle]="'Händler ' + article.dealer" link="/shop/kratom/detail" [linkId]="article.id"
-                     [rating]="article.rating" imageUrl="assets/img/kratom_red_hell-250x250.png"/>
+                     [rating]="article.rating" [imageUrl]="'assets/img/' + article.pictureUrl"/>
   }
 </div>

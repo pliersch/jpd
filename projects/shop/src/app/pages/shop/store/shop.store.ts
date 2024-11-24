@@ -12,12 +12,14 @@ type ShopState = {
   lastChanges: string | undefined;
   product: Product | undefined;
   category: string | undefined;
+  article: Article | undefined;
 };
 
 const initialState: ShopState = {
   lastChanges: undefined,
   product: undefined,
   category: undefined,
+  article: undefined,
 };
 
 export const ShopStore = signalStore(
@@ -32,8 +34,6 @@ export const ShopStore = signalStore(
       .filter(article => article.product === product()
         && (article.category === category() || !category()))),
   })),
-
-  // article.category === productCategory()?.category
 
   withMethods((store, service = inject(ShopService)) => ({
       loadAll: rxMethod<Product>(
@@ -52,6 +52,23 @@ export const ShopStore = signalStore(
             );
           })
         )
+      ),
+      setActiveArticleById: rxMethod<string>(
+        pipe(
+          debounceTime(300),
+          distinctUntilChanged(),
+          switchMap((id) => {
+            return service.getById(id).pipe(
+              tapResponse({
+                next: (article) => {
+                  patchState(store, {article: article})
+                },
+                error: console.error,
+                // finalize: () => computeWidgets(store.articlesEntities()),
+              })
+            );
+          })
+        ),
       ),
       // loadProductsByCategoryAndFamily: rxMethod<ProductCategory>(
       //   pipe(

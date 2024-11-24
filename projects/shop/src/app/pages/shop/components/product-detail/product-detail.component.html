@@ -1,5 +1,68 @@
-<div *ngIf="article$ | async as hero">
-  <h3>{{ hero.name }}</h3>
-</div>
-<!--<p> signal: {{ productDetail()?.name }}</p>-->
+@if (shopStore.article(); as article) {
 
+  <div class="m-auto lg:max-w-5xl px-4 py-12 sm:px-6 sm:py-24 lg:grid grid-cols-2 lg:gap-8 lg:px-8">
+    <div class="max-w-lg self-end">
+
+      <nav aria-label="breadcrumb" class="w-max">
+        <ol class="flex w-full flex-wrap items-center py-2">
+          <li
+            class="flex cursor-pointer items-center text-sm transition-colors duration-300 hover:text-[color:--theme-accent]">
+            <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path
+                  d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+              </svg>
+            </a>
+            <span class="pointer-events-none mx-2">
+        /
+      </span>
+          </li>
+          <li
+            class="flex cursor-pointer items-center text-sm  transition-colors duration-300 hover:text-[color:--theme-accent]">
+            <a href="#">Components</a>
+            <span class="pointer-events-none mx-2">
+        /
+      </span>
+          </li>
+          <li
+            class="flex cursor-pointer items-center text-sm  transition-colors duration-300 hover:text-[color:--theme-accent]">
+            <a href="#">Breadcrumbs</a>
+          </li>
+        </ol>
+      </nav>
+
+      <div class="flex items-center justify-between pb-2">
+        <h1 class="text-xl">{{ article.name }} {{ article.shortName }} {{ article.charge }}</h1>
+        <a4w-stars [rate]="article.rating || 0"/>
+      </div>
+      <section aria-labelledby="information-heading">
+        <h2 id="information-heading" class="b">Händler {{ article.dealer }}</h2>
+        <p class="text-sm">{{ article.description }}</p>
+      </section>
+    </div>
+    <div class="mt-10 lg:col-start-2 lg:row-span-2 lg:mt-0 lg:self-center">
+      <img [src]="'assets/img/' + article.pictureUrl" alt="image of kratom" class="object-cover rounded-md w-full">
+    </div>
+    <div class="mt-10 lg:col-start-1 lg:row-start-2 lg:max-w-lg lg:self-start">
+      <section aria-labelledby="options-heading">
+        <h2 id="options-heading" class="b">Product options</h2>
+        <form>
+          <div class="flex items-end flex-col w-fit">
+            <app-number-input text="10 Gramm"/>
+            <app-number-input text="50 Gramm"/>
+            <app-number-input text="100 Gramm"/>
+            <app-number-input text="250 Gramm"/>
+            <app-number-input text="500 Gramm"/>
+            <app-number-input text="1000 Gramm"/>
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <mat-tab-group color="accent" mat-stretch-tabs="false" mat-align-tabs="start">
+    <mat-tab label="Beschreibung"> {{ article.description }}</mat-tab>
+    <mat-tab label="Händler Info">{{ dealerStore.getDealer(article.dealer).info }}</mat-tab>
+    <mat-tab label="Bewertungen"> Content 3</mat-tab>
+  </mat-tab-group>
+}

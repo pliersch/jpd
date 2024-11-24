@@ -1,4 +1,5 @@
-import { Article, Dealer, Product } from '@shop/pages/shop/store/shop.model';
+import { DealerType } from '@shop/pages/shop/store/dealer/dealer.model';
+import { Article, Product } from '@shop/pages/shop/store/shop.model';
 import { LoremIpsumFactory } from 'jpd-core';
 
 export function createKratomArticles(): Article[] {
@@ -15,7 +16,7 @@ export function createKratomArticles(): Article[] {
   return articles;
 }
 
-function createKratomArticle(name: string, product: Product, category: string, dealer: Dealer, id: string): Article {
+function createKratomArticle(name: string, product: Product, category: string, dealer: DealerType, id: string): Article {
   return {
     id: id,
     name: `${capitalizeFirstLetter(category)} ${name}`,
@@ -29,7 +30,7 @@ function createKratomArticle(name: string, product: Product, category: string, d
     comments: [],
     dealer: dealer,
     stock: {gram10: 20, gram50: 25, gram100: 30, gram250: 70, gram500: 10, gram1000: 8},
-    pictureUrl: ''
+    pictureUrl: 'kratom_red_hell-250x250.png'
   }
 }
 
@@ -45,13 +46,13 @@ function randomRating(): number {
   return randomIntFromInterval(1, 5);
 }
 
-function randomDealer(): Dealer {
-  const dealers: Dealer[] = ['A', 'B', 'C', 'D', 'E', 'F'];
+function randomDealer(): DealerType {
+  const dealers: DealerType[] = ['A', 'B', 'C', 'D', 'E', 'F'];
   return dealers[randomIntFromInterval(0, 5)];
 }
 
-function createShortName(name: string, category: string, dealer: Dealer): string {
+function createShortName(name: string, category: string, dealer: DealerType): string {
   return dealer.charAt(0).toUpperCase()
-    .concat(name.charAt(0)).toUpperCase()
-    .concat(category.charAt(0)).toUpperCase();
+    .concat(category.charAt(0)).toUpperCase()
+    .concat(name.charAt(0)).toUpperCase();
 }
