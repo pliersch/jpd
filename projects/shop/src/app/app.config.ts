@@ -11,7 +11,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconRegistry } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { DomSanitizer, provideClientHydration } from '@angular/platform-browser';
-import { provideAnimations } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter, withComponentInputBinding } from '@angular/router';
 import { initProjectIcons } from '@shop/common/icon.initializer';
 import { CustomAppDataService } from '@shop/services/custom-app-data.service';
@@ -38,7 +38,7 @@ registerLocaleData(localeDe);
 export const appConfig: ApplicationConfig = {
   providers: [
     provideClientHydration(),
-    importProvidersFrom(MatSnackBarModule, MatDialogModule, GoogleMapsModule),
+    importProvidersFrom(MatSnackBarModule, MatDialogModule, GoogleMapsModule, BrowserAnimationsModule),
     provideAnimations(),
     provideHttpClient(withFetch(), /*withInterceptorsFromDi()*/),
     {provide: LOCALE_ID, useValue: 'de'},

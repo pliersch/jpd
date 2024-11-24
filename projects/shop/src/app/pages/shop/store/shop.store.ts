@@ -77,7 +77,7 @@ export const ShopStore = signalStore(
   ),
   // second withMethods for access to "loadProductsByCategoryAndFamily"
   withMethods((store) => ({
-      setProduct: rxMethod<Product>(
+      setProduct: rxMethod<Product | undefined>(
         pipe(
           tap((val) => patchState(store, {product: val})),
         ),
