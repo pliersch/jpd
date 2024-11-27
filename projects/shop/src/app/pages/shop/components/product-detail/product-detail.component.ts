@@ -1,10 +1,9 @@
-import { Component, inject, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTab, MatTabGroup } from '@angular/material/tabs';
 import { NumberInputComponent } from '@shop/pages/shop/components/number-input/number-input.component';
-import { DealerStore } from '@shop/pages/shop/store/dealer/dealer.store';
-import { ShopStore } from '@shop/pages/shop/store/shop.store';
+import { DetailStore } from '@shop/pages/shop/detail/detail.store';
 import { ImageFallbackDirective, StarsComponent } from 'jpd-core';
 
 @Component({
@@ -20,16 +19,11 @@ import { ImageFallbackDirective, StarsComponent } from 'jpd-core';
     NumberInputComponent
   ],
   templateUrl: './product-detail.component.html',
-  styleUrl: './product-detail.component.scss'
+  styleUrl: './product-detail.component.scss',
+  providers: [DetailStore],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductDetailComponent {
 
-  readonly shopStore = inject(ShopStore);
-  readonly dealerStore = inject(DealerStore);
-
-  @Input() // read id from url param id (withComponentInputBinding)
-  set id(articleId: string) {
-    this.shopStore.setActiveArticleById(articleId);
-  }
-
+  readonly detailStore = inject(DetailStore);
 }

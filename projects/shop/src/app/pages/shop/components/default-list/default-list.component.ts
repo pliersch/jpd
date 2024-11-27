@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ShopStore } from '@shop/pages/shop/store/shop.store';
 import { ShopCard1Component } from 'jpd-core';
 
@@ -9,7 +9,8 @@ import { ShopCard1Component } from 'jpd-core';
     ShopCard1Component
   ],
   templateUrl: './default-list.component.html',
-  styleUrl: './default-list.component.scss'
+  styleUrl: './default-list.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DefaultListComponent {
 

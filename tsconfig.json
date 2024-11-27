@@ -8,7 +8,7 @@
     "noImplicitOverride": true,
     "resolveJsonModule": true,
     "strictPropertyInitialization": false,
-    "noPropertyAccessFromIndexSignature": true,
+    "noPropertyAccessFromIndexSignature": false,
     "baseUrl": "./",
     "paths": {
       "jpd-core": [

@@ -1,6 +1,6 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DefaultListComponent } from '@shop/pages/shop/default-list/default-list.component';
+import { DefaultListComponent } from '@shop/pages/shop/components/default-list/default-list.component';
 import { getProductCategoryFromUrl } from '@shop/pages/shop/store/models/url-product-types';
 import { ShopStore } from '@shop/pages/shop/store/shop.store';
 
@@ -11,7 +11,8 @@ import { ShopStore } from '@shop/pages/shop/store/shop.store';
     DefaultListComponent
   ],
   templateUrl: './product-category.component.html',
-  styleUrl: './product-category.component.scss'
+  styleUrl: './product-category.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductCategoryComponent implements OnInit {
 

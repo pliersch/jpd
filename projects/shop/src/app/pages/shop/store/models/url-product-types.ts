@@ -1,6 +1,6 @@
-import { Product } from '@shop/pages/shop/store/shop.model';
+import { Category } from '@shop/pages/shop/store/articles/article.model';
 
-export function getProductFromUrl(url: string): Product | null {
+export function getProductFromUrl(url: string): Category | null {
   const newVar = getProductMap().get(url);
   if (!newVar) {
     return null;
@@ -8,8 +8,8 @@ export function getProductFromUrl(url: string): Product | null {
   return newVar;
 }
 
-function getProductMap(): Map<string, Product> {
-  return new Map<string, Product>([
+function getProductMap(): Map<string, Category> {
+  return new Map<string, Category>([
     ["kratom", "kratom"],
   ]);
 }

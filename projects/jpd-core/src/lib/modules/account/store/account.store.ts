@@ -1,7 +1,7 @@
-import { withCallState, withDevtools } from '@angular-architects/ngrx-toolkit';
+import { updateState, withCallState, withDevtools } from '@angular-architects/ngrx-toolkit';
 import { inject } from '@angular/core';
 import { tapResponse } from '@ngrx/operators';
-import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
+import { signalStore, withMethods, withState } from '@ngrx/signals';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { debounceTime, distinctUntilChanged, pipe, switchMap } from 'rxjs';
 import { AuthService } from './auth.service';
@@ -28,7 +28,7 @@ export const AccountStore = signalStore(
           switchMap(() => {
             return authService.loginFake().pipe(
               tapResponse({
-                next: (user) => patchState(store, {user: user}),
+                next: (user) => updateState(store, 'account set user', {user: user}),
                 error: console.error,
               })
             );

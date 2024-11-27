@@ -1,4 +1,4 @@
-@if (shopStore.article(); as article) {
+@if (detailStore.article(); as article) {
 
   <div class="m-auto lg:max-w-5xl px-4 py-12 sm:px-6 sm:py-24 lg:grid grid-cols-2 lg:gap-8 lg:px-8">
     <div class="max-w-lg self-end">
@@ -62,7 +62,7 @@
 
   <mat-tab-group color="accent" mat-stretch-tabs="false" mat-align-tabs="start">
     <mat-tab label="Beschreibung"> {{ article.description }}</mat-tab>
-    <mat-tab label="Händler Info">{{ dealerStore.getDealer(article.dealer).info }}</mat-tab>
+    <mat-tab label="Händler Info">{{ detailStore.activeDealer()?.info }}</mat-tab>
     <mat-tab label="Bewertungen"> Content 3</mat-tab>
   </mat-tab-group>
 }

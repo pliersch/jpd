@@ -1,23 +1,35 @@
 // todo is it possible to use capitalizeFirstLetter
-import { DealerType } from '@shop/pages/shop/store/dealer/dealer.model';
+import { DealerType } from '@shop/pages/shop/store/articles/kratom/dealer.model';
+import { KratomPrices, KratomStock } from '@shop/pages/shop/store/articles/kratom/kratom.model';
 
-export type Product = 'kratom' | 'cbd' | 'miscellaneous';
+export type Category = 'kratom' | 'cbd' | 'miscellaneous';
 
 export interface Article {
   id: string;
   name: string;
-  product: Product;
-  category: string;
-  charge: number;
+  product: Category;
+  group: string;
   shortName: string;
   description: string;
   rating: number;
-  comments: Comment[];
+  charge: number;
+  // comments: Comment[];
   dealer: DealerType;
-  stock: Stock;
+  stock: KratomStock;
   date: Date;
   pictureUrl: string;
+  prices: KratomPrices;
 }
+
+// export interface ArticleDetails {
+//   id: string;
+//   articleId: string;
+//   charge: number;
+//   description: string;
+//   comments: Comment[];
+//   stock: KratomStock;
+//   date: Date;
+// }
 
 export interface Comment {
   userName: string;
@@ -26,24 +38,15 @@ export interface Comment {
   date: Date;
 }
 
-export interface Stock {
-  gram10: number;
-  gram50: number;
-  gram100: number;
-  gram250: number;
-  gram500: number;
-  gram1000: number;
-}
-
 export interface CreateArticle {
   name: string;
-  product: Product;
-  category: string;
+  product: Category;
+  group: string;
   charge: number;
   shortName: string;
   description: string;
   dealer: DealerType;
-  stock: Stock;
+  stock: KratomStock;
   date?: Date;
   pictureUrl: string;
 }
@@ -52,7 +55,7 @@ export interface UpdateArticle {
   name?: string;
   description?: string;
   dealer?: DealerType;
-  stock?: Stock;
+  stock?: KratomStock;
   date?: Date;
   pictureUrl?: string;
 }

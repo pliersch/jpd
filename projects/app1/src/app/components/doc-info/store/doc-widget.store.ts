@@ -6,7 +6,8 @@ import { tapResponse } from '@ngrx/operators';
 import { patchState, signalStore, type, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import { setAllEntities, updateEntity, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { isAfter, parseISO } from 'date-fns';
+import { formatDistance, isAfter, parseISO } from 'date-fns';
+import { de } from 'date-fns/locale';
 import { pipe, switchMap } from 'rxjs';
 
 type DocWidgetState = {
@@ -27,7 +28,13 @@ export const DocWidgetStore = signalStore(
     getHighWidgets: computed(() => widgetsEntities().filter(info => info.visibility === 'high')),
     getLowWidgets: computed(() => widgetsEntities().filter(info => info.visibility === 'low')),
     getLastUpdate: computed(() => {
-      return widgetsEntities().length > 0 ? findNewestUpdate(widgetsEntities()) : undefined;
+      const date = widgetsEntities().length > 0 ? findNewestUpdate(widgetsEntities()) : undefined;
+      let last = '';
+      if (date) {
+        const time = formatDistance(date, new Date(), {locale: de});
+        last = `Letzte Änderung: vor ${time}`
+      }
+      return last;
     }),
   })),
   withMethods((store, service = inject(DocWidgetService)) => ({

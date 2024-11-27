@@ -12,7 +12,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { DomSanitizer, provideClientHydration } from '@angular/platform-browser';
 import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
-import { provideRouter, withComponentInputBinding } from '@angular/router';
+import { provideRouter } from '@angular/router';
 import { initProjectIcons } from '@shop/common/icon.initializer';
 import { CustomAppDataService } from '@shop/services/custom-app-data.service';
 import { CustomEnvironmentService } from '@shop/services/custom-environment.service';
@@ -44,7 +44,7 @@ export const appConfig: ApplicationConfig = {
     {provide: LOCALE_ID, useValue: 'de'},
     {provide: DateAdapter, useClass: DateFnsAdapter, deps: [MAT_DATE_LOCALE]},
     // provideRouter(ROUTES,
-    provideRouter(ROUTES, withComponentInputBinding()
+    provideRouter(ROUTES, /*withComponentInputBinding()*/
       // withInMemoryScrolling({anchorScrolling: 'enabled', scrollPositionRestoration: 'top'})
     ),
     {

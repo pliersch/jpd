@@ -1,7 +1,7 @@
-import { Dealer, DealerType } from '@shop/pages/shop/store/dealer/dealer.model';
+import { Dealer, DealerType } from '@shop/pages/shop/store/articles/kratom/dealer.model';
 import { LoremIpsumFactory } from 'jpd-core';
 
-export function createDealerInfo(): Dealer[] {
+export function createDealer(): Dealer[] {
   const dealers: DealerType[] = ['A', 'B', 'C', 'D', 'E', 'F'];
   const foo: Dealer[] = [];
   for (const dealer of dealers) {

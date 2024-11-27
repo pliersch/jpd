@@ -1,12 +1,13 @@
-import { DealerType } from '@shop/pages/shop/store/dealer/dealer.model';
-import { Article, Product } from '@shop/pages/shop/store/shop.model';
+import { Category } from '@shop/pages/shop/store/articles/article.model';
+import { DealerType } from '@shop/pages/shop/store/articles/kratom/dealer.model';
+import { Kratom } from '@shop/pages/shop/store/articles/kratom/kratom.model';
 import { LoremIpsumFactory } from 'jpd-core';
 
-export function createKratomArticles(): Article[] {
+export function createKratomArticles(): Kratom[] {
   // todo 'Type' sounds better then 'Category'
   const types: string[] = ['white', 'green', 'red'];
   const names: string[] = ['Bali', 'Borneo', 'Thai', 'Sumatra'];
-  const articles: Article[] = [];
+  const articles: Kratom[] = [];
   let id = 1;
   for (const type of types) {
     for (const name of names) {
@@ -16,20 +17,21 @@ export function createKratomArticles(): Article[] {
   return articles;
 }
 
-function createKratomArticle(name: string, product: Product, category: string, dealer: DealerType, id: string): Article {
+function createKratomArticle(name: string, product: Category, category: string, dealer: DealerType, id: string): Kratom {
   return {
     id: id,
     name: `${capitalizeFirstLetter(category)} ${name}`,
     rating: randomRating(),
     date: new Date(),
     product: product,
-    category: category,
+    group: category,
     charge: randomIntFromInterval(1000, 9999),
     shortName: createShortName(name, category, dealer),
     description: LoremIpsumFactory.getText(150),
-    comments: [],
+    // comments: [],
     dealer: dealer,
-    stock: {gram10: 20, gram50: 25, gram100: 30, gram250: 70, gram500: 10, gram1000: 8},
+    prices: {price10: 2.00, price50: 15.5, price100: 25.44, price250: 35.5, price500: 50, price1000: 80},
+    stock: {stock10: 20, stock50: 25, stock100: 30, stock250: 70, stock500: 10, stock1000: 8},
     pictureUrl: 'kratom_red_hell-250x250.png'
   }
 }

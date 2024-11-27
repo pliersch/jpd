@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -10,9 +10,14 @@ import { RouterOutlet } from '@angular/router';
     RouterOutlet,
   ],
   templateUrl: './shop-page.component.html',
-  styleUrls: ['./shop-page.component.scss']
+  styleUrls: ['./shop-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  // providers: [ShopStore, DealerStore],
 })
 export class ShopPageComponent {
 
 
+  constructor() {
+
+  }
 }

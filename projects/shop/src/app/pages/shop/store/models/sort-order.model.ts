@@ -1,4 +1,4 @@
-import { Article } from '@shop/pages/shop/store/shop.model';
+import { Article } from '@shop/pages/shop/store/articles/article.model';
 
 export type SortOrder = 'Newest' | 'Oldest' | 'HighestRating' | 'LowestRating' | 'AZ' | 'ZA';
 
