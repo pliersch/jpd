@@ -48,12 +48,12 @@
         <h2 id="options-heading" class="b">Product options</h2>
         <form>
           <div class="flex items-end flex-col w-fit">
-            <shop-number-input text="10 Gramm"/>
-            <shop-number-input text="50 Gramm"/>
-            <shop-number-input text="100 Gramm"/>
-            <shop-number-input text="250 Gramm"/>
-            <shop-number-input text="500 Gramm"/>
-            <shop-number-input text="1000 Gramm"/>
+            <shop-number-input text="10 Gramm" [price]="article.prices.price10"/>
+            <shop-number-input text="50 Gramm" [price]="article.prices.price50"/>
+            <shop-number-input text="100 Gramm" [price]="article.prices.price100"/>
+            <shop-number-input text="250 Gramm" [price]="article.prices.price250"/>
+            <shop-number-input text="500 Gramm" [price]="article.prices.price500"/>
+            <shop-number-input text="1000 Gramm" [price]="article.prices.price1000"/>
           </div>
         </form>
       </section>

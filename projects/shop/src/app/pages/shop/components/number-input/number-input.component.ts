@@ -1,3 +1,4 @@
+import { CurrencyPipe } from '@angular/common';
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
@@ -7,7 +8,8 @@ import { MatIcon } from '@angular/material/icon';
   standalone: true,
   imports: [
     MatIcon,
-    MatIconButton
+    MatIconButton,
+    CurrencyPipe
   ],
   templateUrl: './number-input.component.html',
   styleUrl: './number-input.component.scss'
@@ -16,6 +18,9 @@ export class NumberInputComponent {
 
   @Input({required: true})
   text: string;
+
+  @Input({required: true})
+  price: number;
 
   // @Input()
   // color = 'yellow';

@@ -1,5 +1,5 @@
 <div class="inline-flex my-3">
-  <p class="m-auto">{{ text }}</p>
+  <p class="m-auto">{{ text }}: {{ price | currency:'EUR' }}</p>
   <button type="button" mat-icon-button color="accent" (click)="decrease()" aria-label="reduziert Bestellmenge um 1">
     <mat-icon>remove</mat-icon>
   </button>
