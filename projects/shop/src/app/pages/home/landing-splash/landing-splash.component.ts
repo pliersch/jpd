@@ -8,7 +8,7 @@ export interface LandingSplashModel {
 }
 
 @Component({
-  selector: 'app-landing-splash',
+  selector: 'shop-landing-splash',
   standalone: true,
   imports: [CommonModule, MatButtonModule],
   templateUrl: './landing-splash.component.html',

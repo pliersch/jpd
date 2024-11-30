@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 
 @Component({
-  selector: 'app-product-filter',
+  selector: 'shop-product-filter',
   standalone: true,
   imports: [
     MatExpansionModule

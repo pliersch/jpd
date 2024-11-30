@@ -3,7 +3,7 @@ import { MatAnchor } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-not-found',
+  selector: 'shop-not-found',
   standalone: true,
   imports: [RouterLink, MatAnchor],
   template: `

@@ -7,7 +7,7 @@ import { DetailStore } from '@shop/pages/shop/detail/detail.store';
 import { ImageFallbackDirective, StarsComponent } from 'jpd-core';
 
 @Component({
-  selector: 'app-product-detail',
+  selector: 'shop-product-detail',
   standalone: true,
   imports: [
     ImageFallbackDirective,

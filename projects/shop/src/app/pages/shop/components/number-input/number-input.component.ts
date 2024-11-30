@@ -3,7 +3,7 @@ import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-number-input',
+  selector: 'shop-number-input',
   standalone: true,
   imports: [
     MatIcon,

@@ -118,7 +118,7 @@
       },
       "root": "projects/shop",
       "sourceRoot": "projects/shop/src",
-      "prefix": "app",
+      "prefix": "shop",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",

@@ -4,7 +4,7 @@ import { IsActiveMatchOptions, Route, RouterLink, RouterLinkActive } from '@angu
 import { RouteDomService } from 'jpd-core';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'shop-navbar',
   standalone: true,
   imports: [
     MatAnchor,

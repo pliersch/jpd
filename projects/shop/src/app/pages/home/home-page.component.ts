@@ -23,7 +23,7 @@ import {
 } from 'jpd-core';
 
 @Component({
-  selector: 'app-home-page',
+  selector: 'shop-home-page',
   standalone: true,
   imports: [
     CommonModule,

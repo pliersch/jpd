@@ -9,7 +9,7 @@ import {
 } from 'jpd-core';
 
 @Component({
-  selector: 'app-privacy-page',
+  selector: 'shop-privacy-page',
   standalone: true,
   imports: [
     CommonModule,

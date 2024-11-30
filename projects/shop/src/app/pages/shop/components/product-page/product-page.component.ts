@@ -6,11 +6,11 @@ import { getProductFromUrl } from '@shop/pages/shop/store/models/url-product-typ
 import { ShopStore } from '@shop/pages/shop/store/shop.store';
 
 @Component({
-  selector: 'app-product-page',
+  selector: 'shop-product-page',
   standalone: true,
   imports: [
-    NavbarComponent,
-    RouterOutlet
+    RouterOutlet,
+    NavbarComponent
   ],
   templateUrl: './product-page.component.html',
   styleUrl: './product-page.component.scss',

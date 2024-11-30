@@ -14,7 +14,7 @@ import {
 } from 'jpd-core';
 
 @Component({
-  selector: 'app-contact',
+  selector: 'shop-contact',
   standalone: true,
   imports: [CommonModule, FragmentDirective, Parallax1Component, GMapsIframeComponent, ContactCompanyComponent, ContactCompanyInfoComponent, Address1Component, Mail1Component, Phone1Component, SectionComponent],
   templateUrl: './contact-page.component.html',

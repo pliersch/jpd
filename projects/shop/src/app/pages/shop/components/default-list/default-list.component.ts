@@ -3,7 +3,7 @@ import { ShopStore } from '@shop/pages/shop/store/shop.store';
 import { ShopCard1Component } from 'jpd-core';
 
 @Component({
-  selector: 'app-default-list',
+  selector: 'shop-default-list',
   standalone: true,
   imports: [
     ShopCard1Component

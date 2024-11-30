@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { AbstractDefaultPageComponent, FragmentDirective, TabNavComponent } from 'jpd-core';
 
 @Component({
-  selector: 'app-service-page',
+  selector: 'shop-service-page',
   standalone: true,
   imports: [
     CommonModule,

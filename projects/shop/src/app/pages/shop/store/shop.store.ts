@@ -10,17 +10,13 @@ import { setFulfilled, setPending, withRequestStatus } from 'jpd-core';
 import { debounceTime, distinctUntilChanged, pipe, switchMap, tap } from 'rxjs';
 
 type ShopState = {
-  lastChanges: string | undefined;
   product: Category | undefined;
   category: string | undefined;
-  article: Article | undefined;
 };
 
 const initialState: ShopState = {
-  lastChanges: undefined,
   product: undefined,
   category: undefined,
-  article: undefined,
 };
 
 export const ShopStore = signalStore(
@@ -59,51 +55,6 @@ export const ShopStore = signalStore(
           })
         )
       ),
-      setArticle(article: Article): void {
-        updateState(store, 'shop set article', setEntity(article));
-      },
-      // setActiveArticleById: rxMethod<string>(
-      //   pipe(
-      //     debounceTime(300),
-      //     distinctUntilChanged(),
-      //     switchMap((id) => {
-      //       return articleService.getById(id).pipe(
-      //         tapResponse({
-      //           next: (article) => {
-      //             patchState(store, {article: article})
-      //           },
-      //           error: console.error,
-      //           // finalize: () => computeWidgets(store.articlesEntities()),
-      //         })
-      //       );
-      //     })
-      //   ),
-      // ),
-
-      // loadProductsByCategoryAndFamily: rxMethod<ProductCategory>(
-      //   pipe(
-      //     filter(Boolean),
-      //     tap((p) => patchState(store, {productCategory: p})),
-      //     // tap(() => patchState(store, setPending())),
-      //     switchMap((product) => {
-      //       return service.getByProductCategory(product.product, product.category).pipe(
-      //         tapResponse({
-      //           // next: (articles) => console.log(articles),
-      //           next: (articles) => {
-      //             patchState(store, addEntities(articles, {collection: 'articles'}));
-      //             patchState(store, addEntity(product, {collection: 'requestedProducts'}));
-      //           },
-      //           error: console.error,
-      //           // finalize: () => computeWidgets(store.articlesEntities()),
-      //         })
-      //       );
-      //     }),
-      //   ),
-      // ),
-    }),
-  ),
-  // second withMethods for access to "loadProductsByCategoryAndFamily"
-  withMethods((store) => ({
       setProduct: rxMethod<Category | undefined>(
         pipe(
           tap((val) => updateState(store, 'shop set product', {product: val})),
@@ -112,23 +63,11 @@ export const ShopStore = signalStore(
       setCategory: rxMethod<string | undefined>(
         pipe(
           tap((val) => updateState(store, 'shop set category', {category: val})),
-          // filter(p => !store.requestedProductsEntities().find(product => product.id === p.id)),
-          // tap((val) => store.loadProductsByCategoryAndFamily(val)),
         ),
       ),
-      // setProductCategory: rxMethod<ProductCategory | undefined>(
-      //   pipe(
-      //     filter(Boolean),
-      //     tap((val) => patchState(store, {productCategory: val})),
-      //     filter(p => !store.requestedProductsEntities().find(product => product.id === p.id)),
-      //     tap((val) => store.loadProductsByCategoryAndFamily(val)),
-      //   ),
-      // ),
+      setArticle(article: Article): void {
+        updateState(store, 'shop set article', setEntity(article));
+      },
     }),
   ),
-  // withHooks({
-  //   onInit(/*{loadAll}*/): void {
-  //     loadAll();
-  //   }
-  // })
 );

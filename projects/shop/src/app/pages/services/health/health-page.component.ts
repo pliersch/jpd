@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AbstractDefaultPageComponent, TxtImg2Component } from 'jpd-core';
 
 @Component({
-  selector: 'app-service-health-page',
+  selector: 'shop-service-health-page',
   standalone: true,
   imports: [
     TxtImg2Component,

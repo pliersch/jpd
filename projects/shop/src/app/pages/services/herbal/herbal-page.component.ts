@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { AbstractDefaultPageComponent, TxtImg2Component } from 'jpd-core';
 
 @Component({
-  selector: 'app-service-herbal-page',
+  selector: 'shop-service-herbal-page',
   standalone: true,
   imports: [
     CommonModule,

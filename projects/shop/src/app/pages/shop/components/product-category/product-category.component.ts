@@ -5,7 +5,7 @@ import { getProductCategoryFromUrl } from '@shop/pages/shop/store/models/url-pro
 import { ShopStore } from '@shop/pages/shop/store/shop.store';
 
 @Component({
-  selector: 'app-product-category',
+  selector: 'shop-product-category',
   standalone: true,
   imports: [
     DefaultListComponent
