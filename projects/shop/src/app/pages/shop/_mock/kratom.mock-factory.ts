@@ -30,7 +30,7 @@ function createKratomArticle(name: string, product: Category, category: string, 
     description: LoremIpsumFactory.getText(150),
     // comments: [],
     dealer: dealer,
-    prices: {price10: 2.00, price50: 15.5, price100: 25.44, price250: 35.5, price500: 50, price1000: 80},
+    prices: {price10: 2.00, price50: 8.5, price100: 15.44, price250: 30.5, price500: 50, price1000: 80},
     stock: {stock10: 20, stock50: 25, stock100: 30, stock250: 70, stock500: 10, stock1000: 8},
     pictureUrl: 'kratom_red_hell-250x250.png'
   }

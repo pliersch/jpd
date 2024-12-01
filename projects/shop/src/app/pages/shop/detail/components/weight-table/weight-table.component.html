@@ -1,0 +1,169 @@
+<div
+  class="relative flex flex-col w-full h-full  shadow-md rounded-xl overflow-hidden bg-clip-border">
+  <table class="w-full text-left table-auto min-w-max">
+    <thead>
+    <tr>
+      <th class="p-4 border-blue-gray-100">
+        <p class="block font-sans text-sm antialiased font-normal leading-none opacity-70">
+          Gewicht
+        </p>
+      </th>
+      <th class="p-4 border-blue-gray-100">
+        <p class="block font-sans text-sm antialiased font-normal leading-none opacity-70">
+          Preis
+        </p>
+      </th>
+      <th class="p-4 border-blue-gray-100">
+        <p class="block font-sans text-sm antialiased font-normal leading-none opacity-70">
+          Grundpreis
+        </p>
+      </th>
+      <th class="p-4 border-blue-gray-100">
+        <p class="block font-sans text-sm antialiased font-normal leading-none opacity-70">
+          Bestand
+        </p>
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr>
+      <td class="p-4 border-blue-gray-50">
+        <p class="block font-sans text-sm antialiased font-normal leading-normal">
+          10 Gramm
+        </p>
+      </td>
+      <td class="p-4 border-blue-gray-50">
+        <p class="block font-sans text-sm antialiased font-normal leading-normal">
+          {{ prices.price10  | currency:'EUR' }}
+        </p>
+      </td>
+      <td class="p-4 border-blue-gray-50">
+        <p class="block font-sans text-sm antialiased font-normal leading-normal">
+          {{ prices.price10 * 100  | currency:'EUR' }}
+        </p>
+      </td>
+      <td class="p-4 border-blue-gray-50">
+        <a href="#" class="block font-sans text-sm antialiased font-medium leading-normal">
+          {{ stock.stock10 }}
+        </a>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="p-4 border-blue-gray-50">
+        <p class="block font-sans text-sm antialiased font-normal leading-normal">
+          50 Gramm
+        </p>
+      </td>
+      <td class="p-4 border-blue-gray-50">
+        <p class="block font-sans text-sm antialiased font-normal leading-normal">
+          {{ prices.price50  | currency:'EUR' }}
+        </p>
+      </td>
+      <td class="p-4 border-blue-gray-50">
+        <p class="block font-sans text-sm antialiased font-normal leading-normal">
+          {{ prices.price50 * 20  | currency:'EUR' }}
+        </p>
+      </td>
+      <td class="p-4 border-blue-gray-50">
+        <a href="#" class="block font-sans text-sm antialiased font-medium leading-normal">
+          {{ stock.stock50 }}
+        </a>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="p-4 border-blue-gray-50">
+        <p class="block font-sans text-sm antialiased font-normal leading-normal">
+          100 Gramm
+        </p>
+      </td>
+      <td class="p-4 border-blue-gray-50">
+        <p class="block font-sans text-sm antialiased font-normal leading-normal">
+          {{ prices.price100  | currency:'EUR' }}
+        </p>
+      </td>
+      <td class="p-4 border-blue-gray-50">
+        <p class="block font-sans text-sm antialiased font-normal leading-normal">
+          {{ prices.price100 * 10  | currency:'EUR' }}
+        </p>
+      </td>
+      <td class="p-4 border-blue-gray-50">
+        <a href="#" class="block font-sans text-sm antialiased font-medium leading-normal">
+          {{ stock.stock100 }}
+        </a>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="p-4 border-blue-gray-50">
+        <p class="block font-sans text-sm antialiased font-normal leading-normal">
+          250 Gramm
+        </p>
+      </td>
+      <td class="p-4 border-blue-gray-50">
+        <p class="block font-sans text-sm antialiased font-normal leading-normal">
+          {{ prices.price250  | currency:'EUR' }}
+        </p>
+      </td>
+      <td class="p-4 border-blue-gray-50">
+        <p class="block font-sans text-sm antialiased font-normal leading-normal">
+          {{ prices.price250 * 4  | currency:'EUR' }}
+        </p>
+      </td>
+      <td class="p-4 border-blue-gray-50">
+        <a href="#" class="block font-sans text-sm antialiased font-medium leading-normal">
+          {{ stock.stock250 }}
+        </a>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="p-4 border-blue-gray-50">
+        <p class="block font-sans text-sm antialiased font-normal leading-normal">
+          500 Gramm
+        </p>
+      </td>
+      <td class="p-4 border-blue-gray-50">
+        <p class="block font-sans text-sm antialiased font-normal leading-normal">
+          {{ prices.price500  | currency:'EUR' }}
+        </p>
+      </td>
+      <td class="p-4 border-blue-gray-50">
+        <p class="block font-sans text-sm antialiased font-normal leading-normal">
+          {{ prices.price500 * 2  | currency:'EUR' }}
+        </p>
+      </td>
+      <td class="p-4 border-blue-gray-50">
+        <a href="#" class="block font-sans text-sm antialiased font-medium leading-normal">
+          {{ stock.stock500 }}
+        </a>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="p-4 border-blue-gray-50">
+        <p class="block font-sans text-sm antialiased font-normal leading-normal">
+          1000 Gramm
+        </p>
+      </td>
+      <td class="p-4 border-blue-gray-50">
+        <p class="block font-sans text-sm antialiased font-normal leading-normal">
+          {{ prices.price1000  | currency:'EUR' }}
+        </p>
+      </td>
+      <td class="p-4 border-blue-gray-50">
+        <p class="block font-sans text-sm antialiased font-normal leading-normal">
+          {{ prices.price1000 | currency:'EUR' }}
+        </p>
+      </td>
+      <td class="p-4 border-blue-gray-50">
+        <a href="#" class="block font-sans text-sm antialiased font-medium leading-normal">
+          {{ stock.stock1000 }}
+        </a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

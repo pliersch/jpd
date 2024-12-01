@@ -26,3 +26,23 @@ export interface KratomStock {
   stock500: number;
   stock1000: number;
 }
+
+// export type KratomWeight = '10' | '50' | '100' | '250' | '500' | '1000';
+//
+// export interface KratomPrices {
+//   prices: KratomPrice[];
+// }
+//
+// export interface KratomPrice {
+//   weight: KratomWeight;
+//   price: number;
+// }
+//
+// export interface KratomStock {
+//   stock10: number;
+//   stock50: number;
+//   stock100: number;
+//   stock250: number;
+//   stock500: number;
+//   stock1000: number;
+// }

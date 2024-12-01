@@ -1,12 +1,12 @@
 <div class="inline-flex my-3">
-  <p class="m-auto">{{ text }}: {{ price | currency:'EUR' }}</p>
+  <p class="m-auto">{{ text }}</p>
   <button type="button" mat-icon-button color="accent" (click)="decrease()" aria-label="reduziert Bestellmenge um 1">
     <mat-icon>remove</mat-icon>
   </button>
   <div class="w-32 m-auto">
     <div class="relative">
       <input #fileInput type="number" (change)="onChange()"
-             class="text-[color:--theme-accent] w-full bg-transparent placeholder:text-[color:--theme-accent]
+             class=" w-full bg-transparent
                        border border-[color:--theme-grey] rounded-md pl-3 pr-16 py-2 number-input
                        transition duration-300 ease focus:outline-none focus:border-[color:--theme-accent]
                        shadow-sm focus:shadow"/>

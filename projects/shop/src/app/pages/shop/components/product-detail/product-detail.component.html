@@ -1,7 +1,7 @@
 @if (detailStore.article(); as article) {
 
-  <div class="m-auto lg:max-w-5xl px-4 py-12 sm:px-6 sm:py-24 lg:grid grid-cols-2 lg:gap-8 lg:px-8">
-    <div class="max-w-lg self-end">
+  <div class="m-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-24 md:grid grid-cols-2 md:gap-x-8 md:px-8">
+    <div class="md:max-w-lg">
 
       <nav aria-label="breadcrumb" class="w-max">
         <ol class="flex w-full flex-wrap items-center py-2">
@@ -40,23 +40,28 @@
         <p class="text-sm">{{ article.description }}</p>
       </section>
     </div>
-    <div class="mt-10 lg:col-start-2 lg:row-span-2 lg:mt-0 lg:self-center">
-      <img [src]="'assets/img/' + article.pictureUrl" alt="image of kratom" class="object-cover rounded-md w-full">
+    <div class="mt-10 md:col-start-2  md:mt-0 md:self-center md:justify-self-center">
+      <img [ngSrc]="'assets/img/' + article.pictureUrl" width="350" height="350" alt="image of kratom"
+           class="object-cover rounded-md"
+      >
     </div>
-    <div class="mt-10 lg:col-start-1 lg:row-start-2 lg:max-w-lg lg:self-start">
+    <div class="mt-10 md:col-start-1 md:row-start-2 md:max-w-lg md:self-start">
       <section aria-labelledby="options-heading">
         <h2 id="options-heading" class="b">Product options</h2>
         <form>
           <div class="flex items-end flex-col w-fit">
-            <shop-number-input text="10 Gramm" [price]="article.prices.price10"/>
-            <shop-number-input text="50 Gramm" [price]="article.prices.price50"/>
-            <shop-number-input text="100 Gramm" [price]="article.prices.price100"/>
-            <shop-number-input text="250 Gramm" [price]="article.prices.price250"/>
-            <shop-number-input text="500 Gramm" [price]="article.prices.price500"/>
-            <shop-number-input text="1000 Gramm" [price]="article.prices.price1000"/>
+            <shop-number-input text="10 Gramm"/>
+            <shop-number-input text="50 Gramm"/>
+            <shop-number-input text="100 Gramm"/>
+            <shop-number-input text="250 Gramm"/>
+            <shop-number-input text="500 Gramm"/>
+            <shop-number-input text="1000 Gramm"/>
           </div>
         </form>
       </section>
+    </div>
+    <div class="mt-10 md:col-start-2 md:row-start-2 md:max-w-lg md:self-start">
+      <shop-weight-table [prices]="article.prices" [stock]="article.stock"/>
     </div>
   </div>
 
