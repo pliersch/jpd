@@ -3,11 +3,11 @@
 <!----------------------------------------------------->
 
 @if (isXSmall()) {
-  <ng-container *ngTemplateOutlet="mobile"></ng-container>
+  <ng-container [ngTemplateOutlet]="mobile"/>
 } @else if (isSmall()) {
-  <ng-container *ngTemplateOutlet="tablet"></ng-container>
+  <ng-container [ngTemplateOutlet]="tablet"/>
 } @else {
-  <ng-container *ngTemplateOutlet="desktop"></ng-container>
+  <ng-container [ngTemplateOutlet]="desktop"/>
 }
 
 <!----------------------------------------------------->
@@ -37,7 +37,7 @@
                [style.background-color]="bgColor">
 
     <div class="flex w-full items-center justify-between">
-      <ng-container *ngTemplateOutlet="logoTemplate"></ng-container>
+      <ng-container [ngTemplateOutlet]="logoTemplate"/>
       <ng-container [ngTemplateOutlet]="actionsTemplate"/>
     </div>
   </mat-toolbar>
@@ -50,7 +50,7 @@
       </div>
     }
   </div>
-  <ng-container *ngTemplateOutlet="subNavTemplate"></ng-container>
+  <ng-container [ngTemplateOutlet]="subNavTemplate"/>
 </ng-template>
 
 <!----------------------------------------------------->
@@ -64,12 +64,12 @@
                [style.background-color]="bgColor">
 
     <div class="flex w-full items-center justify-between">
-      <ng-container *ngTemplateOutlet="logoTemplate"></ng-container>
+      <ng-container [ngTemplateOutlet]="logoTemplate"/>
       <ng-container [ngTemplateOutlet]="navTemplate"/>
       <ng-container [ngTemplateOutlet]="actionsTemplate"/>
     </div>
   </mat-toolbar>
-  <ng-container *ngTemplateOutlet="subNavTemplate"></ng-container>
+  <ng-container [ngTemplateOutlet]="subNavTemplate"/>
 </ng-template>
 <!----------------------------------------------------->
 <!--                actions template                 -->
