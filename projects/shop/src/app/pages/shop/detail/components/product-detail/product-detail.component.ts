@@ -3,9 +3,10 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTab, MatTabGroup } from '@angular/material/tabs';
-import { NumberInputComponent } from '@shop/pages/shop/components/number-input/number-input.component';
+import { TagChipsComponent } from '@shop/pages/shop/detail/components/tags/tag-chips.component';
 import { WeightTableComponent } from '@shop/pages/shop/detail/components/weight-table/weight-table.component';
 import { DetailStore } from '@shop/pages/shop/detail/detail.store';
+import { NumberInputComponent } from '@shop/pages/shop/detail/number-input/number-input.component';
 import { ImageFallbackDirective, StarsComponent } from 'jpd-core';
 
 @Component({
@@ -20,7 +21,8 @@ import { ImageFallbackDirective, StarsComponent } from 'jpd-core';
     MatFormFieldModule,
     NumberInputComponent,
     WeightTableComponent,
-    NgOptimizedImage
+    NgOptimizedImage,
+    TagChipsComponent
   ],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.scss',

@@ -35,10 +35,13 @@
         <h1 class="text-xl">{{ article.name }} {{ article.shortName }} {{ article.charge }}</h1>
         <a4w-stars [rate]="article.rating || 0"/>
       </div>
-      <section aria-labelledby="information-heading">
+      <section class="pb-2" aria-labelledby="information-heading">
         <h2 id="information-heading" class="b">Händler {{ article.dealer }}</h2>
         <p class="text-sm">{{ article.description }}</p>
       </section>
+
+      <shop-tag-chips [tags]="article.tags"/>
+
     </div>
     <div class="mt-10 md:col-start-2  md:mt-0 md:self-center md:justify-self-center">
       <img [ngSrc]="'assets/img/' + article.pictureUrl" width="350" height="350" alt="image of kratom"

@@ -1,0 +1,13 @@
+<div class="flex gap-2">
+  @for (tag of tags; track tag) {
+    <a [routerLink]="[tag]"
+       class="rounded-md cursor-pointer border py-1.5 px-2.5 text-sm transition-all shadow-sm">
+      {{ tag }}
+    </a>
+  }
+
+  <!--  <a [routerLink]="['']"-->
+  <!--     class="rounded-full cursor-pointer bg-[color:&#45;&#45;theme-accent]  py-1.5 px-2.5  text-sm transition-all shadow-sm">-->
+  <!--    Chip Filled-->
+  <!--  </a>-->
+</div>

@@ -3,7 +3,7 @@ import { ShopPageComponent } from '@shop/pages/shop/shop-page.component';
 
 const productPage = () => import('./components/product-page/product-page.component').then((x) => x.ProductPageComponent);
 const productCategory = () => import('./components/product-category/product-category.component').then((x) => x.ProductCategoryComponent);
-const productDetail = () => import('./components/product-detail/product-detail.component').then((x) => x.ProductDetailComponent);
+const productDetail = () => import('./detail/components/product-detail/product-detail.component').then((x) => x.ProductDetailComponent);
 const notFound = () => import('@shop/components/not-found/not-found.component').then((x) => x.default);
 
 export default [

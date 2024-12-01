@@ -18,6 +18,7 @@ export interface Article {
   stock: KratomStock;
   date: Date;
   pictureUrl: string;
+  tags: string[];
   prices: KratomPrices;
 }
 
@@ -36,6 +37,11 @@ export interface Comment {
   comment: string;
   rating: number;
   date: Date;
+}
+
+export interface Tag {
+  id: number;
+  name: string;
 }
 
 export interface CreateArticle {
