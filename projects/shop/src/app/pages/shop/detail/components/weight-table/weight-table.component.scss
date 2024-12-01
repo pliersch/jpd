@@ -1,16 +1,14 @@
-tr:nth-child(even) {
-  background: var(--theme-component-contrast);
-}
-
-//tr:nth-child(odd) {
-//  background: #FFF
+//tr:nth-child(even) {
+//  background: var(--theme-component-contrast);
 //}
 
 th {
-  background: var(--theme-component-contrast);
+  //background: var(--theme-component-contrast);
+  border-bottom-color: var(--mat-table-row-item-outline-color);
   border-bottom-width: 1px;
 }
 
-//td {
-//  border-bottom-width: 1px;
-//}
+td {
+  border-bottom-color: var(--mat-table-row-item-outline-color);
+  border-bottom-width: 1px;
+}

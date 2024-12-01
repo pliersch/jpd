@@ -1,11 +1,13 @@
 import { afterNextRender, AfterRenderPhase, Component, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { PopOverComponent } from '@shop/pages/shop/components/pop-over/pop-over.component';
 import {
   A4WRootComponent,
   ActionContainerComponent,
   AppbarComponent,
   AppbarTwoRowsComponent,
   AuthService,
+  CardH1Component,
   EnableAdminActionComponent,
   FragmentDirective,
   LoginComponent,
@@ -23,7 +25,7 @@ import {
   standalone: true,
   imports: [A4WRootComponent, AppbarComponent,
     LogoContainerComponent, ThemeToggleActionComponent, SubNavComponent, NavigationDirective,
-    ActionContainerComponent, ScrollTopActionComponent, SigninComponent, FragmentDirective, LoginComponent, SmallFooter1Component, AppbarTwoRowsComponent, EnableAdminActionComponent],
+    ActionContainerComponent, ScrollTopActionComponent, SigninComponent, FragmentDirective, LoginComponent, SmallFooter1Component, AppbarTwoRowsComponent, EnableAdminActionComponent, PopOverComponent, PopOverComponent, CardH1Component],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

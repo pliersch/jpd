@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FragmentDirective } from '../../../../common';
 import { TitleSubtitleDescription } from '../../../../content';
 import { BaseComponent } from '../../../core/base/base.component';
-import { CardH1Component } from '../../cards/horizontal/card-h-1/card-h-1.component';
+import { CardH1Component } from '../../cards/card-h-1/card-h-1.component';
 
 export interface WaveDesign1Model {
   cards: TitleSubtitleDescription[];
