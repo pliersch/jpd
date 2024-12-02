@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTab, MatTabGroup } from '@angular/material/tabs';
+import { CartStore } from '@shop/pages/shop/cart/store/cart.store';
 import { TagChipsComponent } from '@shop/pages/shop/detail/components/tags/tag-chips.component';
 import { WeightTableComponent } from '@shop/pages/shop/detail/components/weight-table/weight-table.component';
 import { DetailStore } from '@shop/pages/shop/detail/detail.store';
@@ -32,4 +33,10 @@ import { ImageFallbackDirective, StarsComponent } from 'jpd-core';
 export class ProductDetailComponent {
 
   readonly detailStore = inject(DetailStore);
+  readonly cartStore = inject(CartStore);
+
+  updateCart(size: number, $event: number): void {
+    this.cartStore.addToCart(this.detailStore.article()!);
+    console.log('ProductDetailComponent updateCart: ', size, $event);
+  }
 }

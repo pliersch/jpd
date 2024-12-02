@@ -45,20 +45,19 @@
     </div>
     <div class="mt-10 md:col-start-2  md:mt-0 md:self-center md:justify-self-center">
       <img [ngSrc]="'assets/img/' + article.pictureUrl" width="350" height="350" alt="image of kratom"
-           class="object-cover rounded-md"
-      >
+           class="object-cover rounded-md">
     </div>
     <div class="mt-10 md:col-start-1 md:row-start-2 md:max-w-lg md:self-start">
       <section aria-labelledby="options-heading">
         <h2 id="options-heading" class="b">Product options</h2>
         <form>
           <div class="flex items-end flex-col w-fit">
-            <shop-number-input text="10 Gramm"/>
-            <shop-number-input text="50 Gramm"/>
-            <shop-number-input text="100 Gramm"/>
-            <shop-number-input text="250 Gramm"/>
-            <shop-number-input text="500 Gramm"/>
-            <shop-number-input text="1000 Gramm"/>
+            <shop-number-input text="10 Gramm" (numberChange)="updateCart(10, $event)"/>
+            <shop-number-input text="50 Gramm" (numberChange)="updateCart(50, $event)"/>
+            <shop-number-input text="100 Gramm" (numberChange)="updateCart(100, $event)"/>
+            <shop-number-input text="250 Gramm" (numberChange)="updateCart(250, $event)"/>
+            <shop-number-input text="500 Gramm" (numberChange)="updateCart(500, $event)"/>
+            <shop-number-input text="1000 Gramm" (numberChange)="updateCart(1000, $event)"/>
           </div>
         </form>
       </section>

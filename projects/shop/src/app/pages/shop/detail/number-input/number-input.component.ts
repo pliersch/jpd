@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 
@@ -20,6 +20,9 @@ export class NumberInputComponent {
   // @Input()
   // color = 'yellow';
 
+  @Output()
+  numberChange = new EventEmitter<number>();
+
   @ViewChild('fileInput')
   input!: ElementRef;
 
@@ -29,6 +32,7 @@ export class NumberInputComponent {
     const value = this.input.nativeElement.value;
     if (value > 0) {
       this.value = value;
+      this.emitChanges();
     } else {
       this.clear();
     }
@@ -36,6 +40,7 @@ export class NumberInputComponent {
 
   increase(): void {
     this.input.nativeElement.value = ++this.value;
+    this.emitChanges();
   }
 
   decrease(): void {
@@ -43,13 +48,20 @@ export class NumberInputComponent {
     if (value > 1) {
       this.value = value - 1;
       this.input.nativeElement.value = this.value;
+      this.emitChanges();
     } else if (value == 1) {
-      this.clear()
+      this.clear();
     }
   }
 
   clear(): void {
     this.value = 0;
     this.input.nativeElement.value = '';
+    this.emitChanges();
+  }
+
+
+  emitChanges(): void {
+    this.numberChange.emit(this.value);
   }
 }
