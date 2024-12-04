@@ -4,7 +4,7 @@ import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({
-  selector: 'shop-pop-over',
+  selector: 'a4w-pop-over',
   standalone: true,
   imports: [
     CdkOverlayOrigin,

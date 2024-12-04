@@ -49,15 +49,21 @@
     </div>
     <div class="mt-10 md:col-start-1 md:row-start-2 md:max-w-lg md:self-start">
       <section aria-labelledby="options-heading">
-        <h2 id="options-heading" class="b">Product options</h2>
-        <form>
+        <h2 id="options-heading" class="b">Auswahl</h2>
+        <form (ngSubmit)="onSubmit()">
+          <p>Gewicht in Gramm</p>
+          <mat-button-toggle-group name="weight" [(ngModel)]="size"
+                                   aria-label="Auswahl Gewicht">
+            <mat-button-toggle value="10">10</mat-button-toggle>
+            <mat-button-toggle value="50">50</mat-button-toggle>
+            <mat-button-toggle value="100">100</mat-button-toggle>
+            <mat-button-toggle value="250">250</mat-button-toggle>
+            <mat-button-toggle value="500">500</mat-button-toggle>
+            <mat-button-toggle value="1000">1000</mat-button-toggle>
+          </mat-button-toggle-group>
           <div class="flex items-end flex-col w-fit">
-            <shop-number-input text="10 Gramm" (numberChange)="updateCart(10, $event)"/>
-            <shop-number-input text="50 Gramm" (numberChange)="updateCart(50, $event)"/>
-            <shop-number-input text="100 Gramm" (numberChange)="updateCart(100, $event)"/>
-            <shop-number-input text="250 Gramm" (numberChange)="updateCart(250, $event)"/>
-            <shop-number-input text="500 Gramm" (numberChange)="updateCart(500, $event)"/>
-            <shop-number-input text="1000 Gramm" (numberChange)="updateCart(1000, $event)"/>
+            <shop-number-input #quantityInput text="Menge" [disabled]="!size" (numberChange)="updateCart($event)"/>
+            <button mat-flat-button [disabled]="quantity === 0" color="accent">In den Warenkorb</button>
           </div>
         </form>
       </section>

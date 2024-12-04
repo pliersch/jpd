@@ -25,6 +25,7 @@ export {
 export { AbstractDefaultPageComponent } from './container/pages/abstract-default-page.component';
 export { Parallax1Component, Parallax1Model } from './container/parallax/parallax-1/parallax1.component';
 export { Parallax7Component } from './container/parallax/parallax-7/parallax7.component';
+export { PopOverComponent } from './container/pop-over/pop-over.component';
 export { A4WRootComponent } from './container/root/a4w-root.component';
 export { SectionComponent } from './container/section/section.component';
 export {

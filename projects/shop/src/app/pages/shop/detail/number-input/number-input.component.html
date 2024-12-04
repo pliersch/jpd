@@ -1,14 +1,15 @@
 <div class="inline-flex my-3">
   <p class="m-auto">{{ text }}</p>
-  <button type="button" mat-icon-button color="accent" (click)="decrease()" aria-label="reduziert Bestellmenge um 1">
+  <button type="button" mat-icon-button color="accent" (click)="decrease()"
+          [disabled]="disabled" aria-label="reduziert Bestellmenge um 1">
     <mat-icon>remove</mat-icon>
   </button>
-  <div class="w-32 m-auto">
+  <div class="w-28 m-auto">
     <div class="relative">
-      <input #fileInput type="number" (change)="onChange()"
+      <input #fileInput [disabled]="disabled" type="number" (change)="onChange()"
              class=" w-full bg-transparent
                        border border-[color:--theme-grey] rounded-md pl-3 pr-16 py-2 number-input
-                       transition duration-300 ease focus:outline-none focus:border-[color:--theme-accent]
+                       focus:outline-none focus:border-[color:--theme-accent]
                        shadow-sm focus:shadow"/>
       @if (value) {
         <button type="button" (click)="clear()"
@@ -22,7 +23,8 @@
       }
     </div>
   </div>
-  <button type="button" mat-icon-button color="accent" (click)="increase()" aria-label="erhöht Bestellmenge um 1">
+  <button type="button" mat-icon-button color="accent" (click)="increase()"
+          [disabled]="disabled" aria-label="erhöht Bestellmenge um 1">
     <mat-icon>add</mat-icon>
   </button>
 </div>

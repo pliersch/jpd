@@ -17,6 +17,9 @@ export class NumberInputComponent {
   @Input({required: true})
   text: string;
 
+  @Input()
+  disabled: boolean = false;
+
   // @Input()
   // color = 'yellow';
 

@@ -1,16 +1,11 @@
-import { Article } from '@shop/pages/shop/store/articles/article.model';
+import { OrderPosition } from '@shop/pages/shop/shared/models/orderPosition';
 
-export interface Position {
-  article: Article;
-  count: number;
-  size: number | string;
-}
-
-export function totalCost(articles: Article[]): number {
+export function totalCost(positions: OrderPosition[]): number {
   let total = 0;
-  for (const article of articles) {
-    total += article.prices.price500;
+  for (const pos of positions) {
+    total += pos.quantity * pos.article.prices.price100;
   }
+  console.log('totalCost totalCost: ', total);
   return total;
 }
 
