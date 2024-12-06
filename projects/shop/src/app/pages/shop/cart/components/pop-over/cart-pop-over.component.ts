@@ -87,7 +87,7 @@ export class CartPopOverComponent {
     this.isOpen = false;
   }
 
-  delete(item: OrderPosition) {
+  delete(item: OrderPosition): void {
     console.log('CartPopOverComponent delete: ', item);
   }
 }

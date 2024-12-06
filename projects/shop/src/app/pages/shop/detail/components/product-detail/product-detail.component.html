@@ -36,7 +36,7 @@
         <a4w-stars [rate]="article.rating || 0"/>
       </div>
       <section class="pb-2" aria-labelledby="information-heading">
-        <h2 id="information-heading" class="b">Händler {{ article.dealer }}</h2>
+        <h2 id="information-heading" class="hidden-description">Händler {{ article.dealer }}</h2>
         <p class="text-sm">{{ article.description }}</p>
       </section>
 
@@ -49,7 +49,7 @@
     </div>
     <div class="mt-10 md:col-start-1 md:row-start-2 md:max-w-lg md:self-start">
       <section aria-labelledby="options-heading">
-        <h2 id="options-heading" class="b">Auswahl</h2>
+        <h2 id="options-heading" class="hidden-description">Auswahl</h2>
         <form (ngSubmit)="onSubmit()">
           <p>Gewicht in Gramm</p>
           <mat-button-toggle-group name="weight" [(ngModel)]="size"
