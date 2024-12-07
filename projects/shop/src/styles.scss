@@ -28,3 +28,8 @@ $app1-theme: mat.define-light-theme((
 html {
   scroll-behavior: auto !important;
 }
+
+body {
+  margin: 0;
+  font-family: Inter, "Helvetica Neue", sans-serif;
+}

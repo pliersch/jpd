@@ -103,6 +103,9 @@ $light-foreground: mat.get-color-from-palette(mat.$light-theme-foreground-palett
   --theme-default-text: #FFFFFF;
   --theme-default-opposite-text: rgba(0, 0, 0, 0.87);;
   --theme-grey: #bdbdbd;
+  --theme-grey-alpha-25: #{color.adjust(#bdbdbd, $alpha: -0.25)};
+  --theme-grey-alpha-50: #{color.adjust(#bdbdbd, $alpha: -0.5)};
+  --theme-grey-alpha-75: #{color.adjust(#bdbdbd, $alpha: -0.75)};
   --poster-background: #{lighten($dark-bg, 5%)};
 }
 
@@ -143,6 +146,9 @@ $light-foreground: mat.get-color-from-palette(mat.$light-theme-foreground-palett
   --theme-default-text: rgba(0, 0, 0, 0.87);;
   --theme-default-opposite-text: #FFFFFF;
   --theme-grey: #212121;
+  --theme-grey-alpha-25: #{color.adjust(#212121, $alpha: -0.25)};
+  --theme-grey-alpha-50: #{color.adjust(#212121, $alpha: -0.5)};
+  --theme-grey-alpha-75: #{color.adjust(#212121, $alpha: -0.75)};
   //--poster-background: #{lighten($light-bg, 6%)};
   --poster-background: white;
 }
