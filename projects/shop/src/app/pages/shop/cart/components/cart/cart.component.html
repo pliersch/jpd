@@ -71,7 +71,7 @@
           <div class="col-span-4">
             <div class="p-3 h-full">
               <img class="object-cover rounded-lg" width="80" height="80"
-                   [ngSrc]="'assets/img/' + item.article.pictureUrl" alt="image">
+                   [ngSrc]="'assets/img/' + item.article.pictureUrl" alt="image" priority>
             </div>
           </div>
           <div class="col-span-6 my-auto">
@@ -100,21 +100,21 @@
           <dd class="font-medium">{{ cartStore.totalCost() | currency:'EUR' }}</dd>
         </div>
         <div
-          class="flex justify-between items-center mt-4 pt-4 divider">
+          class="flex justify-between items-center mt-4 pt-4 divider-top">
           <dt class="flex items-center"><span>Versandkosten</span>
             <span class="hidden-description">Learn more about how tax is calculated</span>
           </dt>
           <dd class="font-medium">{{ cartStore.totalCost() | currency:'EUR' }}</dd>
         </div>
         <div
-          class="flex justify-between items-center mt-4 pt-4 divider">
+          class="flex justify-between items-center mt-4 pt-4 divider-top">
           <dt class="flex items-center"><span>inkl. 7 % MwSt.</span>
             <span class="hidden-description">Learn more about how tax is calculated</span>
           </dt>
           <dd class="font-medium">{{ cartStore.totalCost() | currency:'EUR' }}</dd>
         </div>
         <div
-          class="flex justify-between items-center mt-4 pt-4 divider">
+          class="flex justify-between items-center mt-4 pt-4 divider-top">
           <dt class="flex items-center"><span>Gesamtsumme</span>
             <span class="hidden-description">Learn more about how tax is calculated</span>
           </dt>

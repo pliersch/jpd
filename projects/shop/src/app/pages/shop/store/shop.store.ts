@@ -1,7 +1,7 @@
 import { updateState, withDevtools } from '@angular-architects/ngrx-toolkit';
 import { computed, inject } from '@angular/core';
 import { tapResponse } from '@ngrx/operators';
-import { patchState, signalStore, withComputed, withMethods, withState } from '@ngrx/signals';
+import { patchState, signalStore, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import { setAllEntities, setEntity, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { Article, Category } from '@shop/pages/shop/store/articles/article.model';
@@ -70,4 +70,10 @@ export const ShopStore = signalStore(
       },
     }),
   ),
+  // todo only for dev
+  withHooks({
+    onInit({loadAll}): void {
+      loadAll('kratom');
+    }
+  })
 );

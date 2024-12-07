@@ -52,12 +52,12 @@ export class ProductDetailComponent {
   }
 
   // updateCart(size: number, $event: number): void {
-  //   this.cartStore.addToCart(this.detailStore.article()!);
+  //   this.cartStore.add(this.detailStore.article()!);
   //   console.log('ProductDetailComponent updateCart: ', size, $event);
   // }
 
   onSubmit(): void {
-    this.cartStore.addToCart(createOrderPosition(this.detailStore.article()!, this.quantity, this.size!));
+    this.cartStore.add(createOrderPosition(this.detailStore.article()!, this.quantity, this.size!));
     this.quantity = 0;
     this.quantityInput.clear();
   }

@@ -29,7 +29,17 @@ html {
   scroll-behavior: auto !important;
 }
 
-body {
-  margin: 0;
-  font-family: Inter, "Helvetica Neue", sans-serif;
+//body {
+//  margin: 0;
+//  font-family: Inter, "Helvetica Neue", sans-serif;
+//}
+
+.divider-top {
+  border-top-color: var(--theme-grey-alpha-75);
+  border-top-width: 1px;
+}
+
+.divider-bottom {
+  border-bottom-color: var(--theme-grey-alpha-75);
+  border-bottom-width: 1px;
 }

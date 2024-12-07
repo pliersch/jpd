@@ -1,0 +1,19 @@
+<div class="flex items-center divider-bottom">
+  <div class="col-span-4">
+    <div class="p-3 h-full">
+      <img class="object-cover rounded-lg" width="50" height="50"
+           [ngSrc]="'assets/img/' + item.article.pictureUrl" alt="image">
+    </div>
+  </div>
+  <div class="col-span-6 my-auto">
+    <div class="px-2 py-3">
+      <h5>{{ item.quantity }}x {{ item.article.name }} {{ item.article.charge }} {{ item.article.shortName }}</h5>
+      <p>{{ item.size }} Gramm</p>
+    </div>
+  </div>
+  <div class="col-span-2 my-auto">
+    <button mat-icon-button (click)="emitItem()" type="button">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</div>

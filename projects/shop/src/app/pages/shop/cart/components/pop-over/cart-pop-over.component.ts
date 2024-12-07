@@ -1,10 +1,13 @@
 import { animate, keyframes, query, stagger, style, transition, trigger } from '@angular/animations';
 import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
-import { CurrencyPipe, NgOptimizedImage } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatAnchor, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import {
+  CartPopOverItemComponent
+} from '@shop/pages/shop/cart/components/pop-over/cart-pop-over-item/cart-pop-over-item.component';
 import { CartStore } from '@shop/pages/shop/cart/store/cart.store';
 import { OrderPosition } from '@shop/pages/shop/shared/models/orderPosition';
 import { PosterComponent } from 'jpd-core';
@@ -14,14 +17,14 @@ import { PosterComponent } from 'jpd-core';
   standalone: true,
   imports: [
     PosterComponent,
-    NgOptimizedImage,
     CdkOverlayOrigin,
     MatIcon,
     MatIconButton,
     CdkConnectedOverlay,
     RouterLink,
     MatAnchor,
-    CurrencyPipe
+    CurrencyPipe,
+    CartPopOverItemComponent
   ],
   templateUrl: './cart-pop-over.component.html',
   styleUrl: './cart-pop-over.component.scss',
@@ -88,6 +91,7 @@ export class CartPopOverComponent {
   }
 
   delete(item: OrderPosition): void {
+    this.cartStore.remove(item.id);
     console.log('CartPopOverComponent delete: ', item);
   }
 }

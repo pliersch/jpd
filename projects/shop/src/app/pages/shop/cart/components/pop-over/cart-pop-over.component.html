@@ -11,34 +11,21 @@
              [cdkConnectedOverlayOrigin]="trigger"
              [cdkConnectedOverlayOpen]="isOpen">
 
-  <a4w-poster rounded="rounded-lg text-[color:--theme-default-text]">
+  <a4w-poster rounded="rounded-lg"
+              class="max-w-80 text-sm font-normal text-[color:--theme-default-text]">
     @for (item of cartStore.entities(); track item.id) {
-      <div class="grid grid-cols-12">
-        <div class="col-span-4">
-          <div class="p-3 h-full">
-            <img class="object-cover rounded-lg" width="80" height="80"
-                 [ngSrc]="'assets/img/' + item.article.pictureUrl" alt="image">
-          </div>
-        </div>
-        <div class="col-span-6 my-auto">
-          <div class="px-2 py-3 text-[color:--theme-default-text]">
-            <h5 class="text-sm font-medium">{{ item.article.name }} {{ item.article.charge }}</h5>
-            <p class="text-sm">{{ item.article.shortName }}</p>
-            <p class="text-sm">{{ item.size }} Gramm</p>
-            <!--          <p class="text-sm">Menge{{ item.quantity }}</p>-->
-          </div>
-        </div>
-        <div class="col-span-2 my-auto text-[color:--theme-default-text]">
-          <button mat-icon-button (click)="delete(item)" type="button">
-            <mat-icon>delete</mat-icon>
-          </button>
-        </div>
-      </div>
+      <shop-cart-pop-over-item [item]="item" (itemEvent)="delete($event)"/>
     }
     <div class="m-4">
-      <p class="text-lg">
-        Zwischensumme: {{ cartStore.totalCost() | currency:'EUR' }}
-      </p>
+      <p> Zwischensumme: {{ cartStore.totalCost() | currency:'EUR' }} </p>
+      @if (cartStore.freeShipping()) {
+        <p> kostenloser Versand </p>
+      } @else {
+        <p>
+          Es fehlen nur noch {{ cartStore.freeShippingDiff() | currency:'EUR' }} und ihre Bestellung ist
+          versandkostenfrei.
+        </p>
+      }
 
       <div class="flex justify-around mt-4">
         <a mat-flat-button color="accent" (click)="isOpen = false" routerLink="/warenkorb">
