@@ -1,5 +1,5 @@
 import { CurrencyPipe, NgOptimizedImage } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatAnchor, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
@@ -18,7 +18,8 @@ import { OrderPosition } from '@shop/pages/shop/shared/models/orderPosition';
     RouterLink
   ],
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.scss'
+  styleUrl: './cart.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CartComponent {
 

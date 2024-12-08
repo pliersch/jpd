@@ -4,6 +4,7 @@ import { patchState, signalStore, watchState, withComputed, withHooks, withMetho
 import { removeEntity, setEntity, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { totalCost } from '@shop/pages/shop/cart/store/cart.model';
+import { SHOP_CONSTANTS } from '@shop/pages/shop/const';
 import { CreateOrderPositionDto, OrderPosition } from '@shop/pages/shop/shared/models/orderPosition';
 import { ShopStore } from '@shop/pages/shop/store/shop.store';
 import { withRequestStatus } from 'jpd-core';
@@ -22,8 +23,8 @@ export const CartStore = signalStore(
     totalCost: computed(() => totalCost(entities())),
   })),
   withComputed(({totalCost}) => ({
-    freeShipping: computed(() => totalCost() > 50),
-    freeShippingDiff: computed(() => 50 - totalCost()),
+    freeShipping: computed(() => totalCost() > SHOP_CONSTANTS.FREE_SHIPPING),
+    freeShippingDiff: computed(() => SHOP_CONSTANTS.FREE_SHIPPING - totalCost()),
   })),
   withMethods((store) => ({
       add: rxMethod<CreateOrderPositionDto>(

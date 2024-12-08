@@ -1,5 +1,5 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { OrderPosition } from '@shop/pages/shop/shared/models/orderPosition';
@@ -13,7 +13,8 @@ import { OrderPosition } from '@shop/pages/shop/shared/models/orderPosition';
     NgOptimizedImage
   ],
   templateUrl: './cart-pop-over-item.component.html',
-  styleUrl: './cart-pop-over-item.component.scss'
+  styleUrl: './cart-pop-over-item.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CartPopOverItemComponent {
 

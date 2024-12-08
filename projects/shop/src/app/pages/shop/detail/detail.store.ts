@@ -39,7 +39,7 @@ export const DetailStore = signalStore(
               tapResponse({
                 next: (article) => {
                   patchState(store, setFulfilled());
-                  shopStore.setArticle(article);
+                  shopStore.addArticle(article);
                 },
                 error: () => console.error('not found', id),
                 // error: () => router.navigateByUrl('/not-found'),

@@ -25,6 +25,7 @@ export const ShopStore = signalStore(
   withDevtools('shop'),
   withState(initialState),
   withEntities<Article>(),
+  // withSelectedEntity(),
   withRequestStatus(),
   withComputed(({entities, product, category}) => ({
     getCurrentProducts: computed(() => entities()
@@ -65,8 +66,9 @@ export const ShopStore = signalStore(
           tap((val) => updateState(store, 'shop set category', {category: val})),
         ),
       ),
-      setArticle(article: Article): void {
+      addArticle(article: Article): void {
         updateState(store, 'shop set article', setEntity(article));
+        // updateState(store, 'shop set selectedEntity', setSelectedEntity(article.id));
       },
     }),
   ),

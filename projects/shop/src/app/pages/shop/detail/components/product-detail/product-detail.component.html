@@ -43,7 +43,7 @@
       <shop-tag-chips [tags]="article.tags"/>
 
     </div>
-    <div class="mt-10 md:col-start-2  md:mt-0 md:self-center md:justify-self-center">
+    <div class="mt-10 md:col-start-2 md:mt-0 md:self-center md:justify-self-center">
       <img [ngSrc]="'assets/img/' + article.pictureUrl" width="350" height="350" alt="image of kratom"
            class="object-cover rounded-md">
     </div>
@@ -54,22 +54,27 @@
           <p>Gewicht in Gramm</p>
           <mat-button-toggle-group name="weight" [(ngModel)]="size"
                                    aria-label="Auswahl Gewicht">
-            <mat-button-toggle value="10">10</mat-button-toggle>
-            <mat-button-toggle value="50">50</mat-button-toggle>
-            <mat-button-toggle value="100">100</mat-button-toggle>
-            <mat-button-toggle value="250">250</mat-button-toggle>
-            <mat-button-toggle value="500">500</mat-button-toggle>
-            <mat-button-toggle value="1000">1000</mat-button-toggle>
+            <mat-button-toggle [value]="10">10</mat-button-toggle>
+            <mat-button-toggle [value]="50">50</mat-button-toggle>
+            <mat-button-toggle [value]="100">100</mat-button-toggle>
+            <mat-button-toggle [value]="250">250</mat-button-toggle>
+            <mat-button-toggle [value]="500">500</mat-button-toggle>
+            <mat-button-toggle [value]="1000">1000</mat-button-toggle>
           </mat-button-toggle-group>
           <div class="flex items-end flex-col w-fit">
-            <shop-number-input #quantityInput text="Menge" [disabled]="!size" (numberChange)="updateCart($event)"/>
+            <shop-number-input text="Menge" [disabled]="!size" (numberChange)="updateCart($event)"/>
             <button mat-flat-button [disabled]="quantity === 0" color="accent">In den Warenkorb</button>
+          </div>
+
+          <div class="mt-10 md:col-start-2 md:row-start-2 md:max-w-lg md:self-start">
+            <shop-weight-table [article]="article" (choiceEvent)="selectWeight($event)"/>
+            <div class="flex items-end flex-col w-fit">
+              <shop-number-input text="Menge" [disabled]="!size" (numberChange)="updateCart($event)"/>
+              <button mat-flat-button [disabled]="quantity === 0" color="accent">In den Warenkorb</button>
+            </div>
           </div>
         </form>
       </section>
-    </div>
-    <div class="mt-10 md:col-start-2 md:row-start-2 md:max-w-lg md:self-start">
-      <shop-weight-table [prices]="article.prices" [stock]="article.stock"/>
     </div>
   </div>
 
