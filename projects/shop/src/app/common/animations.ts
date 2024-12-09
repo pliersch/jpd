@@ -29,3 +29,25 @@ export const slideInAnimation =
       query(':enter', animateChild()),
     ])
   ]);
+
+// Routable animations
+export const fadeInAnimation =
+  trigger('routeAnimation', [
+    transition('* <=> *', [
+      // Set a default  style for enter and leave
+      query(':enter, :leave', [
+        style({
+          position: 'absolute',
+          width: '100%',
+          opacity: 0,
+        }),
+      ], {optional: true}),
+      // Animate the new page in
+      query(':enter', [
+        animate('600ms ease',
+          style({
+            opacity: 1,
+          })),
+      ], {optional: true})
+    ]),
+  ]);

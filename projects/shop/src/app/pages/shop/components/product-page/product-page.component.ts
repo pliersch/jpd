@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, ChildrenOutletContexts, RouterOutlet } from '@angular/router';
-import { slideInAnimation } from '@shop/common/animations';
+import { fadeInAnimation } from '@shop/common/animations';
 import { NavbarComponent } from '@shop/components/navbar/navbar.component';
 import { getProductFromUrl } from '@shop/pages/shop/store/models/url-product-types';
 import { ShopStore } from '@shop/pages/shop/store/shop.store';
@@ -15,7 +15,7 @@ import { ShopStore } from '@shop/pages/shop/store/shop.store';
   templateUrl: './product-page.component.html',
   styleUrl: './product-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: [slideInAnimation]
+  animations: [fadeInAnimation]
 })
 export class ProductPageComponent implements OnInit {
 
