@@ -1,8 +1,14 @@
 // todo is it possible to use capitalizeFirstLetter
 import { DealerType } from '@shop/pages/shop/store/articles/kratom/dealer.model';
-import { KratomPrices, KratomStock } from '@shop/pages/shop/store/articles/kratom/kratom.model';
 
 export type Category = 'kratom' | 'cbd' | 'miscellaneous';
+
+export interface Data {
+  index: number;
+  identifier: string | number;
+  price: number;
+  stock: number;
+}
 
 export interface Article {
   id: string;
@@ -15,11 +21,27 @@ export interface Article {
   charge: number;
   // comments: Comment[];
   dealer: DealerType;
-  stock: KratomStock;
   date: Date;
   pictureUrl: string;
   tags: string[];
-  prices: KratomPrices;
+  data: Data[]
+}
+
+export function getDataBySize(data: Data[], size: string | number): Data {
+  const find = data.find(item => item.identifier === size);
+  if (!find) {
+    throw new Error('No data found.');
+  }
+  return find;
+}
+
+export function getPriceBySize(data: Data[], size: string | number): number {
+  console.log('getPriceBySize getPriceBySize: ', size)
+  const find = data.find(item => item.identifier === size);
+  if (!find) {
+    throw new Error('No data found.');
+  }
+  return find.price;
 }
 
 // export interface ArticleDetails {
@@ -52,7 +74,7 @@ export interface CreateArticle {
   shortName: string;
   description: string;
   dealer: DealerType;
-  stock: KratomStock;
+  data: Data[];
   date?: Date;
   pictureUrl: string;
 }
@@ -61,7 +83,7 @@ export interface UpdateArticle {
   name?: string;
   description?: string;
   dealer?: DealerType;
-  stock?: KratomStock;
+  // stock?: KratomStock;
   date?: Date;
   pictureUrl?: string;
 }

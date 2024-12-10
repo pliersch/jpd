@@ -81,16 +81,13 @@ export class WeightTableComponent implements OnInit {
   }
 
   private createTableData(): KratomTableData[] {
-    const p = this.article.prices;
-    const s = this.article.stock;
-
-    return [
-      {weight: 10, price: p.price10, kgPrice: p.price10 * 100, stock: s.stock10},
-      {weight: 50, price: p.price50, kgPrice: p.price50 * 20, stock: s.stock50},
-      {weight: 100, price: p.price100, kgPrice: p.price100 * 10, stock: s.stock100},
-      {weight: 250, price: p.price250, kgPrice: p.price250 * 4, stock: s.stock250},
-      {weight: 500, price: p.price500, kgPrice: p.price500 * 2, stock: s.stock500},
-      {weight: 1000, price: p.price1000, kgPrice: p.price1000, stock: s.stock100},
-    ];
+    const data = this.article.data;
+    const tableData: KratomTableData[] = [];
+    for (const item of data) {
+      tableData.push(
+        {weight: Number(item.identifier), price: item.price, kgPrice: item.price * 100, stock: item.stock}
+      )
+    }
+    return tableData;
   }
 }

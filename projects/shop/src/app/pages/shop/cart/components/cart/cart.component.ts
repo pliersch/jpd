@@ -3,8 +3,8 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatAnchor, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import { OrderPosition } from '@shop/pages/shop/cart/store/cart.model';
 import { CartStore } from '@shop/pages/shop/cart/store/cart.store';
-import { OrderPosition } from '@shop/pages/shop/shared/models/orderPosition';
 
 @Component({
   selector: 'shop-cart',
@@ -26,7 +26,7 @@ export class CartComponent {
   cartStore = inject(CartStore);
 
   delete(item: OrderPosition): void {
-    console.log('CartPopOverComponent delete: ', item);
+    this.cartStore.remove(item.id);
   }
 
 }

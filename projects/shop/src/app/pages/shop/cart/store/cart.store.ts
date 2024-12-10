@@ -3,9 +3,8 @@ import { computed, inject } from '@angular/core';
 import { patchState, signalStore, watchState, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import { removeEntity, setEntity, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { totalCost } from '@shop/pages/shop/cart/store/cart.model';
+import { CreateOrderPositionDto, OrderPosition, totalCost } from '@shop/pages/shop/cart/store/cart.model';
 import { SHOP_CONSTANTS } from '@shop/pages/shop/const';
-import { CreateOrderPositionDto, OrderPosition } from '@shop/pages/shop/shared/models/orderPosition';
 import { ShopStore } from '@shop/pages/shop/store/shop.store';
 import { withRequestStatus } from 'jpd-core';
 import { pipe, tap } from 'rxjs';
@@ -15,11 +14,13 @@ export const CartStore = signalStore(
   // withCallState(),
   withDevtools('cart'),
   withState({
-    _count: 0,
+    _counter: 0,
+    itemCount: 0,
   }),
   withEntities<OrderPosition>(),
   withRequestStatus(),
   withComputed(({entities}) => ({
+    items: computed(() => totalCost(entities())),
     totalCost: computed(() => totalCost(entities())),
   })),
   withComputed(({totalCost}) => ({
@@ -31,35 +32,34 @@ export const CartStore = signalStore(
         pipe(
           tap((dto) => updateState(store, 'cart add position',
             setEntity({
-              id: store._count(),
+              id: store._counter(),
               article: dto.article,
               size: dto.size,
               quantity: dto.quantity
             }))),
-          tap(() => patchState(store, {_count: store._count() + 1})),
+          tap(() => patchState(store, {_counter: store._counter() + 1})),
+          tap(() => patchState(store, {itemCount: store.entities().length})),
         ),
       ),
       remove: rxMethod<number>(
         pipe(
-          tap((id) => updateState(store, 'cart add position', removeEntity(id))),
-          // tap(() => patchState(store, {_count: store._count() + 1})),
+          tap((id) => updateState(store, 'cart remove position', removeEntity(id))),
         ),
       ),
     }),
   ),
-  withHooks(({add}) => {
+  withHooks((store) => {
     const shopStore = inject(ShopStore);
     let empty = true;
     return {
       onInit(): void {
         // todo only for dev
         watchState(shopStore, (state) => {
-          if (empty && state.ids.length > 0) {
+          if (empty && state.requestStatus === 'fulfilled') {
             empty = false;
-            add({article: shopStore.entities()[0], quantity: 3, size: 100});
-            add({article: shopStore.entities()[0], quantity: 3, size: 100});
-            add({article: shopStore.entities()[0], quantity: 3, size: 100});
-            add({article: shopStore.entities()[0], quantity: 3, size: 100});
+            store.add({article: shopStore.entities()[0], quantity: 3, size: 100});
+            store.add({article: shopStore.entities()[4], quantity: 3, size: 100});
+            store.add({article: shopStore.entities()[8], quantity: 3, size: 100});
           }
         });
       },

@@ -1,8 +1,10 @@
-import { NgOptimizedImage } from '@angular/common';
+import { CurrencyPipe, NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
-import { OrderPosition } from '@shop/pages/shop/shared/models/orderPosition';
+import { RouterLink } from '@angular/router';
+import { OrderPosition } from '@shop/pages/shop/cart/store/cart.model';
+import { getPriceBySize } from '@shop/pages/shop/store/articles/article.model';
 
 @Component({
   selector: 'shop-cart-pop-over-item',
@@ -10,7 +12,9 @@ import { OrderPosition } from '@shop/pages/shop/shared/models/orderPosition';
   imports: [
     MatIcon,
     MatIconButton,
-    NgOptimizedImage
+    NgOptimizedImage,
+    RouterLink,
+    CurrencyPipe
   ],
   templateUrl: './cart-pop-over-item.component.html',
   styleUrl: './cart-pop-over-item.component.scss',
@@ -28,4 +32,5 @@ export class CartPopOverItemComponent {
     this.itemEvent.emit(this.item);
   }
 
+  protected readonly getPriceBySize = getPriceBySize;
 }

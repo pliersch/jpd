@@ -62,14 +62,14 @@
             <mat-button-toggle [value]="1000">1000</mat-button-toggle>
           </mat-button-toggle-group>
           <div class="flex items-end flex-col w-fit">
-            <shop-number-input text="Menge" [disabled]="!size" (numberChange)="updateCart($event)"/>
+            <shop-number-input text="Menge" [disabled]="!size" (numberChange)="onChangeQuantity($event)"/>
             <button mat-flat-button [disabled]="quantity === 0" color="accent">In den Warenkorb</button>
           </div>
 
           <div class="mt-10 md:col-start-2 md:row-start-2 md:max-w-lg md:self-start">
-            <shop-weight-table [article]="article" (choiceEvent)="selectWeight($event)"/>
+            <shop-weight-table [article]="article" (choiceEvent)="onChangeWeight($event)"/>
             <div class="flex items-end flex-col w-fit">
-              <shop-number-input text="Menge" [disabled]="!size" (numberChange)="updateCart($event)"/>
+              <shop-number-input text="Menge" [disabled]="!size" (numberChange)="onChangeQuantity($event)"/>
               <button mat-flat-button [disabled]="quantity === 0" color="accent">In den Warenkorb</button>
             </div>
           </div>

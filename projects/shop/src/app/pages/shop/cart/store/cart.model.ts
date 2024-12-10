@@ -1,21 +1,35 @@
-import { OrderPosition } from '@shop/pages/shop/shared/models/orderPosition';
+import { Article, getPriceBySize } from '@shop/pages/shop/store/articles/article.model';
+
+export interface OrderPosition {
+  id: number;
+  article: Article;
+  quantity: number;
+  size: number | string;
+}
+
+export interface ExtendedOrderPosition extends OrderPosition {
+  id: number;
+  article: Article;
+  quantity: number;
+  size: number | string;
+}
+
+export interface CreateOrderPositionDto {
+  article: Article;
+  quantity: number;
+  size: number | string;
+}
+
+export function createOrderPosition(article: Article, quantity: number, size: number | string): CreateOrderPositionDto {
+  return {
+    article, quantity, size
+  }
+}
 
 export function totalCost(positions: OrderPosition[]): number {
   let total = 0;
   for (const pos of positions) {
-    total += pos.quantity * pos.article.prices.price100;
+    total += pos.quantity * getPriceBySize(pos.article.data, pos.size);
   }
-  console.log('totalCost totalCost: ', total);
   return total;
 }
-
-// export function sortById(p1: Video, p2: Video): number {
-//   const compare = Number(p1.artist.at(0)) - Number(p2.artist.at(0));
-//   if (compare > 0) {
-//     return 1;
-//   } else if (compare < 0) {
-//     return -1;
-//   } else {
-//     return 0;
-//   }
-// }

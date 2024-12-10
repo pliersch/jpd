@@ -1,15 +1,15 @@
-import { animate, keyframes, query, stagger, style, transition, trigger } from '@angular/animations';
 import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
 import { CurrencyPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatAnchor, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import { cartIconAnimation } from '@shop/pages/shop/cart/components/pop-over/cart-icon-animation';
 import {
   CartPopOverItemComponent
 } from '@shop/pages/shop/cart/components/pop-over/cart-pop-over-item/cart-pop-over-item.component';
+import { OrderPosition } from '@shop/pages/shop/cart/store/cart.model';
 import { CartStore } from '@shop/pages/shop/cart/store/cart.store';
-import { OrderPosition } from '@shop/pages/shop/shared/models/orderPosition';
 import { PosterComponent } from 'jpd-core';
 
 @Component({
@@ -29,56 +29,7 @@ import { PosterComponent } from 'jpd-core';
   templateUrl: './cart-pop-over.component.html',
   styleUrl: './cart-pop-over.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: [
-    trigger('filterAnimation', [
-      transition(':increment', [
-        query(':self', [
-          style({color: 'red'/*, opacity: 0*/}),
-          stagger(1, [
-            animate(
-              '1500ms cubic-bezier(.68,-0.73,.26,1.65)',
-              keyframes([
-                style({offset: 0.0, transform: 'translateX(0)'}),
-                style({offset: 0.1, transform: 'translateX(-20%)'}),
-                style({offset: 0.2, transform: 'translateX(20%)'}),
-                style({offset: 0.3, transform: 'translateX(-20%)'}),
-                style({offset: 0.4, transform: 'translateX(20%)'}),
-                style({offset: 0.5, transform: 'translateX(-20%)'}),
-                style({offset: 0.6, transform: 'translateX(20%)'}),
-                style({offset: 0.7, transform: 'translateX(-20%)'}),
-                style({offset: 0.8, transform: 'translateX(15%)'}),
-                style({offset: 0.9, transform: 'translateX(-15%)'}),
-                style({offset: 1, transform: 'translateX(0)'}),
-              ]),
-            ),
-          ]),
-        ], {optional: true})
-      ]),
-      transition(':decrement', [
-        query(':self', [
-          style({color: 'red'/*, opacity: 0*/}),
-          stagger(1, [
-            animate(
-              '1500ms cubic-bezier(.68,-0.73,.26,1.65)',
-              keyframes([
-                style({offset: 0.0, transform: 'translateX(0)'}),
-                style({offset: 0.1, transform: 'translateX(-20%)'}),
-                style({offset: 0.2, transform: 'translateX(20%)'}),
-                style({offset: 0.3, transform: 'translateX(-20%)'}),
-                style({offset: 0.4, transform: 'translateX(20%)'}),
-                style({offset: 0.5, transform: 'translateX(-20%)'}),
-                style({offset: 0.6, transform: 'translateX(20%)'}),
-                style({offset: 0.7, transform: 'translateX(-20%)'}),
-                style({offset: 0.8, transform: 'translateX(15%)'}),
-                style({offset: 0.9, transform: 'translateX(-15%)'}),
-                style({offset: 1, transform: 'translateX(0)'}),
-              ]),
-            ),
-          ]),
-        ])
-      ]),
-    ]),
-  ]
+  animations: [cartIconAnimation]
 })
 export class CartPopOverComponent {
 
@@ -92,6 +43,5 @@ export class CartPopOverComponent {
 
   delete(item: OrderPosition): void {
     this.cartStore.remove(item.id);
-    console.log('CartPopOverComponent delete: ', item);
   }
 }

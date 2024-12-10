@@ -1,4 +1,4 @@
-<div [@filterAnimation]="cartStore.entities().length">
+<div [@shakeAnimation]="cartStore.itemCount()">
   <button mat-icon-button (click)="isOpen = !isOpen"
           type="button" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
     <mat-icon>shopping_cart</mat-icon>
@@ -11,31 +11,42 @@
              [cdkConnectedOverlayOrigin]="trigger"
              [cdkConnectedOverlayOpen]="isOpen">
 
-  <a4w-poster rounded="rounded-lg"
-              class="max-w-80 text-sm font-normal text-[color:--theme-default-text]">
-    @for (item of cartStore.entities(); track item.id) {
-      <shop-cart-pop-over-item [item]="item" (itemEvent)="delete($event)"/>
-    }
-    <div class="m-4">
-      <p> Zwischensumme: {{ cartStore.totalCost() | currency:'EUR' }} </p>
-      @if (cartStore.freeShipping()) {
-        <p> kostenloser Versand </p>
+  <a4w-poster rounded="rounded-lg" class="w-80 max-w-80
+  text-sm font-normal text-[color:--theme-default-text]">
+
+    <div class="p-4">
+      @if (cartStore.entities().length > 0) {
+        @for (item of cartStore.entities(); track item.id) {
+          <shop-cart-pop-over-item [item]="item" (itemEvent)="delete($event)"/>
+        }
+        <div>
+          <div class="mt-4">
+            <p> Zwischensumme: {{ cartStore.totalCost() | currency:'EUR' }} </p>
+            @if (cartStore.freeShipping()) {
+              <p> kostenloser Versand </p>
+            } @else {
+              <p>
+                Es fehlen noch {{ cartStore.freeShippingDiff() | currency:'EUR' }} und ihre Bestellung ist
+                versandkostenfrei.
+              </p>
+            }
+          </div>
+          <div class="flex justify-around mt-4">
+            <a mat-flat-button color="accent" (click)="isOpen = false" routerLink="/warenkorb">
+              Warenkorb
+            </a>
+            <a mat-flat-button color="accent" (click)="isOpen = false" routerLink="/kasse">
+              Kasse
+            </a>
+
+          </div>
+        </div>
       } @else {
-        <p>
-          Es fehlen nur noch {{ cartStore.freeShippingDiff() | currency:'EUR' }} und ihre Bestellung ist
-          versandkostenfrei.
-        </p>
+        <div class="flex items-center justify-center">
+          <p>Ihr Warenkorb ist leer</p>
+        </div>
       }
-
-      <div class="flex justify-around mt-4">
-        <a mat-flat-button color="accent" (click)="isOpen = false" routerLink="/warenkorb">
-          Warenkorb
-        </a>
-        <a mat-flat-button color="accent" (click)="isOpen = false" routerLink="/kasse">
-          Kasse
-        </a>
-
-      </div>
     </div>
+
   </a4w-poster>
 </ng-template>
