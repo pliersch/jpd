@@ -64,8 +64,6 @@ export class WeightTableComponent implements OnInit {
   }
 
   checkboxLabel(row: KratomTableData): string {
-    // console.log('WeightTableComponent checkboxLabel: ',
-    // `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.weight}`)
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.weight}`;
   }
 
@@ -83,9 +81,13 @@ export class WeightTableComponent implements OnInit {
   private createTableData(): KratomTableData[] {
     const data = this.article.data;
     const tableData: KratomTableData[] = [];
+    let weight = 0;
+    let factor = 0;
     for (const item of data) {
+      weight = Number(item.identifier);
+      factor = 1000 / weight;
       tableData.push(
-        {weight: Number(item.identifier), price: item.price, kgPrice: item.price * 100, stock: item.stock}
+        {weight: weight, price: item.price, kgPrice: item.price * factor, stock: item.stock}
       )
     }
     return tableData;

@@ -5,7 +5,7 @@ import { MatButton } from '@angular/material/button';
 import { MatButtonToggle, MatButtonToggleGroup } from '@angular/material/button-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTab, MatTabGroup } from '@angular/material/tabs';
-import { createOrderPosition } from '@shop/pages/shop/cart/store/cart.model';
+import { createOrderPositionDto } from '@shop/pages/shop/cart/store/cart.model';
 import { CartStore } from '@shop/pages/shop/cart/store/cart.store';
 import { TagChipsComponent } from '@shop/pages/shop/detail/components/tags/tag-chips.component';
 import {
@@ -56,7 +56,7 @@ export class ProductDetailComponent {
 
   onSubmit(): void {
     this.cartStore.add(
-      createOrderPosition(this.detailStore.article()!, this.quantity, this.size!));
+      createOrderPositionDto(this.detailStore.article()!, this.quantity, this.size!));
     this.quantity = 0;
     this.quantityInputs.forEach(item => item.clear());
   }

@@ -27,17 +27,16 @@ export interface Article {
   data: Data[]
 }
 
-export function getDataBySize(data: Data[], size: string | number): Data {
-  const find = data.find(item => item.identifier === size);
+export function getDataBySize(article: Article, size: string | number): Data {
+  const find = article.data.find(item => item.identifier === size);
   if (!find) {
     throw new Error('No data found.');
   }
   return find;
 }
 
-export function getPriceBySize(data: Data[], size: string | number): number {
-  console.log('getPriceBySize getPriceBySize: ', size)
-  const find = data.find(item => item.identifier === size);
+export function getPriceBySize(article: Article, size: string | number): number {
+  const find = article.data.find(item => item.identifier === size);
   if (!find) {
     throw new Error('No data found.');
   }

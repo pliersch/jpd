@@ -4,7 +4,6 @@ import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { OrderPosition } from '@shop/pages/shop/cart/store/cart.model';
-import { getPriceBySize } from '@shop/pages/shop/store/articles/article.model';
 
 @Component({
   selector: 'shop-cart-pop-over-item',
@@ -32,5 +31,4 @@ export class CartPopOverItemComponent {
     this.itemEvent.emit(this.item);
   }
 
-  protected readonly getPriceBySize = getPriceBySize;
 }
