@@ -2590,6 +2590,14 @@
     "@material/theme" "15.0.0-canary.7f224ddd4.0"
     tslib "^2.1.0"
 
+"@ngrx/eslint-plugin@^18.1.1":
+  version "18.1.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/eslint-plugin/-/eslint-plugin-18.1.1.tgz#3e3172a2ed019302ed7eacf22670a41708807df6"
+  integrity sha512-+fFKzczOabD0F2DPkIrQolxkVJgw/YV7iIvlzHqo54JKOf4vm14/wZbNiZQdAC0ScE9+c6EAkTCWTGrg1fx5/g==
+  dependencies:
+    semver "^7.3.5"
+    strip-json-comments "3.1.1"
+
 "@ngrx/operators@^18.1.1":
   version "18.1.1"
   resolved "https://registry.yarnpkg.com/@ngrx/operators/-/operators-18.1.1.tgz#166bcbacff9bd5cbeb2c5d85f43e11db65eef2ac"

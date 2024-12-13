@@ -19,6 +19,7 @@ export const CartStore = signalStore(
   // withCallState(),
   withDevtools('cart'),
   withState({
+    discount: 0,
     _counter: 0,
   }),
   withEntities<OrderPosition>(),

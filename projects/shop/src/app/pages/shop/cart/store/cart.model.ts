@@ -33,7 +33,7 @@ export function createOrderPosition(dto: CreateOrderPositionDto, id: number): Or
 export function totalCost(positions: OrderPosition[]): number {
   let total = 0;
   for (const pos of positions) {
-    total += pos.quantity * getPriceBySize(pos.article, pos.size);
+    total += pos.quantity * pos.price!;
   }
   return total;
 }
