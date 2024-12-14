@@ -10,9 +10,6 @@
       "files": [
         "*.ts"
       ],
-      "extends": [
-        "plugin:@ngrx/strict"
-      ],
       "parserOptions": {
         "project": [
           "../../tsconfig.json"

@@ -4,29 +4,59 @@ import { patchState, signalStore, watchState, withComputed, withHooks, withMetho
 import { removeEntity, setEntity, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import {
+  CartItem,
   createOrderPosition,
   CreateOrderPositionDto,
   OrderPosition,
   totalCost
 } from '@shop/pages/shop/cart/store/cart.model';
 import { SHOP_CONSTANTS } from '@shop/pages/shop/const';
+import { getPriceBySize } from '@shop/pages/shop/store/articles/article.model';
 import { ShopStore } from '@shop/pages/shop/store/shop.store';
 import { withRequestStatus } from 'jpd-core';
 import { pipe, tap } from 'rxjs';
+
+type CartState = {
+  discount: number;
+  _counter: number;
+  lastEntityIdForTest: number;
+};
+
+const initialState: CartState = {
+  discount: 0,
+  _counter: 0,
+  lastEntityIdForTest: 0,
+};
 
 export const CartStore = signalStore(
   {providedIn: 'root'},
   // withCallState(),
   withDevtools('cart'),
-  withState({
-    discount: 0,
-    _counter: 0,
-  }),
+  withState(initialState),
   withEntities<OrderPosition>(),
   withRequestStatus(),
   withComputed(({entities}) => ({
     itemCount: computed(() => entities().length),
-    totalCost: computed(() => totalCost(entities())),
+  })),
+  withComputed(({entities},
+                shopStore = inject(ShopStore)) => ({
+    items: computed((): CartItem[] => entities().map((entity) => {
+      const article = shopStore.items()[entity.entityId];
+      return ({
+        id: entity.id,
+        title: `${article.name} ${article.charge} ${article.shortName}`,
+        subTitle: `${entity.size} Gramm`,
+        description: 'string',
+        imageUrl: article.pictureUrl,
+        price: getPriceBySize(article, entity.size),
+        quantity: entity.quantity,
+        // todo hard coded
+        routerLink: ['/shop/kratom/detail/', article.id]
+      })
+    })),
+  })),
+  withComputed(({items}) => ({
+    totalCost: computed(() => totalCost(items())),
   })),
   withComputed(({totalCost}) => ({
     freeShipping: computed(() => totalCost() > SHOP_CONSTANTS.FREE_SHIPPING),
@@ -35,6 +65,7 @@ export const CartStore = signalStore(
   withMethods((store) => ({
       add: rxMethod<CreateOrderPositionDto>(
         pipe(
+          tap(dto => patchState(store, {lastEntityIdForTest: dto.entityId})),
           tap((dto) => updateState(store, 'cart add position',
             setEntity(createOrderPosition(dto, store._counter())))),
           tap(() => patchState(store, {_counter: store._counter() + 1})),
@@ -56,8 +87,8 @@ export const CartStore = signalStore(
         watchState(shopStore, (state) => {
           if (empty && state.requestStatus === 'fulfilled') {
             empty = false;
-            store.add({article: shopStore.entities()[0], quantity: 1, size: 100});
-            store.add({article: shopStore.entities()[4], quantity: 1, size: 250});
+            store.add({entityId: 1, quantity: 1, size: 100});
+            store.add({entityId: 4, quantity: 1, size: 250});
           }
         });
       },

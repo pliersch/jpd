@@ -3,11 +3,14 @@ import { DealerType } from '@shop/pages/shop/store/articles/kratom/dealer.model'
 
 export type Category = 'kratom' | 'cbd' | 'miscellaneous';
 
+export type ArticleSize = number | string;
+
 export interface Data {
   index: number;
-  identifier: string | number;
+  size: ArticleSize;
   price: number;
   stock: number;
+  // kgPrice?: number;
 }
 
 export interface Article {
@@ -17,6 +20,7 @@ export interface Article {
   group: string;
   shortName: string;
   description: string;
+  price: number;
   rating: number;
   charge: number;
   // comments: Comment[];
@@ -28,7 +32,7 @@ export interface Article {
 }
 
 export function getDataBySize(article: Article, size: string | number): Data {
-  const find = article.data.find(item => item.identifier === size);
+  const find = article.data.find(item => item.size === size);
   if (!find) {
     throw new Error('No data found.');
   }
@@ -36,7 +40,7 @@ export function getDataBySize(article: Article, size: string | number): Data {
 }
 
 export function getPriceBySize(article: Article, size: string | number): number {
-  const find = article.data.find(item => item.identifier === size);
+  const find = article.data.find(item => item.size === size);
   if (!find) {
     throw new Error('No data found.');
   }

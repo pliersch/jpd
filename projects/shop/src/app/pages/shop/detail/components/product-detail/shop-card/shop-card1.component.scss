@@ -1,0 +1,11 @@
+@use "@angular/material" as mat;
+
+.elevation {
+  @include mat.elevation-transition();
+  @include mat.elevation(4);
+
+  &:hover {
+    @include mat.elevation(9);
+  }
+
+}

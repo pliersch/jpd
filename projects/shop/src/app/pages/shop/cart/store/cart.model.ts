@@ -1,39 +1,51 @@
-import { Article, getPriceBySize } from '@shop/pages/shop/store/articles/article.model';
+import { ArticleSize } from '@shop/pages/shop/store/articles/article.model';
 
 export interface OrderPosition {
   id: number;
-  article: Article;
+  entityId: number;
   quantity: number;
-  size: number | string;
-  price?: number;
+  size: ArticleSize;
 }
 
 export interface CreateOrderPositionDto {
-  article: Article;
+  entityId: number;
   quantity: number;
-  size: number | string;
+  size: ArticleSize;
 }
 
-export function createOrderPositionDto(article: Article, quantity: number, size: number | string): CreateOrderPositionDto {
+export function createOrderPositionDto(entityId: number, quantity: number, size: ArticleSize): CreateOrderPositionDto {
   return {
-    article, quantity, size
+    entityId: entityId, quantity, size
   }
 }
 
 export function createOrderPosition(dto: CreateOrderPositionDto, id: number): OrderPosition {
   return {
     id: id,
-    article: dto.article,
+    entityId: dto.entityId,
     size: dto.size,
     quantity: dto.quantity,
-    price: getPriceBySize(dto.article, dto.size)
+    // price: getPriceBySize(dto.article, dto.size)
   }
 }
 
-export function totalCost(positions: OrderPosition[]): number {
+export function totalCost(positions: CartItem[]): number {
   let total = 0;
   for (const pos of positions) {
     total += pos.quantity * pos.price!;
   }
   return total;
+  // return 42;
+}
+
+export interface CartItem {
+  id: number;
+  title: string;
+  subTitle: string;
+  description: string;
+  imageUrl: string;
+  size: ArticleSize;
+  price: number;
+  quantity: number;
+  routerLink: string[];
 }

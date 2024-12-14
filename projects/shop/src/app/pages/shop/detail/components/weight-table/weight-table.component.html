@@ -13,19 +13,19 @@
     </td>
   </ng-container>
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="weight">
+  <!-- Size Column -->
+  <ng-container matColumnDef="size">
     <th mat-header-cell *matHeaderCellDef> Gewicht</th>
-    <td mat-cell *matCellDef="let element"> {{ element.weight }} Gramm</td>
+    <td mat-cell *matCellDef="let element"> {{ element.size }} Gramm</td>
   </ng-container>
 
-  <!-- Weight Column -->
+  <!-- Price Column -->
   <ng-container matColumnDef="price">
     <th mat-header-cell *matHeaderCellDef> Preis</th>
     <td mat-cell *matCellDef="let element"> {{ element.price | currency:'EUR' }}</td>
   </ng-container>
 
-  <!-- Symbol Column -->
+  <!-- Base Price Column -->
   <ng-container matColumnDef="kgPrice">
     <th mat-header-cell *matHeaderCellDef> Grundpreis (kg)</th>
     <td mat-cell *matCellDef="let element"> {{ element.kgPrice | currency:'EUR' }}</td>
@@ -41,173 +41,3 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onChangeSelection(row)"
       class="selected-row"></tr>
 </table>
-
-<!--<div-->
-<!--  class="relative flex flex-col w-full h-full rounded-xl overflow-hidden bg-clip-border">-->
-<!--  <table class="w-full text-left table-auto min-w-max">-->
-<!--    <thead>-->
-<!--    <tr>-->
-<!--      <th class="p-4">-->
-<!--        <p class="block font-sans text-sm antialiased font-semibold leading-none ">-->
-<!--          Gewicht-->
-<!--        </p>-->
-<!--      </th>-->
-<!--      <th class="p-4">-->
-<!--        <p class="block font-sans text-sm antialiased font-semibold leading-none ">-->
-<!--          Preis-->
-<!--        </p>-->
-<!--      </th>-->
-<!--      <th class="p-4">-->
-<!--        <p class="block font-sans text-sm antialiased font-semibold leading-none ">-->
-<!--          Grundpreis (kg)-->
-<!--        </p>-->
-<!--      </th>-->
-<!--      <th class="p-4">-->
-<!--        <p class="block font-sans text-sm antialiased font-semibold leading-none ">-->
-<!--          Bestand-->
-<!--        </p>-->
-<!--      </th>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-
-<!--    <tr>-->
-<!--      <td class="p-4">-->
-<!--        <p class="block font-sans text-sm antialiased font-normal leading-normal">-->
-<!--          10 Gramm-->
-<!--        </p>-->
-<!--      </td>-->
-<!--      <td class="p-4">-->
-<!--        <p class="block font-sans text-sm antialiased font-normal leading-normal">-->
-<!--          {{ article.prices.price10  | currency:'EUR' }}-->
-<!--        </p>-->
-<!--      </td>-->
-<!--      <td class="p-4">-->
-<!--        <p class="block font-sans text-sm antialiased font-normal leading-normal">-->
-<!--          {{ article.prices.price10 * 100  | currency:'EUR' }}-->
-<!--        </p>-->
-<!--      </td>-->
-<!--      <td class="p-4">-->
-<!--        <a class="block font-sans text-sm antialiased font-medium leading-normal">-->
-<!--          {{ article.stock.stock10 }}-->
-<!--        </a>-->
-<!--      </td>-->
-<!--    </tr>-->
-
-<!--    <tr>-->
-<!--      <td class="p-4">-->
-<!--        <p class="block font-sans text-sm antialiased font-normal leading-normal">-->
-<!--          50 Gramm-->
-<!--        </p>-->
-<!--      </td>-->
-<!--      <td class="p-4">-->
-<!--        <p class="block font-sans text-sm antialiased font-normal leading-normal">-->
-<!--          {{ article.prices.price50  | currency:'EUR' }}-->
-<!--        </p>-->
-<!--      </td>-->
-<!--      <td class="p-4">-->
-<!--        <p class="block font-sans text-sm antialiased font-normal leading-normal">-->
-<!--          {{ article.prices.price50 * 20  | currency:'EUR' }}-->
-<!--        </p>-->
-<!--      </td>-->
-<!--      <td class="p-4">-->
-<!--        <a class="block font-sans text-sm antialiased font-medium leading-normal">-->
-<!--          {{ article.stock.stock50 }}-->
-<!--        </a>-->
-<!--      </td>-->
-<!--    </tr>-->
-
-<!--    <tr>-->
-<!--      <td class="p-4">-->
-<!--        <p class="block font-sans text-sm antialiased font-normal leading-normal">-->
-<!--          100 Gramm-->
-<!--        </p>-->
-<!--      </td>-->
-<!--      <td class="p-4">-->
-<!--        <p class="block font-sans text-sm antialiased font-normal leading-normal">-->
-<!--          {{ article.prices.price100  | currency:'EUR' }}-->
-<!--        </p>-->
-<!--      </td>-->
-<!--      <td class="p-4">-->
-<!--        <p class="block font-sans text-sm antialiased font-normal leading-normal">-->
-<!--          {{ article.prices.price100 * 10  | currency:'EUR' }}-->
-<!--        </p>-->
-<!--      </td>-->
-<!--      <td class="p-4">-->
-<!--        <a class="block font-sans text-sm antialiased font-medium leading-normal">-->
-<!--          {{ article.stock.stock100 }}-->
-<!--        </a>-->
-<!--      </td>-->
-<!--    </tr>-->
-
-<!--    <tr>-->
-<!--      <td class="p-4">-->
-<!--        <p class="block font-sans text-sm antialiased font-normal leading-normal">-->
-<!--          250 Gramm-->
-<!--        </p>-->
-<!--      </td>-->
-<!--      <td class="p-4">-->
-<!--        <p class="block font-sans text-sm antialiased font-normal leading-normal">-->
-<!--          {{ article.prices.price250  | currency:'EUR' }}-->
-<!--        </p>-->
-<!--      </td>-->
-<!--      <td class="p-4">-->
-<!--        <p class="block font-sans text-sm antialiased font-normal leading-normal">-->
-<!--          {{ article.prices.price250 * 4  | currency:'EUR' }}-->
-<!--        </p>-->
-<!--      </td>-->
-<!--      <td class="p-4">-->
-<!--        <a class="block font-sans text-sm antialiased font-medium leading-normal">-->
-<!--          {{ article.stock.stock250 }}-->
-<!--        </a>-->
-<!--      </td>-->
-<!--    </tr>-->
-
-<!--    <tr>-->
-<!--      <td class="p-4">-->
-<!--        <p class="block font-sans text-sm antialiased font-normal leading-normal">-->
-<!--          500 Gramm-->
-<!--        </p>-->
-<!--      </td>-->
-<!--      <td class="p-4">-->
-<!--        <p class="block font-sans text-sm antialiased font-normal leading-normal">-->
-<!--          {{ article.prices.price500  | currency:'EUR' }}-->
-<!--        </p>-->
-<!--      </td>-->
-<!--      <td class="p-4">-->
-<!--        <p class="block font-sans text-sm antialiased font-normal leading-normal">-->
-<!--          {{ article.prices.price500 * 2  | currency:'EUR' }}-->
-<!--        </p>-->
-<!--      </td>-->
-<!--      <td class="p-4">-->
-<!--        <a class="block font-sans text-sm antialiased font-medium leading-normal">-->
-<!--          {{ article.stock.stock500 }}-->
-<!--        </a>-->
-<!--      </td>-->
-<!--    </tr>-->
-
-<!--    <tr>-->
-<!--      <td class="p-4">-->
-<!--        <p class="block font-sans text-sm antialiased font-normal leading-normal">-->
-<!--          1000 Gramm-->
-<!--        </p>-->
-<!--      </td>-->
-<!--      <td class="p-4">-->
-<!--        <p class="block font-sans text-sm antialiased font-normal leading-normal">-->
-<!--          {{ article.prices.price1000  | currency:'EUR' }}-->
-<!--        </p>-->
-<!--      </td>-->
-<!--      <td class="p-4">-->
-<!--        <p class="block font-sans text-sm antialiased font-normal leading-normal">-->
-<!--          {{ article.prices.price1000 | currency:'EUR' }}-->
-<!--        </p>-->
-<!--      </td>-->
-<!--      <td class="p-4">-->
-<!--        <a class="block font-sans text-sm antialiased font-medium leading-normal">-->
-<!--          {{ article.stock.stock1000 }}-->
-<!--        </a>-->
-<!--      </td>-->
-<!--    </tr>-->
-<!--    </tbody>-->
-<!--  </table>-->
-<!--</div>-->

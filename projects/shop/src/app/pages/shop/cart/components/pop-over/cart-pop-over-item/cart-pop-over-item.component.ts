@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
-import { OrderPosition } from '@shop/pages/shop/cart/store/cart.model';
+import { CartItem } from '@shop/pages/shop/cart/store/cart.model';
 
 @Component({
   selector: 'shop-cart-pop-over-item',
@@ -22,13 +22,13 @@ import { OrderPosition } from '@shop/pages/shop/cart/store/cart.model';
 export class CartPopOverItemComponent {
 
   @Input({required: true})
-  item: OrderPosition
+  item: CartItem
 
   @Output()
-  itemEvent = new EventEmitter<OrderPosition>();
+  itemEvent = new EventEmitter<number>();
 
-  emitItem(): void {
-    this.itemEvent.emit(this.item);
+  emitId(): void {
+    this.itemEvent.emit(this.item.id);
   }
 
 }

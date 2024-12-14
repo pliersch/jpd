@@ -1,17 +1,17 @@
 <div class="flex items-center justify-evenly divider-bottom">
   <div class="p-3 h-full">
     <img class="object-cover rounded-lg" width="50" height="50"
-         [ngSrc]="'assets/img/' + item.article.pictureUrl" alt="image">
+         [ngSrc]="'assets/img/' + item.imageUrl" alt="image">
   </div>
-  <a [routerLink]="['/shop/kratom/detail/', item.article.id]">
+  <a [routerLink]="[item.routerLink[0], item.routerLink[1]]">
     <div class="px-2 py-3">
       <span class="font-medium">{{ item.quantity }}x </span>
-      <span>{{ item.article.name }} {{ item.article.charge }} {{ item.article.shortName }} </span>
+      <span>{{ item.title }}</span>
       <p>{{ item.size }} Gramm</p>
       <p>{{ item.quantity * item.price! | currency:'EUR' }}</p>
     </div>
   </a>
-  <button mat-icon-button (click)="emitItem()" type="button">
+  <button mat-icon-button (click)="emitId()" type="button">
     <mat-icon>delete</mat-icon>
   </button>
 </div>

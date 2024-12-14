@@ -1,5 +1,8 @@
-<p>account works!</p>
+@if (accountStore.metadata(); as metadata) {
+  <p>Aufträge: {{ metadata.orders.length }}</p>
+}
+<p>Rabatt: {{ accountStore.discount() }}</p>
 
-<button type="button" mat-icon-button color="accent" (click)="setDiscount()">
+<button type="button" mat-flat-button color="accent" (click)="setDiscount()">
   <mat-icon>percent</mat-icon>
 </button>

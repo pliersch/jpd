@@ -8,12 +8,10 @@ import { MatTab, MatTabGroup } from '@angular/material/tabs';
 import { createOrderPositionDto } from '@shop/pages/shop/cart/store/cart.model';
 import { CartStore } from '@shop/pages/shop/cart/store/cart.store';
 import { TagChipsComponent } from '@shop/pages/shop/detail/components/tags/tag-chips.component';
-import {
-  KratomTableData,
-  WeightTableComponent
-} from '@shop/pages/shop/detail/components/weight-table/weight-table.component';
+import { WeightTableComponent } from '@shop/pages/shop/detail/components/weight-table/weight-table.component';
 import { DetailStore } from '@shop/pages/shop/detail/detail.store';
 import { NumberInputComponent } from '@shop/pages/shop/detail/number-input/number-input.component';
+import { ArticleSize } from '@shop/pages/shop/store/articles/article.model';
 import { ImageFallbackDirective, StarsComponent } from 'jpd-core';
 
 @Component({
@@ -47,7 +45,7 @@ export class ProductDetailComponent {
   @ViewChildren(NumberInputComponent)
   quantityInputs!: QueryList<NumberInputComponent>;
 
-  size?: number;
+  size?: ArticleSize;
   quantity: number = 0;
 
   onChangeQuantity(quantity: number): void {
@@ -56,12 +54,12 @@ export class ProductDetailComponent {
 
   onSubmit(): void {
     this.cartStore.add(
-      createOrderPositionDto(this.detailStore.article()!, this.quantity, this.size!));
+      createOrderPositionDto(this.detailStore.entityId(), this.quantity, this.size!));
     this.quantity = 0;
     this.quantityInputs.forEach(item => item.clear());
   }
 
-  onChangeWeight($event: KratomTableData | null): void {
-    this.size = $event ? $event.weight : 0;
+  onSelectSize($event: ArticleSize | null): void {
+    this.size = $event ? $event : 0;
   }
 }

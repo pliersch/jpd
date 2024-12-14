@@ -8,7 +8,6 @@ import { cartIconAnimation } from '@shop/pages/shop/cart/components/pop-over/car
 import {
   CartPopOverItemComponent
 } from '@shop/pages/shop/cart/components/pop-over/cart-pop-over-item/cart-pop-over-item.component';
-import { OrderPosition } from '@shop/pages/shop/cart/store/cart.model';
 import { CartStore } from '@shop/pages/shop/cart/store/cart.store';
 import { PosterComponent } from 'jpd-core';
 
@@ -41,7 +40,7 @@ export class CartPopOverComponent {
     this.isOpen = false;
   }
 
-  delete(item: OrderPosition): void {
-    this.cartStore.remove(item.id);
+  delete($event: number): void {
+    this.cartStore.remove($event);
   }
 }

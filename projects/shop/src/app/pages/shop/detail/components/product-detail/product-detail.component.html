@@ -67,7 +67,7 @@
           </div>
 
           <div class="mt-10 md:col-start-2 md:row-start-2 md:max-w-lg md:self-start">
-            <shop-weight-table [article]="article" (choiceEvent)="onChangeWeight($event)"/>
+            <shop-weight-table [tableData]="detailStore.tableData()" (choiceEvent)="onSelectSize($event)"/>
             <div class="flex items-end flex-col w-fit">
               <shop-number-input text="Menge" [disabled]="!size" (numberChange)="onChangeQuantity($event)"/>
               <button mat-flat-button [disabled]="quantity === 0" color="accent">In den Warenkorb</button>
@@ -80,7 +80,7 @@
 
   <mat-tab-group color="accent" mat-stretch-tabs="false" mat-align-tabs="start">
     <mat-tab label="Beschreibung"> {{ article.description }}</mat-tab>
-    <mat-tab label="Händler Info">{{ detailStore.activeDealer()?.info }}</mat-tab>
+    <mat-tab label="Händler Info">{{ detailStore.dealer()?.info }}</mat-tab>
     <mat-tab label="Bewertungen"> Content 3</mat-tab>
   </mat-tab-group>
 }

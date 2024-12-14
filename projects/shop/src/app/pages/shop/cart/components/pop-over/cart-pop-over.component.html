@@ -16,7 +16,7 @@
 
     <div class="p-4">
       @if (cartStore.entities().length > 0) {
-        @for (item of cartStore.entities(); track item.id) {
+        @for (item of cartStore.items(); track item.id) {
           <shop-cart-pop-over-item [item]="item" (itemEvent)="delete($event)"/>
         }
         <div>

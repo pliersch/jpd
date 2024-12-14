@@ -1,9 +1,9 @@
 import { withDevtools } from '@angular-architects/ngrx-toolkit';
 import { computed, inject } from '@angular/core';
-import { Router } from '@angular/router';
 import { tapResponse } from '@ngrx/operators';
 import { patchState, signalStore, withComputed, withHooks, withMethods, } from '@ngrx/signals';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
+import { createTableData } from '@shop/pages/shop/detail/detail.model';
 import { DetailService } from '@shop/pages/shop/detail/detail.service';
 import { DealerStore } from '@shop/pages/shop/store/articles/kratom/dealer.store';
 import { ShopStore } from '@shop/pages/shop/store/shop.store';
@@ -19,16 +19,21 @@ export const DetailStore = signalStore(
                 shopStore = inject(ShopStore),
                 dealerStore = inject(DealerStore)) => ({
     article: computed(() =>
-      articleId() ? shopStore.entityMap()[articleId()] : null),
-    activeDealer: computed(() =>
-      dealerStore.entities().find(article => article.dealerType === shopStore.entityMap()[articleId()].dealer))
+      articleId() ? shopStore.items().find((item) => item.id === articleId()) : null),
+    entityId: computed(() => shopStore.entities().map((entity) => entity.id).indexOf(articleId())),
+    dealer: computed(() =>
+      dealerStore.entities().find(dealer =>
+        dealer.dealerType === shopStore.entityMap()[articleId()].dealer))
+  })),
+  withComputed(({article}) => ({
+    tableData: computed(() =>
+      createTableData(article()!))
   })),
   withMethods(
     (
       store,
       shopStore = inject(ShopStore),
       detailService = inject(DetailService),
-      router = inject(Router),
     ) => ({
       setActiveArticleById: rxMethod<string>(
         pipe(
