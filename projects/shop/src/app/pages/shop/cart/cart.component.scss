@@ -1,0 +1,33 @@
+.grid {
+  grid-template-areas:
+            "items items"
+            "info summary";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+
+  .grid-items {
+    grid-area: items;
+  }
+
+  .grid-summary {
+    grid-area: summary;
+  }
+
+  .grid-info {
+    grid-area: info;
+  }
+
+}
+
+
+.hidden-description {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0px, 0px, 0px, 0px);
+  padding: 0px;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-width: 0px;
+}

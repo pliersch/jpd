@@ -1,0 +1,11 @@
+<div class="flex items-center py-2">
+  <img class="object-cover rounded-lg" width="50" height="50"
+       [ngSrc]="'assets/img/' + item.imageUrl" alt="Bild des Artikel">
+  <a class="mx-3" [routerLink]="[item.routerLink[0], item.routerLink[1]]">
+    <div class="px-2 py-3">
+      <span>{{ item.title }}</span>
+      <p>{{ item.size }}</p>
+    </div>
+  </a>
+</div>
+

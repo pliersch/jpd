@@ -1,6 +1,5 @@
 import { JsonPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, effect, inject } from '@angular/core';
-import { MatInput } from '@angular/material/input';
 import { RecipesStore } from '@app1/pages/baking/store/recipes.store';
 import { getState } from '@ngrx/signals';
 
@@ -10,7 +9,6 @@ import { getState } from '@ngrx/signals';
   providers: [RecipesStore],
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    MatInput,
     JsonPipe
   ],
   templateUrl: './bread-table.component.html',

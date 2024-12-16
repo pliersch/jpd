@@ -54,12 +54,12 @@
           <p>Gewicht in Gramm</p>
           <mat-button-toggle-group name="weight" [(ngModel)]="size"
                                    aria-label="Auswahl Gewicht">
-            <mat-button-toggle [value]="10">10</mat-button-toggle>
-            <mat-button-toggle [value]="50">50</mat-button-toggle>
-            <mat-button-toggle [value]="100">100</mat-button-toggle>
-            <mat-button-toggle [value]="250">250</mat-button-toggle>
-            <mat-button-toggle [value]="500">500</mat-button-toggle>
-            <mat-button-toggle [value]="1000">1000</mat-button-toggle>
+            <mat-button-toggle [value]="'10 Gramm'">10</mat-button-toggle>
+            <mat-button-toggle [value]="'50 Gramm'">50</mat-button-toggle>
+            <mat-button-toggle [value]="'100 Gramm'">100</mat-button-toggle>
+            <mat-button-toggle [value]="'250 Gramm'">250</mat-button-toggle>
+            <mat-button-toggle [value]="'500 Gramm'">500</mat-button-toggle>
+            <mat-button-toggle [value]="'1000 Gramm'">1000</mat-button-toggle>
           </mat-button-toggle-group>
           <div class="flex items-end flex-col w-fit">
             <shop-number-input text="Menge" [disabled]="!size" (numberChange)="onChangeQuantity($event)"/>

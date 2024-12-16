@@ -1,0 +1,53 @@
+export interface Country {
+  name: string;
+  code: string;
+}
+
+export function getCountries(): Country[] {
+  return [
+    {code: "AL", name: "Albanien"},
+    {code: "AD", name: "Andorra"},
+    {code: "BY", name: "Belarus"},
+    {code: "BE", name: "Belgien"},
+    {code: "BA", name: "Bosnien und Herzegowina"},
+    {code: "BG", name: "Bulgarien"},
+    {code: "DE", name: "Deutschland"},
+    {code: "EE", name: "Estland"},
+    {code: "FO", name: "Färöer"},
+    {code: "FI", name: "Finnland"},
+    {code: "FR", name: "Frankreich"},
+    {code: "GI", name: "Gibraltar"},
+    {code: "GR", name: "Griechenland"},
+    {code: "IE", name: "Irland"},
+    {code: "IS", name: "Island"},
+    {code: "IT", name: "Italien"},
+    {code: "HR", name: "Kroatien"},
+    {code: "LV", name: "Lettland"},
+    {code: "LI", name: "Liechtenstein"},
+    {code: "LT", name: "Litauen"},
+    {code: "LU", name: "Luxemburg"},
+    {code: "MT", name: "Malta"},
+    {code: "MC", name: "Monaco"},
+    {code: "ME", name: "Montenegro"},
+    {code: "NL", name: "Niederlande"},
+    {code: "MK", name: "Nordmazedonien"},
+    {code: "NO", name: "Norwegen"},
+    {code: "PL", name: "Polen"},
+    {code: "PT", name: "Portugal"},
+    {code: "MD", name: "Republik Moldau"},
+    {code: "RO", name: "Rumänien"},
+    {code: "SM", name: "San Marino"},
+    {code: "SE", name: "Schweden"},
+    {code: "CH", name: "Schweiz"},
+    {code: "RS", name: "Serbien"},
+    {code: "SK", name: "Slowakei"},
+    {code: "SI", name: "Slowenien"},
+    {code: "ES", name: "Spanien"},
+    {code: "CZ", name: "Tschechien"},
+    {code: "TR", name: "Türkei"},
+    {code: "HU", name: "Ungarn"},
+    {code: "VA", name: "Vatikanstadt"},
+    {code: "GB", name: "Vereinigtes Königreich"},
+    {code: "CY", name: "Zypern"},
+  ]
+}

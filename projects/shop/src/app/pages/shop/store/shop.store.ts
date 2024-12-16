@@ -93,10 +93,12 @@ export const ShopStore = signalStore(
       },
     }),
   ),
-  withHooks(({setDiscount}) => {
+  withHooks(({loadAll, setDiscount}) => {
     const accountStore = inject(CustomerAccountStore);
     return {
       onInit(): void {
+        // todo only for dev
+        loadAll('kratom')
         watchState(accountStore, (state) => {
           setDiscount(state.discount)
         });

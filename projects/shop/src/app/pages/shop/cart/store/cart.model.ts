@@ -5,19 +5,24 @@ export interface OrderPosition {
   size: string;
 }
 
-export interface CreateOrderPositionDto {
+export interface CreateOrderPosition {
   entityId: number;
   quantity: number;
   size: string;
 }
 
-export function createOrderPositionDto(entityId: number, quantity: number, size: string): CreateOrderPositionDto {
+export interface UpdateOrderPosition {
+  id: number;
+  quantity: number;
+}
+
+export function createOrderPositionDto(entityId: number, quantity: number, size: string): CreateOrderPosition {
   return {
     entityId: entityId, quantity, size
   }
 }
 
-export function createOrderPosition(dto: CreateOrderPositionDto, id: number): OrderPosition {
+export function createOrderPosition(dto: CreateOrderPosition, id: number): OrderPosition {
   return {
     id: id,
     entityId: dto.entityId,

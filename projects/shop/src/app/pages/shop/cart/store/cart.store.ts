@@ -1,14 +1,15 @@
 import { updateState, withDevtools } from '@angular-architects/ngrx-toolkit';
 import { computed, inject } from '@angular/core';
 import { patchState, signalStore, watchState, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
-import { removeEntity, setEntity, withEntities } from '@ngrx/signals/entities';
+import { removeEntity, setEntity, updateEntity, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import {
   CartItem,
   createOrderPosition,
-  CreateOrderPositionDto,
+  CreateOrderPosition,
   OrderPosition,
-  totalCost
+  totalCost,
+  UpdateOrderPosition
 } from '@shop/pages/shop/cart/store/cart.model';
 import { SHOP_CONSTANTS } from '@shop/pages/shop/const';
 import { getPriceBySize } from '@shop/pages/shop/store/articles/article.model';
@@ -19,13 +20,11 @@ import { pipe, tap } from 'rxjs';
 type CartState = {
   discount: number;
   _counter: number;
-  lastEntityIdForTest: number;
 };
 
 const initialState: CartState = {
   discount: 0,
   _counter: 0,
-  lastEntityIdForTest: 0,
 };
 
 export const CartStore = signalStore(
@@ -63,12 +62,17 @@ export const CartStore = signalStore(
     freeShippingDiff: computed(() => SHOP_CONSTANTS.FREE_SHIPPING - totalCost()),
   })),
   withMethods((store) => ({
-      add: rxMethod<CreateOrderPositionDto>(
+      add: rxMethod<CreateOrderPosition>(
         pipe(
-          tap(dto => patchState(store, {lastEntityIdForTest: dto.entityId})),
           tap((dto) => updateState(store, 'cart add position',
             setEntity(createOrderPosition(dto, store._counter())))),
           tap(() => patchState(store, {_counter: store._counter() + 1})),
+        ),
+      ),
+      update: rxMethod<UpdateOrderPosition>(
+        pipe(
+          tap((dto) => updateState(store, 'cart update position',
+            updateEntity({id: dto.id, changes: {quantity: dto.quantity}}))),
         ),
       ),
       remove: rxMethod<number>(
@@ -87,7 +91,7 @@ export const CartStore = signalStore(
         watchState(shopStore, (state) => {
           if (empty && state.requestStatus === 'fulfilled') {
             empty = false;
-            store.add({entityId: 1, quantity: 1, size: '100 Gramm'});
+            store.add({entityId: 1, quantity: 2, size: '100 Gramm'});
             store.add({entityId: 4, quantity: 1, size: '250 Gramm'});
           }
         });

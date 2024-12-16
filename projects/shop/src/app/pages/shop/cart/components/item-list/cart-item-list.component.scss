@@ -1,0 +1,15 @@
+.cart-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) 3fr 2fr 2fr 1fr;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
