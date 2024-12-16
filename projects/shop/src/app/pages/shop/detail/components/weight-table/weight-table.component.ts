@@ -16,7 +16,6 @@ import {
   MatTableDataSource
 } from '@angular/material/table';
 import { KratomTableData } from '@shop/pages/shop/detail/detail.model';
-import { ArticleSize } from '@shop/pages/shop/store/articles/article.model';
 
 @Component({
   selector: 'shop-weight-table',
@@ -46,7 +45,7 @@ export class WeightTableComponent implements OnInit {
   tableData: KratomTableData[];
 
   @Output()
-  choiceEvent = new EventEmitter<ArticleSize | null>();
+  choiceEvent = new EventEmitter<string | null>();
 
   displayedColumns: string[] = ['select', 'size', 'price', 'kgPrice', 'stock'];
   dataSource: MatTableDataSource<KratomTableData>

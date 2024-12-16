@@ -1,19 +1,17 @@
-import { ArticleSize } from '@shop/pages/shop/store/articles/article.model';
-
 export interface OrderPosition {
   id: number;
   entityId: number;
   quantity: number;
-  size: ArticleSize;
+  size: string;
 }
 
 export interface CreateOrderPositionDto {
   entityId: number;
   quantity: number;
-  size: ArticleSize;
+  size: string;
 }
 
-export function createOrderPositionDto(entityId: number, quantity: number, size: ArticleSize): CreateOrderPositionDto {
+export function createOrderPositionDto(entityId: number, quantity: number, size: string): CreateOrderPositionDto {
   return {
     entityId: entityId, quantity, size
   }
@@ -25,7 +23,6 @@ export function createOrderPosition(dto: CreateOrderPositionDto, id: number): Or
     entityId: dto.entityId,
     size: dto.size,
     quantity: dto.quantity,
-    // price: getPriceBySize(dto.article, dto.size)
   }
 }
 
@@ -35,16 +32,14 @@ export function totalCost(positions: CartItem[]): number {
     total += pos.quantity * pos.price!;
   }
   return total;
-  // return 42;
 }
 
 export interface CartItem {
   id: number;
   title: string;
-  subTitle: string;
   description: string;
   imageUrl: string;
-  size: ArticleSize;
+  size: string;
   price: number;
   quantity: number;
   routerLink: string[];

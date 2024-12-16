@@ -3,11 +3,10 @@ import { DealerType } from '@shop/pages/shop/store/articles/kratom/dealer.model'
 
 export type Category = 'kratom' | 'cbd' | 'miscellaneous';
 
-export type ArticleSize = number | string;
 
 export interface Data {
   index: number;
-  size: ArticleSize;
+  size: string;
   price: number;
   stock: number;
   // kgPrice?: number;

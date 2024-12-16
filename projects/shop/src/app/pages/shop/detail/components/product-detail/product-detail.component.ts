@@ -11,7 +11,6 @@ import { TagChipsComponent } from '@shop/pages/shop/detail/components/tags/tag-c
 import { WeightTableComponent } from '@shop/pages/shop/detail/components/weight-table/weight-table.component';
 import { DetailStore } from '@shop/pages/shop/detail/detail.store';
 import { NumberInputComponent } from '@shop/pages/shop/detail/number-input/number-input.component';
-import { ArticleSize } from '@shop/pages/shop/store/articles/article.model';
 import { ImageFallbackDirective, StarsComponent } from 'jpd-core';
 
 @Component({
@@ -45,7 +44,7 @@ export class ProductDetailComponent {
   @ViewChildren(NumberInputComponent)
   quantityInputs!: QueryList<NumberInputComponent>;
 
-  size?: ArticleSize;
+  size?: string;
   quantity: number = 0;
 
   onChangeQuantity(quantity: number): void {
@@ -59,7 +58,7 @@ export class ProductDetailComponent {
     this.quantityInputs.forEach(item => item.clear());
   }
 
-  onSelectSize($event: ArticleSize | null): void {
-    this.size = $event ? $event : 0;
+  onSelectSize($event: string | null): void {
+    this.size = $event ? $event : '';
   }
 }

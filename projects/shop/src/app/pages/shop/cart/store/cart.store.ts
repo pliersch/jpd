@@ -45,9 +45,9 @@ export const CartStore = signalStore(
       return ({
         id: entity.id,
         title: `${article.name} ${article.charge} ${article.shortName}`,
-        subTitle: `${entity.size} Gramm`,
         description: 'string',
         imageUrl: article.pictureUrl,
+        size: entity.size,
         price: getPriceBySize(article, entity.size),
         quantity: entity.quantity,
         // todo hard coded
@@ -87,8 +87,8 @@ export const CartStore = signalStore(
         watchState(shopStore, (state) => {
           if (empty && state.requestStatus === 'fulfilled') {
             empty = false;
-            store.add({entityId: 1, quantity: 1, size: 100});
-            store.add({entityId: 4, quantity: 1, size: 250});
+            store.add({entityId: 1, quantity: 1, size: '100 Gramm'});
+            store.add({entityId: 4, quantity: 1, size: '250 Gramm'});
           }
         });
       },

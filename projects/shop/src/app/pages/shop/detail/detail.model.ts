@@ -1,7 +1,7 @@
-import { Article, ArticleSize } from '@shop/pages/shop/store/articles/article.model';
+import { Article } from '@shop/pages/shop/store/articles/article.model';
 
 export interface KratomTableData {
-  size: ArticleSize;
+  size: string;
   price: number;
   kgPrice: number;
   stock: number;
@@ -10,13 +10,13 @@ export interface KratomTableData {
 export function createTableData(article: Article): KratomTableData[] {
   const data = article.data;
   const tableData: KratomTableData[] = [];
-  let size = 0;
+  let sizeAsNumber = 0;
   let factor = 0;
   for (const item of data) {
-    size = Number(item.size);
-    factor = 1000 / size;
+    sizeAsNumber = Number(item.size.split(' ')[0]);
+    factor = 1000 / sizeAsNumber;
     tableData.push(
-      {size: size, price: item.price, kgPrice: item.price * factor, stock: item.stock}
+      {size: item.size, price: item.price, kgPrice: item.price * factor, stock: item.stock}
     )
   }
   return tableData;
