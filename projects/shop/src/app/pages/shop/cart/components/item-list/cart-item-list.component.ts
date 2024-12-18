@@ -1,25 +1,24 @@
-import { CurrencyPipe } from '@angular/common';
-import { Component, EventEmitter, Input, Output, Signal } from '@angular/core';
-import { MatIconButton } from '@angular/material/button';
-import { MatIcon } from '@angular/material/icon';
-import { CartItemComponent } from '@shop/pages/shop/cart/components/item/cart-item.component';
+import { Component, EventEmitter, inject, Input, Output, Signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { LargeCartItemComponent } from '@shop/pages/shop/cart/components/item-list/large/large-cart-item.component';
+import { SmallCartItemComponent } from '@shop/pages/shop/cart/components/item-list/small/small-cart-item.component';
 import { CartItem, UpdateOrderPosition } from '@shop/pages/shop/cart/store/cart.model';
+import { BreakpointService, Dimension } from 'jpd-core';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'shop-cart-item-list',
   standalone: true,
   imports: [
-    CartItemComponent,
-    CurrencyPipe,
-    MatIcon,
-    MatIconButton
+    LargeCartItemComponent,
+    SmallCartItemComponent
   ],
   templateUrl: './cart-item-list.component.html',
   styleUrl: './cart-item-list.component.scss'
 })
 export class CartItemListComponent {
 
-  @Input() items: Signal<CartItem[]>;
+  @Input() items: CartItem[];
 
   @Output()
   quantityChange = new EventEmitter<UpdateOrderPosition>();
@@ -27,11 +26,13 @@ export class CartItemListComponent {
   @Output()
   deleteItem = new EventEmitter<number>();
 
-  emitQuantityChange(id: number, quantity: string): void {
-    this.quantityChange.emit({id: id, quantity: Number(quantity)});
-  }
+  isSmall: Signal<boolean | undefined>;
 
-  onDelete(id: number): void {
-    this.deleteItem.emit(id);
+  private breakpointService: BreakpointService = inject(BreakpointService);
+
+  constructor() {
+    this.isSmall = toSignal(this.breakpointService.dimension$.pipe(
+      map(dimension => dimension === Dimension.XSmall ||
+        dimension === Dimension.Small),));
   }
 }

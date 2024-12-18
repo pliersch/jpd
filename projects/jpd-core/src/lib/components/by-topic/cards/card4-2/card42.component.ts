@@ -4,7 +4,6 @@ import {
   MatAccordion,
   MatExpansionModule,
   MatExpansionPanel,
-  MatExpansionPanelDescription,
   MatExpansionPanelTitle
 } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
@@ -20,7 +19,7 @@ export interface Card42Model {
 @Component({
   selector: 'a4w-card42',
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatAccordion, MatExpansionModule, MatExpansionPanel, MatExpansionPanelTitle, MatExpansionPanelDescription],
+  imports: [CommonModule, MatIconModule, MatAccordion, MatExpansionModule, MatExpansionPanel, MatExpansionPanelTitle],
   templateUrl: './card42.component.html',
   styleUrls: ['./card42.component.scss']
 })

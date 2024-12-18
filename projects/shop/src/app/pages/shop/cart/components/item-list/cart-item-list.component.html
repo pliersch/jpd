@@ -1,34 +1,24 @@
-<div class="cart-grid">
-  <span class="">Artikel</span>
-  <span class="my-auto">Anzahl</span>
-  <span class="my-auto">Stückpreis</span>
-  <span class="my-auto">Summe</span>
-  <span class="my-auto"></span>
-  @for (item of items(); track item.id) {
-    <div class="my-auto divider-bottom">
-      <shop-cart-item [item]="item"/>
+@if (isSmall()) {
+  <div>
+    @for (item of items; track item.id) {
+      <shop-small-cart-item [item]="item"
+                            (deleteItem)="deleteItem.emit($event)"
+                            (quantityChange)="quantityChange.emit($event)"/>
+    }
+  </div>
+} @else {
+  <div>
+    <div class="grid cart-grid">
+      <span class="">Artikel</span>
+      <span class="my-auto">Anzahl</span>
+      <span class="my-auto">Stückpreis</span>
+      <span class="my-auto">Summe</span>
+      <span class="my-auto"></span>
     </div>
-    <div class="flex divider-bottom">
-      <div class="flex my-auto">
-        <input #input type="number" [value]="item.quantity"
-               class=" w-24 bg-transparent text-right border border-[color:--theme-grey]
-                     rounded-md p-3 focus:outline-none focus:border-[color:--theme-accent]"/>
-        <button mat-icon-button type="button" (click)="emitQuantityChange(item.id, input.value)">
-          <mat-icon>refresh</mat-icon>
-        </button>
-      </div>
-    </div>
-    <div class="flex divider-bottom">
-      <span class="my-auto">{{ item.price  | currency:'EUR' }}</span>
-    </div>
-    <div class="flex divider-bottom">
-      <span class="my-auto">{{ item.price * item.quantity | currency:'EUR' }}</span></div>
-    <div class="flex divider-bottom">
-      <div class="my-auto">
-        <button mat-icon-button (click)="onDelete(item.id)" type="button">
-          <mat-icon>delete</mat-icon>
-        </button>
-      </div>
-    </div>
-  }
-</div>
+    @for (item of items; track item.id) {
+      <shop-large-cart-item [item]="item"
+                            (deleteItem)="deleteItem.emit($event)"
+                            (quantityChange)="quantityChange.emit($event)"/>
+    }
+  </div>
+}

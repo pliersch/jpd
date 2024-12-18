@@ -7,7 +7,6 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { IsActiveMatchOptions, RouterLink, RouterLinkActive } from "@angular/router";
-import { tap } from 'rxjs';
 import { map } from 'rxjs/operators';
 import {
   BreakpointService,
@@ -72,7 +71,6 @@ export class AppbarTwoRowsComponent implements OnInit {
     cssDomService.themeState$.subscribe(state => this.onToggleTheme(state));
 
     this.isXSmall = toSignal(this.breakpointService.dimension$.pipe(
-      tap(dimension => console.log(dimension)),
       map(dimension => dimension === Dimension.XSmall)));
 
     this.isSmall = toSignal(this.breakpointService.dimension$.pipe(

@@ -1,0 +1,34 @@
+<div class="grid cart-grid divider-bottom">
+  <div class="flex items-center py-2">
+    <img class="object-cover rounded-lg" width="50" height="50"
+         [ngSrc]="'assets/img/' + item.imageUrl" alt="Bild des Artikel">
+    <a class="mx-3" [routerLink]="[item.routerLink[0], item.routerLink[1]]">
+      <div class="px-2 py-3">
+        <span>{{ item.title }}</span>
+        <p>{{ item.size }}</p>
+      </div>
+    </a>
+  </div>
+  <div class="flex">
+    <div class="flex my-auto">
+      <input #input type="number" [value]="item.quantity"
+             class=" w-20 bg-transparent text-right border border-[color:--theme-grey]
+                     rounded-md p-3 focus:outline-none focus:border-[color:--theme-accent]"/>
+      <button mat-icon-button type="button" (click)="emitQuantityChange(item.id, input.value)">
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="flex ">
+    <span class="my-auto">{{ item.price  | currency:'EUR' }}</span>
+  </div>
+  <div class="flex ">
+    <span class="my-auto">{{ item.price * item.quantity | currency:'EUR' }}</span></div>
+  <div class="flex justify-end">
+    <div class="my-auto">
+      <button mat-icon-button (click)="onDelete(item.id)" type="button">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
