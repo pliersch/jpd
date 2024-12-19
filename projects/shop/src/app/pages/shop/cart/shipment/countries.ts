@@ -7,6 +7,7 @@ export function getCountries(): Country[] {
   return [
     {code: "AL", name: "Albanien"},
     {code: "AD", name: "Andorra"},
+    {code: "AT", name: "Österreich"},
     {code: "BY", name: "Belarus"},
     {code: "BE", name: "Belgien"},
     {code: "BA", name: "Bosnien und Herzegowina"},

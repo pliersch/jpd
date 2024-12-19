@@ -21,9 +21,9 @@
         }
         <div>
           <div class="mt-4">
-            <p> Zwischensumme: {{ cartStore.totalCost() | currency:'EUR' }} </p>
+            <p> Zwischensumme: {{ cartStore.subtotal() | currency:'EUR' }} </p>
             @if (cartStore.freeShipping()) {
-              <p> kostenloser Versand </p>
+              <p> kostenloser Versand nach Deutschland</p>
             } @else {
               <p>
                 Es fehlen noch {{ cartStore.freeShippingDiff() | currency:'EUR' }} und ihre Bestellung ist

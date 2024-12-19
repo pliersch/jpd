@@ -49,3 +49,10 @@ export interface CartItem {
   quantity: number;
   routerLink: string[];
 }
+
+export interface CartSummary {
+  subtotal: number;
+  shipment: number;
+  tax: number;
+  total: number;
+}

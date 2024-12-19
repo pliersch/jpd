@@ -9,12 +9,12 @@
     </div>
     <div class="grid-info">
       <section aria-labelledby="info-heading">
-        <shop-info/>
+        <shop-shipment (selectCountry)="cartStore.setCountry($event)"/>
       </section>
     </div>
     <div class="grid-summary">
       <section aria-labelledby="summary-heading">
-        <shop-cart-summary [summary]="{totalCost:cartStore.totalCost()}"/>
+        <shop-cart-summary [summary]="cartStore.summary()"/>
       </section>
     </div>
   </div>

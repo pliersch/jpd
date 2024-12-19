@@ -2,7 +2,7 @@
 <form class="max-w-sm mx-auto">
   <mat-form-field color="accent">
     <mat-label>Land</mat-label>
-    <mat-select [(value)]="selectedCountry">
+    <mat-select [(value)]="selectedCountry" (selectionChange)="onSelectCountry()">
       @for (country of countries; track country.code) {
         <mat-option [value]='country.code'>
           {{ country.name }}

@@ -3,8 +3,10 @@ import { computed, inject } from '@angular/core';
 import { patchState, signalStore, watchState, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import { removeEntity, setEntity, updateEntity, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
+import { withShipment } from '@shop/pages/shop/cart/shipment/shipment.feature';
 import {
   CartItem,
+  CartSummary,
   createOrderPosition,
   CreateOrderPosition,
   OrderPosition,
@@ -32,9 +34,11 @@ export const CartStore = signalStore(
   // withCallState(),
   withDevtools('cart'),
   withState(initialState),
+  withShipment(),
   withEntities<OrderPosition>(),
   withRequestStatus(),
   withComputed(({entities}) => ({
+    // helper: animation trigger
     itemCount: computed(() => entities().length),
   })),
   withComputed(({entities},
@@ -55,11 +59,22 @@ export const CartStore = signalStore(
     })),
   })),
   withComputed(({items}) => ({
-    totalCost: computed(() => totalCost(items())),
+    subtotal: computed(() => totalCost(items())),
   })),
-  withComputed(({totalCost}) => ({
-    freeShipping: computed(() => totalCost() > SHOP_CONSTANTS.FREE_SHIPPING),
-    freeShippingDiff: computed(() => SHOP_CONSTANTS.FREE_SHIPPING - totalCost()),
+  withComputed(({subtotal}) => ({
+    freeShipping: computed(() => subtotal() > SHOP_CONSTANTS.FREE_SHIPPING),
+    freeShippingDiff: computed(() => SHOP_CONSTANTS.FREE_SHIPPING - subtotal()),
+  })),
+  withComputed(({subtotal, shipmentCost, freeShipping}) => ({
+    summary: computed((): CartSummary => {
+      const shipment = freeShipping() ? 0 : shipmentCost();
+      return {
+        subtotal: subtotal(),
+        shipment: shipment,
+        tax: subtotal() * 0.07,
+        total: subtotal() + shipment
+      }
+    }),
   })),
   withMethods((store) => ({
       add: rxMethod<CreateOrderPosition>(

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CartItemListComponent } from '@shop/pages/shop/cart/components/item-list/cart-item-list.component';
-import { ShipmentComponent } from '@shop/pages/shop/cart/components/shipment/shipment.component';
 import { CartSummaryComponent } from '@shop/pages/shop/cart/components/summary/cart-summary.component';
+import { ShipmentComponent } from '@shop/pages/shop/cart/shipment/components/shipment.component';
 import { UpdateOrderPosition } from '@shop/pages/shop/cart/store/cart.model';
 import { CartStore } from '@shop/pages/shop/cart/store/cart.store';
 

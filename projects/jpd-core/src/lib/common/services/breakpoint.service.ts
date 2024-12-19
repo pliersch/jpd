@@ -44,6 +44,8 @@ export class BreakpointService {
       dim = Dimension.XXLarge;
     } else if (this.breakpointObserver.isMatched(Dimension.XXXLarge)) {
       dim = Dimension.XXXLarge;
+    } else if (this.breakpointObserver.isMatched(Dimension.XXXXLarge)) {
+      dim = Dimension.XXXXLarge;
     }
     this.dimension$.next(dim)
   }

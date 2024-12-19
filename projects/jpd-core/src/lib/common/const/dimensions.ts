@@ -6,6 +6,7 @@ export class Dimension {
   static readonly XLarge: string = '(min-width: 1280px) and (max-width: 1535.98px)'
   static readonly XXLarge: string = '(min-width: 1536px) and (max-width: 1919.98px)'
   static readonly XXXLarge: string = '(min-width: 1920px) and (max-width: 2559.98px)'
+  static readonly XXXXLarge: string = '(min-width: 2600px)'
   // Handset: string;
   // Tablet: string;
   // Web: string;
