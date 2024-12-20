@@ -1,35 +1,34 @@
+<nav aria-label="breadcrumb" class="w-max">
+  <ol class="flex w-full flex-wrap items-center py-2">
+    <li
+      class="flex cursor-pointer items-center text-smhover:text-[color:--theme-accent]">
+      <a href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+          <path
+            d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+        </svg>
+      </a>
+      <span class="pointer-events-none mx-2">
+        /
+      </span>
+    </li>
+    <li
+      class="flex cursor-pointer items-center text-sm hover:text-[color:--theme-accent]">
+      <a href="#">Components</a>
+      <span class="pointer-events-none mx-2">
+        /
+      </span>
+    </li>
+    <li
+      class="flex cursor-pointer items-center text-sm hover:text-[color:--theme-accent]">
+      <a href="#">Breadcrumbs</a>
+    </li>
+  </ol>
+</nav>
 @if (detailStore.article(); as article) {
 
-  <div class="m-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-24 md:grid grid-cols-2 md:gap-x-8 md:px-8">
+  <div class="grid sm:grid-cols-2 md:gap-8 max-w-5xl m-auto px-8">
     <div class="md:max-w-lg">
-
-      <nav aria-label="breadcrumb" class="w-max">
-        <ol class="flex w-full flex-wrap items-center py-2">
-          <li
-            class="flex cursor-pointer items-center text-smhover:text-[color:--theme-accent]">
-            <a href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                <path
-                  d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
-              </svg>
-            </a>
-            <span class="pointer-events-none mx-2">
-        /
-      </span>
-          </li>
-          <li
-            class="flex cursor-pointer items-center text-sm hover:text-[color:--theme-accent]">
-            <a href="#">Components</a>
-            <span class="pointer-events-none mx-2">
-        /
-      </span>
-          </li>
-          <li
-            class="flex cursor-pointer items-center text-sm hover:text-[color:--theme-accent]">
-            <a href="#">Breadcrumbs</a>
-          </li>
-        </ol>
-      </nav>
 
       <div class="flex items-center justify-between pb-2">
         <h1 class="text-xl">{{ article.name }} {{ article.shortName }} {{ article.charge }}</h1>
@@ -43,13 +42,20 @@
       <shop-tag-chips [tags]="article.tags"/>
 
     </div>
-    <div class="mt-10 md:col-start-2 md:mt-0 md:self-center md:justify-self-center">
-      <img [ngSrc]="'assets/img/' + article.pictureUrl" width="350" height="350" alt="image of kratom"
+
+    <!----------------------------------------------------->
+    <!--                      image                      -->
+    <!----------------------------------------------------->
+    <div class="md:col-start-2 self-center justify-self-center">
+      <!--      <img [src]="'assets/img/' + article.pictureUrl" alt="image of kratom"-->
+      <!--           class="object-cover rounded-md">-->
+      <img [ngSrc]="'assets/img/' + article.pictureUrl" width="300" height="300" alt="image of kratom"
            class="object-cover rounded-md">
     </div>
-    <div class="mt-10 md:col-start-1 md:row-start-2 md:max-w-lg md:self-start">
+
+    <div class="md:col-start-1 md:row-start-2 md:max-w-lg md:self-start">
       <section aria-labelledby="options-heading">
-        <h2 id="options-heading" class="hidden-description">Auswahl</h2>
+        <h2 class="hidden-description">Auswahl</h2>
         <form (ngSubmit)="onSubmit()">
           <p>Gewicht in Gramm</p>
           <mat-button-toggle-group name="weight" [(ngModel)]="size"
@@ -65,8 +71,14 @@
             <shop-number-input text="Menge" [disabled]="!size" (numberChange)="onChangeQuantity($event)"/>
             <button mat-flat-button [disabled]="quantity === 0" color="accent">In den Warenkorb</button>
           </div>
-
-          <div class="mt-10 md:col-start-2 md:row-start-2 md:max-w-lg md:self-start">
+        </form>
+      </section>
+    </div>
+    <div class="md:col-start-2 md:row-start-2 md:max-w-lg md:self-start">
+      <section aria-labelledby="options-heading">
+        <h2 class="hidden-description">Auswahl</h2>
+        <form (ngSubmit)="onSubmit()">
+          <div class="md:col-start-2 md:row-start-2 md:max-w-lg md:self-start">
             <shop-weight-table [tableData]="detailStore.tableData()" (choiceEvent)="onSelectSize($event)"/>
             <div class="flex items-end flex-col w-fit">
               <shop-number-input text="Menge" [disabled]="!size" (numberChange)="onChangeQuantity($event)"/>

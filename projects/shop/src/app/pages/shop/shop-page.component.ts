@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { SideNavMenuComponent } from '@shop/components/side-nav-menu/side-nav-menu.component';
 
 @Component({
   selector: 'shop-shop-page',
@@ -8,6 +9,7 @@ import { RouterOutlet } from '@angular/router';
   imports: [
     CommonModule,
     RouterOutlet,
+    SideNavMenuComponent,
   ],
   templateUrl: './shop-page.component.html',
   styleUrls: ['./shop-page.component.scss'],
