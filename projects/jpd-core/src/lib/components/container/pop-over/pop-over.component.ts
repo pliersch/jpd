@@ -1,5 +1,5 @@
 import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 
@@ -16,6 +16,10 @@ import { MatIcon } from '@angular/material/icon';
   styleUrl: './pop-over.component.scss'
 })
 export class PopOverComponent {
+
+  @Input({required: true})
+  icon: string;
+
   isOpen = false;
 
   close(): void {

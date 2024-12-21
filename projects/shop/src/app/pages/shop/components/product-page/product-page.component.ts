@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, ChildrenOutletContexts, RouterOutlet } from '@angular/router';
 import { fadeInAnimation } from '@shop/common/animations';
 import { NavbarComponent } from '@shop/components/navbar/navbar.component';
+import { SideNavMenuComponent } from '@shop/components/side-nav-menu/side-nav-menu.component';
 import { getProductFromUrl } from '@shop/pages/shop/store/models/url-product-types';
 import { ShopStore } from '@shop/pages/shop/store/shop.store';
 
@@ -10,7 +11,8 @@ import { ShopStore } from '@shop/pages/shop/store/shop.store';
   standalone: true,
   imports: [
     RouterOutlet,
-    NavbarComponent
+    NavbarComponent,
+    SideNavMenuComponent
   ],
   templateUrl: './product-page.component.html',
   styleUrl: './product-page.component.scss',
@@ -18,6 +20,9 @@ import { ShopStore } from '@shop/pages/shop/store/shop.store';
   animations: [fadeInAnimation]
 })
 export class ProductPageComponent implements OnInit {
+
+  @HostBinding('@.disabled')
+  public animationsDisabled = true;
 
   private route = inject(ActivatedRoute);
   private contexts = inject(ChildrenOutletContexts);
@@ -34,6 +39,10 @@ export class ProductPageComponent implements OnInit {
       this.store.setProduct(product);
       this.store.loadAll(product);
     }
+  }
+
+  toggleAnimations() {
+    this.animationsDisabled = !this.animationsDisabled;
   }
 
   getRouteAnimationData(): unknown {

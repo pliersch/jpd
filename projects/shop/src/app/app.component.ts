@@ -4,6 +4,7 @@ import { CartPopOverComponent } from '@shop/pages/shop/cart/components/pop-over/
 import {
   A4WRootComponent,
   ActionContainerComponent,
+  AnimationsSettingsComponent,
   AppbarComponent,
   AppbarTwoRowsComponent,
   AuthService,
@@ -13,7 +14,9 @@ import {
   LoginComponent,
   LogoContainerComponent,
   NavigationDirective,
+  PopOverComponent,
   ScrollTopActionComponent,
+  SettingsOverlayComponent,
   SigninComponent,
   SmallFooter1Component,
   SubNavComponent,
@@ -23,11 +26,11 @@ import {
 @Component({
   selector: 'shop-root',
   standalone: true,
-  imports: [A4WRootComponent, AppbarComponent,
+  imports: [A4WRootComponent, AppbarComponent, AnimationsSettingsComponent,
     LogoContainerComponent, ThemeToggleActionComponent, SubNavComponent, NavigationDirective,
     ActionContainerComponent, ScrollTopActionComponent, SigninComponent, FragmentDirective,
-    LoginComponent, SmallFooter1Component, AppbarTwoRowsComponent, EnableAdminActionComponent,
-    CardH1Component, CartPopOverComponent],
+    LoginComponent, PopOverComponent, SmallFooter1Component, AppbarTwoRowsComponent, EnableAdminActionComponent,
+    CardH1Component, CartPopOverComponent, SettingsOverlayComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

@@ -18,7 +18,7 @@ export interface UpdateOrderPosition {
 
 export function createOrderPositionDto(entityId: number, quantity: number, size: string): CreateOrderPosition {
   return {
-    entityId: entityId, quantity, size
+    entityId, quantity, size
   }
 }
 

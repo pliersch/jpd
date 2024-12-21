@@ -1,24 +1,31 @@
 <mat-accordion>
   @for (item of data; let i = $index; track item.name) {
-    <mat-expansion-panel [expanded]="step === i" (opened)="setStep(i)" hideToggle>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
+    <mat-expansion-panel [expanded]="step === i"
+                         (opened)="setStep(i)" hideToggle>
+      <mat-expansion-panel-header [class.no-pointer]="step === i">
+        <a class="!capitalize cursor-pointer"
+           routerLinkActive="active-route" [routerLink]="['./kratom']">
           {{ item.name }}
-        </mat-panel-title>
+        </a>
       </mat-expansion-panel-header>
       <mat-list>
-        @if (item.children) {
-          @for (item2 of item.children; let j = $index; track item2.name) {
-            <mat-list-item role="listitem">{{ item2.name }}</mat-list-item>
-          }
+
+        @for (item2 of item.children; let j = $index; track item2.name) {
+          <a class="!capitalize cursor-pointer"
+             routerLinkActive="active-route" [routerLink]="['./kratom']">
+            {{ item.name }}
+          </a>
         }
+
       </mat-list>
-      <!--      <mat-selection-list>-->
-      <!--        <mat-list-option *ngFor="let tag of group.tags" [selected]="activeTags.includes(tag)"-->
-      <!--                         [value]="tag" (click)="onSelectionChange(tag)">-->
-      <!--          {{ tag.name }}-->
-      <!--        </mat-list-option>-->
-      <!--      </mat-selection-list>-->
     </mat-expansion-panel>
   }
 </mat-accordion>
+
+<!--      <mat-list>-->
+<!--        @if (item.children) {-->
+<!--          @for (item2 of item.children; let j = $index; track item2.name) {-->
+<!--            <mat-list-item role="listitem">{{ item2.name }}</mat-list-item>-->
+<!--          }-->
+<!--        }-->
+<!--      </mat-list>-->

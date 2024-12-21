@@ -1,18 +1,18 @@
-import { group } from '@angular/animations';
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { MatList, MatListItem } from '@angular/material/list';
+import { MatList } from '@angular/material/list';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 export interface MyData {
   name: string;
   children?: MyData[];
-  // url: string;
+  url: string;
 }
 
 @Component({
   selector: 'shop-side-nav-menu',
   standalone: true,
-  imports: [MatExpansionModule, MatList, MatListItem],
+  imports: [MatExpansionModule, MatList, RouterLinkActive, RouterLink],
   templateUrl: './side-nav-menu.component.html',
   styleUrl: './side-nav-menu.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -30,29 +30,29 @@ export class SideNavMenuComponent {
   createData(): MyData[] {
     return [
       {
-        name: 'Foo',
-        children: [{name: 'a1'}, {name: 'a1'}, {name: 'a1'}, {
-          name: 'a1',
-          children: [{name: 'a1'}, {name: 'a1'}, {name: 'a1'}, {name: 'a1'},]
+        name: 'adslödösdöldsö', url: 'foo',
+        children: [{url: 'foo', name: 'a1'}, {url: 'foo', name: 'a1'}, {url: 'foo', name: 'a1'}, {
+          name: 'a1', url: 'foo',
+          children: [{url: 'foo', name: 'a2'}, {url: 'foo', name: 'a2'}, {url: 'foo', name: 'a2'}, {
+            url: 'foo',
+            name: 'a2'
+          },]
         },]
       },
       {
-        name: 'Faa',
-        children: [{name: 'a1'}, {name: 'a1'}, {name: 'a1'}, {name: 'a1'},]
+        name: 'bsölöfbxövbgc', url: 'foo',
+        children: [{url: 'foo', name: 'b1'}, {url: 'foo', name: 'b1'}, {url: 'foo', name: 'b1'}, {
+          url: 'foo',
+          name: 'b1'
+        },]
       },
       {
-        name: 'Fou',
-        children: [{name: 'a1'}, {name: 'a1'}, {name: 'a1'}, {name: 'a1'},]
-      },
-      {
-        name: 'Bar',
-        children: [{name: 'a1'}, {name: 'a1'}, {name: 'a1'}, {name: 'a1'},]
-      },
-      {
-        name: 'Baz',
-        children: [{name: 'a1'}, {name: 'a1'}, {name: 'a1'}, {name: 'a1'},]
+        name: 'cvcölcöbönn öfhl', url: 'foo',
+        children: [{url: 'foo', name: 'c1'}, {url: 'foo', name: 'c1'}, {url: 'foo', name: 'c1'}, {
+          url: 'foo',
+          name: 'c1'
+        },]
       }]
   }
 
-  protected readonly group = group;
 }
