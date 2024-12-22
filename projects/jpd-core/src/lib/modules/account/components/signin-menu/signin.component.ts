@@ -16,11 +16,10 @@ import { AccountStore } from '../../store/account.store';
 import { User } from '../../store/user.model';
 
 @Component({
-  selector: 'a4w-signin',
-  templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.scss'],
-  standalone: true,
-  imports: [NgIf, MatButtonModule, MatMenuModule, MatIconModule]
+    selector: 'a4w-signin',
+    templateUrl: './signin.component.html',
+    styleUrls: ['./signin.component.scss'],
+    imports: [NgIf, MatButtonModule, MatMenuModule, MatIconModule]
 })
 export class SigninComponent implements OnInit {
 

@@ -27,11 +27,10 @@ export function castTo<T>(): (row: unknown) => T {
 }
 
 @Component({
-  selector: 'a4w-admin-component-bar',
-  standalone: true,
-  imports: [CommonModule, MatError, MatFormField, MatInput, FormsModule, MatFormFieldModule, MatInputModule, MatTabGroup, MatTab, MatIconButton, MatIcon],
-  templateUrl: './admin-component-bar.component.html',
-  styleUrl: './admin-component-bar.component.scss',
+    selector: 'a4w-admin-component-bar',
+    imports: [CommonModule, MatError, MatFormField, MatInput, FormsModule, MatFormFieldModule, MatInputModule, MatTabGroup, MatTab, MatIconButton, MatIcon],
+    templateUrl: './admin-component-bar.component.html',
+    styleUrl: './admin-component-bar.component.scss'
 })
 export class AdminComponentBarComponent implements OnInit, OnDestroy {
 

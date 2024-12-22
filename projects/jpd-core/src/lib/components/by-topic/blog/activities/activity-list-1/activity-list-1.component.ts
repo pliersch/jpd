@@ -9,11 +9,10 @@ export interface ActivityList1Model {
 }
 
 @Component({
-  selector: 'a4w-activity-list-1',
-  standalone: true,
-  imports: [CommonModule, RouterLink],
-  templateUrl: './activity-list-1.component.html',
-  styleUrl: './activity-list-1.component.scss'
+    selector: 'a4w-activity-list-1',
+    imports: [CommonModule, RouterLink],
+    templateUrl: './activity-list-1.component.html',
+    styleUrl: './activity-list-1.component.scss'
 })
 export class ActivityList1Component {
 

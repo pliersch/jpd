@@ -11,16 +11,15 @@ export interface MapsOpeningContactModel {
 }
 
 @Component({
-  selector: 'a4w-maps-opening-contact',
-  standalone: true,
-  imports: [
-    MatIcon,
-    GMapsIframeComponent,
-    SafePipe,
-    NgForOf
-  ],
-  templateUrl: './maps-opening-contact.component.html',
-  styleUrl: './maps-opening-contact.component.scss'
+    selector: 'a4w-maps-opening-contact',
+    imports: [
+        MatIcon,
+        GMapsIframeComponent,
+        SafePipe,
+        NgForOf
+    ],
+    templateUrl: './maps-opening-contact.component.html',
+    styleUrl: './maps-opening-contact.component.scss'
 })
 export class MapsOpeningContactComponent extends BaseComponent<MapsOpeningContactModel> {
 

@@ -8,14 +8,13 @@ import { BaseWidgetComponent } from '@app1/components/doc-info/widgets/base/base
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-doc-info',
-  standalone: true,
-  imports: [
-    BaseWidgetComponent,
-    MatButton
-  ],
-  templateUrl: './doc-widget.component.html',
-  styleUrl: './doc-widget.component.scss'
+    selector: 'app-doc-info',
+    imports: [
+        BaseWidgetComponent,
+        MatButton
+    ],
+    templateUrl: './doc-widget.component.html',
+    styleUrl: './doc-widget.component.scss'
 })
 export class DocWidgetComponent implements OnInit, OnDestroy {
 

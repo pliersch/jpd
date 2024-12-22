@@ -9,11 +9,10 @@ export interface TopStories1Model {
 }
 
 @Component({
-  selector: 'a4w-top-stories-1',
-  standalone: true,
-  imports: [CommonModule, RouterLink],
-  templateUrl: './top-stories-1.component.html',
-  styleUrl: './top-stories-1.component.scss'
+    selector: 'a4w-top-stories-1',
+    imports: [CommonModule, RouterLink],
+    templateUrl: './top-stories-1.component.html',
+    styleUrl: './top-stories-1.component.scss'
 })
 export class TopStories1Component {
 

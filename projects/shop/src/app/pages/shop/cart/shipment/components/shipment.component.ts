@@ -7,18 +7,17 @@ import { MatSelectModule } from '@angular/material/select';
 import { Country, getCountries } from '@shop/pages/shop/cart/shipment/countries';
 
 @Component({
-  selector: 'shop-shipment',
-  standalone: true,
-  templateUrl: './shipment.component.html',
-  styleUrl: './shipment.component.scss',
-  imports: [
-    MatCheckboxModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
-  ],
+    selector: 'shop-shipment',
+    templateUrl: './shipment.component.html',
+    styleUrl: './shipment.component.scss',
+    imports: [
+        MatCheckboxModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatInputModule,
+    ]
 })
 export class ShipmentComponent {
 

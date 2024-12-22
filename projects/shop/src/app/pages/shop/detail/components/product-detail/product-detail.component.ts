@@ -11,13 +11,11 @@ import { TagChipsComponent } from '@shop/pages/shop/detail/components/tags/tag-c
 import { WeightTableComponent } from '@shop/pages/shop/detail/components/weight-table/weight-table.component';
 import { DetailStore } from '@shop/pages/shop/detail/detail.store';
 import { NumberInputComponent } from '@shop/pages/shop/detail/number-input/number-input.component';
-import { ImageFallbackDirective, StarsComponent } from 'jpd-core';
+import { StarsComponent } from 'jpd-core';
 
 @Component({
   selector: 'shop-product-detail',
-  standalone: true,
   imports: [
-    ImageFallbackDirective,
     StarsComponent,
     MatTabGroup,
     MatTab,
@@ -34,7 +32,7 @@ import { ImageFallbackDirective, StarsComponent } from 'jpd-core';
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.scss',
   providers: [DetailStore],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductDetailComponent {
 

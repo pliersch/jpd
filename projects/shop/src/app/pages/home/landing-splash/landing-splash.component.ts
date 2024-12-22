@@ -8,14 +8,10 @@ export interface LandingSplashModel {
 }
 
 @Component({
-  selector: 'shop-landing-splash',
-  standalone: true,
-  imports: [CommonModule, MatButtonModule],
-  templateUrl: './landing-splash.component.html',
-  styleUrls: ['./landing-splash.component.scss'],
-  // animations: [
-  //   bounceInUpOnEnterAnimation({anchor: 'enter1'}),
-  // ]
+    selector: 'shop-landing-splash',
+    imports: [CommonModule, MatButtonModule],
+    templateUrl: './landing-splash.component.html',
+    styleUrls: ['./landing-splash.component.scss']
 })
 
 export class LandingSplashComponent extends BaseComponent<LandingSplashModel> {

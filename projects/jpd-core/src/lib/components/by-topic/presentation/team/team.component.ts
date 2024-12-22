@@ -6,11 +6,10 @@ import { TitleSubtitleDescription } from '../../../../content';
 import { BaseComponent } from '../../../core/base/base.component';
 
 @Component({
-  selector: 'app-team',
-  standalone: true,
-  imports: [CommonModule, RouterLink],
-  templateUrl: './team.component.html',
-  styleUrls: ['./team.component.scss']
+    selector: 'app-team',
+    imports: [CommonModule, RouterLink],
+    templateUrl: './team.component.html',
+    styleUrls: ['./team.component.scss']
 })
 export class TeamComponent extends BaseComponent<any> {
 

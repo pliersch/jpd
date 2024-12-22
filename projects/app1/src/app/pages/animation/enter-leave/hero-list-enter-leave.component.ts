@@ -6,9 +6,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Hero } from '@app1/pages/animation/hero';
 
 @Component({
-  standalone: true,
-  selector: 'app-hero-list-enter-leave',
-  template: `
+    selector: 'app-hero-list-enter-leave',
+    template: `
     <ul class="heroes">
       <li *ngFor="let hero of heroes"
           [@flyInOut]="'in'">
@@ -19,20 +18,20 @@ import { Hero } from '@app1/pages/animation/hero';
       </li>
     </ul>
   `,
-  styleUrls: ['./hero-list-page.component.css'],
-  imports: [NgFor],
-  animations: [
-    trigger('flyInOut', [
-      state('in', style({transform: 'translateX(0)'})),
-      transition('void => *', [
-        style({transform: 'translateX(-100%)'}),
-        animate(100)
-      ]),
-      transition('* => void', [
-        animate(100, style({transform: 'translateX(100%)'}))
-      ])
-    ])
-  ]
+    styleUrls: ['./hero-list-page.component.css'],
+    imports: [NgFor],
+    animations: [
+        trigger('flyInOut', [
+            state('in', style({ transform: 'translateX(0)' })),
+            transition('void => *', [
+                style({ transform: 'translateX(-100%)' }),
+                animate(100)
+            ]),
+            transition('* => void', [
+                animate(100, style({ transform: 'translateX(100%)' }))
+            ])
+        ])
+    ]
 })
 export class HeroListEnterLeaveComponent {
   @Input() heroes: Hero[] = [];

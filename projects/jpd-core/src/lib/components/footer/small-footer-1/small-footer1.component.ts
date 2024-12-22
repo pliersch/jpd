@@ -8,10 +8,9 @@ import { Route, RouteDomService } from '../../../common';
 // export interface Small1FooterModel {}
 
 @Component({
-  selector: 'a4w-small-footer-1',
-  standalone: true,
-  imports: [CommonModule, MatIconModule, MatAnchor, RouterLink],
-  templateUrl: './small-footer1.component.html'
+    selector: 'a4w-small-footer-1',
+    imports: [CommonModule, MatIconModule, MatAnchor, RouterLink],
+    templateUrl: './small-footer1.component.html'
 })
 export class SmallFooter1Component /*extends BaseComponent<Small1FooterModel> */ {
 

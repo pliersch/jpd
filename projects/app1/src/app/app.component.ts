@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { afterNextRender, AfterRenderPhase, Component, signal } from '@angular/core';
+import { afterNextRender, Component, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterOutlet } from '@angular/router';
 import {
@@ -20,13 +20,12 @@ import {
 } from 'jpd-core';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, A4WRootComponent, AppbarComponent,
-    LogoContainerComponent, ThemeToggleActionComponent, SubNavComponent, NavigationDirective,
-    ActionContainerComponent, ScrollTopActionComponent, FragmentDirective, AsyncPipe, LoginComponent, SmallFooter1Component, AppbarTwoRowsComponent, EnableAdminActionComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-root',
+    imports: [RouterOutlet, A4WRootComponent, AppbarComponent,
+        LogoContainerComponent, ThemeToggleActionComponent, SubNavComponent, NavigationDirective,
+        ActionContainerComponent, ScrollTopActionComponent, FragmentDirective, AsyncPipe, LoginComponent, SmallFooter1Component, AppbarTwoRowsComponent, EnableAdminActionComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent {
 
@@ -37,9 +36,9 @@ export class AppComponent {
               // protected adminService: AdminService,
   ) {
 
-    afterNextRender(() => {
-      this.isLoading.set(false)
-    }, {phase: AfterRenderPhase.Write});
+    afterNextRender({ write: () => {
+        this.isLoading.set(false);
+    } }, );
   }
 
 }

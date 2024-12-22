@@ -9,17 +9,16 @@ import {
 import { RouteDomService } from '../../../../common';
 
 @Component({
-  selector: 'a4w-admin-panel-menu',
-  standalone: true,
-  imports: [
-    MatAccordion,
-    MatExpansionPanel,
-    MatExpansionPanelHeader,
-    MatExpansionPanelTitle,
-    MatExpansionPanelDescription
-  ],
-  templateUrl: './admin-panel-menu.component.html',
-  styleUrl: './admin-panel-menu.component.scss'
+    selector: 'a4w-admin-panel-menu',
+    imports: [
+        MatAccordion,
+        MatExpansionPanel,
+        MatExpansionPanelHeader,
+        MatExpansionPanelTitle,
+        MatExpansionPanelDescription
+    ],
+    templateUrl: './admin-panel-menu.component.html',
+    styleUrl: './admin-panel-menu.component.scss'
 })
 export class AdminPanelMenuComponent {
 

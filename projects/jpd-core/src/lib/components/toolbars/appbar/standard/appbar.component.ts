@@ -32,11 +32,10 @@ import {
 import { NavigationDirective } from '../../../navigation/directives/navigation.directive';
 
 @Component({
-  selector: 'a4w-appbar',
-  standalone: true,
-  imports: [CommonModule, MatToolbarModule, MatIconModule, MatButtonModule, RouterLinkActive, RouterLink, MatMenuModule, MatListModule],
-  templateUrl: './appbar.component.html',
-  styleUrls: ['./appbar.component.scss'],
+    selector: 'a4w-appbar',
+    imports: [CommonModule, MatToolbarModule, MatIconModule, MatButtonModule, RouterLinkActive, RouterLink, MatMenuModule, MatListModule],
+    templateUrl: './appbar.component.html',
+    styleUrls: ['./appbar.component.scss']
 })
 export class AppbarComponent implements OnInit, AfterViewInit {
 

@@ -22,13 +22,12 @@ export interface LegalModel {
 }
 
 @Component({
-  selector: 'a4w-legal-notice-1',
-  standalone: true,
-  imports: [
-    PosterComponent
-  ],
-  templateUrl: './legal-notice.component.html',
-  styleUrl: './legal-notice.component.scss'
+    selector: 'a4w-legal-notice-1',
+    imports: [
+        PosterComponent
+    ],
+    templateUrl: './legal-notice.component.html',
+    styleUrl: './legal-notice.component.scss'
 })
 export class LegalNoticeComponent extends BaseComponent<LegalModel> {
 

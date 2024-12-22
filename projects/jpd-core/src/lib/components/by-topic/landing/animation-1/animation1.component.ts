@@ -9,11 +9,10 @@ export interface AnimationModel {
 }
 
 @Component({
-  selector: 'a4w-animation-1',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './animation1.component.html',
-  styleUrls: ['./animation1.component.scss']
+    selector: 'a4w-animation-1',
+    imports: [CommonModule],
+    templateUrl: './animation1.component.html',
+    styleUrls: ['./animation1.component.scss']
 })
 export class Animation1Component extends BaseComponent<AnimationModel> {
 

@@ -10,11 +10,10 @@ import { PosterComponent } from 'jpd-core';
 import { BreakpointService, Dimension } from '../../../../../../jpd-core/src/lib/common';
 
 @Component({
-  selector: 'app-doc-info-editor',
-  templateUrl: './doc-widget-editor.component.html',
-  styleUrls: ['./doc-widget-editor.component.scss'],
-  standalone: true,
-  imports: [MatButtonModule, MatTabGroup, MatTab, LayoutEditorComponent, PosterComponent, OpeningHoursComponent, AsyncPipe, NgTemplateOutlet, VacationComponent, WaitingTimeComponent]
+    selector: 'app-doc-info-editor',
+    templateUrl: './doc-widget-editor.component.html',
+    styleUrls: ['./doc-widget-editor.component.scss'],
+    imports: [MatButtonModule, MatTabGroup, MatTab, LayoutEditorComponent, PosterComponent, OpeningHoursComponent, AsyncPipe, NgTemplateOutlet, VacationComponent, WaitingTimeComponent]
 })
 export class DocWidgetEditorComponent implements OnInit {
 

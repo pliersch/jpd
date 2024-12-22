@@ -10,11 +10,10 @@ export interface LandingSplashModel {
 }
 
 @Component({
-  selector: 'app-landing-splash',
-  standalone: true,
-  imports: [CommonModule, MatButtonModule],
-  templateUrl: './landing-splash.component.html',
-  styleUrls: ['./landing-splash.component.scss']
+    selector: 'app-landing-splash',
+    imports: [CommonModule, MatButtonModule],
+    templateUrl: './landing-splash.component.html',
+    styleUrls: ['./landing-splash.component.scss']
 })
 export class LandingSplashComponent extends BaseComponent<LandingSplashModel> {
 

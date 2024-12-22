@@ -9,11 +9,10 @@ export interface TextContent1Model {
 }
 
 @Component({
-  selector: 'a4w-text-content-1',
-  standalone: true,
-  imports: [],
-  templateUrl: './text-content-1.component.html',
-  styleUrl: './text-content-1.component.scss'
+    selector: 'a4w-text-content-1',
+    imports: [],
+    templateUrl: './text-content-1.component.html',
+    styleUrl: './text-content-1.component.scss'
 })
 export class TextContent1Component extends BaseComponent<TextContent1Model> {
 

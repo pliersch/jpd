@@ -18,11 +18,10 @@ export interface Grid321Model {
 }
 
 @Component({
-  selector: 'a4w-image-grid321',
-  standalone: true,
-  imports: [CommonModule, ImageFallbackDirective, RouterLink],
-  templateUrl: './image-grid321.component.html',
-  styleUrls: ['./image-grid321.component.scss']
+    selector: 'a4w-image-grid321',
+    imports: [CommonModule, ImageFallbackDirective, RouterLink],
+    templateUrl: './image-grid321.component.html',
+    styleUrls: ['./image-grid321.component.scss']
 })
 export class ImageGrid321Component extends BaseComponent<Grid321Model> {
 

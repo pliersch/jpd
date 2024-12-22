@@ -19,17 +19,10 @@ export interface Banner2Model {
 }
 
 @Component({
-  selector: 'a4w-banner-2',
-  standalone: true,
-  imports: [CommonModule, RouterLink],
-  templateUrl: './banner2.component.html',
-  styleUrl: './banner2.component.scss',
-  // animations: [
-  //   trigger('fade', [
-  //     transition('void => *', [style({opacity: 0}), animate('300ms', style({opacity: 1}))]),
-  //     transition('* => void', [style({opacity: 1}), animate('300ms', style({opacity: 0}))]),
-  //   ])
-  // ]
+    selector: 'a4w-banner-2',
+    imports: [CommonModule, RouterLink],
+    templateUrl: './banner2.component.html',
+    styleUrl: './banner2.component.scss'
 })
 export class Banner2Component extends BaseComponent<Banner2Model> implements OnInit {
 

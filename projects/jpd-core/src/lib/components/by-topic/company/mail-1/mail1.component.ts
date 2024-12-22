@@ -8,13 +8,12 @@ export interface Mail1Model {
 }
 
 @Component({
-  selector: 'lib-company-mail-1',
-  standalone: true,
-  imports: [
-    MatIcon
-  ],
-  templateUrl: './mail1.component.html',
-  styleUrl: './mail1.component.scss'
+    selector: 'lib-company-mail-1',
+    imports: [
+        MatIcon
+    ],
+    templateUrl: './mail1.component.html',
+    styleUrl: './mail1.component.scss'
 })
 export class Mail1Component extends BaseComponent<Mail1Model> {
 

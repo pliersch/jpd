@@ -6,16 +6,15 @@ import { UpdateOrderPosition } from '@shop/pages/shop/cart/store/cart.model';
 import { CartStore } from '@shop/pages/shop/cart/store/cart.store';
 
 @Component({
-  selector: 'shop-cart',
-  standalone: true,
-  imports: [
-    CartItemListComponent,
-    CartSummaryComponent,
-    ShipmentComponent
-  ],
-  templateUrl: './cart.component.html',
-  styleUrl: './cart.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'shop-cart',
+    imports: [
+        CartItemListComponent,
+        CartSummaryComponent,
+        ShipmentComponent
+    ],
+    templateUrl: './cart.component.html',
+    styleUrl: './cart.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CartComponent {
 

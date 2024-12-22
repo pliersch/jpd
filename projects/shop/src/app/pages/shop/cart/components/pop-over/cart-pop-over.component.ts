@@ -12,23 +12,22 @@ import { CartStore } from '@shop/pages/shop/cart/store/cart.store';
 import { PosterComponent } from 'jpd-core';
 
 @Component({
-  selector: 'shop-cart-pop-over',
-  standalone: true,
-  imports: [
-    PosterComponent,
-    CdkOverlayOrigin,
-    MatIcon,
-    MatIconButton,
-    CdkConnectedOverlay,
-    RouterLink,
-    MatAnchor,
-    CurrencyPipe,
-    CartPopOverItemComponent
-  ],
-  templateUrl: './cart-pop-over.component.html',
-  styleUrl: './cart-pop-over.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: [cartIconAnimation]
+    selector: 'shop-cart-pop-over',
+    imports: [
+        PosterComponent,
+        CdkOverlayOrigin,
+        MatIcon,
+        MatIconButton,
+        CdkConnectedOverlay,
+        RouterLink,
+        MatAnchor,
+        CurrencyPipe,
+        CartPopOverItemComponent
+    ],
+    templateUrl: './cart-pop-over.component.html',
+    styleUrl: './cart-pop-over.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    animations: [cartIconAnimation]
 })
 export class CartPopOverComponent {
 

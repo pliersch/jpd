@@ -4,7 +4,6 @@ import {
   AbstractDefaultPageComponent,
   Address1Component,
   ContactCompanyComponent,
-  ContactCompanyInfoComponent,
   FragmentDirective,
   GMapsIframeComponent,
   Mail1Component,
@@ -15,8 +14,9 @@ import {
 
 @Component({
   selector: 'shop-contact',
-  standalone: true,
-  imports: [CommonModule, FragmentDirective, Parallax1Component, GMapsIframeComponent, ContactCompanyComponent, ContactCompanyInfoComponent, Address1Component, Mail1Component, Phone1Component, SectionComponent],
+  imports: [CommonModule, FragmentDirective, Parallax1Component, GMapsIframeComponent,
+    ContactCompanyComponent, Address1Component, Mail1Component, Phone1Component,
+    SectionComponent],
   templateUrl: './contact-page.component.html',
   styleUrls: ['./contact-page.component.scss']
 })

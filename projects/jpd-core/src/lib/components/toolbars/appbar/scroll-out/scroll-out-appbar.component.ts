@@ -8,11 +8,10 @@ import { Observable, of } from 'rxjs';
 import { Route, RouteDomService } from '../../../../common';
 
 @Component({
-  selector: 'a4w-scroll-out-appbar',
-  standalone: true,
-  imports: [CommonModule, MatToolbarModule, MatButtonModule, RouterLinkActive, RouterLink, MatListModule],
-  templateUrl: './scroll-out-appbar.component.html',
-  styleUrls: ['./scroll-out-appbar.component.scss']
+    selector: 'a4w-scroll-out-appbar',
+    imports: [CommonModule, MatToolbarModule, MatButtonModule, RouterLinkActive, RouterLink, MatListModule],
+    templateUrl: './scroll-out-appbar.component.html',
+    styleUrls: ['./scroll-out-appbar.component.scss']
 })
 export class ScrollOutAppbarComponent implements OnInit {
 

@@ -12,11 +12,10 @@ export interface Small2FooterModel {
 }
 
 @Component({
-  selector: 'a4w-small-footer-2',
-  standalone: true,
-  imports: [CommonModule, MatIconModule, MatAnchor, RouterLink],
-  templateUrl: './small-footer2.component.html',
-  styleUrls: ['./small-footer2.component.scss']
+    selector: 'a4w-small-footer-2',
+    imports: [CommonModule, MatIconModule, MatAnchor, RouterLink],
+    templateUrl: './small-footer2.component.html',
+    styleUrls: ['./small-footer2.component.scss']
 })
 export class SmallFooter2Component extends BaseComponent<Small2FooterModel> {
 

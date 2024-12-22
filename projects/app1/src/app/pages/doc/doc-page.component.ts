@@ -5,18 +5,17 @@ import { DocWidgetComponent } from '@app1/components/doc-info/doc-widget.compone
 import { AbstractDefaultPageComponent, FragmentDirective, Parallax1Component, SectionComponent } from 'jpd-core';
 
 @Component({
-  selector: 'app-doc-page',
-  standalone: true,
-  imports: [
-    CommonModule,
-    Parallax1Component,
-    FragmentDirective,
-    SectionComponent,
-    DocWidgetComponent,
-    DocWidgetEditorComponent,
-  ],
-  templateUrl: './doc-page.component.html',
-  styleUrls: ['./doc-page.component.scss']
+    selector: 'app-doc-page',
+    imports: [
+        CommonModule,
+        Parallax1Component,
+        FragmentDirective,
+        SectionComponent,
+        DocWidgetComponent,
+        DocWidgetEditorComponent,
+    ],
+    templateUrl: './doc-page.component.html',
+    styleUrls: ['./doc-page.component.scss']
 })
 export class DocPageComponent extends AbstractDefaultPageComponent {
 

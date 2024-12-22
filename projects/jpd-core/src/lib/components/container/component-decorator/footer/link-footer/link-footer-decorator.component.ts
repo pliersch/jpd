@@ -10,11 +10,10 @@ export interface LinkFooterDecoratorModel {
 }
 
 @Component({
-  selector: 'a4w-link-footer-decorator',
-  standalone: true,
-  imports: [CommonModule, RouterLink],
-  templateUrl: './link-footer-decorator.component.html',
-  styleUrl: './link-footer-decorator.component.scss'
+    selector: 'a4w-link-footer-decorator',
+    imports: [CommonModule, RouterLink],
+    templateUrl: './link-footer-decorator.component.html',
+    styleUrl: './link-footer-decorator.component.scss'
 })
 export class LinkFooterDecoratorComponent extends BaseComponent<LinkFooterDecoratorModel> {
 

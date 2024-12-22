@@ -7,11 +7,10 @@ import { TitleSubtitle } from '../../../../content';
 import { BaseComponent } from '../../../core/base/base.component';
 
 @Component({
-  selector: 'a4w-title-subtitle-decorator',
-  standalone: true,
-  imports: [CommonModule, RouterLink, MatIcon],
-  templateUrl: './title-subtitle-decorator.component.html',
-  styleUrls: ['./title-subtitle-decorator.component.scss']
+    selector: 'a4w-title-subtitle-decorator',
+    imports: [CommonModule, RouterLink, MatIcon],
+    templateUrl: './title-subtitle-decorator.component.html',
+    styleUrls: ['./title-subtitle-decorator.component.scss']
 })
 export class TitleSubtitleDecoratorComponent extends BaseComponent<TitleSubtitle> implements OnInit {
 

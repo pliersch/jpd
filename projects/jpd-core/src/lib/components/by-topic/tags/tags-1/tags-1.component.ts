@@ -3,11 +3,10 @@ import { Component, Input } from '@angular/core';
 import { MatChipsModule } from '@angular/material/chips';
 
 @Component({
-  selector: 'a4w-tags-1',
-  standalone: true,
-  imports: [CommonModule, MatChipsModule],
-  templateUrl: './tags-1.component.html',
-  styleUrl: './tags-1.component.scss'
+    selector: 'a4w-tags-1',
+    imports: [CommonModule, MatChipsModule],
+    templateUrl: './tags-1.component.html',
+    styleUrl: './tags-1.component.scss'
 })
 export class Tags1Component {
 

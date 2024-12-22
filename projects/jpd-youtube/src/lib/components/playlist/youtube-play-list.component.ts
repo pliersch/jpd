@@ -4,11 +4,10 @@ import { CardVideo1Component } from 'jpd-core';
 import { Tag, Video } from '../../store/model';
 
 @Component({
-  selector: 'a4w-youtube-playlist',
-  standalone: true,
-  imports: [CommonModule, CardVideo1Component],
-  templateUrl: './youtube-play-list.component.html',
-  styleUrl: './youtube-play-list.component.scss',
+    selector: 'a4w-youtube-playlist',
+    imports: [CommonModule, CardVideo1Component],
+    templateUrl: './youtube-play-list.component.html',
+    styleUrl: './youtube-play-list.component.scss'
 })
 export class YoutubePlayListComponent {
 

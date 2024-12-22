@@ -1,15 +1,12 @@
-import { afterNextRender, AfterRenderPhase, Component, signal } from '@angular/core';
+import { afterNextRender, Component, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CartPopOverComponent } from '@shop/pages/shop/cart/components/pop-over/cart-pop-over.component';
 import {
   A4WRootComponent,
   ActionContainerComponent,
   AnimationsSettingsComponent,
-  AppbarComponent,
   AppbarTwoRowsComponent,
   AuthService,
-  CardH1Component,
-  EnableAdminActionComponent,
   FragmentDirective,
   LoginComponent,
   LogoContainerComponent,
@@ -25,12 +22,11 @@ import {
 
 @Component({
   selector: 'shop-root',
-  standalone: true,
-  imports: [A4WRootComponent, AppbarComponent, AnimationsSettingsComponent,
+  imports: [A4WRootComponent, AnimationsSettingsComponent,
     LogoContainerComponent, ThemeToggleActionComponent, SubNavComponent, NavigationDirective,
     ActionContainerComponent, ScrollTopActionComponent, SigninComponent, FragmentDirective,
-    LoginComponent, PopOverComponent, SmallFooter1Component, AppbarTwoRowsComponent, EnableAdminActionComponent,
-    CardH1Component, CartPopOverComponent, SettingsOverlayComponent],
+    LoginComponent, PopOverComponent, SmallFooter1Component, AppbarTwoRowsComponent,
+    CartPopOverComponent, SettingsOverlayComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -43,9 +39,11 @@ export class AppComponent {
               // protected adminService: AdminService,
   ) {
 
-    afterNextRender(() => {
-      this.isLoading.set(false)
-    }, {phase: AfterRenderPhase.Write});
+    afterNextRender({
+      write: () => {
+        this.isLoading.set(false);
+      }
+    },);
   }
 
 }

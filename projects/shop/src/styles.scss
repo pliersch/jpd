@@ -1,38 +1,63 @@
 @use '@angular/material' as mat;
 
-@use '../../../projects/jpd-core/src/styles/core-styles' with (
-  $dark-primary: mat.define-palette(mat.$purple-palette, 900),
-  $dark-accent: mat.define-palette(mat.$green-palette, A200, A100, A400),
-  $light-primary: mat.define-palette(mat.$indigo-palette, 900),
-  $light-accent: mat.define-palette(mat.$pink-palette, A400, A200, A700)
-);
+@use '../../../projects/jpd-core/src/styles/core-styles';
+@use '../../../_theme-colors' as my-theme;
 
-@include mat.core();
+//@use '../../../projects/jpd-core/src/styles/core-styles' with (
+//  $dark-primary: my-theme.$primary-palette,
+//  $dark-accent: my-theme.$tertiary-palette,
+//  $light-primary: my-theme.$primary-palette,
+//  $light-accent: my-theme.$tertiary-palette
+//);
 
-$primary: mat.define-palette(mat.$indigo-palette);
-$accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-//$warn: mat.define-palette(mat.$red-palette);
+//@include mat.elevation-classes();
+//@include mat.app-background();
 
-$app1-theme: mat.define-light-theme((
-  color: (
-    primary: $primary,
-    accent: $accent,
-    //warn: $warn,
-  ),
-  typography: mat.define-typography-config(),
-  density: 0
-));
+//body {      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-@include mat.all-component-themes($app1-theme);
+//  background: var(--mat-sys-surface);
+//  color: var(--mat-sys-on-surface);
+
+//}   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+html {
+  @include mat.theme((
+    color: (
+      primary: my-theme.$primary-palette,
+      tertiary: my-theme.$tertiary-palette,
+      theme-type: light,
+      //use-system-variables: true,
+    ),
+    typography: Roboto,
+    density: 0
+  ));
+
+  //@include mat.theme-overrides((
+  //  primary: #ebdcff,
+  //  on-primary: #230f46,
+  //  body-medium: 500 1.15rem/1.3rem Arial,
+  //  corner-large: 32px,
+  //  level3: 0 4px 6px 1px var(--mat-sys-surface-dim),
+  //));
+}
+
+body.dark-theme {
+  //color-scheme: dark;
+  @include mat.theme((
+    color: (
+      primary: my-theme.$primary-palette,
+      tertiary: my-theme.$tertiary-palette,
+      theme-type: dark,
+      //use-system-variables: true,
+    ),
+    typography: Roboto,
+    density: 0
+  ));
+}
 
 html {
   scroll-behavior: auto !important;
 }
-
-//body {
-//  margin: 0;
-//  font-family: Inter, "Helvetica Neue", sans-serif;
-//}
 
 .divider-top {
   border-top-color: var(--theme-grey-alpha-75);
@@ -43,3 +68,116 @@ html {
   border-bottom-color: var(--theme-grey-alpha-75);
   border-bottom-width: 1px;
 }
+
+//.dark-theme {
+//  --mat-sys-background: #303030;
+//  --mat-sys-surface: #141218;
+//  --mat-sys-color-background: #141218;
+//  --mat-sys-color-on-background: #e6e0e9;
+//  --mat-sys-color-surface: #141218;
+//  --mat-sys-color-surface-dim: #141218;
+//  --mat-sys-color-surface-bright: #3b383e;
+//  --mat-sys-color-surface-container-lowest: #0f0d13;
+//  --mat-sys-color-surface-container-low: #1d1b20;
+//  --mat-sys-color-surface-container: #211f24;
+//  --mat-sys-color-surface-container-high: #2b292f;
+//  --mat-sys-color-surface-container-highest: #36343a;
+//  --mat-sys-color-on-surface: #e6e0e9;
+//  --mat-sys-color-surface-variant: #49454e;
+//  --mat-sys-color-on-surface-variant: #cac4cf;
+//  --mat-sys-color-inverse-surface: #e6e0e9;
+//  --mat-sys-color-inverse-on-surface: #322f35;
+//  --mat-sys-color-outline: #948f99;
+//  --mat-sys-color-outline-variant: #49454e;
+//  --mat-sys-color-shadow: #000000;
+//  --mat-sys-color-scrim: #000000;
+//  --mat-sys-color-surface-tint: #cfbdfe;
+//  --mat-sys-color-primary: #cfbdfe;
+//  --mat-sys-color-on-primary: #36275d;
+//  --mat-sys-color-primary-container: #4d3d75;
+//  --mat-sys-color-on-primary-container: #e9ddff;
+//  --mat-sys-color-inverse-primary: #65558f;
+//  --mat-sys-color-secondary: #cbc2db;
+//  --mat-sys-color-on-secondary: #332d41;
+//  --mat-sys-color-secondary-container: #4a4458;
+//  --mat-sys-color-on-secondary-container: #e8def8;
+//  --mat-sys-color-tertiary: #ffb0c9;
+//  --mat-sys-color-on-tertiary: #541d33;
+//  --mat-sys-color-tertiary-container: #6f3349;
+//  --mat-sys-color-on-tertiary-container: #ffd9e3;
+//  --mat-sys-color-error: #ffb4ab;
+//  --mat-sys-color-on-error: #690005;
+//  --mat-sys-color-error-container: #93000a;
+//  --mat-sys-color-on-error-container: #ffdad6;
+//  --mat-sys-color-neutral: #7a767d;
+//  --mat-sys-color-neutral-variant: #7a757f;
+//  --mat-sys-color-primary-fixed: #e9ddff;
+//  --mat-sys-color-primary-fixed-dim: #cfbdfe;
+//  --mat-sys-color-on-primary-fixed: #201047;
+//  --mat-sys-color-on-primary-fixed-variant: #4d3d75;
+//  --mat-sys-color-secondary-fixed: #e8def8;
+//  --mat-sys-color-secondary-fixed-dim: #cbc2db;
+//  --mat-sys-color-on-secondary-fixed: #1e192b;
+//  --mat-sys-color-on-secondary-fixed-variant: #4a4458;
+//  --mat-sys-color-tertiary-fixed: #ffd9e3;
+//  --mat-sys-color-tertiary-fixed-dim: #ffb0c9;
+//  --mat-sys-color-on-tertiary-fixed: #3a071e;
+//  --mat-sys-color-on-tertiary-fixed-variant: #6f3349;
+//  --mat-sys-color-inverse-tertiary: #8b4a61;
+//}
+
+//:root, :host {
+//  --mat-sys-surface: #141218;
+//  --mat-sys-color-background: #141218;
+//  --mat-sys-color-on-background: #e6e0e9;
+//  --mat-sys-color-surface: #141218;
+//  --mat-sys-color-surface-dim: #141218;
+//  --mat-sys-color-surface-bright: #3b383e;
+//  --mat-sys-color-surface-container-lowest: #0f0d13;
+//  --mat-sys-color-surface-container-low: #1d1b20;
+//  --mat-sys-color-surface-container: #211f24;
+//  --mat-sys-color-surface-container-high: #2b292f;
+//  --mat-sys-color-surface-container-highest: #36343a;
+//  --mat-sys-color-on-surface: #e6e0e9;
+//  --mat-sys-color-surface-variant: #49454e;
+//  --mat-sys-color-on-surface-variant: #cac4cf;
+//  --mat-sys-color-inverse-surface: #e6e0e9;
+//  --mat-sys-color-inverse-on-surface: #322f35;
+//  --mat-sys-color-outline: #948f99;
+//  --mat-sys-color-outline-variant: #49454e;
+//  --mat-sys-color-shadow: #000000;
+//  --mat-sys-color-scrim: #000000;
+//  --mat-sys-color-surface-tint: #cfbdfe;
+//  --mat-sys-color-primary: #cfbdfe;
+//  --mat-sys-color-on-primary: #36275d;
+//  --mat-sys-color-primary-container: #4d3d75;
+//  --mat-sys-color-on-primary-container: #e9ddff;
+//  --mat-sys-color-inverse-primary: #65558f;
+//  --mat-sys-color-secondary: #cbc2db;
+//  --mat-sys-color-on-secondary: #332d41;
+//  --mat-sys-color-secondary-container: #4a4458;
+//  --mat-sys-color-on-secondary-container: #e8def8;
+//  --mat-sys-color-tertiary: #ffb0c9;
+//  --mat-sys-color-on-tertiary: #541d33;
+//  --mat-sys-color-tertiary-container: #6f3349;
+//  --mat-sys-color-on-tertiary-container: #ffd9e3;
+//  --mat-sys-color-error: #ffb4ab;
+//  --mat-sys-color-on-error: #690005;
+//  --mat-sys-color-error-container: #93000a;
+//  --mat-sys-color-on-error-container: #ffdad6;
+//  --mat-sys-color-neutral: #7a767d;
+//  --mat-sys-color-neutral-variant: #7a757f;
+//  --mat-sys-color-primary-fixed: #e9ddff;
+//  --mat-sys-color-primary-fixed-dim: #cfbdfe;
+//  --mat-sys-color-on-primary-fixed: #201047;
+//  --mat-sys-color-on-primary-fixed-variant: #4d3d75;
+//  --mat-sys-color-secondary-fixed: #e8def8;
+//  --mat-sys-color-secondary-fixed-dim: #cbc2db;
+//  --mat-sys-color-on-secondary-fixed: #1e192b;
+//  --mat-sys-color-on-secondary-fixed-variant: #4a4458;
+//  --mat-sys-color-tertiary-fixed: #ffd9e3;
+//  --mat-sys-color-tertiary-fixed-dim: #ffb0c9;
+//  --mat-sys-color-on-tertiary-fixed: #3a071e;
+//  --mat-sys-color-on-tertiary-fixed-variant: #6f3349;
+//  --mat-sys-color-inverse-tertiary: #8b4a61;
+//}

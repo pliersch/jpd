@@ -12,11 +12,10 @@ export interface StoriesGroup1Model {
 }
 
 @Component({
-  selector: 'a4w-stories-group-1',
-  standalone: true,
-  imports: [CommonModule, Card44Component, ImageCard1Component, MatPaginatorModule],
-  templateUrl: './stories-group-1.component.html',
-  styleUrl: './stories-group-1.component.scss'
+    selector: 'a4w-stories-group-1',
+    imports: [CommonModule, Card44Component, ImageCard1Component, MatPaginatorModule],
+    templateUrl: './stories-group-1.component.html',
+    styleUrl: './stories-group-1.component.scss'
 })
 export class StoriesGroup1Component extends BaseComponent<StoriesGroup1Model> {
 

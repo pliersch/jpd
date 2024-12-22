@@ -29,20 +29,19 @@ export interface VacationTableItem {
 }
 
 @Component({
-  selector: 'app-doc-vacation',
-  standalone: true,
-  imports: [
-    MatButton,
-    MatCheckbox,
-    MatError,
-    MatFormField,
-    MatInput,
-    NgIf,
-    ReactiveFormsModule,
-    InputHelpDirective
-  ],
-  templateUrl: './vacation.component.html',
-  styleUrl: './vacation.component.scss'
+    selector: 'app-doc-vacation',
+    imports: [
+        MatButton,
+        MatCheckbox,
+        MatError,
+        MatFormField,
+        MatInput,
+        NgIf,
+        ReactiveFormsModule,
+        InputHelpDirective
+    ],
+    templateUrl: './vacation.component.html',
+    styleUrl: './vacation.component.scss'
 })
 export class VacationComponent implements AfterViewInit {
 

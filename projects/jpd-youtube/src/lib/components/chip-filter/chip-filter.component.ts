@@ -4,11 +4,10 @@ import { MatChip, MatChipListbox } from '@angular/material/chips';
 import { Tag } from '../../store/model';
 
 @Component({
-  selector: 'a4w-chip-filter',
-  standalone: true,
-  imports: [CommonModule, MatChipListbox, MatChip],
-  templateUrl: './chip-filter.component.html',
-  styleUrl: './chip-filter.component.scss',
+    selector: 'a4w-chip-filter',
+    imports: [CommonModule, MatChipListbox, MatChip],
+    templateUrl: './chip-filter.component.html',
+    styleUrl: './chip-filter.component.scss'
 })
 export class ChipFilterComponent {
 

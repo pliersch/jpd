@@ -4,11 +4,10 @@ import { Themes, ThemeService } from '../../../common';
 import { ActionComponent } from '../_base-action/action.component';
 
 @Component({
-  selector: 'a4w-theme-toggle-action',
-  standalone: true,
-  imports: [CommonModule, ActionComponent],
-  templateUrl: './theme-toggle-action.component.html',
-  styleUrl: './theme-toggle-action.component.scss'
+    selector: 'a4w-theme-toggle-action',
+    imports: [CommonModule, ActionComponent],
+    templateUrl: './theme-toggle-action.component.html',
+    styleUrl: './theme-toggle-action.component.scss'
 })
 export class ThemeToggleActionComponent {
 

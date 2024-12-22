@@ -7,11 +7,10 @@ import { NavigationService } from '../../../common';
 import { ActionComponent } from '../_base-action/action.component';
 
 @Component({
-  selector: 'a4w-back-action',
-  standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule, ActionComponent],
-  templateUrl: './back-action.component.html',
-  styleUrl: './back-action.component.scss'
+    selector: 'a4w-back-action',
+    imports: [CommonModule, MatButtonModule, MatIconModule, ActionComponent],
+    templateUrl: './back-action.component.html',
+    styleUrl: './back-action.component.scss'
 })
 export class BackActionComponent {
 

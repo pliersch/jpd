@@ -15,10 +15,9 @@ export interface AddVideoDialogData {
 }
 
 @Component({
-  selector: 'a4w-add-video-dialog',
-  templateUrl: './add-video-dialog.component.html',
-  standalone: true,
-  imports: [MatDialogModule, MatFormFieldModule, MatSelectModule, MatOptionModule, NgFor, MatButtonModule, MatInput, ReactiveFormsModule, NgIf, MatChipListbox, MatChipOption]
+    selector: 'a4w-add-video-dialog',
+    templateUrl: './add-video-dialog.component.html',
+    imports: [MatDialogModule, MatFormFieldModule, MatSelectModule, MatOptionModule, NgFor, MatButtonModule, MatInput, ReactiveFormsModule, NgIf, MatChipListbox, MatChipOption]
 })
 export class AddVideoDialogComponent implements OnInit {
 

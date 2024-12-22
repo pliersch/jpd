@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { booleanAttribute, Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'a4w-txt-img-2',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './txt-img2.component.html',
-  styleUrl: './txt-img2.component.scss'
+    selector: 'a4w-txt-img-2',
+    imports: [CommonModule],
+    templateUrl: './txt-img2.component.html',
+    styleUrl: './txt-img2.component.scss'
 })
 export class TxtImg2Component implements OnInit {
 

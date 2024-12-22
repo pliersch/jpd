@@ -12,11 +12,10 @@ export interface Card11Model {
 }
 
 @Component({
-  selector: 'a4w-card11',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './card11.component.html',
-  styleUrl: './card11.component.scss'
+    selector: 'a4w-card11',
+    imports: [CommonModule],
+    templateUrl: './card11.component.html',
+    styleUrl: './card11.component.scss'
 })
 export class Card11Component {
 

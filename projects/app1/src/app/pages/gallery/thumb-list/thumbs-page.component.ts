@@ -10,18 +10,17 @@ import {
 } from 'jpd-core';
 
 @Component({
-  selector: 'app-gallery-page',
-  standalone: true,
-  imports: [
-    CommonModule,
-    FragmentDirective,
-    EndlessGridComponent,
-    TitleSubtitleDecoratorComponent,
-    SectionComponent,
-    RouterOutlet,
-  ],
-  templateUrl: './thumbs-page.component.html',
-  styleUrls: ['./thumbs-page.component.scss']
+    selector: 'app-gallery-page',
+    imports: [
+        CommonModule,
+        FragmentDirective,
+        EndlessGridComponent,
+        TitleSubtitleDecoratorComponent,
+        SectionComponent,
+        RouterOutlet,
+    ],
+    templateUrl: './thumbs-page.component.html',
+    styleUrls: ['./thumbs-page.component.scss']
 })
 export class ThumbsPageComponent extends AbstractDefaultPageComponent {
 

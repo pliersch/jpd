@@ -6,17 +6,16 @@ import { RouterLink } from '@angular/router';
 import { CartItem, UpdateOrderPosition } from '@shop/pages/shop/cart/store/cart.model';
 
 @Component({
-  selector: 'shop-small-cart-item',
-  standalone: true,
-  imports: [
-    CurrencyPipe,
-    MatIcon,
-    MatIconButton,
-    NgOptimizedImage,
-    RouterLink
-  ],
-  templateUrl: './small-cart-item.component.html',
-  styleUrl: './small-cart-item.component.scss'
+    selector: 'shop-small-cart-item',
+    imports: [
+        CurrencyPipe,
+        MatIcon,
+        MatIconButton,
+        NgOptimizedImage,
+        RouterLink
+    ],
+    templateUrl: './small-cart-item.component.html',
+    styleUrl: './small-cart-item.component.scss'
 })
 export class SmallCartItemComponent {
 

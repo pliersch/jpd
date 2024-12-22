@@ -9,17 +9,16 @@ import {
 } from 'jpd-core';
 
 @Component({
-  selector: 'app-privacy-page',
-  standalone: true,
-  imports: [
-    CommonModule,
-    FragmentDirective,
-    SectionComponent,
-    Privacy1Component,
-    LegalContainerComponent,
-  ],
-  templateUrl: './privacy-page.component.html',
-  styleUrls: ['./privacy-page.component.scss']
+    selector: 'app-privacy-page',
+    imports: [
+        CommonModule,
+        FragmentDirective,
+        SectionComponent,
+        Privacy1Component,
+        LegalContainerComponent,
+    ],
+    templateUrl: './privacy-page.component.html',
+    styleUrls: ['./privacy-page.component.scss']
 })
 export class PrivacyPageComponent extends AbstractDefaultPageComponent {
 

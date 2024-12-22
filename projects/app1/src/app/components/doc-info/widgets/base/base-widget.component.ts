@@ -5,11 +5,10 @@ import { DocWidgetItem } from '@app1/components/doc-info/store/doc-widget.model'
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 @Component({
-  selector: 'app-doc-info-default-widget',
-  standalone: true,
-  imports: [MatIcon],
-  templateUrl: './base-widget.component.html',
-  styleUrl: './base-widget.component.scss'
+    selector: 'app-doc-info-default-widget',
+    imports: [MatIcon],
+    templateUrl: './base-widget.component.html',
+    styleUrl: './base-widget.component.scss'
 })
 export class BaseWidgetComponent implements OnInit {
 

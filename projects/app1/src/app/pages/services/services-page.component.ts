@@ -3,15 +3,14 @@ import { Component } from '@angular/core';
 import { AbstractDefaultPageComponent, FragmentDirective, TabNavComponent } from 'jpd-core';
 
 @Component({
-  selector: 'app-service-page',
-  standalone: true,
-  imports: [
-    CommonModule,
-    FragmentDirective,
-    TabNavComponent,
-  ],
-  templateUrl: './services-page.component.html',
-  styleUrls: ['./services-page.component.scss']
+    selector: 'app-service-page',
+    imports: [
+        CommonModule,
+        FragmentDirective,
+        TabNavComponent,
+    ],
+    templateUrl: './services-page.component.html',
+    styleUrls: ['./services-page.component.scss']
 })
 export class ServicesPageComponent extends AbstractDefaultPageComponent {
 

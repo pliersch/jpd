@@ -10,11 +10,10 @@ export interface ImageCard2Model {
 }
 
 @Component({
-  selector: 'a4w-image-card2',
-  standalone: true,
-  imports: [CommonModule, RouterLink],
-  templateUrl: './image-card2.component.html',
-  styleUrl: './image-card2.component.scss'
+    selector: 'a4w-image-card2',
+    imports: [CommonModule, RouterLink],
+    templateUrl: './image-card2.component.html',
+    styleUrl: './image-card2.component.scss'
 })
 export class ImageCard2Component {
 

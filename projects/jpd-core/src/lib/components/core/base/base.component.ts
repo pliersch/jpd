@@ -5,11 +5,10 @@ import { FragmentDirective } from '../../../common';
 import { AppDataService } from '../../../core';
 
 @Component({
-  selector: 'a4w-base',
-  standalone: true,
-  imports: [CommonModule],
-  template: ``,
-  styles: []
+    selector: 'a4w-base',
+    imports: [CommonModule],
+    template: ``,
+    styles: []
 })
 export abstract class BaseComponent<T extends object> {
 

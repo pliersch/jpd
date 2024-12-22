@@ -14,11 +14,10 @@ export interface ImageCard1Model {
 }
 
 @Component({
-  selector: 'a4w-image-card1',
-  standalone: true,
-  imports: [CommonModule, RouterLink],
-  templateUrl: './image-card1.component.html',
-  styleUrl: './image-card1.component.scss'
+    selector: 'a4w-image-card1',
+    imports: [CommonModule, RouterLink],
+    templateUrl: './image-card1.component.html',
+    styleUrl: './image-card1.component.scss'
 })
 export class ImageCard1Component {
 

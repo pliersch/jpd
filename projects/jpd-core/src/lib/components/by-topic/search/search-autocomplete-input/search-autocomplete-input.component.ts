@@ -8,11 +8,10 @@ import { Observable, startWith } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'a4w-search-autocomplete-input',
-  standalone: true,
-  imports: [CommonModule, FormsModule, MatInputModule, MatIconModule, ReactiveFormsModule, MatAutocompleteModule],
-  templateUrl: './search-autocomplete-input.component.html',
-  styleUrls: ['./search-autocomplete-input.component.scss']
+    selector: 'a4w-search-autocomplete-input',
+    imports: [CommonModule, FormsModule, MatInputModule, MatIconModule, ReactiveFormsModule, MatAutocompleteModule],
+    templateUrl: './search-autocomplete-input.component.html',
+    styleUrls: ['./search-autocomplete-input.component.scss']
 })
 export class SearchAutocompleteInputComponent implements OnInit {
   control = new FormControl('');

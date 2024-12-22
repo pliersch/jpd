@@ -11,19 +11,18 @@ import { DocOpeningStore } from '@app1/components/doc-info/admin/opening-hours/d
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-opening-hours',
-  standalone: true,
-  imports: [
-    MatButton,
-    MatCheckbox,
-    MatError,
-    MatFormField,
-    MatInput,
-    NgIf,
-    ReactiveFormsModule
-  ],
-  templateUrl: './opening-hours.component.html',
-  styleUrl: './opening-hours.component.scss'
+    selector: 'app-opening-hours',
+    imports: [
+        MatButton,
+        MatCheckbox,
+        MatError,
+        MatFormField,
+        MatInput,
+        NgIf,
+        ReactiveFormsModule
+    ],
+    templateUrl: './opening-hours.component.html',
+    styleUrl: './opening-hours.component.scss'
 })
 export class OpeningHoursComponent implements OnInit {
 

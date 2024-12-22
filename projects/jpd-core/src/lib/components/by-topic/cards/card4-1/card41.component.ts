@@ -10,10 +10,9 @@ export interface Card41Model {
 }
 
 @Component({
-  selector: 'a4w-card41',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './card41.component.html'
+    selector: 'a4w-card41',
+    imports: [CommonModule],
+    templateUrl: './card41.component.html'
 })
 export class Card41Component {
 

@@ -13,11 +13,10 @@ export interface ShopFooter1Model {
 }
 
 @Component({
-  selector: 'a4w-shop-footer-1',
-  standalone: true,
-  imports: [CommonModule, MatIconModule],
-  templateUrl: './shop-footer1.component.html',
-  styleUrls: ['./shop-footer1.component.scss']
+    selector: 'a4w-shop-footer-1',
+    imports: [CommonModule, MatIconModule],
+    templateUrl: './shop-footer1.component.html',
+    styleUrls: ['./shop-footer1.component.scss']
 })
 export class ShopFooter1Component extends BaseComponent<ShopFooter1Model> implements OnInit {
 

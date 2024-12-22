@@ -12,11 +12,10 @@ export interface AboutUsModel {
 }
 
 @Component({
-  selector: 'app-about-us',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './about-us.component.html',
-  styleUrls: ['./about-us.component.scss']
+    selector: 'app-about-us',
+    imports: [CommonModule],
+    templateUrl: './about-us.component.html',
+    styleUrls: ['./about-us.component.scss']
 })
 export class AboutUsComponent extends BaseComponent<AboutUsModel> {
 

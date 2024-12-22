@@ -18,25 +18,24 @@ import {
 import { KratomTableData } from '@shop/pages/shop/detail/detail.model';
 
 @Component({
-  selector: 'shop-weight-table',
-  standalone: true,
-  imports: [
-    CurrencyPipe,
-    MatTable,
-    MatColumnDef,
-    MatHeaderCell,
-    MatCell,
-    MatHeaderRow,
-    MatRow,
-    MatHeaderCellDef,
-    MatCheckbox,
-    MatCellDef,
-    MatHeaderRowDef,
-    MatRowDef
-  ],
-  templateUrl: './weight-table.component.html',
-  styleUrl: './weight-table.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'shop-weight-table',
+    imports: [
+        CurrencyPipe,
+        MatTable,
+        MatColumnDef,
+        MatHeaderCell,
+        MatCell,
+        MatHeaderRow,
+        MatRow,
+        MatHeaderCellDef,
+        MatCheckbox,
+        MatCellDef,
+        MatHeaderRowDef,
+        MatRowDef
+    ],
+    templateUrl: './weight-table.component.html',
+    styleUrl: './weight-table.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class WeightTableComponent implements OnInit {

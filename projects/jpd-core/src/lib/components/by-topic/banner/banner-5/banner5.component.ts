@@ -13,11 +13,10 @@ export interface Banner5Model {
 }
 
 @Component({
-  selector: 'a4w-banner-5',
-  standalone: true,
-  imports: [CommonModule, MatButtonModule],
-  templateUrl: './banner5.component.html',
-  styleUrl: './banner5.component.scss'
+    selector: 'a4w-banner-5',
+    imports: [CommonModule, MatButtonModule],
+    templateUrl: './banner5.component.html',
+    styleUrl: './banner5.component.scss'
 })
 export class Banner5Component extends BaseComponent<Banner5Model> {
 

@@ -16,18 +16,17 @@ export interface IFramePlaceholderModel {
 }
 
 @Component({
-  selector: 'a4w-iframe-placeholder',
-  standalone: true,
-  imports: [
-    NgComponentOutlet,
-    MatButton,
-    MatAnchor,
-    RouterLink,
-    AsyncPipe,
-    // MatProgressSpinner
-  ],
-  templateUrl: './iframe-placeholder.component.html',
-  styleUrl: './iframe-placeholder.component.scss'
+    selector: 'a4w-iframe-placeholder',
+    imports: [
+        NgComponentOutlet,
+        MatButton,
+        MatAnchor,
+        RouterLink,
+        AsyncPipe,
+        // MatProgressSpinner
+    ],
+    templateUrl: './iframe-placeholder.component.html',
+    styleUrl: './iframe-placeholder.component.scss'
 })
 export class IframePlaceholderComponent {
 

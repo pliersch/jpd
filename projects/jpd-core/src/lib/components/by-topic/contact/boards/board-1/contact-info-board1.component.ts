@@ -9,14 +9,13 @@ export interface ContactInfoBoard1Model {
 }
 
 @Component({
-  selector: 'lib-contact-info-board-1',
-  standalone: true,
-  imports: [
-    MatIcon,
-    ContactCompanyInfoComponent
-  ],
-  templateUrl: './contact-info-board1.component.html',
-  styleUrl: './contact-info-board1.component.scss'
+    selector: 'lib-contact-info-board-1',
+    imports: [
+        MatIcon,
+        ContactCompanyInfoComponent
+    ],
+    templateUrl: './contact-info-board1.component.html',
+    styleUrl: './contact-info-board1.component.scss'
 })
 export class ContactInfoBoard1Component extends BaseComponent<ContactInfoBoard1Model> {
 

@@ -8,22 +8,21 @@ import { MatToolbar } from '@angular/material/toolbar';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-app-shell',
-  standalone: true,
-  imports: [
-    MatIconButton,
-    MatListItem,
-    MatNavList,
-    MatSidenav,
-    MatSidenavContainer,
-    MatSidenavContent,
-    MatToolbar,
-    NgForOf,
-    RouterLink,
-    RouterOutlet
-  ],
-  templateUrl: './app-shell.component.html',
-  styleUrl: './app-shell.component.scss'
+    selector: 'app-app-shell',
+    imports: [
+        MatIconButton,
+        MatListItem,
+        MatNavList,
+        MatSidenav,
+        MatSidenavContainer,
+        MatSidenavContent,
+        MatToolbar,
+        NgForOf,
+        RouterLink,
+        RouterOutlet
+    ],
+    templateUrl: './app-shell.component.html',
+    styleUrl: './app-shell.component.scss'
 })
 export class AppShellComponent implements OnDestroy {
   mobileQuery: MediaQueryList;

@@ -9,11 +9,10 @@ export interface GMapsModel {
 }
 
 @Component({
-  selector: 'a4w-maps-iframe',
-  standalone: true,
-  imports: [CommonModule, GoogleMapsModule, SafePipe],
-  templateUrl: './g-maps-iframe.component.html',
-  styleUrls: ['./g-maps-iframe.component.scss']
+    selector: 'a4w-maps-iframe',
+    imports: [CommonModule, GoogleMapsModule, SafePipe],
+    templateUrl: './g-maps-iframe.component.html',
+    styleUrls: ['./g-maps-iframe.component.scss']
 })
 export class GMapsIframeComponent extends BaseComponent<GMapsModel> {
 

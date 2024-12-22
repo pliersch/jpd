@@ -8,13 +8,12 @@ export interface ImageCards2Model {
 }
 
 @Component({
-  selector: 'a4w-img-cards-2',
-  standalone: true,
-  imports: [
-    ImageCard2Component
-  ],
-  templateUrl: './image-cards2.component.html',
-  styleUrl: './image-cards2.component.scss'
+    selector: 'a4w-img-cards-2',
+    imports: [
+        ImageCard2Component
+    ],
+    templateUrl: './image-cards2.component.html',
+    styleUrl: './image-cards2.component.scss'
 })
 export class ImageCards2Component extends BaseComponent<ImageCards2Model> {
 

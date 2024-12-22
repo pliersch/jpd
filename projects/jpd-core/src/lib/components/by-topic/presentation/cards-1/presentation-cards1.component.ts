@@ -13,15 +13,13 @@ export interface StoriesGroup1Model {
 }
 
 @Component({
-  selector: 'a4w-presentation-cards-1',
-  standalone: true,
-  imports: [
-    ImageCard1Component,
-    Card11Component,
-    ImageCard2Component
-  ],
-  templateUrl: './presentation-cards1.component.html',
-  // styleUrl: './presentation-cards1.component.scss'
+    selector: 'a4w-presentation-cards-1',
+    imports: [
+        ImageCard1Component,
+        Card11Component,
+        ImageCard2Component
+    ],
+    templateUrl: './presentation-cards1.component.html'
 })
 export class PresentationCards1Component extends BaseComponent<StoriesGroup1Model> {
 

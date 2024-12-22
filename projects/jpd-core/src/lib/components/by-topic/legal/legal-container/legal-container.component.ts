@@ -5,16 +5,15 @@ import { LgContainerComponent } from '../../../container/breakpoints/lg-containe
 import { PosterComponent } from '../../../poster/poster.component';
 
 @Component({
-  selector: 'a4w-legal-container',
-  standalone: true,
-  imports: [
-    PosterComponent,
-    AsyncPipe,
-    NgTemplateOutlet,
-    LgContainerComponent
-  ],
-  templateUrl: './legal-container.component.html',
-  styleUrl: './legal-container.component.scss'
+    selector: 'a4w-legal-container',
+    imports: [
+        PosterComponent,
+        AsyncPipe,
+        NgTemplateOutlet,
+        LgContainerComponent
+    ],
+    templateUrl: './legal-container.component.html',
+    styleUrl: './legal-container.component.scss'
 })
 export class LegalContainerComponent implements OnInit {
 

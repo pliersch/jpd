@@ -3,14 +3,13 @@ import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({
-  selector: 'shop-number-input',
-  standalone: true,
-  imports: [
-    MatIcon,
-    MatIconButton
-  ],
-  templateUrl: './number-input.component.html',
-  styleUrl: './number-input.component.scss'
+    selector: 'shop-number-input',
+    imports: [
+        MatIcon,
+        MatIconButton
+    ],
+    templateUrl: './number-input.component.html',
+    styleUrl: './number-input.component.scss'
 })
 export class NumberInputComponent {
 

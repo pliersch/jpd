@@ -4,10 +4,9 @@ import { RouterLink } from '@angular/router';
 import { PosterComponent } from '../../../poster/poster.component';
 
 @Component({
-  selector: 'a4w-card-h-1',
-  standalone: true,
-  imports: [CommonModule, PosterComponent, RouterLink],
-  templateUrl: './card-h-1.component.html',
+    selector: 'a4w-card-h-1',
+    imports: [CommonModule, PosterComponent, RouterLink],
+    templateUrl: './card-h-1.component.html'
 })
 export class CardH1Component {
 

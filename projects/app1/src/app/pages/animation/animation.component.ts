@@ -3,14 +3,10 @@ import { ChildrenOutletContexts, RouterLink, RouterLinkActive, RouterOutlet } fr
 import { AbstractDefaultPageComponent } from 'jpd-core';
 
 @Component({
-  selector: 'app-animation',
-  standalone: true,
-  imports: [RouterLink, RouterOutlet, RouterLinkActive],
-  templateUrl: './animation.component.html',
-  styleUrl: './animation.component.css',
-  // animations: [
-  //   slideInAnimation
-  // ]
+    selector: 'app-animation',
+    imports: [RouterLink, RouterOutlet, RouterLinkActive],
+    templateUrl: './animation.component.html',
+    styleUrl: './animation.component.css'
 })
 export class AnimationComponent extends AbstractDefaultPageComponent {
 

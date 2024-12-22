@@ -6,11 +6,10 @@ import { ContactCompanyInfoComponent } from '../../info/company-info/contact-com
 
 
 @Component({
-  selector: 'a4w-standard-contact',
-  standalone: true,
-  imports: [CommonModule, PosterComponent, ContactFormComponent, ContactCompanyInfoComponent],
-  templateUrl: './contact-company.component.html',
-  styleUrls: ['./contact-company.component.scss']
+    selector: 'a4w-standard-contact',
+    imports: [CommonModule, PosterComponent, ContactFormComponent, ContactCompanyInfoComponent],
+    templateUrl: './contact-company.component.html',
+    styleUrls: ['./contact-company.component.scss']
 })
 export class ContactCompanyComponent {
 

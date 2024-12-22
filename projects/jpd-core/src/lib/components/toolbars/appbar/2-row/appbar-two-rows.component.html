@@ -14,7 +14,7 @@
 <!--                mobile template                  -->
 <!----------------------------------------------------->
 <ng-template #mobile>
-  <mat-toolbar class="fill shadow-bottom relative">
+  <mat-toolbar class="shadow-bottom relative">
     <button mat-icon-button (click)="emitNavToggle()">
       <mat-icon svgIcon="menu"/>
     </button>
@@ -30,7 +30,7 @@
 <!--                tablet template                  -->
 <!----------------------------------------------------->
 <ng-template #tablet>
-  <mat-toolbar class="fill shadow-bottom relative"
+  <mat-toolbar class="shadow-bottom relative"
                [class.transparent-bg]="_transparent"
                [class.absolute]="_transparent || blurry"
                [class.blurry]="blurry"
@@ -41,7 +41,7 @@
       <ng-container [ngTemplateOutlet]="actionsTemplate"/>
     </div>
   </mat-toolbar>
-  <div class="w-full absolute fill shadow-bottom" [style.background-color]="bgColor">
+  <div class="w-full absolute shadow-bottom" [style.background-color]="bgColor">
     @if (isOpen) {
       <div class="second-toolbar">
         <div class="w-full px-3 center-vertical">
@@ -57,7 +57,7 @@
 <!--                desktop template                 -->
 <!----------------------------------------------------->
 <ng-template #desktop>
-  <mat-toolbar class="fill shadow-bottom relative"
+  <mat-toolbar class="shadow-bottom relative"
                [class.transparent-bg]="_transparent"
                [class.absolute]="_transparent || blurry"
                [class.blurry]="blurry"
@@ -88,7 +88,7 @@
 
     @if (rootRoute.children.length === 1) {
       @for (childRoute of rootRoute.children[0].fragments; track childRoute) {
-        <a mat-flat-button class="transparent-background !capitalize"
+        <a mat-button class="transparent-background !capitalize"
            [routerLinkActiveOptions]="linkActiveOptions" (click)="onClickFragment()"
            [fragment]="childRoute" routerLinkActive="active" [routerLink]="[rootRoute.path]">
           {{ childRoute }}
@@ -97,7 +97,7 @@
     } @else {
       <!-- multi site. with sub routes -->
       @for (childRoute of rootRoute.children; track childRoute.name) {
-        <a #ref mat-flat-button class="transparent-background !capitalize demo-btn-color"
+        <a #ref mat-button class="transparent-background !capitalize demo-btn-color"
            routerLinkActive="active" [routerLink]="[rootRoute.path +'/'+ childRoute.path]"
            [routerLinkActiveOptions]="linkActiveOptions"
            (click)="showSubNav(childRoute, ref._elementRef.nativeElement.getBoundingClientRect().x)"

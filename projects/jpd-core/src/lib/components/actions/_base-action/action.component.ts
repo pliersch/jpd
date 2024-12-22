@@ -4,11 +4,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-  selector: 'a4w-action',
-  standalone: true,
-  imports: [CommonModule, MatIconModule, MatButtonModule],
-  templateUrl: './action.component.html',
-  styleUrl: './action.component.scss'
+    selector: 'a4w-action',
+    imports: [CommonModule, MatIconModule, MatButtonModule],
+    templateUrl: './action.component.html',
+    styleUrl: './action.component.scss'
 })
 export class ActionComponent implements OnInit {
 

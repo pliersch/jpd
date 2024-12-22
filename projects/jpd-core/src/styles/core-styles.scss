@@ -3,32 +3,25 @@
 //@use 'padding';
 //@use 'margin';
 //@use 'dimensions';
-@use 'theming/theme-colors';
+
+//@use 'theming/theme-colors';
 @use 'scrollbar';
 
-$dark-primary: mat.define-palette(mat.$purple-palette, 900) !default;
-$dark-accent: mat.define-palette(mat.$green-palette, A200, A100, A400) !default;
-$light-primary: mat.define-palette(mat.$indigo-palette, 900) !default;
-$light-accent: mat.define-palette(mat.$pink-palette, A400, A200, A700) !default;
-$dark-background: #303030 !default;
+//$dark-primary: mat.$magenta-palette !default;
+//$dark-accent: mat.$chartreuse-palette !default;
+//$light-primary: mat.$azure-palette !default;
+//$light-accent: mat.$blue-palette !default;
 
-@use './theming/themes' with (
-  $dark-primary: $dark-primary,
-  $dark-accent: $dark-accent,
-  $light-primary: $light-primary,
-  $light-accent: $light-accent,
-  $dark-background: $dark-background
-);
+//@use './theming/themes' with (
+//  $dark-primary: $dark-primary,
+//  $dark-accent: $dark-accent,
+//  $light-primary: $light-primary,
+//  $light-accent: $light-accent,
+//);
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-//@import 'color-contrast';
-//.foo-color-contrast {
-//  color: tone(#fff); // returns 'white'
-//  color: tone(#444); // returns 'dark'
-//}
 
 html, body {
   height: 100%;

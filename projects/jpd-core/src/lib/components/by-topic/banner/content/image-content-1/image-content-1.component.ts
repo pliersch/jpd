@@ -7,11 +7,10 @@ export interface ImageContent1Model {
 }
 
 @Component({
-  selector: 'a4w-image-content-1',
-  standalone: true,
-  imports: [],
-  templateUrl: './image-content-1.component.html',
-  styleUrl: './image-content-1.component.scss'
+    selector: 'a4w-image-content-1',
+    imports: [],
+    templateUrl: './image-content-1.component.html',
+    styleUrl: './image-content-1.component.scss'
 })
 export class ImageContent1Component extends BaseComponent<ImageContent1Model> {
 

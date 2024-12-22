@@ -5,11 +5,10 @@ import { ImageFallbackDirective } from '../../../../common';
 import { PosterComponent } from '../../../poster/poster.component';
 
 @Component({
-  selector: 'a4w-card-video-1',
-  standalone: true,
-  imports: [CommonModule, PosterComponent, RouterLink, ImageFallbackDirective],
-  templateUrl: './card-video1.component.html',
-  styleUrl: './card-video1.component.scss'
+    selector: 'a4w-card-video-1',
+    imports: [CommonModule, PosterComponent, RouterLink, ImageFallbackDirective],
+    templateUrl: './card-video1.component.html',
+    styleUrl: './card-video1.component.scss'
 })
 export class CardVideo1Component {
 

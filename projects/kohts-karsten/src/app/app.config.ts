@@ -1,7 +1,7 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { Platform } from '@angular/cdk/platform';
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { APP_INITIALIZER, ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, inject, provideAppInitializer } from '@angular/core';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer, provideClientHydration } from '@angular/platform-browser';
@@ -29,14 +29,18 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     provideHttpClient(withFetch()),
     provideRouter(ROUTES),
-    {
-      provide: APP_INITIALIZER,
-      multi: true,
-      useFactory: initTheme,
-      deps: [/*SsrCookieService,*/ ThemeService, Platform, MediaMatcher]
-    },
-    {provide: APP_INITIALIZER, useFactory: initApplication, multi: true, deps: [BreakpointService]},
-    {provide: APP_INITIALIZER, useFactory: initIcons, multi: true, deps: [MatIconRegistry, DomSanitizer]},
+    provideAppInitializer(() => {
+        const initializerFn = (initTheme)(inject(ThemeService), inject(Platform), inject(MediaMatcher));
+        return initializerFn();
+      }),
+    provideAppInitializer(() => {
+        const initializerFn = (initApplication)(inject(BreakpointService));
+        return initializerFn();
+      }),
+    provideAppInitializer(() => {
+        const initializerFn = (initIcons)(inject(MatIconRegistry), inject(DomSanitizer));
+        return initializerFn();
+      }),
     {provide: EnvironmentService, useClass: CustomEnvironmentService},
     {provide: RouteDomService, useClass: CustomRouteDomService},
     {provide: AppDataService, useClass: CustomAppDataService},

@@ -6,11 +6,10 @@ import {
 } from '../scroller/horizontal-scroller/photos-horizontal-scroller.component';
 
 @Component({
-  selector: 'a4w-photos-slideshow',
-  templateUrl: './slideshow.component.html',
-  styleUrls: ['./slideshow.component.scss'],
-  standalone: true,
-  imports: [NgIf, PhotosHorizontalScrollerComponent]
+    selector: 'a4w-photos-slideshow',
+    templateUrl: './slideshow.component.html',
+    styleUrls: ['./slideshow.component.scss'],
+    imports: [NgIf, PhotosHorizontalScrollerComponent]
 })
 export class SlideshowComponent implements OnInit, OnDestroy {
 

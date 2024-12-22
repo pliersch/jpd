@@ -4,15 +4,14 @@ import { RecipesStore } from '@app1/pages/baking/store/recipes.store';
 import { getState } from '@ngrx/signals';
 
 @Component({
-  selector: 'app-bread-table',
-  standalone: true,
-  providers: [RecipesStore],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    JsonPipe
-  ],
-  templateUrl: './bread-table.component.html',
-  styleUrl: './bread-table.component.scss'
+    selector: 'app-bread-table',
+    providers: [RecipesStore],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        JsonPipe
+    ],
+    templateUrl: './bread-table.component.html',
+    styleUrl: './bread-table.component.scss'
 })
 export class BreadTableComponent {
 

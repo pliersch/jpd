@@ -10,19 +10,18 @@ import {
 } from 'jpd-core';
 
 @Component({
-  selector: 'app-post-page',
-  standalone: true,
-  imports: [
-    FragmentDirective,
-    SectionComponent,
-    Post1Component,
-    Parallax1Component,
-    Card31Component,
-    LinkFooterDecoratorComponent,
-    TitleSubtitleDecoratorComponent
-  ],
-  templateUrl: './post-page.component.html',
-  styleUrl: './post-page.component.scss'
+    selector: 'app-post-page',
+    imports: [
+        FragmentDirective,
+        SectionComponent,
+        Post1Component,
+        Parallax1Component,
+        Card31Component,
+        LinkFooterDecoratorComponent,
+        TitleSubtitleDecoratorComponent
+    ],
+    templateUrl: './post-page.component.html',
+    styleUrl: './post-page.component.scss'
 })
 export class PostPageComponent {
 

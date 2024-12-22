@@ -10,11 +10,10 @@ export interface PhoneModel {
 }
 
 @Component({
-  selector: 'a4w-phone-action',
-  standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule, ActionComponent],
-  templateUrl: './phone-action.component.html',
-  styleUrl: './phone-action.component.scss'
+    selector: 'a4w-phone-action',
+    imports: [CommonModule, MatButtonModule, MatIconModule, ActionComponent],
+    templateUrl: './phone-action.component.html',
+    styleUrl: './phone-action.component.scss'
 })
 
 // fixme avoid extending BaseComponent. Use CompanyService to get phone

@@ -16,13 +16,12 @@ import { ScrollerItemComponent } from '../scroller-item/scroller-item.component'
 
 
 @Component({
-  selector: 'a4w-photos-horizontal-scroller',
-  templateUrl: './photos-horizontal-scroller.component.html',
-  styleUrls: ['./photos-horizontal-scroller.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
-  imports: [ScrollerItemComponent, CdkFixedSizeVirtualScroll, CdkVirtualScrollViewport, CdkVirtualForOf]
+    selector: 'a4w-photos-horizontal-scroller',
+    templateUrl: './photos-horizontal-scroller.component.html',
+    styleUrls: ['./photos-horizontal-scroller.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [ScrollerItemComponent, CdkFixedSizeVirtualScroll, CdkVirtualScrollViewport, CdkVirtualForOf]
 })
 export class PhotosHorizontalScrollerComponent implements AfterViewInit, OnChanges {
 

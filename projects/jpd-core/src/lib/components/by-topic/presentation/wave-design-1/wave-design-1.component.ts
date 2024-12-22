@@ -10,11 +10,10 @@ export interface WaveDesign1Model {
 }
 
 @Component({
-  selector: 'a4w-wave-design-1',
-  standalone: true,
-  imports: [CommonModule, CardH1Component],
-  templateUrl: './wave-design-1.component.html',
-  styleUrl: './wave-design-1.component.scss'
+    selector: 'a4w-wave-design-1',
+    imports: [CommonModule, CardH1Component],
+    templateUrl: './wave-design-1.component.html',
+    styleUrl: './wave-design-1.component.scss'
 })
 export class WaveDesign1Component extends BaseComponent<WaveDesign1Model> {
 

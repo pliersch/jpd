@@ -7,11 +7,10 @@ export interface LogoModel {
   logoUrl: string;
 }
 @Component({
-  selector: 'a4w-logo-container',
-  standalone: true,
-  imports: [CommonModule, RouterLink],
-  templateUrl: './logo-container.component.html',
-  styleUrl: './logo-container.component.scss'
+    selector: 'a4w-logo-container',
+    imports: [CommonModule, RouterLink],
+    templateUrl: './logo-container.component.html',
+    styleUrl: './logo-container.component.scss'
 })
 
 export class LogoContainerComponent extends BaseComponent<LogoModel> {

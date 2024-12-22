@@ -8,11 +8,10 @@ import { ScrollService } from '../../../common';
 import { ActionComponent } from '../_base-action/action.component';
 
 @Component({
-  selector: 'a4w-scroll-top-action',
-  standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule, ActionComponent],
-  templateUrl: './scroll-top-action.component.html',
-  styleUrl: './scroll-top-action.component.scss'
+    selector: 'a4w-scroll-top-action',
+    imports: [CommonModule, MatButtonModule, MatIconModule, ActionComponent],
+    templateUrl: './scroll-top-action.component.html',
+    styleUrl: './scroll-top-action.component.scss'
 })
 
 export class ScrollTopActionComponent {

@@ -10,14 +10,12 @@ export interface Cards41Model {
 }
 
 @Component({
-  selector: 'a4w-cards41',
-  standalone: true,
-  imports: [
-    NgIf,
-    Card41Component
-
-  ],
-  templateUrl: './cards41.component.html',
+    selector: 'a4w-cards41',
+    imports: [
+        NgIf,
+        Card41Component
+    ],
+    templateUrl: './cards41.component.html'
 })
 export class Cards41Component extends BaseComponent<Cards41Model> {
 

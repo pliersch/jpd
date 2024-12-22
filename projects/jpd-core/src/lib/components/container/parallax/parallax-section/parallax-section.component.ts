@@ -8,11 +8,10 @@ export interface ParallaxSectionModel {
 }
 
 @Component({
-  selector: 'a4w-section-parallax',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './parallax-section.component.html',
-  styleUrl: './parallax-section.component.scss'
+    selector: 'a4w-section-parallax',
+    imports: [CommonModule],
+    templateUrl: './parallax-section.component.html',
+    styleUrl: './parallax-section.component.scss'
 })
 export class ParallaxSectionComponent extends BaseComponent<ParallaxSectionModel> {
 

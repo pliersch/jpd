@@ -4,17 +4,15 @@ import { RouterOutlet } from '@angular/router';
 import { SideNavMenuComponent } from '@shop/components/side-nav-menu/side-nav-menu.component';
 
 @Component({
-  selector: 'shop-shop-page',
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    SideNavMenuComponent,
-  ],
-  templateUrl: './shop-page.component.html',
-  styleUrls: ['./shop-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  // providers: [ShopStore, DealerStore],
+    selector: 'shop-shop-page',
+    imports: [
+        CommonModule,
+        RouterOutlet,
+        SideNavMenuComponent,
+    ],
+    templateUrl: './shop-page.component.html',
+    styleUrls: ['./shop-page.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShopPageComponent {
 

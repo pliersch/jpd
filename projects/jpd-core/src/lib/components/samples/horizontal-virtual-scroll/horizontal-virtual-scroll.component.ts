@@ -10,13 +10,12 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'a4w-horizontal-virtual-scroll',
-  standalone: true,
-  imports: [CommonModule, CdkFixedSizeVirtualScroll, CdkVirtualScrollViewport, CdkVirtualForOf],
-  templateUrl: './horizontal-virtual-scroll.component.html',
-  styleUrl: './horizontal-virtual-scroll.component.scss',
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'a4w-horizontal-virtual-scroll',
+    imports: [CommonModule, CdkFixedSizeVirtualScroll, CdkVirtualScrollViewport, CdkVirtualForOf],
+    templateUrl: './horizontal-virtual-scroll.component.html',
+    styleUrl: './horizontal-virtual-scroll.component.scss',
+    encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HorizontalVirtualScrollComponent implements AfterViewInit {
   items = Array.from({length: 100}).map((_, i) => `#${i}`);

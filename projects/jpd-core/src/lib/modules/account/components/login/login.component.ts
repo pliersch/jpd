@@ -9,11 +9,10 @@ import { PosterComponent } from '../../../../components';
 import { AuthService } from '../../store/auth.service';
 
 @Component({
-  selector: 'a4w-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
-  standalone: true,
-  imports: [ReactiveFormsModule, MatCardModule, MatFormFieldModule, MatInputModule, NgIf, MatButtonModule, PosterComponent]
+    selector: 'a4w-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss'],
+    imports: [ReactiveFormsModule, MatCardModule, MatFormFieldModule, MatInputModule, NgIf, MatButtonModule, PosterComponent]
 })
 export class LoginComponent implements OnInit {
 

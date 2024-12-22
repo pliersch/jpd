@@ -17,11 +17,10 @@ export interface Card31ComponentModel {
 }
 
 @Component({
-  selector: 'a4w-card31',
-  standalone: true,
-  imports: [CommonModule, RouterLink],
-  templateUrl: './card31.component.html',
-  styleUrls: ['./card31.component.scss']
+    selector: 'a4w-card31',
+    imports: [CommonModule, RouterLink],
+    templateUrl: './card31.component.html',
+    styleUrls: ['./card31.component.scss']
 })
 export class Card31Component extends BaseComponent<Card31ComponentModel> {
 

@@ -6,11 +6,10 @@ import { AdminService } from '../../../modules/admin';
 import { ActionComponent } from '../_base-action/action.component';
 
 @Component({
-  selector: 'a4w-enable-admin-action',
-  standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule, ActionComponent],
-  templateUrl: './enable-admin-action.component.html',
-  styleUrl: './enable-admin-action.component.scss'
+    selector: 'a4w-enable-admin-action',
+    imports: [CommonModule, MatButtonModule, MatIconModule, ActionComponent],
+    templateUrl: './enable-admin-action.component.html',
+    styleUrl: './enable-admin-action.component.scss'
 })
 
 export class EnableAdminActionComponent {

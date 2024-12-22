@@ -8,11 +8,10 @@ export interface BannerContainer1Model {
 }
 
 @Component({
-  selector: 'a4w-banner-container-1',
-  standalone: true,
-  imports: [],
-  templateUrl: './banner-container1.component.html',
-  styleUrl: './banner-container1.component.scss'
+    selector: 'a4w-banner-container-1',
+    imports: [],
+    templateUrl: './banner-container1.component.html',
+    styleUrl: './banner-container1.component.scss'
 })
 export class BannerContainer1Component extends BaseComponent<BannerContainer1Model> {
 

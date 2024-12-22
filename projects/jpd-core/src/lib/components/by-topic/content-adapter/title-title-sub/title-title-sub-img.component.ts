@@ -5,11 +5,10 @@ import { BaseComponent } from '../../../core/base/base.component';
 import { TitleTitleSubtitleImg } from '../model';
 
 @Component({
-  selector: 'a4w-content-ttsi',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './title-title-sub-img.component.html',
-  styleUrls: ['./title-title-sub-img.component.scss']
+    selector: 'a4w-content-ttsi',
+    imports: [CommonModule],
+    templateUrl: './title-title-sub-img.component.html',
+    styleUrls: ['./title-title-sub-img.component.scss']
 })
 export class TitleTitleSubImgComponent extends BaseComponent<TitleTitleSubtitleImg> {
 

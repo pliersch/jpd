@@ -4,16 +4,15 @@ import { HEROES } from '@app1/pages/animation/mock-heroes';
 import { HeroListEnterLeaveComponent } from './hero-list-enter-leave.component';
 
 @Component({
-  standalone: true,
-  selector: 'app-hero-list-enter-leave-page',
-  template: `
+    selector: 'app-hero-list-enter-leave-page',
+    template: `
     <section>
       <h2 class="text-3xl">Enter/Leave</h2>
 
       <app-hero-list-enter-leave [heroes]="heroes" (remove)="onRemove($event)"></app-hero-list-enter-leave>
     </section>
   `,
-  imports: [HeroListEnterLeaveComponent]
+    imports: [HeroListEnterLeaveComponent]
 })
 export class HeroListEnterLeavePageComponent {
   heroes = HEROES.slice();

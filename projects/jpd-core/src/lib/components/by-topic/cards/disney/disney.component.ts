@@ -7,11 +7,10 @@ export interface DisneyModel {
 }
 
 @Component({
-  selector: 'a4w-disney',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './disney.component.html',
-  styleUrl: './disney.component.scss'
+    selector: 'a4w-disney',
+    imports: [CommonModule],
+    templateUrl: './disney.component.html',
+    styleUrl: './disney.component.scss'
 })
 export class DisneyComponent/* extends BaseComponent<DisneyModel>*/ {
 

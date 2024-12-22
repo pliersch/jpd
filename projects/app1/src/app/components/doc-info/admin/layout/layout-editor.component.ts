@@ -12,11 +12,10 @@ import { DocWidgetItem } from '@app1/components/doc-info/store/doc-widget.model'
 import { DocWidgetStore } from '@app1/components/doc-info/store/doc-widget.store';
 
 @Component({
-  selector: 'app-doc-layout-editor',
-  templateUrl: './layout-editor.component.html',
-  styleUrls: ['./layout-editor.component.scss'],
-  standalone: true,
-  imports: [MatButtonModule, CdkDrag, CdkDropList, CdkDropListGroup]
+    selector: 'app-doc-layout-editor',
+    templateUrl: './layout-editor.component.html',
+    styleUrls: ['./layout-editor.component.scss'],
+    imports: [MatButtonModule, CdkDrag, CdkDropList, CdkDropListGroup]
 })
 export class LayoutEditorComponent implements OnInit {
 

@@ -7,14 +7,13 @@ import { BreakpointService, Dimension } from 'jpd-core';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'shop-cart-item-list',
-  standalone: true,
-  imports: [
-    LargeCartItemComponent,
-    SmallCartItemComponent
-  ],
-  templateUrl: './cart-item-list.component.html',
-  styleUrl: './cart-item-list.component.scss'
+    selector: 'shop-cart-item-list',
+    imports: [
+        LargeCartItemComponent,
+        SmallCartItemComponent
+    ],
+    templateUrl: './cart-item-list.component.html',
+    styleUrl: './cart-item-list.component.scss'
 })
 export class CartItemListComponent {
 

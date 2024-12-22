@@ -9,11 +9,10 @@ import { Video } from '../../store/model';
 import { VideoService } from '../../store/video.service';
 
 @Component({
-  selector: 'app-youtube-page',
-  standalone: true,
-  imports: [CommonModule, YoutubePlayerComponent, YoutubePlayListComponent],
-  templateUrl: './youtube-watch-page.component.html',
-  styleUrl: './youtube-watch-page.component.scss',
+    selector: 'app-youtube-page',
+    imports: [CommonModule, YoutubePlayerComponent, YoutubePlayListComponent],
+    templateUrl: './youtube-watch-page.component.html',
+    styleUrl: './youtube-watch-page.component.scss'
 })
 export class YoutubeWatchPageComponent /*implements OnInit */ {
 

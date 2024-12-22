@@ -4,14 +4,13 @@ import { BreadTableComponent } from '@app1/pages/baking/bread-table/bread-table.
 import { AbstractDefaultPageComponent } from 'jpd-core';
 
 @Component({
-  selector: 'app-baking-page',
-  standalone: true,
-  imports: [
-    CommonModule,
-    BreadTableComponent,
-  ],
-  templateUrl: './baking-page.component.html',
-  styleUrls: ['./baking-page.component.scss']
+    selector: 'app-baking-page',
+    imports: [
+        CommonModule,
+        BreadTableComponent,
+    ],
+    templateUrl: './baking-page.component.html',
+    styleUrls: ['./baking-page.component.scss']
 })
 export class BakingPageComponent extends AbstractDefaultPageComponent {
 

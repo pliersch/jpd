@@ -6,17 +6,16 @@ import { RouterLink } from '@angular/router';
 import { CartItem, UpdateOrderPosition } from '@shop/pages/shop/cart/store/cart.model';
 
 @Component({
-  selector: 'shop-large-cart-item',
-  standalone: true,
-  imports: [
-    CurrencyPipe,
-    MatIcon,
-    MatIconButton,
-    NgOptimizedImage,
-    RouterLink
-  ],
-  templateUrl: './large-cart-item.component.html',
-  styleUrl: './large-cart-item.component.scss'
+    selector: 'shop-large-cart-item',
+    imports: [
+        CurrencyPipe,
+        MatIcon,
+        MatIconButton,
+        NgOptimizedImage,
+        RouterLink
+    ],
+    templateUrl: './large-cart-item.component.html',
+    styleUrl: './large-cart-item.component.scss'
 })
 export class LargeCartItemComponent {
 

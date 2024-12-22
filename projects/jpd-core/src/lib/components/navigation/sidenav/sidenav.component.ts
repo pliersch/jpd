@@ -11,11 +11,10 @@ import { PhoneActionComponent } from '../../actions/phone/phone-action.component
 import { ThemeToggleActionComponent } from '../../actions/theme-toggle/theme-toggle-action.component';
 
 @Component({
-  selector: 'a4w-sidenav',
-  standalone: true,
-  imports: [CommonModule, MatListModule, RouterLinkActive, RouterLink, MatSidenavModule, MatIcon, MatIconButton, ThemeToggleActionComponent, PhoneActionComponent],
-  templateUrl: './sidenav.component.html',
-  styleUrl: './sidenav.component.scss'
+    selector: 'a4w-sidenav',
+    imports: [CommonModule, MatListModule, RouterLinkActive, RouterLink, MatSidenavModule, MatIcon, MatIconButton, ThemeToggleActionComponent, PhoneActionComponent],
+    templateUrl: './sidenav.component.html',
+    styleUrl: './sidenav.component.scss'
 })
 export class SidenavComponent implements OnInit {
 

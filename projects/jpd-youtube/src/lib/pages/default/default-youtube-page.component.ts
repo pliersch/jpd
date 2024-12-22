@@ -11,18 +11,17 @@ import { CreateVideoDto, Tag } from '../../store/model';
 import { VideosStore } from '../../store/videos.store';
 
 @Component({
-  selector: 'a4w-default-youtube-page',
-  standalone: true,
-  imports: [
-    ChipFilterComponent,
-    YoutubePlayListComponent,
-    AsyncPipe,
-    YouTubePlayer,
-    MatIcon,
-    MatIconButton
-  ],
-  templateUrl: './default-youtube-page.component.html',
-  styleUrl: './default-youtube-page.component.scss'
+    selector: 'a4w-default-youtube-page',
+    imports: [
+        ChipFilterComponent,
+        YoutubePlayListComponent,
+        AsyncPipe,
+        YouTubePlayer,
+        MatIcon,
+        MatIconButton
+    ],
+    templateUrl: './default-youtube-page.component.html',
+    styleUrl: './default-youtube-page.component.scss'
 })
 export class DefaultYoutubePageComponent {
 

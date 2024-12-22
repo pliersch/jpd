@@ -14,14 +14,13 @@ import { Subscription } from "rxjs";
 import { BreakpointService, Dimension, FragmentDirective, NavigationService, ScrollService } from '../../../common';
 
 @Component({
-  selector: 'a4w-default-page',
-  standalone: true,
-  imports: [
-    CommonModule,
-    FragmentDirective
-  ],
-  template: ``,
-  styles: []
+    selector: 'a4w-default-page',
+    imports: [
+        CommonModule,
+        FragmentDirective
+    ],
+    template: ``,
+    styles: []
 })
 export abstract class AbstractDefaultPageComponent implements OnInit, AfterViewInit, OnDestroy {
 

@@ -11,13 +11,12 @@ export interface TabNavModel {
 }
 
 @Component({
-  selector: 'a4w-tab-nav',
-  standalone: true,
-  imports: [CommonModule, MatTabsModule, MatButtonModule, RouterOutlet],
-  templateUrl: './tab-nav.component.html',
-  styleUrl: './tab-nav.component.scss',
-  animations: [fader]
-  // animations: [slider]
+    selector: 'a4w-tab-nav',
+    imports: [CommonModule, MatTabsModule, MatButtonModule, RouterOutlet],
+    templateUrl: './tab-nav.component.html',
+    styleUrl: './tab-nav.component.scss',
+    animations: [fader]
+    // animations: [slider]
 })
 export class TabNavComponent extends BaseComponent<TabNavModel> implements OnInit /*AfterViewInit*/ {
 

@@ -5,11 +5,10 @@ import { Observable, of } from 'rxjs';
 import { Route } from '../../../../common';
 
 @Component({
-  selector: 'a4w-base-behavior',
-  standalone: true,
-  imports: [CommonModule],
-  template: ``,
-  styles: []
+    selector: 'a4w-base-behavior',
+    imports: [CommonModule],
+    template: ``,
+    styles: []
 })
 export abstract class AbstractNavigationComponent {
 

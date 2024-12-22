@@ -5,14 +5,13 @@ import { getProductCategoryFromUrl } from '@shop/pages/shop/store/models/url-pro
 import { ShopStore } from '@shop/pages/shop/store/shop.store';
 
 @Component({
-  selector: 'shop-product-category',
-  standalone: true,
-  imports: [
-    DefaultListComponent
-  ],
-  templateUrl: './product-category.component.html',
-  styleUrl: './product-category.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'shop-product-category',
+    imports: [
+        DefaultListComponent
+    ],
+    templateUrl: './product-category.component.html',
+    styleUrl: './product-category.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductCategoryComponent implements OnInit {
 

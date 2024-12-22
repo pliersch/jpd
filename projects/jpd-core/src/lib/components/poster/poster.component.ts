@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
-  selector: 'a4w-poster',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './poster.component.html',
-  styleUrls: ['./poster.component.scss']
+    selector: 'a4w-poster',
+    imports: [CommonModule],
+    templateUrl: './poster.component.html',
+    styleUrls: ['./poster.component.scss']
 })
 export class PosterComponent implements OnInit {
 

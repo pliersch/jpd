@@ -20,11 +20,10 @@ export interface Card32ComponentModel {
 }
 
 @Component({
-  selector: 'a4w-card32',
-  standalone: true,
-  imports: [CommonModule, RouterLink, MatIcon, MatAnchor],
-  templateUrl: './card32.component.html',
-  styleUrls: ['./card32.component.scss']
+    selector: 'a4w-card32',
+    imports: [CommonModule, RouterLink, MatIcon, MatAnchor],
+    templateUrl: './card32.component.html',
+    styleUrls: ['./card32.component.scss']
 })
 export class Card32Component extends BaseComponent<Card32ComponentModel> {
 

@@ -22,11 +22,10 @@ import {
 import { NavigationDirective } from '../../../navigation/directives/navigation.directive';
 
 @Component({
-  selector: 'a4w-appbar-two-rows',
-  standalone: true,
-  imports: [CommonModule, MatToolbarModule, MatIconModule, MatButtonModule, RouterLinkActive, RouterLink, MatMenuModule, MatListModule],
-  templateUrl: './appbar-two-rows.component.html',
-  styleUrls: ['./appbar-two-rows.component.scss'],
+    selector: 'a4w-appbar-two-rows',
+    imports: [CommonModule, MatToolbarModule, MatIconModule, MatButtonModule, RouterLinkActive, RouterLink, MatMenuModule, MatListModule],
+    templateUrl: './appbar-two-rows.component.html',
+    styleUrls: ['./appbar-two-rows.component.scss']
 })
 export class AppbarTwoRowsComponent implements OnInit {
 

@@ -14,11 +14,10 @@ import { StickyAppbarComponent } from '../../toolbars/appbar/sticky/sticky-appba
 import { RightSideComponent } from '../side/right/right-side.component';
 
 @Component({
-  selector: 'a4w-root',
-  templateUrl: './a4w-root.component.html',
-  styleUrls: ['./a4w-root.component.scss'],
-  standalone: true,
-  imports: [MatSidenavModule, MatListModule, NgFor, RouterLink, RouterLinkActive, RouterOutlet, AsyncPipe, NgIf, DynamicHostComponent, AppbarComponent, StickyAppbarComponent, NgClass, NgTemplateOutlet, MatButtonModule, SidenavComponent, RightSideComponent, MatToolbar, ScrollDirective]
+    selector: 'a4w-root',
+    templateUrl: './a4w-root.component.html',
+    styleUrls: ['./a4w-root.component.scss'],
+    imports: [MatSidenavModule, MatListModule, NgFor, RouterLink, RouterLinkActive, RouterOutlet, AsyncPipe, NgIf, DynamicHostComponent, AppbarComponent, StickyAppbarComponent, NgClass, NgTemplateOutlet, MatButtonModule, SidenavComponent, RightSideComponent, MatToolbar, ScrollDirective]
 })
 export class A4WRootComponent implements OnInit, AfterViewInit {
 

@@ -5,11 +5,10 @@ import { ImageFallbackDirective } from '../../../../common';
 import { StarsComponent } from '../../miscellaneous/stars/stars.component';
 
 @Component({
-  selector: 'a4w-shop-card-1',
-  standalone: true,
-  imports: [CommonModule, RouterLink, ImageFallbackDirective, ImageFallbackDirective, StarsComponent],
-  templateUrl: './shop-card1.component.html',
-  styleUrl: './shop-card1.component.scss'
+    selector: 'a4w-shop-card-1',
+    imports: [CommonModule, RouterLink, ImageFallbackDirective, ImageFallbackDirective, StarsComponent],
+    templateUrl: './shop-card1.component.html',
+    styleUrl: './shop-card1.component.scss'
 })
 
 export class ShopCard1Component {

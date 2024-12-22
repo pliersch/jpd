@@ -3,11 +3,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-  selector: 'a4w-star-rating',
-  templateUrl: './star-rating.component.html',
-  styleUrls: ['./star-rating.component.scss'],
-  standalone: true,
-  imports: [MatButtonModule, MatIconModule]
+    selector: 'a4w-star-rating',
+    templateUrl: './star-rating.component.html',
+    styleUrls: ['./star-rating.component.scss'],
+    imports: [MatButtonModule, MatIconModule]
 })
 export class StarRatingComponent {
 

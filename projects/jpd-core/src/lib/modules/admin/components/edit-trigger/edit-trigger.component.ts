@@ -4,11 +4,10 @@ import { MatButton } from '@angular/material/button';
 import { PosterComponent } from '../../../../components/poster/poster.component';
 
 @Component({
-  selector: 'a4w-edit-trigger',
-  standalone: true,
-  imports: [CommonModule, PosterComponent, MatButton],
-  templateUrl: './edit-trigger.component.html',
-  styleUrl: './edit-trigger.component.scss',
+    selector: 'a4w-edit-trigger',
+    imports: [CommonModule, PosterComponent, MatButton],
+    templateUrl: './edit-trigger.component.html',
+    styleUrl: './edit-trigger.component.scss'
 })
 export class EditTriggerComponent {
 

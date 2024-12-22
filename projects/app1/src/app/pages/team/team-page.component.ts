@@ -13,21 +13,20 @@ import {
 } from 'jpd-core';
 
 @Component({
-  selector: 'app-team-page',
-  standalone: true,
-  imports: [
-    CommonModule,
-    FragmentDirective,
-    TitleSubtitleDecoratorComponent,
-    SectionComponent,
-    WaveDesign1Component,
-    Card31Component,
-    Banner3Component,
-    Banner4Component,
-    Banner2Component,
-  ],
-  templateUrl: './team-page.component.html',
-  styleUrls: ['./team-page.component.scss']
+    selector: 'app-team-page',
+    imports: [
+        CommonModule,
+        FragmentDirective,
+        TitleSubtitleDecoratorComponent,
+        SectionComponent,
+        WaveDesign1Component,
+        Card31Component,
+        Banner3Component,
+        Banner4Component,
+        Banner2Component,
+    ],
+    templateUrl: './team-page.component.html',
+    styleUrls: ['./team-page.component.scss']
 })
 export class TeamPageComponent extends AbstractDefaultPageComponent {
 

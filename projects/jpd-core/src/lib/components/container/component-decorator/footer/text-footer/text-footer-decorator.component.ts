@@ -8,11 +8,10 @@ export interface TextFooterDecoratorModel {
 }
 
 @Component({
-  selector: 'a4w-text-footer-decorator',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './text-footer-decorator.component.html',
-  styleUrls: ['./text-footer-decorator.component.scss']
+    selector: 'a4w-text-footer-decorator',
+    imports: [CommonModule],
+    templateUrl: './text-footer-decorator.component.html',
+    styleUrls: ['./text-footer-decorator.component.scss']
 })
 export class TextFooterDecoratorComponent extends BaseComponent<TextFooterDecoratorModel> {
 

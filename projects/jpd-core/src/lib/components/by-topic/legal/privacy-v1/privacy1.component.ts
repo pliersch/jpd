@@ -10,11 +10,10 @@ import { MatIcon } from '@angular/material/icon';
 import { PosterComponent } from '../../../poster/poster.component';
 
 @Component({
-  selector: 'a4w-privacy-1',
-  standalone: true,
-  imports: [CommonModule, PosterComponent, MatAccordion, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle, MatIcon],
-  templateUrl: './privacy1.component.html',
-  styleUrl: './privacy1.component.scss'
+    selector: 'a4w-privacy-1',
+    imports: [CommonModule, PosterComponent, MatAccordion, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle, MatIcon],
+    templateUrl: './privacy1.component.html',
+    styleUrl: './privacy1.component.scss'
 })
 export class Privacy1Component /*implements OnInit */ {
 

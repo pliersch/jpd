@@ -7,17 +7,16 @@ import { Observable, of } from 'rxjs';
 import { Route, RouteDomService } from '../../../../common';
 
 @Component({
-  selector: 'a4w-appbar-nav',
-  standalone: true,
-  imports: [
-    MatAnchor,
-    RouterLinkActive,
-    AsyncPipe,
-    MatToolbar,
-    RouterLink
-  ],
-  templateUrl: './appbar-nav.component.html',
-  styleUrl: './appbar-nav.component.scss'
+    selector: 'a4w-appbar-nav',
+    imports: [
+        MatAnchor,
+        RouterLinkActive,
+        AsyncPipe,
+        MatToolbar,
+        RouterLink
+    ],
+    templateUrl: './appbar-nav.component.html',
+    styleUrl: './appbar-nav.component.scss'
 })
 
 export class AppbarNavComponent implements OnInit {

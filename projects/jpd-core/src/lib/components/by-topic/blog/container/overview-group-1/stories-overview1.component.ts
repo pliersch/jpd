@@ -17,11 +17,10 @@ export interface StoriesOverview1Model {
 }
 
 @Component({
-  selector: 'a4w-stories-overview-1',
-  standalone: true,
-  imports: [CommonModule, ActivityList1Component, NewsletterSimpleSubscription1Component, Tags1Component, TopStories1Component],
-  templateUrl: './stories-overview1.component.html',
-  styleUrl: './stories-overview1.component.scss'
+    selector: 'a4w-stories-overview-1',
+    imports: [CommonModule, ActivityList1Component, NewsletterSimpleSubscription1Component, Tags1Component, TopStories1Component],
+    templateUrl: './stories-overview1.component.html',
+    styleUrl: './stories-overview1.component.scss'
 })
 export class StoriesOverview1Component extends BaseComponent<StoriesOverview1Model> {
 

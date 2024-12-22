@@ -9,13 +9,12 @@ export interface Address1Model {
 }
 
 @Component({
-  selector: 'lib-company-address-1',
-  standalone: true,
-  imports: [
-    MatIcon
-  ],
-  templateUrl: './address-1.component.html',
-  styleUrl: './address-1.component.scss'
+    selector: 'lib-company-address-1',
+    imports: [
+        MatIcon
+    ],
+    templateUrl: './address-1.component.html',
+    styleUrl: './address-1.component.scss'
 })
 export class Address1Component extends BaseComponent<Address1Model> {
 

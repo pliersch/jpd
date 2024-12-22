@@ -9,13 +9,12 @@ export interface Phone1Model {
 }
 
 @Component({
-  selector: 'lib-company-phone-1',
-  standalone: true,
-  imports: [
-    MatIcon
-  ],
-  templateUrl: './phone1.component.html',
-  styleUrl: './phone1.component.scss'
+    selector: 'lib-company-phone-1',
+    imports: [
+        MatIcon
+    ],
+    templateUrl: './phone1.component.html',
+    styleUrl: './phone1.component.scss'
 })
 export class Phone1Component extends BaseComponent<Phone1Model> {
 

@@ -8,11 +8,10 @@ import { Observable, of } from 'rxjs';
 import { Route, RouteDomService, ScrollService } from '../../../../common';
 
 @Component({
-  selector: 'a4w-sticky-appbar',
-  standalone: true,
-  imports: [CommonModule, MatToolbarModule, MatButtonModule, RouterLinkActive, RouterLink, MatListModule],
-  templateUrl: './sticky-appbar.component.html',
-  styleUrls: ['./sticky-appbar.component.scss']
+    selector: 'a4w-sticky-appbar',
+    imports: [CommonModule, MatToolbarModule, MatButtonModule, RouterLinkActive, RouterLink, MatListModule],
+    templateUrl: './sticky-appbar.component.html',
+    styleUrls: ['./sticky-appbar.component.scss']
 })
 export class StickyAppbarComponent implements OnInit {
 

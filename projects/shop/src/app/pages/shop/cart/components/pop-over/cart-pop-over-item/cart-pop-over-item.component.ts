@@ -6,18 +6,17 @@ import { RouterLink } from '@angular/router';
 import { CartItem } from '@shop/pages/shop/cart/store/cart.model';
 
 @Component({
-  selector: 'shop-cart-pop-over-item',
-  standalone: true,
-  imports: [
-    MatIcon,
-    MatIconButton,
-    NgOptimizedImage,
-    RouterLink,
-    CurrencyPipe
-  ],
-  templateUrl: './cart-pop-over-item.component.html',
-  styleUrl: './cart-pop-over-item.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'shop-cart-pop-over-item',
+    imports: [
+        MatIcon,
+        MatIconButton,
+        NgOptimizedImage,
+        RouterLink,
+        CurrencyPipe
+    ],
+    templateUrl: './cart-pop-over-item.component.html',
+    styleUrl: './cart-pop-over-item.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CartPopOverItemComponent {
 

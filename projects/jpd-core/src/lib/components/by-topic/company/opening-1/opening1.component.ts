@@ -8,13 +8,12 @@ export interface Opening1Model {
 }
 
 @Component({
-  selector: 'lib-company-opening-1',
-  standalone: true,
-  imports: [
-    MatIcon
-  ],
-  templateUrl: './opening1.component.html',
-  styleUrl: './opening1.component.scss'
+    selector: 'lib-company-opening-1',
+    imports: [
+        MatIcon
+    ],
+    templateUrl: './opening1.component.html',
+    styleUrl: './opening1.component.scss'
 })
 export class Opening1Component extends BaseComponent<Opening1Model> {
 

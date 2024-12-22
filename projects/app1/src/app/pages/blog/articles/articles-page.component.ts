@@ -10,18 +10,17 @@ import {
 } from 'jpd-core';
 
 @Component({
-  selector: 'app-blog-page',
-  standalone: true,
-  imports: [
-    CommonModule,
-    FragmentDirective,
-    SectionComponent,
-    StickySideContainerComponent,
-    StoriesGroup1Component,
-    StoriesOverview1Component,
-  ],
-  templateUrl: './articles-page.component.html',
-  styleUrls: ['./articles-page.component.scss']
+    selector: 'app-blog-page',
+    imports: [
+        CommonModule,
+        FragmentDirective,
+        SectionComponent,
+        StickySideContainerComponent,
+        StoriesGroup1Component,
+        StoriesOverview1Component,
+    ],
+    templateUrl: './articles-page.component.html',
+    styleUrls: ['./articles-page.component.scss']
 })
 export class ArticlesPageComponent extends AbstractDefaultPageComponent {
 

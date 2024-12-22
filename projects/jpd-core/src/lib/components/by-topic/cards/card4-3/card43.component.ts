@@ -11,11 +11,10 @@ export interface Card43Model {
 }
 
 @Component({
-  selector: 'a4w-card43',
-  standalone: true,
-  imports: [CommonModule, ImageFallbackDirective, RouterLink],
-  templateUrl: './card43.component.html',
-  styleUrls: ['./card43.component.scss']
+    selector: 'a4w-card43',
+    imports: [CommonModule, ImageFallbackDirective, RouterLink],
+    templateUrl: './card43.component.html',
+    styleUrls: ['./card43.component.scss']
 })
 export class Card43Component extends BaseComponent<Card43Model> {
 

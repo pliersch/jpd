@@ -3,7 +3,7 @@ import { Platform } from '@angular/cdk/platform';
 import { registerLocaleData } from '@angular/common';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import localeDe from '@angular/common/locales/de';
-import { APP_INITIALIZER, ApplicationConfig, importProvidersFrom, LOCALE_ID } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, LOCALE_ID, inject, provideAppInitializer } from '@angular/core';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { DateFnsAdapter } from '@angular/material-date-fns-adapter';
 import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
@@ -47,15 +47,22 @@ export const appConfig: ApplicationConfig = {
     provideRouter(ROUTES, /*withComponentInputBinding()*/
       // withInMemoryScrolling({anchorScrolling: 'enabled', scrollPositionRestoration: 'top'})
     ),
-    {
-      provide: APP_INITIALIZER,
-      multi: true,
-      useFactory: initTheme,
-      deps: [/*SsrCookieService,*/ ThemeService, Platform, MediaMatcher]
-    },
-    {provide: APP_INITIALIZER, useFactory: initApplication, multi: true, deps: [BreakpointService]},
-    {provide: APP_INITIALIZER, useFactory: initIcons, multi: true, deps: [MatIconRegistry, DomSanitizer]},
-    {provide: APP_INITIALIZER, useFactory: initProjectIcons, multi: true, deps: [MatIconRegistry, DomSanitizer]},
+    provideAppInitializer(() => {
+        const initializerFn = (initTheme)(inject(ThemeService), inject(Platform), inject(MediaMatcher));
+        return initializerFn();
+      }),
+    provideAppInitializer(() => {
+        const initializerFn = (initApplication)(inject(BreakpointService));
+        return initializerFn();
+      }),
+    provideAppInitializer(() => {
+        const initializerFn = (initIcons)(inject(MatIconRegistry), inject(DomSanitizer));
+        return initializerFn();
+      }),
+    provideAppInitializer(() => {
+        const initializerFn = (initProjectIcons)(inject(MatIconRegistry), inject(DomSanitizer));
+        return initializerFn();
+      }),
     {provide: ENV_TOKEN, useValue: environment},
     {provide: AppDataService, useClass: CustomAppDataService},
     {provide: RouteDomService, useClass: CustomRouteDomService},

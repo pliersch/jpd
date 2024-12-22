@@ -11,11 +11,10 @@ export interface Foo {
 }
 
 @Component({
-  selector: 'app-services-icons',
-  standalone: true,
-  imports: [CommonModule, RouterLink],
-  templateUrl: './avatar-tsd4.component.html',
-  styleUrls: ['./avatar-tsd4.component.scss']
+    selector: 'app-services-icons',
+    imports: [CommonModule, RouterLink],
+    templateUrl: './avatar-tsd4.component.html',
+    styleUrls: ['./avatar-tsd4.component.scss']
 })
 export class AvatarTSD4Component extends BaseComponent<Foo> {
 

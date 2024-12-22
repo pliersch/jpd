@@ -10,11 +10,10 @@ export interface EndlessGridModel {
 }
 
 @Component({
-  selector: 'a4w-endless-grid',
-  standalone: true,
-  imports: [CommonModule, RouterLink],
-  templateUrl: './endless-grid.component.html',
-  styleUrls: ['./endless-grid.component.scss']
+    selector: 'a4w-endless-grid',
+    imports: [CommonModule, RouterLink],
+    templateUrl: './endless-grid.component.html',
+    styleUrls: ['./endless-grid.component.scss']
 })
 export class EndlessGridComponent extends BaseComponent<EndlessGridModel> implements OnInit {
 

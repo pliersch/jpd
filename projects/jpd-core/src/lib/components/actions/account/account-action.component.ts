@@ -4,11 +4,10 @@ import { Themes, ThemeService } from '../../../common';
 import { ActionComponent } from '../_base-action/action.component';
 
 @Component({
-  selector: 'a4w-account-action',
-  standalone: true,
-  imports: [CommonModule, ActionComponent],
-  templateUrl: './account-action.component.html',
-  styleUrl: './account-action.component.scss'
+    selector: 'a4w-account-action',
+    imports: [CommonModule, ActionComponent],
+    templateUrl: './account-action.component.html',
+    styleUrl: './account-action.component.scss'
 })
 export class AccountActionComponent {
 
