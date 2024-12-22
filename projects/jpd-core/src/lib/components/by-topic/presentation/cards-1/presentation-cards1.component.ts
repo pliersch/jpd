@@ -4,8 +4,7 @@ import { map } from 'rxjs/operators';
 import { BreakpointService, Dimension, FragmentDirective } from '../../../../common';
 import { BaseComponent } from '../../../core/base/base.component';
 import { Card11Component, Card11Model } from '../../cards/card1-1/card11.component';
-import { ImageCard1Component, ImageCard1Model } from '../../cards/image-card-1/image-card1.component';
-import { ImageCard2Component } from '../../cards/image-card-2/image-card2.component';
+import { ImageCard1Model } from '../../cards/image-card-1/image-card1.component';
 
 export interface StoriesGroup1Model {
   cards: Card11Model[]; // 2 items
@@ -13,13 +12,11 @@ export interface StoriesGroup1Model {
 }
 
 @Component({
-    selector: 'a4w-presentation-cards-1',
-    imports: [
-        ImageCard1Component,
-        Card11Component,
-        ImageCard2Component
-    ],
-    templateUrl: './presentation-cards1.component.html'
+  selector: 'a4w-presentation-cards-1',
+  imports: [
+    Card11Component
+  ],
+  templateUrl: './presentation-cards1.component.html'
 })
 export class PresentationCards1Component extends BaseComponent<StoriesGroup1Model> {
 

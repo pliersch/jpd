@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { PosterComponent } from '../../../poster/poster.component';
 
 export interface Card44Model {
   title: string
@@ -14,10 +13,10 @@ export interface Card44Model {
 }
 
 @Component({
-    selector: 'a4w-card44',
-    imports: [CommonModule, RouterLink, PosterComponent],
-    templateUrl: './card44.component.html',
-    styleUrl: './card44.component.scss'
+  selector: 'a4w-card44',
+  imports: [CommonModule, RouterLink],
+  templateUrl: './card44.component.html',
+  styleUrl: './card44.component.scss'
 })
 export class Card44Component {
 

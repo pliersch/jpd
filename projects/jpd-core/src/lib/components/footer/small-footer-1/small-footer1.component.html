@@ -2,7 +2,7 @@
   <div class="flex justify-center">
     <nav>
       @for (route of routes; track route) {
-        <a mat-flat-button class="!capitalize transparent-background"
+        <a mat-button class="!capitalize"
            [routerLink]="route.path">
           {{ route.name }}
         </a>

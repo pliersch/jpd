@@ -4,11 +4,11 @@ import { DynamicComponentService } from './dynamic-component.service';
 
 
 @Component({
-    selector: 'a4w-dynamic',
-    template: `
-      <ng-template appDynamicHost></ng-template>`,
-    styles: [],
-    imports: [DynamicComponentDirective]
+  selector: 'a4w-dynamic',
+  template: `
+    <ng-template appDynamicHost></ng-template>`,
+  styles: [],
+  imports: []
 })
 export class DynamicHostComponent implements OnInit {
 

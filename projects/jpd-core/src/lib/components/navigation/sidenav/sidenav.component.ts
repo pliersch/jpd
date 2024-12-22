@@ -1,7 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { MatIconButton } from '@angular/material/button';
-import { MatIcon } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { IsActiveMatchOptions, RouterLink, RouterLinkActive } from '@angular/router';
@@ -11,10 +9,10 @@ import { PhoneActionComponent } from '../../actions/phone/phone-action.component
 import { ThemeToggleActionComponent } from '../../actions/theme-toggle/theme-toggle-action.component';
 
 @Component({
-    selector: 'a4w-sidenav',
-    imports: [CommonModule, MatListModule, RouterLinkActive, RouterLink, MatSidenavModule, MatIcon, MatIconButton, ThemeToggleActionComponent, PhoneActionComponent],
-    templateUrl: './sidenav.component.html',
-    styleUrl: './sidenav.component.scss'
+  selector: 'a4w-sidenav',
+  imports: [CommonModule, MatListModule, RouterLinkActive, RouterLink, MatSidenavModule, ThemeToggleActionComponent, PhoneActionComponent],
+  templateUrl: './sidenav.component.html',
+  styleUrl: './sidenav.component.scss'
 })
 export class SidenavComponent implements OnInit {
 

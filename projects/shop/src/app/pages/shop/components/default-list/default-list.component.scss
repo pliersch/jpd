@@ -1,47 +1,67 @@
-@use "@angular/material" as mat;
-
-.elevation {
-  @include mat.elevation-transition();
-  @include mat.elevation(4);
-
-  &:hover {
-    @include mat.elevation(9);
-  }
-}
-
 .media {
   display: flex;
   padding: 0.5rem;
 
-  @media (min-width: 400px) {
+  @media (min-width: 688px) {
     width: 50%;
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 888px) {
     width: calc(100% / 3)
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1088px) {
     width: calc(100% / 4);
   }
 
-  @media (min-width: 1000px) {
+  @media (min-width: 1288px) {
     width: calc(100% / 5);
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1488px) {
     width: calc(100% / 6);
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1688px) {
     width: calc(100% / 6);
   }
 
-  @media (min-width: 1600px) {
+  @media (min-width: 1888px) {
     width: calc(100% / 7);
   }
 
-  @media (min-width: 1800px) {
+  @media (min-width: 2088px) {
     width: calc(100% / 8);
   }
+  //@media (min-width: 400px) {
+  //  width: 50%;
+  //}
+  //
+  //@media (min-width: 600px) {
+  //  width: calc(100% / 3)
+  //}
+  //
+  //@media (min-width: 800px) {
+  //  width: calc(100% / 4);
+  //}
+  //
+  //@media (min-width: 1000px) {
+  //  width: calc(100% / 5);
+  //}
+  //
+  //@media (min-width: 1200px) {
+  //  width: calc(100% / 6);
+  //}
+  //
+  //@media (min-width: 1400px) {
+  //  width: calc(100% / 6);
+  //}
+  //
+  //@media (min-width: 1600px) {
+  //  width: calc(100% / 7);
+  //}
+  //
+  //@media (min-width: 1800px) {
+  //  width: calc(100% / 8);
+  //}
 }

@@ -1,6 +1,6 @@
 <p>Versandkostenermittlung nach: </p>
 <form class="max-w-sm mx-auto">
-  <mat-form-field color="accent">
+  <mat-form-field>
     <mat-label>Land</mat-label>
     <mat-select [(value)]="selectedCountry" (selectionChange)="onSelectCountry()">
       @for (country of countries; track country.code) {

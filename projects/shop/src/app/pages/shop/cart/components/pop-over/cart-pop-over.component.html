@@ -11,42 +11,43 @@
              [cdkConnectedOverlayOrigin]="trigger"
              [cdkConnectedOverlayOpen]="isOpen">
 
-  <a4w-poster rounded="rounded-lg" class="w-80 max-w-80
-  text-sm font-normal text-[color:--theme-default-text]">
-
-    <div class="p-4">
-      @if (cartStore.entities().length > 0) {
-        @for (item of cartStore.items(); track item.id) {
-          <shop-cart-pop-over-item [item]="item" (itemEvent)="delete($event)"/>
-        }
-        <div>
-          <div class="mt-4">
-            <p> Zwischensumme: {{ cartStore.subtotal() | currency:'EUR' }} </p>
-            @if (cartStore.freeShipping()) {
-              <p> kostenloser Versand nach Deutschland</p>
-            } @else {
-              <p>
-                Es fehlen noch {{ cartStore.freeShippingDiff() | currency:'EUR' }} und ihre Bestellung ist
-                versandkostenfrei.
-              </p>
+  <div class="w-80 max-w-80  text-sm font-normal ">
+    <mat-card appearance="outlined">
+      <mat-card-content>
+        <div class="p-4">
+          @if (cartStore.entities().length > 0) {
+            @for (item of cartStore.items(); track item.id) {
+              <shop-cart-pop-over-item [item]="item" (itemEvent)="delete($event)"/>
             }
-          </div>
-          <div class="flex justify-around mt-4">
-            <a mat-flat-button color="accent" (click)="isOpen = false" routerLink="/warenkorb">
-              Warenkorb
-            </a>
-            <a mat-flat-button color="accent" (click)="isOpen = false" routerLink="/kasse">
-              Kasse
-            </a>
+            <div>
+              <div class="mt-4">
+                <p> Zwischensumme: {{ cartStore.subtotal() | currency:'EUR' }} </p>
+                @if (cartStore.freeShipping()) {
+                  <p> kostenloser Versand nach Deutschland</p>
+                } @else {
+                  <p>
+                    Es fehlen noch {{ cartStore.freeShippingDiff() | currency:'EUR' }} und ihre Bestellung ist
+                    versandkostenfrei.
+                  </p>
+                }
+              </div>
+              <div class="flex justify-around mt-4">
+                <a mat-flat-button (click)="isOpen = false" routerLink="/warenkorb">
+                  Warenkorb
+                </a>
+                <a mat-flat-button (click)="isOpen = false" routerLink="/kasse">
+                  Kasse
+                </a>
 
-          </div>
+              </div>
+            </div>
+          } @else {
+            <div class="flex items-center justify-center">
+              <p>Ihr Warenkorb ist leer</p>
+            </div>
+          }
         </div>
-      } @else {
-        <div class="flex items-center justify-center">
-          <p>Ihr Warenkorb ist leer</p>
-        </div>
-      }
-    </div>
-
-  </a4w-poster>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </ng-template>

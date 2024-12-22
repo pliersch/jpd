@@ -1,9 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatIconButton } from '@angular/material/button';
-import { MatError, MatFormField, MatFormFieldModule } from '@angular/material/form-field';
-import { MatIcon } from '@angular/material/icon';
+import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatInput, MatInputModule } from '@angular/material/input';
 import { MatTab, MatTabGroup } from '@angular/material/tabs';
 import { Subscription } from 'rxjs';
@@ -27,10 +25,10 @@ export function castTo<T>(): (row: unknown) => T {
 }
 
 @Component({
-    selector: 'a4w-admin-component-bar',
-    imports: [CommonModule, MatError, MatFormField, MatInput, FormsModule, MatFormFieldModule, MatInputModule, MatTabGroup, MatTab, MatIconButton, MatIcon],
-    templateUrl: './admin-component-bar.component.html',
-    styleUrl: './admin-component-bar.component.scss'
+  selector: 'a4w-admin-component-bar',
+  imports: [CommonModule, MatFormField, MatInput, FormsModule, MatFormFieldModule, MatInputModule, MatTabGroup, MatTab],
+  templateUrl: './admin-component-bar.component.html',
+  styleUrl: './admin-component-bar.component.scss'
 })
 export class AdminComponentBarComponent implements OnInit, OnDestroy {
 

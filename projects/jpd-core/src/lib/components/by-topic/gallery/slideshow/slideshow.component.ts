@@ -1,4 +1,4 @@
-import { Location, NgIf } from '@angular/common';
+import { Location } from '@angular/common';
 import { Component, EventEmitter, HostListener, OnDestroy, OnInit, Output } from '@angular/core';
 import { AlertService, ImageService } from '../../../../common';
 import {
@@ -6,10 +6,10 @@ import {
 } from '../scroller/horizontal-scroller/photos-horizontal-scroller.component';
 
 @Component({
-    selector: 'a4w-photos-slideshow',
-    templateUrl: './slideshow.component.html',
-    styleUrls: ['./slideshow.component.scss'],
-    imports: [NgIf, PhotosHorizontalScrollerComponent]
+  selector: 'a4w-photos-slideshow',
+  templateUrl: './slideshow.component.html',
+  styleUrls: ['./slideshow.component.scss'],
+  imports: [PhotosHorizontalScrollerComponent]
 })
 export class SlideshowComponent implements OnInit, OnDestroy {
 

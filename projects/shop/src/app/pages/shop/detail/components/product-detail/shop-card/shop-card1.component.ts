@@ -1,13 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { MatCard } from '@angular/material/card';
 import { RouterLink } from '@angular/router';
 import { ImageFallbackDirective, StarsComponent } from 'jpd-core';
 
 @Component({
-    selector: 'shop-card-1',
-    imports: [CommonModule, RouterLink, ImageFallbackDirective, ImageFallbackDirective, StarsComponent],
-    templateUrl: './shop-card1.component.html',
-    styleUrl: './shop-card1.component.scss'
+  selector: 'shop-card-1',
+  imports: [CommonModule, RouterLink, ImageFallbackDirective, ImageFallbackDirective, StarsComponent, ImageFallbackDirective, StarsComponent, MatCard],
+  templateUrl: './shop-card1.component.html',
+  styleUrl: './shop-card1.component.scss'
 })
 
 export class ShopCard1Component {

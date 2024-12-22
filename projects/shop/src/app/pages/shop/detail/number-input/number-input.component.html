@@ -1,6 +1,6 @@
 <div class="inline-flex my-3">
   <p class="m-auto">{{ text }}</p>
-  <button type="button" mat-icon-button color="accent" (click)="decrease()"
+  <button type="button" mat-icon-button (click)="decrease()"
           [disabled]="disabled" aria-label="reduziert Bestellmenge um 1">
     <mat-icon>remove</mat-icon>
   </button>
@@ -18,7 +18,7 @@
       }
     </div>
   </div>
-  <button type="button" mat-icon-button color="accent" (click)="increase()"
+  <button type="button" mat-icon-button (click)="increase()"
           [disabled]="disabled" aria-label="erhöht Bestellmenge um 1">
     <mat-icon>add</mat-icon>
   </button>

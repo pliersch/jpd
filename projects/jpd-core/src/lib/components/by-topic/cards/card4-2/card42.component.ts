@@ -17,10 +17,10 @@ export interface Card42Model {
 }
 
 @Component({
-    selector: 'a4w-card42',
-    imports: [CommonModule, MatIconModule, MatAccordion, MatExpansionModule, MatExpansionPanel, MatExpansionPanelTitle],
-    templateUrl: './card42.component.html',
-    styleUrls: ['./card42.component.scss']
+  selector: 'a4w-card42',
+  imports: [CommonModule, MatIconModule, MatAccordion, MatExpansionModule, MatExpansionPanel, MatExpansionPanelTitle],
+  templateUrl: './card42.component.html',
+  styleUrls: ['./card42.component.scss']
 })
 export class Card42Component extends BaseComponent<Card42Model> {
 

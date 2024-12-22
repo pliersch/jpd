@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { FragmentDirective, SafePipe } from '../../../../../common';
 import { BaseComponent } from '../../../../core/base/base.component';
-import { GMapsIframeComponent } from '../../../maps/g-maps-iframe/g-maps-iframe.component';
 
 export interface MapsOpeningContactModel {
   url: string;
@@ -11,15 +10,14 @@ export interface MapsOpeningContactModel {
 }
 
 @Component({
-    selector: 'a4w-maps-opening-contact',
-    imports: [
-        MatIcon,
-        GMapsIframeComponent,
-        SafePipe,
-        NgForOf
-    ],
-    templateUrl: './maps-opening-contact.component.html',
-    styleUrl: './maps-opening-contact.component.scss'
+  selector: 'a4w-maps-opening-contact',
+  imports: [
+    MatIcon,
+    SafePipe,
+    NgForOf
+  ],
+  templateUrl: './maps-opening-contact.component.html',
+  styleUrl: './maps-opening-contact.component.scss'
 })
 export class MapsOpeningContactComponent extends BaseComponent<MapsOpeningContactModel> {
 

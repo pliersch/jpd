@@ -1,6 +1,6 @@
-import { AsyncPipe, NgComponentOutlet } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { Component, Input, Type } from '@angular/core';
-import { MatAnchor, MatButton } from '@angular/material/button';
+import { MatButton } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { CookieConsentService } from '../../../../common';
@@ -16,17 +16,14 @@ export interface IFramePlaceholderModel {
 }
 
 @Component({
-    selector: 'a4w-iframe-placeholder',
-    imports: [
-        NgComponentOutlet,
-        MatButton,
-        MatAnchor,
-        RouterLink,
-        AsyncPipe,
-        // MatProgressSpinner
-    ],
-    templateUrl: './iframe-placeholder.component.html',
-    styleUrl: './iframe-placeholder.component.scss'
+  selector: 'a4w-iframe-placeholder',
+  imports: [
+    MatButton,
+    RouterLink,
+    AsyncPipe,
+  ],
+  templateUrl: './iframe-placeholder.component.html',
+  styleUrl: './iframe-placeholder.component.scss'
 })
 export class IframePlaceholderComponent {
 

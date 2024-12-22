@@ -1,16 +1,17 @@
-<div class="flex flex-col text-sm w-full rounded overflow-hidden cursor-pointer elevation">
-  <a [routerLink]="[link, linkId]">
-    <div>
-      <div class="flex justify-center items-center">
-        <img a4wImgFallback class="object-cover"
-             [src]="imageUrl" alt="image of kratom">
+<div class="flex flex-col text-sm w-full">
+  <mat-card class="p-3 elevation" appearance="outlined">
+    <a [routerLink]="[link, linkId]">
+      <div>
+        <div class="flex justify-center items-center">
+          <img a4wImgFallback class="object-cover"
+               [src]="imageUrl" alt="image of kratom">
+        </div>
+        <a4w-stars [rate]="rating"/>
       </div>
-      <a4w-stars [rate]="rating"/>
-    </div>
-    <div class="flex flex-col px-2 py-4 theme-contrast-component">
-      <p>{{ subtitle }}</p>
-      <p class="font-normal">{{ title }}</p>
-      <!--      <p>{{ price | currency:'EUR' }}</p>-->
-    </div>
-  </a>
+      <div class="flex flex-col pt-3 theme-contrast-component">
+        <p>{{ subtitle }}</p>
+        <p class="font-normal">{{ title }}</p>
+      </div>
+    </a>
+  </mat-card>
 </div>

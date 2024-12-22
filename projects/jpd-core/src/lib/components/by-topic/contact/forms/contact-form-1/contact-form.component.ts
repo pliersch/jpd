@@ -8,10 +8,10 @@ import { MatInputModule } from '@angular/material/input';
 import { Subscription } from 'rxjs';
 
 @Component({
-    selector: 'a4w-contact-form',
-    imports: [CommonModule, FormsModule, MatButtonModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatCheckboxModule],
-    templateUrl: './contact-form.component.html',
-    styleUrls: ['./contact-form.component.scss']
+  selector: 'a4w-contact-form',
+  imports: [CommonModule, FormsModule, MatButtonModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatCheckboxModule],
+  templateUrl: './contact-form.component.html',
+  styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent implements OnInit, OnDestroy {
 

@@ -1,22 +1,20 @@
 import { AsyncPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatAnchor } from '@angular/material/button';
-import { MatToolbar } from '@angular/material/toolbar';
 import { IsActiveMatchOptions, RouterLink, RouterLinkActive } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { Route, RouteDomService } from '../../../../common';
 
 @Component({
-    selector: 'a4w-appbar-nav',
-    imports: [
-        MatAnchor,
-        RouterLinkActive,
-        AsyncPipe,
-        MatToolbar,
-        RouterLink
-    ],
-    templateUrl: './appbar-nav.component.html',
-    styleUrl: './appbar-nav.component.scss'
+  selector: 'a4w-appbar-nav',
+  imports: [
+    MatAnchor,
+    RouterLinkActive,
+    AsyncPipe,
+    RouterLink
+  ],
+  templateUrl: './appbar-nav.component.html',
+  styleUrl: './appbar-nav.component.scss'
 })
 
 export class AppbarNavComponent implements OnInit {

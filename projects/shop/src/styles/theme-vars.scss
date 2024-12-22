@@ -1,0 +1,23 @@
+@use '@angular/material' as mat;
+@use 'sass:color';
+@use 'theme-colors' as shop-theme;
+
+.light-theme {
+  //@include mat.elevation-classes();
+  //@include mat.app-background();
+  //@include theme-colors($dark-theme, $light-theme);
+  //@include poster.theme($dark-theme);
+  //@include mat.all-component-colors($dark-theme);
+
+  --theme-primary-alpha-50: #{color.adjust(mat.get-theme-color(shop-theme.$dark-theme, primary, 50), $alpha: -0.5)};
+}
+
+.dark-theme {
+  //@include mat.elevation-classes();
+  //@include mat.app-background();
+  //@include theme-colors($dark-theme, $light-theme);
+  //@include poster.theme($dark-theme);
+  //@include mat.all-component-colors($dark-theme);
+
+  --theme-primary-alpha-50: #{color.adjust(mat.get-theme-color(shop-theme.$light-theme, primary, 50), $alpha: -0.5)};
+}

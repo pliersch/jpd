@@ -2,19 +2,17 @@ import { Component } from '@angular/core';
 import { ImageFallbackDirective } from '../../../../../common';
 import { LoremIpsumFactory } from '../../../../../content';
 import { BackActionComponent } from '../../../../actions/back/back-action.component';
-import { Parallax1Component } from '../../../../container/parallax/parallax-1/parallax1.component';
 import { PosterComponent } from '../../../../poster/poster.component';
 
 @Component({
-    selector: 'a4w-post-1',
-    imports: [
-        ImageFallbackDirective,
-        Parallax1Component,
-        PosterComponent,
-        BackActionComponent
-    ],
-    templateUrl: './post1.component.html',
-    styleUrl: './post1.component.scss'
+  selector: 'a4w-post-1',
+  imports: [
+    ImageFallbackDirective,
+    PosterComponent,
+    BackActionComponent
+  ],
+  templateUrl: './post1.component.html',
+  styleUrl: './post1.component.scss'
 })
 export class Post1Component {
   images =

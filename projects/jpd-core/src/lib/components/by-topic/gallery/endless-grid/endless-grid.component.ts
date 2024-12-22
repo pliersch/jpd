@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, isDevMode, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { ImageService } from '../../../../common';
 import { BaseComponent } from '../../../core/base/base.component';
 
@@ -10,10 +9,10 @@ export interface EndlessGridModel {
 }
 
 @Component({
-    selector: 'a4w-endless-grid',
-    imports: [CommonModule, RouterLink],
-    templateUrl: './endless-grid.component.html',
-    styleUrls: ['./endless-grid.component.scss']
+  selector: 'a4w-endless-grid',
+  imports: [CommonModule],
+  templateUrl: './endless-grid.component.html',
+  styleUrls: ['./endless-grid.component.scss']
 })
 export class EndlessGridComponent extends BaseComponent<EndlessGridModel> implements OnInit {
 

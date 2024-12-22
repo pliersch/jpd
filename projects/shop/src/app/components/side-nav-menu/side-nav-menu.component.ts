@@ -1,19 +1,23 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal, ViewEncapsulation } from '@angular/core';
+import { MatAnchor } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatList } from '@angular/material/list';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 export interface MyData {
   name: string;
+  content?: string;
   children?: MyData[];
-  url: string;
+  url?: string;
+  links?: string[];
 }
 
 @Component({
   selector: 'shop-side-nav-menu',
-  imports: [MatExpansionModule, MatList, RouterLinkActive, RouterLink],
+  imports: [MatExpansionModule, MatList, RouterLink, RouterLinkActive, MatAnchor],
   templateUrl: './side-nav-menu.component.html',
   styleUrl: './side-nav-menu.component.scss',
+  encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SideNavMenuComponent {
@@ -29,29 +33,43 @@ export class SideNavMenuComponent {
   createData(): MyData[] {
     return [
       {
-        name: 'adslödösdöldsö', url: 'foo',
-        children: [{url: 'foo', name: 'a11'}, {url: 'foo', name: 'a12'}, {url: 'foo', name: 'a13'}, {
-          name: 'a14', url: 'foo',
-          children: [{url: 'foo', name: 'a21'}, {url: 'foo', name: 'a22'}, {url: 'foo', name: 'a23'}, {
-            url: 'foo',
-            name: 'a24'
-          },]
-        },]
+        name: 'Kratom',
+        children: [
+          {
+            name: 'White',
+            content: 'Content of White',
+            links: [
+              'white-vein',
+              'green-vein',
+              'red-vein',
+            ]
+          },
+          {
+            name: 'Green',
+            content: 'Content of Green',
+            links: [
+              'Green 1 Content of Green',
+              'Green 2',
+              'Green 3',
+            ]
+          }],
+        // links: [
+        //   '11111111111',
+        //   '22222222222',
+        //   '33333333333',
+        // ]
       },
       {
-        name: 'bsölöfbxövbgc', url: 'foo',
-        children: [{url: 'foo', name: 'b11'}, {url: 'foo', name: 'b12'}, {url: 'foo', name: 'b13'}, {
-          url: 'foo',
-          name: 'b14'
-        },]
+        name: 'CBD',
+        children: [{
+          name: 'item 1',
+          content: 'Content of  02-01',
+        }]
       },
       {
-        name: 'cvcölcöbönn öfhl', url: 'foo',
-        children: [{url: 'foo', name: 'c11'}, {url: 'foo', name: 'c12'}, {url: 'foo', name: 'c13'}, {
-          url: 'foo',
-          name: 'c14'
-        },]
-      }]
+        name: 'Sonstiges',
+      },
+    ]
   }
 
 }

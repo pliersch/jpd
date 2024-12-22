@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FragmentDirective } from '../../../../common';
 import { BaseComponent } from '../../../core/base/base.component';
-import { PosterComponent } from '../../../poster/poster.component';
 
 export interface LegalModel {
   company: string;
@@ -22,12 +21,10 @@ export interface LegalModel {
 }
 
 @Component({
-    selector: 'a4w-legal-notice-1',
-    imports: [
-        PosterComponent
-    ],
-    templateUrl: './legal-notice.component.html',
-    styleUrl: './legal-notice.component.scss'
+  selector: 'a4w-legal-notice-1',
+  imports: [],
+  templateUrl: './legal-notice.component.html',
+  styleUrl: './legal-notice.component.scss'
 })
 export class LegalNoticeComponent extends BaseComponent<LegalModel> {
 
