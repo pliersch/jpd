@@ -1,9 +1,20 @@
-<nav class="flex">
-  @for (route of routes; track route) {
-    <a mat-button class="!capitalize"
-       [routerLinkActiveOptions]="linkActiveOptions"
-       routerLinkActive="active" [routerLink]="[route.path]">
-      {{ route.title }}
-    </a>
-  }
-</nav>
+<div class="flex">
+
+  <!--  <nav class="flex">-->
+  <!--    @for (route of routes; track route) {-->
+  <!--      <a mat-button class="!capitalize"-->
+  <!--         [routerLinkActiveOptions]="linkActiveOptions"-->
+  <!--         routerLinkActive="active" [routerLink]="[route.path]">-->
+  <!--        {{ route.title }}-->
+  <!--      </a>-->
+  <!--    }-->
+  <!--  </nav>-->
+
+  <section class="example-section">
+    <mat-slide-toggle
+      class="example-margin">
+      Lab-Tested
+    </mat-slide-toggle>
+  </section>
+</div>
+

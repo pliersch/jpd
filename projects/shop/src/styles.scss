@@ -1,7 +1,4 @@
 @use '@angular/material' as mat;
-
-@use 'sass:color';
-
 @use '../../../projects/jpd-core/src/styles/core-styles';
 @use 'styles/theme-vars';
 @use 'styles/theme-colors' as shop-theme;
@@ -14,8 +11,6 @@
     //a, p {
     //  color: white;
     //}
-
-    --theme-grey-alpha-75: #{color.adjust(#bdbdbd, $alpha: -0.75)};
 
     --mat-sys-surface: #313131;
     //--mat-sys-background: #212121;

@@ -2,6 +2,22 @@
 @use 'sass:color';
 @use 'theme-colors' as shop-theme;
 
+
+//////////////////////////////////////////////////////////
+//                   light
+//////////////////////////////////////////////////////////
+$_light_palettes: (
+  grey: #212121,
+);
+
+
+//////////////////////////////////////////////////////////
+//                   dark
+//////////////////////////////////////////////////////////
+$_dark_palettes: (
+  grey: #bdbdbd,
+);
+
 .light-theme {
   //@include mat.elevation-classes();
   //@include mat.app-background();
@@ -10,6 +26,11 @@
   //@include mat.all-component-colors($dark-theme);
 
   --theme-primary-alpha-50: #{color.adjust(mat.get-theme-color(shop-theme.$dark-theme, primary, 50), $alpha: -0.5)};
+  --theme-grey-alpha-10: #{color.adjust(#212121, $alpha: -0.10)};
+  --theme-grey-alpha-25: #{color.adjust(#212121, $alpha: -0.25)};
+  --theme-grey-alpha-50: #{color.adjust(#212121, $alpha: -0.50)};
+  --theme-grey-alpha-75: #{color.adjust(#212121, $alpha: -0.75)};
+  --theme-grey-alpha-90: #{color.adjust(#212121, $alpha: -0.90)};
 }
 
 .dark-theme {
@@ -20,4 +41,9 @@
   //@include mat.all-component-colors($dark-theme);
 
   --theme-primary-alpha-50: #{color.adjust(mat.get-theme-color(shop-theme.$light-theme, primary, 50), $alpha: -0.5)};
+  --theme-grey-alpha-10: #{color.adjust(#bdbdbd, $alpha: -0.10)};
+  --theme-grey-alpha-25: #{color.adjust(#bdbdbd, $alpha: -0.25)};
+  --theme-grey-alpha-50: #{color.adjust(#bdbdbd, $alpha: -0.50)};
+  --theme-grey-alpha-75: #{color.adjust(#bdbdbd, $alpha: -0.75)};
+  --theme-grey-alpha-90: #{color.adjust(#bdbdbd, $alpha: -0.90)};
 }

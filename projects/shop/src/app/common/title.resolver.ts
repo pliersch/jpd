@@ -4,4 +4,4 @@ import { Observable, of } from 'rxjs';
 export const articleTitleResolver: ResolveFn<string> = (
   route: ActivatedRouteSnapshot
 ): Observable<string> =>
-  of(route.paramMap.get('articleId') || 'Fuck')
+  of(route.paramMap.get('articleId') || 'NO DATA')

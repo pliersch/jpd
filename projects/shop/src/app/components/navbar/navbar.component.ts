@@ -1,17 +1,15 @@
 import { Component, inject } from '@angular/core';
-import { MatAnchor } from '@angular/material/button';
-import { IsActiveMatchOptions, Route, RouterLink, RouterLinkActive } from '@angular/router';
+import { MatSlideToggle } from '@angular/material/slide-toggle';
+import { IsActiveMatchOptions, Route } from '@angular/router';
 import { RouteDomService } from 'jpd-core';
 
 @Component({
-    selector: 'shop-navbar',
-    imports: [
-        MatAnchor,
-        RouterLinkActive,
-        RouterLink
-    ],
-    templateUrl: './navbar.component.html',
-    styleUrl: './navbar.component.scss'
+  selector: 'shop-navbar',
+  imports: [
+    MatSlideToggle
+  ],
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
 

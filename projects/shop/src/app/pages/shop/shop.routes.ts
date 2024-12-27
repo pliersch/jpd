@@ -1,5 +1,4 @@
 import { Route } from '@angular/router';
-import { articleTitleResolver } from '@shop/common/title.resolver';
 import { ShopPageComponent } from '@shop/pages/shop/shop-page.component';
 
 const productPage = () => import('./components/product-page/product-page.component').then((x) => x.ProductPageComponent);
@@ -18,7 +17,7 @@ export default [
           {
             path: 'detail/:articleId',
             loadComponent: productDetail,
-            title: articleTitleResolver,
+            // title: articleTitleResolver,
             data: {animation: 'detail'}
           },
           {path: 'white-vein', loadComponent: productCategory, title: 'White', data: {animation: 'list'}},
