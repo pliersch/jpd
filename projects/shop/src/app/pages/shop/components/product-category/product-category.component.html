@@ -1,4 +1,7 @@
-<!--<div class="flex">-->
-<!--  <shop-product-filter/>-->
-<shop-default-list/>
-<!--</div>-->
+<div class="flex">
+  <shop-chip-filter [tags]="store.tagEntities()"
+                    (toggleTagEvent)="store.toggleTags($event)" />
+  <button mat-flat-button (click)="store.toggleSortDirection()">Toggle</button>
+</div>
+<shop-default-list />
+

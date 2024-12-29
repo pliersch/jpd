@@ -1,23 +1,28 @@
-import { ChangeDetectionStrategy, Component, HostBinding, inject, OnInit } from '@angular/core';
-import { ActivatedRoute, ChildrenOutletContexts, RouterOutlet } from '@angular/router';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostBinding,
+  inject,
+  OnInit,
+} from '@angular/core';
+import {
+  ActivatedRoute,
+  ChildrenOutletContexts,
+  RouterOutlet,
+} from '@angular/router';
 import { fadeInAnimation } from '@shop/common/animations';
-import { NavbarComponent } from '@shop/components/navbar/navbar.component';
 import { getProductFromUrl } from '@shop/pages/shop/store/models/url-product-types';
 import { ShopStore } from '@shop/pages/shop/store/shop.store';
 
 @Component({
   selector: 'shop-product-page',
-  imports: [
-    RouterOutlet,
-    NavbarComponent,
-  ],
+  imports: [RouterOutlet],
   templateUrl: './product-page.component.html',
   styleUrl: './product-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: [fadeInAnimation]
+  animations: [fadeInAnimation],
 })
 export class ProductPageComponent implements OnInit {
-
   @HostBinding('@.disabled')
   public animationsDisabled = true;
 
@@ -43,7 +48,8 @@ export class ProductPageComponent implements OnInit {
   }
 
   getRouteAnimationData(): unknown {
-    return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
+    return this.contexts.getContext('primary')?.route?.snapshot?.data?.[
+      'animation'
+    ];
   }
-
 }

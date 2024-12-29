@@ -3,11 +3,15 @@ import { inject, Injectable } from '@angular/core';
 import { MockService } from '@shop/pages/shop/_mock/mock.service';
 import { ENV_TOKEN } from 'jpd-core';
 import { Observable, of } from 'rxjs';
-import { Article, Category, CreateArticle, UpdateArticle } from './articles/article.model';
+import {
+  Article,
+  Category,
+  CreateArticle,
+  UpdateArticle,
+} from './articles/article.model';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class ShopService {
-
   private readonly API_URL: string = `${inject(ENV_TOKEN).apiUrl}/shop`;
   private readonly http = inject(HttpClient);
   private readonly mock = inject(MockService);
@@ -30,5 +34,4 @@ export class ShopService {
   update(id: string, dto: UpdateArticle): Observable<Article> {
     return this.http.patch<Article>(`${this.API_URL}/${id}`, dto);
   }
-
 }

@@ -1,0 +1,18 @@
+<div class="flex m-2">
+  @for (tag of tags; track tag) {
+    <mat-slide-toggle [checked]="tag.active" (click)="toggleTag(tag.id,!tag.active)">
+      {{ tag.name }}
+    </mat-slide-toggle>
+  }
+
+  <mat-chip-listbox multiple aria-label="Color selection">
+    <mat-chip [highlighted]="!existActiveTags"
+              (click)="deactivateTags()">Alle
+    </mat-chip>
+    @for (tag of tags; track tag.id) {
+      <mat-chip [highlighted]="tag.active" (click)="toggleTag(tag.id, !tag.active)">
+        {{ tag.name }}
+      </mat-chip>
+    }
+  </mat-chip-listbox>
+</div>

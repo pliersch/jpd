@@ -6,17 +6,22 @@ export type SelectedEntityState = { selectedEntityId: EntityId | null };
 
 export function withSelectedEntity<Entity>() {
   return signalStoreFeature(
-    {state: type<EntityState<Entity>>()},
-    withState<SelectedEntityState>({selectedEntityId: null}),
-    withComputed(({entityMap, selectedEntityId}) => ({
+    { state: type<EntityState<Entity>>() },
+    withState<SelectedEntityState>({ selectedEntityId: null }),
+    withComputed(({ entityMap, selectedEntityId }) => ({
       selectedEntity: computed(() => {
         const selectedId = selectedEntityId();
         return selectedId ? entityMap()[selectedId] : null;
       }),
-    }))
+    })),
+    withComputed(({ entityMap }) => ({
+      foobar: computed(() => {
+        return entityMap().length;
+      }),
+    })),
   );
 }
 
-export function setSelectedEntity() {
-
-}
+// export function setSelectedEntity() {
+//
+// }

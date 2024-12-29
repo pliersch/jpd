@@ -1,7 +1,7 @@
 <div class="flex flex-wrap">
-  @for (article of store.getCurrentProducts(); track article.id) {
+  @for (article of store.getFilteredProducts(); track article.id) {
     <shop-card-1 class="media " [title]="article.name + ' ' + article.charge + ' ' + article.shortName"
                  [subtitle]="'Händler ' + article.dealer" link="/shop/kratom/detail" [linkId]="article.id"
-                 [rating]="article.rating" [price]="article.price" [imageUrl]="'assets/img/' + article.pictureUrl"/>
+                 [rating]="article.rating" [price]="article.price" [imageUrl]="'assets/img/' + article.pictureUrl" />
   }
 </div>

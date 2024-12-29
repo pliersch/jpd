@@ -27,15 +27,14 @@ import { StarsComponent } from 'jpd-core';
     TagChipsComponent,
     MatButtonToggle,
     MatButtonToggleGroup,
-    MatButton
+    MatButton,
   ],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.scss',
   providers: [DetailStore],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductDetailComponent {
-
   readonly detailStore = inject(DetailStore);
   readonly cartStore = inject(CartStore);
 
@@ -50,10 +49,9 @@ export class ProductDetailComponent {
   }
 
   onSubmit(): void {
-    this.cartStore.add(
-      createOrderPositionDto(this.detailStore.entityId(), this.quantity, this.size!));
+    this.cartStore.add(createOrderPositionDto(this.detailStore.entityId(), this.quantity, this.size!));
     this.quantity = 0;
-    this.quantityInputs.forEach(item => item.clear());
+    this.quantityInputs.forEach((item) => item.clear());
   }
 
   onSelectSize($event: string | null): void {

@@ -4,6 +4,8 @@ export interface Kratom extends Article {
 
 }
 
+export type KratomTag = 'Lab-Tested' | 'Fermented' | 'Ultra';
+
 // export interface KratomDetails extends ArticleDetails {
 //   prices: KratomPrices;
 //   stock: KratomStock;

@@ -11,7 +11,7 @@ import {
   CreateOrderPosition,
   OrderPosition,
   totalCost,
-  UpdateOrderPosition
+  UpdateOrderPosition,
 } from '@shop/pages/shop/cart/store/cart.model';
 import { SHOP_CONSTANTS } from '@shop/pages/shop/const';
 import { getPriceBySize } from '@shop/pages/shop/store/articles/article.model';
@@ -30,73 +30,69 @@ const initialState: CartState = {
 };
 
 export const CartStore = signalStore(
-  {providedIn: 'root'},
+  { providedIn: 'root' },
   // withCallState(),
   withDevtools('cart'),
   withState(initialState),
   withShipment(),
   withEntities<OrderPosition>(),
   withRequestStatus(),
-  withComputed(({entities}) => ({
+  withComputed(({ entities }) => ({
     // helper: animation trigger
     itemCount: computed(() => entities().length),
   })),
-  withComputed(({entities},
-                shopStore = inject(ShopStore)) => ({
-    items: computed((): CartItem[] => entities().map((entity) => {
-      const article = shopStore.items()[entity.entityId];
-      return ({
-        id: entity.id,
-        title: `${article.name} ${article.charge} ${article.shortName}`,
-        description: 'string',
-        imageUrl: article.pictureUrl,
-        size: entity.size,
-        price: getPriceBySize(article, entity.size),
-        quantity: entity.quantity,
-        // todo hard coded
-        routerLink: ['/shop/kratom/detail/', article.id]
-      })
-    })),
+  withComputed(({ entities }, shopStore = inject(ShopStore)) => ({
+    items: computed((): CartItem[] =>
+      entities().map((entity) => {
+        const article = shopStore.priced()[entity.entityId];
+        return {
+          id: entity.id,
+          title: `${article.name} ${article.charge} ${article.shortName}`,
+          description: 'string',
+          imageUrl: article.pictureUrl,
+          size: entity.size,
+          price: getPriceBySize(article, entity.size),
+          quantity: entity.quantity,
+          // todo hard coded
+          routerLink: ['/shop/kratom/detail/', article.id],
+        };
+      }),
+    ),
   })),
-  withComputed(({items}) => ({
+  withComputed(({ items }) => ({
     subtotal: computed(() => totalCost(items())),
   })),
-  withComputed(({subtotal}) => ({
+  withComputed(({ subtotal }) => ({
     freeShipping: computed(() => subtotal() > SHOP_CONSTANTS.FREE_SHIPPING),
     freeShippingDiff: computed(() => SHOP_CONSTANTS.FREE_SHIPPING - subtotal()),
   })),
-  withComputed(({subtotal, shipmentCost, freeShipping}) => ({
+  withComputed(({ subtotal, shipmentCost, freeShipping }) => ({
     summary: computed((): CartSummary => {
       const shipment = freeShipping() ? 0 : shipmentCost();
       return {
         subtotal: subtotal(),
         shipment: shipment,
         tax: subtotal() * 0.07,
-        total: subtotal() + shipment
-      }
+        total: subtotal() + shipment,
+      };
     }),
   })),
   withMethods((store) => ({
-      add: rxMethod<CreateOrderPosition>(
-        pipe(
-          tap((dto) => updateState(store, 'cart add position',
-            setEntity(createOrderPosition(dto, store._counter())))),
-          tap(() => patchState(store, {_counter: store._counter() + 1})),
+    add: rxMethod<CreateOrderPosition>(
+      pipe(
+        tap((dto) => updateState(store, 'cart add position', setEntity(createOrderPosition(dto, store._counter())))),
+        tap(() => patchState(store, { _counter: store._counter() + 1 })),
+      ),
+    ),
+    update: rxMethod<UpdateOrderPosition>(
+      pipe(
+        tap((dto) =>
+          updateState(store, 'cart update position', updateEntity({ id: dto.id, changes: { quantity: dto.quantity } })),
         ),
       ),
-      update: rxMethod<UpdateOrderPosition>(
-        pipe(
-          tap((dto) => updateState(store, 'cart update position',
-            updateEntity({id: dto.id, changes: {quantity: dto.quantity}}))),
-        ),
-      ),
-      remove: rxMethod<number>(
-        pipe(
-          tap((id) => updateState(store, 'cart remove position', removeEntity(id))),
-        ),
-      ),
-    }),
-  ),
+    ),
+    remove: rxMethod<number>(pipe(tap((id) => updateState(store, 'cart remove position', removeEntity(id))))),
+  })),
   withHooks((store) => {
     const shopStore = inject(ShopStore);
     let empty = true;
@@ -106,8 +102,8 @@ export const CartStore = signalStore(
         watchState(shopStore, (state) => {
           if (empty && state.requestStatus === 'fulfilled') {
             empty = false;
-            store.add({entityId: 1, quantity: 2, size: '100 Gramm'});
-            store.add({entityId: 4, quantity: 1, size: '250 Gramm'});
+            store.add({ entityId: 1, quantity: 2, size: '100 Gramm' });
+            store.add({ entityId: 4, quantity: 1, size: '250 Gramm' });
           }
         });
       },

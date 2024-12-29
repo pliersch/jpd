@@ -1,5 +1,6 @@
 // todo is it possible to use capitalizeFirstLetter
 import { DealerType } from '@shop/pages/shop/store/articles/kratom/dealer.model';
+import { Tag } from '@shop/pages/shop/store/tags/tag.model';
 
 export type Category = 'kratom' | 'cbd' | 'miscellaneous';
 
@@ -63,11 +64,6 @@ export interface Comment {
   date: Date;
 }
 
-export interface Tag {
-  id: number;
-  name: string;
-}
-
 export interface CreateArticle {
   name: string;
   product: Category;
@@ -102,3 +98,12 @@ export interface UpdateArticle {
 //   return [...albums].sort((a, b) => direction * a.date.localeCompare(b.date));
 // }
 
+
+export function createTags(tagNames: string[]): Tag[] {
+  const tags: Tag[] = [];
+  let count = 0;
+  for (const name of tagNames) {
+    tags.push({id: count++, name: name, active: false});
+  }
+  return tags;
+}
