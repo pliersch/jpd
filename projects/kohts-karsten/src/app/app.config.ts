@@ -4,7 +4,7 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 import { ApplicationConfig, importProvidersFrom, inject, provideAppInitializer } from '@angular/core';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer, provideClientHydration } from '@angular/platform-browser';
+import { DomSanitizer, provideClientHydration, withEventReplay } from "@angular/platform-browser";
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import {
@@ -24,7 +24,7 @@ import { CustomRouteDomService } from './services/custom-route-dom.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideClientHydration(),
+    provideClientHydration(withEventReplay()),
     importProvidersFrom(GoogleMapsModule),
     provideAnimations(),
     provideHttpClient(withFetch()),

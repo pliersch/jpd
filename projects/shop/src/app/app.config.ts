@@ -3,15 +3,28 @@ import { Platform } from '@angular/cdk/platform';
 import { registerLocaleData } from '@angular/common';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import localeDe from '@angular/common/locales/de';
-import { ApplicationConfig, importProvidersFrom, LOCALE_ID, inject, provideAppInitializer } from '@angular/core';
+import {
+  ApplicationConfig,
+  importProvidersFrom,
+  inject,
+  LOCALE_ID,
+  provideAppInitializer,
+} from '@angular/core';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { DateFnsAdapter } from '@angular/material-date-fns-adapter';
 import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconRegistry } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { DomSanitizer, provideClientHydration } from '@angular/platform-browser';
-import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
+import {
+  DomSanitizer,
+  provideClientHydration,
+  withEventReplay,
+} from '@angular/platform-browser';
+import {
+  BrowserAnimationsModule,
+  provideAnimations,
+} from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { initProjectIcons } from '@shop/common/icon.initializer';
 import { CustomAppDataService } from '@shop/services/custom-app-data.service';
@@ -28,7 +41,7 @@ import {
   initIcons,
   initTheme,
   RouteDomService,
-  ThemeService
+  ThemeService,
 } from 'jpd-core';
 import { environment } from '../environments/environment';
 import { ROUTES } from './app.routes';
@@ -37,36 +50,42 @@ registerLocaleData(localeDe);
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideClientHydration(),
-    importProvidersFrom(MatSnackBarModule, MatDialogModule, GoogleMapsModule, BrowserAnimationsModule),
+    provideClientHydration(withEventReplay()),
+    importProvidersFrom(
+      MatSnackBarModule,
+      MatDialogModule,
+      GoogleMapsModule,
+      BrowserAnimationsModule,
+    ),
     provideAnimations(),
-    provideHttpClient(withFetch(), /*withInterceptorsFromDi()*/),
-    {provide: LOCALE_ID, useValue: 'de'},
-    {provide: DateAdapter, useClass: DateFnsAdapter, deps: [MAT_DATE_LOCALE]},
+    provideHttpClient(withFetch() /*withInterceptorsFromDi()*/),
+    { provide: LOCALE_ID, useValue: 'de' },
+    { provide: DateAdapter, useClass: DateFnsAdapter, deps: [MAT_DATE_LOCALE] },
     // provideRouter(ROUTES,
-    provideRouter(ROUTES, /*withComponentInputBinding()*/
+    provideRouter(
+      ROUTES /*withComponentInputBinding()*/,
       // withInMemoryScrolling({anchorScrolling: 'enabled', scrollPositionRestoration: 'top'})
     ),
     provideAppInitializer(() => {
-        const initializerFn = (initTheme)(inject(ThemeService), inject(Platform), inject(MediaMatcher));
-        return initializerFn();
-      }),
+      return initTheme(
+        inject(ThemeService),
+        inject(Platform),
+        inject(MediaMatcher),
+      )();
+    }),
     provideAppInitializer(() => {
-        const initializerFn = (initApplication)(inject(BreakpointService));
-        return initializerFn();
-      }),
+      return initApplication(inject(BreakpointService))();
+    }),
     provideAppInitializer(() => {
-        const initializerFn = (initIcons)(inject(MatIconRegistry), inject(DomSanitizer));
-        return initializerFn();
-      }),
+      return initIcons(inject(MatIconRegistry), inject(DomSanitizer))();
+    }),
     provideAppInitializer(() => {
-        const initializerFn = (initProjectIcons)(inject(MatIconRegistry), inject(DomSanitizer));
-        return initializerFn();
-      }),
-    {provide: ENV_TOKEN, useValue: environment},
-    {provide: AppDataService, useClass: CustomAppDataService},
-    {provide: RouteDomService, useClass: CustomRouteDomService},
-    {provide: EnvironmentService, useClass: CustomEnvironmentService},
-    {provide: ImageService, useClass: CustomImageService},
-  ]
+      return initProjectIcons(inject(MatIconRegistry), inject(DomSanitizer))();
+    }),
+    { provide: ENV_TOKEN, useValue: environment },
+    { provide: AppDataService, useClass: CustomAppDataService },
+    { provide: RouteDomService, useClass: CustomRouteDomService },
+    { provide: EnvironmentService, useClass: CustomEnvironmentService },
+    { provide: ImageService, useClass: CustomImageService },
+  ],
 };

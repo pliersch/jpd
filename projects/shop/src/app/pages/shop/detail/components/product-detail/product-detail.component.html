@@ -8,16 +8,12 @@
             d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
         </svg>
       </a>
-      <span class="pointer-events-none mx-2">
-        /
-      </span>
+      <span class="pointer-events-none mx-2">/</span>
     </li>
     <li
       class="flex cursor-pointer items-center text-sm hover:text-[color:--theme-accent]">
       <a href="#">Components</a>
-      <span class="pointer-events-none mx-2">
-        /
-      </span>
+      <span class="pointer-events-none mx-2">/</span>
     </li>
     <li
       class="flex cursor-pointer items-center text-sm hover:text-[color:--theme-accent]">
@@ -32,14 +28,14 @@
 
       <div class="flex items-center justify-between pb-2">
         <h1 class="text-xl">{{ article.name }} {{ article.shortName }} {{ article.charge }}</h1>
-        <a4w-stars [rate]="article.rating || 0"/>
+        <a4w-stars [rate]="article.rating || 0" />
       </div>
       <section class="pb-2" aria-labelledby="information-heading">
         <h2 id="information-heading" class="hidden-description">Händler {{ article.dealer }}</h2>
         <p class="text-sm">{{ article.description }}</p>
       </section>
 
-      <shop-tag-chips [tags]="article.tags"/>
+      <shop-tag-chips [tags]="article.tags" />
 
     </div>
 
@@ -68,7 +64,7 @@
             <mat-button-toggle [value]="'1000 Gramm'">1000</mat-button-toggle>
           </mat-button-toggle-group>
           <div class="flex items-end flex-col w-fit">
-            <shop-number-input text="Menge" [disabled]="!size" (numberChange)="onChangeQuantity($event)"/>
+            <shop-number-input text="Menge" [disabled]="!size" (numberChange)="onChangeQuantity($event)" />
             <button mat-flat-button [disabled]="quantity === 0">In den Warenkorb</button>
           </div>
         </form>
@@ -79,9 +75,9 @@
         <h2 class="hidden-description">Auswahl</h2>
         <form (ngSubmit)="onSubmit()">
           <div class="md:col-start-2 md:row-start-2 md:max-w-lg md:self-start">
-            <shop-weight-table [tableData]="detailStore.tableData()" (choiceEvent)="onSelectSize($event)"/>
+            <shop-weight-table [tableData]="detailStore.tableData()" (choiceEvent)="onSelectSize($event)" />
             <div class="flex items-end flex-col w-fit">
-              <shop-number-input text="Menge" [disabled]="!size" (numberChange)="onChangeQuantity($event)"/>
+              <shop-number-input text="Menge" [disabled]="!size" (numberChange)="onChangeQuantity($event)" />
               <button mat-flat-button [disabled]="quantity === 0">In den Warenkorb</button>
             </div>
           </div>

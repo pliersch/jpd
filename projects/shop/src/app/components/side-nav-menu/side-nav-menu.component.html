@@ -27,7 +27,7 @@
                 </mat-expansion-panel-header>
 
                 @if (item2.links) {
-                  <ng-container *ngTemplateOutlet="articles; context:{ items: item2.links}"/>
+                  <ng-container *ngTemplateOutlet="articles; context:{ items: item2.links}" />
                 }
               </mat-expansion-panel>
             }
@@ -35,7 +35,7 @@
 
         }
         @if (item.links) {
-          <ng-container *ngTemplateOutlet="articles; context:{ items: item.links}"/>
+          <ng-container *ngTemplateOutlet="articles; context:{ items: item.links}" />
         }
       </mat-expansion-panel>
     }
