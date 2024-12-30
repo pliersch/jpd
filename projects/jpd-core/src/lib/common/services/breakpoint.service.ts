@@ -1,20 +1,26 @@
-import { BreakpointObserver } from "@angular/cdk/layout";
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { Injectable } from '@angular/core';
-import { distinctUntilChanged, ReplaySubject } from "rxjs";
+import { distinctUntilChanged, ReplaySubject } from 'rxjs';
 import { Dimension } from '../const';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BreakpointService {
-
   readonly dimension$: ReplaySubject<string> = new ReplaySubject();
 
   private breakpoint$ = this.breakpointObserver
-    .observe([Dimension.XXXLarge, Dimension.XXLarge, Dimension.XLarge, Dimension.Large, Dimension.Medium, Dimension.Small, Dimension.XSmall])
-    .pipe(
-      distinctUntilChanged()
-    );
+    .observe([
+      Dimension.XXXXLarge,
+      Dimension.XXXLarge,
+      Dimension.XXLarge,
+      Dimension.XLarge,
+      Dimension.Large,
+      Dimension.Medium,
+      Dimension.Small,
+      Dimension.XSmall,
+    ])
+    .pipe(distinctUntilChanged());
 
   // private breakpoint$ = this.breakpointObserver
   //   .observe([Breakpoints.XLarge, Breakpoints.Large, Breakpoints.Medium, Breakpoints.Small, Breakpoints.XSmall])
@@ -23,13 +29,11 @@ export class BreakpointService {
   //   );
 
   constructor(private breakpointObserver: BreakpointObserver) {
-    this.breakpoint$.subscribe(() =>
-      this.breakpointChanged()
-    );
+    this.breakpoint$.subscribe(() => this.breakpointChanged());
   }
 
   private breakpointChanged(): void {
-    let dim: string = Dimension.XSmall;
+    let dim: string = Dimension.XXXXLarge;
     if (this.breakpointObserver.isMatched(Dimension.XSmall)) {
       dim = Dimension.XSmall;
     } else if (this.breakpointObserver.isMatched(Dimension.Small)) {
@@ -44,9 +48,10 @@ export class BreakpointService {
       dim = Dimension.XXLarge;
     } else if (this.breakpointObserver.isMatched(Dimension.XXXLarge)) {
       dim = Dimension.XXXLarge;
-    } else if (this.breakpointObserver.isMatched(Dimension.XXXXLarge)) {
-      dim = Dimension.XXXXLarge;
     }
-    this.dimension$.next(dim)
+    // else if (this.breakpointObserver.isMatched(Dimension.XXXXLarge)) {
+    //   dim = Dimension.XXXXLarge;
+    // }
+    this.dimension$.next(dim);
   }
 }
