@@ -4,7 +4,6 @@ import { Tag } from '@shop/pages/shop/store/tags/tag.model';
 
 export type Category = 'kratom' | 'cbd' | 'miscellaneous';
 
-
 export interface Data {
   index: number;
   size: string;
@@ -28,11 +27,11 @@ export interface Article {
   date: Date;
   pictureUrl: string;
   tags: string[];
-  data: Data[]
+  data: Data[];
 }
 
 export function getDataBySize(article: Article, size: string | number): Data {
-  const find = article.data.find(item => item.size === size);
+  const find = article.data.find((item) => item.size === size);
   if (!find) {
     throw new Error('No data found.');
   }
@@ -40,7 +39,7 @@ export function getDataBySize(article: Article, size: string | number): Data {
 }
 
 export function getPriceBySize(article: Article, size: string | number): number {
-  const find = article.data.find(item => item.size === size);
+  const find = article.data.find((item) => item.size === size);
   if (!find) {
     throw new Error('No data found.');
   }
@@ -59,7 +58,8 @@ export function getPriceBySize(article: Article, size: string | number): number 
 
 export interface Comment {
   userName: string;
-  comment: string;
+  title: string;
+  message: string;
   rating: number;
   date: Date;
 }
@@ -98,12 +98,11 @@ export interface UpdateArticle {
 //   return [...albums].sort((a, b) => direction * a.date.localeCompare(b.date));
 // }
 
-
 export function createTags(tagNames: string[]): Tag[] {
   const tags: Tag[] = [];
   let count = 0;
   for (const name of tagNames) {
-    tags.push({id: count++, name: name, active: false});
+    tags.push({ id: count++, name: name, active: false });
   }
   return tags;
 }

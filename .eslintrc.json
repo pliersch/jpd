@@ -62,14 +62,6 @@
     },
     {
       "files": [
-        "*.ts"
-      ],
-      "extends": [
-        "plugin:@ngrx/strict"
-      ]
-    },
-    {
-      "files": [
         "*.json",
         "*.html",
         "*.ts"

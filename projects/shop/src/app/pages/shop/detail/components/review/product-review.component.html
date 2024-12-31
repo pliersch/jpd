@@ -1,0 +1,19 @@
+<div class="grid grid-cols-12">
+  <div class="col-start-1 col-end-6 m-3">
+    <h2 class="text-xl font-bold mb-2">Kunden Bewertungen</h2>
+    <div class="flex items-center mb-3">
+      <a4w-stars class="mb-2" [rate]="article.rating || 0" />
+      <p class="text-sm mb-2">basierend auf 4711 Bewertungen</p>
+    </div>
+    <shop-star-rating />
+    <h2 class="text-xl font-bold mt-6 mb-3">Teile deine Erfahrungen</h2>
+    <button mat-flat-button class="w-full" type="button" (click)="writeReview()">
+      Bewertung schreiben
+      <mat-icon>edit</mat-icon>
+    </button>
+    <!--    <div></div>-->
+  </div>
+  <div class="col-start-6 col-end-13 m-3">
+    <shop-comments />
+  </div>
+</div>

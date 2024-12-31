@@ -91,7 +91,6 @@ export const ShopStore = signalStore(
               error: (error: { message: string }) => {
                 console.log(' error: ', error.message);
               },
-              // finalize: () => computeWidgets(store.articlesEntities()),
             }),
           );
         }),

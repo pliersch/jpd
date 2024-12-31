@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>{{ dialogTitle }}</h1>
+<mat-dialog-content>
+  <div class="grid grid-cols-2 gap-4">
+    <mat-form-field class="example-full-width">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Ex. Pizza" />
+    </mat-form-field>
+    <a4w-star-rating #rating (rateChangeEvent)="rating.rate = $event" />
+    <mat-form-field class="col-span-2">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Ex. Pizza" />
+    </mat-form-field>
+    <mat-form-field class="col-span-2">
+      <mat-label>Schreib einen Kommentar</mat-label>
+      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+    </mat-form-field>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <span class="spacer"></span>
+  <button mat-raised-button (click)="cancel()">Abbrechen</button>
+  <button mat-raised-button (click)="sendFindOptions()">Ok</button>
+</mat-dialog-actions>

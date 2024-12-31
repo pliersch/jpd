@@ -7,6 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTab, MatTabGroup } from '@angular/material/tabs';
 import { createOrderPositionDto } from '@shop/pages/shop/cart/store/cart.model';
 import { CartStore } from '@shop/pages/shop/cart/store/cart.store';
+import { ProductReviewComponent } from '@shop/pages/shop/detail/components/review/product-review.component';
 import { TagChipsComponent } from '@shop/pages/shop/detail/components/tags/tag-chips.component';
 import { WeightTableComponent } from '@shop/pages/shop/detail/components/weight-table/weight-table.component';
 import { DetailStore } from '@shop/pages/shop/detail/detail.store';
@@ -28,6 +29,7 @@ import { StarsComponent } from 'jpd-core';
     MatButtonToggle,
     MatButtonToggleGroup,
     MatButton,
+    ProductReviewComponent,
   ],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.scss',

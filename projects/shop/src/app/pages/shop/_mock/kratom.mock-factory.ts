@@ -64,15 +64,15 @@ function randomRating(): number {
 }
 
 function randomTags(): KratomTag[] {
-  const dealers: KratomTag[] = ['Lab-Tested', 'Fermented', 'Ultra'];
-  const random1: KratomTag[] = [dealers[0], dealers[1]];
-  const random2: KratomTag[] = [dealers[0], dealers[2]];
-  const random3: KratomTag[] = [dealers[0], dealers[3]];
-  const random4: KratomTag[] = [dealers[1], dealers[2]];
-  const random5: KratomTag[] = [dealers[1], dealers[3]];
-  // const random6: KratomTag[] = [dealers[0], dealers[1], dealers[2]];
-  const all = [random1, random2, random3, random4, random5];
-  return all[randomIntFromInterval(0, 4)];
+  const tags: KratomTag[] = ['Lab-Tested', 'Fermented', 'Ultra'];
+  const random1: KratomTag[] = [tags[0], tags[1]];
+  const random2: KratomTag[] = [tags[0], tags[2]];
+  const random3: KratomTag[] = [tags[1], tags[2]];
+  const random4: KratomTag[] = [tags[0]];
+  const random5: KratomTag[] = [tags[1]];
+  const random6: KratomTag[] = [tags[2]];
+  const all = [random1, random2, random3, random4, random5, random6];
+  return all[randomIntFromInterval(0, 5)];
 }
 
 function randomDealer(): DealerType {

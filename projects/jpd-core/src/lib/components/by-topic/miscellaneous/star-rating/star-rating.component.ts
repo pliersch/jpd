@@ -3,18 +3,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-    selector: 'a4w-star-rating',
-    templateUrl: './star-rating.component.html',
-    styleUrls: ['./star-rating.component.scss'],
-    imports: [MatButtonModule, MatIconModule]
+  selector: 'a4w-star-rating',
+  templateUrl: './star-rating.component.html',
+  styleUrls: ['./star-rating.component.scss'],
+  imports: [MatButtonModule, MatIconModule],
 })
 export class StarRatingComponent {
-
   @Input()
   rate = 0;
 
   @Input()
-  colorOn = 'yellow';
+  colorOn = '#E7C512';
 
   @Input()
   colorOff = 'white';
@@ -22,7 +21,7 @@ export class StarRatingComponent {
   @Output()
   rateChangeEvent = new EventEmitter<number>();
 
-  @Input({transform: booleanAttribute})
+  @Input({ transform: booleanAttribute })
   disabled = false;
 
   onClickStar(rate: number): void {
