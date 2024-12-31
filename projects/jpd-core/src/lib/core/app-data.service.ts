@@ -2,10 +2,9 @@ import { Injectable } from '@angular/core';
 import { AppConfig } from '../content';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export abstract class AppDataService {
-
   protected appConfig: AppConfig;
 
   protected constructor(appConfig: AppConfig) {
@@ -19,16 +18,14 @@ export abstract class AppDataService {
    * @param className class of the component like: 'MyComponent'
    * @param a4wFragment name of fragment provides by fragment-directive
    */
-  getComponentData(className: string, a4wFragment?: string): any {
+  getComponentData<T>(className: string, a4wFragment?: string): T {
     // console.log('AppDataService getComponentData: ', className, a4wFragment)
     const components = this.appConfig.data;
     let componentData;
     if (a4wFragment) {
-      componentData = components.filter(data =>
-        data.name === className
-        && data.fragment === a4wFragment);
+      componentData = components.filter((data) => data.name === className && data.fragment === a4wFragment);
     } else {
-      componentData = components.filter(data => data.name === className);
+      componentData = components.filter((data) => data.name === className);
     }
 
     if (!componentData) {
@@ -36,12 +33,10 @@ export abstract class AppDataService {
     }
 
     if (componentData.length > 1) {
-      console.log('AppDataService getComponentData more then one: ', componentData)
+      console.log('AppDataService getComponentData more then one: ', componentData);
       throw new Error('more then one data found for: ' + className);
     }
 
-    return componentData[0].data;
+    return <T>componentData[0].data;
   }
-
 }
-
