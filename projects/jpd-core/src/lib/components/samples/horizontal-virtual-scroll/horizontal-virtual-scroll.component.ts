@@ -5,8 +5,8 @@ import {
   ChangeDetectionStrategy,
   Component,
   HostListener,
-  ViewChild,
-  ViewEncapsulation
+  ViewEncapsulation,
+  viewChild
 } from '@angular/core';
 
 @Component({
@@ -20,8 +20,7 @@ import {
 export class HorizontalVirtualScrollComponent implements AfterViewInit {
   items = Array.from({length: 100}).map((_, i) => `#${i}`);
 
-  @ViewChild(CdkVirtualScrollViewport)
-  viewPort: CdkVirtualScrollViewport;
+  readonly viewPort = viewChild(CdkVirtualScrollViewport);
 
   @HostListener('wheel', ['$event'])
   onMouseWheel(event: WheelEvent) {
@@ -36,6 +35,6 @@ export class HorizontalVirtualScrollComponent implements AfterViewInit {
   }
 
   scrollToIndex(index: number): void {
-    this.viewPort.scrollToIndex(index, "smooth");
+    this.viewPort().scrollToIndex(index, "smooth");
   }
 }

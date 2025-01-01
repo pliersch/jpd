@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit, output } from '@angular/core';
 import { MatButton } from '@angular/material/button';
 import { DocOpeningStore } from '@app1/components/doc-info/admin/opening-hours/doc-opening.store';
 import { DocVacationStore } from '@app1/components/doc-info/admin/vacation/doc-vacation.store';
@@ -18,7 +18,7 @@ import { Subscription } from 'rxjs';
 })
 export class DocWidgetComponent implements OnInit, OnDestroy {
 
-  @Output() editChange: EventEmitter<void> = new EventEmitter();
+  readonly editChange = output();
 
   widgetStore = inject(DocWidgetStore);
   readonly vacationStore = inject(DocVacationStore);

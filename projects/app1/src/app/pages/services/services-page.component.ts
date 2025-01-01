@@ -1,12 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { AbstractDefaultPageComponent, FragmentDirective, TabNavComponent } from 'jpd-core';
+import { AbstractDefaultPageComponent, TabNavComponent } from 'jpd-core';
 
 @Component({
     selector: 'app-service-page',
     imports: [
         CommonModule,
-        FragmentDirective,
         TabNavComponent,
     ],
     templateUrl: './services-page.component.html',

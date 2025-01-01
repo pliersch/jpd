@@ -1,10 +1,7 @@
-import { NgIf } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { MatButton } from '@angular/material/button';
-import { MatCheckbox } from '@angular/material/checkbox';
-import { MatError, MatFormField } from '@angular/material/form-field';
+import { MatFormField } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { DailyOpeningHours } from '@app1/components/doc-info/admin/opening-hours/doc-opening.model';
 import { DocOpeningStore } from '@app1/components/doc-info/admin/opening-hours/doc-opening.store';
@@ -12,15 +9,11 @@ import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-opening-hours',
-    imports: [
-        MatButton,
-        MatCheckbox,
-        MatError,
-        MatFormField,
-        MatInput,
-        NgIf,
-        ReactiveFormsModule
-    ],
+  imports: [
+    MatFormField,
+    MatInput,
+    ReactiveFormsModule
+  ],
     templateUrl: './opening-hours.component.html',
     styleUrl: './opening-hours.component.scss'
 })

@@ -17,7 +17,7 @@ export interface ImageCard2Model {
 })
 export class ImageCard2Component {
 
-  readonly model = input<ImageCard2Model>();
+  readonly model = input.required<ImageCard2Model>();
 
   readonly transparent = input(false);
 }

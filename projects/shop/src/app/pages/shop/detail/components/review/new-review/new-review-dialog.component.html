@@ -1,24 +1,44 @@
 <h1 mat-dialog-title>{{ dialogTitle }}</h1>
 <mat-dialog-content>
-  <div class="grid grid-cols-2 gap-4">
-    <mat-form-field class="example-full-width">
-      <mat-label>Name</mat-label>
-      <input matInput placeholder="Ex. Pizza" />
-    </mat-form-field>
-    <a4w-star-rating #rating (rateChangeEvent)="rating.rate = $event" />
-    <mat-form-field class="col-span-2">
-      <mat-label>Name</mat-label>
-      <input matInput placeholder="Ex. Pizza" />
-    </mat-form-field>
-    <mat-form-field class="col-span-2">
-      <mat-label>Schreib einen Kommentar</mat-label>
-      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-    </mat-form-field>
-  </div>
+  <form [formGroup]="form" novalidate (ngSubmit)="onSubmit()">
+    <div class="grid grid-cols-2 gap-4">
+      <mat-form-field>
+        <mat-label>Bewertung</mat-label>
+        <mat-select formControlName="rating">
+          <mat-option value="1">1 Stern</mat-option>
+          <mat-option value="2">2 Sterne</mat-option>
+          <mat-option value="3">3 Sterne</mat-option>
+          <mat-option value="4">4 Sterne</mat-option>
+          <mat-option value="5">5 Sterne</mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.controls['rating'].hasError('required')">
+          Bewertung ist notwendig
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+      <mat-form-field class="col-span-2">
+        <mat-label>Titel</mat-label>
+        <input matInput formControlName="title" />
+        <mat-error *ngIf="form.controls['title'].hasError('required')">
+          Titel ist notwendig
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="col-span-2">
+        <mat-label>Kommentar</mat-label>
+        <textarea matInput formControlName="comment"></textarea>
+        <mat-error *ngIf="form.controls['comment'].hasError('required')">
+          Kommentar ist notwendig
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </form>
 </mat-dialog-content>
 
 <mat-dialog-actions>
   <span class="spacer"></span>
   <button mat-raised-button (click)="cancel()">Abbrechen</button>
-  <button mat-raised-button (click)="sendFindOptions()">Ok</button>
+  <button mat-raised-button (click)="onSubmit()">Ok</button>
 </mat-dialog-actions>

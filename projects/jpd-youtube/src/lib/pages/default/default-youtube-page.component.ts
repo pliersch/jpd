@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, inject, ViewChild } from '@angular/core';
+import { Component, inject, viewChild } from '@angular/core';
 import { MatIconButton } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
@@ -25,8 +25,7 @@ import { VideosStore } from '../../store/videos.store';
 })
 export class DefaultYoutubePageComponent {
 
-  @ViewChild(YoutubePlayListComponent)
-  list: YoutubePlayListComponent;
+  readonly list = viewChild(YoutubePlayListComponent);
 
   readonly store = inject(VideosStore);
   // readonly service = inject(VideoService);

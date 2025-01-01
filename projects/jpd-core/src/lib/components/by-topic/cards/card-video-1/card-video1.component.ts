@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { ImageFallbackDirective } from '../../../../common';
 
 @Component({
@@ -18,8 +18,7 @@ export class CardVideo1Component {
 
   readonly videoId = input.required<string>();
 
-  @Output()
-  idEmitter = new EventEmitter<string>();
+  readonly idEmitter = output<string>();
 
   emitId(): void {
     this.idEmitter.emit(this.videoId());

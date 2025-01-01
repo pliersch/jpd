@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { booleanAttribute, Component, EventEmitter, OnInit, Output, input } from '@angular/core';
+import { booleanAttribute, Component, OnInit, input, output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -25,8 +25,7 @@ export class ActionComponent implements OnInit {
 
   readonly text = input<string>();
 
-  @Output()
-  actionEvent = new EventEmitter<void>();
+  readonly actionEvent = output<void>();
 
   execute(): void {
     this.actionEvent.emit();

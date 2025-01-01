@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { booleanAttribute, Component, ContentChild, OnInit, Signal, input } from '@angular/core';
+import { booleanAttribute, Component, contentChild, input, OnInit, Signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { MatButtonModule } from "@angular/material/button";
-import { MatIconModule } from "@angular/material/icon";
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { IsActiveMatchOptions, RouterLink, RouterLinkActive } from "@angular/router";
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { IsActiveMatchOptions, RouterLink, RouterLinkActive } from '@angular/router';
 import { map } from 'rxjs/operators';
 import {
   BreakpointService,
@@ -29,8 +29,7 @@ import { NavigationDirective } from '../../../navigation/directives/navigation.d
 })
 export class AppbarTwoRowsComponent implements OnInit {
 
-  @ContentChild(NavigationDirective)
-  navigationDirective?: NavigationDirective;
+  readonly navigationDirective = contentChild(NavigationDirective);
 
   readonly bgColorDark = input<string>(); // fixme set default value. current both colors must set
 
@@ -102,18 +101,18 @@ export class AppbarTwoRowsComponent implements OnInit {
   }
 
   showSubNav(route: Route, x: number): void {
-    this.navigationDirective?.show(route, x)
+    this.navigationDirective()?.show(route, x)
   }
 
   hideSubNav(): void {
-    this.navigationDirective?.hide();
+    this.navigationDirective()?.hide();
   }
 
   private onToggleTheme(change: ThemeToggleChange): void {
     if (change.add === Themes.DARK) {
-      this.bgColor = this.bgColorDark();
+      this.bgColor = this.bgColorDark() ? this.bgColorDark()! : 'no';
     } else {
-      this.bgColor = this.bgColorLight();
+      this.bgColor = this.bgColorLight() ? this.bgColorLight()! : 'no';
     }
   }
 

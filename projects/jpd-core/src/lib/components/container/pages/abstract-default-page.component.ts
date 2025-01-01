@@ -6,12 +6,17 @@ import {
   inject,
   OnDestroy,
   OnInit,
-  QueryList,
-  ViewChildren
+  viewChildren
 } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, NavigationSkipped, Router } from "@angular/router";
-import { Subscription } from "rxjs";
-import { BreakpointService, Dimension, FragmentDirective, NavigationService, ScrollService } from '../../../common';
+import { ActivatedRoute, NavigationEnd, NavigationSkipped, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import {
+  BreakpointService,
+  Dimension,
+  FragmentDirective,
+  NavigationService,
+  ScrollService
+} from '../../../common';
 
 @Component({
     selector: 'a4w-default-page',
@@ -24,8 +29,7 @@ import { BreakpointService, Dimension, FragmentDirective, NavigationService, Scr
 })
 export abstract class AbstractDefaultPageComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  @ViewChildren(FragmentDirective)
-  fragments!: QueryList<FragmentDirective>;
+  readonly fragments = viewChildren(FragmentDirective);
 
   //////////////////////////////////////////////////////////
   // service injection (not the constructor way)
@@ -76,7 +80,7 @@ export abstract class AbstractDefaultPageComponent implements OnInit, AfterViewI
   private scrollToFragment(url: string): void {
     const fragmentName = this.findFragmentName(url);
     if (fragmentName) {
-      const element = this.findElementRef(fragmentName, this.fragments);
+      const element = this.findElementRef(fragmentName, this.fragments());
       // without timeout the position is wrong, because image size doesn't exist (after opening page)
       setTimeout(() =>
         this.scrollService.scrollToPosition(element.nativeElement.offsetTop - this.navBarHeight));
@@ -92,13 +96,13 @@ export abstract class AbstractDefaultPageComponent implements OnInit, AfterViewI
     return undefined;
   }
 
-  private findElementRef(fragmentName: string, fragments: QueryList<FragmentDirective>): ElementRef {
+  private findElementRef(fragmentName: string, fragments: readonly FragmentDirective[]): ElementRef {
     let fragment = fragments.find(f => f.name === fragmentName);
     if (!fragment) {
       if (fragmentName != '/') { // no warn for "root"
         console.warn('no fragment found for fragment: ' + fragmentName);
       }
-      fragment = fragments.first;
+      fragment = fragments[0];
     }
     return fragment.el;
   }

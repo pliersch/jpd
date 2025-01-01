@@ -3,7 +3,7 @@
     {
       "files": "*.ts",
       "options": {
-        "printWidth": 120,
+        "printWidth": 100,
         "bracketSameLine": true,
         "singleAttributePerLine": false
       }
@@ -11,7 +11,7 @@
     {
       "files": "*.html",
       "options": {
-        "printWidth": 120,
+        "printWidth": 100,
         "parser": "angular"
       }
     }

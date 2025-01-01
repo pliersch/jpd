@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { booleanAttribute, Component, Signal, ViewChild, input } from '@angular/core';
+import { booleanAttribute, Component, Signal, input, viewChild } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -20,8 +20,7 @@ export class ScrollTopActionComponent {
 
   readonly button = input<boolean, unknown>(undefined, { transform: booleanAttribute });
 
-  @ViewChild(ActionComponent)
-  action!: ActionComponent;
+  readonly action = viewChild.required(ActionComponent);
 
   top: Signal<boolean | undefined>
 

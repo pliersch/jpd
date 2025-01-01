@@ -1,4 +1,4 @@
-import { Component, OnInit, Type, ViewChild } from '@angular/core';
+import { Component, OnInit, Type, viewChild } from '@angular/core';
 import { DynamicComponentDirective } from './dynamic-component.directive';
 import { DynamicComponentService } from './dynamic-component.service';
 
@@ -12,8 +12,7 @@ import { DynamicComponentService } from './dynamic-component.service';
 })
 export class DynamicHostComponent implements OnInit {
 
-  @ViewChild(DynamicComponentDirective, {static: true})
-  componentHost!: DynamicComponentDirective;
+  readonly componentHost = viewChild.required(DynamicComponentDirective);
 
   private currentComponent: Type<Component>;
 
@@ -24,7 +23,7 @@ export class DynamicHostComponent implements OnInit {
   }
 
   loadWidget(component: Type<Component>): void {
-    const viewContainerRef = this.componentHost.viewContainerRef;
+    const viewContainerRef = this.componentHost().viewContainerRef;
     viewContainerRef.clear();
     viewContainerRef.createComponent(component);
     this.currentComponent = component;
@@ -36,7 +35,7 @@ export class DynamicHostComponent implements OnInit {
         component.name, this.currentComponent.name)
       return;
     }
-    this.componentHost.viewContainerRef.clear();
+    this.componentHost().viewContainerRef.clear();
   }
 
 }

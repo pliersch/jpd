@@ -19,7 +19,7 @@ export interface Card11Model {
 })
 export class Card11Component {
 
-  readonly model = input<Card11Model>();
+  readonly model = input.required<Card11Model>();
 
   readonly transparent = input(false);
 

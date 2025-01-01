@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, viewChild } from '@angular/core';
 import { MatMenu, MatMenuModule, MatMenuPanel } from '@angular/material/menu';
 
 @Component({
@@ -10,8 +10,7 @@ import { MatMenu, MatMenuModule, MatMenuPanel } from '@angular/material/menu';
 })
 export class LinksMenuComponent implements AfterViewInit {
 
-  @ViewChild(MatMenu, {static: true})
-  menu: MatMenuPanel;
+  readonly menu = viewChild(MatMenu);
 
   ngAfterViewInit(): void {
     console.log('LinkMenuComponent ngAfterViewInit: ',)

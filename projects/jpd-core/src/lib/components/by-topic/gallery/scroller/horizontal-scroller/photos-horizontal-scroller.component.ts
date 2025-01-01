@@ -1,16 +1,21 @@
-import { CdkFixedSizeVirtualScroll, CdkVirtualForOf, CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
+import {
+  CdkFixedSizeVirtualScroll,
+  CdkVirtualForOf,
+  CdkVirtualScrollViewport
+} from '@angular/cdk/scrolling';
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   ElementRef,
-  EventEmitter,
+  input,
+  model,
   OnChanges,
-  Output,
+  output,
   SimpleChanges,
   ViewChild,
-  ViewEncapsulation,
-  input
+  viewChild,
+  ViewEncapsulation
 } from '@angular/core';
 import { ScrollerItemComponent } from '../scroller-item/scroller-item.component';
 
@@ -25,24 +30,22 @@ import { ScrollerItemComponent } from '../scroller-item/scroller-item.component'
 })
 export class PhotosHorizontalScrollerComponent implements AfterViewInit, OnChanges {
 
-  @ViewChild(CdkVirtualScrollViewport)
+    @ViewChild(CdkVirtualScrollViewport)
   viewPort: CdkVirtualScrollViewport;
 
-  @ViewChild(CdkVirtualScrollViewport, {read: ElementRef})
-  viewPortRef: ElementRef;
+  readonly viewPortRef = viewChild(CdkVirtualScrollViewport, { read: ElementRef });
 
-  readonly imageUrls = input<string[]>();
+  readonly imageUrls = input.required<string[]>();
 
-  readonly currentIndex = input<number>();
+  readonly currentIndex = model.required<number>();
 
-  @Output()
-  selectEvent = new EventEmitter<number>();
+  readonly selectEvent = output<number>();
 
   // private resizeObserver: ResizeObserver;
   lastIndex = 0;
 
   private readonly ITEM_WIDTH = 150;
-  private readonly STEPS = 3;
+  // private readonly STEPS = 3;
 
   private visibleItems = 0;
 
@@ -67,7 +70,7 @@ export class PhotosHorizontalScrollerComponent implements AfterViewInit, OnChang
     if (this._isItemVisible(index)) {
       return;
     } else {
-      this.viewPort.scrollToIndex(index, "smooth");
+      this.viewPort!.scrollToIndex(index, "smooth");
     }
   }
 
@@ -78,11 +81,13 @@ export class PhotosHorizontalScrollerComponent implements AfterViewInit, OnChang
   onScroll(event: WheelEvent): void {
     if (event.deltaY > 0) {
       if (this.currentIndex() < this.imageUrls().length - 1) {
-        this.scrollToIndex(++this.currentIndex())
+        this.currentIndex.update(old => old + 1)
+        this.scrollToIndex(this.currentIndex())
       }
     } else {
       if (this.currentIndex() > 0) {
-        this.scrollToIndex(--this.currentIndex())
+        this.currentIndex.update(old => old - 1)
+        this.scrollToIndex(this.currentIndex())
       }
     }
     event.stopImmediatePropagation();
@@ -92,8 +97,8 @@ export class PhotosHorizontalScrollerComponent implements AfterViewInit, OnChang
 
   _isItemVisible(index: number): boolean {
     const position = (index + 1) * this.ITEM_WIDTH;
-    const viewportSize = this.viewPort.getViewportSize();
-    const offsetLeft = this.viewPort.measureScrollOffset('left');
+    const viewportSize = this.viewPort!.getViewportSize();
+    const offsetLeft = this.viewPort!.measureScrollOffset('left');
     const normalizedPosition = position - offsetLeft;
     const left = normalizedPosition > 0;
     const right = normalizedPosition < viewportSize;

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ContentChild, OnInit, signal, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, signal, viewChild, contentChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
@@ -16,10 +16,9 @@ import { StickyAppbarComponent } from '../../toolbars/appbar/sticky/sticky-appba
 })
 export class A4WRootComponent implements OnInit, AfterViewInit {
 
-  @ViewChild(MatSidenav) sidenav!: MatSidenav;
+  readonly sidenav = viewChild.required(MatSidenav);
 
-  @ContentChild(StickyAppbarComponent)
-  stickyAppbar?: StickyAppbarComponent;
+  readonly stickyAppbar = contentChild(StickyAppbarComponent);
 
   // avoid flickering of footer (is rendered before router content)
   showFooter = false;
@@ -39,7 +38,7 @@ export class A4WRootComponent implements OnInit, AfterViewInit {
   }
 
   toggleNav(): void {
-    void this.sidenav.toggle();
+    void this.sidenav().toggle();
   }
 
   ngAfterViewInit(): void {

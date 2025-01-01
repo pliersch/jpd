@@ -1,5 +1,5 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, OnInit, viewChild } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipListbox, MatChipOption } from '@angular/material/chips';
@@ -29,8 +29,7 @@ export class AddVideoDialogComponent implements OnInit {
     tags: [''],
   });
 
-  @ViewChild(MatChipListbox)
-  chipListBox: MatChipListbox;
+  readonly chipListBox = viewChild(MatChipListbox);
 
   valid = false;
   tags: Array<Tag>;
@@ -68,7 +67,7 @@ export class AddVideoDialogComponent implements OnInit {
   }
 
   getTagsFromChipList(): string[] {
-    const selected = this.chipListBox.selected;
+    const selected = this.chipListBox().selected;
     const result: string[] = [];
     if (Array.isArray(selected)) {
       for (const item of selected) {

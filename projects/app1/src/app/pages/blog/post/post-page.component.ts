@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import {
   Card31Component,
   FragmentDirective,
-  LinkFooterDecoratorComponent,
   Parallax1Component,
   Post1Component,
   SectionComponent,
@@ -17,7 +16,6 @@ import {
         Post1Component,
         Parallax1Component,
         Card31Component,
-        LinkFooterDecoratorComponent,
         TitleSubtitleDecoratorComponent
     ],
     templateUrl: './post-page.component.html',

@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, EventEmitter, HostListener, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit, output } from '@angular/core';
 import { AlertService, ImageService } from '../../../../common';
 import {
   PhotosHorizontalScrollerComponent
@@ -13,8 +13,7 @@ import {
 })
 export class SlideshowComponent implements OnInit, OnDestroy {
 
-  @Output()
-  closeEvent: EventEmitter<void> = new EventEmitter();
+  readonly closeEvent = output();
 
   currentIndex = 0;
 

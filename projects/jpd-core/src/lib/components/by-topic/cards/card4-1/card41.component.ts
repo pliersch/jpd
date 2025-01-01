@@ -16,7 +16,7 @@ export interface Card41Model {
 })
 export class Card41Component {
 
-  readonly model = input<Card41Model>();
+  readonly model = input.required<Card41Model>();
 
   readonly padding = input<string>('0');
 

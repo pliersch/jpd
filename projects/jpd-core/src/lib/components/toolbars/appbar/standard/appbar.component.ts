@@ -1,24 +1,24 @@
-import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
 import {
   AfterViewInit,
   booleanAttribute,
   Component,
-  ContentChild,
+  contentChild,
   ElementRef,
   HostListener,
+  input,
   OnInit,
-  ViewChild,
-  input
+  viewChild
 } from '@angular/core';
-import { MatButtonModule } from "@angular/material/button";
-import { MatIconModule } from "@angular/material/icon";
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { IsActiveMatchOptions, RouterLink, RouterLinkActive } from "@angular/router";
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { IsActiveMatchOptions, RouterLink, RouterLinkActive } from '@angular/router';
 
-import { Observable, tap } from "rxjs";
+import { Observable, tap } from 'rxjs';
 import { map } from 'rxjs/operators';
 import {
   Route,
@@ -39,15 +39,13 @@ import { NavigationDirective } from '../../../navigation/directives/navigation.d
 })
 export class AppbarComponent implements OnInit, AfterViewInit {
 
-  @ContentChild(NavigationDirective)
-  navigationDirective?: NavigationDirective;
+  readonly navigationDirective = contentChild(NavigationDirective);
 
-  @ViewChild('navContainer', {read: ElementRef})
-  navContainer: ElementRef;
+  readonly navContainer = viewChild('navContainer', { read: ElementRef });
 
-  readonly bgColorDark = input<string>(); // fixme set default value. current both colors must set
+  readonly bgColorDark = input.required<string>(); // fixme set default value. current both colors must set
 
-  readonly bgColorLight = input<string>(); // fixme set default value. current both colors must set
+  readonly bgColorLight = input.required<string>(); // fixme set default value. current both colors must set
 
   bgColor: string;
 
@@ -102,19 +100,20 @@ export class AppbarComponent implements OnInit, AfterViewInit {
   }
 
   showSubNav(route: Route, x: number): void {
-    this.navigationDirective?.show(route, x)
+    this.navigationDirective()?.show(route, x)
   }
 
   hideSubNav(): void {
-    this.navigationDirective?.hide();
+    this.navigationDirective()?.hide();
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(): void {
-    if (!this.navContainer) {
+    const navContainer = this.navContainer();
+    if (!navContainer) {
       return;
     }
-    const navContainerWidth = this.navContainer.nativeElement.offsetWidth;
+    const navContainerWidth = navContainer.nativeElement.offsetWidth;
     const appbarWidth = navContainerWidth + 150 + 150;
     this.actionsVisible = appbarWidth <= window.innerWidth;
   }

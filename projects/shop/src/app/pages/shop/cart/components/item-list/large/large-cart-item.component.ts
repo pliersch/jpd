@@ -1,5 +1,5 @@
 import { CurrencyPipe, NgOptimizedImage } from '@angular/common';
-import { Component, EventEmitter, Output, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
@@ -21,11 +21,9 @@ export class LargeCartItemComponent {
 
   readonly item = input.required<CartItem>();
 
-  @Output()
-  quantityChange = new EventEmitter<UpdateOrderPosition>();
+  readonly quantityChange = output<UpdateOrderPosition>();
 
-  @Output()
-  deleteItem = new EventEmitter<number>();
+  readonly deleteItem = output<number>();
 
   emitQuantityChange(id: number, quantity: string): void {
     this.quantityChange.emit({id: id, quantity: Number(quantity)});

@@ -2,7 +2,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 
 
 import { NgFor } from '@angular/common';
-import { Component, EventEmitter, Output, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Hero } from '@app1/pages/animation/hero';
 
 @Component({
@@ -36,7 +36,7 @@ import { Hero } from '@app1/pages/animation/hero';
 export class HeroListEnterLeaveComponent {
   readonly heroes = input<Hero[]>([]);
 
-  @Output() remove = new EventEmitter<number>();
+  readonly remove = output<number>();
 
   removeHero(id: number) {
     this.remove.emit(id);

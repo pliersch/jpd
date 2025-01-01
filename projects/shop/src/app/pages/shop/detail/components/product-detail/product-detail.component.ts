@@ -1,5 +1,5 @@
 import { NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, QueryList, ViewChildren } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, viewChildren } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { MatButtonToggle, MatButtonToggleGroup } from '@angular/material/button-toggle';
@@ -40,8 +40,7 @@ export class ProductDetailComponent {
   readonly detailStore = inject(DetailStore);
   readonly cartStore = inject(CartStore);
 
-  @ViewChildren(NumberInputComponent)
-  quantityInputs!: QueryList<NumberInputComponent>;
+  readonly quantityInputs = viewChildren(NumberInputComponent);
 
   size?: string;
   quantity: number = 0;
@@ -53,7 +52,7 @@ export class ProductDetailComponent {
   onSubmit(): void {
     this.cartStore.add(createOrderPositionDto(this.detailStore.entityId(), this.quantity, this.size!));
     this.quantity = 0;
-    this.quantityInputs.forEach((item) => item.clear());
+    this.quantityInputs().forEach((item) => item.clear());
   }
 
   onSelectSize($event: string | null): void {

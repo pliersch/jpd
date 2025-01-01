@@ -1,6 +1,6 @@
 import { SelectionModel } from '@angular/cdk/collections';
 import { CurrencyPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, input, output } from '@angular/core';
 import { MatCheckbox } from '@angular/material/checkbox';
 import {
   MatCell,
@@ -42,8 +42,7 @@ export class WeightTableComponent implements OnInit {
 
   readonly tableData = input.required<KratomTableData[]>();
 
-  @Output()
-  choiceEvent = new EventEmitter<string | null>();
+  readonly choiceEvent = output<string | null>();
 
   displayedColumns: string[] = ['select', 'size', 'price', 'kgPrice', 'stock'];
   dataSource: MatTableDataSource<KratomTableData>

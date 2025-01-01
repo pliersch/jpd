@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'a4w-scroller-item',
@@ -8,14 +8,13 @@ import { Component, EventEmitter, Output, input } from '@angular/core';
 })
 export class ScrollerItemComponent {
 
-  readonly index = input<number>();
+  readonly index = input.required<number>();
 
-  readonly imageUrl = input<string>();
+  readonly imageUrl = input.required<string>();
 
   readonly active = input<boolean>();
 
-  @Output()
-  selectEvent = new EventEmitter<number>();
+  readonly selectEvent = output<number>();
 
   onClick(): void {
     this.selectEvent.emit(this.index());

@@ -258,19 +258,19 @@ export const appData: AppConfig = {
           items: [
             {
               title: 'Design',
-              subtitles: ['Foobar', 'Foobar', 'Foobar', 'Foobar']
+              subtitles: ['Foo', 'Bar', 'Baz', 'Buh', 'Yeah', 'Grrr']
             },
             {
               title: 'Development',
-              subtitles: ['Foobar', 'Foobar', 'Foobar', 'Foobar', 'Foobar', 'Foobar']
+              subtitles: ['Foo', 'Bar', 'Baz', 'Buh', 'Dum', 'Huh']
             },
             {
               title: 'Services',
-              subtitles: ['Foobar', 'Foobar', 'Foobar', 'Foobar', 'Foobar', 'Foobar']
+              subtitles: ['Foo', 'Bar', 'Baz', 'Buh']
             },
             {
               title: 'Sonstige',
-              subtitles: ['Foobar', 'Foobar', 'Foobar', 'Foobar', 'Foobar']
+              subtitles: ['Foo', 'Bar', 'Baz', 'Buh']
             },
           ]
         },

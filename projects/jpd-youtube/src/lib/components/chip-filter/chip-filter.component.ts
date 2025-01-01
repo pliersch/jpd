@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { MatChip, MatChipListbox } from '@angular/material/chips';
 import { Tag } from '../../store/model';
 
@@ -13,8 +13,7 @@ export class ChipFilterComponent {
 
   readonly tags = input.required<Tag[]>();
 
-  @Output()
-  tagChangeEvent = new EventEmitter<Tag[]>();
+  readonly tagChangeEvent = output<Tag[]>();
 
   areActiveTags = false;
 

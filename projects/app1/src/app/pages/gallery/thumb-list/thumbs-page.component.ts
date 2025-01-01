@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import {
   AbstractDefaultPageComponent,
   EndlessGridComponent,
@@ -11,14 +10,14 @@ import {
 
 @Component({
     selector: 'app-gallery-page',
-    imports: [
-        CommonModule,
-        FragmentDirective,
-        EndlessGridComponent,
-        TitleSubtitleDecoratorComponent,
-        SectionComponent,
-        RouterOutlet,
-    ],
+  imports: [
+    CommonModule,
+    FragmentDirective,
+    EndlessGridComponent,
+    TitleSubtitleDecoratorComponent,
+    SectionComponent,
+
+  ],
     templateUrl: './thumbs-page.component.html',
     styleUrls: ['./thumbs-page.component.scss']
 })

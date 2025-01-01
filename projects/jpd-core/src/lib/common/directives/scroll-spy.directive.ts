@@ -1,4 +1,6 @@
-import { Directive, ElementRef, EventEmitter, HostListener, Output, input } from '@angular/core';
+import { Directive, ElementRef, HostListener, input, output } from '@angular/core';
+
+export type InOutEvent = 'in' | 'out';
 
 @Directive({
   selector: '[a4wScrollSpy]',
@@ -8,7 +10,7 @@ export class ScrollSpyDirective {
 
   readonly appScrollSpy = input<number>(0);
 
-  @Output() reachedEvent: EventEmitter<string> = new EventEmitter();
+  readonly reachedEvent = output<InOutEvent>();
 
   private inEmitted = false;
   private outEmitted = false;

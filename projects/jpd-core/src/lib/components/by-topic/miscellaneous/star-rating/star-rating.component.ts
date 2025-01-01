@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, EventEmitter, Output, input } from '@angular/core';
+import { booleanAttribute, Component, input, output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -15,8 +15,7 @@ export class StarRatingComponent {
 
   readonly colorOff = input('white');
 
-  @Output()
-  rateChangeEvent = new EventEmitter<number>();
+  readonly rateChangeEvent = output<number>();
 
   readonly disabled = input(false, { transform: booleanAttribute });
 

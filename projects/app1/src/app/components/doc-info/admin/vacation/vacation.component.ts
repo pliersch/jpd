@@ -1,19 +1,14 @@
-import { NgIf } from '@angular/common';
 import {
   AfterViewInit,
   Component,
   Directive,
   ElementRef,
   inject,
-  QueryList,
-  ViewChild,
-  ViewChildren
+  viewChild,
+  viewChildren
 } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
-import { MatCheckbox } from '@angular/material/checkbox';
-import { MatError, MatFormField } from '@angular/material/form-field';
-import { MatInput } from '@angular/material/input';
 import { Vacation } from '@app1/components/doc-info/admin/vacation/doc-vacation.model';
 import { DocVacationStore } from '@app1/components/doc-info/admin/vacation/doc-vacation.store';
 
@@ -30,26 +25,19 @@ export interface VacationTableItem {
 
 @Component({
     selector: 'app-doc-vacation',
-    imports: [
-        MatButton,
-        MatCheckbox,
-        MatError,
-        MatFormField,
-        MatInput,
-        NgIf,
-        ReactiveFormsModule,
-        InputHelpDirective
-    ],
+  imports: [
+    MatButton,
+    ReactiveFormsModule,
+    InputHelpDirective
+  ],
     templateUrl: './vacation.component.html',
     styleUrl: './vacation.component.scss'
 })
 export class VacationComponent implements AfterViewInit {
 
-  @ViewChildren(InputHelpDirective, {read: ElementRef})
-  inputs: QueryList<ElementRef>;
+  readonly inputs = viewChildren(InputHelpDirective, { read: ElementRef });
 
-  @ViewChild('root', {read: ElementRef})
-  root: ElementRef;
+  readonly root = viewChild('root', { read: ElementRef });
 
   readonly store = inject(DocVacationStore);
   vacations: Vacation[] = [];
@@ -67,7 +55,7 @@ export class VacationComponent implements AfterViewInit {
 
   checkDateAndLine($event: FocusEvent): void {
     this.checkDate($event);
-    for (const input of this.inputs) {
+    for (const input of this.inputs()) {
       if (input.nativeElement.value === '') {
         this.newLinePossible = false;
         break;
@@ -82,10 +70,10 @@ export class VacationComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const observer = new MutationObserver(() => {
-      this.inputs.get(this.inputs.length - 2)?.nativeElement.focus()
+      this.inputs().at(this.inputs().length - 2)?.nativeElement.focus()
 
     });
-    observer.observe(this.root.nativeElement, {childList: true});
+    observer.observe(this.root()!.nativeElement, {childList: true});
   }
 
   nextEntry(): void {
