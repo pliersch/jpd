@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Comment } from '@shop/pages/shop/store/articles/article.model';
 import { StarsComponent } from 'jpd-core';
 
@@ -9,6 +9,5 @@ import { StarsComponent } from 'jpd-core';
   styleUrl: './comment.component.scss',
 })
 export class CommentComponent {
-  @Input({ required: true })
-  comment: Comment;
+  readonly comment = input.required<Comment>();
 }

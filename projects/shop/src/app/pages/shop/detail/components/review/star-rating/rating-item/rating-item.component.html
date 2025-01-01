@@ -1,6 +1,6 @@
 <div class="flex items-center mb-1">
   <dt class="flex flex-1 items-center">
-    <p>{{ value.grade }}</p>
+    <p>{{ value().grade }}</p>
     <div aria-hidden="true" class="flex-1 items-center ml-1">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#E7C512" aria-hidden="true"
            data-slot="icon" width="20px" height="20px" class="bdo om ww">
@@ -12,9 +12,9 @@
     <div class="flex-start flex h-3 w-full  ml-1 overflow-hidden rounded-full
       bg-[var(--mat-sys-surface-variant)] font-sans text-xs font-medium">
       <div class="flex items-center justify-center h-full overflow-hidden
-        text-white break-all bg-[#E7C512] rounded-full" [style.width]="value.countPercent+'%'">
+        text-white break-all bg-[#E7C512] rounded-full" [style.width]="value().countPercent+'%'">
       </div>
     </div>
   </dt>
-  <dd class=" ml-1 text-right w-10">{{ value.countPercent }}%</dd>
+  <dd class=" ml-1 text-right w-10">{{ value().countPercent }}%</dd>
 </div>

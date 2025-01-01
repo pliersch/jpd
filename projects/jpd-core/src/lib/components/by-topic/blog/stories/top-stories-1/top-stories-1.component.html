@@ -1,6 +1,6 @@
 <h4 class="text-2xl mt-5">Top Stories</h4>
 
-@for (story of stories; track story) {
+@for (story of stories(); track story) {
   <div class="mt-4">
     <a [routerLink]="[story.link]">
       <div class="grid grid-cols-3">

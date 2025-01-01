@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { booleanAttribute, Component, Input, OnInit } from '@angular/core';
+import { booleanAttribute, Component, OnInit, input } from '@angular/core';
 
 @Component({
     selector: 'a4w-txt-img-2',
@@ -9,22 +9,24 @@ import { booleanAttribute, Component, Input, OnInit } from '@angular/core';
 })
 export class TxtImg2Component implements OnInit {
 
-  @Input({transform: booleanAttribute}) circle: boolean;
+  readonly circle = input<boolean, unknown>(undefined, { transform: booleanAttribute });
 
-  @Input({transform: booleanAttribute}) oblique: boolean;
+  readonly oblique = input<boolean, unknown>(undefined, { transform: booleanAttribute });
 
   imgClass = ''
 
   bg = '1x/21.jpg'
 
   ngOnInit(): void {
-    if (this.circle && this.oblique) {
+    const circle = this.circle();
+    const oblique = this.oblique();
+    if (circle && oblique) {
       throw new Error('Only one property is allowed.')
     }
-    if (this.circle) {
+    if (circle) {
       this.imgClass = 'clip-circle'
     }
-    if (this.oblique) {
+    if (oblique) {
       this.imgClass = 'clip-oblique'
     }
   }

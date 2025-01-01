@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 export interface TopStories1Model {
@@ -16,7 +16,6 @@ export interface TopStories1Model {
 })
 export class TopStories1Component {
 
-  @Input()
-  stories: TopStories1Model[]
+  readonly stories = input<TopStories1Model[]>();
 
 }

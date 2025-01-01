@@ -3,7 +3,7 @@
     <!--        <div class="slider" *ngIf="current === i" @fade>-->
     <div class="slider" *ngIf="current === i">
       <div class="col py-7 z-2 mx-auto overflow-hidden rounded-lg relative"
-           [style.color]="textColor"
+           [style.color]="textColor()"
            [style.background-color]="color">
         <div class="pseudo-bg-img z-n1">
           <img [src]="item.bgImageUrl" alt="Hintergrundbild zum Artikel"/>

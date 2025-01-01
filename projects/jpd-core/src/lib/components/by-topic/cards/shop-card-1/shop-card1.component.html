@@ -1,15 +1,15 @@
 <div class="flex flex-col text-sm w-full rounded overflow-hidden cursor-pointer elevation">
-  <a [routerLink]="[link, linkId]">
+  <a [routerLink]="[link(), linkId()]">
     <div>
       <div class="flex justify-center items-center">
         <img a4wImgFallback class="object-cover"
-             [src]="imageUrl" alt="image of kratom">
+             [src]="imageUrl()" alt="image of kratom">
       </div>
-      <a4w-stars [rate]="rating"/>
+      <a4w-stars [rate]="rating()"/>
     </div>
     <div class="flex flex-col px-2 py-4 theme-contrast-component">
-      <p>{{ subtitle }}</p>
-      <p class="font-normal">{{ title }}</p>
+      <p>{{ subtitle() }}</p>
+      <p class="font-normal">{{ title() }}</p>
     </div>
   </a>
 </div>

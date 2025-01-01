@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, model } from '@angular/core';
+import { Component, model, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ImageFallbackDirective } from '../../../../common';
 import { StarsComponent } from '../../miscellaneous/stars/stars.component';
@@ -13,29 +13,21 @@ import { StarsComponent } from '../../miscellaneous/stars/stars.component';
 
 export class ShopCard1Component {
 
-  @Input({required: true})
-  title: string;
+  readonly title = input.required<string>();
 
-  @Input({required: true})
-  subtitle: string;
+  readonly subtitle = input.required<string>();
 
-  @Input({required: true})
-  link: string;
+  readonly link = input.required<string>();
 
-  @Input({required: true})
-  linkId: string;
+  readonly linkId = input.required<string>();
 
-  @Input({required: true})
-  imageUrl: string;
+  readonly imageUrl = input.required<string>();
 
-  @Input()
-  rating: number = 0;
+  readonly rating = input<number>(0);
 
-  @Input()
-  colorOn: string = 'yellow';
+  readonly colorOn = input<string>('yellow');
 
-  @Input()
-  colorOff: string = 'white';
+  readonly colorOff = input<string>('white');
 
   // @Output()
   // emitter = new EventEmitter<string>();

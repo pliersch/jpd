@@ -5,12 +5,12 @@ import {
   Component,
   ElementRef,
   EventEmitter,
-  Input,
   OnChanges,
   Output,
   SimpleChanges,
   ViewChild,
-  ViewEncapsulation
+  ViewEncapsulation,
+  input
 } from '@angular/core';
 import { ScrollerItemComponent } from '../scroller-item/scroller-item.component';
 
@@ -31,11 +31,9 @@ export class PhotosHorizontalScrollerComponent implements AfterViewInit, OnChang
   @ViewChild(CdkVirtualScrollViewport, {read: ElementRef})
   viewPortRef: ElementRef;
 
-  @Input()
-  imageUrls: string[];
+  readonly imageUrls = input<string[]>();
 
-  @Input()
-  currentIndex: number;
+  readonly currentIndex = input<number>();
 
   @Output()
   selectEvent = new EventEmitter<number>();
@@ -62,7 +60,7 @@ export class PhotosHorizontalScrollerComponent implements AfterViewInit, OnChang
     if (changes['currentIndex'] && !changes['currentIndex'].firstChange) {
       this.scrollToActiveItem();
     }
-    this.lastIndex = this.currentIndex;
+    this.lastIndex = this.currentIndex();
   }
 
   scrollToIndex(index: number): void {
@@ -79,12 +77,12 @@ export class PhotosHorizontalScrollerComponent implements AfterViewInit, OnChang
 
   onScroll(event: WheelEvent): void {
     if (event.deltaY > 0) {
-      if (this.currentIndex < this.imageUrls.length - 1) {
-        this.scrollToIndex(++this.currentIndex)
+      if (this.currentIndex() < this.imageUrls().length - 1) {
+        this.scrollToIndex(++this.currentIndex())
       }
     } else {
-      if (this.currentIndex > 0) {
-        this.scrollToIndex(--this.currentIndex)
+      if (this.currentIndex() > 0) {
+        this.scrollToIndex(--this.currentIndex())
       }
     }
     event.stopImmediatePropagation();
@@ -104,7 +102,7 @@ export class PhotosHorizontalScrollerComponent implements AfterViewInit, OnChang
   }
 
   scrollToActiveItem(): void {
-    this.scrollToIndex(this.currentIndex);
+    this.scrollToIndex(this.currentIndex());
   }
 
   // fixme need implementation (device rotation)

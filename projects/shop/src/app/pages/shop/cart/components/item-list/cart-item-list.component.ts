@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Input, Output, Signal } from '@angular/core';
+import { Component, EventEmitter, inject, Output, Signal, input } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { LargeCartItemComponent } from '@shop/pages/shop/cart/components/item-list/large/large-cart-item.component';
 import { SmallCartItemComponent } from '@shop/pages/shop/cart/components/item-list/small/small-cart-item.component';
@@ -17,7 +17,7 @@ import { map } from 'rxjs/operators';
 })
 export class CartItemListComponent {
 
-  @Input() items: CartItem[];
+  readonly items = input<CartItem[]>();
 
   @Output()
   quantityChange = new EventEmitter<UpdateOrderPosition>();

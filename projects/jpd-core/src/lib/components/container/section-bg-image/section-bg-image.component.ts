@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { FragmentDirective } from '../../../common';
 import { BaseComponent } from '../../core/base/base.component';
 
@@ -15,8 +15,7 @@ export interface BgImageModel {
 
 export class SectionBgImageComponent extends BaseComponent<BgImageModel> {
 
-  @Input()
-  darkenBG = true;
+  readonly darkenBG = input(true);
 
   constructor(override fragment?: FragmentDirective) {
     super('SectionBgImage', fragment);

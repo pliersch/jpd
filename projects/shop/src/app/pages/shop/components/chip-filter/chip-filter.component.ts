@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output, input } from '@angular/core';
 import { MatChip, MatChipListbox } from '@angular/material/chips';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
 import { Tag, ToggleTagAction } from '@shop/pages/shop/store/tags/tag.model';
@@ -11,8 +11,7 @@ import { Tag, ToggleTagAction } from '@shop/pages/shop/store/tags/tag.model';
   styleUrl: './chip-filter.component.scss',
 })
 export class ChipFilterComponent {
-  @Input({ required: true })
-  tags: Tag[];
+  readonly tags = input.required<Tag[]>();
 
   @Output()
   toggleTagEvent = new EventEmitter<ToggleTagAction>();
@@ -21,7 +20,7 @@ export class ChipFilterComponent {
 
   deactivateTags(): void {
     this.existActiveTags = false;
-    const ids = this.tags.map((tag) => tag.id);
+    const ids = this.tags().map((tag) => tag.id);
     this.toggleTagEvent.emit({ ids, active: false });
   }
 

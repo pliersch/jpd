@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input } from '@angular/core';
+import { Directive, ElementRef, input } from '@angular/core';
 
 @Directive({
   selector: '[a4wFragment]',
@@ -6,13 +6,12 @@ import { Directive, ElementRef, Input } from '@angular/core';
 })
 export class FragmentDirective {
 
-  @Input({required: true})
-  a4wFragment: string;
+  readonly a4wFragment = input.required<string>();
 
   constructor(public el: ElementRef) { }
 
   public get name(): string {
-    return this.a4wFragment;
+    return this.a4wFragment();
   }
 
 }

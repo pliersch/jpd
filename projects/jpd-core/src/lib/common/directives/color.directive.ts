@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, OnInit, Renderer2, input } from '@angular/core';
 
 @Directive({
   selector: '[a4wColor]',
@@ -6,13 +6,12 @@ import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 })
 export class ColorDirective implements OnInit {
 
-  @Input({required: true})
-  color: string;
+  readonly color = input.required<string>();
 
   constructor(private el: ElementRef,
               private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.renderer.setStyle(this.el.nativeElement, 'color', this.color);
+    this.renderer.setStyle(this.el.nativeElement, 'color', this.color());
   }
 }

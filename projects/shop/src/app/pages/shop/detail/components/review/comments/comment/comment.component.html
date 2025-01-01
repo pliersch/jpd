@@ -1,12 +1,12 @@
 <div class="py-4 divider-bottom">
   <div class="flex justify-between">
-    <p class="font-medium">{{ comment.title }}</p>
-    <a4w-stars class=" mb-2" [rate]="comment.rating" />
+    <p class="font-medium">{{ comment().title }}</p>
+    <a4w-stars class=" mb-2" [rate]="comment().rating" />
     <!--    <a4w-stars class=" mb-2" [rate]="article.rating || 0" />-->
   </div>
   <div>
-    <p class="mb-2">{{ comment.message }}</p>
-    <p class="text-xs"> {{ comment.userName }}, {{ comment.date.toLocaleDateString() }}</p>
+    <p class="mb-2">{{ comment().message }}</p>
+    <p class="text-xs"> {{ comment().userName }}, {{ comment().date.toLocaleDateString() }}</p>
 
   </div>
 </div>

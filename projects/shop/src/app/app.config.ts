@@ -9,6 +9,7 @@ import {
   inject,
   LOCALE_ID,
   provideAppInitializer,
+  provideExperimentalZonelessChangeDetection
 } from '@angular/core';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { DateFnsAdapter } from '@angular/material-date-fns-adapter';
@@ -16,15 +17,8 @@ import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconRegistry } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import {
-  DomSanitizer,
-  provideClientHydration,
-  withEventReplay,
-} from '@angular/platform-browser';
-import {
-  BrowserAnimationsModule,
-  provideAnimations,
-} from '@angular/platform-browser/animations';
+import { DomSanitizer, provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { initProjectIcons } from '@shop/common/icon.initializer';
 import { CustomAppDataService } from '@shop/services/custom-app-data.service';
@@ -50,13 +44,9 @@ registerLocaleData(localeDe);
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideExperimentalZonelessChangeDetection(),
     provideClientHydration(withEventReplay()),
-    importProvidersFrom(
-      MatSnackBarModule,
-      MatDialogModule,
-      GoogleMapsModule,
-      BrowserAnimationsModule,
-    ),
+    importProvidersFrom(MatSnackBarModule, MatDialogModule, GoogleMapsModule, BrowserAnimationsModule),
     provideAnimations(),
     provideHttpClient(withFetch() /*withInterceptorsFromDi()*/),
     { provide: LOCALE_ID, useValue: 'de' },
@@ -67,11 +57,7 @@ export const appConfig: ApplicationConfig = {
       // withInMemoryScrolling({anchorScrolling: 'enabled', scrollPositionRestoration: 'top'})
     ),
     provideAppInitializer(() => {
-      return initTheme(
-        inject(ThemeService),
-        inject(Platform),
-        inject(MediaMatcher),
-      )();
+      return initTheme(inject(ThemeService), inject(Platform), inject(MediaMatcher))();
     }),
     provideAppInitializer(() => {
       return initApplication(inject(BreakpointService))();

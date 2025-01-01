@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { booleanAttribute, Component, Input } from '@angular/core';
+import { booleanAttribute, Component, input } from '@angular/core';
 import { Themes, ThemeService } from '../../../common';
 import { ActionComponent } from '../_base-action/action.component';
 
@@ -11,9 +11,9 @@ import { ActionComponent } from '../_base-action/action.component';
 })
 export class ThemeToggleActionComponent {
 
-  @Input({transform: booleanAttribute}) fab: boolean;
+  readonly fab = input<boolean, unknown>(undefined, { transform: booleanAttribute });
 
-  @Input({transform: booleanAttribute}) button: boolean;
+  readonly button = input<boolean, unknown>(undefined, { transform: booleanAttribute });
 
   theme: string = Themes.DARK;
 

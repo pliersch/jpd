@@ -1,6 +1,6 @@
 <div class="img-card-2 card-background mat-elevation-z6 white relative overflow-hidden rounded-lg">
-  @if (model.linkUrl) {
-    <a [routerLink]="[model.linkUrl]">
+  @if (model().linkUrl) {
+    <a [routerLink]="[model().linkUrl]">
       <ng-container [ngTemplateOutlet]="template"/>
     </a>
   } @else {
@@ -9,11 +9,11 @@
 </div>
 
 <ng-template #template>
-  <div class="full-background" [style.background-image]="'url(' + model.imgUrl + ')'"></div>
+  <div class="full-background" [style.background-image]="'url(' + model().imgUrl + ')'"></div>
   <div class="filter"></div>
   <div class="card-body flex flex-col justify-content-end">
     <span class="spacer"></span>
-    <h3 class="mb-2 font-medium text-3xl">{{ model.title }}</h3>
-    <p class="font-normal">{{ model.contentText }}</p>
+    <h3 class="mb-2 font-medium text-3xl">{{ model().title }}</h3>
+    <p class="font-normal">{{ model().contentText }}</p>
   </div>
 </ng-template>

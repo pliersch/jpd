@@ -2,14 +2,14 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 
 
 import { NgFor } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output, input } from '@angular/core';
 import { Hero } from '@app1/pages/animation/hero';
 
 @Component({
     selector: 'app-hero-list-enter-leave',
     template: `
     <ul class="heroes">
-      <li *ngFor="let hero of heroes"
+      <li *ngFor="let hero of heroes()"
           [@flyInOut]="'in'">
         <button class="inner" type="button" (click)="removeHero(hero.id)">
           <span class="badge">{{ hero.id }}</span>
@@ -34,7 +34,7 @@ import { Hero } from '@app1/pages/animation/hero';
     ]
 })
 export class HeroListEnterLeaveComponent {
-  @Input() heroes: Hero[] = [];
+  readonly heroes = input<Hero[]>([]);
 
   @Output() remove = new EventEmitter<number>();
 

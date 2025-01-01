@@ -3,33 +3,31 @@
   <dl class="mt-5">
     <div class="flex justify-between items-center">
       <dt class="axd ayu">Zwischensumme</dt>
-      <dd class="font-medium">{{ summary.subtotal | currency:'EUR' }}</dd>
+      <dd class="font-medium">{{ summary().subtotal | currency: "EUR" }}</dd>
     </div>
-    <div
-      class="flex justify-between items-center mt-4 pt-4 divider-top">
-      <dt class="flex items-center"><span>Versandkosten</span>
+    <div class="flex justify-between items-center mt-4 pt-4 divider-top">
+      <dt class="flex items-center">
+        <span>Versandkosten</span>
         <span class="hidden-description">Learn more about how tax is calculated</span>
       </dt>
-      <dd class="font-medium">{{ summary.shipment | currency:'EUR' }}</dd>
+      <dd class="font-medium">{{ summary().shipment | currency: "EUR" }}</dd>
     </div>
-    <div
-      class="flex justify-between items-center mt-4 pt-4 divider-top">
-      <dt class="flex items-center"><span>inkl. 7 % MwSt.</span>
+    <div class="flex justify-between items-center mt-4 pt-4 divider-top">
+      <dt class="flex items-center">
+        <span>inkl. 7 % MwSt.</span>
         <span class="hidden-description">Learn more about how tax is calculated</span>
       </dt>
-      <dd class="font-medium">{{ summary.tax | currency:'EUR' }}</dd>
+      <dd class="font-medium">{{ summary().tax | currency: "EUR" }}</dd>
     </div>
-    <div
-      class="flex justify-between items-center mt-4 pt-4 divider-top">
-      <dt class="flex items-center"><span>Gesamtsumme</span>
+    <div class="flex justify-between items-center mt-4 pt-4 divider-top">
+      <dt class="flex items-center">
+        <span>Gesamtsumme</span>
         <span class="hidden-description">Learn more about how tax is calculated</span>
       </dt>
-      <dd class="font-medium">{{ summary.total | currency:'EUR' }}</dd>
+      <dd class="font-medium">{{ summary().total | currency: "EUR" }}</dd>
     </div>
   </dl>
   <div class="flex justify-around mt-4">
-    <a mat-flat-button routerLink="/kasse">
-      Kasse
-    </a>
+    <a mat-flat-button routerLink="/kasse"> Kasse </a>
   </div>
 </section>

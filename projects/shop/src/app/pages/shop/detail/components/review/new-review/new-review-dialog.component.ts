@@ -25,7 +25,6 @@ export interface ReviewDialogData {
     MatButtonModule,
     MatInput,
     StarRatingComponent,
-
   ],
 })
 export class NewReviewDialogComponent implements OnInit {

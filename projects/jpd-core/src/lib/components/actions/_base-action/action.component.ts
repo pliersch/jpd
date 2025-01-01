@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { booleanAttribute, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { booleanAttribute, Component, EventEmitter, OnInit, Output, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -11,26 +11,19 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class ActionComponent implements OnInit {
 
-  @Input({transform: booleanAttribute})
-  fab: boolean;
+  readonly fab = input<boolean, unknown>(undefined, { transform: booleanAttribute });
 
-  @Input({transform: booleanAttribute})
-  button: boolean;
+  readonly button = input<boolean, unknown>(undefined, { transform: booleanAttribute });
 
-  @Input({transform: booleanAttribute})
-  iconTextButton: boolean;
+  readonly iconTextButton = input<boolean, unknown>(undefined, { transform: booleanAttribute });
 
-  @Input({required: true})
-  name: string;
+  readonly name = input.required<string>();
 
-  @Input({required: true})
-  icon: string;
+  readonly icon = input.required<string>();
 
-  @Input({required: true})
-  ariaLabel: string;
+  readonly ariaLabel = input.required<string>();
 
-  @Input()
-  text: string;
+  readonly text = input<string>();
 
   @Output()
   actionEvent = new EventEmitter<void>();
@@ -40,10 +33,13 @@ export class ActionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.fab && this.button
-      || this.fab && this.iconTextButton
-      || this.button && this.iconTextButton) {
-      throw new Error(this.name + ' action: Only one button-type is allowed.')
+    const fab = this.fab();
+    const button = this.button();
+    const iconTextButton = this.iconTextButton();
+    if (fab && button
+      || fab && iconTextButton
+      || button && iconTextButton) {
+      throw new Error(this.name() + ' action: Only one button-type is allowed.')
     }
   }
 

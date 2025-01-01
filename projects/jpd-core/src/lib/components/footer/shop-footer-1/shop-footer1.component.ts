@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, input } from '@angular/core';
 import { MatIconModule } from "@angular/material/icon";
 import { FragmentDirective } from '../../../common';
 import { Address } from '../../../content';
@@ -20,11 +20,9 @@ export interface ShopFooter1Model {
 })
 export class ShopFooter1Component extends BaseComponent<ShopFooter1Model> implements OnInit {
 
-  @Input()
-  headlineColor: string;
+  readonly headlineColor = input<string>();
 
-  @Input()
-  textColor: string;
+  readonly textColor = input<string>();
 
   address: string
 

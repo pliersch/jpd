@@ -1,25 +1,25 @@
-@if (fab) {
+@if (fab()) {
   <button mat-fab color="accent" (click)="execute()"
           aria-label="Anruf">
-    <mat-icon [svgIcon]="icon"></mat-icon>
+    <mat-icon [svgIcon]="icon()"></mat-icon>
   </button>
 
-} @else if (button) {
+} @else if (button()) {
   <button class="fs-5" mat-raised-button color="accent" (click)="execute()"
           aria-label="Anruf">
-    {{ text }}
+    {{ text() }}
   </button>
 
-} @else if (iconTextButton) {
+} @else if (iconTextButton()) {
   <button mat-raised-button color="accent" (click)="execute()"
           aria-label="Anruf">
-    <mat-icon [svgIcon]="icon"></mat-icon>
-    {{ text }}
+    <mat-icon [svgIcon]="icon()"></mat-icon>
+    {{ text() }}
   </button>
 
 } @else {
   <button mat-icon-button (click)="execute()"
           aria-label="Anruf">
-    <mat-icon [svgIcon]="icon"></mat-icon>
+    <mat-icon [svgIcon]="icon()"></mat-icon>
   </button>
 }

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { booleanAttribute, Component, Input, OnInit } from '@angular/core';
+import { booleanAttribute, Component, OnInit, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -15,8 +15,7 @@ import { Route, RouteDomService, ScrollService } from '../../../../common';
 })
 export class StickyAppbarComponent implements OnInit {
 
-  @Input({transform: booleanAttribute})
-  showOnScrollTop: boolean;
+  readonly showOnScrollTop = input<boolean, unknown>(undefined, { transform: booleanAttribute });
 
   isOpen = false;
   // todo move it into config file
@@ -36,7 +35,7 @@ export class StickyAppbarComponent implements OnInit {
   }
 
   private handleDisplayBehavior(scrollTop: number): void {
-    if (this.showOnScrollTop) {
+    if (this.showOnScrollTop()) {
       this.isOpen = scrollTop < this.scrollTop;
     } else {
       this.isOpen = scrollTop >= this.scrollTop;

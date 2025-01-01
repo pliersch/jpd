@@ -1,6 +1,6 @@
 <div class="mt-5 overflow-hidden rounded-lg">
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4" [class.grid-flow-dense]="imgFirst">
-    @if (imgFirst) {
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4" [class.grid-flow-dense]="imgFirst()">
+    @if (imgFirst()) {
       <ng-container [ngTemplateOutlet]="img"/>
       <ng-container [ngTemplateOutlet]="txt"/>
     } @else {
@@ -14,7 +14,7 @@
 <!--                 image template                  -->
 <!----------------------------------------------------->
 <ng-template #img>
-  <img class="mat-elevation-z6 w-full rounded-lg" [src]="model.imgUrl" alt="estate">
+  <img class="mat-elevation-z6 w-full rounded-lg" [src]="model().imgUrl" alt="estate">
 </ng-template>
 
 <!----------------------------------------------------->
@@ -22,17 +22,17 @@
 <!----------------------------------------------------->
 <ng-template #txt>
   <div class="my-sm-auto pt-3 pt-lg-0">
-    <h3 class="my-3 text-3xl font-medium"> {{ model.title }} </h3>
-    <p class="text-xl"> {{ model.contentText }}
-      @if (model.linkText) {
-        {{ model.linkText }}
+    <h3 class="my-3 text-3xl font-medium"> {{ model().title }} </h3>
+    <p class="text-xl"> {{ model().contentText }}
+      @if (model().linkText) {
+        {{ model().linkText }}
       }</p>
     <div class="flex">
-      @if (model.avatar) {
-        <img [src]="model.avatar" alt="team-3" class="avatar avatar-sm">
+      @if (model().avatar) {
+        <img [src]="model().avatar" alt="team-3" class="avatar avatar-sm">
       }
-      @if (model.postContentText) {
-        <p class="my-auto ms-2">{{ model.postContentText }}</p>
+      @if (model().postContentText) {
+        <p class="my-auto ms-2">{{ model().postContentText }}</p>
       }
     </div>
   </div>

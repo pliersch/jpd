@@ -1,5 +1,5 @@
 import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 
@@ -16,8 +16,7 @@ import { MatIcon } from '@angular/material/icon';
 })
 export class PopOverComponent {
 
-  @Input({required: true})
-  icon: string;
+  readonly icon = input.required<string>();
 
   isOpen = false;
 

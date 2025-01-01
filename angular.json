@@ -21,7 +21,6 @@
             "index": "projects/app1/src/index.html",
             "browser": "projects/app1/src/main.ts",
             "polyfills": [
-              "zone.js"
             ],
             "tsConfig": "projects/app1/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -92,8 +91,6 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
-              "zone.js",
-              "zone.js/testing"
             ],
             "tsConfig": "projects/app1/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
@@ -127,7 +124,6 @@
             "index": "projects/shop/src/index.html",
             "browser": "projects/shop/src/main.ts",
             "polyfills": [
-              "zone.js"
             ],
             "tsConfig": "projects/shop/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -198,8 +194,6 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
-              "zone.js",
-              "zone.js/testing"
             ],
             "tsConfig": "projects/shop/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
@@ -246,8 +240,6 @@
           "options": {
             "tsConfig": "projects/jpd-core/tsconfig.spec.json",
             "polyfills": [
-              "zone.js",
-              "zone.js/testing"
             ]
           }
         }
@@ -279,8 +271,6 @@
           "options": {
             "tsConfig": "projects/jpd-youtube/tsconfig.spec.json",
             "polyfills": [
-              "zone.js",
-              "zone.js/testing"
             ]
           }
         }
@@ -304,7 +294,6 @@
             "index": "projects/kohts-karsten/src/index.html",
             "browser": "projects/kohts-karsten/src/main.ts",
             "polyfills": [
-              "zone.js"
             ],
             "tsConfig": "projects/kohts-karsten/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -375,8 +364,6 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
-              "zone.js",
-              "zone.js/testing"
             ],
             "tsConfig": "projects/kohts-karsten/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
@@ -410,7 +397,6 @@
             "index": "projects/test/src/index.html",
             "browser": "projects/test/src/main.ts",
             "polyfills": [
-              "zone.js"
             ],
             "tsConfig": "projects/test/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -475,8 +461,6 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
-              "zone.js",
-              "zone.js/testing"
             ],
             "tsConfig": "projects/test/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",

@@ -32,8 +32,8 @@
 <ng-template #tablet>
   <mat-toolbar class="shadow-bottom relative"
                [class.transparent-bg]="_transparent"
-               [class.absolute]="_transparent || blurry"
-               [class.blurry]="blurry"
+               [class.absolute]="_transparent || blurry()"
+               [class.blurry]="blurry()"
                [style.background-color]="bgColor">
 
     <div class="flex w-full items-center justify-between">
@@ -59,8 +59,8 @@
 <ng-template #desktop>
   <mat-toolbar class="shadow-bottom relative"
                [class.transparent-bg]="_transparent"
-               [class.absolute]="_transparent || blurry"
-               [class.blurry]="blurry"
+               [class.absolute]="_transparent || blurry()"
+               [class.blurry]="blurry()"
                [style.background-color]="bgColor">
 
     <div class="flex w-full items-center justify-between">

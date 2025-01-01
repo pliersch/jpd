@@ -1,6 +1,6 @@
 import { Platform } from '@angular/cdk/platform';
 import { CommonModule } from '@angular/common';
-import { Component, Input, numberAttribute, OnInit } from '@angular/core';
+import { Component, numberAttribute, OnInit, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FragmentDirective } from '../../../../common';
 import { BaseComponent } from '../../../core/base/base.component';
@@ -26,11 +26,9 @@ export interface Banner2Model {
 })
 export class Banner2Component extends BaseComponent<Banner2Model> implements OnInit {
 
-  @Input()
-  textColor: string;
+  readonly textColor = input<string>();
 
-  @Input({transform: numberAttribute})
-  intervall = 5000;
+  readonly intervall = input(5000, { transform: numberAttribute });
 
   current = 0;
   color: string;
@@ -49,7 +47,7 @@ export class Banner2Component extends BaseComponent<Banner2Model> implements OnI
         this.alphaColor = this.color + '99';
         this.current = ++this.current % this.model.items.length
         this.color = this.model.items[this.current].color;
-      }, this.intervall);
+      }, this.intervall());
     }
   }
 

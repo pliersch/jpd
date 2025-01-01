@@ -1,4 +1,4 @@
-import { Directive, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, HostListener, Output, input } from '@angular/core';
 
 @Directive({
   selector: '[a4wScrollSpy]',
@@ -6,7 +6,7 @@ import { Directive, ElementRef, EventEmitter, HostListener, Input, Output } from
 })
 export class ScrollSpyDirective {
 
-  @Input() appScrollSpy: number = 0;
+  readonly appScrollSpy = input<number>(0);
 
   @Output() reachedEvent: EventEmitter<string> = new EventEmitter();
 
@@ -21,7 +21,7 @@ export class ScrollSpyDirective {
   onWindowScroll(): void {
     const nativeElement = this.el.nativeElement;
     // todo use 'nativeElement.offsetTop' ?!
-    const inside = nativeElement.getBoundingClientRect().top + this.appScrollSpy <= 0;
+    const inside = nativeElement.getBoundingClientRect().top + this.appScrollSpy() <= 0;
 
     if (!this.inEmitted && inside) {
       this.reachedEvent.emit('in');

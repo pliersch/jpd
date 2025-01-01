@@ -1,5 +1,5 @@
 import { CurrencyPipe, NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Output, input } from '@angular/core';
 import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
@@ -20,14 +20,13 @@ import { CartItem } from '@shop/pages/shop/cart/store/cart.model';
 })
 export class CartPopOverItemComponent {
 
-  @Input({required: true})
-  item: CartItem
+  readonly item = input.required<CartItem>();
 
   @Output()
   itemEvent = new EventEmitter<number>();
 
   emitId(): void {
-    this.itemEvent.emit(this.item.id);
+    this.itemEvent.emit(this.item().id);
   }
 
 }

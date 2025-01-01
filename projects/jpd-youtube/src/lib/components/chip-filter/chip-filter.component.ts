@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output, input } from '@angular/core';
 import { MatChip, MatChipListbox } from '@angular/material/chips';
 import { Tag } from '../../store/model';
 
@@ -11,8 +11,7 @@ import { Tag } from '../../store/model';
 })
 export class ChipFilterComponent {
 
-  @Input({required: true})
-  tags: Tag[];
+  readonly tags = input.required<Tag[]>();
 
   @Output()
   tagChangeEvent = new EventEmitter<Tag[]>();
@@ -20,7 +19,7 @@ export class ChipFilterComponent {
   areActiveTags = false;
 
   deactivateTags(): void {
-    for (const tag of this.tags) {
+    for (const tag of this.tags()) {
       tag.active = false;
     }
     this.areActiveTags = false;
@@ -28,11 +27,11 @@ export class ChipFilterComponent {
   }
 
   toggleTag(tagName: string): void {
-    const tagItem = this.tags.find(item => item.name === tagName);
+    const tagItem = this.tags().find(item => item.name === tagName);
     if (tagItem) {
       tagItem.active = !tagItem.active;
     }
-    const activeTags = this.tags.filter(item => item.active);
+    const activeTags = this.tags().filter(item => item.active);
     this.areActiveTags = activeTags.length > 0;
     this.tagChangeEvent.emit(activeTags);
   }

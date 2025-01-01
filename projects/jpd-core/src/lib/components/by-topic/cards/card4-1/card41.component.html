@@ -1,12 +1,12 @@
 <div class="grid grid-rows-subgrid row-span-4 gap-y-2 overflow-hidden rounded-lg mat-elevation-z6"
-     [style.padding]="padding">
-  <img class="w-full object-cover" [src]="model.imageUrl">
-  <h4 class="px-4 text-2xl font-medium">{{ model.title }}</h4>
-  @if (model.subtitle) {
-    <h6 class="px-4">{{ model.subtitle }}</h6>
+     [style.padding]="padding()">
+  <img class="w-full object-cover" [src]="model().imageUrl">
+  <h4 class="px-4 text-2xl font-medium">{{ model().title }}</h4>
+  @if (model().subtitle) {
+    <h6 class="px-4">{{ model().subtitle }}</h6>
   }
-  @if (model.description) {
-    <small class="px-4 pb-4 text-sm">{{ model.description }}</small>
+  @if (model().description) {
+    <small class="px-4 pb-4 text-sm">{{ model().description }}</small>
   }
 </div>
 

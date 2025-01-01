@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, ViewChild, input } from '@angular/core';
 import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 
@@ -13,11 +13,9 @@ import { MatIcon } from '@angular/material/icon';
 })
 export class NumberInputComponent {
 
-  @Input({required: true})
-  text: string;
+  readonly text = input.required<string>();
 
-  @Input()
-  disabled: boolean = false;
+  readonly disabled = input<boolean>(false);
 
   // @Input()
   // color = 'yellow';

@@ -1,46 +1,46 @@
-@if (colorOff) {
+@if (colorOff()) {
   <div class="flex justify-end">
     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -960 960 960"
-         [attr.fill]="rate > 0 ? colorOn : colorOff">
+         [attr.fill]="rate() > 0 ? colorOn() : colorOff()">
       <path d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
     </svg>
     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -960 960 960"
-         [attr.fill]="rate > 1 ? colorOn : colorOff">
+         [attr.fill]="rate() > 1 ? colorOn() : colorOff()">
       <path d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
     </svg>
     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -960 960 960"
-         [attr.fill]="rate > 2 ? colorOn : colorOff">
+         [attr.fill]="rate() > 2 ? colorOn() : colorOff()">
       <path d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
     </svg>
     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -960 960 960"
-         [attr.fill]="rate > 3 ? colorOn : colorOff">
+         [attr.fill]="rate() > 3 ? colorOn() : colorOff()">
       <path d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
     </svg>
     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -960 960 960"
-         [attr.fill]="rate > 4 ? colorOn : colorOff">
+         [attr.fill]="rate() > 4 ? colorOn() : colorOff()">
       <path d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
     </svg>
   </div>
 } @else {
   <div class="flex justify-end">
     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -960 960 960"
-         [attr.fill]="rate > 0 ? colorOn : 'var(--mat-sys-surface-variant)'">
+         [attr.fill]="rate() > 0 ? colorOn() : 'var(--mat-sys-surface-variant)'">
       <path d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
     </svg>
     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -960 960 960"
-         [attr.fill]="rate > 1 ? colorOn : 'var(--mat-sys-surface-variant)'">
+         [attr.fill]="rate() > 1 ? colorOn() : 'var(--mat-sys-surface-variant)'">
       <path d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
     </svg>
     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -960 960 960"
-         [attr.fill]="rate > 2 ? colorOn : 'var(--mat-sys-surface-variant)'">
+         [attr.fill]="rate() > 2 ? colorOn() : 'var(--mat-sys-surface-variant)'">
       <path d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
     </svg>
     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -960 960 960"
-         [attr.fill]="rate > 3 ? colorOn : 'var(--mat-sys-surface-variant)'">
+         [attr.fill]="rate() > 3 ? colorOn() : 'var(--mat-sys-surface-variant)'">
       <path d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
     </svg>
     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -960 960 960"
-         [attr.fill]="rate > 4 ? colorOn : 'var(--mat-sys-surface-variant)'">
+         [attr.fill]="rate() > 4 ? colorOn() : 'var(--mat-sys-surface-variant)'">
       <path d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
     </svg>
   </div>

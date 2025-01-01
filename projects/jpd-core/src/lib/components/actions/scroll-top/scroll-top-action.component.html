@@ -1,4 +1,4 @@
 @if (top()) {
   <a4w-action name="scroll top" icon="vertical_align_top" ariaLabel="Scroll nach oben"
-              [fab]="fab" [button]="button" (actionEvent)="scrollTop()"/>
+              [fab]="fab()" [button]="button()" (actionEvent)="scrollTop()"/>
 }

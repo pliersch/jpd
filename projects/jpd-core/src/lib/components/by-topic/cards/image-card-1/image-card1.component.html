@@ -1,22 +1,22 @@
 <div class="big-card-1 card-background mat-elevation-z6 white relative overflow-hidden rounded-lg">
-  <a [routerLink]="[model.linkUrl]">
-    <div class="full-background" [style.background-image]="'url(' + model.imgUrl + ')'"></div>
+  <a [routerLink]="[model().linkUrl]">
+    <div class="full-background" [style.background-image]="'url(' + model().imgUrl + ')'"></div>
     <div class="filter"></div>
     <div class="card-body">
       <div class="content-left flex flex-col">
-        <h2 class="card-title text-3xl font-medium">{{ model.title }}</h2>
-        <p class="card-description">{{ model.contentText }}</p>
+        <h2 class="card-title text-3xl font-medium">{{ model().title }}</h2>
+        <p class="card-description">{{ model().contentText }}</p>
         <span class="spacer"></span>
         <div class="author items-center">
-          @if (model.avatar) {
-            <img [src]="model.avatar" alt="team-3" class="avatar avatar-sm">
+          @if (model().avatar) {
+            <img [src]="model().avatar" alt="team-3" class="avatar avatar-sm">
           }
-          @if (model.postContentTitle) {
+          @if (model().postContentTitle) {
             <div class="name ms-2">
-              <span>{{ model.postContentTitle }}</span>
-              @if (model.postContentText) {
+              <span>{{ model().postContentTitle }}</span>
+              @if (model().postContentText) {
                 <div class="stats">
-                  <small>{{ model.postContentText }}</small>
+                  <small>{{ model().postContentText }}</small>
                 </div>
               }
             </div>

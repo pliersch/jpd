@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, Input, Type } from '@angular/core';
+import { Component, Type, input } from '@angular/core';
 import { MatButton } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import { Observable, of } from 'rxjs';
@@ -27,8 +27,7 @@ export interface IFramePlaceholderModel {
 })
 export class IframePlaceholderComponent {
 
-  @Input({required: true})
-  component: Type<any>
+  readonly component = input.required<Type<any>>();
 
   model: IFramePlaceholderModel = {
     title: 'Google Maps Karte anzeigen',

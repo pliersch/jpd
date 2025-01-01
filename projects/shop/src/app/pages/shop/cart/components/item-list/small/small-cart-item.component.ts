@@ -1,5 +1,5 @@
 import { CurrencyPipe, NgOptimizedImage } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output, input } from '@angular/core';
 import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
@@ -19,8 +19,7 @@ import { CartItem, UpdateOrderPosition } from '@shop/pages/shop/cart/store/cart.
 })
 export class SmallCartItemComponent {
 
-  @Input({required: true})
-  item: CartItem
+  readonly item = input.required<CartItem>();
 
   @Output()
   quantityChange = new EventEmitter<UpdateOrderPosition>();

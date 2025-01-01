@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, input } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { FragmentDirective, ScrollService } from '../../../../common';
 import { BaseComponent } from '../../../core/base/base.component';
@@ -16,8 +16,7 @@ export interface Parallax1Model {
 
 export class Parallax1Component extends BaseComponent<Parallax1Model> implements OnDestroy {
 
-  @Input()
-  darkenBG = true;
+  readonly darkenBG = input(true);
 
   parallax = 0;
   alpha = 1;

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 export interface Card44Model {
@@ -20,9 +20,7 @@ export interface Card44Model {
 })
 export class Card44Component {
 
-  @Input()
-  model: Card44Model;
+  readonly model = input<Card44Model>();
 
-  @Input()
-  transparent = false;
+  readonly transparent = input(false);
 }

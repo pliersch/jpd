@@ -1,5 +1,5 @@
 <div class="flex flex-wrap">
-  @for (item of videos; track item.videoId) {
+  @for (item of videos(); track item.videoId) {
     <a4w-card-video-1 (idEmitter)="onCurrentVideoChange($event)"
                       class="media"
                       [imageUrl]="item.posterUrl" [title]="item.title"

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { MatChipsModule } from '@angular/material/chips';
 
 @Component({
@@ -10,7 +10,6 @@ import { MatChipsModule } from '@angular/material/chips';
 })
 export class Tags1Component {
 
-  @Input()
-  tags: string[]
+  readonly tags = input<string[]>();
 
 }

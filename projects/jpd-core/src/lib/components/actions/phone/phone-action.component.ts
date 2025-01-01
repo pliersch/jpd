@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { booleanAttribute, Component, Input } from '@angular/core';
+import { booleanAttribute, Component, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { BaseComponent } from '../../core/base/base.component';
@@ -19,11 +19,11 @@ export interface PhoneModel {
 // fixme avoid extending BaseComponent. Use CompanyService to get phone
 export class PhoneActionComponent extends BaseComponent<PhoneModel> {
 
-  @Input({transform: booleanAttribute}) fab: boolean;
+  readonly fab = input<boolean, unknown>(undefined, { transform: booleanAttribute });
 
-  @Input({transform: booleanAttribute}) button: boolean;
+  readonly button = input<boolean, unknown>(undefined, { transform: booleanAttribute });
 
-  @Input({transform: booleanAttribute}) iconTextButton: boolean;
+  readonly iconTextButton = input<boolean, unknown>(undefined, { transform: booleanAttribute });
 
   constructor() {
     super('PhoneAction');

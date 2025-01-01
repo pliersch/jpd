@@ -1,4 +1,4 @@
-import { Component, Input, numberAttribute } from '@angular/core';
+import { Component, numberAttribute, input } from '@angular/core';
 import { FragmentDirective } from '../../../../../common';
 import { BaseComponent } from '../../../../core/base/base.component';
 
@@ -14,8 +14,7 @@ export interface ImageContent1Model {
 })
 export class ImageContent1Component extends BaseComponent<ImageContent1Model> {
 
-  @Input({transform: numberAttribute, required: true})
-  maxHeight: number;
+  readonly maxHeight = input.required<number, unknown>({ transform: numberAttribute });
 
   constructor(override fragment?: FragmentDirective) {
     super('ImageContent1', fragment)

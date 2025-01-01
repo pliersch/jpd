@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 export interface Rating {
   grade: number;
@@ -12,6 +12,5 @@ export interface Rating {
   styleUrl: './rating-item.component.scss',
 })
 export class RatingItemComponent {
-  @Input({ required: true })
-  value: Rating;
+  readonly value = input.required<Rating>();
 }

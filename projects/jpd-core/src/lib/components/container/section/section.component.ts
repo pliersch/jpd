@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { booleanAttribute, Component, Input } from '@angular/core';
+import { booleanAttribute, Component, Input, input } from '@angular/core';
 
 @Component({
     selector: 'a4w-section',
@@ -9,11 +9,9 @@ import { booleanAttribute, Component, Input } from '@angular/core';
 })
 export class SectionComponent {
 
-  @Input()
-  bgColor: string;
+  readonly bgColor = input<string>();
 
-  @Input()
-  container: 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+  readonly container = input<'sm' | 'md' | 'lg' | 'xl' | 'xxl'>();
 
   private _noPadding: boolean;
 

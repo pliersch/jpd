@@ -1,26 +1,26 @@
 <!--<a4w-poster rounded="rounded-lg">-->
 <div class="grid grid-cols-12 sm:gap-0 gap-4 rounded-2xl max-w-650px">
   <div class="col-span-12 md:col-span-4 lg:col-span-4">
-    <a [routerLink]="[model.linkUrl]">
+    <a [routerLink]="[model().linkUrl]">
       <div class="sm:p-3 md:p-0 lg:p-3 h-full">
         <img class="max-h-60 rounded-lg aspect-07"
-             [src]="model.imgUrl" alt="image">
+             [src]="model().imgUrl" alt="image">
       </div>
     </a>
   </div>
   <div class="col-span-12 md:col-span-8 lg:col-span-8p my-auto">
     <div class="px-2 py-3 sm:px-6 sm:pb-4">
-      <h4 class="text-2xl font-medium pb-3"> {{ model.title }} </h4>
-      <p> {{ model.contentText }}
-        @if (model.linkText) {
-          {{ model.linkText }}
+      <h4 class="text-2xl font-medium pb-3"> {{ model().title }} </h4>
+      <p> {{ model().contentText }}
+        @if (model().linkText) {
+          {{ model().linkText }}
         }</p>
       <div class="author">
-        @if (model.avatar) {
-          <img [src]="model.avatar" alt="team-3" class="avatar avatar-sm">
+        @if (model().avatar) {
+          <img [src]="model().avatar" alt="team-3" class="avatar avatar-sm">
         }
-        @if (model.postContentText) {
-          <p class="my-auto ms-2">{{ model.postContentText }}</p>
+        @if (model().postContentText) {
+          <p class="my-auto ms-2">{{ model().postContentText }}</p>
         }
       </div>
     </div>

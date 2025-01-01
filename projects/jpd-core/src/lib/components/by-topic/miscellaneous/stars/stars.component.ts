@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -9,12 +9,9 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [MatButtonModule, MatIconModule],
 })
 export class StarsComponent {
-  @Input()
-  rate = 0;
+  readonly rate = input(0);
 
-  @Input()
-  colorOn = '#E7C512';
+  readonly colorOn = input('#E7C512');
 
-  @Input()
-  colorOff: string;
+  readonly colorOff = input<string>();
 }

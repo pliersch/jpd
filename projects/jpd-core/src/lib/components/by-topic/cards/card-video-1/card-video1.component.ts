@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output, input } from '@angular/core';
 import { ImageFallbackDirective } from '../../../../common';
 
 @Component({
@@ -10,22 +10,18 @@ import { ImageFallbackDirective } from '../../../../common';
 })
 export class CardVideo1Component {
 
-  @Input({required: true})
-  title: string;
+  readonly title = input.required<string>();
 
-  @Input({required: true})
-  subtitle: string;
+  readonly subtitle = input.required<string>();
 
-  @Input({required: true})
-  imageUrl?: string;
+  readonly imageUrl = input.required<string | undefined>();
 
-  @Input({required: true})
-  videoId: string;
+  readonly videoId = input.required<string>();
 
   @Output()
   idEmitter = new EventEmitter<string>();
 
   emitId(): void {
-    this.idEmitter.emit(this.videoId);
+    this.idEmitter.emit(this.videoId());
   }
 }

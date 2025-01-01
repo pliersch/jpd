@@ -13,9 +13,9 @@
   <!--   DESKTOP    -->
   <mat-toolbar class="z-2 fill mat-elevation-z6 relative"
                [class.transparent-bg]="_transparent"
-               [class.absolute]="_transparent || blurry"
-               [class.rounded]="rounded"
-               [class.blurry]="blurry"
+               [class.absolute]="_transparent || blurry()"
+               [class.rounded]="rounded()"
+               [class.blurry]="blurry()"
                [style.background-color]="bgColor">
 
     <div class="flex w-full items-center"

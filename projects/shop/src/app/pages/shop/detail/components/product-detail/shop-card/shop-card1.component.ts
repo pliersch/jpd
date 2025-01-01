@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { MatCard } from '@angular/material/card';
 import { RouterLink } from '@angular/router';
 import { ImageFallbackDirective, StarsComponent } from 'jpd-core';
@@ -13,31 +13,22 @@ import { ImageFallbackDirective, StarsComponent } from 'jpd-core';
 
 export class ShopCard1Component {
 
-  @Input({required: true})
-  title: string;
+  readonly title = input.required<string>();
 
-  @Input({required: true})
-  subtitle: string;
+  readonly subtitle = input.required<string>();
 
-  @Input({required: true})
-  price: number;
+  readonly price = input.required<number>();
 
-  @Input({required: true})
-  link: string;
+  readonly link = input.required<string>();
 
-  @Input({required: true})
-  linkId: string;
+  readonly linkId = input.required<string>();
 
-  @Input({required: true})
-  imageUrl: string;
+  readonly imageUrl = input.required<string>();
 
-  @Input()
-  rating: number = 0;
+  readonly rating = input<number>(0);
 
-  @Input()
-  colorOn: string = 'yellow';
+  readonly colorOn = input<string>('yellow');
 
-  @Input()
-  colorOff: string = 'white';
+  readonly colorOff = input<string>('white');
 
 }

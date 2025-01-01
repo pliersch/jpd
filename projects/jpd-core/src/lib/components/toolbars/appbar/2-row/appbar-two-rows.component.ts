@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { booleanAttribute, Component, ContentChild, Input, OnInit, Signal } from '@angular/core';
+import { booleanAttribute, Component, ContentChild, OnInit, Signal, input } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
@@ -32,20 +32,16 @@ export class AppbarTwoRowsComponent implements OnInit {
   @ContentChild(NavigationDirective)
   navigationDirective?: NavigationDirective;
 
-  @Input()
-  bgColorDark: string; // fixme set default value. current both colors must set
+  readonly bgColorDark = input<string>(); // fixme set default value. current both colors must set
 
-  @Input()
-  bgColorLight: string; // fixme set default value. current both colors must set
+  readonly bgColorLight = input<string>(); // fixme set default value. current both colors must set
 
   bgColor: string;
 
-  @Input({transform: booleanAttribute})
-  transparent = false;
+  readonly transparent = input(false, { transform: booleanAttribute });
   _transparent = false;
 
-  @Input({transform: booleanAttribute})
-  blurry = false;
+  readonly blurry = input(false, { transform: booleanAttribute });
 
   rootRoute: Route;
 
@@ -80,7 +76,7 @@ export class AppbarTwoRowsComponent implements OnInit {
     this.rootRoute = this.routeDomService.getRouteDom();
     this.linkActiveOptions = this.routeDomService.getIsActiveMatchOptions();
     // this.bgColor = this.cssDomService.getTheme() === Themes.DARK ? this.bgColorDark : this.bgColorLight;
-    this._transparent = this.transparent;
+    this._transparent = this.transparent();
   }
 
   emitNavToggle(): void {
@@ -115,9 +111,9 @@ export class AppbarTwoRowsComponent implements OnInit {
 
   private onToggleTheme(change: ThemeToggleChange): void {
     if (change.add === Themes.DARK) {
-      this.bgColor = this.bgColorDark;
+      this.bgColor = this.bgColorDark();
     } else {
-      this.bgColor = this.bgColorLight;
+      this.bgColor = this.bgColorLight();
     }
   }
 

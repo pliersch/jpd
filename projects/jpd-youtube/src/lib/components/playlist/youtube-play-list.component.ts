@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output, input } from '@angular/core';
 import { CardVideo1Component } from 'jpd-core';
 import { Tag, Video } from '../../store/model';
 
@@ -11,11 +11,9 @@ import { Tag, Video } from '../../store/model';
 })
 export class YoutubePlayListComponent {
 
-  @Input()
-  videos: Video[] | undefined;
+  readonly videos = input<Video[]>();
 
-  @Input()
-  tags: Tag[] = [];
+  readonly tags = input<Tag[]>([]);
 
   @Output()
   videoIdChangeEvent: EventEmitter<string> = new EventEmitter();

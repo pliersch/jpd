@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, input } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { DocWidgetItem } from '@app1/components/doc-info/store/doc-widget.model';
 
@@ -12,18 +12,16 @@ export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 })
 export class BaseWidgetComponent implements OnInit {
 
-  @Input({required: true})
-  item: DocWidgetItem;
+  readonly item = input.required<DocWidgetItem>();
 
-  @Input(/*{required: true}*/)
-  size: Size;
+  readonly size = input<Size>();
 
   svgSize = 2;
 
   imageUrl: string;
 
   ngOnInit(): void {
-    switch (this.size) {
+    switch (this.size()) {
       case 'xs':
         this.svgSize = 20;
         break;
@@ -40,6 +38,6 @@ export class BaseWidgetComponent implements OnInit {
         this.svgSize = 100;
         break;
     }
-    this.imageUrl = 'assets/svg/icons/' + this.item.svg + '.svg';
+    this.imageUrl = 'assets/svg/icons/' + this.item().svg + '.svg';
   }
 }

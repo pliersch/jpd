@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { PosterComponent } from '../../../poster/poster.component';
 
@@ -10,19 +10,14 @@ import { PosterComponent } from '../../../poster/poster.component';
 })
 export class CardH1Component {
 
-  @Input({required: true})
-  title: string;
+  readonly title = input.required<string>();
 
-  @Input({required: true})
-  subtitle: string;
+  readonly subtitle = input.required<string>();
 
-  @Input({required: true})
-  description: string;
+  readonly description = input.required<string>();
 
-  @Input()
-  imageUrl?: string
+  readonly imageUrl = input<string>();
 
-  @Input()
-  link?: string
+  readonly link = input<string>();
 
 }

@@ -1,11 +1,11 @@
-<section [style.background-color]="bgColor"
-         [class.mx-auto]="!!container"
+<section [style.background-color]="bgColor()"
+         [class.mx-auto]="!!container()"
          [class.py-10]="!noPadding"
-         [class.max-w-screen-sm]="container === 'sm'"
-         [class.max-w-screen-md]="container === 'md'"
-         [class.max-w-screen-lg]="container === 'lg'"
-         [class.max-w-screen-xl]="container === 'xl'"
-         [class.max-w-screen-2xl]="container === 'xxl'">
+         [class.max-w-screen-sm]="container() === 'sm'"
+         [class.max-w-screen-md]="container() === 'md'"
+         [class.max-w-screen-lg]="container() === 'lg'"
+         [class.max-w-screen-xl]="container() === 'xl'"
+         [class.max-w-screen-2xl]="container() === 'xxl'">
   <ng-content select="[header]"></ng-content>
   <!--  default-->
   <ng-content></ng-content>

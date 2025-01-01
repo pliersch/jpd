@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 export interface ActivityList1Model {
@@ -16,6 +16,5 @@ export interface ActivityList1Model {
 })
 export class ActivityList1Component {
 
-  @Input()
-  activities: ActivityList1Model[]
+  readonly activities = input<ActivityList1Model[]>();
 }

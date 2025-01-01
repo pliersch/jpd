@@ -1,8 +1,8 @@
 <div class="flex items-center"
-     [class.flex-col]="size === 'xl' || size === 'lg'">
+     [class.flex-col]="size() === 'xl' || size() === 'lg'">
   <mat-icon inline class="me-2" color="accent" aria-hidden="false"
             aria-label="Info Symbol" [style.height.px]=" svgSize"
-            [svgIcon]="item.svg"></mat-icon>
+            [svgIcon]="item().svg"></mat-icon>
 
-  <h4 class="text-2xl font-normal">{{ item.message }}</h4>
+  <h4 class="text-2xl font-normal">{{ item().message }}</h4>
 </div>

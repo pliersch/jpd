@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { booleanAttribute, Component, Input } from '@angular/core';
+import { booleanAttribute, Component, input } from '@angular/core';
 
 export interface Card11Model {
   title: string
@@ -19,12 +19,9 @@ export interface Card11Model {
 })
 export class Card11Component {
 
-  @Input()
-  model: Card11Model;
+  readonly model = input<Card11Model>();
 
-  @Input()
-  transparent = false;
+  readonly transparent = input(false);
 
-  @Input({transform: booleanAttribute})
-  imgFirst: boolean;
+  readonly imgFirst = input<boolean, unknown>(undefined, { transform: booleanAttribute });
 }

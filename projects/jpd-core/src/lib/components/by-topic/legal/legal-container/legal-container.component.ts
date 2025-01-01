@@ -1,5 +1,5 @@
 import { NgTemplateOutlet } from '@angular/common';
-import { Component, Input, OnInit, signal } from '@angular/core';
+import { Component, OnInit, signal, input } from '@angular/core';
 import { BreakpointService, Dimension } from '../../../../common';
 import { LgContainerComponent } from '../../../container/breakpoints/lg-container.component';
 import { PosterComponent } from '../../../poster/poster.component';
@@ -18,8 +18,7 @@ export class LegalContainerComponent implements OnInit {
 
   isMobile = signal(false);
 
-  @Input({required: true})
-  title: string;
+  readonly title = input.required<string>();
 
   constructor(private breakpointService: BreakpointService) { }
 

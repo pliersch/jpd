@@ -7,9 +7,9 @@ import {
   ContentChild,
   ElementRef,
   HostListener,
-  Input,
   OnInit,
-  ViewChild
+  ViewChild,
+  input
 } from '@angular/core';
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
@@ -45,23 +45,18 @@ export class AppbarComponent implements OnInit, AfterViewInit {
   @ViewChild('navContainer', {read: ElementRef})
   navContainer: ElementRef;
 
-  @Input()
-  bgColorDark: string; // fixme set default value. current both colors must set
+  readonly bgColorDark = input<string>(); // fixme set default value. current both colors must set
 
-  @Input()
-  bgColorLight: string; // fixme set default value. current both colors must set
+  readonly bgColorLight = input<string>(); // fixme set default value. current both colors must set
 
   bgColor: string;
 
-  @Input({transform: booleanAttribute})
-  transparent = false;
+  readonly transparent = input(false, { transform: booleanAttribute });
   _transparent = false;
 
-  @Input({transform: booleanAttribute})
-  blurry = false;
+  readonly blurry = input(false, { transform: booleanAttribute });
 
-  @Input({transform: booleanAttribute})
-  rounded = false;
+  readonly rounded = input(false, { transform: booleanAttribute });
 
   actionsVisible = true;
   routes: Route[] = [];
@@ -83,8 +78,8 @@ export class AppbarComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.rootRoute = this.routeDomService.getRouteDom();
     this.linkActiveOptions = this.routeDomService.getIsActiveMatchOptions();
-    this.bgColor = this.cssDomService.getTheme() === Themes.DARK ? this.bgColorDark : this.bgColorLight;
-    this._transparent = this.transparent;
+    this.bgColor = this.cssDomService.getTheme() === Themes.DARK ? this.bgColorDark() : this.bgColorLight();
+    this._transparent = this.transparent();
     this.isHandset$ = this.breakpointObserver.observe(Breakpoints.Handset)
       .pipe(
         tap(res => console.log(res.matches)),
@@ -101,7 +96,7 @@ export class AppbarComponent implements OnInit, AfterViewInit {
   }
 
   private onScroll(scrollTop: number): void {
-    if (this.transparent) {
+    if (this.transparent()) {
       this._transparent = scrollTop <= 50;
     }
   }
@@ -126,9 +121,9 @@ export class AppbarComponent implements OnInit, AfterViewInit {
 
   private onToggleTheme(change: ThemeToggleChange): void {
     if (change.add === Themes.DARK) {
-      this.bgColor = this.bgColorDark;
+      this.bgColor = this.bgColorDark();
     } else {
-      this.bgColor = this.bgColorLight;
+      this.bgColor = this.bgColorLight();
     }
   }
 }

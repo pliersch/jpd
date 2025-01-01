@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 export interface Card41Model {
   title: string;
@@ -16,10 +16,8 @@ export interface Card41Model {
 })
 export class Card41Component {
 
-  @Input()
-  model: Card41Model;
+  readonly model = input<Card41Model>();
 
-  @Input()
-  padding: string = '0';
+  readonly padding = input<string>('0');
 
 }

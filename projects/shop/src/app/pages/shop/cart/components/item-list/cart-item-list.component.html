@@ -1,6 +1,6 @@
 @if (isSmall()) {
   <div>
-    @for (item of items; track item.id) {
+    @for (item of items(); track item.id) {
       <shop-small-cart-item [item]="item"
                             (deleteItem)="deleteItem.emit($event)"
                             (quantityChange)="quantityChange.emit($event)"/>
@@ -15,7 +15,7 @@
       <span class="my-auto">Summe</span>
       <span class="my-auto"></span>
     </div>
-    @for (item of items; track item.id) {
+    @for (item of items(); track item.id) {
       <shop-large-cart-item [item]="item"
                             (deleteItem)="deleteItem.emit($event)"
                             (quantityChange)="quantityChange.emit($event)"/>

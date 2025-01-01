@@ -6,9 +6,10 @@ import localeDe from '@angular/common/locales/de';
 import {
   ApplicationConfig,
   importProvidersFrom,
-  LOCALE_ID,
   inject,
+  LOCALE_ID,
   provideAppInitializer,
+  provideExperimentalZonelessChangeDetection,
 } from '@angular/core';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { DateFnsAdapter } from '@angular/material-date-fns-adapter';
@@ -16,11 +17,7 @@ import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconRegistry } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import {
-  DomSanitizer,
-  provideClientHydration,
-  withEventReplay,
-} from '@angular/platform-browser';
+import { DomSanitizer, provideClientHydration, withEventReplay, } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { initProjectIcons } from '@app1/common/icon.initializer';
@@ -47,6 +44,7 @@ registerLocaleData(localeDe);
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideExperimentalZonelessChangeDetection(),
     provideClientHydration(withEventReplay()),
     importProvidersFrom(MatSnackBarModule, MatDialogModule, GoogleMapsModule),
     provideAnimations(),

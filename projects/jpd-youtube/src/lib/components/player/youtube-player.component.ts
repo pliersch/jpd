@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { YouTubePlayer } from '@angular/youtube-player';
 
 @Component({
@@ -13,8 +13,7 @@ export class YoutubePlayerComponent {
   // @Input({required: true})
   // video: Observable<YoutubeVideo>;
 
-  @Input(/*{required: true}*/)
-  id: string;
+  readonly id = input<string>();
 
   playerConfig = {
     controls: 1,

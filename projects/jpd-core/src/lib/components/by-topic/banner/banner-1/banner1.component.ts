@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { FragmentDirective } from '../../../../common';
@@ -23,14 +23,11 @@ export interface Banner1Model {
 })
 export class Banner1Component extends BaseComponent<Banner1Model> {
 
-  @Input()
-  textColor: string;
+  readonly textColor = input<string>();
 
-  @Input()
-  color1: string;
+  readonly color1 = input<string>();
 
-  @Input()
-  color2: string;
+  readonly color2 = input<string>();
 
   constructor(override fragment?: FragmentDirective) {
     super('Banner1', fragment)

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { booleanAttribute, Component, Input } from '@angular/core';
+import { booleanAttribute, Component, Input, input } from '@angular/core';
 import { FragmentDirective } from '../../../../common';
 import { BaseComponent } from '../../../core/base/base.component';
 
@@ -15,8 +15,7 @@ export interface ParallaxSectionModel {
 })
 export class ParallaxSectionComponent extends BaseComponent<ParallaxSectionModel> {
 
-  @Input()
-  color: string;
+  readonly color = input<string>();
 
   private _noPadding: boolean;
 

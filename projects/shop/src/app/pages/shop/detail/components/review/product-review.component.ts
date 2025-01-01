@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { MatButton } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
@@ -15,8 +15,7 @@ import { LoremIpsumFactory, StarsComponent } from 'jpd-core';
   styleUrl: './product-review.component.scss',
 })
 export class ProductReviewComponent {
-  @Input({ required: true })
-  article: Article;
+  readonly article = input.required<Article>();
 
   dialog: MatDialog = inject(MatDialog);
 

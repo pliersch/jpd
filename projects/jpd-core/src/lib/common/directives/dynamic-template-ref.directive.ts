@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input } from '@angular/core';
+import { Directive, ElementRef, input } from '@angular/core';
 
 @Directive({
   selector: '[a4wDynRef]',
@@ -6,13 +6,12 @@ import { Directive, ElementRef, Input } from '@angular/core';
 })
 export class DynamicTemplateRefDirective {
 
-  @Input({required: true,})
-  dynRef: string;
+  readonly dynRef = input.required<string>();
 
   constructor(public el: ElementRef) { }
 
   public get name(): string {
-    return this.dynRef;
+    return this.dynRef();
   }
 
 }

@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, OnInit, Renderer2, input } from '@angular/core';
 
 @Directive({
   selector: '[a4wBackgroundColor]',
@@ -6,14 +6,13 @@ import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 })
 export class BackgroundColorDirective implements OnInit {
 
-  @Input({required: true})
-  backgroundColor: string;
+  readonly backgroundColor = input.required<string>();
 
   constructor(private el: ElementRef,
               private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.renderer.setStyle(this.el.nativeElement, 'background-color', this.backgroundColor);
+    this.renderer.setStyle(this.el.nativeElement, 'background-color', this.backgroundColor());
     // display inline doesn't support background. uncomment next line? check style?
     // this.renderer.setStyle(this.el.nativeElement, 'display', 'block');
   }

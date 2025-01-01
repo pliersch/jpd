@@ -1,7 +1,7 @@
 <div class="parallax-container max-component-height">
   <div class="img" [style.transform]="'translateY('+ parallax + 'px)'"
        [style.background-image]="'url(' + model.backgroundImage + ')'">
-    @if (darkenBG) {
+    @if (darkenBG()) {
       <div class="filter"></div>
     }
   </div>

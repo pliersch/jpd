@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, EventEmitter, Input, Output } from '@angular/core';
+import { booleanAttribute, Component, EventEmitter, Output, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -9,20 +9,16 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [MatButtonModule, MatIconModule],
 })
 export class StarRatingComponent {
-  @Input()
-  rate = 0;
+  readonly rate = input(0);
 
-  @Input()
-  colorOn = '#E7C512';
+  readonly colorOn = input('#E7C512');
 
-  @Input()
-  colorOff = 'white';
+  readonly colorOff = input('white');
 
   @Output()
   rateChangeEvent = new EventEmitter<number>();
 
-  @Input({ transform: booleanAttribute })
-  disabled = false;
+  readonly disabled = input(false, { transform: booleanAttribute });
 
   onClickStar(rate: number): void {
     this.rateChangeEvent.emit(rate);
